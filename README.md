@@ -268,8 +268,7 @@ This project is the intellectual property of KiTS (Khoder's Integration and Tech
 **KiTS - Khoder's Integration and Technology Solutions**
 
 For authorized inquiries and support:
-- Email: [Contact Information]
-- Website: [Website URL]
+- Email: kits.tech.co@gmail.com
 - Location: Lebanon
 
 ---
