@@ -1,5 +1,22 @@
 import { useState, useEffect } from "react";
 
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
+
 // ─── PALETTE ──────────────────────────────────────────────────────────────────
 const C = {
   obsidian: "#0A0908",
@@ -518,6 +535,7 @@ const TABS = [
 ];
 
 export default function StrikeBrandStudy() {
+  const { isMobile } = useResponsive();
   const [tab, setTab] = useState("verdict");
   const [loaded, setLoaded] = useState(false);
   const [expandedEnh, setExpandedEnh] = useState<string | null>(null);
@@ -543,7 +561,7 @@ export default function StrikeBrandStudy() {
       <div style={{
         background: `linear-gradient(160deg, ${C.charcoal} 0%, ${C.void} 60%)`,
         borderBottom: `1px solid ${C.ash}`,
-        padding: "36px 40px 28px",
+        padding: isMobile ? "24px 24px 20px" : "36px 40px 28px",
         position: "relative", overflow: "hidden",
       }}>
         {/* Background grid */}
@@ -557,15 +575,15 @@ export default function StrikeBrandStudy() {
           <div style={{ width: 1, height: "200%", background: C.gold, transform: "rotate(-20deg) translateX(130px)", transformOrigin: "top right" }} />
         </div>
 
-        <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.gold, opacity: 0.5, letterSpacing: "0.4em", marginBottom: 14 }}>
+        <div style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 8 : 9, color: C.gold, opacity: 0.5, letterSpacing: "0.4em", marginBottom: isMobile ? 10 : 14 }}>
           KITS ADVISORY GROUP · BRAND ENHANCEMENT STUDY · REF: KAG-JRK-008 · CONFIDENTIAL
         </div>
 
-        <div style={{ display: "flex", alignItems: "flex-end", gap: 24, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", alignItems: isMobile ? "flex-start" : "flex-end", gap: isMobile ? 16 : 24, flexWrap: "wrap", flexDirection: isMobile ? "column" : "row" }}>
           <div>
             <h1 style={{
               margin: 0, fontFamily: "'Didot','Bodoni MT','Playfair Display',Georgia,serif",
-              fontSize: "clamp(32px,6vw,64px)", fontWeight: 400, letterSpacing: "0.15em",
+              fontSize: isMobile ? "clamp(28px,8vw,64px)" : "clamp(32px,6vw,64px)", fontWeight: 400, letterSpacing: "0.15em",
               color: C.strike, lineHeight: 1,
               opacity: loaded ? 1 : 0,
               transform: loaded ? "translateY(0)" : "translateY(16px)",
@@ -574,28 +592,28 @@ export default function StrikeBrandStudy() {
               STRIKE
             </h1>
             <div style={{
-              fontFamily: "'Courier New', monospace", fontSize: 11, color: C.gold,
+              fontFamily: "'Courier New', monospace", fontSize: isMobile ? 10 : 11, color: C.gold,
               letterSpacing: "0.3em", marginTop: 6,
               opacity: loaded ? 1 : 0,
               transition: "all 0.8s cubic-bezier(0.16,1,0.3,1) 0.1s"
             }}>
               STRIKE BITES · Brand Enhancement Study
             </div>
-            <div style={{ fontFamily: "Georgia, serif", fontSize: 12, color: C.creamDim, marginTop: 6, letterSpacing: "0.05em" }}>
+            <div style={{ fontFamily: "Georgia, serif", fontSize: isMobile ? 11 : 12, color: C.creamDim, marginTop: 6, letterSpacing: "0.05em" }}>
               Premium Portioned Beef Jerky Bites · Lebanese Market Entry · GCC & Western Scale
             </div>
           </div>
 
           {/* Overall brand score */}
           <div style={{
-            marginLeft: "auto", textAlign: "center",
+            marginLeft: isMobile ? 0 : "auto", textAlign: "center",
             opacity: loaded ? 1 : 0,
             transition: "all 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s"
           }}>
             <div style={{ position: "relative", display: "inline-block" }}>
-              <ScoreRing score={88} color={C.goldBright} size={80} />
+              <ScoreRing score={88} color={C.goldBright} size={isMobile ? 64 : 80} />
               <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                <div style={{ fontFamily: "'Courier New', monospace", fontSize: 20, color: C.goldBright, lineHeight: 1 }}>88</div>
+                <div style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 18 : 20, color: C.goldBright, lineHeight: 1 }}>88</div>
                 <div style={{ fontFamily: "'Courier New', monospace", fontSize: 6, color: C.gold, letterSpacing: "0.1em" }}>/100</div>
               </div>
             </div>
@@ -612,24 +630,25 @@ export default function StrikeBrandStudy() {
       {/* ─── TABS ──────────────────────────────────────────────────────────── */}
       <div style={{
         background: C.charcoal, borderBottom: `1px solid ${C.ash}`,
-        display: "flex", flexWrap: "wrap", padding: "0 40px"
+        display: "flex", flexWrap: "wrap", padding: isMobile ? "0 20px" : "0 40px", overflowX: "auto", WebkitOverflowScrolling: "touch"
       }}>
         {TABS.map(t => (
           <button key={t.id} onClick={() => setTab(t.id)} style={{
             background: "transparent", border: "none",
             borderBottom: tab === t.id ? `2px solid ${C.gold}` : "2px solid transparent",
             color: tab === t.id ? C.cream : C.creamDim,
-            fontFamily: "'Courier New', monospace", fontSize: 10,
-            letterSpacing: "0.2em", padding: "14px 20px 12px",
+            fontFamily: "'Courier New', monospace", fontSize: isMobile ? 9 : 10,
+            letterSpacing: "0.2em", padding: isMobile ? "12px 16px 10px" : "14px 20px 12px",
             cursor: "pointer", transition: "all 0.15s", whiteSpace: "nowrap",
             opacity: tab === t.id ? 1 : 0.5,
+            WebkitTapHighlightColor: "transparent", touchAction: "manipulation"
           }}>
             {t.label.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div style={{ padding: "36px 40px", maxWidth: 1100 }}>
+      <div style={{ padding: isMobile ? "24px 20px" : "36px 40px", maxWidth: 1100 }}>
 
         {/* ═══════════════════════════════════════════════════════════════════
             TAB: BRAND VERDICT
@@ -643,24 +662,25 @@ export default function StrikeBrandStudy() {
               <h2 style={{ margin: 0, fontSize: "clamp(18px,3vw,26px)", fontWeight: 400, color: C.cream }}>
                 What Works. What to Evolve. What to Add.
               </h2>
-              <p style={{ margin: "10px 0 0", fontSize: 13, color: C.creamDim, lineHeight: 1.8, maxWidth: 680 }}>
+              <p style={{ margin: "10px 0 0", fontSize: isMobile ? 12 : 13, color: C.creamDim, lineHeight: 1.8, maxWidth: isMobile ? "100%" : 680 }}>
                 This section evaluates every element of the STRIKE brand brief against international best practice, Lebanese market requirements, GCC scalability, and Western market readiness. Each element is scored, verdicted, and enhanced with specific actionable recommendations.
               </p>
             </div>
 
             {/* Verdict selector */}
-            <div style={{ display: "flex", gap: 6, marginBottom: 20, flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: isMobile ? 4 : 6, marginBottom: 20, flexWrap: "wrap" }}>
               {Object.entries(VERDICT).map(([key, v]) => (
                 <button key={key} onClick={() => setActiveVerdict(key)} style={{
                   background: activeVerdict === key ? `${v.color}18` : "transparent",
                   border: `1px solid ${activeVerdict === key ? v.color : C.ash}`,
-                  borderRadius: 4, padding: "10px 18px", cursor: "pointer",
-                  transition: "all 0.2s", textAlign: "left"
+                  borderRadius: 4, padding: isMobile ? "8px 14px" : "10px 18px", cursor: "pointer",
+                  transition: "all 0.2s", textAlign: "left",
+                  WebkitTapHighlightColor: "transparent", touchAction: "manipulation"
                 }}>
-                  <div style={{ fontFamily: "'Courier New', monospace", fontSize: 8, color: activeVerdict === key ? v.color : C.creamDim, letterSpacing: "0.15em", marginBottom: 4 }}>
+                  <div style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 7 : 8, color: activeVerdict === key ? v.color : C.creamDim, letterSpacing: "0.15em", marginBottom: 4 }}>
                     {key.toUpperCase()}
                   </div>
-                  <div style={{ fontSize: 11, color: activeVerdict === key ? C.cream : C.creamDim }}>
+                  <div style={{ fontSize: isMobile ? 10 : 11, color: activeVerdict === key ? C.cream : C.creamDim }}>
                     {v.label}
                   </div>
                 </button>
@@ -677,12 +697,12 @@ export default function StrikeBrandStudy() {
               <div style={{
                 background: `${vItem.color}0C`,
                 borderBottom: `1px solid ${vItem.color}20`,
-                padding: "20px 28px",
-                display: "flex", gap: 24, alignItems: "flex-start", flexWrap: "wrap"
+                padding: isMobile ? "16px 20px" : "20px 28px",
+                display: "flex", gap: isMobile ? 16 : 24, alignItems: "flex-start", flexWrap: "wrap"
               }}>
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 10, flexWrap: "wrap" }}>
-                    <h3 style={{ margin: 0, fontFamily: "'Didot',Georgia,serif", fontSize: 26, fontWeight: 400, color: C.cream, letterSpacing: "0.1em" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 10 : 14, marginBottom: 10, flexWrap: "wrap" }}>
+                    <h3 style={{ margin: 0, fontFamily: "'Didot',Georgia,serif", fontSize: isMobile ? 22 : 26, fontWeight: 400, color: C.cream, letterSpacing: "0.1em" }}>
                       {vItem.label}
                     </h3>
                     <span style={{
@@ -695,7 +715,7 @@ export default function StrikeBrandStudy() {
                       {vItem.verdict}
                     </span>
                   </div>
-                  <p style={{ margin: 0, fontSize: 13, color: C.creamDim, lineHeight: 1.85 }}>
+                  <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: C.creamDim, lineHeight: 1.85 }}>
                     {vItem.analysis}
                   </p>
                 </div>
@@ -710,9 +730,9 @@ export default function StrikeBrandStudy() {
                 </div>
               </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
+              <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 0 }}>
                 {/* Risks */}
-                <div style={{ padding: "20px 28px", borderRight: `1px solid ${C.ash}` }}>
+                <div style={{ padding: isMobile ? "16px 20px" : "20px 28px", borderRight: isMobile ? "none" : `1px solid ${C.ash}`, borderBottom: isMobile ? `1px solid ${C.ash}` : "none" }}>
                   <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.red, letterSpacing: "0.2em", marginBottom: 12 }}>
                     RISK FLAGS
                   </div>
@@ -724,7 +744,7 @@ export default function StrikeBrandStudy() {
                   ))}
                 </div>
                 {/* Improvements */}
-                <div style={{ padding: "20px 28px" }}>
+                <div style={{ padding: isMobile ? "16px 20px" : "20px 28px" }}>
                   <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.2em", marginBottom: 12 }}>
                     KITS RECOMMENDATIONS
                   </div>
@@ -739,14 +759,14 @@ export default function StrikeBrandStudy() {
             </div>
 
             {/* Overall brand score summary */}
-            <div style={{ marginTop: 20, background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "20px 28px" }}>
+            <div style={{ marginTop: 20, background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: isMobile ? "16px 20px" : "20px 28px" }}>
               <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.gold, letterSpacing: "0.25em", marginBottom: 16 }}>
                 OVERALL BRAND ASSESSMENT — KITS VERDICT
               </div>
-              <p style={{ margin: "0 0 12px", fontSize: 14, color: C.cream, lineHeight: 1.85, fontFamily: "Georgia, serif" }}>
+              <p style={{ margin: "0 0 12px", fontSize: isMobile ? 13 : 14, color: C.cream, lineHeight: 1.85, fontFamily: "Georgia, serif" }}>
                 <strong style={{ color: C.goldBright }}>STRIKE is a genuinely strong brand name</strong> for this product, this market, and this growth trajectory. It is short, phonetically universal, kinetically charged, and fully trademarkable. The product line architecture (BITES / STRIPS / STICKS) is modular, alliterative, and commercially scalable. The 'primal' positioning is differentiated and correct. The Arabic-English-French trilingual system is exactly right for Lebanon and GCC export.
               </p>
-              <p style={{ margin: 0, fontSize: 14, color: C.creamDim, lineHeight: 1.85, fontFamily: "Georgia, serif" }}>
+              <p style={{ margin: 0, fontSize: isMobile ? 13 : 14, color: C.creamDim, lineHeight: 1.85, fontFamily: "Georgia, serif" }}>
                 The areas requiring refinement are the tagline (move away from 'MUSCLE FUEL'), the cedar tree execution (geometric abstraction only — never literal), and the packaging hierarchy (add transparent window and UV spot varnish). None of these are fundamental brand problems — they are executional refinements that separate a good launch from a great one. With these enhancements, STRIKE BITES is positioned to be the defining Lebanese protein snack brand of this decade.
               </p>
             </div>
@@ -777,17 +797,17 @@ export default function StrikeBrandStudy() {
                   width: "100%", background: expandedEnh === enh.id ? `${enh.color}0C` : C.charcoal,
                   border: `1px solid ${expandedEnh === enh.id ? enh.color + "40" : C.ash}`,
                   borderLeft: `4px solid ${enh.color}`,
-                  borderRadius: 4, padding: "18px 24px", cursor: "pointer",
+                  borderRadius: 4, padding: isMobile ? "14px 20px" : "18px 24px", cursor: "pointer",
                   transition: "all 0.2s", textAlign: "left"
                 }}>
                   <div>
                     <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: enh.color, letterSpacing: "0.2em", marginBottom: 5 }}>
                       SECTION {String(ei + 1).padStart(2, "0")}
                     </div>
-                    <div style={{ fontSize: 16, color: C.cream, marginBottom: 2 }}>{enh.title}</div>
-                    <div style={{ fontSize: 11, color: C.creamDim, fontFamily: "'Courier New', monospace" }}>{enh.subtitle}</div>
+                    <div style={{ fontSize: isMobile ? 15 : 16, color: C.cream, marginBottom: 2 }}>{enh.title}</div>
+                    <div style={{ fontSize: isMobile ? 10 : 11, color: C.creamDim, fontFamily: "'Courier New', monospace" }}>{enh.subtitle}</div>
                   </div>
-                  <span style={{ color: C.creamDim, fontSize: 18 }}>{expandedEnh === enh.id ? "−" : "+"}</span>
+                  <span style={{ color: C.creamDim, fontSize: isMobile ? 16 : 18 }}>{expandedEnh === enh.id ? "−" : "+"}</span>
                 </button>
 
                 {expandedEnh === enh.id && (
@@ -796,7 +816,7 @@ export default function StrikeBrandStudy() {
                       <div key={gi} style={{ borderBottom: gi < enh.items.length - 1 ? `1px solid ${C.ash}` : "none" }}>
                         <div style={{
                           background: `${group.color}08`,
-                          padding: "12px 24px",
+                          padding: isMobile ? "10px 20px" : "12px 24px",
                           borderLeft: `3px solid ${group.color}`,
                           borderBottom: `1px solid ${C.ash}`
                         }}>
@@ -941,10 +961,10 @@ export default function StrikeBrandStudy() {
             <div style={{
               display: "flex",
               justifyContent: "center",
-              alignItems: "flex-end",
-              gap: 40,
+              alignItems: isMobile ? "center" : "flex-end",
+              gap: isMobile ? 24 : 40,
               flexWrap: "wrap",
-              padding: "48px 0 24px",
+              padding: isMobile ? "32px 0 20px" : "48px 0 24px",
               background: `radial-gradient(ellipse at 50% 40%, ${C.charcoal} 0%, ${C.void} 65%)`,
               borderRadius: 8,
               marginBottom: 20,
@@ -970,7 +990,7 @@ export default function StrikeBrandStudy() {
             </div>
 
             {/* Design annotation summary */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 6 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))", gap: 6 }}>
               {[
                 { label: "STRIKE Wordmark", note: "Custom-weight serif · Simulated UV spot gloss on matte substrate · Arabic سترايك paired beneath", color: C.gold },
                 { label: "Performance Gold System", note: "Muted earthy amber — not chrome, not yellow. Protein number, brand name, flavor zone accents", color: C.gold },
@@ -999,14 +1019,14 @@ export default function StrikeBrandStudy() {
 
       {/* Footer */}
       <div style={{
-        borderTop: `1px solid ${C.ash}`, padding: "14px 40px",
+        borderTop: `1px solid ${C.ash}`, padding: isMobile ? "14px 24px" : "14px 40px",
         display: "flex", justifyContent: "space-between", alignItems: "center",
         flexWrap: "wrap", gap: 8, background: C.charcoal
       }}>
-        <span style={{ fontFamily: "'Courier New', monospace", fontSize: 8, color: C.creamDim, opacity: 0.4, letterSpacing: "0.2em" }}>
+        <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 7 : 8, color: C.creamDim, opacity: 0.4, letterSpacing: "0.2em" }}>
           KITS ADVISORY GROUP · BRAND ENHANCEMENT STUDY · KAG-JRK-008 · CONFIDENTIAL
         </span>
-        <span style={{ fontFamily: "'Courier New', monospace", fontSize: 8, color: C.gold, opacity: 0.3, letterSpacing: "0.15em" }}>
+        <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 7 : 8, color: C.gold, opacity: 0.3, letterSpacing: "0.15em" }}>
           STRIKE BITES · OVERALL BRAND SCORE: 88/100 · STATUS: APPROVED — STRONG
         </span>
       </div>

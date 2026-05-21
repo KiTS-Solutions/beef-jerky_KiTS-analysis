@@ -1,4 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
 
 const TIERS = [
   {
@@ -255,6 +272,7 @@ const BLOCKERS = [
 ];
 
 export default function FinancialStudy() {
+  const { isMobile } = useResponsive();
   const [activeTier, setActiveTier] = useState("standard");
   const [expandedCat, setExpandedCat] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState("investment");
@@ -282,15 +300,15 @@ export default function FinancialStudy() {
       <div style={{
         background: "#0A0910",
         borderBottom: "1px solid #1C1A24",
-        padding: "28px 36px 22px",
+        padding: isMobile ? "20px 24px 16px" : "28px 36px 22px",
       }}>
-        <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", letterSpacing: "0.3em", marginBottom: 8 }}>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#4A4060", letterSpacing: "0.3em", marginBottom: 8 }}>
           KITS ADVISORY GROUP · FINANCIAL FEASIBILITY STUDY · REF: KAG-JRK-003 · CONFIDENTIAL
         </div>
-        <h1 style={{ margin: 0, fontSize: "clamp(18px, 3vw, 30px)", fontWeight: 400, color: "#E2D8CC", lineHeight: 1.2 }}>
+        <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 30px)" : "clamp(18px, 3vw, 30px)", fontWeight: 400, color: "#E2D8CC", lineHeight: 1.2 }}>
           Beef Jerky Venture — Financial Feasibility
         </h1>
-        <p style={{ margin: "6px 0 0", fontSize: 13, color: "#7A7090", fontFamily: "Georgia, serif" }}>
+        <p style={{ margin: "6px 0 0", fontSize: isMobile ? 12 : 13, color: "#7A7090", fontFamily: "Georgia, serif" }}>
           Three budget scenarios · Lebanon Market Entry · Phase 0 → 12 months
         </p>
       </div>
@@ -299,27 +317,30 @@ export default function FinancialStudy() {
       <div style={{
         background: "#09080E",
         borderBottom: "1px solid #1C1A24",
-        padding: "20px 36px",
-        display: "flex", gap: 12, flexWrap: "wrap"
+        padding: isMobile ? "16px 20px" : "20px 36px",
+        display: "flex", gap: isMobile ? 8 : 12, flexWrap: "wrap"
       }}>
         {TIERS.map(t => (
           <button key={t.id} onClick={() => setActiveTier(t.id)} style={{
             background: activeTier === t.id ? `${t.color}18` : "transparent",
             border: `1px solid ${activeTier === t.id ? t.color : "#1C1A24"}`,
             borderRadius: 4,
-            padding: "14px 22px",
+            padding: isMobile ? "12px 16px" : "14px 22px",
             cursor: "pointer",
             textAlign: "left",
             transition: "all 0.2s",
-            minWidth: 180,
+            minWidth: isMobile ? "auto" : 180,
+            flex: isMobile ? 1 : "auto",
+            WebkitTapHighlightColor: "transparent",
+            touchAction: "manipulation",
           }}>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: activeTier === t.id ? t.color : "#4A4060", letterSpacing: "0.2em", marginBottom: 4 }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: activeTier === t.id ? t.color : "#4A4060", letterSpacing: "0.2em", marginBottom: 4 }}>
               {t.label}
             </div>
-            <div style={{ fontSize: 15, color: activeTier === t.id ? "#E2D8CC" : "#7A7090", fontWeight: 400, marginBottom: 2 }}>
+            <div style={{ fontSize: isMobile ? 14 : 15, color: activeTier === t.id ? "#E2D8CC" : "#7A7090", fontWeight: 400, marginBottom: 2 }}>
               {t.name}
             </div>
-            <div style={{ fontFamily: "monospace", fontSize: 12, color: activeTier === t.id ? t.color : "#3A3050" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 12, color: activeTier === t.id ? t.color : "#3A3050" }}>
               ~${t.total.toLocaleString()}
             </div>
           </button>
@@ -330,26 +351,26 @@ export default function FinancialStudy() {
       <div style={{
         background: `${tier?.color}0A`,
         borderBottom: `1px solid ${tier?.color}30`,
-        padding: "16px 36px",
-        display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start"
+        padding: isMobile ? "14px 20px" : "16px 36px",
+        display: "flex", gap: isMobile ? 16 : 24, flexWrap: "wrap", alignItems: isMobile ? "flex-start" : "flex-start", flexDirection: isMobile ? "column" : "row"
       }}>
-        <div style={{ flex: 2, minWidth: 260 }}>
-          <p style={{ margin: 0, fontSize: 13, color: "#9A90A0", lineHeight: 1.75, fontFamily: "Georgia, serif" }}>
+        <div style={{ flex: isMobile ? "auto" : 2, minWidth: isMobile ? "auto" : 260 }}>
+          <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: "#9A90A0", lineHeight: 1.75, fontFamily: "Georgia, serif" }}>
             {tier?.description}
           </p>
         </div>
-        <div style={{ flex: 1, minWidth: 200 }}>
-          <div style={{ fontFamily: "monospace", fontSize: 10, color: tier?.color, letterSpacing: "0.15em", marginBottom: 6 }}>SUITABLE WHEN</div>
-          <p style={{ margin: 0, fontSize: 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.suitable}</p>
+        <div style={{ flex: isMobile ? "auto" : 1, minWidth: isMobile ? "auto" : 200 }}>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: tier?.color, letterSpacing: "0.15em", marginBottom: 6 }}>SUITABLE WHEN</div>
+          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.suitable}</p>
         </div>
-        <div style={{ flex: 1, minWidth: 200 }}>
-          <div style={{ fontFamily: "monospace", fontSize: 10, color: "#E07B6A", letterSpacing: "0.15em", marginBottom: 6 }}>RISK FACTOR</div>
-          <p style={{ margin: 0, fontSize: 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.risk}</p>
+        <div style={{ flex: isMobile ? "auto" : 1, minWidth: isMobile ? "auto" : 200 }}>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#E07B6A", letterSpacing: "0.15em", marginBottom: 6 }}>RISK FACTOR</div>
+          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.risk}</p>
         </div>
       </div>
 
       {/* Tabs */}
-      <div style={{ background: "#09080E", borderBottom: "1px solid #1C1A24", display: "flex", padding: "0 36px" }}>
+      <div style={{ background: "#09080E", borderBottom: "1px solid #1C1A24", display: "flex", padding: isMobile ? "0 16px" : "0 36px", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
         {tabs.map(t => (
           <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
             background: "transparent",
@@ -357,18 +378,21 @@ export default function FinancialStudy() {
             borderBottom: activeTab === t.id ? `2px solid ${tier?.color}` : "2px solid transparent",
             color: activeTab === t.id ? "#E2D8CC" : "#4A4060",
             fontFamily: "monospace",
-            fontSize: 10,
+            fontSize: isMobile ? 9 : 10,
             letterSpacing: "0.15em",
-            padding: "13px 18px 11px",
+            padding: isMobile ? "12px 16px 10px" : "13px 18px 11px",
             cursor: "pointer",
-            transition: "all 0.15s"
+            transition: "all 0.15s",
+            whiteSpace: "nowrap",
+            WebkitTapHighlightColor: "transparent",
+            touchAction: "manipulation",
           }}>
             {t.label.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div style={{ padding: "32px 36px", maxWidth: 960 }}>
+      <div style={{ padding: isMobile ? "24px 20px" : "32px 36px", maxWidth: 960 }}>
 
         {/* === INVESTMENT BREAKDOWN === */}
         {activeTab === "investment" && (
@@ -378,15 +402,15 @@ export default function FinancialStudy() {
               background: `${tier?.color}10`,
               border: `1px solid ${tier?.color}30`,
               borderRadius: 4,
-              padding: "20px 24px",
-              marginBottom: 28,
-              display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16
+              padding: isMobile ? "16px 20px" : "20px 24px",
+              marginBottom: isMobile ? 20 : 28,
+              display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "center", flexWrap: "wrap", gap: 16, flexDirection: isMobile ? "column" : "row"
             }}>
               <div>
-                <div style={{ fontFamily: "monospace", fontSize: 10, color: tier?.color, letterSpacing: "0.2em", marginBottom: 6 }}>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: tier?.color, letterSpacing: "0.2em", marginBottom: 6 }}>
                   TOTAL INVESTMENT RANGE — {tier?.label}: {tier?.name.toUpperCase()}
                 </div>
-                <div style={{ fontSize: "clamp(22px, 4vw, 36px)", color: "#E2D8CC", fontWeight: 400, letterSpacing: "0.05em" }}>
+                <div style={{ fontSize: isMobile ? "clamp(18px, 5vw, 36px)" : "clamp(22px, 4vw, 36px)", color: "#E2D8CC", fontWeight: 400, letterSpacing: "0.05em" }}>
                   ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}
                 </div>
               </div>
@@ -499,9 +523,9 @@ export default function FinancialStudy() {
                 border: `1px solid ${m.color}40`,
                 borderLeft: `3px solid ${m.color}`,
                 borderRadius: 4,
-                padding: "18px 24px",
+                padding: isMobile ? "14px 18px" : "18px 24px",
                 marginBottom: 8,
-                display: "flex", gap: 24, flexWrap: "wrap"
+                display: "flex", gap: isMobile ? 16 : 24, flexWrap: "wrap", flexDirection: isMobile ? "column" : "row"
               }}>
                 <div style={{ minWidth: 100 }}>
                   <div style={{ fontFamily: "monospace", fontSize: 12, color: m.color, marginBottom: 4 }}>{m.period}</div>
@@ -519,7 +543,7 @@ export default function FinancialStudy() {
             ))}
 
             {/* Key metrics */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 8, marginTop: 20 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(180px, 1fr))", gap: isMobile ? 12 : 8, marginTop: 20 }}>
               {[
                 { label: "Breakeven Target", value: tier?.projections?.breakeven, color: "#7EB5A6" },
                 { label: "Target Gross Margin", value: tier?.projections?.gross_margin, color: tier?.color },
@@ -557,8 +581,8 @@ export default function FinancialStudy() {
             </div>
             {ASSUMPTIONS.map((a, i) => (
               <div key={i} style={{
-                display: "flex", justifyContent: "space-between", alignItems: "baseline",
-                padding: "12px 0", borderBottom: "1px solid #140F1C", gap: 24
+                display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "baseline",
+                padding: "12px 0", borderBottom: "1px solid #140F1C", gap: isMobile ? 12 : 24, flexDirection: isMobile ? "column" : "row"
               }}>
                 <span style={{ fontSize: 13, color: "#7A7090", fontFamily: "Georgia, serif", flex: 1 }}>{a.label}</span>
                 <span style={{ fontFamily: "monospace", fontSize: 12, color: "#C8BCAC", whiteSpace: "nowrap" }}>{a.value}</span>
@@ -583,8 +607,8 @@ export default function FinancialStudy() {
                 background: "#0C0B12",
                 border: "1px solid #1C1A24",
                 borderLeft: `3px solid ${b.urgency === "IMMEDIATE" ? "#E07B6A" : "#C8A96E"}`,
-                borderRadius: 4, marginBottom: 6, padding: "16px 20px",
-                display: "flex", gap: 16, flexWrap: "wrap", alignItems: "flex-start"
+                borderRadius: 4, marginBottom: 6, padding: isMobile ? "14px 18px" : "16px 20px",
+                display: "flex", gap: isMobile ? 12 : 16, flexWrap: "wrap", alignItems: isMobile ? "flex-start" : "flex-start", flexDirection: isMobile ? "column" : "row"
               }}>
                 <div style={{ minWidth: 90 }}>
                   <span style={{
@@ -636,14 +660,14 @@ export default function FinancialStudy() {
 
       {/* Footer */}
       <div style={{
-        padding: "16px 36px",
+        padding: isMobile ? "16px 24px" : "16px 36px",
         borderTop: "1px solid #1C1A24",
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#2A2038", letterSpacing: "0.15em" }}>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2038", letterSpacing: "0.15em" }}>
           KITS ADVISORY GROUP · FINANCIAL FEASIBILITY · CONFIDENTIAL · NOT FOR DISTRIBUTION
         </span>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#2A2038" }}>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2038" }}>
           KAG-JRK-003 · THREE-TIER MODEL
         </span>
       </div>

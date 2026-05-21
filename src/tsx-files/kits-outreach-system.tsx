@@ -1,4 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
 
 const SECTIONS = [
   { id: "strategy", label: "Channel Strategy" },
@@ -302,6 +319,7 @@ const STATUS_COLORS = {
 };
 
 export default function OutreachSystem() {
+  const { isMobile } = useResponsive();
   const [activeSection, setActiveSection] = useState("strategy");
   const [expandedStep, setExpandedStep] = useState<number | null>(null);
   const [expandedObj, setExpandedObj] = useState<number | null>(null);
@@ -321,15 +339,15 @@ export default function OutreachSystem() {
       <div style={{
         background: "linear-gradient(135deg, #0C0A14 0%, #100D1A 100%)",
         borderBottom: "1px solid #1E1A2E",
-        padding: "28px 36px 20px",
+        padding: isMobile ? "20px 24px 16px" : "28px 36px 20px",
       }}>
-        <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A406A", letterSpacing: "0.3em", marginBottom: 8 }}>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#4A406A", letterSpacing: "0.3em", marginBottom: 8 }}>
           KITS ADVISORY GROUP · TRADE OUTREACH SYSTEM · REF: KAG-JRK-004 · CONFIDENTIAL
         </div>
-        <h1 style={{ margin: 0, fontSize: "clamp(18px, 3vw, 28px)", fontWeight: 400, color: "#DDD5C8", lineHeight: 1.2 }}>
+        <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 28px)" : "clamp(18px, 3vw, 28px)", fontWeight: 400, color: "#DDD5C8", lineHeight: 1.2 }}>
           Gym & Sports Nutrition — Outreach & Trade System
         </h1>
-        <p style={{ margin: "6px 0 0", fontSize: 13, color: "#7A6E9A", fontFamily: "Palatino, Georgia, serif" }}>
+        <p style={{ margin: "6px 0 0", fontSize: isMobile ? 12 : 13, color: "#7A6E9A", fontFamily: "Palatino, Georgia, serif" }}>
           Beef Jerky Venture · Phase 1 Channel Activation · Warm Relationship Model
         </p>
       </div>
@@ -338,7 +356,7 @@ export default function OutreachSystem() {
       <div style={{
         background: "#09070E",
         borderBottom: "1px solid #1A1628",
-        display: "flex", flexWrap: "wrap", padding: "0 36px"
+        display: "flex", flexWrap: "wrap", padding: isMobile ? "0 16px" : "0 36px", overflowX: "auto", WebkitOverflowScrolling: "touch"
       }}>
         {SECTIONS.map(s => (
           <button key={s.id} onClick={() => setActiveSection(s.id)} style={{
@@ -347,19 +365,21 @@ export default function OutreachSystem() {
             borderBottom: activeSection === s.id ? "2px solid #C8A96E" : "2px solid transparent",
             color: activeSection === s.id ? "#DDD5C8" : "#4A406A",
             fontFamily: "monospace",
-            fontSize: 10,
+            fontSize: isMobile ? 9 : 10,
             letterSpacing: "0.15em",
-            padding: "13px 16px 11px",
+            padding: isMobile ? "12px 14px 10px" : "13px 16px 11px",
             cursor: "pointer",
             transition: "all 0.15s",
-            whiteSpace: "nowrap"
+            whiteSpace: "nowrap",
+            WebkitTapHighlightColor: "transparent",
+            touchAction: "manipulation"
           }}>
             {s.label.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div style={{ padding: "32px 36px", maxWidth: 940 }}>
+      <div style={{ padding: isMobile ? "24px 20px" : "32px 36px", maxWidth: 940 }}>
 
         {/* CHANNEL STRATEGY */}
         {activeSection === "strategy" && (
@@ -400,7 +420,7 @@ export default function OutreachSystem() {
 
                 <p style={{ margin: "0 0 16px", fontSize: 13, color: "#8A80A8", lineHeight: 1.8 }}>{ch.why}</p>
 
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+                <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))", gap: isMobile ? 12 : 12 }}>
                   {[
                     { label: "STORE PROFILE", text: ch.profile },
                     { label: "APPROACH", text: ch.approach },
@@ -480,7 +500,7 @@ export default function OutreachSystem() {
 
                       <p style={{ margin: "0 0 14px", fontSize: 13, color: "#6A608A", lineHeight: 1.8 }}>{step.notes}</p>
 
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 12 : 10 }}>
                         <div style={{ background: "#080E0A", border: "1px solid #1E2E1A", borderRadius: 3, padding: "12px 14px" }}>
                           <div style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", marginBottom: 8 }}>DO</div>
                           {step.do.map((d, j) => (
@@ -872,14 +892,14 @@ export default function OutreachSystem() {
 
       {/* Footer */}
       <div style={{
-        padding: "16px 36px",
+        padding: isMobile ? "16px 24px" : "16px 36px",
         borderTop: "1px solid #1A1628",
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#2A2040", letterSpacing: "0.15em" }}>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2040", letterSpacing: "0.15em" }}>
           KITS ADVISORY GROUP · TRADE OUTREACH SYSTEM · CONFIDENTIAL
         </span>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#2A2040" }}>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2040" }}>
           KAG-JRK-004 · PHASE 1 CHANNEL ACTIVATION
         </span>
       </div>

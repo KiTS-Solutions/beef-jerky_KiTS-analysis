@@ -15,8 +15,8 @@ import ComponentTen from './tsx-files/strike-brand-study.tsx';
 // 2. Define a list of your components for easy navigation mapping
 const COMPONENT_MAP = { 
   'strike presentation': <ComponentNine />,
-  'beef jerky advisory': <ComponentOne />,
   'master plan': <ComponentFive />,
+  'beef jerky advisory': <ComponentOne />,
   'financial study': <ComponentFour />,
   'outreach system': <ComponentSeven />,
   'manufacturer brief': <ComponentSix />,
@@ -26,102 +26,157 @@ const COMPONENT_MAP = {
   'product visualization': <ComponentEight />,
 };
 
+
 type ComponentKey = keyof typeof COMPONENT_MAP;
 
 export default function App() {
   const [activeView, setActiveView] = useState<ComponentKey>('strike presentation');
   const [isCollapsed, setIsCollapsed] = useState(false);
-  // Track presentation mode state
   const [isFullscreen, setIsFullscreen] = useState(false);
+  
+  // Track screen size for responsive breakpoints
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isTablet, setIsTablet] = useState(window.innerWidth >= 768 && window.innerWidth < 1024);
 
-  // Allow exiting presentation mode via the 'Escape' key
+  // Handle window resizing and escape key listener
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setIsFullscreen(false);
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsTablet(width >= 768 && width < 1024);
     };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsFullscreen(false);
+        if (isMobile) setIsCollapsed(true);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMobile]);
+
+  // Compute sidebar widths based on device and collapse states
+  const getSidebarWidth = () => {
+    if (isFullscreen) return '0px';
+    if (isMobile) return isCollapsed ? '0px' : '100%';
+    if (isTablet) return isCollapsed ? '60px' : '240px';
+    return isCollapsed ? '60px' : '260px';
+  };
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'sans-serif', backgroundColor: '#fff' }}>
       
-      {/* Sidebar - Hidden completely in full-screen presentation mode */}
-      <nav style={{
-        width: isFullscreen ? '0px' : (isCollapsed ? '60px' : '260px'),
-        display: isFullscreen ? 'none' : 'flex',
-        backgroundColor: '#f8f9fa',
-        borderRight: '1px solid #e0e0e0',
-        padding: isCollapsed ? '15px 5px' : '20px',
-        boxSizing: 'border-box',
-        transition: 'width 0.2s ease-in-out',
-        flexDirection: 'column',
-        alignItems: isCollapsed ? 'center' : 'stretch',
-        overflowX: 'hidden'
-      }}>
-        {/* Toggle Button */}
+      {/* Floating Hamburger / Toggle Button for Mobile & Desktop */}
+      {!isFullscreen && (
         <button 
           onClick={() => setIsCollapsed(!isCollapsed)}
           style={{
-            alignSelf: isCollapsed ? 'center' : 'flex-end',
-            marginBottom: '20px',
-            padding: '6px 10px',
+            position: isMobile ? 'fixed' : 'absolute',
+            top: isMobile ? '12px' : '15px',
+            left: isMobile ? '12px' : 'auto',
+            right: isMobile ? 'auto' : (isCollapsed ? 'auto' : '20px'),
+            zIndex: 1000,
+            padding: isMobile ? '12px 16px' : '10px 14px',
             cursor: 'pointer',
-            backgroundColor: '#e0e0e0',
+            backgroundColor: '#007acc',
+            color: '#fff',
             border: 'none',
-            borderRadius: '4px',
-            fontSize: '12px',
-            fontWeight: 'bold'
+            borderRadius: isMobile ? '8px' : '6px',
+            fontSize: isMobile ? '16px' : '14px',
+            fontWeight: 'bold',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+            WebkitTapHighlightColor: 'transparent',
+            touchAction: 'manipulation',
           }}
         >
-          {isCollapsed ? '➔' : '✕ Collapse'}
+          {isMobile ? (isCollapsed ? '☰' : '✕') : (isCollapsed ? '➔' : '✕')}
         </button>
+      )}
 
-        {!isCollapsed && <h3 style={{ marginTop: 0, marginBottom: '20px', color: '#333', fontSize: '16px' }}>Components</h3>}
+      {/* Responsive Sidebar Menu */}
+      <nav style={{
+        position: isMobile ? 'fixed' : 'relative',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        zIndex: 999,
+        width: getSidebarWidth(),
+        visibility: (isMobile && isCollapsed) || isFullscreen ? 'hidden' : 'visible',
+        display: isFullscreen ? 'none' : 'flex',
+        backgroundColor: '#f8f9fa',
+        borderRight: isMobile ? 'none' : '1px solid #e0e0e0',
+        padding: isCollapsed 
+          ? (isMobile ? '60px 16px 20px 16px' : '60px 5px 20px 5px') 
+          : (isMobile ? '60px 20px 20px 20px' : '60px 20px 20px 20px'),
+        boxSizing: 'border-box',
+        transition: isMobile ? 'transform 0.3s ease-in-out' : 'width 0.2s ease-in-out, visibility 0.2s',
+        flexDirection: 'column',
+        alignItems: isCollapsed ? 'center' : 'stretch',
+        overflowX: 'hidden',
+        overflowY: 'auto',
+        boxShadow: isMobile ? '4px 0 15px rgba(0,0,0,0.1)' : 'none',
+        WebkitOverflowScrolling: 'touch',
+      }}>
+        {!isCollapsed && <h3 style={{ marginTop: 0, marginBottom: isMobile ? '24px' : '20px', color: '#333', fontSize: isMobile ? '18px' : '16px' }}>Components</h3>}
 
-        {/* Presentation Button in Sidebar */}
+        {/* Presentation Button */}
         <button
-          onClick={() => setIsFullscreen(true)}
+          onClick={() => {
+            setIsFullscreen(true);
+            if (isMobile) setIsCollapsed(true); // Auto-hide menu on mobile presentation
+          }}
           style={{
-            marginBottom: '20px',
-            padding: '10px',
+            marginBottom: isMobile ? '24px' : '20px',
+            padding: isMobile ? '14px' : '12px',
             backgroundColor: '#28a745',
             color: 'white',
             border: 'none',
-            borderRadius: '6px',
+            borderRadius: isMobile ? '8px' : '6px',
             cursor: 'pointer',
             fontWeight: 'bold',
-            fontSize: '13px',
+            fontSize: isMobile ? '14px' : '13px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            gap: '5px'
+            gap: '8px',
+            WebkitTapHighlightColor: 'transparent',
+            touchAction: 'manipulation',
           }}
-          title="Presentation Mode"
         >
           📺 {!isCollapsed && 'Presentation Mode'}
         </button>
 
-        {/* Menu List */}
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, width: '100%' }}>
+        {/* Menu Items */}
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, width: '100%', overflowY: 'auto' }}>
           {Object.keys(COMPONENT_MAP).map((name) => (
-            <li key={name} style={{ marginBottom: '8px' }}>
+            <li key={name} style={{ marginBottom: isMobile ? '12px' : '8px' }}>
               <button
-                onClick={() => setActiveView(name as ComponentKey)}
+                onClick={() => {
+                  setActiveView(name as ComponentKey);
+                  if (isMobile) setIsCollapsed(true); // Close drawer after selection on mobile
+                }}
                 title={name}
                 style={{
                   width: '100%',
                   textAlign: isCollapsed ? 'center' : 'left',
-                  padding: '10px',
-                  borderRadius: '6px',
+                  padding: isMobile ? '14px 12px' : '12px 10px',
+                  borderRadius: isMobile ? '8px' : '6px',
                   border: 'none',
                   cursor: 'pointer',
-                  fontSize: '14px',
+                  fontSize: isMobile ? '15px' : '14px',
                   whiteSpace: 'nowrap',
                   fontWeight: activeView === name ? 'bold' : 'normal',
                   backgroundColor: activeView === name ? '#007acc' : 'transparent',
                   color: activeView === name ? '#fff' : '#555',
                   transition: 'all 0.1s ease',
+                  WebkitTapHighlightColor: 'transparent',
+                  touchAction: 'manipulation',
                 }}
               >
                 {isCollapsed ? name.charAt(0) : name}
@@ -131,48 +186,66 @@ export default function App() {
         </ul>
       </nav>
 
-      {/* Main Content Area - Layout dynamically resets when in presentation mode */}
+      {/* Dark Overlay Tint Backing for Mobile Drawer Menu */}
+      {isMobile && !isCollapsed && !isFullscreen && (
+        <div 
+          onClick={() => setIsCollapsed(true)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(0,0,0,0.4)',
+            zIndex: 998,
+          }}
+        />
+      )}
+
+      {/* Main Content Viewer Viewport */}
       <main style={{ 
         flex: 1, 
-        padding: isFullscreen ? '0px' : '20px', 
+        padding: isFullscreen ? '0px' : (isMobile ? '70px 12px 12px 12px' : (isTablet ? '20px 16px' : '20px')), 
         backgroundColor: isFullscreen ? 'transparent' : '#fafafa',
-        position: 'relative'
+        position: 'relative',
+        minWidth: 0, // Prevents flex children from stretching past device boundary
+        overflowX: 'hidden',
       }}>
-        {/* Floating Exit Badge - Only visible during presentation mode */}
+        {/* Floating Presentation Mode Exit Button */}
         {isFullscreen && (
           <button
             onClick={() => setIsFullscreen(false)}
             style={{
-              position: 'absolute',
-              top: '15px',
-              right: '15px',
+              position: 'fixed',
+              top: isMobile ? '12px' : '15px',
+              right: isMobile ? '12px' : '15px',
               zIndex: 9999,
-              padding: '8px 12px',
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              padding: isMobile ? '12px 18px' : '10px 16px',
+              backgroundColor: 'rgba(0, 0, 0, 0.75)',
               color: '#fff',
               border: 'none',
-              borderRadius: '20px',
+              borderRadius: isMobile ? '24px' : '20px',
               cursor: 'pointer',
-              fontSize: '12px',
+              fontSize: isMobile ? '14px' : '13px',
               backdropFilter: 'blur(4px)',
-              transition: 'background-color 0.2s'
+              WebkitTapHighlightColor: 'transparent',
+              touchAction: 'manipulation',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)')}
           >
-            ✕ Exit Presentation (Esc)
+            ✕ Exit View
           </button>
         )}
 
+        {/* Outer Frame Wrapper */}
         <div style={{
           border: isFullscreen ? 'none' : '1px solid #e0e0e0',
-          borderRadius: isFullscreen ? '0px' : '8px',
-          padding: isFullscreen ? '0px' : '24px',
+          borderRadius: isFullscreen ? '0px' : (isMobile ? '12px' : '8px'),
+          padding: isFullscreen ? '0px' : (isMobile ? '16px' : (isTablet ? '20px' : '24px')),
           minHeight: isFullscreen ? '100vh' : 'calc(100vh - 40px)',
           width: '100%',
+          maxWidth: '100%',
           backgroundColor: '#fff',
           boxShadow: isFullscreen ? 'none' : '0 1px 3px rgba(0,0,0,0.05)',
-          boxSizing: 'border-box'
+          boxSizing: 'border-box',
+          overflowX: 'auto', // Adds fallback scrolling if individual components are wide
+          overflowY: 'auto',
         }}>
           {COMPONENT_MAP[activeView]}
         </div>
@@ -180,151 +253,3 @@ export default function App() {
     </div>
   );
 }
-
-// type ComponentKey = keyof typeof COMPONENT_MAP;
-
-// export default function App() {
-//   const [activeView, setActiveView] = useState<ComponentKey>('beef jerky advisory');
-//   // State to track if sidebar is collapsed
-//   const [isCollapsed, setIsCollapsed] = useState(false);
-
-//   return (
-//     <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'sans-serif', backgroundColor: '#fff' }}>
-      
-//       {/* Collapsable Sidebar */}
-//       <nav style={{
-//         width: isCollapsed ? '60px' : '260px',
-//         backgroundColor: '#f8f9fa',
-//         borderRight: '1px solid #e0e0e0',
-//         padding: isCollapsed ? '15px 5px' : '20px',
-//         boxSizing: 'border-box',
-//         transition: 'width 0.2s ease-in-out',
-//         display: 'flex',
-//         flexDirection: 'column',
-//         alignItems: isCollapsed ? 'center' : 'stretch',
-//         overflowX: 'hidden'
-//       }}>
-//         {/* Toggle Button */}
-//         <button 
-//           onClick={() => setIsCollapsed(!isCollapsed)}
-//           style={{
-//             alignSelf: isCollapsed ? 'center' : 'flex-end',
-//             marginBottom: '20px',
-//             padding: '6px 10px',
-//             cursor: 'pointer',
-//             backgroundColor: '#e0e0e0',
-//             border: 'none',
-//             borderRadius: '4px',
-//             fontSize: '12px',
-//             fontWeight: 'bold'
-//           }}
-//         >
-//           {isCollapsed ? '➔' : '✕ Collapse'}
-//         </button>
-
-//         {/* Navigation Title */}
-//         {!isCollapsed && <h3 style={{ marginTop: 0, marginBottom: '20px', color: '#333', fontSize: '16px' }}>Components</h3>}
-
-//         {/* Menu List */}
-//         <ul style={{ listStyle: 'none', padding: 0, margin: 0, width: '100%' }}>
-//           {Object.keys(COMPONENT_MAP).map((name) => (
-//             <li key={name} style={{ marginBottom: '8px' }}>
-//               <button
-//                 onClick={() => setActiveView(name as ComponentKey)}
-//                 title={name}
-//                 style={{
-//                   width: '100%',
-//                   textAlign: isCollapsed ? 'center' : 'left',
-//                   padding: '10px',
-//                   borderRadius: '6px',
-//                   border: 'none',
-//                   cursor: 'pointer',
-//                   fontSize: '14px',
-//                   whiteSpace: 'nowrap',
-//                   fontWeight: activeView === name ? 'bold' : 'normal',
-//                   backgroundColor: activeView === name ? '#007acc' : 'transparent',
-//                   color: activeView === name ? '#fff' : '#555',
-//                   transition: 'all 0.1s ease',
-//                 }}
-//               >
-//                 {isCollapsed ? name.charAt(0) : name}
-//               </button>
-//             </li>
-//           ))}
-//         </ul>
-//       </nav>
-
-//       {/* Expanded Main Content Area */}
-//       <main style={{ 
-//         flex: 1, 
-//         padding: '20px', 
-//         backgroundColor: '#fafafa',
-//         transition: 'padding 0.2s ease-in-out'
-//       }}>
-//         <div style={{
-//           border: '1px solid #e0e0e0',
-//           borderRadius: '8px',
-//           padding: '24px',
-//           minHeight: 'calc(100vh - 40px)',
-//           backgroundColor: '#fff',
-//           boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-//           boxSizing: 'border-box'
-//         }}>
-//                     {/* Dynamically renders the selected component */}
-//           {COMPONENT_MAP[activeView]}
-//         </div>
-//       </main>
-//     </div>
-//   );
-// }
-// //   // 3. Set the first component as the default view
-// //   const [activeView, setActiveView] = useState<ComponentKey>('Component One');
-
-//   // return (
-//   //   <div style={{ display: 'flex', minHeight: '100vh', fontFamily: 'sans-serif' }}>
-//   //     {/* Sidebar Navigation */}
-//   //     <nav style={{
-//   //       width: '250px',
-//   //       backgroundColor: '#f5f5f5',
-//   //       borderRight: '1px solid #ddd',
-//   //       padding: '20px',
-//   //       boxSizing: 'border-box'
-//   //     }}>
-//   //       <h3 style={{ marginTop: 0, marginBottom: '20px', color: '#333' }}>Component Viewer</h3>
-//   //       <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-//   //         {Object.keys(COMPONENT_MAP).map((name) => (
-//   //           <li key={name} style={{ marginBottom: '10px' }}>
-//   //             <button
-//   //               onClick={() => setActiveView(name as ComponentKey)}
-//   //               style={{
-//   //                 width: '100%',
-//   //                 textAlign: 'left',
-//   //                 padding: '10px 12px',
-//   //                 borderRadius: '6px',
-//   //                 border: 'none',
-//   //                 cursor: 'pointer',
-//   //                 fontSize: '14px',
-//   //                 fontWeight: activeView === name ? 'bold' : 'normal',
-//   //                 backgroundColor: activeView === name ? '#007acc' : 'transparent',
-//   //                 color: activeView === name ? '#fff' : '#333',
-//   //                 transition: 'background-color 0.2s',
-//   //               }}
-//   //             >
-//   //               {name}
-//   //             </button>
-//   //           </li>
-//   //         ))}
-//   //       </ul>
-//   //     </nav>
-
-
-//       {/* Main Content Preview Window Area
-//       <main style={{ flex: 1, padding: '30px', backgroundColor: '#fff' }}>
-//         <div style={{
-//           border: '1px dashed #ccc',
-//           borderRadius: '8px',
-//           padding: '20px',
-//           minHeight: 'calc(100vh - 100px)',
-//           backgroundColor: '#fafafa'
-//         }}> */}
-

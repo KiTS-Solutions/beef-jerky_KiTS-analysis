@@ -1,4 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
 
 // ─── DATA ────────────────────────────────────────────────────────────────────
 
@@ -410,6 +427,7 @@ const COMP_COLS = ["jacklinks", "wildwest", "questbar", "barebells", "ours"];
 const COMP_SHORT = { jacklinks: "JL", wildwest: "WW", questbar: "QB", barebells: "BB", ours: "US" };
 
 export default function CompetitiveAnalysis() {
+  const { isMobile } = useResponsive();
   const [activeTab, setActiveTab] = useState("middleman");
   const [expandedCell, setExpandedCell] = useState<string | null>(null);
   const [expandedPower, setExpandedPower] = useState<number | null>(null);
@@ -752,13 +770,13 @@ export default function CompetitiveAnalysis() {
 
       {/* ─── MARKET DATA ────────────────────────────────────────────────────── */}
       {activeTab === "market" && (
-        <div style={{ padding: "28px 36px", maxWidth: 860 }}>
-          <div style={{ marginBottom: 24 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: "#A8D8A8", letterSpacing: "0.2em", marginBottom: 8 }}>
+        <div style={{ padding: isMobile ? "24px 20px" : "28px 36px", maxWidth: 860 }}>
+          <div style={{ marginBottom: isMobile ? 20 : 24 }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#A8D8A8", letterSpacing: "0.2em", marginBottom: 8 }}>
               MARKET INTELLIGENCE — VERIFIED DATA POINTS
             </div>
-            <h2 style={{ margin: 0, fontSize: 22, fontWeight: 400, color: "#D8D0C8" }}>The Numbers Behind the Opportunity</h2>
-            <p style={{ fontSize: 13, color: "#5A5478", lineHeight: 1.8, marginTop: 10 }}>
+            <h2 style={{ margin: 0, fontSize: isMobile ? 18 : 22, fontWeight: 400, color: "#D8D0C8" }}>The Numbers Behind the Opportunity</h2>
+            <p style={{ fontSize: isMobile ? 12 : 13, color: "#5A5478", lineHeight: 1.8, marginTop: 10 }}>
               All market data is sourced from Grand View Research, Precedence Research, and Cognitive Market Research (2024–2025 editions). These figures validate the strategy — they did not create it. The strategy is correct because the market data confirms what field research shows on the ground in Lebanon.
             </p>
           </div>
@@ -768,23 +786,23 @@ export default function CompetitiveAnalysis() {
               background: i % 2 === 0 ? "#0A091A" : "#08070F",
               border: "1px solid #14121E",
               borderRadius: 3, marginBottom: 4,
-              padding: "16px 20px",
-              display: "flex", justifyContent: "space-between", alignItems: "flex-start",
-              gap: 20, flexWrap: "wrap"
+              padding: isMobile ? "14px 18px" : "16px 20px",
+              display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "flex-start",
+              gap: isMobile ? 12 : 20, flexDirection: isMobile ? "column" : "row"
             }}>
               <div style={{ flex: 1, minWidth: 220 }}>
-                <div style={{ fontSize: 13, color: "#8A8098", lineHeight: 1.5, fontFamily: "Palatino, Georgia, serif" }}>{d.label}</div>
+                <div style={{ fontSize: isMobile ? 12 : 13, color: "#8A8098", lineHeight: 1.5, fontFamily: "Palatino, Georgia, serif" }}>{d.label}</div>
               </div>
               <div style={{ textAlign: "right", minWidth: 120 }}>
-                <div style={{ fontFamily: "monospace", fontSize: 16, color: "#A8D8A8", marginBottom: 4 }}>{d.value}</div>
-                <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4468" }}>{d.trend}</div>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 14 : 16, color: "#A8D8A8", marginBottom: 4 }}>{d.value}</div>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#4A4468" }}>{d.trend}</div>
               </div>
             </div>
           ))}
 
           {/* Strategic implications */}
-          <div style={{ marginTop: 24 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: "#C8A96E", letterSpacing: "0.2em", marginBottom: 14 }}>
+          <div style={{ marginTop: isMobile ? 20 : 24 }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#C8A96E", letterSpacing: "0.2em", marginBottom: 14 }}>
               STRATEGIC IMPLICATIONS FOR THE LEBANESE LAUNCH
             </div>
             {[
@@ -798,10 +816,10 @@ export default function CompetitiveAnalysis() {
                 border: "1px solid #14121E",
                 borderLeft: "3px solid #A8D8A8",
                 borderRadius: 3, marginBottom: 6,
-                padding: "14px 18px"
+                padding: isMobile ? "12px 16px" : "14px 18px"
               }}>
-                <div style={{ fontFamily: "monospace", fontSize: 10, color: "#A8D8A8", marginBottom: 6 }}>{item.headline}</div>
-                <p style={{ margin: 0, fontSize: 13, color: "#6A6080", lineHeight: 1.75, fontFamily: "Palatino, Georgia, serif" }}>{item.implication}</p>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#A8D8A8", marginBottom: 6 }}>{item.headline}</div>
+                <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: "#6A6080", lineHeight: 1.75, fontFamily: "Palatino, Georgia, serif" }}>{item.implication}</p>
               </div>
             ))}
           </div>
@@ -810,14 +828,14 @@ export default function CompetitiveAnalysis() {
 
       {/* Footer */}
       <div style={{
-        padding: "16px 36px",
+        padding: isMobile ? "16px 24px" : "16px 36px",
         borderTop: "1px solid #14121E",
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#1A1828", letterSpacing: "0.15em" }}>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A1828", letterSpacing: "0.15em" }}>
           KITS ADVISORY GROUP · COMPETITIVE INTELLIGENCE · CONFIDENTIAL · NOT FOR DISTRIBUTION
         </span>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#1A1828" }}>KAG-JRK-005</span>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A1828" }}>KAG-JRK-005</span>
       </div>
     </div>
   );
