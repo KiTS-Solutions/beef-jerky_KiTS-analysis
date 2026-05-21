@@ -222,7 +222,7 @@ export default function ManufacturerBrief() {
   const [active, setActive] = useState("overview");
   const [expanded, setExpanded] = useState({});
 
-  const toggle = (key) => setExpanded(p => ({ ...p, [key]: !p[key] }));
+  const toggle = (key: string) => setExpanded((p: any) => ({ ...p, [key]: !p[key] }));
 
   return (
     <div style={{
@@ -358,7 +358,7 @@ export default function ManufacturerBrief() {
                     padding: "14px 18px", cursor: "pointer", textAlign: "left",
                     display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12
                   }}>
-                    <div style={{ display: "flex", align: "center", gap: 12, flex: 1 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1 }}>
                       {comp.critical && (
                         <span style={{ fontFamily: "monospace", fontSize: 9, color: "#E07B6A",
                           background: "#E07B6A15", border: "1px solid #E07B6A30",
@@ -368,9 +368,9 @@ export default function ManufacturerBrief() {
                       )}
                       <span style={{ fontSize: 13, color: "#A8C8A8" }}>{comp.element}</span>
                     </div>
-                    <span style={{ color: "#2A4A38", fontSize: 16 }}>{expanded[`fl-${i}`] ? "−" : "+"}</span>
+                    <span style={{ color: "#2A4A38", fontSize: 16 }}>{(expanded as any)[`fl-${i}`] ? "−" : "+"}</span>
                   </button>
-                  {expanded[`fl-${i}`] && (
+                  {(expanded as any)[`fl-${i}`] && (
                     <div style={{ padding: "0 18px 16px", borderTop: "1px solid #14201A" }}>
                       <p style={{ margin: "12px 0 0", fontSize: 13, color: "#6A8A78", lineHeight: 1.8 }}>{comp.direction}</p>
                     </div>
@@ -422,9 +422,9 @@ export default function ManufacturerBrief() {
                       </div>
                       <div style={{ fontFamily: "monospace", fontSize: 11, color: "#7EB5A6" }}>{nr.target}</div>
                     </div>
-                    <span style={{ color: "#2A4A38", fontSize: 16 }}>{expanded[`nr-${i}`] ? "−" : "+"}</span>
+                    <span style={{ color: "#2A4A38", fontSize: 16 }}>{(expanded as any)[`nr-${i}`] ? "−" : "+"}</span>
                   </button>
-                  {expanded[`nr-${i}`] && (
+                  {(expanded as any)[`nr-${i}`] && (
                     <div style={{ padding: "0 18px 16px", borderTop: "1px solid #14201A" }}>
                       <p style={{ margin: "10px 0 8px", fontSize: 13, color: "#6A8A78", lineHeight: 1.75 }}>{nr.rationale}</p>
                       <div style={{ fontFamily: "monospace", fontSize: 10, color: "#C8A96E", background: "#C8A96E10", border: "1px solid #C8A96E20", padding: "6px 10px", borderRadius: 2 }}>
@@ -625,7 +625,7 @@ export default function ManufacturerBrief() {
   );
 }
 
-function Pill({ color, label }) {
+function Pill({ color, label }: { color: string; label: string }) {
   return (
     <div style={{
       display: "inline-flex", alignItems: "center", gap: 6,
@@ -638,7 +638,7 @@ function Pill({ color, label }) {
   );
 }
 
-function SecHead({ label, title, color }) {
+function SecHead({ label, title, color }: { label: string; title: string; color: string }) {
   return (
     <div style={{ marginBottom: 22 }}>
       <div style={{ fontFamily: "monospace", fontSize: 10, color, letterSpacing: "0.25em", marginBottom: 8 }}>{label}</div>
@@ -648,7 +648,7 @@ function SecHead({ label, title, color }) {
   );
 }
 
-function GreenBox({ title, children }) {
+function GreenBox({ title, children }: { title: string; children: any }) {
   return (
     <div style={{ background: "#0A1410", border: "1px solid #2A4A2A", borderRadius: 4, padding: "16px 20px", marginBottom: 14 }}>
       <div style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", letterSpacing: "0.15em", marginBottom: 8 }}>{title}</div>

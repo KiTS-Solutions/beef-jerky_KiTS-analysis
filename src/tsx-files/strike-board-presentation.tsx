@@ -483,7 +483,7 @@ const SLIDES = [
 
 // ─── SLIDE RENDERERS ──────────────────────────────────────────────────────────
 
-function CoverSlide({ slide }) {
+function CoverSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 80px", position: "relative" }}>
       <div style={{ position: "absolute", inset: 0, opacity: 0.04,
@@ -514,12 +514,12 @@ function CoverSlide({ slide }) {
   );
 }
 
-function AgendaSlide({ slide }) {
+function AgendaSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "48px 80px" }}>
       <SlideHeader slide={slide} />
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 48px", alignContent: "start", marginTop: 16 }}>
-        {slide.items.map((item, i) => (
+        {slide.items.map((item: any, i: number) => (
           <div key={i} style={{ display: "flex", gap: 16, alignItems: "center", padding: "10px 0", borderBottom: `1px solid ${C.ash}` }}>
             <span style={{ fontFamily: "monospace", fontSize: 10, color: C.gold, flexShrink: 0, opacity: 0.7 }}>{item.n}</span>
             <span style={{ fontSize: 14, color: C.cream, flex: 1, lineHeight: 1.4 }}>{item.text}</span>
@@ -531,7 +531,7 @@ function AgendaSlide({ slide }) {
   );
 }
 
-function StatsSlide({ slide }) {
+function StatsSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "48px 80px" }}>
       <SlideHeader slide={slide} />
@@ -539,7 +539,7 @@ function StatsSlide({ slide }) {
         "{slide.headline}"
       </p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, flex: 1 }}>
-        {slide.stats.map((s, i) => (
+        {slide.stats.map((s: any, i: number) => (
           <div key={i} style={{ background: `${s.color}08`, border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 4, padding: "24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             <div style={{ fontFamily: "monospace", fontSize: "clamp(24px,3vw,40px)", color: s.color, lineHeight: 1, marginBottom: 12 }}>{s.value}</div>
             <div>
@@ -553,15 +553,15 @@ function StatsSlide({ slide }) {
   );
 }
 
-function TwoColSlide({ slide }) {
+function TwoColSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "48px 80px" }}>
       <SlideHeader slide={slide} />
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 16 }}>
-        {[slide.left, slide.right].map((col, ci) => (
+        {[slide.left, slide.right].map((col: any, ci: number) => (
           <div key={ci} style={{ background: ci === 0 ? `${C.gold}06` : `${C.greenBright}06`, border: `1px solid ${ci === 0 ? C.gold : C.greenBright}20`, borderRadius: 4, padding: "24px 28px" }}>
             <div style={{ fontFamily: "monospace", fontSize: 10, color: ci === 0 ? C.gold : C.greenBright, letterSpacing: "0.2em", marginBottom: 16 }}>{col.heading}</div>
-            {col.items.map((item, ii) => (
+            {col.items.map((item: any, ii: number) => (
               <div key={ii} style={{ display: "flex", gap: 12, marginBottom: 12, alignItems: "flex-start" }}>
                 <span style={{ color: ci === 0 ? C.gold : C.greenBright, fontSize: 10, flexShrink: 0, marginTop: 3 }}>→</span>
                 <p style={{ margin: 0, fontSize: 13, color: C.cream, opacity: 0.85, lineHeight: 1.6 }}>{item}</p>
@@ -574,13 +574,13 @@ function TwoColSlide({ slide }) {
   );
 }
 
-function ProductSlide({ slide }) {
+function ProductSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <SlideHeader slide={slide} />
       <p style={{ fontSize: 15, color: C.gold, fontFamily: "Georgia,serif", margin: "8px 0 20px", fontStyle: "italic" }}>{slide.tagline}</p>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
-        {slide.pillars.map((p, i) => (
+        {slide.pillars.map((p: any, i: number) => (
           <div key={i} style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 3, padding: "12px 14px" }}>
             <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 6 }}>
               <span style={{ color: C.gold, fontSize: 10 }}>{p.icon}</span>
@@ -592,7 +592,7 @@ function ProductSlide({ slide }) {
       </div>
       <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.2em", marginBottom: 10 }}>PRODUCT LINE ARCHITECTURE</div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 6 }}>
-        {slide.line.map((l, i) => (
+        {slide.line.map((l: any, i: number) => (
           <div key={i} style={{ background: `${l.color}08`, border: `1px solid ${l.color}30`, borderLeft: `3px solid ${l.color}`, borderRadius: 3, padding: "10px 12px" }}>
             <div style={{ fontFamily: "monospace", fontSize: 8, color: l.color, marginBottom: 4 }}>{l.phase}</div>
             <div style={{ fontSize: 12, color: C.cream, marginBottom: 3 }}>{l.name}</div>
@@ -605,27 +605,26 @@ function ProductSlide({ slide }) {
   );
 }
 
-function MatrixSlide({ slide }) {
+function MatrixSlide({ slide }: { slide: any }) {
   const cols = ["criterion", "jl", "ww", "qb", "bb", "us"];
   const headers = ["CRITERION", "Jack Link's", "Wild West", "Quest Bar", "Barebells", "STRIKE"];
-  const colors = { jl: C.red, ww: C.amber, qb: C.purple, bb: "#6080A0", us: C.greenBright };
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "90%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <SlideHeader slide={slide} />
       <p style={{ fontSize: 12, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 16px", letterSpacing: "0.15em" }}>{slide.subtitle}</p>
       <div style={{ flex: 1, overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
           <thead>
             <tr>
-              {headers.map((h, i) => (
+              {headers.map((h: any, i: number) => (
                 <th key={i} style={{ padding: "8px 12px", fontFamily: "monospace", fontSize: 9, color: i === 0 ? C.creamDim : i === 5 ? C.greenBright : C.creamDim, letterSpacing: "0.1em", textAlign: "left", borderBottom: `2px solid ${i === 5 ? C.greenBright : C.ash}`, background: i === 5 ? `${C.greenBright}10` : "transparent", whiteSpace: "nowrap" }}>{h}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {slide.rows.map((row, ri) => (
+            {slide.rows.map((row: any, ri: number) => (
               <tr key={ri} style={{ background: ri % 2 === 0 ? `${C.charcoal}` : C.obsidian }}>
-                {cols.map((col, ci) => (
+                {cols.map((col: any, ci: number) => (
                   <td key={ci} style={{ padding: "10px 12px", fontSize: ci === 0 ? 12 : 11, color: ci === 5 ? (row.usWin ? C.greenBright : C.cream) : ci === 0 ? C.cream : C.creamDim, background: ci === 5 ? `${C.greenBright}08` : "transparent", borderBottom: `1px solid ${C.ash}`, fontFamily: ci > 0 ? "monospace" : "Georgia,serif", lineHeight: 1.3 }}>
                     {row[col]}
                   </td>
@@ -635,7 +634,7 @@ function MatrixSlide({ slide }) {
           </tbody>
         </table>
       </div>
-      <div style={{ marginTop: 12, padding: "10px 16px", background: `${C.greenBright}10`, border: `1px solid ${C.greenBright}30`, borderRadius: 3, display: "flex", gap: 10, alignItems: "center" }}>
+      <div style={{ marginTop: 5, padding: "10px 16px", background: `${C.greenBright}10`, border: `1px solid ${C.greenBright}30`, borderRadius: 3, display: "flex", gap: 10, alignItems: "center" }}>
         <span style={{ color: C.greenBright, fontSize: 14 }}>★</span>
         <p style={{ margin: 0, fontSize: 12, color: C.greenBright, fontFamily: "Georgia,serif" }}>STRIKE wins on every criterion. No competitor holds more than three of these seven advantages simultaneously. We hold all seven.</p>
       </div>
@@ -643,7 +642,7 @@ function MatrixSlide({ slide }) {
   );
 }
 
-function BrandSlide({ slide }) {
+function BrandSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -655,7 +654,7 @@ function BrandSlide({ slide }) {
         </div>
       </div>
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 16, alignContent: "start" }}>
-        {slide.elements.map((el, i) => (
+        {slide.elements.map((el: any, i: number) => (
           <div key={i} style={{ background: C.charcoal, border: `1px solid ${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}20`, borderLeft: `3px solid ${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}`, borderRadius: 3, padding: "12px 14px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, alignItems: "center" }}>
               <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.1em" }}>{el.label}</div>
@@ -670,18 +669,18 @@ function BrandSlide({ slide }) {
   );
 }
 
-function PhasesSlide({ slide }) {
+function PhasesSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <SlideHeader slide={slide} />
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginTop: 16, alignContent: "start" }}>
-        {slide.phases.map((ph, i) => (
+        {slide.phases.map((ph: any, i: number) => (
           <div key={i} style={{ background: `${ph.color}06`, border: `1px solid ${ph.color}25`, borderTop: `3px solid ${ph.color}`, borderRadius: 4, padding: "16px 14px", display: "flex", flexDirection: "column" }}>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: ph.color, letterSpacing: "0.15em", marginBottom: 4 }}>{ph.phase}</div>
             <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, marginBottom: 8 }}>{ph.time}</div>
             <div style={{ fontSize: 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 12 }}>{ph.title}</div>
             <div style={{ flex: 1 }}>
-              {ph.actions.map((a, ai) => (
+              {ph.actions.map((a: any, ai: number) => (
                 <div key={ai} style={{ display: "flex", gap: 6, marginBottom: 7, alignItems: "flex-start" }}>
                   <span style={{ color: ph.color, fontSize: 8, flexShrink: 0, marginTop: 3 }}>→</span>
                   <p style={{ margin: 0, fontSize: 10, color: C.creamDim, lineHeight: 1.5 }}>{a}</p>
@@ -695,14 +694,14 @@ function PhasesSlide({ slide }) {
   );
 }
 
-function TiersSlide({ slide }) {
+function TiersSlide({ slide }: { slide: any }) {
   const [activeTier, setActiveTier] = useState(1);
   const t = slide.tiers[activeTier];
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <SlideHeader slide={slide} />
       <div style={{ display: "flex", gap: 8, marginTop: 16, marginBottom: 16 }}>
-        {slide.tiers.map((tier, i) => (
+        {slide.tiers.map((tier: any, i: number) => (
           <button key={i} onClick={() => setActiveTier(i)} style={{ flex: 1, background: activeTier === i ? `${tier.color}18` : C.charcoal, border: `1px solid ${activeTier === i ? tier.color : C.ash}`, borderRadius: 4, padding: "12px 16px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative" }}>
             {tier.recommended && <div style={{ position: "absolute", top: -8, left: "50%", transform: "translateX(-50%)", fontFamily: "monospace", fontSize: 7, color: C.gold, background: C.obsidian, padding: "2px 8px", border: `1px solid ${C.gold}40`, borderRadius: 2, whiteSpace: "nowrap" }}>KITS RECOMMENDED</div>}
             <div style={{ fontFamily: "monospace", fontSize: 8, color: tier.color, letterSpacing: "0.15em", marginBottom: 4 }}>{tier.tier}</div>
@@ -718,7 +717,7 @@ function TiersSlide({ slide }) {
               { label: "Breakeven", value: t.breakeven },
               { label: "Gross Margin", value: t.margin },
               { label: "Accounts M6", value: t.accounts_m6 },
-            ].map((m, i) => (
+            ].map((m: any, i: number) => (
               <div key={i} style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 3, padding: "10px 12px" }}>
                 <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, marginBottom: 4 }}>{m.label}</div>
                 <div style={{ fontFamily: "monospace", fontSize: 14, color: t.color }}>{m.value}</div>
@@ -736,7 +735,7 @@ function TiersSlide({ slide }) {
         </div>
         <div>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 10 }}>WHAT'S INCLUDED</div>
-          {t.includes.map((inc, i) => (
+          {t.includes.map((inc: any, i: number) => (
             <div key={i} style={{ display: "flex", gap: 10, marginBottom: 8, alignItems: "center", padding: "6px 0", borderBottom: `1px solid ${C.ash}` }}>
               <span style={{ color: t.color, fontSize: 10, flexShrink: 0 }}>✓</span>
               <span style={{ fontSize: 12, color: C.cream }}>{inc}</span>
@@ -752,13 +751,13 @@ function TiersSlide({ slide }) {
   );
 }
 
-function BlockersSlide({ slide }) {
+function BlockersSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <SlideHeader slide={slide} />
       <p style={{ fontSize: 12, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 14px", letterSpacing: "0.1em" }}>{slide.subtitle}</p>
       <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6, overflowY: "auto" }}>
-        {slide.blockers.map((b, i) => (
+        {slide.blockers.map((b: any, i: number) => (
           <div key={i} style={{ background: C.charcoal, border: `1px solid ${b.color}25`, borderLeft: `4px solid ${b.color}`, borderRadius: 3, padding: "10px 16px", display: "flex", gap: 16, alignItems: "flex-start" }}>
             <div style={{ flexShrink: 0, minWidth: 110 }}>
               <div style={{ fontFamily: "monospace", fontSize: 8, color: b.color, background: `${b.color}15`, border: `1px solid ${b.color}30`, padding: "2px 8px", borderRadius: 2, letterSpacing: "0.1em", display: "inline-block", marginBottom: 4 }}>{b.urgency}</div>
@@ -776,17 +775,17 @@ function BlockersSlide({ slide }) {
   );
 }
 
-function MandateSlide({ slide }) {
+function MandateSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <SlideHeader slide={slide} />
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 16 }}>
         <div>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>KITS SCOPE OF AUTHORITY</div>
-          {slide.scope.map((area, i) => (
+          {slide.scope.map((area: any, i: number) => (
             <div key={i} style={{ marginBottom: 12 }}>
               <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, marginBottom: 6 }}>{area.area.toUpperCase()}</div>
-              {area.items.map((item, ii) => (
+              {area.items.map((item: any, ii: number) => (
                 <div key={ii} style={{ display: "flex", gap: 8, marginBottom: 5 }}>
                   <span style={{ color: C.gold, fontSize: 8, flexShrink: 0, marginTop: 2 }}>→</span>
                   <span style={{ fontSize: 11, color: C.cream, lineHeight: 1.4 }}>{item}</span>
@@ -797,7 +796,7 @@ function MandateSlide({ slide }) {
         </div>
         <div>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>GOVERNANCE STRUCTURE</div>
-          {slide.governance.map((g, i) => (
+          {slide.governance.map((g: any, i: number) => (
             <div key={i} style={{ display: "flex", gap: 10, marginBottom: 8, padding: "8px 0", borderBottom: `1px solid ${C.ash}` }}>
               <span style={{ color: C.gold, fontSize: 10, flexShrink: 0 }}>◈</span>
               <p style={{ margin: 0, fontSize: 11, color: C.cream, lineHeight: 1.5 }}>{g}</p>
@@ -806,7 +805,7 @@ function MandateSlide({ slide }) {
           <div style={{ marginTop: 16 }}>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>FEE STRUCTURE</div>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, marginBottom: 8 }}>{slide.fees.note}</div>
-            {slide.fees.tiers.map((ft, i) => (
+            {slide.fees.tiers.map((ft: any, i: number) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: `1px solid ${C.ash}` }}>
                 <span style={{ fontSize: 12, color: C.cream }}>{ft.tier}</span>
                 <span style={{ fontFamily: "monospace", fontSize: 11, color: C.gold }}>{ft.range}</span>
@@ -819,16 +818,16 @@ function MandateSlide({ slide }) {
   );
 }
 
-function TimelineSlide({ slide }) {
+function TimelineSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
       <SlideHeader slide={slide} />
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginTop: 16, alignContent: "start" }}>
-        {slide.milestones.map((m, i) => (
+        {slide.milestones.map((m: any, i: number) => (
           <div key={i} style={{ background: `${m.color}06`, border: `1px solid ${m.color}25`, borderTop: `3px solid ${m.color}`, borderRadius: 4, padding: "14px 16px" }}>
             <div style={{ fontFamily: "monospace", fontSize: 12, color: m.color, marginBottom: 4, letterSpacing: "0.1em" }}>{m.week}</div>
             <div style={{ fontSize: 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 10 }}>{m.label}</div>
-            {m.items.map((item, ii) => (
+            {m.items.map((item: any, ii: number) => (
               <div key={ii} style={{ display: "flex", gap: 8, marginBottom: 6 }}>
                 <span style={{ color: m.color, fontSize: 8, flexShrink: 0, marginTop: 3 }}>✓</span>
                 <p style={{ margin: 0, fontSize: 11, color: C.creamDim, lineHeight: 1.5 }}>{item}</p>
@@ -841,7 +840,7 @@ function TimelineSlide({ slide }) {
   );
 }
 
-function ClosingSlide({ slide }) {
+function ClosingSlide({ slide }: { slide: any }) {
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 80px", position: "relative" }}>
       <div style={{ position: "absolute", inset: 0, opacity: 0.03,
@@ -852,7 +851,7 @@ function ClosingSlide({ slide }) {
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
         <div>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: C.red, letterSpacing: "0.2em", marginBottom: 14 }}>DECISIONS REQUIRED TODAY</div>
-          {slide.decisions.map((d, i) => (
+          {slide.decisions.map((d: any, i: number) => (
             <div key={i} style={{ display: "flex", gap: 12, marginBottom: 10, padding: "10px 14px", background: `${C.red}08`, border: `1px solid ${C.red}20`, borderLeft: `3px solid ${C.red}`, borderRadius: 3 }}>
               <span style={{ fontFamily: "monospace", fontSize: 10, color: C.red, flexShrink: 0, marginTop: 1 }}>{String(i + 1).padStart(2, "0")}</span>
               <p style={{ margin: 0, fontSize: 12, color: C.cream, lineHeight: 1.5 }}>{d}</p>
@@ -861,7 +860,7 @@ function ClosingSlide({ slide }) {
         </div>
         <div>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 14 }}>SUPPORTING ARTIFACTS</div>
-          {slide.artifacts.map((a, i) => (
+          {slide.artifacts.map((a: any, i: number) => (
             <div key={i} style={{ display: "flex", gap: 10, marginBottom: 6, padding: "6px 0", borderBottom: `1px solid ${C.ash}` }}>
               <span style={{ fontFamily: "monospace", fontSize: 8, color: C.goldDim, flexShrink: 0, marginTop: 1 }}>{a.ref}</span>
               <div>
@@ -877,7 +876,7 @@ function ClosingSlide({ slide }) {
 }
 
 // ─── SHARED SLIDE HEADER ──────────────────────────────────────────────────────
-function SlideHeader({ slide }) {
+function SlideHeader({ slide }: { slide: any }) {
   return (
     <div style={{ marginBottom: 4 }}>
       {slide.section && (
@@ -902,7 +901,7 @@ export default function BoardPresentation() {
   const next = useCallback(() => setCurrent(c => Math.min(total - 1, c + 1)), [total]);
 
   useEffect(() => {
-    const handler = (e) => {
+    const handler = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === " ") { e.preventDefault(); next(); }
       if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); prev(); }
       if (e.key === "n" || e.key === "N") setShowNotes(s => !s);
@@ -989,7 +988,7 @@ export default function BoardPresentation() {
               {slide.notes.emphasis && slide.notes.emphasis.length > 0 && (
                 <div>
                   <div style={{ fontFamily: "monospace", fontSize: 9, color: C.amber, letterSpacing: "0.2em", marginBottom: 8 }}>EMPHASIS POINTS</div>
-                  {slide.notes.emphasis.map((e, i) => (
+                  {slide.notes.emphasis.map((e: any, i: number) => (
                     <div key={i} style={{ display: "flex", gap: 10, marginBottom: 8, alignItems: "flex-start" }}>
                       <span style={{ color: C.amber, fontSize: 10, flexShrink: 0, marginTop: 2 }}>★</span>
                       <p style={{ margin: 0, fontSize: 12, color: C.amber, opacity: 0.85, lineHeight: 1.7 }}>{e}</p>

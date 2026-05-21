@@ -211,12 +211,12 @@ const QUESTIONS = [
 export default function MasterPlan() {
   const [activeTab, setActiveTab] = useState("checklist");
   const [checked, setChecked] = useState({});
-  const [expandedStep, setExpandedStep] = useState(null);
-  const [expandedComp, setExpandedComp] = useState(null);
+  const [expandedStep, setExpandedStep] = useState<string | null>(null);
+  const [expandedComp, setExpandedComp] = useState<number | null>(null);
 
-  const toggle = (id) => setChecked(prev => ({ ...prev, [id]: !prev[id] }));
-  const toggleStep = (id) => setExpandedStep(prev => prev === id ? null : id);
-  const toggleComp = (i) => setExpandedComp(prev => prev === i ? null : i);
+  const toggle = (id: string) => setChecked((prev: any) => ({ ...prev, [id]: !prev[id] }));
+  const toggleStep = (id: string) => setExpandedStep(prev => prev === id ? null : id);
+  const toggleComp = (i: number) => setExpandedComp(prev => prev === i ? null : i);
 
   const totalSteps = PHASES.reduce((a, p) => a + p.steps.length, 0);
   const doneSteps = Object.values(checked).filter(Boolean).length;
@@ -295,7 +295,7 @@ export default function MasterPlan() {
         {activeTab === "checklist" && (
           <div>
             {PHASES.map(phase => {
-              const done = phase.steps.filter(s => checked[s.id]).length;
+              const done = phase.steps.filter(s => (checked as any)[s.id]).length;
               return (
                 <div key={phase.id} style={{ marginBottom: 40 }}>
                   {/* Phase Header */}
@@ -324,7 +324,7 @@ export default function MasterPlan() {
                   {/* Steps */}
                   {phase.steps.map((step, i) => {
                     const isExpanded = expandedStep === step.id;
-                    const isDone = !!checked[step.id];
+                    const isDone = !!(checked as any)[step.id];
                     return (
                       <div key={step.id} style={{
                         background: isDone ? "#0D110E" : "#0E0D0B",

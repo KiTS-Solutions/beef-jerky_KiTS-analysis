@@ -367,7 +367,7 @@ const POWER_POINTS = [
 
 // ─── SCORING ─────────────────────────────────────────────────────────────────
 
-function ScoreDot({ score, color }) {
+function ScoreDot({ score, color }: { score: number; color: string }) {
   return (
     <div style={{ display: "flex", gap: 3, flexWrap: "nowrap" }}>
       {[1,2,3,4,5].map(n => (
@@ -381,7 +381,7 @@ function ScoreDot({ score, color }) {
   );
 }
 
-function ScoreBadge({ score, color }) {
+function ScoreBadge({ score }: { score: number }) {
   const label = score >= 5 ? "WINS" : score >= 4 ? "STRONG" : score >= 3 ? "FAIR" : "WEAK";
   const bg = score >= 5 ? "#1A2E1A" : score >= 4 ? "#1E1C10" : score >= 3 ? "#1A1820" : "#1A0E0E";
   const c = score >= 5 ? "#A8D8A8" : score >= 4 ? "#C8A96E" : score >= 3 ? "#9B8EC4" : "#E07B6A";
@@ -411,19 +411,20 @@ const COMP_SHORT = { jacklinks: "JL", wildwest: "WW", questbar: "QB", barebells:
 
 export default function CompetitiveAnalysis() {
   const [activeTab, setActiveTab] = useState("middleman");
-  const [expandedCell, setExpandedCell] = useState(null);
-  const [expandedPower, setExpandedPower] = useState(null);
+  const [expandedCell, setExpandedCell] = useState<string | null>(null);
+  const [expandedPower, setExpandedPower] = useState<number | null>(null);
   const [selectedComp, setSelectedComp] = useState("ours");
 
   const data = activeTab === "middleman" ? MIDDLEMAN_CRITERIA : USER_CRITERIA;
 
-  const toggleCell = (key) => setExpandedCell(prev => prev === key ? null : key);
-  const togglePower = (i) => setExpandedPower(prev => prev === i ? null : i);
+  const toggleCell = (key: string) => setExpandedCell(prev => prev === key ? null : key);
+  const togglePower = (i: number) => setExpandedPower(prev => prev === i ? null : i);
 
   // Compute overall scores per competitor
-  const computeScore = (compId, criteriaList) => {
-    let total = 0, count = 0;
-    criteriaList.forEach(cat => cat.criteria.forEach(cr => {
+  let total = 0;
+  let count = 0;
+  const computeScore = (compId: string, criteriaList: any) => {
+    criteriaList.forEach((cat: any) => cat.criteria.forEach((cr: any) => {
       if (cr[compId]) { total += cr[compId].score; count++; }
     }));
     return count ? Math.round((total / count) * 10) / 10 : 0;
@@ -467,8 +468,8 @@ export default function CompetitiveAnalysis() {
       }}>
         <span style={{ fontFamily: "monospace", fontSize: 10, color: "#3A3455", marginRight: 8 }}>OVERALL SCORES →</span>
         {COMP_COLS.map(c => {
-          const sc = scores.middleman[c];
-          const comp = COMPETITORS[c];
+          const sc = (scores as any).middleman[c];
+          const comp = (COMPETITORS as any)[c];
           return (
             <button key={c} onClick={() => setSelectedComp(c)} style={{
               background: selectedComp === c ? `${comp.color}18` : "transparent",
@@ -477,7 +478,7 @@ export default function CompetitiveAnalysis() {
               cursor: "pointer", transition: "all 0.15s",
               display: "flex", alignItems: "center", gap: 8
             }}>
-              <span style={{ fontFamily: "monospace", fontSize: 10, color: comp.color }}>{COMP_SHORT[c]}</span>
+              <span style={{ fontFamily: "monospace", fontSize: 10, color: comp.color }}>{(COMP_SHORT as any)[c]}</span>
               <span style={{ fontSize: 11, color: selectedComp === c ? "#D8D0C8" : "#4A4460" }}>
                 {sc.toFixed(1)}/5
               </span>
@@ -528,9 +529,9 @@ export default function CompetitiveAnalysis() {
           <div style={{ display: "flex", gap: 10, marginBottom: 16, flexWrap: "wrap" }}>
             {COMP_COLS.map(c => (
               <div key={c} style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <div style={{ width: 8, height: 8, borderRadius: "50%", background: COMPETITORS[c].color }} />
+                <div style={{ width: 8, height: 8, borderRadius: "50%", background: (COMPETITORS as any)[c].color }} />
                 <span style={{ fontFamily: "monospace", fontSize: 9, color: "#4A4468" }}>
-                  {COMP_SHORT[c]} = {COMPETITORS[c].name}
+                  {(COMP_SHORT as any)[c]} = {(COMPETITORS as any)[c].name}
                 </span>
               </div>
             ))}
@@ -572,10 +573,10 @@ export default function CompetitiveAnalysis() {
 
                     {/* Competitor cells */}
                     {COMP_COLS.map(c => {
-                      const cell = cr[c];
+                      const cell = (cr as any)[c];
                       const cellKey = `${ci}-${ri}-${c}`;
                       const isOpen = expandedCell === cellKey;
-                      const comp = COMPETITORS[c];
+                      const comp = (COMPETITORS as any)[c];
                       return (
                         <button
                           key={c}
@@ -603,7 +604,7 @@ export default function CompetitiveAnalysis() {
                   </div>
 
                   {/* Expanded cell detail */}
-                  {expandedCell && expandedCell.startsWith(`${ci}-${ri}-`) && (
+                  {expandedCell && (expandedCell as string).startsWith(`${ci}-${ri}-`) && (
                     <div style={{
                       padding: "12px 14px",
                       borderTop: "1px solid #14121E",
@@ -613,9 +614,9 @@ export default function CompetitiveAnalysis() {
                     }}>
                       {COMP_COLS.map(c => {
                         const cellKey = `${ci}-${ri}-${c}`;
-                        if (expandedCell !== cellKey && !expandedCell.startsWith(`${ci}-${ri}-`)) return null;
-                        const cell = cr[c];
-                        const comp = COMPETITORS[c];
+                        if (expandedCell !== cellKey && !(expandedCell as string).startsWith(`${ci}-${ri}-`)) return null;
+                        const cell = (cr as any)[c];
+                        const comp = (COMPETITORS as any)[c];
                         return (
                           <div key={c} style={{
                             background: "#08070F",
@@ -625,7 +626,7 @@ export default function CompetitiveAnalysis() {
                             padding: "10px 12px"
                           }}>
                             <div style={{ fontFamily: "monospace", fontSize: 9, color: comp.color, marginBottom: 4, letterSpacing: "0.1em" }}>
-                              {COMP_SHORT[c]} — {comp.name}
+                              {(COMP_SHORT as any)[c]} — {comp.name}
                             </div>
                             <div style={{ fontFamily: "monospace", fontSize: 10, color: "#6A6088", marginBottom: 6 }}>
                               {cell.value}
@@ -650,13 +651,13 @@ export default function CompetitiveAnalysis() {
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: 8 }}>
               {COMP_COLS.map(c => {
-                const sc = scores[activeTab === "middleman" ? "middleman" : "enduser"][c];
-                const comp = COMPETITORS[c];
+                const sc = (scores as any)[activeTab === "middleman" ? "middleman" : "enduser"][c];
+                const comp = (COMPETITORS as any)[c];
                 const pct = Math.round((sc / 5) * 100);
                 return (
                   <div key={c} style={{ background: "#06050C", border: `1px solid ${comp.color}30`, borderRadius: 3, padding: "12px 14px" }}>
                     <div style={{ fontFamily: "monospace", fontSize: 10, color: comp.color, marginBottom: 8 }}>
-                      {COMP_SHORT[c]} — {comp.name}
+                      {(COMP_SHORT as any)[c]} — {comp.name}
                     </div>
                     <div style={{ height: 3, background: "#1A1828", borderRadius: 2, marginBottom: 6 }}>
                       <div style={{ width: `${pct}%`, height: "100%", background: comp.color, borderRadius: 2, transition: "width 0.6s" }} />

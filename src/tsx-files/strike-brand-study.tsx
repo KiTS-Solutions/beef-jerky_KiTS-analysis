@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 // ─── PALETTE ──────────────────────────────────────────────────────────────────
 const C = {
@@ -272,7 +272,7 @@ const SKUS = [
 ];
 
 // ─── BAG VISUALIZATION ────────────────────────────────────────────────────────
-function StrikeBag({ sku, size = 1 }) {
+function StrikeBag({ sku, size = 1 }: { sku: any; size?: number }) {
   const W = 220 * size;
   const H = 340 * size;
   const s = size;
@@ -494,7 +494,7 @@ function StrikeBag({ sku, size = 1 }) {
 }
 
 // ─── SCORE RING ───────────────────────────────────────────────────────────────
-function ScoreRing({ score, color, size = 64 }) {
+function ScoreRing({ score, color, size = 64 }: { score: number; color: string; size?: number }) {
   const r = size * 0.4;
   const circ = 2 * Math.PI * r;
   const offset = circ * (1 - score / 100);
@@ -520,7 +520,7 @@ const TABS = [
 export default function StrikeBrandStudy() {
   const [tab, setTab] = useState("verdict");
   const [loaded, setLoaded] = useState(false);
-  const [expandedEnh, setExpandedEnh] = useState(null);
+  const [expandedEnh, setExpandedEnh] = useState<string | null>(null);
   const [activeSku, setActiveSku] = useState("bites");
   const [activeVerdict, setActiveVerdict] = useState("name");
 
@@ -529,8 +529,7 @@ export default function StrikeBrandStudy() {
     return () => clearTimeout(t);
   }, []);
 
-  const sku = SKUS.find(s => s.id === activeSku);
-  const vItem = VERDICT[activeVerdict];
+  const vItem = VERDICT[activeVerdict as keyof typeof VERDICT];
 
   return (
     <div style={{
@@ -717,7 +716,7 @@ export default function StrikeBrandStudy() {
                   <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.red, letterSpacing: "0.2em", marginBottom: 12 }}>
                     RISK FLAGS
                   </div>
-                  {vItem.risks.map((r, i) => (
+                  {vItem.risks.map((r: any, i: number) => (
                     <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
                       <span style={{ color: C.red, fontSize: 10, flexShrink: 0, marginTop: 2 }}>⚑</span>
                       <p style={{ margin: 0, fontSize: 12, color: C.creamDim, lineHeight: 1.7 }}>{r}</p>
@@ -729,7 +728,7 @@ export default function StrikeBrandStudy() {
                   <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.2em", marginBottom: 12 }}>
                     KITS RECOMMENDATIONS
                   </div>
-                  {vItem.improvements.map((r, i) => (
+                  {vItem.improvements.map((r: any, i: number) => (
                     <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
                       <span style={{ color: C.greenBright, fontSize: 10, flexShrink: 0, marginTop: 2 }}>→</span>
                       <p style={{ margin: 0, fontSize: 12, color: C.creamDim, lineHeight: 1.7 }}>{r}</p>

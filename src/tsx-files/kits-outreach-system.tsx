@@ -287,12 +287,6 @@ const LEAVE_BEHIND = {
   }
 };
 
-const TRACKER_FIELDS = [
-  "Account Name", "Type", "Area", "Contact Name", "Phone",
-  "Visit Date", "Units Placed", "Sale-or-Return?", "Follow-up Date",
-  "Week 2 Units Sold", "Status", "Notes"
-];
-
 const TRACKER_SAMPLE = [
   ["Protein District — Achrafieh", "Nutrition Store", "Achrafieh", "Owner Name", "+961 X XXX XXX", "—", "30", "Yes", "—", "—", "TO VISIT", "Priority — warm contact"],
   ["CrossFit Box — Dbayeh", "Gym", "Dbayeh", "Owner Name", "+961 X XXX XXX", "—", "20", "Yes", "—", "—", "TO VISIT", "Know owner personally"],
@@ -309,12 +303,12 @@ const STATUS_COLORS = {
 
 export default function OutreachSystem() {
   const [activeSection, setActiveSection] = useState("strategy");
-  const [expandedStep, setExpandedStep] = useState(null);
-  const [expandedObj, setExpandedObj] = useState(null);
+  const [expandedStep, setExpandedStep] = useState<number | null>(null);
+  const [expandedObj, setExpandedObj] = useState<number | null>(null);
   const [expandedScript, setExpandedScript] = useState(0);
 
-  const toggleStep = (i) => setExpandedStep(prev => prev === i ? null : i);
-  const toggleObj = (i) => setExpandedObj(prev => prev === i ? null : i);
+  const toggleStep = (i: number) => setExpandedStep(prev => prev === i ? null : i);
+  const toggleObj = (i: number) => setExpandedObj(prev => prev === i ? null : i);
 
   return (
     <div style={{
@@ -827,7 +821,7 @@ export default function OutreachSystem() {
                         <td key={ci} style={{
                           padding: "10px 10px",
                           fontSize: 11,
-                          color: ci === 9 ? STATUS_COLORS[cell] || "#DDD5C8" : "#7A7090",
+                          color: ci === 9 ? (STATUS_COLORS as any)[cell] || "#DDD5C8" : "#7A7090",
                           fontFamily: ci === 9 ? "monospace" : "inherit",
                           whiteSpace: ci === 0 ? "normal" : "nowrap",
                           background: ri % 2 === 0 ? "#0C0A14" : "#0A0810",

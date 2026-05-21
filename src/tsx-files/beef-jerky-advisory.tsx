@@ -261,9 +261,9 @@ export default function BeefJerkyAdvisory() {
 
   const activeSection = sections.find(s => s.id === active);
 
-  const toggleItem = (sectionId, idx) => {
+  const toggleItem = (sectionId: string, idx: number) => {
     const key = `${sectionId}-${idx}`;
-    setExpandedItems(prev => ({ ...prev, [key]: !prev[key] }));
+    setExpandedItems((prev: any) => ({ ...prev, [key]: !prev[key] }));
   };
 
   return (
@@ -355,7 +355,7 @@ export default function BeefJerkyAdvisory() {
               <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 {activeSection.content.map((item, idx) => {
                   const key = `${activeSection.id}-${idx}`;
-                  const expanded = expandedItems[key] !== false; // default open
+                  const expanded = (expandedItems as any)[key] !== false; // default open
                   return (
                     <div key={idx} style={{
                       background: "#131209",

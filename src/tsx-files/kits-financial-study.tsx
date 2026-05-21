@@ -256,13 +256,13 @@ const BLOCKERS = [
 
 export default function FinancialStudy() {
   const [activeTier, setActiveTier] = useState("standard");
-  const [expandedCat, setExpandedCat] = useState(null);
+  const [expandedCat, setExpandedCat] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState("investment");
 
   const tier = TIERS.find(t => t.id === activeTier);
 
-  const totalLow = tier.categories.reduce((a, c) => a + c.items.reduce((b, i) => b + i.low, 0), 0);
-  const totalHigh = tier.categories.reduce((a, c) => a + c.items.reduce((b, i) => b + i.high, 0), 0);
+  const totalLow = tier?.categories.reduce((a, c) => a + c.items.reduce((b, i) => b + i.low, 0), 0) || 0;
+  const totalHigh = tier?.categories.reduce((a, c) => a + c.items.reduce((b, i) => b + i.high, 0), 0) || 0;
 
   const tabs = [
     { id: "investment", label: "Investment Breakdown" },
@@ -328,23 +328,23 @@ export default function FinancialStudy() {
 
       {/* Tier Description Bar */}
       <div style={{
-        background: `${tier.color}0A`,
-        borderBottom: `1px solid ${tier.color}30`,
+        background: `${tier?.color}0A`,
+        borderBottom: `1px solid ${tier?.color}30`,
         padding: "16px 36px",
         display: "flex", gap: 24, flexWrap: "wrap", alignItems: "flex-start"
       }}>
         <div style={{ flex: 2, minWidth: 260 }}>
           <p style={{ margin: 0, fontSize: 13, color: "#9A90A0", lineHeight: 1.75, fontFamily: "Georgia, serif" }}>
-            {tier.description}
+            {tier?.description}
           </p>
         </div>
         <div style={{ flex: 1, minWidth: 200 }}>
-          <div style={{ fontFamily: "monospace", fontSize: 10, color: tier.color, letterSpacing: "0.15em", marginBottom: 6 }}>SUITABLE WHEN</div>
-          <p style={{ margin: 0, fontSize: 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier.suitable}</p>
+          <div style={{ fontFamily: "monospace", fontSize: 10, color: tier?.color, letterSpacing: "0.15em", marginBottom: 6 }}>SUITABLE WHEN</div>
+          <p style={{ margin: 0, fontSize: 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.suitable}</p>
         </div>
         <div style={{ flex: 1, minWidth: 200 }}>
           <div style={{ fontFamily: "monospace", fontSize: 10, color: "#E07B6A", letterSpacing: "0.15em", marginBottom: 6 }}>RISK FACTOR</div>
-          <p style={{ margin: 0, fontSize: 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier.risk}</p>
+          <p style={{ margin: 0, fontSize: 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.risk}</p>
         </div>
       </div>
 
@@ -354,7 +354,7 @@ export default function FinancialStudy() {
           <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
             background: "transparent",
             border: "none",
-            borderBottom: activeTab === t.id ? `2px solid ${tier.color}` : "2px solid transparent",
+            borderBottom: activeTab === t.id ? `2px solid ${tier?.color}` : "2px solid transparent",
             color: activeTab === t.id ? "#E2D8CC" : "#4A4060",
             fontFamily: "monospace",
             fontSize: 10,
@@ -375,16 +375,16 @@ export default function FinancialStudy() {
           <div>
             {/* Total Banner */}
             <div style={{
-              background: `${tier.color}10`,
-              border: `1px solid ${tier.color}30`,
+              background: `${tier?.color}10`,
+              border: `1px solid ${tier?.color}30`,
               borderRadius: 4,
               padding: "20px 24px",
               marginBottom: 28,
               display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16
             }}>
               <div>
-                <div style={{ fontFamily: "monospace", fontSize: 10, color: tier.color, letterSpacing: "0.2em", marginBottom: 6 }}>
-                  TOTAL INVESTMENT RANGE — {tier.label}: {tier.name.toUpperCase()}
+                <div style={{ fontFamily: "monospace", fontSize: 10, color: tier?.color, letterSpacing: "0.2em", marginBottom: 6 }}>
+                  TOTAL INVESTMENT RANGE — {tier?.label}: {tier?.name.toUpperCase()}
                 </div>
                 <div style={{ fontSize: "clamp(22px, 4vw, 36px)", color: "#E2D8CC", fontWeight: 400, letterSpacing: "0.05em" }}>
                   ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}
@@ -392,12 +392,12 @@ export default function FinancialStudy() {
               </div>
               <div style={{ textAlign: "right" }}>
                 <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", marginBottom: 4 }}>MIDPOINT ESTIMATE</div>
-                <div style={{ fontSize: 24, color: tier.color }}>${Math.round((totalLow + totalHigh) / 2).toLocaleString()}</div>
+                <div style={{ fontSize: 24, color: tier?.color }}>${Math.round((totalLow + totalHigh) / 2).toLocaleString()}</div>
               </div>
             </div>
 
             {/* Category Breakdown */}
-            {tier.categories.map((cat, ci) => {
+            {tier?.categories.map((cat, ci) => {
               const catLow = cat.items.reduce((a, i) => a + i.low, 0);
               const catHigh = cat.items.reduce((a, i) => a + i.high, 0);
               const isOpen = expandedCat === `${activeTier}-${ci}`;
@@ -456,9 +456,9 @@ export default function FinancialStudy() {
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", letterSpacing: "0.15em", marginBottom: 16 }}>
                 ALLOCATION BREAKDOWN — MIDPOINT VALUES
               </div>
-              {tier.categories.map((cat, ci) => {
+              {tier?.categories.map((cat, ci) => {
                 const catMid = cat.items.reduce((a, i) => a + (i.low + i.high) / 2, 0);
-                const totalMid = tier.categories.reduce((a, c) => a + c.items.reduce((b, i) => b + (i.low + i.high) / 2, 0), 0);
+                const totalMid = tier?.categories.reduce((a, c) => a + c.items.reduce((b, i) => b + (i.low + i.high) / 2, 0), 0) || 0;
                 const pct = Math.round((catMid / totalMid) * 100);
                 return (
                   <div key={ci} style={{ marginBottom: 10 }}>
@@ -480,8 +480,8 @@ export default function FinancialStudy() {
         {activeTab === "projections" && (
           <div>
             <div style={{ marginBottom: 24 }}>
-              <div style={{ fontFamily: "monospace", fontSize: 10, color: tier.color, letterSpacing: "0.2em", marginBottom: 8 }}>
-                REVENUE PROJECTIONS — {tier.name.toUpperCase()}
+              <div style={{ fontFamily: "monospace", fontSize: 10, color: tier?.color, letterSpacing: "0.2em", marginBottom: 8 }}>
+                REVENUE PROJECTIONS — {tier?.name?.toUpperCase()}
               </div>
               <p style={{ margin: 0, fontSize: 13, color: "#7A7090", lineHeight: 1.75 }}>
                 All projections are directional estimates based on comparable FMCG launches in the Lebanese market under KITS' advisory scope. They assume successful MoPH registration, product-market fit validation in Phase 1, and no major currency or political disruption events.
@@ -490,9 +490,9 @@ export default function FinancialStudy() {
 
             {/* Milestone cards */}
             {[
-              { period: "Month 3", label: "End of Phase 1", accounts: tier.projections.accounts_m3, rev: "Revenue building — not yet material", color: "#4A4060" },
-              { period: "Month 6", label: "End of Phase 2", accounts: tier.projections.accounts_m6, rev: tier.projections.rev_m6, color: tier.color },
-              { period: "Month 12", label: "End of Phase 3", accounts: tier.projections.accounts_m12, rev: tier.projections.rev_m12, color: "#7EB5A6" },
+              { period: "Month 3", label: "End of Phase 1", accounts: tier?.projections?.accounts_m3, rev: "Revenue building — not yet material", color: "#4A4060" },
+              { period: "Month 6", label: "End of Phase 2", accounts: tier?.projections?.accounts_m6, rev: tier?.projections?.rev_m6, color: tier?.color },
+              { period: "Month 12", label: "End of Phase 3", accounts: tier?.projections?.accounts_m12, rev: tier?.projections?.rev_m12, color: "#7EB5A6" },
             ].map((m, i) => (
               <div key={i} style={{
                 background: "#0C0B12",
@@ -521,10 +521,10 @@ export default function FinancialStudy() {
             {/* Key metrics */}
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 8, marginTop: 20 }}>
               {[
-                { label: "Breakeven Target", value: tier.projections.breakeven, color: "#7EB5A6" },
-                { label: "Target Gross Margin", value: tier.projections.gross_margin, color: tier.color },
+                { label: "Breakeven Target", value: tier?.projections?.breakeven, color: "#7EB5A6" },
+                { label: "Target Gross Margin", value: tier?.projections?.gross_margin, color: tier?.color },
                 { label: "Investment Recovery", value: activeTier === "lean" ? "Month 9–12" : activeTier === "standard" ? "Month 8–11" : "Month 10–14", color: "#9B8EC4" },
-              ].map((m, i) => (
+              ].map((m: any, i: number) => (
                 <div key={i} style={{
                   background: "#0C0B12", border: "1px solid #1C1A24",
                   borderRadius: 4, padding: "16px 20px"
@@ -538,7 +538,7 @@ export default function FinancialStudy() {
             <div style={{ marginTop: 20, background: "#0A0C08", border: "1px solid #2A3020", borderRadius: 4, padding: "16px 20px" }}>
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", marginBottom: 6 }}>MODEL ASSUMPTIONS NOTE</div>
               <p style={{ margin: 0, fontSize: 12, color: "#6A7A60", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>
-                {tier.projections.note}. Revenue projections assume no major Lebanese economic disruption and are expressed in USD equivalent. All projections should be revised at Month 3 using actual sell-through data from the gym launch phase.
+                {tier?.projections?.note}. Revenue projections assume no major Lebanese economic disruption and are expressed in USD equivalent. All projections should be revised at Month 3 using actual sell-through data from the gym launch phase.
               </p>
             </div>
           </div>

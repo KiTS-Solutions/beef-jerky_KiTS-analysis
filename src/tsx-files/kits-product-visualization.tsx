@@ -39,7 +39,7 @@ const CLAIMS = [
 ];
 
 // ─── SINGLE-SERVE FRONT PANEL ─────────────────────────────────────────────────
-function SingleFront({animated}) {
+function SingleFront() {
   return (
     <g>
       {/* Bag body fill */}
@@ -754,7 +754,7 @@ export default function ProductVisualization() {
                 </filter>
               </defs>
 
-              {isSingle && panel === "front" && <SingleFront animated={loaded} />}
+              {isSingle && panel === "front" && <SingleFront />}
               {isSingle && panel === "back" && <SingleBack />}
               {!isSingle && panel === "front" && <MultiFront />}
               {!isSingle && panel === "back" && (

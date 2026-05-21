@@ -142,7 +142,7 @@ export default function BrandDesignBrief() {
   const [active, setActive] = useState("overview");
   const [expanded, setExpanded] = useState({});
 
-  const toggle = (key) => setExpanded(p => ({ ...p, [key]: !p[key] }));
+  const toggle = (key: string) => setExpanded((p: any) => ({ ...p, [key]: !p[key] }));
 
   return (
     <div style={{
@@ -304,9 +304,9 @@ export default function BrandDesignBrief() {
                   display: "flex", justifyContent: "space-between", alignItems: "center"
                 }}>
                   <span style={{ fontSize: 13, color: "#1A1612" }}>{item.req}</span>
-                  <span style={{ color: "#8A7A68", fontSize: 16 }}>{expanded[`name-${i}`] ? "−" : "+"}</span>
+                  <span style={{ color: "#8A7A68", fontSize: 16 }}>{(expanded as any)[`name-${i}`] ? "−" : "+"}</span>
                 </button>
-                {expanded[`name-${i}`] && (
+                {(expanded as any)[`name-${i}`] && (
                   <div style={{ padding: "0 18px 16px", borderTop: "1px solid #DDD5C8" }}>
                     <p style={{ margin: "12px 0 0", fontSize: 13, color: "#5A4A38", lineHeight: 1.8 }}>{item.detail}</p>
                   </div>
@@ -619,7 +619,7 @@ export default function BrandDesignBrief() {
   );
 }
 
-function SectionHead({ label, title, color }) {
+function SectionHead({ label, title, color }: { label: string; title: string; color: string }) {
   return (
     <div style={{ marginBottom: 24 }}>
       <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: color, letterSpacing: "0.25em", marginBottom: 8 }}>{label}</div>
@@ -629,7 +629,7 @@ function SectionHead({ label, title, color }) {
   );
 }
 
-function Brief({ label, children }) {
+function Brief({ label, children }: { label: string; children: any }) {
   return (
     <div style={{ background: "#EFEBE3", border: "1px solid #DDD5C8", borderRadius: 3, padding: "16px 20px", marginBottom: 12 }}>
       <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#8A7A68", letterSpacing: "0.2em", marginBottom: 8 }}>{label}</div>
