@@ -9,12 +9,14 @@ import ComponentFive from './tsx-files/kits-master-plan.tsx';
 import ComponentSix from './tsx-files/kits-manufacturer-brief.tsx';
 import ComponentSeven from './tsx-files/kits-outreach-system.tsx';
 import ComponentEight from './tsx-files/kits-product-visualization.tsx';
-import ComponentNine from './tsx-files/strike-board-presentation.tsx';
+import ComponentNine from './tsx-files/strike-board-presentation-final.tsx';
 import ComponentTen from './tsx-files/strike-brand-study.tsx';
+//import ComponentEleven from './tsx-files/strike-board-presentation-final.tsx';
 
 // 2. Define a list of your components for easy navigation mapping
 const COMPONENT_MAP = { 
   'strike presentation': <ComponentNine />,
+  //'strike final': <ComponentEleven />,
   'master plan': <ComponentFive />,
   'beef jerky advisory': <ComponentOne />,
   'financial study': <ComponentFour />,
