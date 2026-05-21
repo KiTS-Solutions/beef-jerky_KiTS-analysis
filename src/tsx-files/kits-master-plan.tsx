@@ -1,4 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
 
 const PHASES = [
   {
@@ -209,6 +226,7 @@ const QUESTIONS = [
 ];
 
 export default function MasterPlan() {
+  const { isMobile } = useResponsive();
   const [activeTab, setActiveTab] = useState("checklist");
   const [checked, setChecked] = useState({});
   const [expandedStep, setExpandedStep] = useState<string | null>(null);
@@ -240,22 +258,22 @@ export default function MasterPlan() {
       <div style={{
         background: "#0D0C0A",
         borderBottom: "1px solid #1E1C16",
-        padding: "28px 36px 20px",
+        padding: isMobile ? "20px 20px 16px" : "28px 36px 20px",
       }}>
-        <div style={{ fontFamily: "monospace", fontSize: 10, color: "#5A5040", letterSpacing: "0.3em", marginBottom: 8 }}>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#5A5040", letterSpacing: "0.3em", marginBottom: isMobile ? 6 : 8 }}>
           KITS ADVISORY GROUP · REF: KAG-JRK-002 · CONFIDENTIAL
         </div>
-        <h1 style={{ margin: 0, fontSize: "clamp(20px, 3.5vw, 32px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.2 }}>
+        <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 5vw, 28px)" : "clamp(20px, 3.5vw, 32px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.2 }}>
           Beef Jerky — Master Launch Plan
         </h1>
-        <p style={{ margin: "6px 0 0", fontSize: 13, color: "#8A7A60", fontFamily: "Georgia, serif" }}>
+        <p style={{ margin: "6px 0 0", fontSize: isMobile ? 12 : 13, color: "#8A7A60", fontFamily: "Georgia, serif" }}>
           Lebanon Market Entry · A to Z · Phase 0 → 4
         </p>
       </div>
 
       {/* Progress Bar */}
-      <div style={{ background: "#0D0C0A", padding: "12px 36px", borderBottom: "1px solid #1A1814" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+      <div style={{ background: "#0D0C0A", padding: isMobile ? "10px 20px" : "12px 36px", borderBottom: "1px solid #1A1814" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 12 : 16 }}>
           <div style={{ flex: 1, height: 3, background: "#1E1C16", borderRadius: 2 }}>
             <div style={{
               width: `${pct}%`, height: "100%",
@@ -263,14 +281,14 @@ export default function MasterPlan() {
               borderRadius: 2, transition: "width 0.4s ease"
             }} />
           </div>
-          <div style={{ fontFamily: "monospace", fontSize: 11, color: "#8A7A60", whiteSpace: "nowrap" }}>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: "#8A7A60", whiteSpace: "nowrap" }}>
             {doneSteps} / {totalSteps} COMPLETED
           </div>
         </div>
       </div>
 
       {/* Tabs */}
-      <div style={{ background: "#0D0C0A", borderBottom: "1px solid #1A1814", display: "flex", padding: "0 36px" }}>
+      <div style={{ background: "#0D0C0A", borderBottom: "1px solid #1E1C16", display: "flex", padding: isMobile ? "0 16px" : "0 36px", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
         {tabs.map(t => (
           <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
             background: "transparent",
@@ -278,18 +296,21 @@ export default function MasterPlan() {
             borderBottom: activeTab === t.id ? "2px solid #C8A96E" : "2px solid transparent",
             color: activeTab === t.id ? "#E8E0D0" : "#5A5040",
             fontFamily: "monospace",
-            fontSize: 11,
+            fontSize: isMobile ? 10 : 11,
             letterSpacing: "0.15em",
-            padding: "14px 20px 12px",
+            padding: isMobile ? "12px 16px 10px" : "14px 20px 12px",
             cursor: "pointer",
-            transition: "all 0.15s"
+            transition: "all 0.15s",
+            whiteSpace: "nowrap",
+            WebkitTapHighlightColor: "transparent",
+            touchAction: "manipulation",
           }}>
             {t.label.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div style={{ padding: "32px 36px", maxWidth: 900 }}>
+      <div style={{ padding: isMobile ? "24px 20px" : "32px 36px", maxWidth: 900 }}>
 
         {/* === CHECKLIST === */}
         {activeTab === "checklist" && (
@@ -297,11 +318,11 @@ export default function MasterPlan() {
             {PHASES.map(phase => {
               const done = phase.steps.filter(s => (checked as any)[s.id]).length;
               return (
-                <div key={phase.id} style={{ marginBottom: 40 }}>
+                <div key={phase.id} style={{ marginBottom: isMobile ? 32 : 40 }}>
                   {/* Phase Header */}
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 16, marginBottom: 16 }}>
+                  <div style={{ display: "flex", alignItems: isMobile ? "flex-start" : "baseline", gap: isMobile ? 12 : 16, marginBottom: 16, flexDirection: isMobile ? "column" : "row" }}>
                     <div style={{
-                      fontFamily: "monospace", fontSize: 10,
+                      fontFamily: "monospace", fontSize: isMobile ? 9 : 10,
                       color: phase.color, letterSpacing: "0.2em",
                       background: `${phase.color}15`,
                       border: `1px solid ${phase.color}40`,
@@ -309,13 +330,13 @@ export default function MasterPlan() {
                     }}>
                       {phase.label}
                     </div>
-                    <h2 style={{ margin: 0, fontSize: 18, fontWeight: 400, color: "#D4C8B0" }}>
+                    <h2 style={{ margin: 0, fontSize: isMobile ? 16 : 18, fontWeight: 400, color: "#D4C8B0" }}>
                       {phase.title}
                     </h2>
-                    <span style={{ fontFamily: "monospace", fontSize: 11, color: "#4A4030" }}>
+                    <span style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: "#4A4030" }}>
                       {phase.timeline}
                     </span>
-                    <span style={{ marginLeft: "auto", fontFamily: "monospace", fontSize: 11, color: phase.color }}>
+                    <span style={{ marginLeft: isMobile ? "0" : "auto", fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: phase.color }}>
                       {done}/{phase.steps.length}
                     </span>
                   </div>
@@ -333,27 +354,29 @@ export default function MasterPlan() {
                         borderRadius: 3, marginBottom: 4, overflow: "hidden",
                         transition: "all 0.2s ease"
                       }}>
-                        <div style={{ display: "flex", alignItems: "flex-start", padding: "12px 16px", gap: 12 }}>
+                        <div style={{ display: "flex", alignItems: isMobile ? "flex-start" : "flex-start", padding: isMobile ? "14px 16px" : "12px 16px", gap: isMobile ? 12 : 12, flexDirection: isMobile ? "column" : "row" }}>
                           {/* Checkbox */}
                           <button onClick={() => toggle(step.id)} style={{
-                            width: 18, height: 18, flexShrink: 0, marginTop: 1,
+                            width: isMobile ? 22 : 18, height: isMobile ? 22 : 18, flexShrink: 0, marginTop: isMobile ? 0 : 1,
                             border: `1px solid ${isDone ? "#4A7A4A" : "#3A3428"}`,
                             background: isDone ? "#2A4A2A" : "transparent",
                             borderRadius: 2, cursor: "pointer", display: "flex",
                             alignItems: "center", justifyContent: "center",
-                            transition: "all 0.15s"
+                            transition: "all 0.15s",
+                            WebkitTapHighlightColor: "transparent",
+                            touchAction: "manipulation",
                           }}>
-                            {isDone && <span style={{ color: "#7ABA7A", fontSize: 11 }}>✓</span>}
+                            {isDone && <span style={{ color: "#7ABA7A", fontSize: isMobile ? 12 : 11 }}>✓</span>}
                           </button>
 
                           {/* Step number + text */}
                           <div style={{ flex: 1 }}>
-                            <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-                              <span style={{ fontFamily: "monospace", fontSize: 10, color: isDone ? "#4A7A4A" : "#4A4030", flexShrink: 0 }}>
+                            <div style={{ display: "flex", alignItems: isMobile ? "flex-start" : "baseline", gap: 8, flexDirection: isMobile ? "column" : "row" }}>
+                              <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: isDone ? "#4A7A4A" : "#4A4030", flexShrink: 0 }}>
                                 {String(i + 1).padStart(2, "0")}
                               </span>
                               <span style={{
-                                fontSize: 13, lineHeight: 1.5,
+                                fontSize: isMobile ? 12 : 13, lineHeight: 1.5,
                                 color: isDone ? "#6A8A6A" : "#C8BCA8",
                                 textDecoration: isDone ? "line-through" : "none",
                                 fontFamily: "Georgia, serif"
@@ -366,19 +389,21 @@ export default function MasterPlan() {
                           {/* Expand button */}
                           <button onClick={() => toggleStep(step.id)} style={{
                             background: "transparent", border: "none",
-                            color: "#4A4030", fontSize: 14, cursor: "pointer", flexShrink: 0, padding: 0
+                            color: "#4A4030", fontSize: isMobile ? 16 : 14, cursor: "pointer", flexShrink: 0, padding: 0,
+                            WebkitTapHighlightColor: "transparent",
+                            touchAction: "manipulation",
                           }}>
                             {isExpanded ? "−" : "+"}
                           </button>
                         </div>
 
                         {isExpanded && (
-                          <div style={{ padding: "0 16px 14px 46px" }}>
+                          <div style={{ padding: isMobile ? "0 16px 14px 16px" : "0 16px 14px 46px" }}>
                             <p style={{
-                              margin: 0, fontSize: 13, lineHeight: 1.8,
+                              margin: 0, fontSize: isMobile ? 12 : 13, lineHeight: 1.8,
                               color: "#7A6E5A", fontFamily: "Georgia, serif",
-                              borderLeft: `2px solid ${phase.color}40`,
-                              paddingLeft: 12
+                              borderLeft: isMobile ? "none" : `2px solid ${phase.color}40`,
+                              paddingLeft: isMobile ? 0 : 12
                             }}>
                               {step.detail}
                             </p>
@@ -396,12 +421,12 @@ export default function MasterPlan() {
         {/* === BRAND NAMES === */}
         {activeTab === "brands" && (
           <div>
-            <div style={{ marginBottom: 28 }}>
-              <div style={{ fontFamily: "monospace", fontSize: 10, color: "#C8A96E", letterSpacing: "0.2em", marginBottom: 8 }}>
+            <div style={{ marginBottom: isMobile ? 24 : 28 }}>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#C8A96E", letterSpacing: "0.2em", marginBottom: 8 }}>
                 BRAND NAMING ADVISORY
               </div>
-              <h2 style={{ margin: 0, fontSize: 22, fontWeight: 400, color: "#E8E0D0" }}>Candidate Brand Names</h2>
-              <p style={{ fontSize: 13, color: "#7A6E5A", lineHeight: 1.7, marginTop: 10 }}>
+              <h2 style={{ margin: 0, fontSize: isMobile ? 18 : 22, fontWeight: 400, color: "#E8E0D0" }}>Candidate Brand Names</h2>
+              <p style={{ fontSize: isMobile ? 12 : 13, color: "#7A6E5A", lineHeight: 1.7, marginTop: 10 }}>
                 All candidates below meet the core criteria: Arabic-rooted, pronounceable across Arabic / English / French, short enough to trademark cleanly, and free from generic descriptive language. Each must be checked against the Ministry of Economy and Trade IP register before use. Scores are out of 5.
               </p>
             </div>
@@ -410,15 +435,15 @@ export default function MasterPlan() {
               <div key={i} style={{
                 background: "#0E0D0B",
                 border: "1px solid #1E1C16",
-                borderRadius: 4, marginBottom: 6, padding: "18px 20px"
+                borderRadius: 4, marginBottom: 6, padding: isMobile ? "16px 18px" : "18px 20px"
               }}>
-                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+                <div style={{ display: "flex", alignItems: isMobile ? "flex-start" : "flex-start", justifyContent: "space-between", gap: isMobile ? 12 : 16, flexDirection: isMobile ? "column" : "row" }}>
                   <div style={{ flex: 1, minWidth: 220 }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 6 }}>
-                      <span style={{ fontSize: 20, fontWeight: 400, color: "#E8E0D0", letterSpacing: "0.1em" }}>{b.name}</span>
-                      <span style={{ fontSize: 16, color: "#8A7A60", fontFamily: "Georgia, serif" }}>{b.arabic}</span>
+                    <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 8 : 12, marginBottom: 6, flexWrap: "wrap" }}>
+                      <span style={{ fontSize: isMobile ? 18 : 20, fontWeight: 400, color: "#E8E0D0", letterSpacing: "0.1em" }}>{b.name}</span>
+                      <span style={{ fontSize: isMobile ? 14 : 16, color: "#8A7A60", fontFamily: "Georgia, serif" }}>{b.arabic}</span>
                       <span style={{
-                        fontFamily: "monospace", fontSize: 10,
+                        fontFamily: "monospace", fontSize: isMobile ? 9 : 10,
                         color: b.score === 5 ? "#C8A96E" : b.score === 4 ? "#7EB5A6" : "#9B8EC4",
                         background: b.score === 5 ? "#C8A96E15" : b.score === 4 ? "#7EB5A615" : "#9B8EC415",
                         border: `1px solid ${b.score === 5 ? "#C8A96E40" : b.score === 4 ? "#7EB5A640" : "#9B8EC440"}`,
@@ -427,17 +452,17 @@ export default function MasterPlan() {
                         {b.verdict}
                       </span>
                     </div>
-                    <div style={{ fontFamily: "monospace", fontSize: 11, color: "#C8A96E", marginBottom: 8 }}>
+                    <div style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: "#C8A96E", marginBottom: 8 }}>
                       "{b.meaning}"
                     </div>
-                    <p style={{ margin: 0, fontSize: 13, lineHeight: 1.7, color: "#7A6E5A", fontFamily: "Georgia, serif" }}>
+                    <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, lineHeight: 1.7, color: "#7A6E5A", fontFamily: "Georgia, serif" }}>
                       {b.rationale}
                     </p>
                   </div>
                   <div style={{ display: "flex", gap: 3 }}>
                     {[1,2,3,4,5].map(n => (
                       <div key={n} style={{
-                        width: 8, height: 8, borderRadius: "50%",
+                        width: isMobile ? 10 : 8, height: isMobile ? 10 : 8, borderRadius: "50%",
                         background: n <= b.score ? "#C8A96E" : "#2A2820"
                       }} />
                     ))}
@@ -446,11 +471,11 @@ export default function MasterPlan() {
               </div>
             ))}
 
-            <div style={{ marginTop: 28, background: "#0E110E", border: "1px solid #2A3020", borderRadius: 4, padding: "18px 20px" }}>
-              <div style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", letterSpacing: "0.2em", marginBottom: 8 }}>
+            <div style={{ marginTop: isMobile ? 24 : 28, background: "#0E110E", border: "1px solid #2A3020", borderRadius: 4, padding: isMobile ? "16px 18px" : "18px 20px" }}>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#7EB5A6", letterSpacing: "0.2em", marginBottom: 8 }}>
                 KITS RECOMMENDATION
               </div>
-              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.8, color: "#8A9E80", fontFamily: "Georgia, serif" }}>
+              <p style={{ margin: 0, fontSize: isMobile ? 13 : 14, lineHeight: 1.8, color: "#8A9E80", fontFamily: "Georgia, serif" }}>
                 <strong style={{ color: "#A8C0A0" }}>QUWWAT</strong> is the strongest candidate. It is short, powerful, trademarkable, genuinely Arabic in origin, and works phonetically in all three of Lebanon's languages. It communicates the product's core value — strength — without being descriptive in a way that prevents trademark protection. <strong style={{ color: "#A8C0A0" }}>BADR</strong> is the creative dark horse: one syllable, pure, and poetic. <strong style={{ color: "#A8C0A0" }}>LAHM+</strong> is bold and direct — highest risk, highest reward if the positioning is confident enough to carry it. Run all three through IP check immediately.
               </p>
             </div>
@@ -460,12 +485,12 @@ export default function MasterPlan() {
         {/* === COMPETITION === */}
         {activeTab === "competition" && (
           <div>
-            <div style={{ marginBottom: 28 }}>
-              <div style={{ fontFamily: "monospace", fontSize: 10, color: "#E07B6A", letterSpacing: "0.2em", marginBottom: 8 }}>
+            <div style={{ marginBottom: isMobile ? 24 : 28 }}>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#E07B6A", letterSpacing: "0.2em", marginBottom: 8 }}>
                 COMPETITIVE INTELLIGENCE
               </div>
-              <h2 style={{ margin: 0, fontSize: 22, fontWeight: 400, color: "#E8E0D0" }}>Lebanon Market — Competition Map</h2>
-              <p style={{ fontSize: 13, color: "#7A6E5A", lineHeight: 1.7, marginTop: 10 }}>
+              <h2 style={{ margin: 0, fontSize: isMobile ? 18 : 22, fontWeight: 400, color: "#E8E0D0" }}>Lebanon Market — Competition Map</h2>
+              <p style={{ fontSize: isMobile ? 12 : 13, color: "#7A6E5A", lineHeight: 1.7, marginTop: 10 }}>
                 The Lebanese beef jerky market has a critical structural advantage for a new entrant: <strong style={{ color: "#C8A96E" }}>there is no established local brand.</strong> All current competition is imported, expensive, not Halal-certified for the discerning consumer, and not positioned for the fitness segment. Global jerky market growing at ~7% CAGR. Middle East sports nutrition market growing at 7.3% CAGR through 2033. The window is open.
               </p>
             </div>
@@ -479,18 +504,20 @@ export default function MasterPlan() {
                 <button onClick={() => toggleComp(i)} style={{
                   display: "flex", alignItems: "center", justifyContent: "space-between",
                   width: "100%", background: "transparent", border: "none",
-                  padding: "16px 20px", cursor: "pointer", textAlign: "left", gap: 16
+                  padding: isMobile ? "14px 18px" : "16px 20px", cursor: "pointer", textAlign: "left", gap: isMobile ? 12 : 16,
+                  WebkitTapHighlightColor: "transparent",
+                  touchAction: "manipulation",
                 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12, flex: 1, flexWrap: "wrap" }}>
-                    <span style={{ fontSize: 15, color: c.brand.includes("No established") ? "#7ABA7A" : "#C8BCA8", fontFamily: "Georgia, serif" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 8 : 12, flex: 1, flexWrap: "wrap" }}>
+                    <span style={{ fontSize: isMobile ? 14 : 15, color: c.brand.includes("No established") ? "#7ABA7A" : "#C8BCA8", fontFamily: "Georgia, serif" }}>
                       {c.brand}
                     </span>
                     {c.origin !== "—" && (
-                      <span style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4030" }}>{c.origin}</span>
+                      <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#4A4030" }}>{c.origin}</span>
                     )}
                     <span style={{
-                      fontFamily: "monospace", fontSize: 10,
-                      color: c.threat.startsWith("HIGH") ? "#E07B6A" : c.threat.startsWith("MEDIUM") ? "#C8A96E" : c.threat.startsWith("LOW") ? "#7EB5A6" : "#7ABA7A",
+                      fontFamily: "monospace", fontSize: isMobile ? 9 : 10,
+                      color: c.threat.startsWith("HIGH") ? "#E07B6A" : c.threat.startsWith("MEDIUM") ? "#C8A96E" : c.threat.startsWith("LOW") ? "#7EB5A6" : c.threat.startsWith("OPPORT") ? "#7ABA7A15" : "#7EB5A615",
                       background: c.threat.startsWith("HIGH") ? "#E07B6A15" : c.threat.startsWith("MEDIUM") ? "#C8A96E15" : c.threat.startsWith("OPPORT") ? "#7ABA7A15" : "#7EB5A615",
                       border: `1px solid ${c.threat.startsWith("HIGH") ? "#E07B6A40" : c.threat.startsWith("MEDIUM") ? "#C8A96E40" : c.threat.startsWith("OPPORT") ? "#7ABA7A40" : "#7EB5A640"}`,
                       padding: "2px 8px", borderRadius: 2
@@ -498,33 +525,33 @@ export default function MasterPlan() {
                       {c.threat.split(" —")[0]}
                     </span>
                   </div>
-                  <span style={{ color: "#4A4030", fontSize: 14 }}>{expandedComp === i ? "−" : "+"}</span>
+                  <span style={{ color: "#4A4030", fontSize: isMobile ? 16 : 14 }}>{expandedComp === i ? "−" : "+"}</span>
                 </button>
 
                 {expandedComp === i && (
-                  <div style={{ padding: "0 20px 18px" }}>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 12 }}>
+                  <div style={{ padding: isMobile ? "0 18px 16px" : "0 20px 18px" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 12 : 16, marginBottom: 12 }}>
                       {c.where !== "—" && (
                         <div>
-                          <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4030", marginBottom: 4 }}>WHERE SOLD</div>
-                          <p style={{ margin: 0, fontSize: 12, color: "#7A6E5A", lineHeight: 1.6 }}>{c.where}</p>
+                          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#4A4030", marginBottom: 4 }}>WHERE SOLD</div>
+                          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: "#7A6E5A", lineHeight: 1.6 }}>{c.where}</p>
                         </div>
                       )}
                       {c.sizes !== "—" && (
                         <div>
-                          <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4030", marginBottom: 4 }}>PACK SIZES</div>
-                          <p style={{ margin: 0, fontSize: 12, color: "#7A6E5A", lineHeight: 1.6 }}>{c.sizes}</p>
+                          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#4A4030", marginBottom: 4 }}>PACK SIZES</div>
+                          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: "#7A6E5A", lineHeight: 1.6 }}>{c.sizes}</p>
                         </div>
                       )}
                       {c.flavors !== "—" && (
                         <div>
-                          <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4030", marginBottom: 4 }}>FLAVORS</div>
+                          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#4A4030", marginBottom: 4 }}>FLAVORS</div>
                           <p style={{ margin: 0, fontSize: 12, color: "#7A6E5A", lineHeight: 1.6 }}>{c.flavors}</p>
                         </div>
                       )}
                       <div>
                         <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4030", marginBottom: 4 }}>POSITIONING</div>
-                        <p style={{ margin: 0, fontSize: 12, color: "#7A6E5A", lineHeight: 1.6 }}>{c.positioning}</p>
+                        <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: "#7A6E5A", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{c.positioning}</p>
                       </div>
                     </div>
                     <div style={{ background: "#0A1A0A", border: "1px solid #2A3A2A", borderRadius: 3, padding: "10px 14px" }}>

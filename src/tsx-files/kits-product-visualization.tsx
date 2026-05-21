@@ -1,5 +1,22 @@
 import { useState, useEffect } from "react";
 
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
+
 const BRAND = "[BRAND NAME]";
 const FLAVOR = "Lebanese BBQ";
 const FLAVOR_AR = "شواء لبناني";
@@ -613,6 +630,7 @@ function MultiFront() {
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 export default function ProductVisualization() {
+  const { isMobile } = useResponsive();
   const [sku, setSku] = useState("single");
   const [panel, setPanel] = useState("front");
   const [loaded, setLoaded] = useState(false);
@@ -638,19 +656,19 @@ export default function ProductVisualization() {
       {/* Header */}
       <div style={{
         borderBottom: "1px solid #1C1810",
-        padding: "20px 32px 16px",
-        display: "flex", justifyContent: "space-between", alignItems: "flex-end",
+        padding: isMobile ? "16px 24px 14px" : "20px 32px 16px",
+        display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "flex-end",
         flexWrap: "wrap", gap: 12,
-        background: "linear-gradient(to bottom, #0E0C08, #0A0806)"
+        background: "linear-gradient(to bottom, #0E0C08, #0A0806)", flexDirection: isMobile ? "column" : "row"
       }}>
         <div>
-          <div style={{ fontSize: 9, color: GOLD, letterSpacing: "0.35em", marginBottom: 6, opacity: 0.7 }}>
+          <div style={{ fontSize: isMobile ? 8 : 9, color: GOLD, letterSpacing: "0.35em", marginBottom: 6, opacity: 0.7 }}>
             KITS ADVISORY GROUP · PRODUCT VISUALIZATION · REF: KAG-JRK-VIZ-001
           </div>
-          <div style={{ fontSize: "clamp(15px,2.5vw,22px)", color: CREAM, letterSpacing: "0.08em", fontWeight: 400 }}>
+          <div style={{ fontSize: isMobile ? "clamp(15px,4vw,22px)" : "clamp(15px,2.5vw,22px)", color: CREAM, letterSpacing: "0.08em", fontWeight: 400 }}>
             Packaging Concept — Visualization Draft
           </div>
-          <div style={{ fontSize: 11, color: CREAM, opacity: 0.35, marginTop: 4, letterSpacing: "0.15em" }}>
+          <div style={{ fontSize: isMobile ? 10 : 11, color: CREAM, opacity: 0.35, marginTop: 4, letterSpacing: "0.15em" }}>
             All placeholders pending board decision · Not for print
           </div>
         </div>
@@ -675,9 +693,9 @@ export default function ProductVisualization() {
 
       {/* Controls */}
       <div style={{
-        padding: "14px 32px",
+        padding: isMobile ? "12px 24px" : "14px 32px",
         borderBottom: "1px solid #1C1810",
-        display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap"
+        display: "flex", gap: isMobile ? 16 : 24, alignItems: isMobile ? "flex-start" : "center", flexWrap: "wrap", flexDirection: isMobile ? "column" : "row"
       }}>
         {/* SKU toggle */}
         <div>
@@ -725,11 +743,11 @@ export default function ProductVisualization() {
         flex: 1,
         display: "flex",
         justifyContent: "center",
-        alignItems: "flex-start",
-        padding: "48px 32px 64px",
-        gap: 48,
+        alignItems: isMobile ? "center" : "flex-start",
+        padding: isMobile ? "32px 20px 48px" : "48px 32px 64px",
+        gap: isMobile ? 24 : 48,
         flexWrap: "wrap",
-        background: "radial-gradient(ellipse at 50% 30%, #1A1610 0%, #0A0806 60%)",
+        background: "radial-gradient(ellipse at 50% 30%, #1A1610 0%, #0A0806 60%)", flexDirection: isMobile ? "column" : "row"
       }}>
 
         {/* Main bag */}
@@ -968,11 +986,11 @@ export default function ProductVisualization() {
 
         {/* Annotations panel */}
         <div style={{
-          maxWidth: 280,
+          maxWidth: isMobile ? "100%" : 280,
           display: "flex",
           flexDirection: "column",
           gap: 10,
-          paddingTop: 8,
+          paddingTop: isMobile ? 0 : 8,
           opacity: loaded ? 1 : 0,
           transform: loaded ? "translateX(0)" : "translateX(20px)",
           transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s",
@@ -1085,15 +1103,15 @@ export default function ProductVisualization() {
       {/* Footer */}
       <div style={{
         borderTop: "1px solid #1C1810",
-        padding: "12px 32px",
+        padding: isMobile ? "12px 24px" : "12px 32px",
         display: "flex", justifyContent: "space-between", alignItems: "center",
         flexWrap: "wrap", gap: 8,
         background: "#08060A"
       }}>
-        <span style={{ fontSize: 8, color: CREAM, opacity: 0.2, letterSpacing: "0.2em" }}>
+        <span style={{ fontSize: isMobile ? 7 : 8, color: CREAM, opacity: 0.2, letterSpacing: "0.2em" }}>
           KITS ADVISORY GROUP · VISUALIZATION DRAFT · NOT FOR PRINT · CONFIDENTIAL
         </span>
-        <span style={{ fontSize: 8, color: GOLD, opacity: 0.3, letterSpacing: "0.15em" }}>
+        <span style={{ fontSize: isMobile ? 7 : 8, color: GOLD, opacity: 0.3, letterSpacing: "0.15em" }}>
           KAG-JRK-VIZ-001 · ALL PLACEHOLDERS PENDING BOARD DECISION
         </span>
       </div>

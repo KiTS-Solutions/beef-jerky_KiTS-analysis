@@ -1,4 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
 
 const sections = [
   {
@@ -256,99 +273,89 @@ const sections = [
 ];
 
 export default function BeefJerkyAdvisory() {
-  const [active, setActive] = useState("overview");
+  const { isMobile } = useResponsive();
+  const [active, setActive] = useState(sections[0].id);
   const [expandedItems, setExpandedItems] = useState({});
-
-  const activeSection = sections.find(s => s.id === active);
 
   const toggleItem = (sectionId: string, idx: number) => {
     const key = `${sectionId}-${idx}`;
-    setExpandedItems((prev: any) => ({ ...prev, [key]: !prev[key] }));
+    setExpandedItems(prev => ({ ...prev, [key]: !(prev as any)[key] }));
   };
+
+  const activeSection = sections.find(s => s.id === active);
 
   return (
     <div style={{
       fontFamily: "'Georgia', 'Times New Roman', serif",
-      background: "#0F0E0B",
+      background: "#0A0908",
       minHeight: "100vh",
       color: "#E8E0D0",
       display: "flex",
-      flexDirection: "column"
+      flexDirection: isMobile ? "column" : "row",
     }}>
-      {/* Header */}
-      <header style={{
-        borderBottom: "1px solid #2A2820",
-        padding: "32px 40px 24px",
-        background: "#0F0E0B"
+      {/* Sidebar Navigation */}
+      <nav style={{
+        width: isMobile ? "100%" : 260,
+        background: "#0D0C0A",
+        borderRight: isMobile ? "none" : "1px solid #1E1C16",
+        borderBottom: isMobile ? "1px solid #1E1C16" : "none",
+        padding: isMobile ? "20px 16px" : "28px 20px",
+        display: "flex",
+        flexDirection: "column",
+        flexShrink: 0,
       }}>
-        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-          <div>
-            <div style={{ fontSize: 11, letterSpacing: "0.25em", color: "#8A7E6A", textTransform: "uppercase", marginBottom: 8, fontFamily: "monospace" }}>
-              KITS Advisory Group · Confidential
-            </div>
-            <h1 style={{ margin: 0, fontSize: "clamp(22px, 4vw, 36px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.2 }}>
-              Beef Jerky Venture
-            </h1>
-            <h2 style={{ margin: "4px 0 0", fontSize: "clamp(13px, 2vw, 17px)", fontWeight: 400, color: "#C8A96E", letterSpacing: "0.05em" }}>
-              Lebanese Market Entry — Full Advisory Framework
-            </h2>
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <div style={{ fontSize: 11, color: "#5A5245", fontFamily: "monospace", letterSpacing: "0.1em" }}>REF: KAG-JRK-001</div>
-            <div style={{ fontSize: 11, color: "#5A5245", fontFamily: "monospace", marginTop: 4 }}>10 SECTIONS · PHASE 0→4</div>
-          </div>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: "#5A5040", letterSpacing: "0.3em", marginBottom: isMobile ? 16 : 24 }}>
+          KITS ADVISORY GROUP · REF: KAG-JRK-001 · CONFIDENTIAL
         </div>
-      </header>
-
-      <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
-        {/* Sidebar */}
-        <nav style={{
-          width: 220,
-          flexShrink: 0,
-          borderRight: "1px solid #2A2820",
-          padding: "24px 0",
-          overflowY: "auto",
-          background: "#0C0B09"
-        }}>
+        <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(16px, 4vw, 20px)" : "clamp(16px, 2.5vw, 20px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.3, marginBottom: isMobile ? 20 : 32 }}>
+          Beef Jerky Advisory
+        </h1>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0, flex: 1, display: isMobile ? "flex" : "block", flexDirection: isMobile ? "row" : "column", overflowX: isMobile ? "auto" : "visible", WebkitOverflowScrolling: "touch", gap: isMobile ? 8 : 0 }}>
           {sections.map(s => (
-            <button
-              key={s.id}
-              onClick={() => setActive(s.id)}
-              style={{
-                display: "block",
-                width: "100%",
-                textAlign: "left",
-                background: active === s.id ? "#1A1810" : "transparent",
-                border: "none",
-                borderLeft: active === s.id ? `3px solid ${s.color}` : "3px solid transparent",
-                padding: "12px 20px",
-                cursor: "pointer",
-                transition: "all 0.15s ease"
-              }}
-            >
-              <div style={{ fontFamily: "monospace", fontSize: 10, color: active === s.id ? s.color : "#4A4438", letterSpacing: "0.15em", marginBottom: 4 }}>
-                {s.code}
-              </div>
-              <div style={{ fontSize: 12, color: active === s.id ? "#E8E0D0" : "#7A6E5E", lineHeight: 1.4, fontFamily: "Georgia, serif" }}>
+            <li key={s.id} style={{ marginBottom: isMobile ? 0 : 4, flexShrink: 0 }}>
+              <button
+                onClick={() => setActive(s.id)}
+                style={{
+                  width: isMobile ? "auto" : "100%",
+                  textAlign: "left",
+                  padding: isMobile ? "8px 12px" : "10px 12px",
+                  borderRadius: 4,
+                  border: "none",
+                  cursor: "pointer",
+                  fontSize: isMobile ? 12 : 13,
+                  whiteSpace: isMobile ? "nowrap" : "normal",
+                  background: active === s.id ? `${s.color}15` : "transparent",
+                  color: active === s.id ? s.color : "#6A6050",
+                  fontWeight: active === s.id ? "bold" : "normal",
+                  transition: "all 0.15s",
+                  WebkitTapHighlightColor: "transparent",
+                  touchAction: "manipulation",
+                }}
+              >
+                <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, marginRight: 8, opacity: 0.6 }}>{s.code}</span>
                 {s.title}
-              </div>
-            </button>
+              </button>
+            </li>
           ))}
-        </nav>
+        </ul>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: "#3A3428", letterSpacing: "0.15em", marginTop: isMobile ? 16 : 20 }}>
+          NOT FOR DISTRIBUTION
+        </div>
+      </nav>
 
-        {/* Main Content */}
-        <main style={{ flex: 1, overflowY: "auto", padding: "40px" }}>
+      {/* Main Content */}
+      <main style={{ flex: 1, overflowY: "auto", padding: isMobile ? "24px 20px" : "40px", WebkitOverflowScrolling: "touch" }}>
           {activeSection && (
             <div key={activeSection.id}>
               {/* Section Header */}
-              <div style={{ marginBottom: 36 }}>
-                <div style={{ fontFamily: "monospace", fontSize: 11, color: activeSection.color, letterSpacing: "0.2em", marginBottom: 10 }}>
+              <div style={{ marginBottom: isMobile ? 28 : 36 }}>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: activeSection.color, letterSpacing: "0.2em", marginBottom: 10 }}>
                   SECTION {activeSection.code}
                 </div>
-                <h2 style={{ margin: 0, fontSize: "clamp(18px, 3vw, 28px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.3 }}>
+                <h2 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 28px)" : "clamp(18px, 3vw, 28px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.3 }}>
                   {activeSection.title}
                 </h2>
-                <div style={{ marginTop: 16, height: 1, background: `linear-gradient(to right, ${activeSection.color}, transparent)`, maxWidth: 400 }} />
+                <div style={{ marginTop: 16, height: 1, background: `linear-gradient(to right, ${activeSection.color}, transparent)`, maxWidth: isMobile ? "100%" : 400 }} />
               </div>
 
               {/* Content Items */}
@@ -372,26 +379,28 @@ export default function BeefJerkyAdvisory() {
                           width: "100%",
                           background: "transparent",
                           border: "none",
-                          padding: "16px 20px",
+                          padding: isMobile ? "14px 16px" : "16px 20px",
                           cursor: "pointer",
-                          textAlign: "left"
+                          textAlign: "left",
+                          WebkitTapHighlightColor: "transparent",
+                          touchAction: "manipulation",
                         }}
                       >
-                        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                          <div style={{ width: 6, height: 6, borderRadius: "50%", background: activeSection.color, flexShrink: 0 }} />
-                          <span style={{ fontSize: 14, color: "#D4C9B4", fontFamily: "Georgia, serif", fontWeight: 400 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 10 : 12 }}>
+                          <div style={{ width: isMobile ? 8 : 6, height: isMobile ? 8 : 6, borderRadius: "50%", background: activeSection.color, flexShrink: 0 }} />
+                          <span style={{ fontSize: isMobile ? 13 : 14, color: "#D4C9B4", fontFamily: "Georgia, serif", fontWeight: 400 }}>
                             {item.heading}
                           </span>
                         </div>
-                        <span style={{ color: "#5A5245", fontSize: 16, flexShrink: 0 }}>
+                        <span style={{ color: "#5A5245", fontSize: isMobile ? 18 : 16, flexShrink: 0 }}>
                           {expanded ? "−" : "+"}
                         </span>
                       </button>
                       {expanded && (
-                        <div style={{ padding: "0 20px 20px 38px" }}>
+                        <div style={{ padding: isMobile ? "0 16px 16px 16px" : "0 20px 20px 38px" }}>
                           <p style={{
                             margin: 0,
-                            fontSize: 14,
+                            fontSize: isMobile ? 13 : 14,
                             lineHeight: 1.85,
                             color: "#9A8E7E",
                             fontFamily: "Georgia, serif"
@@ -406,8 +415,8 @@ export default function BeefJerkyAdvisory() {
               </div>
 
               {/* Section Footer */}
-              <div style={{ marginTop: 40, paddingTop: 24, borderTop: "1px solid #1E1C16", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <div style={{ fontFamily: "monospace", fontSize: 10, color: "#3A3428", letterSpacing: "0.15em" }}>
+              <div style={{ marginTop: isMobile ? 32 : 40, paddingTop: 24, borderTop: "1px solid #1E1C16", display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 0 }}>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#3A3428", letterSpacing: "0.15em" }}>
                   KITS ADVISORY · CONFIDENTIAL · NOT FOR DISTRIBUTION
                 </div>
                 <div style={{ display: "flex", gap: 8 }}>
@@ -416,12 +425,14 @@ export default function BeefJerkyAdvisory() {
                       key={s.id}
                       onClick={() => setActive(s.id)}
                       style={{
-                        width: 8, height: 8,
+                        width: isMobile ? 10 : 8, height: isMobile ? 10 : 8,
                         borderRadius: "50%",
                         background: active === s.id ? activeSection.color : "#2A2820",
                         border: "none",
                         cursor: "pointer",
-                        padding: 0
+                        padding: 0,
+                        WebkitTapHighlightColor: "transparent",
+                        touchAction: "manipulation",
                       }}
                     />
                   ))}
@@ -431,6 +442,5 @@ export default function BeefJerkyAdvisory() {
           )}
         </main>
       </div>
-    </div>
   );
 }

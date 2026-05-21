@@ -1,5 +1,25 @@
 import { useState, useEffect, useCallback } from "react";
 
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      setIsMobile(width < 768);
+      setIsTablet(width >= 768 && width < 1024);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile, isTablet };
+}
+
 // ─── BRAND CONSTANTS ──────────────────────────────────────────────────────────
 const C = {
   void: "#050404",
@@ -484,30 +504,32 @@ const SLIDES = [
 // ─── SLIDE RENDERERS ──────────────────────────────────────────────────────────
 
 function CoverSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: "0 80px", position: "relative" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", padding: isMobile ? "0 24px" : isTablet ? "0 48px" : "0 80px", position: "relative" }}>
       <div style={{ position: "absolute", inset: 0, opacity: 0.04,
         backgroundImage: `linear-gradient(${C.gold} 1px, transparent 1px), linear-gradient(90deg, ${C.gold} 1px, transparent 1px)`,
         backgroundSize: "40px 40px" }} />
       <div style={{ position: "absolute", right: 0, top: 0, width: "35%", height: "100%",
         background: `linear-gradient(135deg, ${C.gold}06 0%, transparent 60%)`, pointerEvents: "none" }} />
-      <div style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, opacity: 0.6, letterSpacing: "0.4em", marginBottom: 24 }}>
+      <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 11, color: C.gold, opacity: 0.6, letterSpacing: "0.4em", marginBottom: isMobile ? 16 : 24 }}>
         KITS ADVISORY GROUP · CONFIDENTIAL · KAG-JRK-BOARD-001
       </div>
-      <h1 style={{ fontFamily: "'Didot','Bodoni MT','Playfair Display',Georgia,serif", fontSize: "clamp(48px,7vw,88px)", fontWeight: 400, color: C.strike, margin: "0 0 8px", letterSpacing: "0.2em", lineHeight: 1 }}>
+      <h1 style={{ fontFamily: "'Didot','Bodoni MT','Playfair Display',Georgia,serif", fontSize: "clamp(32px,8vw,88px)", fontWeight: 400, color: C.strike, margin: "0 0 8px", letterSpacing: "0.2em", lineHeight: 1 }}>
         STRIKE
       </h1>
-      <h2 style={{ fontFamily: "'Didot','Bodoni MT',Georgia,serif", fontSize: "clamp(20px,3vw,36px)", fontWeight: 400, color: C.gold, margin: "0 0 32px", letterSpacing: "0.1em" }}>
+      <h2 style={{ fontFamily: "'Didot','Bodoni MT',Georgia,serif", fontSize: "clamp(16px,4vw,36px)", fontWeight: 400, color: C.gold, margin: "0 0 24px", letterSpacing: "0.1em" }}>
         BITES
       </h2>
-      <div style={{ width: 80, height: 2, background: `linear-gradient(to right, ${C.gold}, transparent)`, marginBottom: 32 }} />
-      <p style={{ fontSize: "clamp(14px,2vw,20px)", color: C.cream, opacity: 0.8, margin: "0 0 8px", letterSpacing: "0.05em", fontFamily: "Georgia,serif" }}>
+      <div style={{ width: isMobile ? 60 : 80, height: 2, background: `linear-gradient(to right, ${C.gold}, transparent)`, marginBottom: isMobile ? 24 : 32 }} />
+      <p style={{ fontSize: isMobile ? 14 : "clamp(14px,2vw,20px)", color: C.cream, opacity: 0.8, margin: "0 0 8px", letterSpacing: "0.05em", fontFamily: "Georgia,serif" }}>
         Board Meeting — Initial Advisory Presentation
       </p>
-      <p style={{ fontFamily: "monospace", fontSize: 11, color: C.creamDim, opacity: 0.5, margin: 0, letterSpacing: "0.2em" }}>
+      <p style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 11, color: C.creamDim, opacity: 0.5, margin: 0, letterSpacing: "0.2em" }}>
         {slide.meta}
       </p>
-      <div style={{ position: "absolute", bottom: 40, right: 80, fontFamily: "monospace", fontSize: 9, color: C.creamDim, opacity: 0.3, letterSpacing: "0.2em" }}>
+      <div style={{ position: "absolute", bottom: isMobile ? 24 : 40, right: isMobile ? 24 : 80, fontFamily: "monospace", fontSize: isMobile ? 7 : 9, color: C.creamDim, opacity: 0.3, letterSpacing: "0.2em" }}>
         PREMIUM PORTIONED BEEF JERKY · LEBANESE MARKET ENTRY · GCC SCALE
       </div>
     </div>
@@ -515,15 +537,17 @@ function CoverSlide({ slide }: { slide: any }) {
 }
 
 function AgendaSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "48px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "36px 48px" : "48px 80px" }}>
       <SlideHeader slide={slide} />
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "6px 48px", alignContent: "start", marginTop: 16 }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? "6px 16px" : "6px 48px", alignContent: "start", marginTop: 16 }}>
         {slide.items.map((item: any, i: number) => (
-          <div key={i} style={{ display: "flex", gap: 16, alignItems: "center", padding: "10px 0", borderBottom: `1px solid ${C.ash}` }}>
-            <span style={{ fontFamily: "monospace", fontSize: 10, color: C.gold, flexShrink: 0, opacity: 0.7 }}>{item.n}</span>
-            <span style={{ fontSize: 14, color: C.cream, flex: 1, lineHeight: 1.4 }}>{item.text}</span>
-            <span style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, flexShrink: 0, background: `${C.ash}`, padding: "2px 8px", borderRadius: 2 }}>{item.tag}</span>
+          <div key={i} style={{ display: "flex", gap: isMobile ? 12 : 16, alignItems: isMobile ? "flex-start" : "center", padding: isMobile ? "12px 0" : "10px 0", borderBottom: `1px solid ${C.ash}`, flexDirection: isMobile ? "column" : "row" }}>
+            <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: C.gold, flexShrink: 0, opacity: 0.7 }}>{item.n}</span>
+            <span style={{ fontSize: isMobile ? 13 : 14, color: C.cream, flex: 1, lineHeight: 1.4 }}>{item.text}</span>
+            <span style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, flexShrink: 0, background: `${C.ash}`, padding: "2px 8px", borderRadius: 2 }}>{item.tag}</span>
           </div>
         ))}
       </div>
@@ -532,19 +556,21 @@ function AgendaSlide({ slide }: { slide: any }) {
 }
 
 function StatsSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "48px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "36px 48px" : "48px 80px" }}>
       <SlideHeader slide={slide} />
-      <p style={{ fontSize: 20, color: C.gold, fontFamily: "Georgia,serif", margin: "16px 0 32px", lineHeight: 1.5, fontStyle: "italic" }}>
+      <p style={{ fontSize: isMobile ? 16 : 20, color: C.gold, fontFamily: "Georgia,serif", margin: "16px 0 24px", lineHeight: 1.5, fontStyle: "italic" }}>
         "{slide.headline}"
       </p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16, flex: 1 }}>
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: isMobile ? 12 : 16, flex: 1 }}>
         {slide.stats.map((s: any, i: number) => (
-          <div key={i} style={{ background: `${s.color}08`, border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 4, padding: "24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-            <div style={{ fontFamily: "monospace", fontSize: "clamp(24px,3vw,40px)", color: s.color, lineHeight: 1, marginBottom: 12 }}>{s.value}</div>
+          <div key={i} style={{ background: `${s.color}08`, border: `1px solid ${s.color}30`, borderTop: `3px solid ${s.color}`, borderRadius: 4, padding: isMobile ? "16px 14px" : "24px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? "clamp(20px,5vw,32px)" : "clamp(24px,3vw,40px)", color: s.color, lineHeight: 1, marginBottom: isMobile ? 8 : 12 }}>{s.value}</div>
             <div>
-              <div style={{ fontSize: 13, color: C.cream, marginBottom: 4, lineHeight: 1.4 }}>{s.label}</div>
-              <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.05em" }}>{s.sub}</div>
+              <div style={{ fontSize: isMobile ? 11 : 13, color: C.cream, marginBottom: 4, lineHeight: 1.4 }}>{s.label}</div>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, letterSpacing: "0.05em" }}>{s.sub}</div>
             </div>
           </div>
         ))}
@@ -554,17 +580,19 @@ function StatsSlide({ slide }: { slide: any }) {
 }
 
 function TwoColSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "48px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "36px 48px" : "48px 80px" }}>
       <SlideHeader slide={slide} />
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32, marginTop: 16 }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 20 : 32, marginTop: 16 }}>
         {[slide.left, slide.right].map((col: any, ci: number) => (
-          <div key={ci} style={{ background: ci === 0 ? `${C.gold}06` : `${C.greenBright}06`, border: `1px solid ${ci === 0 ? C.gold : C.greenBright}20`, borderRadius: 4, padding: "24px 28px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: ci === 0 ? C.gold : C.greenBright, letterSpacing: "0.2em", marginBottom: 16 }}>{col.heading}</div>
+          <div key={ci} style={{ background: ci === 0 ? `${C.gold}06` : `${C.greenBright}06`, border: `1px solid ${ci === 0 ? C.gold : C.greenBright}20`, borderRadius: 4, padding: isMobile ? "20px 24px" : "24px 28px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: ci === 0 ? C.gold : C.greenBright, letterSpacing: "0.2em", marginBottom: isMobile ? 12 : 16 }}>{col.heading}</div>
             {col.items.map((item: any, ii: number) => (
-              <div key={ii} style={{ display: "flex", gap: 12, marginBottom: 12, alignItems: "flex-start" }}>
-                <span style={{ color: ci === 0 ? C.gold : C.greenBright, fontSize: 10, flexShrink: 0, marginTop: 3 }}>→</span>
-                <p style={{ margin: 0, fontSize: 13, color: C.cream, opacity: 0.85, lineHeight: 1.6 }}>{item}</p>
+              <div key={ii} style={{ display: "flex", gap: isMobile ? 10 : 12, marginBottom: isMobile ? 10 : 12, alignItems: "flex-start" }}>
+                <span style={{ color: ci === 0 ? C.gold : C.greenBright, fontSize: isMobile ? 9 : 10, flexShrink: 0, marginTop: 3 }}>→</span>
+                <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: C.cream, opacity: 0.85, lineHeight: 1.6 }}>{item}</p>
               </div>
             ))}
           </div>
@@ -575,29 +603,31 @@ function TwoColSlide({ slide }: { slide: any }) {
 }
 
 function ProductSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "40px 80px" }}>
       <SlideHeader slide={slide} />
-      <p style={{ fontSize: 15, color: C.gold, fontFamily: "Georgia,serif", margin: "8px 0 20px", fontStyle: "italic" }}>{slide.tagline}</p>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8, marginBottom: 20 }}>
+      <p style={{ fontSize: isMobile ? 13 : 15, color: C.gold, fontFamily: "Georgia,serif", margin: "8px 0 16px", fontStyle: "italic" }}>{slide.tagline}</p>
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)", gap: isMobile ? 10 : 8, marginBottom: isMobile ? 16 : 20 }}>
         {slide.pillars.map((p: any, i: number) => (
-          <div key={i} style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 3, padding: "12px 14px" }}>
+          <div key={i} style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 3, padding: isMobile ? "14px 16px" : "12px 14px" }}>
             <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 6 }}>
-              <span style={{ color: C.gold, fontSize: 10 }}>{p.icon}</span>
-              <span style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.1em" }}>{p.label}</span>
+              <span style={{ color: C.gold, fontSize: isMobile ? 12 : 10 }}>{p.icon}</span>
+              <span style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 9, color: C.gold, letterSpacing: "0.1em" }}>{p.label}</span>
             </div>
-            <p style={{ margin: 0, fontSize: 12, color: C.cream, opacity: 0.8, lineHeight: 1.5 }}>{p.value}</p>
+            <p style={{ margin: 0, fontSize: isMobile ? 13 : 12, color: C.cream, opacity: 0.8, lineHeight: 1.5 }}>{p.value}</p>
           </div>
         ))}
       </div>
-      <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.2em", marginBottom: 10 }}>PRODUCT LINE ARCHITECTURE</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 6 }}>
+      <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, letterSpacing: "0.2em", marginBottom: isMobile ? 8 : 10 }}>PRODUCT LINE ARCHITECTURE</div>
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: isMobile ? 8 : 6 }}>
         {slide.line.map((l: any, i: number) => (
-          <div key={i} style={{ background: `${l.color}08`, border: `1px solid ${l.color}30`, borderLeft: `3px solid ${l.color}`, borderRadius: 3, padding: "10px 12px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: l.color, marginBottom: 4 }}>{l.phase}</div>
-            <div style={{ fontSize: 12, color: C.cream, marginBottom: 3 }}>{l.name}</div>
-            <div style={{ fontSize: 10, color: l.color, marginBottom: 3 }}>{l.flavor}</div>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>{l.channel}</div>
+          <div key={i} style={{ background: `${l.color}08`, border: `1px solid ${l.color}30`, borderLeft: `3px solid ${l.color}`, borderRadius: 3, padding: isMobile ? "12px 14px" : "10px 12px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 8, color: l.color, marginBottom: 4 }}>{l.phase}</div>
+            <div style={{ fontSize: isMobile ? 13 : 12, color: C.cream, marginBottom: 3 }}>{l.name}</div>
+            <div style={{ fontSize: isMobile ? 11 : 10, color: l.color, marginBottom: 3 }}>{l.flavor}</div>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 8, color: C.creamDim }}>{l.channel}</div>
           </div>
         ))}
       </div>
@@ -606,18 +636,20 @@ function ProductSlide({ slide }: { slide: any }) {
 }
 
 function MatrixSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
   const cols = ["criterion", "jl", "ww", "qb", "bb", "us"];
   const headers = ["CRITERION", "Jack Link's", "Wild West", "Quest Bar", "Barebells", "STRIKE"];
+  
   return (
-    <div style={{ height: "90%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "90%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 16px" : isTablet ? "32px 48px" : "40px 80px" }}>
       <SlideHeader slide={slide} />
-      <p style={{ fontSize: 12, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 16px", letterSpacing: "0.15em" }}>{slide.subtitle}</p>
-      <div style={{ flex: 1, overflowX: "auto" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+      <p style={{ fontSize: isMobile ? 10 : 12, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 12px", letterSpacing: "0.15em" }}>{slide.subtitle}</p>
+      <div style={{ flex: 1, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: isMobile ? 10 : 12, minWidth: isMobile ? "600px" : "auto" }}>
           <thead>
             <tr>
               {headers.map((h: any, i: number) => (
-                <th key={i} style={{ padding: "8px 12px", fontFamily: "monospace", fontSize: 9, color: i === 0 ? C.creamDim : i === 5 ? C.greenBright : C.creamDim, letterSpacing: "0.1em", textAlign: "left", borderBottom: `2px solid ${i === 5 ? C.greenBright : C.ash}`, background: i === 5 ? `${C.greenBright}10` : "transparent", whiteSpace: "nowrap" }}>{h}</th>
+                <th key={i} style={{ padding: isMobile ? "6px 8px" : "8px 12px", fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: i === 0 ? C.creamDim : i === 5 ? C.greenBright : C.creamDim, letterSpacing: "0.1em", textAlign: "left", borderBottom: `2px solid ${i === 5 ? C.greenBright : C.ash}`, background: i === 5 ? `${C.greenBright}10` : "transparent", whiteSpace: "nowrap" }}>{h}</th>
               ))}
             </tr>
           </thead>
@@ -625,7 +657,7 @@ function MatrixSlide({ slide }: { slide: any }) {
             {slide.rows.map((row: any, ri: number) => (
               <tr key={ri} style={{ background: ri % 2 === 0 ? `${C.charcoal}` : C.obsidian }}>
                 {cols.map((col: any, ci: number) => (
-                  <td key={ci} style={{ padding: "10px 12px", fontSize: ci === 0 ? 12 : 11, color: ci === 5 ? (row.usWin ? C.greenBright : C.cream) : ci === 0 ? C.cream : C.creamDim, background: ci === 5 ? `${C.greenBright}08` : "transparent", borderBottom: `1px solid ${C.ash}`, fontFamily: ci > 0 ? "monospace" : "Georgia,serif", lineHeight: 1.3 }}>
+                  <td key={ci} style={{ padding: isMobile ? "8px 10px" : "10px 12px", fontSize: ci === 0 ? (isMobile ? 10 : 12) : (isMobile ? 9 : 11), color: ci === 5 ? (row.usWin ? C.greenBright : C.cream) : ci === 0 ? C.cream : C.creamDim, background: ci === 5 ? `${C.greenBright}08` : "transparent", borderBottom: `1px solid ${C.ash}`, fontFamily: ci > 0 ? "monospace" : "Georgia,serif", lineHeight: 1.3 }}>
                     {row[col]}
                   </td>
                 ))}
@@ -634,34 +666,36 @@ function MatrixSlide({ slide }: { slide: any }) {
           </tbody>
         </table>
       </div>
-      <div style={{ marginTop: 5, padding: "10px 16px", background: `${C.greenBright}10`, border: `1px solid ${C.greenBright}30`, borderRadius: 3, display: "flex", gap: 10, alignItems: "center" }}>
-        <span style={{ color: C.greenBright, fontSize: 14 }}>★</span>
-        <p style={{ margin: 0, fontSize: 12, color: C.greenBright, fontFamily: "Georgia,serif" }}>STRIKE wins on every criterion. No competitor holds more than three of these seven advantages simultaneously. We hold all seven.</p>
+      <div style={{ marginTop: 5, padding: isMobile ? "12px 14px" : "10px 16px", background: `${C.greenBright}10`, border: `1px solid ${C.greenBright}30`, borderRadius: 3, display: "flex", gap: 10, alignItems: isMobile ? "flex-start" : "center", flexDirection: isMobile ? "column" : "row" }}>
+        <span style={{ color: C.greenBright, fontSize: isMobile ? 12 : 14 }}>★</span>
+        <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: C.greenBright, fontFamily: "Georgia,serif", lineHeight: 1.5 }}>STRIKE wins on every criterion. No competitor holds more than three of these seven advantages simultaneously. We hold all seven.</p>
       </div>
     </div>
   );
 }
 
 function BrandSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "40px 80px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: isMobile ? "center" : "flex-start", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 0 }}>
         <SlideHeader slide={slide} />
         <div style={{ textAlign: "center", flexShrink: 0 }}>
-          <div style={{ fontSize: 32, fontFamily: "monospace", color: C.goldBright, lineHeight: 1 }}>{slide.score}</div>
-          <div style={{ fontFamily: "monospace", fontSize: 8, color: C.gold, letterSpacing: "0.1em" }}>/100 BRAND SCORE</div>
-          <div style={{ fontFamily: "monospace", fontSize: 7, color: C.greenBright, marginTop: 2 }}>APPROVED — STRONG</div>
+          <div style={{ fontSize: isMobile ? 28 : 32, fontFamily: "monospace", color: C.goldBright, lineHeight: 1 }}>{slide.score}</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: C.gold, letterSpacing: "0.1em" }}>/100 BRAND SCORE</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 6 : 7, color: C.greenBright, marginTop: 2 }}>APPROVED — STRONG</div>
         </div>
       </div>
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 16, alignContent: "start" }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 10 : 8, marginTop: 16, alignContent: "start" }}>
         {slide.elements.map((el: any, i: number) => (
-          <div key={i} style={{ background: C.charcoal, border: `1px solid ${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}20`, borderLeft: `3px solid ${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}`, borderRadius: 3, padding: "12px 14px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, alignItems: "center" }}>
-              <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.1em" }}>{el.label}</div>
-              <span style={{ fontFamily: "monospace", fontSize: 8, color: el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber, background: `${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}15`, padding: "1px 6px", borderRadius: 2 }}>{el.verdict}</span>
+          <div key={i} style={{ background: C.charcoal, border: `1px solid ${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}20`, borderLeft: `3px solid ${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}`, borderRadius: 3, padding: isMobile ? "14px 16px" : "12px 14px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, alignItems: isMobile ? "flex-start" : "center", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 4 : 0 }}>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, letterSpacing: "0.1em" }}>{el.label}</div>
+              <span style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber, background: `${el.verdict === "APPROVED" ? C.greenBright : el.verdict === "RECOMMENDED" ? C.gold : C.amber}15`, padding: "1px 6px", borderRadius: 2 }}>{el.verdict}</span>
             </div>
-            <div style={{ fontSize: 15, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 6 }}>{el.value}</div>
-            <p style={{ margin: 0, fontSize: 11, color: C.creamDim, lineHeight: 1.5 }}>{el.note}</p>
+            <div style={{ fontSize: isMobile ? 14 : 15, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 6 }}>{el.value}</div>
+            <p style={{ margin: 0, fontSize: isMobile ? 10 : 11, color: C.creamDim, lineHeight: 1.5 }}>{el.note}</p>
           </div>
         ))}
       </div>
@@ -670,18 +704,20 @@ function BrandSlide({ slide }: { slide: any }) {
 }
 
 function PhasesSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "40px 80px" }}>
       <SlideHeader slide={slide} />
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 10, marginTop: 16, alignContent: "start" }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: isMobile ? 12 : 10, marginTop: 16, alignContent: "start" }}>
         {slide.phases.map((ph: any, i: number) => (
-          <div key={i} style={{ background: `${ph.color}06`, border: `1px solid ${ph.color}25`, borderTop: `3px solid ${ph.color}`, borderRadius: 4, padding: "16px 14px", display: "flex", flexDirection: "column" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: ph.color, letterSpacing: "0.15em", marginBottom: 4 }}>{ph.phase}</div>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, marginBottom: 8 }}>{ph.time}</div>
-            <div style={{ fontSize: 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 12 }}>{ph.title}</div>
+          <div key={i} style={{ background: `${ph.color}06`, border: `1px solid ${ph.color}25`, borderTop: `3px solid ${ph.color}`, borderRadius: 4, padding: isMobile ? "18px 16px" : "16px 14px", display: "flex", flexDirection: "column" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: ph.color, letterSpacing: "0.15em", marginBottom: 4 }}>{ph.phase}</div>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: C.creamDim, marginBottom: 8 }}>{ph.time}</div>
+            <div style={{ fontSize: isMobile ? 12 : 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 12 }}>{ph.title}</div>
             <div style={{ flex: 1 }}>
               {ph.actions.map((a: any, ai: number) => (
-                <div key={ai} style={{ display: "flex", gap: 6, marginBottom: 7, alignItems: "flex-start" }}>
+                <div key={ai} style={{ display: "flex", gap: isMobile ? 6 : 6, marginBottom: isMobile ? 8 : 7, alignItems: "flex-start" }}>
                   <span style={{ color: ph.color, fontSize: 8, flexShrink: 0, marginTop: 3 }}>→</span>
                   <p style={{ margin: 0, fontSize: 10, color: C.creamDim, lineHeight: 1.5 }}>{a}</p>
                 </div>
@@ -695,55 +731,57 @@ function PhasesSlide({ slide }: { slide: any }) {
 }
 
 function TiersSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
   const [activeTier, setActiveTier] = useState(1);
   const t = slide.tiers[activeTier];
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "40px 80px" }}>
       <SlideHeader slide={slide} />
-      <div style={{ display: "flex", gap: 8, marginTop: 16, marginBottom: 16 }}>
+      <div style={{ display: "flex", gap: isMobile ? 6 : 8, marginTop: 16, marginBottom: 16, flexDirection: isMobile ? "column" : "row" }}>
         {slide.tiers.map((tier: any, i: number) => (
-          <button key={i} onClick={() => setActiveTier(i)} style={{ flex: 1, background: activeTier === i ? `${tier.color}18` : C.charcoal, border: `1px solid ${activeTier === i ? tier.color : C.ash}`, borderRadius: 4, padding: "12px 16px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative" }}>
-            {tier.recommended && <div style={{ position: "absolute", top: -8, left: "50%", transform: "translateX(-50%)", fontFamily: "monospace", fontSize: 7, color: C.gold, background: C.obsidian, padding: "2px 8px", border: `1px solid ${C.gold}40`, borderRadius: 2, whiteSpace: "nowrap" }}>KITS RECOMMENDED</div>}
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: tier.color, letterSpacing: "0.15em", marginBottom: 4 }}>{tier.tier}</div>
-            <div style={{ fontSize: 13, color: C.cream, marginBottom: 4 }}>{tier.name}</div>
-            <div style={{ fontFamily: "monospace", fontSize: 16, color: tier.color }}>{tier.total}</div>
+          <button key={i} onClick={() => setActiveTier(i)} style={{ flex: 1, background: activeTier === i ? `${tier.color}18` : C.charcoal, border: `1px solid ${activeTier === i ? tier.color : C.ash}`, borderRadius: 4, padding: isMobile ? "14px 16px" : "12px 16px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>
+            {tier.recommended && <div style={{ position: "absolute", top: isMobile ? -10 : -8, left: "50%", transform: "translateX(-50%)", fontFamily: "monospace", fontSize: isMobile ? 6 : 7, color: C.gold, background: C.obsidian, padding: "2px 8px", border: `1px solid ${C.gold}40`, borderRadius: 2, whiteSpace: "nowrap" }}>KITS RECOMMENDED</div>}
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: tier.color, letterSpacing: "0.15em", marginBottom: 4 }}>{tier.tier}</div>
+            <div style={{ fontSize: isMobile ? 12 : 13, color: C.cream, marginBottom: 4 }}>{tier.name}</div>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 18 : 16, color: tier.color }}>{tier.total}</div>
           </button>
         ))}
       </div>
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 16 : 12 }}>
         <div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 12 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: isMobile ? 10 : 8, marginBottom: 12 }}>
             {[
               { label: "Breakeven", value: t.breakeven },
               { label: "Gross Margin", value: t.margin },
               { label: "Accounts M6", value: t.accounts_m6 },
             ].map((m: any, i: number) => (
-              <div key={i} style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 3, padding: "10px 12px" }}>
-                <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, marginBottom: 4 }}>{m.label}</div>
-                <div style={{ fontFamily: "monospace", fontSize: 14, color: t.color }}>{m.value}</div>
+              <div key={i} style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 3, padding: isMobile ? "12px 14px" : "10px 12px" }}>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: C.creamDim, marginBottom: 4 }}>{m.label}</div>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 16 : 14, color: t.color }}>{m.value}</div>
               </div>
             ))}
           </div>
-          <div style={{ background: `${t.color}06`, border: `1px solid ${t.color}20`, borderRadius: 3, padding: "12px 14px", marginBottom: 8 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: t.color, marginBottom: 6 }}>SUITABLE FOR</div>
-            <p style={{ margin: 0, fontSize: 12, color: C.cream, lineHeight: 1.6 }}>{t.suitable}</p>
+          <div style={{ background: `${t.color}06`, border: `1px solid ${t.color}20`, borderRadius: 3, padding: isMobile ? "14px 16px" : "12px 14px", marginBottom: 8 }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: t.color, marginBottom: 6 }}>SUITABLE FOR</div>
+            <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: C.cream, lineHeight: 1.6 }}>{t.suitable}</p>
           </div>
-          <div style={{ background: `${C.red}08`, border: `1px solid ${C.red}20`, borderRadius: 3, padding: "12px 14px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.red, marginBottom: 6 }}>RISK FACTOR</div>
-            <p style={{ margin: 0, fontSize: 12, color: C.creamDim, lineHeight: 1.6 }}>{t.risk}</p>
+          <div style={{ background: `${C.red}08`, border: `1px solid ${C.red}20`, borderRadius: 3, padding: isMobile ? "14px 16px" : "12px 14px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.red, marginBottom: 6 }}>RISK FACTOR</div>
+            <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: C.creamDim, lineHeight: 1.6 }}>{t.risk}</p>
           </div>
         </div>
         <div>
-          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 10 }}>WHAT'S INCLUDED</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 10 }}>WHAT'S INCLUDED</div>
           {t.includes.map((inc: any, i: number) => (
-            <div key={i} style={{ display: "flex", gap: 10, marginBottom: 8, alignItems: "center", padding: "6px 0", borderBottom: `1px solid ${C.ash}` }}>
-              <span style={{ color: t.color, fontSize: 10, flexShrink: 0 }}>✓</span>
-              <span style={{ fontSize: 12, color: C.cream }}>{inc}</span>
+            <div key={i} style={{ display: "flex", gap: isMobile ? 8 : 10, marginBottom: 8, alignItems: "center", padding: "6px 0", borderBottom: `1px solid ${C.ash}` }}>
+              <span style={{ color: t.color, fontSize: isMobile ? 12 : 10, flexShrink: 0 }}>✓</span>
+              <span style={{ fontSize: isMobile ? 11 : 12, color: C.cream }}>{inc}</span>
             </div>
           ))}
-          <div style={{ marginTop: 12, padding: "10px 14px", background: `${t.color}10`, border: `1px solid ${t.color}30`, borderRadius: 3 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: t.color, marginBottom: 4 }}>REVENUE AT MONTH 6</div>
-            <div style={{ fontFamily: "monospace", fontSize: 20, color: t.color }}>{t.rev_m6}</div>
+          <div style={{ marginTop: 12, padding: isMobile ? "12px 16px" : "10px 14px", background: `${t.color}10`, border: `1px solid ${t.color}30`, borderRadius: 3 }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: t.color, marginBottom: 4 }}>REVENUE AT MONTH 6</div>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 24 : 20, color: t.color }}>{t.rev_m6}</div>
           </div>
         </div>
       </div>
@@ -752,21 +790,23 @@ function TiersSlide({ slide }: { slide: any }) {
 }
 
 function BlockersSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "40px 80px" }}>
       <SlideHeader slide={slide} />
-      <p style={{ fontSize: 12, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 14px", letterSpacing: "0.1em" }}>{slide.subtitle}</p>
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6, overflowY: "auto" }}>
+      <p style={{ fontSize: isMobile ? 10 : 12, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 12px", letterSpacing: "0.1em" }}>{slide.subtitle}</p>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: isMobile ? 10 : 6, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
         {slide.blockers.map((b: any, i: number) => (
-          <div key={i} style={{ background: C.charcoal, border: `1px solid ${b.color}25`, borderLeft: `4px solid ${b.color}`, borderRadius: 3, padding: "10px 16px", display: "flex", gap: 16, alignItems: "flex-start" }}>
-            <div style={{ flexShrink: 0, minWidth: 110 }}>
-              <div style={{ fontFamily: "monospace", fontSize: 8, color: b.color, background: `${b.color}15`, border: `1px solid ${b.color}30`, padding: "2px 8px", borderRadius: 2, letterSpacing: "0.1em", display: "inline-block", marginBottom: 4 }}>{b.urgency}</div>
-              <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>{b.owner}</div>
+          <div key={i} style={{ background: C.charcoal, border: `1px solid ${b.color}25`, borderLeft: `4px solid ${b.color}`, borderRadius: 3, padding: isMobile ? "14px 16px" : "10px 16px", display: "flex", gap: isMobile ? 12 : 16, alignItems: isMobile ? "flex-start" : "flex-start", flexDirection: isMobile ? "column" : "row" }}>
+            <div style={{ flexShrink: 0, minWidth: isMobile ? "auto" : 110 }}>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: b.color, background: `${b.color}15`, border: `1px solid ${b.color}30`, padding: "2px 8px", borderRadius: 2, letterSpacing: "0.1em", display: "inline-block", marginBottom: 4 }}>{b.urgency}</div>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: C.creamDim }}>{b.owner}</div>
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontSize: 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 4 }}>{b.item}</div>
-              <p style={{ margin: "0 0 4px", fontSize: 11, color: C.creamDim, lineHeight: 1.5 }}>{b.impact}</p>
-              <div style={{ fontFamily: "monospace", fontSize: 9, color: b.color }}>ACTION → {b.action}</div>
+              <div style={{ fontSize: isMobile ? 12 : 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 4 }}>{b.item}</div>
+              <p style={{ margin: "0 0 4px", fontSize: isMobile ? 10 : 11, color: C.creamDim, lineHeight: 1.5 }}>{b.impact}</p>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: b.color }}>ACTION → {b.action}</div>
             </div>
           </div>
         ))}
@@ -776,39 +816,41 @@ function BlockersSlide({ slide }: { slide: any }) {
 }
 
 function MandateSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "40px 80px" }}>
       <SlideHeader slide={slide} />
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 16 }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 20 : 16, marginTop: 16 }}>
         <div>
-          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>KITS SCOPE OF AUTHORITY</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>KITS SCOPE OF AUTHORITY</div>
           {slide.scope.map((area: any, i: number) => (
-            <div key={i} style={{ marginBottom: 12 }}>
-              <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, marginBottom: 6 }}>{area.area.toUpperCase()}</div>
+            <div key={i} style={{ marginBottom: isMobile ? 14 : 12 }}>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, marginBottom: 6 }}>{area.area.toUpperCase()}</div>
               {area.items.map((item: any, ii: number) => (
-                <div key={ii} style={{ display: "flex", gap: 8, marginBottom: 5 }}>
-                  <span style={{ color: C.gold, fontSize: 8, flexShrink: 0, marginTop: 2 }}>→</span>
-                  <span style={{ fontSize: 11, color: C.cream, lineHeight: 1.4 }}>{item}</span>
+                <div key={ii} style={{ display: "flex", gap: isMobile ? 6 : 8, marginBottom: 5 }}>
+                  <span style={{ color: C.gold, fontSize: isMobile ? 7 : 8, flexShrink: 0, marginTop: 2 }}>→</span>
+                  <span style={{ fontSize: isMobile ? 10 : 11, color: C.cream, lineHeight: 1.4 }}>{item}</span>
                 </div>
               ))}
             </div>
           ))}
         </div>
         <div>
-          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>GOVERNANCE STRUCTURE</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>GOVERNANCE STRUCTURE</div>
           {slide.governance.map((g: any, i: number) => (
-            <div key={i} style={{ display: "flex", gap: 10, marginBottom: 8, padding: "8px 0", borderBottom: `1px solid ${C.ash}` }}>
-              <span style={{ color: C.gold, fontSize: 10, flexShrink: 0 }}>◈</span>
-              <p style={{ margin: 0, fontSize: 11, color: C.cream, lineHeight: 1.5 }}>{g}</p>
+            <div key={i} style={{ display: "flex", gap: isMobile ? 8 : 10, marginBottom: 8, padding: "8px 0", borderBottom: `1px solid ${C.ash}` }}>
+              <span style={{ color: C.gold, fontSize: isMobile ? 9 : 10, flexShrink: 0 }}>◈</span>
+              <p style={{ margin: 0, fontSize: isMobile ? 10 : 11, color: C.cream, lineHeight: 1.5 }}>{g}</p>
             </div>
           ))}
           <div style={{ marginTop: 16 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>FEE STRUCTURE</div>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, marginBottom: 8 }}>{slide.fees.note}</div>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 10 }}>FEE STRUCTURE</div>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, marginBottom: 8 }}>{slide.fees.note}</div>
             {slide.fees.tiers.map((ft: any, i: number) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: `1px solid ${C.ash}` }}>
-                <span style={{ fontSize: 12, color: C.cream }}>{ft.tier}</span>
-                <span style={{ fontFamily: "monospace", fontSize: 11, color: C.gold }}>{ft.range}</span>
+                <span style={{ fontSize: isMobile ? 11 : 12, color: C.cream }}>{ft.tier}</span>
+                <span style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: C.gold }}>{ft.range}</span>
               </div>
             ))}
           </div>
@@ -819,18 +861,20 @@ function MandateSlide({ slide }: { slide: any }) {
 }
 
 function TimelineSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: "40px 80px" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "40px 80px" }}>
       <SlideHeader slide={slide} />
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10, marginTop: 16, alignContent: "start" }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : isTablet ? "repeat(2, 1fr)" : "repeat(3, 1fr)", gap: isMobile ? 12 : 10, marginTop: 16, alignContent: "start" }}>
         {slide.milestones.map((m: any, i: number) => (
-          <div key={i} style={{ background: `${m.color}06`, border: `1px solid ${m.color}25`, borderTop: `3px solid ${m.color}`, borderRadius: 4, padding: "14px 16px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 12, color: m.color, marginBottom: 4, letterSpacing: "0.1em" }}>{m.week}</div>
-            <div style={{ fontSize: 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 10 }}>{m.label}</div>
+          <div key={i} style={{ background: `${m.color}06`, border: `1px solid ${m.color}25`, borderTop: `3px solid ${m.color}`, borderRadius: 4, padding: isMobile ? "16px 18px" : "14px 16px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 12, color: m.color, marginBottom: 4, letterSpacing: "0.1em" }}>{m.week}</div>
+            <div style={{ fontSize: isMobile ? 12 : 13, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 10 }}>{m.label}</div>
             {m.items.map((item: any, ii: number) => (
-              <div key={ii} style={{ display: "flex", gap: 8, marginBottom: 6 }}>
-                <span style={{ color: m.color, fontSize: 8, flexShrink: 0, marginTop: 3 }}>✓</span>
-                <p style={{ margin: 0, fontSize: 11, color: C.creamDim, lineHeight: 1.5 }}>{item}</p>
+              <div key={ii} style={{ display: "flex", gap: isMobile ? 6 : 8, marginBottom: 6 }}>
+                <span style={{ color: m.color, fontSize: isMobile ? 7 : 8, flexShrink: 0, marginTop: 3 }}>✓</span>
+                <p style={{ margin: 0, fontSize: isMobile ? 10 : 11, color: C.creamDim, lineHeight: 1.5 }}>{item}</p>
               </div>
             ))}
           </div>
@@ -841,31 +885,33 @@ function TimelineSlide({ slide }: { slide: any }) {
 }
 
 function ClosingSlide({ slide }: { slide: any }) {
+  const { isMobile, isTablet } = useResponsive();
+  
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: "0 80px", position: "relative" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : isTablet ? "0 48px" : "0 80px", position: "relative" }}>
       <div style={{ position: "absolute", inset: 0, opacity: 0.03,
         backgroundImage: `linear-gradient(${C.gold} 1px, transparent 1px), linear-gradient(90deg, ${C.gold} 1px, transparent 1px)`,
         backgroundSize: "40px 40px" }} />
-      <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, opacity: 0.5, letterSpacing: "0.4em", marginBottom: 24 }}>KITS ADVISORY GROUP · DECISION REQUIRED</div>
-      <h2 style={{ fontFamily: "'Didot','Bodoni MT',Georgia,serif", fontSize: "clamp(16px,2.5vw,28px)", fontWeight: 400, color: C.strike, margin: "0 0 32px", lineHeight: 1.4, maxWidth: 700 }}>{slide.title}</h2>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+      <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 9, color: C.gold, opacity: 0.5, letterSpacing: "0.4em", marginBottom: isMobile ? 16 : 24 }}>KITS ADVISORY GROUP · DECISION REQUIRED</div>
+      <h2 style={{ fontFamily: "'Didot','Bodoni MT',Georgia,serif", fontSize: "clamp(18px,4vw,28px)", fontWeight: 400, color: C.strike, margin: "0 0 24px", lineHeight: 1.4, maxWidth: 700 }}>{slide.title}</h2>
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 24 : 32 }}>
         <div>
-          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.red, letterSpacing: "0.2em", marginBottom: 14 }}>DECISIONS REQUIRED TODAY</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.red, letterSpacing: "0.2em", marginBottom: isMobile ? 12 : 14 }}>DECISIONS REQUIRED TODAY</div>
           {slide.decisions.map((d: any, i: number) => (
-            <div key={i} style={{ display: "flex", gap: 12, marginBottom: 10, padding: "10px 14px", background: `${C.red}08`, border: `1px solid ${C.red}20`, borderLeft: `3px solid ${C.red}`, borderRadius: 3 }}>
-              <span style={{ fontFamily: "monospace", fontSize: 10, color: C.red, flexShrink: 0, marginTop: 1 }}>{String(i + 1).padStart(2, "0")}</span>
-              <p style={{ margin: 0, fontSize: 12, color: C.cream, lineHeight: 1.5 }}>{d}</p>
+            <div key={i} style={{ display: "flex", gap: isMobile ? 10 : 12, marginBottom: isMobile ? 12 : 10, padding: isMobile ? "12px 16px" : "10px 14px", background: `${C.red}08`, border: `1px solid ${C.red}20`, borderLeft: `3px solid ${C.red}`, borderRadius: 3 }}>
+              <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: C.red, flexShrink: 0, marginTop: 1 }}>{String(i + 1).padStart(2, "0")}</span>
+              <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: C.cream, lineHeight: 1.5 }}>{d}</p>
             </div>
           ))}
         </div>
         <div>
-          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 14 }}>SUPPORTING ARTIFACTS</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: isMobile ? 12 : 14 }}>SUPPORTING ARTIFACTS</div>
           {slide.artifacts.map((a: any, i: number) => (
-            <div key={i} style={{ display: "flex", gap: 10, marginBottom: 6, padding: "6px 0", borderBottom: `1px solid ${C.ash}` }}>
-              <span style={{ fontFamily: "monospace", fontSize: 8, color: C.goldDim, flexShrink: 0, marginTop: 1 }}>{a.ref}</span>
+            <div key={i} style={{ display: "flex", gap: isMobile ? 8 : 10, marginBottom: 6, padding: "6px 0", borderBottom: `1px solid ${C.ash}` }}>
+              <span style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: C.goldDim, flexShrink: 0, marginTop: 1 }}>{a.ref}</span>
               <div>
-                <div style={{ fontSize: 11, color: C.cream }}>{a.title}</div>
-                <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>{a.desc}</div>
+                <div style={{ fontSize: isMobile ? 10 : 11, color: C.cream }}>{a.title}</div>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: C.creamDim }}>{a.desc}</div>
               </div>
             </div>
           ))}
@@ -952,9 +998,9 @@ export default function BoardPresentation() {
 
       {/* Slide navigator */}
       {showNav && (
-        <div style={{ background: C.obsidian, borderBottom: `1px solid ${C.ash}`, padding: "12px 24px", display: "flex", gap: 6, flexWrap: "wrap", flexShrink: 0 }}>
+        <div style={{ background: C.obsidian, borderBottom: `1px solid ${C.ash}`, padding: "12px 24px", display: "flex", gap: 6, flexWrap: "wrap", flexShrink: 0, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
           {SLIDES.map((s, i) => (
-            <button key={i} onClick={() => { setCurrent(i); setShowNav(false); }} style={{ background: current === i ? `${C.gold}18` : "transparent", border: `1px solid ${current === i ? C.gold : C.ash}`, borderRadius: 3, padding: "6px 12px", cursor: "pointer", transition: "all 0.15s" }}>
+            <button key={i} onClick={() => { setCurrent(i); setShowNav(false); }} style={{ background: current === i ? `${C.gold}18` : "transparent", border: `1px solid ${current === i ? C.gold : C.ash}`, borderRadius: 3, padding: "6px 12px", cursor: "pointer", transition: "all 0.15s", WebkitTapHighlightColor: "transparent", touchAction: "manipulation", flexShrink: 0 }}>
               <div style={{ fontFamily: "monospace", fontSize: 7, color: current === i ? C.gold : C.creamDim, marginBottom: 2, letterSpacing: "0.1em" }}>{String(i + 1).padStart(2, "0")}</div>
               <div style={{ fontSize: 9, color: current === i ? C.cream : C.creamDim }}>{s.label}</div>
             </button>
@@ -971,14 +1017,14 @@ export default function BoardPresentation() {
             <div style={{ position: "absolute", top: 0, left: 0, width: `${((current + 1) / total) * 100}%`, height: 2, background: `linear-gradient(to right, ${C.gold}, ${C.goldBright})`, transition: "width 0.3s ease", zIndex: 10 }} />
             {renderSlide()}
             {/* Navigation arrows */}
-            <button onClick={prev} disabled={current === 0} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 36, height: 36, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.3 : 0.7, transition: "opacity 0.2s" }}>‹</button>
-            <button onClick={next} disabled={current === total - 1} style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 36, height: 36, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 16, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.3 : 0.7, transition: "opacity 0.2s" }}>›</button>
+            <button onClick={prev} disabled={current === 0} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 44, height: 44, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.3 : 0.7, transition: "opacity 0.2s", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>‹</button>
+            <button onClick={next} disabled={current === total - 1} style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 44, height: 44, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.3 : 0.7, transition: "opacity 0.2s", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>›</button>
           </div>
 
           {/* Presenter notes */}
           {showNotes && slide.notes && (
-            <div style={{ background: "#0A0808", borderTop: `2px solid ${C.gold}40`, padding: "16px 32px", maxHeight: "40vh", overflowY: "auto", flexShrink: 0 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+            <div style={{ background: "#0A0808", borderTop: `2px solid ${C.gold}40`, padding: "16px 24px", maxHeight: "40vh", overflowY: "auto", flexShrink: 0, WebkitOverflowScrolling: "touch" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12, flexDirection: "row" }}>
                 <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.25em" }}>PRESENTER NOTES · {slide.label}</div>
                 <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim }}>SUGGESTED TIMING: {slide.notes.timing}</div>
               </div>
@@ -1002,18 +1048,18 @@ export default function BoardPresentation() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ background: C.void, borderTop: `1px solid ${C.ash}`, padding: "6px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
-        <div style={{ display: "flex", gap: 24 }}>
-          <button onClick={prev} disabled={current === 0} style={{ background: "transparent", border: "none", cursor: current === 0 ? "default" : "pointer", fontFamily: "monospace", fontSize: 9, color: current === 0 ? C.ash : C.creamDim, letterSpacing: "0.1em" }}>← PREV</button>
-          <button onClick={next} disabled={current === total - 1} style={{ background: "transparent", border: "none", cursor: current === total - 1 ? "default" : "pointer", fontFamily: "monospace", fontSize: 9, color: current === total - 1 ? C.ash : C.creamDim, letterSpacing: "0.1em" }}>NEXT →</button>
+      <div style={{ background: C.void, borderTop: `1px solid ${C.ash}`, padding: "8px 16px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, flexWrap: "wrap", gap: 8 }}>
+        <div style={{ display: "flex", gap: 16 }}>
+          <button onClick={prev} disabled={current === 0} style={{ background: "transparent", border: "none", cursor: current === 0 ? "default" : "pointer", fontFamily: "monospace", fontSize: 9, color: current === 0 ? C.ash : C.creamDim, letterSpacing: "0.1em", padding: "4px 8px", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>← PREV</button>
+          <button onClick={next} disabled={current === total - 1} style={{ background: "transparent", border: "none", cursor: current === total - 1 ? "default" : "pointer", fontFamily: "monospace", fontSize: 9, color: current === total - 1 ? C.ash : C.creamDim, letterSpacing: "0.1em", padding: "4px 8px", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>NEXT →</button>
         </div>
-        <div style={{ display: "flex", gap: 8 }}>
+        <div style={{ display: "flex", gap: 6, flex: 1, justifyContent: "center", minWidth: 0, overflowX: "auto" }}>
           {SLIDES.map((_, i) => (
-            <button key={i} onClick={() => setCurrent(i)} style={{ width: i === current ? 20 : 6, height: 4, borderRadius: 2, background: i === current ? C.gold : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease" }} />
+            <button key={i} onClick={() => setCurrent(i)} style={{ width: i === current ? 24 : 8, height: 4, borderRadius: 2, background: i === current ? C.gold : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", flexShrink: 0, WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }} />
           ))}
         </div>
-        <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, opacity: 0.4, letterSpacing: "0.15em" }}>
-          N = TOGGLE NOTES · ← → NAVIGATE · ESC = CLOSE NAV
+        <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, opacity: 0.4, letterSpacing: "0.15em", whiteSpace: "nowrap" }}>
+          N = NOTES · ← → NAVIGATE
         </div>
       </div>
     </div>

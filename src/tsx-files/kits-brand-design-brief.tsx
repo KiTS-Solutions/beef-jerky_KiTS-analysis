@@ -1,4 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
 
 const PENDING = "[BOARD DECISION PENDING]";
 const PENDING_FLAVOR = "[PRIMARY FLAVOR — BOARD DECISION PENDING]";
@@ -139,6 +156,7 @@ const TIMELINE = [
 ];
 
 export default function BrandDesignBrief() {
+  const { isMobile } = useResponsive();
   const [active, setActive] = useState("overview");
   const [expanded, setExpanded] = useState({});
 
@@ -607,33 +625,35 @@ export default function BrandDesignBrief() {
       {/* Footer */}
       <div style={{
         background: "#1A1612",
-        padding: "14px 48px",
+        padding: isMobile ? "14px 24px" : "14px 48px",
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
-        <span style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#3A2A18", letterSpacing: "0.15em" }}>
+        <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 9 : 10, color: "#3A2A18", letterSpacing: "0.15em" }}>
           KITS ADVISORY GROUP · BRAND & PACKAGING DESIGN BRIEF · CONFIDENTIAL
         </span>
-        <span style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#3A2A18" }}>KAG-JRK-006</span>
+        <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 9 : 10, color: "#3A2A18" }}>KAG-JRK-006</span>
       </div>
     </div>
   );
 }
 
 function SectionHead({ label, title, color }: { label: string; title: string; color: string }) {
+  const { isMobile } = useResponsive();
   return (
-    <div style={{ marginBottom: 24 }}>
-      <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: color, letterSpacing: "0.25em", marginBottom: 8 }}>{label}</div>
-      <h2 style={{ margin: 0, fontSize: "clamp(18px, 3vw, 26px)", fontWeight: 400, color: "#1A1612", lineHeight: 1.2 }}>{title}</h2>
-      <div style={{ marginTop: 12, height: 1, background: `linear-gradient(to right, ${color}, transparent)`, maxWidth: 320 }} />
+    <div style={{ marginBottom: isMobile ? 20 : 24 }}>
+      <div style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 9 : 10, color: color, letterSpacing: "0.25em", marginBottom: 8 }}>{label}</div>
+      <h2 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 26px)" : "clamp(18px, 3vw, 26px)", fontWeight: 400, color: "#1A1612", lineHeight: 1.2 }}>{title}</h2>
+      <div style={{ marginTop: 12, height: 1, background: `linear-gradient(to right, ${color}, transparent)`, maxWidth: isMobile ? "100%" : 320 }} />
     </div>
   );
 }
 
 function Brief({ label, children }: { label: string; children: any }) {
+  const { isMobile } = useResponsive();
   return (
-    <div style={{ background: "#EFEBE3", border: "1px solid #DDD5C8", borderRadius: 3, padding: "16px 20px", marginBottom: 12 }}>
-      <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: "#8A7A68", letterSpacing: "0.2em", marginBottom: 8 }}>{label}</div>
-      <p style={{ margin: 0, fontSize: 13, color: "#3A2A18", lineHeight: 1.8 }}>{children}</p>
+    <div style={{ background: "#EFEBE3", border: "1px solid #DDD5C8", borderRadius: 3, padding: isMobile ? "14px 18px" : "16px 20px", marginBottom: 12 }}>
+      <div style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 8 : 9, color: "#8A7A68", letterSpacing: "0.2em", marginBottom: 8 }}>{label}</div>
+      <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: "#3A2A18", lineHeight: 1.8 }}>{children}</p>
     </div>
   );
 }

@@ -1,4 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return { isMobile };
+}
 
 const PENDING = "[BOARD DECISION PENDING]";
 
@@ -219,6 +236,7 @@ const TESTING_SEQUENCE = [
 ];
 
 export default function ManufacturerBrief() {
+  const { isMobile } = useResponsive();
   const [active, setActive] = useState("overview");
   const [expanded, setExpanded] = useState({});
 
@@ -236,7 +254,7 @@ export default function ManufacturerBrief() {
       <div style={{
         background: "linear-gradient(160deg, #0A0E0D 0%, #0E1210 100%)",
         borderBottom: "1px solid #1A2420",
-        padding: "32px 44px 24px",
+        padding: isMobile ? "24px 24px 20px" : "32px 44px 24px",
         position: "relative", overflow: "hidden",
       }}>
         {/* Grid texture */}
@@ -244,13 +262,13 @@ export default function ManufacturerBrief() {
           backgroundImage: "linear-gradient(#6A9A80 1px, transparent 1px), linear-gradient(90deg, #6A9A80 1px, transparent 1px)",
           backgroundSize: "24px 24px" }} />
 
-        <div style={{ fontFamily: "monospace", fontSize: 10, color: "#2A4A38", letterSpacing: "0.35em", marginBottom: 10 }}>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#2A4A38", letterSpacing: "0.35em", marginBottom: 10 }}>
           KITS ADVISORY GROUP · MANUFACTURER TECHNICAL BRIEF · REF: KAG-JRK-007 · CONFIDENTIAL
         </div>
-        <h1 style={{ margin: "0 0 6px", fontSize: "clamp(20px, 3.5vw, 34px)", fontWeight: 400, color: "#D8E0D8", lineHeight: 1.15 }}>
+        <h1 style={{ margin: "0 0 6px", fontSize: isMobile ? "clamp(18px, 4vw, 34px)" : "clamp(20px, 3.5vw, 34px)", fontWeight: 400, color: "#D8E0D8", lineHeight: 1.15 }}>
           Manufacturer Technical Brief
         </h1>
-        <p style={{ margin: "0 0 16px", fontSize: 13, color: "#5A7A68", fontFamily: "Georgia, serif" }}>
+        <p style={{ margin: "0 0 16px", fontSize: isMobile ? 12 : 13, color: "#5A7A68", fontFamily: "Georgia, serif" }}>
           Beef Jerky Venture · Lebanese Market · Flavour, Quality, Halal & Supply Standards
         </p>
 
@@ -266,30 +284,31 @@ export default function ManufacturerBrief() {
       <div style={{
         background: "#090C0B",
         borderBottom: "1px solid #14201A",
-        display: "flex", flexWrap: "wrap", padding: "0 44px"
+        display: "flex", flexWrap: "wrap", padding: isMobile ? "0 16px" : "0 44px", overflowX: "auto", WebkitOverflowScrolling: "touch"
       }}>
         {SECTIONS.map(s => (
           <button key={s.id} onClick={() => setActive(s.id)} style={{
             background: "transparent", border: "none",
             borderBottom: active === s.id ? "2px solid #7EB5A6" : "2px solid transparent",
             color: active === s.id ? "#D8E0D8" : "#2A4A38",
-            fontFamily: "monospace", fontSize: 10, letterSpacing: "0.15em",
-            padding: "13px 16px 11px",
-            cursor: "pointer", transition: "all 0.15s", whiteSpace: "nowrap"
+            fontFamily: "monospace", fontSize: isMobile ? 9 : 10, letterSpacing: "0.15em",
+            padding: isMobile ? "12px 14px 10px" : "13px 16px 11px",
+            cursor: "pointer", transition: "all 0.15s", whiteSpace: "nowrap",
+            WebkitTapHighlightColor: "transparent", touchAction: "manipulation"
           }}>
             {s.label.toUpperCase()}
           </button>
         ))}
       </div>
 
-      <div style={{ padding: "32px 44px", maxWidth: 960 }}>
+      <div style={{ padding: isMobile ? "24px 20px" : "32px 44px", maxWidth: 960 }}>
 
         {/* OVERVIEW */}
         {active === "overview" && (
           <div>
             <SecHead label="BRIEF OVERVIEW" title="What We Need and Why" color="#7EB5A6" />
 
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 24 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 12 : 10, marginBottom: 24 }}>
               {[
                 { k: "CLIENT", v: "Beef Jerky Venture — Lebanon" },
                 { k: "MANAGING PARTY", v: "KITS Advisory Group" },
@@ -612,14 +631,14 @@ export default function ManufacturerBrief() {
 
       {/* Footer */}
       <div style={{
-        padding: "14px 44px",
+        padding: isMobile ? "14px 24px" : "14px 44px",
         borderTop: "1px solid #14201A",
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#1A2820", letterSpacing: "0.15em" }}>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A2820", letterSpacing: "0.15em" }}>
           KITS ADVISORY GROUP · MANUFACTURER TECHNICAL BRIEF · CONFIDENTIAL
         </span>
-        <span style={{ fontFamily: "monospace", fontSize: 10, color: "#1A2820" }}>KAG-JRK-007</span>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A2820" }}>KAG-JRK-007</span>
       </div>
     </div>
   );
@@ -639,11 +658,12 @@ function Pill({ color, label }: { color: string; label: string }) {
 }
 
 function SecHead({ label, title, color }: { label: string; title: string; color: string }) {
+  const { isMobile } = useResponsive();
   return (
-    <div style={{ marginBottom: 22 }}>
-      <div style={{ fontFamily: "monospace", fontSize: 10, color, letterSpacing: "0.25em", marginBottom: 8 }}>{label}</div>
-      <h2 style={{ margin: 0, fontSize: "clamp(17px, 3vw, 25px)", fontWeight: 400, color: "#D8E0D8", lineHeight: 1.2 }}>{title}</h2>
-      <div style={{ marginTop: 10, height: 1, background: `linear-gradient(to right, ${color}, transparent)`, maxWidth: 300 }} />
+    <div style={{ marginBottom: isMobile ? 18 : 22 }}>
+      <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color, letterSpacing: "0.25em", marginBottom: 8 }}>{label}</div>
+      <h2 style={{ margin: 0, fontSize: isMobile ? "clamp(17px, 4vw, 25px)" : "clamp(17px, 3vw, 25px)", fontWeight: 400, color: "#D8E0D8", lineHeight: 1.2 }}>{title}</h2>
+      <div style={{ marginTop: 10, height: 1, background: `linear-gradient(to right, ${color}, transparent)`, maxWidth: isMobile ? "100%" : 300 }} />
     </div>
   );
 }
