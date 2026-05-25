@@ -385,7 +385,7 @@ function CoverSlide({ slide }: { slide: CoverSlideData }) {
           <div style={{ position: "relative" }}>
             <div style={{ position: "absolute", inset: -20, background: `radial-gradient(ellipse, ${C.gold}08 0%, transparent 70%)`, borderRadius: "50%" }}/>
            {/* <StrikeBagMini accent={C.amber} size={1.3}/> */}
-           <img src="./public/bag1.png" alt="Bag" style={{ width: "100%", height: "auto", objectFit: "contain" }}/>
+           <img src="./assets/bagx.png" alt="Bag1" style={{ width: "100%", height: "auto", objectFit: "contain" }}/>
           </div>
         </div>
       )}
@@ -549,7 +549,7 @@ function BrandVisualSlide({ slide }: { slide: BrandVisualSlideData }) {
         {/* Left: bag renders */}
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 4 }}>PACKAGING SYSTEM — ALL THREE LAUNCH SKUs</div>
-          <img src="./public/bag1.png" alt="Bag" style={{ width: "100%", height: "auto", objectFit: "contain" }}/>
+          <img src="./assets/bagx.png" alt="Bag1" style={{ width: "100%", height: "auto", objectFit: "contain" }}/>
           {/* <div style={{ flex: 1, background: `radial-gradient(ellipse at 50% 40%, ${C.charcoal} 0%, ${C.obsidian} 70%)`, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", gap: isMobile ? 12 : 20, padding: isMobile ? "16px 12px" : "24px 16px" }}>
             {[0, 1, 2].map((i: number) => (
               
