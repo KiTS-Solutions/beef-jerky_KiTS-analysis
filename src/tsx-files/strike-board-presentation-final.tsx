@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import bagImg from './assets/bagx.png';
+import bagImg from './src/assets/bagx.png';
 // Then use <img src={bagImg} />
 
 // ─── TYPE DEFINITIONS ───────────────────────────────────────────────────────────
