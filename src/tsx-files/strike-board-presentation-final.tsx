@@ -263,65 +263,66 @@ function useResponsive() {
   return { isMobile, isTablet };
 }
 
+
 // ─── SVG BAG RENDER (inline, no external dep) ─────────────────────────────────
-function StrikeBagMini({ accent = C.amber, size = 1 }) {
-  const W = 160 * size, H = 250 * size;
-  const id = `b${Math.round(Math.random() * 9999)}`;
-  return (
-    <svg width={W} height={H} viewBox={`0 0 ${160*size} ${250*size}`} y={0} x={0} style={{ display: "block", filter: `drop-shadow(0 ${12*size}px ${28*size}px rgba(0,0,0,0.9)) drop-shadow(0 2px 8px ${accent}22)` }}>
-      <defs>
-        <linearGradient id={`bg${id}`} x1={0} y1={0} x2={1} y2={1}>
-          <stop offset="0%" stopColor="#161412"/><stop offset="100%" stopColor="#080706"/>
-        </linearGradient>
-        <linearGradient id={`gl${id}`} x1={0} y1={0} x2={0} y2={1}>
-          <stop offset="0%" stopColor={C.goldBright}/><stop offset="100%" stopColor={C.goldDim}/>
-        </linearGradient>
-        <linearGradient id={`el${id}`} x1={0} y1={0} x2={1} y2={0}>
-          <stop offset="0%" stopColor="black" stopOpacity="0.65"/><stop offset="100%" stopColor="black" stopOpacity="0"/>
-        </linearGradient>
-        <linearGradient id={`er${id}`} x1={0} y1={0} x2={1} y2={0}>
-          <stop offset="0%" stopColor="black" stopOpacity="0"/><stop offset="100%" stopColor="black" stopOpacity="0.65"/>
-        </linearGradient>
-        <linearGradient id={`sh${id}`} x1={0} y1={0} x2={1} y2={0}>
-          <stop offset="0%" stopColor="white" stopOpacity="0.07"/><stop offset="100%" stopColor="white" stopOpacity="0"/>
-        </linearGradient>
-      </defs>
-      <rect x={0} y={0} width={160} height={250} rx={10} fill={`url(#bg${id})`}/>
-      {Array.from({length:16}).map((_,i)=><line key={i} x1={i*11} y1={0} x2={i*11-20} y2={250} stroke="white" strokeWidth="0.12" strokeOpacity="0.035"/>)}
-      <rect x={0} y={0} width={160} height={36} rx={10} fill="#0C0B0A"/>
-      <rect x={0} y={24} width={160} height={12} fill="#0C0B0A"/>
-      <text x={12} y={16} fill={C.gold} opacity="0.45" fontFamily="monospace" fontSize="5" letterSpacing="2">KAG-JRK · BITES</text>
-      <text x={12} y={27} fill={C.cream} opacity="0.2" fontFamily="monospace" fontSize="5" letterSpacing="1">SINGLE SERVE · 40g</text>
-      <circle cx={138} cy={70} r={16} fill={C.green}/>
-      <text x={138} y={67} textAnchor="middle" fill="white" fontFamily="Georgia,serif" fontSize="7" fontWeight="bold">حلال</text>
-      <text x={138} y={76} textAnchor="middle" fill="white" fontFamily="monospace" fontSize="4.5">HALAL</text>
-      <rect x={12} y={40} width={`url(#gl${id})` ? 112 : 112} height="1.2" fill={`url(#gl${id})`} opacity="0.8"/>
-      <text x={12} y={72} fill={C.cream} fontFamily="'Didot','Bodoni MT','Playfair Display',Georgia,serif" fontSize="30" fontWeight="400" letterSpacing="5">STRIKE</text>
-      <text x={12} y={86} fill={C.gold} opacity="0.5" fontFamily="Georgia,serif" fontSize="8">سترايك بايتس</text>
-      <rect x={12} y={91} width={136} height="0.7" fill={C.cream} opacity="0.1"/>
-      <text x={12} y={130} fill={`url(#gl${id})`} fontFamily="'Didot','Bodoni MT',Georgia,serif" fontSize="48" letterSpacing="-1">[X]g</text>
-      <text x={12} y={145} fill={C.cream} opacity="0.85" fontFamily="monospace" fontSize="7" letterSpacing="4">PROTEIN</text>
-      <text x={12} y={155} fill={C.cream} opacity="0.3" fontFamily="monospace" fontSize="4.5" letterSpacing="2">بروتين · PROTÉINE</text>
-      <rect x={12} y={161} width={136} height="0.6" fill={C.cream} opacity="0.08"/>
-      <rect x={12} y={168} width={136} height={22} fill={accent} fillOpacity="0.1" rx={3}/>
-      <rect x={12} y={168} width={3} height={22} fill={accent} rx={1.5}/>
-      <text x={22} y={179} fill={accent} fontFamily="'Didot',Georgia,serif" fontSize="9" letterSpacing="1">SMOKING BBQ</text>
-      <text x={22} y={188} fill={accent} opacity="0.55" fontFamily="Georgia,serif" fontSize="6">مدخّن BBQ · BBQ FUMÉ</text>
-      <rect x={0} y={198} width={160} height={28} fill="#0C0B0A"/>
-      <rect x={0} y={198} width={160} height="0.7" fill={C.gold} opacity="0.25"/>
-      <text x={12} y={210} fill={C.green} fontFamily="monospace" fontSize="4.5" letterSpacing="0.3">✓ NO ADDED SUGAR</text>
-      <text x={90} y={210} fill={C.green} fontFamily="monospace" fontSize="4.5" letterSpacing="0.3">✓ NO PRESERVATIVES</text>
-      <text x={12} y={220} fill={C.cream} opacity="0.25" fontFamily="monospace" fontSize="4" letterSpacing="1">MADE IN LEBANON · صنع في لبنان</text>
-      <rect x={0} y={226} width={160} height={24} fill="#050404"/>
-      <rect x={12} y={229} width={34} height={10} fill="white" rx={1}/>
-      {Array.from({length:14}).map((_,i)=><rect key={i} x={13+i*2.1} y="230.5" width={i%3===0?1.2:0.6} height={i%5===0?7:5.5} fill="#080706"/>)}
-      <text x={80} y={238} textAnchor="middle" fill={C.gold} opacity="0.15" fontFamily="monospace" fontSize="4" letterSpacing="1">KITS ADVISORY · STRIKE</text>
-      <rect x={0} y={0} width={160} height={250} fill={`url(#sh${id})`} rx={10}/>
-      <rect x={0} y={0} width={20} height={250} fill={`url(#el${id})`} rx={10}/>
-      <rect x={140} y={0} width={20} height={250} fill={`url(#er${id})`} rx={10}/>
-    </svg>
-  );
-}
+// function StrikeBagMini({ accent = C.amber, size = 1 }) {
+//   const W = 160 * size, H = 250 * size;
+//   const id = `b${Math.round(Math.random() * 9999)}`;
+//   return (
+//     <svg width={W} height={H} viewBox={`0 0 ${160*size} ${250*size}`} y={0} x={0} style={{ display: "block", filter: `drop-shadow(0 ${12*size}px ${28*size}px rgba(0,0,0,0.9)) drop-shadow(0 2px 8px ${accent}22)` }}>
+//       <defs>
+//         <linearGradient id={`bg${id}`} x1={0} y1={0} x2={1} y2={1}>
+//           <stop offset="0%" stopColor="#161412"/><stop offset="100%" stopColor="#080706"/>
+//         </linearGradient>
+//         <linearGradient id={`gl${id}`} x1={0} y1={0} x2={0} y2={1}>
+//           <stop offset="0%" stopColor={C.goldBright}/><stop offset="100%" stopColor={C.goldDim}/>
+//         </linearGradient>
+//         <linearGradient id={`el${id}`} x1={0} y1={0} x2={1} y2={0}>
+//           <stop offset="0%" stopColor="black" stopOpacity="0.65"/><stop offset="100%" stopColor="black" stopOpacity="0"/>
+//         </linearGradient>
+//         <linearGradient id={`er${id}`} x1={0} y1={0} x2={1} y2={0}>
+//           <stop offset="0%" stopColor="black" stopOpacity="0"/><stop offset="100%" stopColor="black" stopOpacity="0.65"/>
+//         </linearGradient>
+//         <linearGradient id={`sh${id}`} x1={0} y1={0} x2={1} y2={0}>
+//           <stop offset="0%" stopColor="white" stopOpacity="0.07"/><stop offset="100%" stopColor="white" stopOpacity="0"/>
+//         </linearGradient>
+//       </defs>
+//       <rect x={0} y={0} width={160} height={250} rx={10} fill={`url(#bg${id})`}/>
+//       {Array.from({length:16}).map((_,i)=><line key={i} x1={i*11} y1={0} x2={i*11-20} y2={250} stroke="white" strokeWidth="0.12" strokeOpacity="0.035"/>)}
+//       <rect x={0} y={0} width={160} height={36} rx={10} fill="#0C0B0A"/>
+//       <rect x={0} y={24} width={160} height={12} fill="#0C0B0A"/>
+//       <text x={12} y={16} fill={C.gold} opacity="0.45" fontFamily="monospace" fontSize="5" letterSpacing="2">KAG-JRK · BITES</text>
+//       <text x={12} y={27} fill={C.cream} opacity="0.2" fontFamily="monospace" fontSize="5" letterSpacing="1">SINGLE SERVE · 40g</text>
+//       <circle cx={138} cy={70} r={16} fill={C.green}/>
+//       <text x={138} y={67} textAnchor="middle" fill="white" fontFamily="Georgia,serif" fontSize="7" fontWeight="bold">حلال</text>
+//       <text x={138} y={76} textAnchor="middle" fill="white" fontFamily="monospace" fontSize="4.5">HALAL</text>
+//       <rect x={12} y={40} width={`url(#gl${id})` ? 112 : 112} height="1.2" fill={`url(#gl${id})`} opacity="0.8"/>
+//       <text x={12} y={72} fill={C.cream} fontFamily="'Didot','Bodoni MT','Playfair Display',Georgia,serif" fontSize="30" fontWeight="400" letterSpacing="5">STRIKE</text>
+//       <text x={12} y={86} fill={C.gold} opacity="0.5" fontFamily="Georgia,serif" fontSize="8">سترايك بايتس</text>
+//       <rect x={12} y={91} width={136} height="0.7" fill={C.cream} opacity="0.1"/>
+//       <text x={12} y={130} fill={`url(#gl${id})`} fontFamily="'Didot','Bodoni MT',Georgia,serif" fontSize="48" letterSpacing="-1">[X]g</text>
+//       <text x={12} y={145} fill={C.cream} opacity="0.85" fontFamily="monospace" fontSize="7" letterSpacing="4">PROTEIN</text>
+//       <text x={12} y={155} fill={C.cream} opacity="0.3" fontFamily="monospace" fontSize="4.5" letterSpacing="2">بروتين · PROTÉINE</text>
+//       <rect x={12} y={161} width={136} height="0.6" fill={C.cream} opacity="0.08"/>
+//       <rect x={12} y={168} width={136} height={22} fill={accent} fillOpacity="0.1" rx={3}/>
+//       <rect x={12} y={168} width={3} height={22} fill={accent} rx={1.5}/>
+//       <text x={22} y={179} fill={accent} fontFamily="'Didot',Georgia,serif" fontSize="9" letterSpacing="1">SMOKING BBQ</text>
+//       <text x={22} y={188} fill={accent} opacity="0.55" fontFamily="Georgia,serif" fontSize="6">مدخّن BBQ · BBQ FUMÉ</text>
+//       <rect x={0} y={198} width={160} height={28} fill="#0C0B0A"/>
+//       <rect x={0} y={198} width={160} height="0.7" fill={C.gold} opacity="0.25"/>
+//       <text x={12} y={210} fill={C.green} fontFamily="monospace" fontSize="4.5" letterSpacing="0.3">✓ NO ADDED SUGAR</text>
+//       <text x={90} y={210} fill={C.green} fontFamily="monospace" fontSize="4.5" letterSpacing="0.3">✓ NO PRESERVATIVES</text>
+//       <text x={12} y={220} fill={C.cream} opacity="0.25" fontFamily="monospace" fontSize="4" letterSpacing="1">MADE IN LEBANON · صنع في لبنان</text>
+//       <rect x={0} y={226} width={160} height={24} fill="#050404"/>
+//       <rect x={12} y={229} width={34} height={10} fill="white" rx={1}/>
+//       {Array.from({length:14}).map((_,i)=><rect key={i} x={13+i*2.1} y="230.5" width={i%3===0?1.2:0.6} height={i%5===0?7:5.5} fill="#080706"/>)}
+//       <text x={80} y={238} textAnchor="middle" fill={C.gold} opacity="0.15" fontFamily="monospace" fontSize="4" letterSpacing="1">KITS ADVISORY · STRIKE</text>
+//       <rect x={0} y={0} width={160} height={250} fill={`url(#sh${id})`} rx={10}/>
+//       <rect x={0} y={0} width={20} height={250} fill={`url(#el${id})`} rx={10}/>
+//       <rect x={140} y={0} width={20} height={250} fill={`url(#er${id})`} rx={10}/>
+//     </svg>
+//   );
+// }
 
 // ─── SECTION DIVIDER ──────────────────────────────────────────────────────────
 function SectionDivider({ slide }: { slide: SectionSlideData }) {
@@ -383,7 +384,8 @@ function CoverSlide({ slide }: { slide: CoverSlideData }) {
         <div style={{ width: "38%", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", zIndex: 1, padding: "40px 40px 40px 0" }}>
           <div style={{ position: "relative" }}>
             <div style={{ position: "absolute", inset: -20, background: `radial-gradient(ellipse, ${C.gold}08 0%, transparent 70%)`, borderRadius: "50%" }}/>
-            <StrikeBagMini accent={C.amber} size={1.3}/>
+           {/* <StrikeBagMini accent={C.amber} size={1.3}/> */}
+           <img src="src/assets/bagx.png" alt="Bag" style={{ width: "100%", height: "auto", objectFit: "contain" }}/>
           </div>
         </div>
       )}
@@ -538,7 +540,7 @@ function ProductSlide({ slide }: { slide: ProductSlideData }) {
 // ─── BRAND VISUAL ─────────────────────────────────────────────────────────────
 function BrandVisualSlide({ slide }: { slide: BrandVisualSlideData }) {
   const { isMobile, isTablet } = useResponsive();
-  const accents = [C.amber, C.red, C.greenBright];
+  //const accents = [C.amber, C.red, C.greenBright];
   
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : isTablet ? "32px 48px" : "36px 72px" }}>
@@ -547,18 +549,21 @@ function BrandVisualSlide({ slide }: { slide: BrandVisualSlideData }) {
         {/* Left: bag renders */}
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 4 }}>PACKAGING SYSTEM — ALL THREE LAUNCH SKUs</div>
-          <div style={{ flex: 1, background: `radial-gradient(ellipse at 50% 40%, ${C.charcoal} 0%, ${C.obsidian} 70%)`, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", gap: isMobile ? 12 : 20, padding: isMobile ? "16px 12px" : "24px 16px" }}>
+          <img src="src/assets/bagx.png" alt="Bag" style={{ width: "100%", height: "auto", objectFit: "contain" }}/>
+          {/* <div style={{ flex: 1, background: `radial-gradient(ellipse at 50% 40%, ${C.charcoal} 0%, ${C.obsidian} 70%)`, borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", gap: isMobile ? 12 : 20, padding: isMobile ? "16px 12px" : "24px 16px" }}>
             {[0, 1, 2].map((i: number) => (
+              
               <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
                 <div style={{ transform: `scale(${i === 1 ? 1.08 : 0.9}) translateY(${i === 1 ? -4 : 0}px)` }}>
                   <StrikeBagMini accent={accents[i]} size={isMobile ? 0.5 : 0.72}/>
+    
                 </div>
                 <div style={{ fontFamily: "monospace", fontSize: isMobile ? 6 : 7, color: accents[i], letterSpacing: "0.1em", textAlign: "center" }}>
                   {["SMOKING BBQ", "FIRE & LIME", "ZA'ATAR"][i]}
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
         {/* Right: brand system details */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
