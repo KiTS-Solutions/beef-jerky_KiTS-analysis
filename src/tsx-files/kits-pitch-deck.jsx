@@ -1,0 +1,877 @@
+import { useState, useEffect, useCallback } from "react";
+
+// ─── DESIGN TOKENS ────────────────────────────────────────────────────────────
+const C = {
+  void: "#050404", obsidian: "#0A0908", charcoal: "#141210", ash: "#1E1B18",
+  ember: "#2A2520", smoke: "#2E2A26",
+  gold: "#C8A050", goldBright: "#E0B860", goldDim: "#7A6030",
+  cream: "#EDE0CC", creamDim: "#8A7A6A", creamMid: "#BEB0A0",
+  green: "#3A6040", greenBright: "#5A9060",
+  red: "#C04030", amber: "#C07030",
+  purple: "#7060A0", steel: "#506080", strike: "#E8D0A0",
+};
+
+// ─── RESPONSIVE HOOK ──────────────────────────────────────────────────────────
+function useResponsive() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
+  useEffect(() => {
+    const h = () => {
+      const w = window.innerWidth;
+      setIsMobile(w < 768);
+      setIsTablet(w >= 768 && w < 1024);
+    };
+    h();
+    window.addEventListener("resize", h);
+    return () => window.removeEventListener("resize", h);
+  }, []);
+  return { isMobile, isTablet };
+}
+
+// ─── SHARED SLIDE HEADER ──────────────────────────────────────────────────────
+function SH({ slide }) {
+  return (
+    <div style={{ marginBottom: 4 }}>
+      {slide.section && (
+        <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, opacity: 0.6, letterSpacing: "0.3em", marginBottom: 6 }}>
+          {slide.section}
+        </div>
+      )}
+      <h2 style={{ margin: "0 0 4px", fontFamily: "Georgia,'Times New Roman',serif", fontSize: "clamp(17px,2.3vw,30px)", fontWeight: 400, color: C.cream, lineHeight: 1.2 }}>
+        {slide.title}
+      </h2>
+      <div style={{ width: 48, height: 2, background: `linear-gradient(to right,${C.gold},transparent)`, marginTop: 8 }} />
+    </div>
+  );
+}
+
+// ─── SECTION DIVIDER ──────────────────────────────────────────────────────────
+function SectionDivider({ slide }) {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, background: `linear-gradient(135deg,${slide.color}08 0%,transparent 60%)` }} />
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 4, background: slide.color }} />
+      <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "40px 40px" }} />
+      <div style={{ textAlign: "center", position: "relative", zIndex: 1, padding: isMobile ? "20px" : "40px" }}>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 11, color: slide.color, opacity: 0.7, letterSpacing: "0.5em", marginBottom: isMobile ? 16 : 20 }}>{slide.badge}</div>
+        <h1 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(28px,6vw,48px)" : "clamp(36px,5vw,64px)", fontWeight: 400, color: C.strike, margin: "0 0 20px", lineHeight: 1.1 }}>{slide.title}</h1>
+        <div style={{ width: isMobile ? 48 : 64, height: 2, background: `linear-gradient(to right,${slide.color},transparent)`, margin: "0 auto 20px" }} />
+        {slide.sub && <p style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 14 : 16, color: C.creamDim, margin: 0, maxWidth: 520, lineHeight: 1.65 }}>{slide.sub}</p>}
+      </div>
+    </div>
+  );
+}
+
+// ─── COVER ────────────────────────────────────────────────────────────────────
+function CoverSlide() {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px" }} />
+      <div style={{ position: "absolute", right: 0, top: 0, width: "44%", height: "100%", background: `linear-gradient(to right,transparent,${C.gold}05)` }} />
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)` }} />
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : "0 72px", position: "relative", zIndex: 1 }}>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.45em", marginBottom: isMobile ? 20 : 32 }}>
+          KITS ADVISORY GROUP · PRIVATE & CONFIDENTIAL · KAG-JRK-PITCH-001
+        </div>
+        <div style={{ marginBottom: 8 }}>
+          <span style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(32px,8vw,56px)" : "clamp(56px,8vw,100px)", fontWeight: 400, color: C.strike, letterSpacing: "0.18em", lineHeight: 1, display: "block" }}>STRIKE</span>
+          <span style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? "clamp(16px,4vw,28px)" : "clamp(24px,4vw,44px)", fontWeight: 400, color: C.gold, letterSpacing: "0.18em", display: "block" }}>BITES</span>
+        </div>
+        <div style={{ width: isMobile ? 60 : 80, height: 2, background: `linear-gradient(to right,${C.gold},transparent)`, margin: "24px 0" }} />
+        <p style={{ fontSize: isMobile ? 13 : "clamp(13px,1.8vw,18px)", color: C.cream, opacity: 0.75, margin: "0 0 8px", fontFamily: "Georgia,serif" }}>Lebanon's First Premium Beef Jerky Brand</p>
+        <p style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.creamDim, opacity: 0.45, margin: "0 0 36px", letterSpacing: "0.2em" }}>CLIENT ADVISORY PRESENTATION · KITS · JUNE 2026</p>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          {["10 Deliverables Ready","88/100 Brand Score","38-Step Launch Plan","3 Financial Scenarios","$0 Local Competition"].map((t, i) => (
+            <span key={i} style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, background: `${C.gold}0D`, border: `1px solid ${C.gold}28`, padding: "5px 11px", borderRadius: 2, letterSpacing: "0.05em" }}>{t}</span>
+          ))}
+        </div>
+        <div style={{ marginTop: 32, fontFamily: "monospace", fontSize: 8, color: C.goldDim, letterSpacing: "0.1em" }}>
+          KITS Advisory Group · Lebanese Market · June 2026
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── LISTEN SLIDE ─────────────────────────────────────────────────────────────
+function ListenSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "44px 72px" }}>
+      <SH slide={slide} />
+      <p style={{ fontSize: isMobile ? 13 : 15, color: C.cream, fontFamily: "Georgia,serif", margin: "8px 0 20px", lineHeight: 1.75, opacity: 0.85 }}>{slide.intro}</p>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 10 }}>
+        {slide.questions.map((q, i) => (
+          <div key={i} style={{ background: `${q.color}07`, border: `1px solid ${q.color}22`, borderLeft: `3px solid ${q.color}`, borderRadius: 3, padding: isMobile ? "14px 16px" : "16px 18px", display: "flex", gap: 12, alignItems: "flex-start" }}>
+            <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: q.color, flexShrink: 0, marginTop: 2 }}>Q{String(i + 1).padStart(2, "0")}</span>
+            <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: C.cream, lineHeight: 1.65 }}>{q.text}</p>
+          </div>
+        ))}
+      </div>
+      <div style={{ marginTop: 16, padding: "12px 18px", background: `${C.gold}08`, border: `1px solid ${C.gold}20`, borderRadius: 3 }}>
+        <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic" }}>"{slide.note}"</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── STATS / MARKET ───────────────────────────────────────────────────────────
+function StatsSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "44px 72px" }}>
+      <SH slide={slide} />
+      <div style={{ margin: "12px 0 20px", padding: isMobile ? "12px 16px" : "14px 20px", background: `${C.greenBright}10`, border: `1px solid ${C.greenBright}30`, borderLeft: `4px solid ${C.greenBright}`, borderRadius: 3 }}>
+        <p style={{ margin: 0, fontSize: isMobile ? 14 : 17, color: C.greenBright, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.5 }}>{slide.headline}</p>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4,1fr)", gap: 12, flex: 1, alignContent: "start" }}>
+        {slide.stats.map((s, i) => (
+          <div key={i} style={{ background: `${s.color}08`, border: `1px solid ${s.color}25`, borderTop: `3px solid ${s.color}`, borderRadius: 4, padding: isMobile ? "16px 14px" : "22px 18px", display: "flex", flexDirection: "column", gap: 12 }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? "clamp(20px,5vw,32px)" : "clamp(22px,2.5vw,38px)", color: s.color, lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
+            <div>
+              <div style={{ fontSize: isMobile ? 11 : 13, color: C.cream, marginBottom: 4, lineHeight: 1.4 }}>{s.label}</div>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, lineHeight: 1.4 }}>{s.sub}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {slide.footnote && <p style={{ margin: "12px 0 0", fontSize: isMobile ? 9 : 10, color: C.creamDim, fontFamily: "monospace" }}>{slide.footnote}</p>}
+    </div>
+  );
+}
+
+// ─── TWO COL ──────────────────────────────────────────────────────────────────
+function TwoColSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "44px 72px" }}>
+      <SH slide={slide} />
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20, marginTop: 20 }}>
+        {[slide.left, slide.right].map((col, ci) => (
+          <div key={ci} style={{ background: ci === 0 ? `${C.gold}07` : `${C.greenBright}07`, border: `1px solid ${ci === 0 ? C.gold : C.greenBright}20`, borderTop: `3px solid ${ci === 0 ? C.gold : C.greenBright}`, borderRadius: 4, padding: "22px 24px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: ci === 0 ? C.gold : C.greenBright, letterSpacing: "0.2em", marginBottom: 16, paddingBottom: 10, borderBottom: `1px solid ${ci === 0 ? C.gold : C.greenBright}20` }}>{col.heading}</div>
+            {col.items.map((item, ii) => (
+              <div key={ii} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "flex-start" }}>
+                <span style={{ color: ci === 0 ? C.gold : C.greenBright, fontSize: 9, flexShrink: 0, marginTop: 3 }}>→</span>
+                <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: C.cream, opacity: 0.85, lineHeight: 1.65 }}>{item}</p>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── DELIVERABLES ─────────────────────────────────────────────────────────────
+function DeliverablesSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  const [active, setActive] = useState(0);
+  const item = slide.items[active];
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 16px" : "40px 60px" }}>
+      <SH slide={slide} />
+      <p style={{ fontSize: isMobile ? 11 : 13, color: C.creamDim, fontFamily: "Georgia,serif", margin: "4px 0 12px", lineHeight: 1.65 }}>{slide.subtitle}</p>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "240px 1fr", gap: 12, minHeight: 0 }}>
+        <div style={{ display: "flex", flexDirection: isMobile ? "row" : "column", gap: 3, overflowX: isMobile ? "auto" : "hidden", overflowY: isMobile ? "hidden" : "auto", WebkitOverflowScrolling: "touch" }}>
+          {slide.items.map((it, i) => (
+            <button key={i} onClick={() => setActive(i)} style={{ background: active === i ? `${it.color}15` : "transparent", border: `1px solid ${active === i ? it.color : C.ash}`, borderLeft: `3px solid ${it.color}`, borderRadius: 3, padding: isMobile ? "8px 10px" : "9px 13px", cursor: "pointer", textAlign: "left", transition: "all 0.15s", flexShrink: 0, WebkitTapHighlightColor: "transparent" }}>
+              <div style={{ fontFamily: "monospace", fontSize: 7, color: it.color, marginBottom: 2 }}>{it.ref}</div>
+              <div style={{ fontSize: isMobile ? 9.5 : 10.5, color: active === i ? C.cream : C.creamDim, lineHeight: 1.3, whiteSpace: isMobile ? "nowrap" : "normal" }}>{it.title}</div>
+            </button>
+          ))}
+        </div>
+        <div style={{ background: `${item.color}07`, border: `1px solid ${item.color}22`, borderRadius: 4, padding: "20px 22px", display: "flex", flexDirection: "column", gap: 12, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+          <div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: item.color, letterSpacing: "0.2em", marginBottom: 6 }}>{item.ref}</div>
+            <h3 style={{ margin: "0 0 10px", fontSize: isMobile ? 15 : 17, fontWeight: 400, color: C.cream, fontFamily: "Georgia,serif" }}>{item.title}</h3>
+            <p style={{ margin: 0, fontSize: isMobile ? 11.5 : 12.5, color: C.creamDim, lineHeight: 1.8 }}>{item.desc}</p>
+          </div>
+          <div style={{ height: 1, background: C.ash }} />
+          <div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 7 }}>CONTAINS</div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
+              {item.tags.map((tag, ti) => (
+                <span key={ti} style={{ fontFamily: "monospace", fontSize: 8, color: item.color, background: `${item.color}10`, border: `1px solid ${item.color}28`, padding: "3px 9px", borderRadius: 2 }}>{tag}</span>
+              ))}
+            </div>
+          </div>
+          <div style={{ background: `${C.greenBright}09`, border: `1px solid ${C.greenBright}1E`, borderRadius: 3, padding: "9px 13px" }}>
+            <span style={{ fontFamily: "monospace", fontSize: 8, color: C.greenBright }}>✓ STATUS: {item.status}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── BRAND SCORE ──────────────────────────────────────────────────────────────
+function BrandScoreSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 0 }}>
+        <SH slide={slide} />
+        <div style={{ textAlign: "center", flexShrink: 0, background: `${C.gold}08`, border: `1px solid ${C.gold}25`, borderRadius: 4, padding: isMobile ? "10px 16px" : "12px 20px" }}>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 28 : 36, color: C.goldBright, lineHeight: 1 }}>{slide.score}</div>
+          <div style={{ fontFamily: "monospace", fontSize: 7, color: C.gold, letterSpacing: "0.15em", marginTop: 4 }}>/ 100 BRAND SCORE</div>
+          <div style={{ fontFamily: "monospace", fontSize: 7, color: C.greenBright, marginTop: 4 }}>APPROVED — STRONG</div>
+        </div>
+      </div>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: 8, marginTop: 16 }}>
+        {slide.elements.map((el, i) => (
+          <div key={i} style={{ background: C.charcoal, border: `1px solid ${el.verdict === "APPROVED" ? C.greenBright : C.gold}15`, borderLeft: `3px solid ${el.verdict === "APPROVED" ? C.greenBright : C.gold}`, borderRadius: 3, padding: "12px 14px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, alignItems: "flex-start", gap: 4 }}>
+              <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, letterSpacing: "0.1em", lineHeight: 1.3 }}>{el.label}</div>
+              <span style={{ fontFamily: "monospace", fontSize: 7, color: el.verdict === "APPROVED" ? C.greenBright : C.gold, background: `${el.verdict === "APPROVED" ? C.greenBright : C.gold}15`, padding: "1px 6px", borderRadius: 2, flexShrink: 0 }}>{el.verdict}</span>
+            </div>
+            <div style={{ fontSize: isMobile ? 12 : 14, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 5 }}>{el.value}</div>
+            <div style={{ height: 3, background: C.ash, borderRadius: 2, marginBottom: 6 }}>
+              <div style={{ width: `${el.score}%`, height: "100%", background: el.verdict === "APPROVED" ? C.greenBright : C.gold, borderRadius: 2 }} />
+            </div>
+            <p style={{ margin: 0, fontSize: 10, color: C.creamDim, lineHeight: 1.5 }}>{el.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── ROADMAP / PHASES ─────────────────────────────────────────────────────────
+function RoadmapSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  const [active, setActive] = useState(0);
+  const ph = slide.phases[active];
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
+      <SH slide={slide} />
+      <div style={{ display: "flex", gap: 6, marginTop: 16, marginBottom: 16, flexDirection: isMobile ? "column" : "row" }}>
+        {slide.phases.map((p, i) => (
+          <button key={i} onClick={() => setActive(i)} style={{ flex: 1, background: active === i ? `${p.color}18` : C.charcoal, border: `1px solid ${active === i ? p.color : C.ash}`, borderTop: `3px solid ${active === i ? p.color : C.ash}`, borderRadius: 3, padding: "10px 12px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", WebkitTapHighlightColor: "transparent" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: p.color, letterSpacing: "0.15em", marginBottom: 4 }}>{p.phase}</div>
+            <div style={{ fontSize: 12, color: active === i ? C.cream : C.creamDim, marginBottom: 2 }}>{p.title}</div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>{p.time}</div>
+          </button>
+        ))}
+      </div>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14 }}>
+        <div>
+          <div style={{ fontFamily: "monospace", fontSize: 9, color: ph.color, letterSpacing: "0.2em", marginBottom: 12 }}>KEY ACTIONS</div>
+          {ph.actions.map((a, i) => (
+            <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
+              <span style={{ color: ph.color, fontSize: 9, flexShrink: 0, marginTop: 3 }}>→</span>
+              <p style={{ margin: 0, fontSize: 12, color: C.creamDim, lineHeight: 1.6 }}>{a}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ background: `${ph.color}08`, border: `1px solid ${ph.color}25`, borderRadius: 4, padding: "14px 16px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: ph.color, letterSpacing: "0.15em", marginBottom: 10 }}>TARGETS AT END OF PHASE</div>
+            {ph.targets.map((t, i) => (
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "7px 0", borderBottom: `1px solid ${ph.color}15` }}>
+                <span style={{ fontSize: 12, color: C.creamDim }}>{t.label}</span>
+                <span style={{ fontFamily: "monospace", fontSize: 12, color: ph.color }}>{t.value}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: `${C.gold}06`, border: `1px solid ${C.gold}15`, borderRadius: 4, padding: "14px 16px", flex: 1 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.15em", marginBottom: 8 }}>KITS PRINCIPLE</div>
+            <p style={{ margin: 0, fontSize: 12, color: C.cream, lineHeight: 1.7, fontFamily: "Georgia,serif", fontStyle: "italic" }}>"{ph.principle}"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── FINANCIALS ───────────────────────────────────────────────────────────────
+function FinancialsSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  const [at, setAt] = useState(1);
+  const t = slide.tiers[at];
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
+      <SH slide={slide} />
+      <div style={{ display: "flex", gap: 8, marginTop: 14, marginBottom: 14, flexDirection: isMobile ? "column" : "row" }}>
+        {slide.tiers.map((tier, i) => (
+          <button key={i} onClick={() => setAt(i)} style={{ flex: 1, background: at === i ? `${tier.color}15` : C.charcoal, border: `1px solid ${at === i ? tier.color : C.ash}`, borderRadius: 4, padding: "11px 13px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative", WebkitTapHighlightColor: "transparent" }}>
+            {tier.rec && <div style={{ position: "absolute", top: -9, left: "50%", transform: "translateX(-50%)", background: C.gold, color: C.obsidian, fontFamily: "monospace", fontSize: 6.5, padding: "2px 8px", borderRadius: 2, whiteSpace: "nowrap" }}>KITS RECOMMENDS</div>}
+            <div style={{ fontFamily: "monospace", fontSize: 7, color: tier.color, letterSpacing: "0.15em", marginBottom: 2 }}>{tier.tier}</div>
+            <div style={{ fontSize: 13, color: C.cream, marginBottom: 4 }}>{tier.name}</div>
+            <div style={{ fontFamily: "monospace", fontSize: 18, color: tier.color }}>{tier.total}</div>
+          </button>
+        ))}
+      </div>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 12 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 7 }}>
+            {[{ label: "Breakeven", val: t.breakeven }, { label: "Gross Margin", val: t.margin }, { label: "Year 1 ROI", val: t.roi }].map((m, i) => (
+              <div key={i} style={{ background: C.charcoal, border: `1px solid ${t.color}1E`, borderRadius: 3, padding: "11px 12px" }}>
+                <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, marginBottom: 5 }}>{m.label}</div>
+                <div style={{ fontFamily: "monospace", fontSize: 13, color: t.color }}>{m.val}</div>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "14px 16px", flex: 1 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 12 }}>REVENUE TRAJECTORY</div>
+            {[{ label: "Month 3", pct: t.m3p, text: t.m3 }, { label: "Month 6", pct: t.m6p, text: t.m6 }, { label: "Month 12", pct: t.m12p, text: t.m12 }].map((r, i) => (
+              <div key={i} style={{ marginBottom: 11 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                  <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>{r.label}</span>
+                  <span style={{ fontFamily: "monospace", fontSize: 9.5, color: t.color }}>{r.text}</span>
+                </div>
+                <div style={{ height: 5, background: C.ash, borderRadius: 3 }}>
+                  <div style={{ width: `${r.pct}%`, height: "100%", background: `linear-gradient(to right,${t.color}90,${t.color})`, borderRadius: 3, transition: "width 0.4s ease" }} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ background: `${t.color}08`, border: `1px solid ${t.color}22`, borderRadius: 4, padding: "13px 16px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: t.color, letterSpacing: "0.12em", marginBottom: 8 }}>WHAT THIS FUNDS</div>
+            {t.includes.map((inc, i) => (
+              <div key={i} style={{ display: "flex", gap: 7, marginBottom: 6 }}>
+                <span style={{ color: t.color, fontSize: 9, flexShrink: 0 }}>✓</span>
+                <span style={{ fontSize: 11.5, color: C.cream, lineHeight: 1.45 }}>{inc}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: `${C.greenBright}08`, border: `1px solid ${C.greenBright}22`, borderRadius: 4, padding: "13px 16px", flex: 1 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.12em", marginBottom: 7 }}>CUMULATIVE YEAR 1 GROSS PROFIT</div>
+            <div style={{ fontFamily: "monospace", fontSize: 26, color: C.goldBright, marginBottom: 5 }}>{t.cumProfit}</div>
+            <p style={{ margin: 0, fontSize: 11, color: C.creamDim, lineHeight: 1.65 }}>{t.profitNote}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── WHY KITS ─────────────────────────────────────────────────────────────────
+function WhyKITSSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  const [active, setActive] = useState(0);
+  const r = slide.reasons[active];
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
+      <SH slide={slide} />
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "210px 1fr", gap: 16, marginTop: 14 }}>
+        <div style={{ display: "flex", flexDirection: isMobile ? "row" : "column", gap: 4, overflowX: isMobile ? "auto" : "hidden", WebkitOverflowScrolling: "touch" }}>
+          {slide.reasons.map((reason, i) => (
+            <button key={i} onClick={() => setActive(i)} style={{ background: active === i ? `${reason.color}12` : "transparent", border: `1px solid ${active === i ? reason.color : C.ash}`, borderLeft: `3px solid ${reason.color}`, borderRadius: 3, padding: "9px 12px", cursor: "pointer", textAlign: "left", transition: "all 0.15s", flexShrink: 0, WebkitTapHighlightColor: "transparent" }}>
+              <div style={{ fontFamily: "monospace", fontSize: 7, color: reason.color, marginBottom: 2 }}>REASON {String(i + 1).padStart(2, "0")}</div>
+              <div style={{ fontSize: 10.5, color: active === i ? C.cream : C.creamDim, lineHeight: 1.35, whiteSpace: isMobile ? "nowrap" : "normal" }}>{reason.title}</div>
+            </button>
+          ))}
+        </div>
+        <div style={{ background: `${r.color}07`, border: `1px solid ${r.color}22`, borderRadius: 4, padding: "22px 24px", display: "flex", flexDirection: "column", gap: 14 }}>
+          <div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: r.color, letterSpacing: "0.2em", marginBottom: 8 }}>WHY THIS MATTERS TO YOU</div>
+            <h3 style={{ margin: "0 0 10px", fontSize: isMobile ? 17 : 19, fontWeight: 400, color: C.cream, fontFamily: "Georgia,serif" }}>{r.title}</h3>
+            <p style={{ margin: 0, fontSize: 12.5, color: C.creamDim, lineHeight: 1.8 }}>{r.body}</p>
+          </div>
+          <div style={{ height: 1, background: C.ash }} />
+          <div style={{ background: `${C.red}09`, border: `1px solid ${C.red}22`, borderRadius: 3, padding: "11px 15px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, marginBottom: 5 }}>WITHOUT KITS</div>
+            <p style={{ margin: 0, fontSize: 11.5, color: C.creamDim, lineHeight: 1.65, fontStyle: "italic" }}>{r.without}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── MANDATE ──────────────────────────────────────────────────────────────────
+function MandateSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
+      <SH slide={slide} />
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16, marginTop: 14 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ background: `${C.gold}07`, border: `1px solid ${C.gold}1E`, borderRadius: 4, padding: "14px 18px", flex: 1 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.18em", marginBottom: 10 }}>KITS TAKES FULL RESPONSIBILITY FOR</div>
+            {slide.kitsScope.map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: 8, marginBottom: 7 }}>
+                <span style={{ color: C.gold, fontSize: 9, flexShrink: 0, marginTop: 1 }}>◈</span>
+                <span style={{ fontSize: 11.5, color: C.cream, lineHeight: 1.45 }}>{item}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: `${C.greenBright}07`, border: `1px solid ${C.greenBright}1E`, borderRadius: 4, padding: "14px 18px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.18em", marginBottom: 10 }}>YOU RETAIN FULL CONTROL OVER</div>
+            {slide.clientScope.map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: 8, marginBottom: 6 }}>
+                <span style={{ color: C.greenBright, fontSize: 9, flexShrink: 0 }}>✓</span>
+                <span style={{ fontSize: 11.5, color: C.cream, lineHeight: 1.45 }}>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "14px 18px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.18em", marginBottom: 10 }}>ADVISORY FEE STRUCTURE</div>
+            {slide.fees.map((f, i) => (
+              <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: i < slide.fees.length - 1 ? `1px solid ${C.ash}` : "none" }}>
+                <span style={{ fontSize: 11.5, color: C.creamDim }}>{f.tier}</span>
+                <span style={{ fontFamily: "monospace", fontSize: 10.5, color: C.gold }}>{f.range}</span>
+              </div>
+            ))}
+          </div>
+          <div style={{ background: `${C.greenBright}07`, border: `1px solid ${C.greenBright}1E`, borderRadius: 4, padding: "14px 18px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.18em", marginBottom: 8 }}>IP OWNERSHIP — FULL TRANSFER ON FINAL PAYMENT</div>
+            <p style={{ margin: 0, fontSize: 11.5, color: C.creamDim, lineHeight: 1.75 }}>Every deliverable — brand identity, flavor specs, outreach scripts, regulatory submissions, competitive intelligence — transfers fully to you. You own everything. Zero conditions.</p>
+          </div>
+          <div style={{ background: `${C.gold}0D`, border: `1px solid ${C.gold}28`, borderRadius: 4, padding: "16px 18px", flex: 1, display: "flex", alignItems: "center" }}>
+            <p style={{ margin: 0, fontSize: 15, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", textAlign: "center", lineHeight: 1.8, width: "100%" }}>
+              "We don't advise from the side.<br />We execute from the front."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Q & A ────────────────────────────────────────────────────────────────────
+function QASlide({ slide }) {
+  const { isMobile } = useResponsive();
+  const [aq, setAq] = useState(null);
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
+      <SH slide={slide} />
+      <p style={{ fontSize: 12, color: C.creamDim, fontFamily: "Georgia,serif", margin: "4px 0 12px", lineHeight: 1.6 }}>{slide.subtitle}</p>
+      <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", gap: 5, WebkitOverflowScrolling: "touch" }}>
+        {slide.qas.map((qa, i) => (
+          <div key={i} style={{ background: C.charcoal, border: `1px solid ${aq === i ? qa.color : C.ash}`, borderLeft: `3px solid ${qa.color}`, borderRadius: 3, overflow: "hidden", transition: "border-color 0.15s" }}>
+            <button onClick={() => setAq(aq === i ? null : i)} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", background: "transparent", border: "none", padding: "12px 16px", cursor: "pointer", textAlign: "left", gap: 14, WebkitTapHighlightColor: "transparent" }}>
+              <div style={{ display: "flex", gap: 10, alignItems: "flex-start", flex: 1 }}>
+                <span style={{ fontFamily: "monospace", fontSize: 8, color: qa.color, flexShrink: 0, marginTop: 2 }}>Q</span>
+                <span style={{ fontSize: isMobile ? 12 : 12.5, color: C.cream, lineHeight: 1.5, fontFamily: "Georgia,serif" }}>{qa.q}</span>
+              </div>
+              <span style={{ color: C.creamDim, fontSize: 15, flexShrink: 0 }}>{aq === i ? "−" : "+"}</span>
+            </button>
+            {aq === i && (
+              <div style={{ padding: "0 16px 14px 38px" }}>
+                <div style={{ height: 1, background: C.ash, marginBottom: 10 }} />
+                <p style={{ margin: 0, fontSize: 12, color: C.creamDim, lineHeight: 1.85, fontFamily: "Georgia,serif" }}>{qa.a}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ─── CLOSING ──────────────────────────────────────────────────────────────────
+function ClosingSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  return (
+    <div style={{ height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)` }} />
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : "0 72px", position: "relative", zIndex: 1 }}>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.3em", marginBottom: 22 }}>KITS ADVISORY GROUP · THE MANDATE</div>
+        <h2 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(18px,3vw,28px)" : "clamp(20px,2.5vw,30px)", fontWeight: 400, color: C.cream, margin: "0 0 22px", lineHeight: 1.45 }}>{slide.title}</h2>
+        <div style={{ width: 60, height: 2, background: C.gold, marginBottom: 26 }} />
+        <div style={{ marginBottom: 26 }}>
+          <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, letterSpacing: "0.2em", marginBottom: 10 }}>FOUR DECISIONS NEEDED TODAY</div>
+          {slide.decisions.map((d, i) => (
+            <div key={i} style={{ display: "flex", gap: 12, marginBottom: 6, padding: "10px 14px", background: `${C.gold}07`, border: `1px solid ${C.gold}18`, borderRadius: 3 }}>
+              <span style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, flexShrink: 0 }}>{String(i + 1).padStart(2, "0")}</span>
+              <p style={{ margin: 0, fontSize: isMobile ? 12 : 12.5, color: C.cream, lineHeight: 1.55 }}>{d}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ background: `${C.gold}09`, border: `1px solid ${C.gold}25`, borderRadius: 4, padding: "20px 24px" }}>
+          <p style={{ margin: 0, fontSize: isMobile ? 14 : 16, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.75 }}>"{slide.closingLine}"</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── SLIDE DISPATCH ───────────────────────────────────────────────────────────
+function RenderSlide({ slide }) {
+  switch (slide.type) {
+    case "cover":        return <CoverSlide />;
+    case "section":      return <SectionDivider slide={slide} />;
+    case "listen":       return <ListenSlide slide={slide} />;
+    case "stats":        return <StatsSlide slide={slide} />;
+    case "two-col":      return <TwoColSlide slide={slide} />;
+    case "deliverables": return <DeliverablesSlide slide={slide} />;
+    case "brandscore":   return <BrandScoreSlide slide={slide} />;
+    case "roadmap":      return <RoadmapSlide slide={slide} />;
+    case "financials":   return <FinancialsSlide slide={slide} />;
+    case "whykits":      return <WhyKITSSlide slide={slide} />;
+    case "mandate":      return <MandateSlide slide={slide} />;
+    case "qa":           return <QASlide slide={slide} />;
+    case "closing":      return <ClosingSlide slide={slide} />;
+    default:             return null;
+  }
+}
+
+// ─── SLIDE DATA ───────────────────────────────────────────────────────────────
+const SLIDES = [
+  {
+    id: "cover", type: "cover", label: "COVER",
+    notes: { open: "Laptop open on this slide before the client walks in. Let them see it. Say nothing about it. Once they are seated: 'Before we show you anything — we want to hear your story.'", emphasis: ["Do not start the presentation. Start the listening."], timing: "0 min — ambient" }
+  },
+  {
+    id: "listen", type: "listen", label: "LISTEN",
+    section: "STEP 01 · DISCOVERY",
+    title: "Before We Show You Anything — Tell Us Your Story",
+    intro: "Every founder comes to this table with a story that matters. We built all of this after seeing the market gap — but you had the vision first. Before we open a single slide, we want to understand your story, your intentions, and what success looks like to you.",
+    questions: [
+      { color: C.gold, text: "How did the idea of beef jerky first come to you? What was the moment you decided this was worth pursuing?" },
+      { color: C.amber, text: "What do you already have in place? Manufacturer contacts, brand ideas, capital, distribution relationships — what exists today?" },
+      { color: C.greenBright, text: "What does success look like in 12 months? In three years? Is this a lifestyle business or a brand you want to scale regionally?" },
+      { color: C.purple, text: "What worries you most about this venture? What has stopped you from moving forward faster up to now?" },
+      { color: C.gold, text: "What kind of partner are you looking for? Someone to execute fully on your behalf, or someone to advise while you drive operations yourself?" },
+      { color: C.steel, text: "Do you have a budget range in mind for the launch phase? No wrong answer — it shapes which plan we present to you." },
+    ],
+    note: "We listen completely before we present anything. Their answers reshape which parts of the presentation we emphasize.",
+    notes: { open: "Do not advance past this slide until you have genuinely listened. Take physical notes. Ask follow-ups. The quality of your questions here determines how credible your entire presentation appears in the next 60 minutes.", emphasis: ["The client reveals their fears, ambitions, and constraints here. Every sentence is intel for the close.", "If they mention a manufacturer — ask the name. If they mention a budget number — write it down and reference it later."], timing: "20–30 minutes — do not rush this" }
+  },
+  {
+    id: "sec01", type: "section", label: "§01",
+    badge: "SECTION ONE", color: C.gold,
+    title: "The Opportunity",
+    sub: "Why Lebanon. Why this product. Why the window is open right now — and why it will not stay open.",
+    notes: { open: "Transition: 'Let us now show you what we found when we researched your market. Some of it will surprise you.'", emphasis: [], timing: "15 seconds" }
+  },
+  {
+    id: "market", type: "stats", label: "MARKET",
+    section: "01 · THE OPPORTUNITY",
+    title: "An Empty Category in a Growing Market",
+    headline: "There is no established local beef jerky brand in Lebanon. That is not a gap in the market — that is an open category waiting for its owner.",
+    stats: [
+      { value: "ZERO", label: "Local beef jerky brands in Lebanon", sub: "Confirmed by KITS field research · Category is fully available today", color: C.greenBright },
+      { value: "$1.04B", label: "Middle East sports nutrition market", sub: "+7.3% CAGR through 2033 · Grand View Research 2024", color: C.gold },
+      { value: "82.6%", label: "Brick-and-mortar dominance in MENA", sub: "Physical relationships drive sales · Not digital channels", color: C.amber },
+      { value: "$8.49B", label: "GCC snacks market 2024", sub: "→ $12.87B by 2030 · Natural export target from Day 1", color: C.purple },
+    ],
+    footnote: "Sources: Grand View Research 2024 · Precedence Research 2024 · Cognitive Market Research 2025 · KITS field research",
+    notes: { open: "Let ZERO sit on screen for five full seconds. Ask: 'When you walk into any gym or nutrition store in Lebanon today, can you buy a locally made beef jerky brand?' The answer is no. That is the business.", emphasis: ["The 82.6% brick-and-mortar statistic validates every strategic choice we made. This is not a conservative approach — it is the statistically correct one.", "Pause on ZERO. Ask the room: 'When did you last see a locally made jerky in a Lebanese gym?' The silence confirms the opportunity."], timing: "4 minutes" }
+  },
+  {
+    id: "whynow", type: "two-col", label: "WHY NOW",
+    section: "01 · THE OPPORTUNITY",
+    title: "Why Lebanon. Why Now.",
+    left: {
+      heading: "THE TAILWINDS",
+      items: [
+        "Lebanese fitness culture expanding — gyms, CrossFit, boutique studios proliferating across Beirut, Metn, Keserwan, Jounieh",
+        "Health-conscious youth (18–40) actively tracking macros — protein content is now the primary purchase driver",
+        "USD-denominated market post-2019 creates pricing stability for a premium brand in a volatile economy",
+        "'Made in Lebanon' carries GCC premium weight — the provenance story travels with the product into UAE and Saudi Arabia",
+        "Halal certification unlocks 60%+ of Lebanese consumers plus all GCC export markets simultaneously from day one",
+      ]
+    },
+    right: {
+      heading: "THE WINDOW",
+      items: [
+        "First-mover advantage is available today — but successful categories attract imitators within 12–18 months of launch",
+        "Imported competitors (Jack Link's, Wild West) are visible but structurally weak: no Halal, wrong flavor, wrong price, no local presence",
+        "No local competitor is building in this space currently — confirmed by KITS field research completed this quarter",
+        "MoPH registration timeline: 2–4 months — beginning now means shelf-ready Q4 2026",
+        "Existing warm relationships across gyms and nutrition stores compress outreach from 3 months of cold calling to 2–3 weeks",
+      ]
+    },
+    notes: { open: "The window is real and open — but first-mover advantage is not permanent. Speed is the only true moat. Trademark, brand equity, and the trainer relationship network are what protect that advantage once built.", emphasis: ["Say directly: 'Every week of delay on decisions is a week closer to someone else discovering what KITS has confirmed through research.'"], timing: "3 minutes" }
+  },
+  {
+    id: "sec02", type: "section", label: "§02",
+    badge: "SECTION TWO", color: C.amber,
+    title: "What We Built",
+    sub: "Ten institutional-quality deliverables — completed, referenced, production-ready. Before you said yes.",
+    notes: { open: "Transition: 'Before we talked about working together, we built the entire business case. We want to show you exactly what exists today and what is ready to use the moment you decide to move forward.'", emphasis: [], timing: "15 seconds" }
+  },
+  {
+    id: "deliverables", type: "deliverables", label: "DELIVERED",
+    section: "02 · WHAT WE BUILT",
+    title: "Built Before You Said Yes — Ten Deliverables Ready",
+    subtitle: "Not slides. Not outlines. Completed, referenced, institutional-quality work. Every one of these can be actioned tomorrow.",
+    items: [
+      { ref: "KAG-JRK-001", color: C.gold, title: "Full Advisory Framework", status: "COMPLETE — READY TO HAND OVER", desc: "A 10-section A-to-Z market entry guide covering legal structure, regulatory approvals, market research, product development, brand positioning, distribution strategy, pricing architecture, and full commercial operations.", tags: ["10 Sections", "A to Z Guide", "Full Market Map", "Reference Index"] },
+      { ref: "KAG-JRK-002", color: C.amber, title: "Master Launch Checklist", status: "COMPLETE — ACTIONABLE FROM DAY ONE", desc: "38 verified action steps across 5 phases from Foundation (Month 1) to Scale (Month 12+). Each step includes detailed implementation guidance, the responsible party, and a milestone gate before the next phase begins.", tags: ["38 Steps", "5 Phases", "Milestone-Gated", "Progress Tracker"] },
+      { ref: "KAG-JRK-003", color: C.greenBright, title: "Financial Feasibility Study", status: "COMPLETE — THREE TIERS MODELLED", desc: "Three full budget scenarios (Lean $18.5K / Standard $42K / Full $82K) with itemised investment breakdowns, month-by-month revenue projections, gross margin targets, breakeven timelines, and Year 1 ROI calculations.", tags: ["3 Budget Tiers", "12-Month Model", "ROI Analysis", "Break-Even"] },
+      { ref: "KAG-JRK-004", color: C.purple, title: "Trade Outreach System", status: "COMPLETE — READY TO USE NOW", desc: "Word-for-word visit scripts for gym, sports nutrition store, and pharmacy accounts. A 6-step account acquisition sequence, full objection-handling for 6 common retailer objections, commercial proposal templates, and a live account tracker.", tags: ["Full Scripts", "6 Objections Handled", "Account Tracker", "Commercial Proposals"] },
+      { ref: "KAG-JRK-005", color: C.red, title: "Competitive Analysis", status: "COMPLETE — MOST RESEARCH-INTENSIVE", desc: "Scored comparison matrix across 5 competitors (Jack Link's, Wild West, Quest Bar, Barebells, STRIKE) evaluated from both the retailer perspective and the consumer perspective across 8 criteria each. STRIKE wins every criterion.", tags: ["5 Competitors", "Dual Perspective", "8 Criteria Each", "Scored Matrix"] },
+      { ref: "KAG-JRK-006", color: C.gold, title: "Brand & Packaging Design Brief", status: "COMPLETE — READY FOR DESIGNER", desc: "Complete 8-section brief for the brand designer: color direction, typography system, packaging specifications for both SKUs, all mandatory regulatory elements, trilingual copy in Arabic, English, and French, and an 8-week delivery timeline.", tags: ["8 Sections", "Trilingual Copy", "Print-Ready Specs", "8-Week Timeline"] },
+      { ref: "KAG-JRK-007", color: C.amber, title: "Manufacturer Technical Brief", status: "COMPLETE — READY FOR MANUFACTURER", desc: "Full flavor specification for the Lebanese BBQ profile with 8 aromatic components, complete nutritional parameter requirements, Halal compliance checklist, a 4-stage quality control protocol, and a supply agreement framework.", tags: ["Flavor Spec", "8 QC Parameters", "Halal Checklist", "Supply Framework"] },
+      { ref: "KAG-JRK-008", color: C.greenBright, title: "STRIKE Brand Enhancement Study", status: "COMPLETE — BRAND APPROVED 88/100", desc: "Element-by-element brand scoring: STRIKE name 92/100, STRIKE BITES 88/100, full tagline analysis, packaging renders for all three SKUs in vector format. Keep / Evolve / Add framework for each brand element.", tags: ["88/100 Overall", "3 SKU Renders", "Keep/Evolve/Add", "92/100 Name Score"] },
+      { ref: "KAG-JRK-009", color: C.purple, title: "Board Meeting Presentation", status: "COMPLETE — FUNDER-READY", desc: "25-slide institutional-quality board presentation with structured presenter notes on every slide. Interactive sections covering financial tiers, competitive power points, GTM phases, and full keyboard navigation. Estimated run time: 73 minutes.", tags: ["25 Slides", "Presenter Notes", "Interactive", "Funder-Ready"] },
+      { ref: "KAG-JRK-010", color: C.red, title: "Complete Project Handoff", status: "COMPLETE — NOTHING OMITTED", desc: "A 16-part operational handoff document covering every dimension of the engagement: product status, brand decisions, market intelligence, critical blockers, financial scenarios, regulatory roadmap, manufacturer contacts, and execution standards.", tags: ["16 Parts", "Full Operational", "All Blockers Flagged", "A to Z Coverage"] },
+    ],
+    notes: { open: "Click through 2–3 deliverables slowly. Let the client read the tags and the status line. Then say: 'Every one of these exists today. If you sign the mandate after this meeting, your designer can be briefed tomorrow and your manufacturer can receive the flavor brief this week.'", emphasis: ["The weight of 10 completed deliverables before a contract is the most powerful proof of commitment in the room. Do not rush past it.", "If the client asks to see a specific deliverable — say yes. You have them all. Offer to walk through any one in detail."], timing: "6 minutes" }
+  },
+  {
+    id: "sec03", type: "section", label: "§03",
+    badge: "SECTION THREE", color: C.gold,
+    title: "The Brand",
+    sub: "STRIKE BITES — named, scored, designed, and ready to build. Months of work already done.",
+    notes: { open: "Transition: 'We did not wait for a mandate to name your brand. We researched it, scored it against 7 criteria, and we have a recommendation that rates 88 out of 100.'", emphasis: [], timing: "15 seconds" }
+  },
+  {
+    id: "brand", type: "brandscore", label: "BRAND",
+    section: "03 · THE BRAND",
+    title: "STRIKE — Your Brand, Already Built",
+    score: 88,
+    elements: [
+      { label: "Brand Name", value: "STRIKE", verdict: "APPROVED", score: 92, note: "Single syllable. Universal pronunciation in Arabic, English, French — سترايك. Functions as verb and noun simultaneously. Outperforms all 7 alternatives evaluated. Class 29 Lebanon appears clear." },
+      { label: "Sub-Brand", value: "STRIKE BITES", verdict: "APPROVED", score: 88, note: "Alliterative architecture that scales across the product line: BITES → STRIPS → STICKS → PACKS. Every future format is pre-architected. No competitor has this system." },
+      { label: "Front Tagline", value: "FUEL THE PRIMAL.", verdict: "RECOMMENDED", score: 85, note: "Refinement of 'REAL PRIMAL MUSCLE FUEL.' Faster. More poetic. Less supplement-adjacent. Works on pack at any size. Your decision to confirm — both options work." },
+      { label: "Visual System", value: "Obsidian · Gold · Matte", verdict: "APPROVED", score: 90, note: "Dark warm obsidian base, performance gold accent, matte laminate finish. UV spot varnish on STRIKE wordmark. Cedar as a geometric 5-line abstraction at 15% opacity." },
+      { label: "Halal Badge", value: "Dar Al-Fatwa · Forest Green", verdict: "APPROVED", score: 95, note: "Single most important regulatory element. Forest green circle, front panel top right. Visible in the first second of shelf encounter. GCC export-recognized from day one." },
+      { label: "Pack Languages", value: "Arabic · English · French", verdict: "APPROVED", score: 95, note: "Arabic regulatory primary. English commercial secondary. French market tertiary. No imported competitor does this. Structural shelf authority advantage in Lebanon." },
+    ],
+    notes: { open: "Walk through STRIKE and STRIKE BITES. Then ask: 'Does this feel right to you?' Pause. Let them react before advancing. Their response reveals their emotional investment in the brand — this is invaluable for the close.", emphasis: ["The score of 88 is real and defensible. Most brands launch with a 70. Explain the methodology if asked — it will demonstrate the rigor behind all KITS work."], timing: "5 minutes" }
+  },
+  {
+    id: "sec04", type: "section", label: "§04",
+    badge: "SECTION FOUR", color: C.greenBright,
+    title: "The Plan",
+    sub: "A to Z. Phase 0 through Phase 4. 38 steps. Nothing improvised, nothing left to chance.",
+    notes: { open: "Transition: 'Let us show you exactly how we take this from today's meeting to your first sale — and beyond.'", emphasis: [], timing: "15 seconds" }
+  },
+  {
+    id: "roadmap", type: "roadmap", label: "ROADMAP",
+    section: "04 · THE PLAN",
+    title: "Full Launch Roadmap — Phase by Phase",
+    phases: [
+      {
+        phase: "PHASE 0–1", time: "Today → Month 4", color: C.gold, title: "Foundation",
+        principle: "Build the structure before the product. Legal entity, regulatory filings, brand identity, and supply agreement must all be locked before a single unit goes to market. These are not bureaucratic steps — they are the foundation that protects every dollar you invest.",
+        actions: ["Engage Lebanese notary — SARL registration begins this week", "IP lawyer engaged — Class 29 + 35 trademark clearance for STRIKE", "MoPH food product registration submitted (2–4 month lead time — start immediately)", "Halal certification applied for — Dar Al-Fatwa Lebanon (3–6 weeks)", "Lab testing commissioned from LIBNOR on nutritional panel receipt from manufacturer", "Brand designer formally briefed — 8-week identity and packaging system delivery", "GS1 Lebanon — barcode allocation for first 2 SKUs", "Supply agreement signed with manufacturer"],
+        targets: [{ label: "SARL Registered", value: "Week 3–4" }, { label: "MoPH Submitted", value: "Month 2" }, { label: "Trademark Cleared", value: "Week 6" }, { label: "Brand Identity Final", value: "Week 8" }]
+      },
+      {
+        phase: "PHASE 2", time: "Month 4–6", color: C.amber, title: "Launch",
+        principle: "Sports nutrition stores are Priority One — their customer walks in already in protein-buying mode. Every first order is sale-or-return. Zero financial risk to any buyer.",
+        actions: ["Formal launch into 20–30 gym and sports nutrition accounts", "STRIKE TEAM: recruit 20 founding personal trainers as brand ambassadors", "Sale-or-return terms for all first orders — zero risk to every account", "Personal display setup at every account by KITS on delivery day", "Bi-weekly check-in at every account — unit count, feedback, reorder", "Pharmacy outreach begins Month 5 once sell-through data is available", "Weekly P&L reporting against approved budget tier begins"],
+        targets: [{ label: "Active Accounts", value: "20–30" }, { label: "Revenue M6", value: "$18K–28K/mo" }, { label: "Trainer Ambassadors", value: "20 founding" }, { label: "Breakeven Target", value: "Month 5–7" }]
+      },
+      {
+        phase: "PHASE 3", time: "Month 6–12", color: C.greenBright, title: "Expand",
+        principle: "Approach modern trade with sell-through data in hand — not with promises. Numbers open doors that relationships alone cannot. 12 weeks of verified sell-through data is your credential with any supermarket buyer.",
+        actions: ["Modern trade approach: Spinneys, TSC, Bou Khalil, Fahed — with data", "B2B and corporate wellness channel development", "Second SKU evaluation based on sell-through signals (STRIPS)", "FMCG distributor engagement as volume warrants", "Quarterly account review and contract renegotiations", "Formal brand health assessment — 50+ consumer survey"],
+        targets: [{ label: "Active Accounts", value: "80–130" }, { label: "Revenue M12", value: "$40K–65K/mo" }, { label: "Modern Trade Entry", value: "Month 8–10" }, { label: "Gross Margin", value: "48–55%" }]
+      },
+      {
+        phase: "PHASE 4", time: "Month 12+", color: C.purple, title: "Scale",
+        principle: "The Lebanese story is the GCC marketing asset. 'Made in Lebanon' is a premium signal in UAE and Saudi Arabia. We built export capability into the product from the first specification — no reformulation, no re-certification needed.",
+        actions: ["GCC export evaluation — UAE first, Saudi Arabia second", "ESMA UAE and Saudi SFDA registration preparation", "STRIKE PACKS — variety multipack for GCC retail and gift market", "STRIKE STRIPS and STRIKE STICKS product line expansion", "Western market horizon planning — D2C digital channel potential"],
+        targets: [{ label: "GCC Entry", value: "UAE + KSA" }, { label: "Active SKUs", value: "3–4" }, { label: "Revenue Potential", value: "$80K–130K/mo" }, { label: "Total Accounts", value: "200+" }]
+      }
+    ],
+    notes: { open: "Spend time on Phase 2 — that is where the client's existing gym and manufacturer relationships become your most powerful accelerators. Say: 'Your contacts cut our Phase 2 timeline by 4–6 weeks versus any other entrant coming into this market cold.'", emphasis: ["The STRIKE TEAM trainer program is the highest-leverage activation in the entire plan. 20 trainers who believe in the product = 20 salespeople who work without a salary."], timing: "6 minutes" }
+  },
+  {
+    id: "sec05", type: "section", label: "§05",
+    badge: "SECTION FIVE", color: C.amber,
+    title: "The Financial Plan",
+    sub: "Your investment. Your return. Your timeline to profitability. Every number is based on real channel data.",
+    notes: { open: "Before advancing to numbers: 'Every figure in this plan is derived from actual channel margins, competitive pricing in Lebanon, and realistic sell-through assumptions. We will not put a projection in front of you that we cannot defend number by number.'", emphasis: [], timing: "15 seconds" }
+  },
+  {
+    id: "financials", type: "financials", label: "FINANCIALS",
+    section: "05 · FINANCIAL PLAN",
+    title: "Investment, Return & ROI — Three Scenarios",
+    tiers: [
+      {
+        tier: "TIER 1", name: "Lean Launch", total: "$18,500", color: C.greenBright,
+        breakeven: "Month 7–9", margin: "42–48%", roi: "~240%",
+        m3: "Building", m3p: 15, m6: "$8K–14K /mo", m6p: 38, m12: "$18K–28K /mo", m12p: 70,
+        cumProfit: "~$64K", profitNote: "Est. cumulative gross profit Year 1 at 45% avg margin. Investment recovery Month 9–12. Functional but competitively underfunded versus imported brands on pharmacy shelf.",
+        includes: ["SARL registration + core licensing", "MoPH registration — 1 SKU", "Basic brand identity (wordmark + color)", "Single-serve pouch only", "1 production batch", "30-account outreach target"]
+      },
+      {
+        tier: "TIER 2", name: "Standard Launch", total: "$42,000", color: C.gold, rec: true,
+        breakeven: "Month 5–7", margin: "48–55%", roi: "~280%",
+        m3: "Revenue building", m3p: 22, m6: "$18K–28K /mo", m6p: 55, m12: "$40K–65K /mo", m12p: 100,
+        cumProfit: "~$161K", profitNote: "Est. cumulative gross profit Year 1 at 51.5% avg margin. Investment recovery Month 6–7. Year 1 net positive approx. $119K. The right level of ambition for this opportunity.",
+        includes: ["SARL + all licensing + IP lawyer", "MoPH registration — 2 SKUs", "Full brand identity system + packaging", "Single-serve + multi-serve pouch", "2 production batches", "80-account outreach", "KITS management fee Phases 0–2"]
+      },
+      {
+        tier: "TIER 3", name: "Full Market Entry", total: "$82,000", color: C.amber,
+        breakeven: "Month 4–6", margin: "52–60%", roi: "~340%",
+        m3: "Soft launch revenue", m3p: 25, m6: "$35K–55K /mo", m6p: 55, m12: "$80K–130K /mo", m12p: 100,
+        cumProfit: "~$358K", profitNote: "Est. cumulative gross profit Year 1 at 56% avg margin. Investment recovery Month 5–6. Year 1 net positive approx. $276K. Maximum market capture velocity.",
+        includes: ["Full legal stack + GCC pre-filing", "MoPH 3 SKUs + full label compliance", "Agency-level brand identity", "Dedicated sales rep 6 months", "3-SKU full production batch", "130+ accounts", "KITS management fee Phases 0–3"]
+      }
+    ],
+    notes: { open: "Lead with Tier 2 as the reference point. Say: 'This is where serious commercial intent meets financial discipline. Enough capital to do this right — not more than you need to prove the concept.'", emphasis: ["Ask directly after presenting all three: 'Which scenario matches where you are right now?' Then stop talking. Let the room decide.", "Memorize these Tier 2 numbers: $42K in. $161K gross profit Year 1. $119K net positive. 280% ROI. Breakeven Month 5–7. You should say these without looking at the slide."], timing: "7 minutes" }
+  },
+  {
+    id: "sec06", type: "section", label: "§06",
+    badge: "SECTION SIX", color: C.purple,
+    title: "Why KITS and Only KITS",
+    sub: "Seven structural advantages. Each one a reason your business will not find this partnership anywhere else.",
+    notes: { open: "Present this section with full confidence. This is not modesty time. You built 10 deliverables before a contract existed. You have earned the right to speak directly.", emphasis: [], timing: "15 seconds" }
+  },
+  {
+    id: "whykits", type: "whykits", label: "WHY KITS",
+    section: "06 · WHY KITS",
+    title: "Why Work With KITS — And Nobody Else",
+    reasons: [
+      { color: C.gold, title: "We Delivered Before You Decided", body: "We built ten institutional-quality documents before you signed anything. Not slides. Not outlines. Full, referenced, production-ready deliverables — brand study, financial model, manufacturer brief, competitive matrix, outreach scripts, board presentation. This is what a committed partner does. Consultants talk about commitment. We proved it before the contract exists.", without: "You engage a standard consultant who gives you a 15-slide deck of generic advice, calls it a market entry strategy, and leaves you to figure out execution on your own." },
+      { color: C.amber, title: "We Know Lebanon's Channels Cold", body: "82.6% of sports nutrition purchases in MENA are brick-and-mortar. Digital marketing is not the priority channel — physical relationship, personal visit, and warm introduction are what open doors in Beirut, Metn, Keserwan, and Jounieh. We built the outreach system and wrote the scripts specifically for Lebanese retail culture.", without: "You work with an advisor who recommends Instagram advertising and an e-commerce store as your primary launch strategy in a relationship-first market where the handshake closes the deal." },
+      { color: C.greenBright, title: "We Execute — We Don't Just Advise", body: "KITS visits accounts personally. Sets up displays personally. Trains store staff personally. Checks in bi-weekly personally. We manage the manufacturer relationship, regulatory submissions, designer briefing, and monthly financial reporting. You make the decisions. We make them happen — every single one.", without: "You receive a comprehensive report and a handshake. You then need to hire someone else to actually execute what the consultant designed, restarting the entire learning curve." },
+      { color: C.purple, title: "We Built Your Brand Already", body: "STRIKE is not a name we suggested casually. It is a name we researched, scored against 7 criteria, tested for trademark viability across Lebanon and GCC, evaluated in Arabic, English, and French, and rated at 92/100. The visual system, packaging specifications, and trilingual copy are all documented. Your designer can be briefed tomorrow.", without: "You spend three months in naming workshops, iterate through 40 logo concepts, engage three designers with conflicting visions, and still don't know if the trademark is available in Lebanon or GCC." },
+      { color: C.red, title: "Milestone-Gated Financial Accountability", body: "Your budget is released by phase, not paid upfront. Phase 0 funds unlock after the legal entity is formed. Phase 1 after brand identity is approved. Phase 2 after the first batch sells through. You are never at risk of committing full capital before results are demonstrated. Every month you see a P&L against the approved plan.", without: "You hand over a lump sum and receive quarterly updates on 'strategic progress' and 'brand-building activity' with no verifiable output and no accountability structure." },
+      { color: C.gold, title: "You Own Everything We Create", body: "Every deliverable — the brand identity, flavor specifications, outreach scripts, competitor intelligence, financial model, and regulatory roadmap — transfers to you upon final payment. You are not licensing our work. You own it outright, unconditionally. If you ever move on without KITS, you take everything with you.", without: "You discover the 'proprietary methodology' your consultant used is copyrighted and you cannot use the outputs without retaining them permanently at an ongoing monthly fee." },
+      { color: C.greenBright, title: "We Think in GCC from Day One", body: "The product is being built for Lebanon and GCC simultaneously. Halal certification from Dar Al-Fatwa Lebanon is recognized in UAE and Saudi Arabia. STRIKE PACKS — the variety multipack for GCC hypermarket entry — is already in the product architecture. The Lebanese BBQ flavor is a premium signal in every GCC market. No reformulation needed.", without: "You launch in Lebanon with a product that requires full reformulation, re-certification under ESMA/SFDA, and an entirely new brand before it can enter any export market." },
+    ],
+    notes: { open: "After all 7: 'No competitor to your business — not Jack Link's, not Wild West, not any future local entrant — will have a partner that brings all seven of these simultaneously. This combination does not exist in Lebanon.'", emphasis: ["Reason 01 — We Delivered — is always the most impactful. It is unique. No other advisory firm in Lebanon has done this.", "Reason 04 — Milestone-Gated — is most reassuring to a careful founder. Emphasize that they pay for progress, not promises."], timing: "7 minutes" }
+  },
+  {
+    id: "mandate", type: "mandate", label: "MANDATE",
+    section: "07 · THE PROPOSAL",
+    title: "What We Are Proposing — The KITS Mandate",
+    kitsScope: ["All channel outreach — every account visit, every commercial negotiation, every display setup", "Regulatory management — MoPH, Halal, trademark, GS1, lab testing — end to end", "Designer briefing, creative direction, and compliance sign-off on all packaging before print", "Manufacturer relationship — flavor development oversight, QC protocol, supply agreement management", "Monthly financial reporting — P&L against plan, sell-through data, account performance", "Strategic decisions — channel sequencing, pricing reviews, SKU expansion timing"],
+    clientScope: ["Capital allocation and final approval on all major financial decisions", "Manufacturer relationship introduction and primary contact access", "Final brand name and tagline confirmation — your choice, our recommendation", "Budget tier selection — Tier 1, 2, or 3", "Board governance and all investor or funder relationships", "Final sign-off on all regulatory filings before submission"],
+    fees: [
+      { tier: "Tier 1 — Lean Launch", range: "Included in contingency" },
+      { tier: "Tier 2 — Standard Launch", range: "$3,000–5,000 / Phases 0–2 (6 mo)" },
+      { tier: "Tier 3 — Full Market Entry", range: "$8,000–14,000 / Phases 0–3 (12 mo)" },
+    ],
+    notes: { open: "Be direct about fee structure. Say: 'Our fee is milestone-linked, not time-billed. We earn when you progress — not when we sit in meetings. If milestones are not hit, the next phase of funding does not release.'", emphasis: ["The IP ownership clause is almost always the most reassuring thing in this section. Emphasize it: 'You own everything we create. Unconditionally.'"], timing: "4 minutes" }
+  },
+  {
+    id: "qa", type: "qa", label: "Q & A",
+    section: "08 · ANTICIPATED QUESTIONS",
+    title: "Every Question — Pre-Answered",
+    subtitle: "The questions most founders ask at this stage. Delivered with confidence and without hesitation.",
+    qas: [
+      { color: C.gold, q: "Why should I give full control to an advisory firm I just met?", a: "You are not giving us control — you are giving us authority to execute within parameters you define. Every major financial commitment and every regulatory filing is approved by you first. What you are giving us is the mandate to move without waiting for a meeting every time we need to visit an account or place a reorder. The 10 deliverables in front of you today were built before you agreed to anything. That is what full commitment looks like before a contract exists." },
+      { color: C.amber, q: "What happens if the product doesn't sell?", a: "Every first account is sale-or-return — no retailer takes financial risk on your product. We do not launch until MoPH approval is confirmed, the brand is professionally executed, and the product is lab-verified. Revenue projections are conservative, assuming 20–40 units per week per gym account at steady state. If sell-through is below target, we have a formal feedback and pricing review protocol built into the mandate — not improvised after the fact." },
+      { color: C.greenBright, q: "How long before I start making money?", a: "Under the recommended Tier 2 scenario: breakeven is projected between Month 5 and Month 7. By Month 6, revenue is projected at $18,000–$28,000 per month at a gross margin of 48–55%. By Month 12, revenue is projected at $40,000–$65,000 per month. Cumulative Year 1 gross profit is estimated at approximately $161,000 against a $42,000 investment — approximately 280% return in 12 months. These are directional projections based on real channel data, not guarantees." },
+      { color: C.purple, q: "What if I want to manage some parts of this myself?", a: "That is entirely your decision and we will document the division clearly in the mandate. However, our methodology is an integrated system. The outreach script connects to the commercial proposal, which connects to the account tracker, which drives the weekly check-in protocol. The more elements are separated, the more the system loses its compounding effect. Our recommendation: run the full system for 6 months, evaluate results, then decide what to internalise based on demonstrated performance." },
+      { color: C.red, q: "What is the minimum I can invest to get started?", a: "Tier 1 at $18,500 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, KITS' recommendation is Tier 2 at $42,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category." },
+      { color: C.gold, q: "Why Lebanon and not start with another market?", a: "Lebanon is the proof-of-concept that unlocks the GCC. 'Made in Lebanon' carries premium weight in UAE and Saudi Arabia — the provenance story is a marketing asset. Halal certification from Dar Al-Fatwa Lebanon is recognized across the GCC. Every product decision — the flavor, the certification, the trilingual packaging — was designed for Lebanon first and GCC second. Starting in Lebanon is not a constraint. It is the strategy." },
+      { color: C.amber, q: "What does KITS do that I couldn't hire someone else to do?", a: "An employee executes tasks. KITS brings the full system: the research base, the brand work already done, the outreach scripts, the financial model, the manufacturer brief, the regulatory knowledge, and the personal relationship network across Lebanese gyms and nutrition stores. Rebuilding this from scratch would take 6–9 months and cost more than Tier 3. You would also be paying for someone to learn the market while we already know it cold." },
+    ],
+    notes: { open: "Do not read these answers. Know them. Internalize them. Deliver with confidence and brevity — then stop talking. Silence after a complete answer is a sign of strength, not uncertainty.", emphasis: ["Question #3 is always asked. Have Tier 2 numbers memorized: $42K in, $161K gross profit Year 1, $119K net positive, 280% ROI. Say these without looking at the slide."], timing: "10–15 minutes — this is real Q&A time, not presentation time" }
+  },
+  {
+    id: "close", type: "closing", label: "CLOSE",
+    title: "The Category Is Empty. The Brand Is Named. The Plan Is Built. Let Us Begin.",
+    decisions: [
+      "Select your budget tier — Tier 1 ($18,500) / Tier 2 ($42,000 recommended) / Tier 3 ($82,000)",
+      "Sign the KITS Management Mandate — formal authority to execute the launch plan today",
+      "Confirm STRIKE as your brand name — IP trademark search begins this week",
+      "Call your manufacturer this week — nutritional panel required within 5 business days",
+    ],
+    closingLine: "The category is empty today. The question is not whether someone will build it. The question is whether STRIKE owns it — or whether we watch someone else do it first.",
+    notes: { open: "Deliver the closing line verbatim. Then stop talking entirely. Let the room decide. Do not fill the silence. Do not renegotiate before they have responded. The next person who speaks is not you.", emphasis: ["Ask which tier directly: 'Which scenario are we working with?' Then silence.", "If they do not sign today — offer to leave all 10 deliverables with them. There is no better closing gift than handing over 10 completed documents they can read tonight."], timing: "5 minutes + close" }
+  }
+];
+
+// ─── MAIN APPLICATION ─────────────────────────────────────────────────────────
+export default function KITSPitchDeck() {
+  const [curr, setCurr] = useState(0);
+  const [notes, setNotes] = useState(false);
+  const [nav, setNav] = useState(false);
+  const total = SLIDES.length;
+  const slide = SLIDES[curr];
+
+  const prev = useCallback(() => setCurr(c => Math.max(0, c - 1)), []);
+  const next = useCallback(() => setCurr(c => Math.min(total - 1, c + 1)), [total]);
+
+  useEffect(() => {
+    const h = e => {
+      if (["ArrowRight", "ArrowDown", " "].includes(e.key)) { e.preventDefault(); next(); }
+      if (["ArrowLeft", "ArrowUp"].includes(e.key)) { e.preventDefault(); prev(); }
+      if (e.key === "n" || e.key === "N") setNotes(s => !s);
+      if (e.key === "Escape") setNav(false);
+    };
+    window.addEventListener("keydown", h);
+    return () => window.removeEventListener("keydown", h);
+  }, [next, prev]);
+
+  const pct = ((curr + 1) / total) * 100;
+
+  return (
+    <div style={{ minHeight: "100vh", background: C.void, display: "flex", flexDirection: "column", fontFamily: "Georgia,serif", userSelect: "none" }}>
+
+      {/* ── TOP BAR ── */}
+      <div style={{ background: C.void, borderBottom: `1px solid ${C.ash}`, padding: "7px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, zIndex: 20 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+          <span style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, letterSpacing: "0.3em" }}>STRIKE BITES</span>
+          <span style={{ width: 1, height: 14, background: C.ash }} />
+          <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>CLIENT PITCH DECK · KITS ADVISORY GROUP · CONFIDENTIAL</span>
+        </div>
+        <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+          <button onClick={() => setNav(!nav)} style={{ background: nav ? `${C.gold}15` : "transparent", border: `1px solid ${nav ? C.gold : C.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: nav ? C.gold : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>SLIDES</button>
+          <button onClick={() => setNotes(!notes)} style={{ background: notes ? `${C.gold}15` : "transparent", border: `1px solid ${notes ? C.gold : C.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: notes ? C.gold : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NOTES {notes ? "▲" : "▼"}</button>
+          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, background: C.charcoal, padding: "4px 10px", borderRadius: 3, border: `1px solid ${C.ash}` }}>{String(curr + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</div>
+        </div>
+      </div>
+
+      {/* ── SLIDE NAVIGATOR ── */}
+      {nav && (
+        <div style={{ background: C.obsidian, borderBottom: `1px solid ${C.ash}`, padding: "10px 24px", display: "flex", gap: 4, flexWrap: "wrap", flexShrink: 0, zIndex: 19 }}>
+          {SLIDES.map((s, i) => (
+            <button key={i} onClick={() => { setCurr(i); setNav(false); }} style={{ background: curr === i ? `${C.gold}18` : s.type === "section" ? C.ember : "transparent", border: `1px solid ${curr === i ? C.gold : C.ash}`, borderRadius: 3, padding: "5px 10px", cursor: "pointer", transition: "all 0.15s", minWidth: s.type === "section" ? 70 : 48, WebkitTapHighlightColor: "transparent" }}>
+              <div style={{ fontFamily: "monospace", fontSize: 6, color: curr === i ? C.gold : C.creamDim, marginBottom: 1 }}>{String(i + 1).padStart(2, "0")}</div>
+              <div style={{ fontSize: 8, color: curr === i ? C.cream : s.type === "section" ? C.gold : C.creamDim }}>{s.label}</div>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* ── MAIN SLIDE AREA ── */}
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+        <div style={{ flex: notes ? "0 0 62%" : 1, background: C.obsidian, position: "relative", overflow: "hidden" }}>
+          <div style={{ position: "absolute", top: 0, left: 0, width: `${pct}%`, height: 2, background: `linear-gradient(to right,${C.goldDim},${C.gold},${C.goldBright})`, transition: "width 0.35s ease", zIndex: 10 }} />
+          <div style={{ position: "absolute", inset: 0, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+            <RenderSlide slide={slide} />
+          </div>
+          <button onClick={prev} disabled={curr === 0} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === 0 ? "default" : "pointer", color: curr === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>‹</button>
+          <button onClick={next} disabled={curr === total - 1} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === total - 1 ? "default" : "pointer", color: curr === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>›</button>
+        </div>
+
+        {/* ── PRESENTER NOTES ── */}
+        {notes && slide.notes && (
+          <div style={{ flex: "0 0 38%", background: "#08070A", borderTop: `2px solid ${C.gold}35`, overflowY: "auto", padding: "16px 32px", WebkitOverflowScrolling: "touch" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+              <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.25em" }}>PRESENTER NOTES · {slide.label}</div>
+              <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>TIMING: {slide.notes.timing}</div>
+            </div>
+            <p style={{ margin: "0 0 16px", fontSize: 13, color: C.cream, lineHeight: 1.8, borderLeft: `3px solid ${C.gold}35`, paddingLeft: 14 }}>{slide.notes.open}</p>
+            {slide.notes.emphasis && slide.notes.emphasis.length > 0 && (
+              <div>
+                <div style={{ fontFamily: "monospace", fontSize: 8, color: C.amber, letterSpacing: "0.2em", marginBottom: 10 }}>★ EMPHASIS POINTS</div>
+                {slide.notes.emphasis.map((e, i) => (
+                  <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, padding: "10px 14px", background: `${C.amber}08`, border: `1px solid ${C.amber}18`, borderLeft: `3px solid ${C.amber}50`, borderRadius: 3 }}>
+                    <span style={{ color: C.amber, fontSize: 10, flexShrink: 0, marginTop: 1 }}>★</span>
+                    <p style={{ margin: 0, fontSize: 12, color: C.amber, opacity: 0.9, lineHeight: 1.7 }}>{e}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      {/* ── BOTTOM BAR ── */}
+      <div style={{ background: C.void, borderTop: `1px solid ${C.ash}`, padding: "6px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
+        <div style={{ display: "flex", gap: 20 }}>
+          <button onClick={prev} disabled={curr === 0} style={{ background: "transparent", border: "none", cursor: curr === 0 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === 0 ? C.ash : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>← PREV</button>
+          <button onClick={next} disabled={curr === total - 1} style={{ background: "transparent", border: "none", cursor: curr === total - 1 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === total - 1 ? C.ash : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NEXT →</button>
+        </div>
+        <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
+          {SLIDES.map((s, i) => (
+            <button key={i} onClick={() => setCurr(i)} style={{ width: i === curr ? 22 : s.type === "section" ? 8 : 5, height: s.type === "section" ? 5 : 4, borderRadius: 3, background: i === curr ? C.gold : s.type === "section" ? C.goldDim : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", WebkitTapHighlightColor: "transparent" }} />
+          ))}
+        </div>
+        <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, opacity: 0.35, letterSpacing: "0.15em" }}>N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW</div>
+      </div>
+    </div>
+  );
+}

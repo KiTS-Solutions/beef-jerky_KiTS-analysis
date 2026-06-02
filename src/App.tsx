@@ -11,8 +11,10 @@ import ComponentSeven from './tsx-files/kits-outreach-system.tsx';
 import ComponentEight from './tsx-files/kits-product-visualization.tsx';
 import ComponentNine from './tsx-files/strike-board-presentation-final.tsx';
 import ComponentTen from './tsx-files/strike-brand-study.tsx';
+import ComponentEleven from './tsx-files/kits-pitch-deck.jsx';
 // 2. Define a list of your components for easy navigation mapping
 const COMPONENT_MAP = {
+'kits pitch deck': <ComponentEleven />,
   'strike presentation': <ComponentNine />,
   'master plan': <ComponentFive />,
   'beef jerky advisory': <ComponentOne />,
