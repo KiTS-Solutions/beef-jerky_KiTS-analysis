@@ -11,12 +11,9 @@ import ComponentSeven from './tsx-files/kits-outreach-system.tsx';
 import ComponentEight from './tsx-files/kits-product-visualization.tsx';
 import ComponentNine from './tsx-files/strike-board-presentation-final.tsx';
 import ComponentTen from './tsx-files/strike-brand-study.tsx';
-//import ComponentEleven from './tsx-files/strike-board-presentation-final.tsx';
-
 // 2. Define a list of your components for easy navigation mapping
-const COMPONENT_MAP = { 
+const COMPONENT_MAP = {
   'strike presentation': <ComponentNine />,
-  //'strike final': <ComponentEleven />,
   'master plan': <ComponentFive />,
   'beef jerky advisory': <ComponentOne />,
   'financial study': <ComponentFour />,
@@ -297,8 +294,8 @@ export default function App() {
                   fontSize: isMobile ? '15px' : '14px',
                   whiteSpace: 'nowrap',
                   fontWeight: activeView === name ? '600' : '400',
-                  backgroundColor: activeView === name 
-                    ? 'linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%)' 
+                  background: activeView === name
+                    ? 'linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%)'
                     : 'rgba(255,255,255,0.05)',
                   color: activeView === name ? '#e0e0ff' : '#a0a0c0',
                   transition: 'all 0.3s ease',
