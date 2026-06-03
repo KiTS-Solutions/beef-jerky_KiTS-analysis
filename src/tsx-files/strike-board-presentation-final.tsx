@@ -366,7 +366,7 @@ function CoverSlide({ slide }: { slide: CoverSlideData }) {
       <div style={{ position: "absolute", right: 0, top: 0, width: isMobile ? "0" : "45%", height: "100%", background: `linear-gradient(135deg, ${C.gold}05 0%, transparent 70%)`, pointerEvents: "none" }}/>
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom, transparent, ${C.gold}, transparent)` }}/>
       {/* Left content */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : isTablet ? "0 48px" : "0 64px", position: "relative", zIndex: 1 }}>
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0px 0px 0px 24px" : isTablet ? "0px 0px 0px 48px" : "0px 0px 0px 64px", position: "relative", zIndex: 1 }}>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.45em", marginBottom: isMobile ? 20 : 32 }}>RU2YA ADVISORY GROUP · CONFIDENTIAL · KAG-JRK-BOARD-001</div>
         <div style={{ marginBottom: 8 }}>
           <span style={{ fontFamily: "'Didot','Bodoni MT','Playfair Display',Georgia,serif", fontSize: isMobile ? "clamp(32px,8vw,56px)" : "clamp(56px,8vw,100px)", fontWeight: 400, color: C.strike, letterSpacing: "0.18em", lineHeight: 1, display: "block" }}>STRIKE</span>
@@ -381,14 +381,41 @@ function CoverSlide({ slide }: { slide: CoverSlideData }) {
           ))}
         </div>
       </div>
-      {/* Right: bag visualization */}
+      {/* Right: bag visualization
       {!isMobile && (
         <div style={{ width: "38%", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", zIndex: 1, padding: "40px 40px 40px 0" }}>
           <div style={{ position: "relative" }}>
             <div style={{ position: "absolute", inset: -20, background: `radial-gradient(ellipse, ${C.gold}08 0%, transparent 70%)`, borderRadius: "50%" }}/>
-           {/* <StrikeBagMini accent={C.amber} size={1.3}/> */}
+              <StrikeBagMini accent={C.amber} size={1.3}/> 
            <img src={bagImg} alt="Bag1" style={{ width: "100%", height: "auto", objectFit: "contain" }}/>
           </div>
+        </div>
+      )} */}
+       {/* Right — product image */}
+      {!isMobile && (
+        <div style={{
+          flex: "0 0 46%",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          overflow: "hidden",
+          paddingRight: "6%",
+        }}>
+          <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to right,${C.obsidian} 0%,transparent 18%)`, zIndex: 2 }} />
+          <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse at 50% 50%,${C.gold}08 0%,transparent 70%)` }} />
+          <img
+            src="/beef-jerky_KiTS-analysis/bag1.png"
+            alt="Strike Bites product"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              maxHeight: "78%",
+              maxWidth: "80%",
+              objectFit: "contain",
+              filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.85)) drop-shadow(0 4px 16px rgba(200,160,80,0.18))",
+            }}
+          />
         </div>
       )}
     </div>
