@@ -26,7 +26,7 @@ const TIERS = [
     total: 18500,
     color: "#7EB5A6",
     description: "Designed for an entrepreneur who wants to validate the concept with real market data before committing to a full build. Every spend is stripped to the essential minimum. Zero waste. Tight execution. Exit ramp available at Phase 1 if market signals are weak.",
-    suitable: "Entrepreneur is risk-averse or liquidity-constrained. KITS operates lean with a milestone-based release of funds.",
+    suitable: "Entrepreneur is risk-averse or liquidity-constrained. RU2YA operates lean with a milestone-based release of funds.",
     risk: "Lower spend means slower brand build. Packaging and identity at this tier are functional, not exceptional. Risk of appearing underfunded vs. imported competitors at pharmacy shelf level.",
     categories: [
       {
@@ -85,7 +85,7 @@ const TIERS = [
       rev_m12: "$18,000–$28,000 / month",
       breakeven: "Month 7–9",
       gross_margin: "42–48%",
-      note: "Assumes $3.00 average retail price, 30% channel margin, 15% KITS operating overhead"
+      note: "Assumes $3.00 average retail price, 30% channel margin, 15% RU2YA operating overhead"
     }
   },
   {
@@ -95,8 +95,8 @@ const TIERS = [
     tagline: "Professional entry. Shelf-ready from day one.",
     total: 42000,
     color: "#C8A96E",
-    description: "The recommended scenario for a venture with serious commercial intent. Funds a proper brand identity, two SKUs, a full gym-to-pharmacy distribution launch, and a working capital buffer that absorbs the 3–4 month revenue lag during regulatory processing. This is the scenario KITS recommends presenting to the entrepreneur as the baseline.",
-    suitable: "Entrepreneur has real commercial ambition and is willing to invest in a proper launch. KITS operates with full mandate and milestone reporting.",
+    description: "The recommended scenario for a venture with serious commercial intent. Funds a proper brand identity, two SKUs, a full gym-to-pharmacy distribution launch, and a working capital buffer that absorbs the 3–4 month revenue lag during regulatory processing. This is the scenario RU2YA recommends presenting to the entrepreneur as the baseline.",
+    suitable: "Entrepreneur has real commercial ambition and is willing to invest in a proper launch. RU2YA operates with full mandate and milestone reporting.",
     risk: "Mid-range spend requires discipline to avoid scope creep. Packaging and brand investment here must be executed by professionals — not cut post-budget-approval.",
     categories: [
       {
@@ -145,11 +145,11 @@ const TIERS = [
         ]
       },
       {
-        name: "Operations & KITS",
+        name: "Operations & RU2YA",
         color: "#C8A96E",
         items: [
           { label: "Accounting + bookkeeping setup (first year)", low: 600, high: 1200 },
-          { label: "KITS management fee — Phase 0–2 (6 months)", low: 3000, high: 5000 },
+          { label: "RU2YA management fee — Phase 0–2 (6 months)", low: 3000, high: 5000 },
           { label: "Contingency & working capital (15% of above)", low: 4500, high: 6500 },
         ]
       }
@@ -172,8 +172,8 @@ const TIERS = [
     tagline: "Category creation. Export-ready from launch.",
     total: 82000,
     color: "#E07B6A",
-    description: "A comprehensive market entry that positions the brand to own the Lebanese protein snack category and be export-ready for GCC within 12 months. Funds a full brand system, 3 SKUs at launch, a dedicated sales representative, modern trade entry, corporate channel development, and a 6-month working capital runway. Recommended only if the entrepreneur has confirmed long-term capital commitment and KITS has a formalized co-management or equity stake.",
-    suitable: "Entrepreneur is fully committed, capitalized, and aligned with KITS on a 2–3 year growth plan. KITS operates as full commercial operator with equity or significant performance fees.",
+    description: "A comprehensive market entry that positions the brand to own the Lebanese protein snack category and be export-ready for GCC within 12 months. Funds a full brand system, 3 SKUs at launch, a dedicated sales representative, modern trade entry, corporate channel development, and a 6-month working capital runway. Recommended only if the entrepreneur has confirmed long-term capital commitment and RU2YA has a formalized co-management or equity stake.",
+    suitable: "Entrepreneur is fully committed, capitalized, and aligned with RU2YA on a 2–3 year growth plan. RU2YA operates as full commercial operator with equity or significant performance fees.",
     risk: "Higher commitment requires proportionally stronger governance. Budget at this tier must be managed with monthly P&L reviews and milestone-gated releases.",
     categories: [
       {
@@ -225,11 +225,11 @@ const TIERS = [
         ]
       },
       {
-        name: "Operations & KITS",
+        name: "Operations & RU2YA",
         color: "#C8A96E",
         items: [
           { label: "Accounting, bookkeeping + financial reporting system", low: 1200, high: 2500 },
-          { label: "KITS management fee — Phase 0–3 (12 months)", low: 8000, high: 14000 },
+          { label: "RU2YA management fee — Phase 0–3 (12 months)", low: 8000, high: 14000 },
           { label: "Contingency + working capital runway (6 months)", low: 8000, high: 14000 },
         ]
       }
@@ -254,7 +254,7 @@ const ASSUMPTIONS = [
   { label: "Channel margin — pharmacies / nutrition", value: "30–35%" },
   { label: "Channel margin — supermarkets", value: "35–40%" },
   { label: "Distributor margin (when engaged)", value: "15–20%" },
-  { label: "KITS gross margin target", value: "48–55% at MSP" },
+  { label: "RU2YA gross margin target", value: "48–55% at MSP" },
   { label: "Currency basis", value: "USD — all pricing USD-denominated" },
   { label: "Exchange rate review cycle", value: "Every 90 days" },
   { label: "Regulatory timeline (MoPH)", value: "2–4 months from submission" },
@@ -265,9 +265,9 @@ const ASSUMPTIONS = [
 
 const BLOCKERS = [
   { label: "Nutritional panel from manufacturer", urgency: "IMMEDIATE", detail: "Blocks: MoPH registration, lab testing, packaging, all pricing. Get the technical data sheet this week." },
-  { label: "KITS Management Mandate — signed", urgency: "IMMEDIATE", detail: "Blocks: all further KITS advisory spend and introductions on client's behalf. Execute before next deliverable." },
+  { label: "RU2YA Management Mandate — signed", urgency: "IMMEDIATE", detail: "Blocks: all further RU2YA advisory spend and introductions on client's behalf. Execute before next deliverable." },
   { label: "Brand name — final selection", urgency: "WEEK 2", detail: "Blocks: trademark filing, brand identity brief, domain/social handle reservation." },
-  { label: "Budget tier — entrepreneur decision", urgency: "WEEK 2", detail: "Blocks: scope of first production batch, brand identity budget, KITS fee structure." },
+  { label: "Budget tier — entrepreneur decision", urgency: "WEEK 2", detail: "Blocks: scope of first production batch, brand identity budget, RU2YA fee structure." },
   { label: "Manufacturer supply agreement — signed", urgency: "WEEK 3", detail: "Blocks: MOQ confirmation, lead time planning, production scheduling, cost-per-unit certainty." },
 ];
 
@@ -303,7 +303,7 @@ export default function FinancialStudy() {
         padding: isMobile ? "20px 24px 16px" : "28px 36px 22px",
       }}>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#4A4060", letterSpacing: "0.3em", marginBottom: 8 }}>
-          KITS ADVISORY GROUP · FINANCIAL FEASIBILITY STUDY · REF: KAG-JRK-003 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · FINANCIAL FEASIBILITY STUDY · REF: KAG-JRK-003 · CONFIDENTIAL
         </div>
         <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 30px)" : "clamp(18px, 3vw, 30px)", fontWeight: 400, color: "#E2D8CC", lineHeight: 1.2 }}>
           Beef Jerky Venture — Financial Feasibility
@@ -508,7 +508,7 @@ export default function FinancialStudy() {
                 REVENUE PROJECTIONS — {tier?.name?.toUpperCase()}
               </div>
               <p style={{ margin: 0, fontSize: 13, color: "#7A7090", lineHeight: 1.75 }}>
-                All projections are directional estimates based on comparable FMCG launches in the Lebanese market under KITS' advisory scope. They assume successful MoPH registration, product-market fit validation in Phase 1, and no major currency or political disruption events.
+                All projections are directional estimates based on comparable FMCG launches in the Lebanese market under RU2YA' advisory scope. They assume successful MoPH registration, product-market fit validation in Phase 1, and no major currency or political disruption events.
               </p>
             </div>
 
@@ -637,7 +637,7 @@ export default function FinancialStudy() {
                 "Packaging design brief (needs brand name + nutritional panel)",
                 "MoPH submission document checklist (needs nutritional panel + manufacturer details)",
                 "Gym outreach script + trade presentation template (ready to produce now)",
-                "KITS management mandate template (ready to produce now)",
+                "RU2YA management mandate template (ready to produce now)",
                 "Flavor development brief for manufacturer (ready to produce now)",
               ].map((item, i) => {
                 const ready = item.includes("ready to produce now");
@@ -665,7 +665,7 @@ export default function FinancialStudy() {
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2038", letterSpacing: "0.15em" }}>
-          KITS ADVISORY GROUP · FINANCIAL FEASIBILITY · CONFIDENTIAL · NOT FOR DISTRIBUTION
+          RU2YA ADVISORY GROUP · FINANCIAL FEASIBILITY · CONFIDENTIAL · NOT FOR DISTRIBUTION
         </span>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2038" }}>
           KAG-JRK-003 · THREE-TIER MODEL

@@ -305,7 +305,7 @@ export default function BeefJerkyAdvisory() {
         flexShrink: 0,
       }}>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: "#5A5040", letterSpacing: "0.3em", marginBottom: isMobile ? 16 : 24 }}>
-          KITS ADVISORY GROUP · REF: KAG-JRK-001 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · REF: KAG-JRK-001 · CONFIDENTIAL
         </div>
         <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(16px, 4vw, 20px)" : "clamp(16px, 2.5vw, 20px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.3, marginBottom: isMobile ? 20 : 32 }}>
           Beef Jerky Advisory
@@ -417,7 +417,7 @@ export default function BeefJerkyAdvisory() {
               {/* Section Footer */}
               <div style={{ marginTop: isMobile ? 32 : 40, paddingTop: 24, borderTop: "1px solid #1E1C16", display: "flex", justifyContent: "space-between", alignItems: "center", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 0 }}>
                 <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#3A3428", letterSpacing: "0.15em" }}>
-                  KITS ADVISORY · CONFIDENTIAL · NOT FOR DISTRIBUTION
+                  RU2YA ADVISORY · CONFIDENTIAL · NOT FOR DISTRIBUTION
                 </div>
                 <div style={{ display: "flex", gap: 8 }}>
                   {sections.map(s => (

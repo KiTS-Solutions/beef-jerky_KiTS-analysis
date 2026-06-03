@@ -186,7 +186,7 @@ const ENHANCEMENTS = [
         category: "LEBANON — FOUNDATION MARKET",
         color: C.greenBright,
         points: [
-          { title: "Channel sequence confirmed", body: "Sports nutrition stores (Priority 1) → Gyms (Priority 2) → Pharmacies (Month 3–6) → Modern trade (Month 6–12). This sequence is commercially correct and aligns with the relationship advantage KITS brings. The one addition: at Month 2, approach the top 3 CrossFit boxes in Lebanon for an exclusive 'founding gym' partnership. CrossFit communities are evangelical — a box that 'discovered' STRIKE first will promote it to every member without being asked." },
+          { title: "Channel sequence confirmed", body: "Sports nutrition stores (Priority 1) → Gyms (Priority 2) → Pharmacies (Month 3–6) → Modern trade (Month 6–12). This sequence is commercially correct and aligns with the relationship advantage RU2YA brings. The one addition: at Month 2, approach the top 3 CrossFit boxes in Lebanon for an exclusive 'founding gym' partnership. CrossFit communities are evangelical — a box that 'discovered' STRIKE first will promote it to every member without being asked." },
           { title: "Trainer ambassador program", body: "STRIKE should position its trainer program as 'THE STRIKE TEAM' — not a generic ambassador program. Founding members (first 20 trainers across Lebanon) receive: personal supply of STRIKE BITES, branded gym bag tag or sticker pack, and a founding member certificate. The program is by invitation only — this creates social currency and makes being 'on the STRIKE team' feel earned. Cost: negligible. Impact: authentic word-of-mouth at the most influential point in the sales chain." },
           { title: "Pricing anchor", body: "Target retail: $2.50–$3.50 single-serve (BITES). $8.00–$12.00 multi-serve (STRIPS). $1.00–$1.50 per stick (STICKS). These prices position STRIKE as accessible-premium — below imported competitors (Jack Link's $4.50–$6.50) while above commodity snack pricing. The accessibility is the competitive weapon. At $3.00, a gym member can buy STRIKE BITES every gym session without budgetary hesitation. At $5.00, it becomes an occasional purchase." },
         ]
@@ -206,7 +206,7 @@ const ENHANCEMENTS = [
         points: [
           { title: "The case for Western market scalability", body: "STRIKE is genuinely positioned for Western market entry in a way that most Lebanese food brands are not. The brand name is English-first. The nutrition credentials (high protein, zero sugar, clean label) match exactly what US and European health-food consumers are actively seeking. The Lebanese/Levantine flavor profile is experiencing a global culinary moment — za'atar, sumac, Aleppo pepper are all appearing on high-end US restaurant menus and in Whole Foods products. STRIKE owns all of these ingredients in its core formula." },
           { title: "Western market readiness checklist", body: "Before Western market entry: (1) US FDA food facility registration — required for any import to the US. (2) Nutrition facts panel in FDA format — different from MoPH format, requires reformatting. (3) Allergen declarations per US standards — more prescriptive than Lebanese requirements. (4) Kosher certification optional but significantly expands Jewish-American market. (5) Non-GMO verification — valuable for Whole Foods and natural food channel entry. Build these into the product specification now, even if the Western market is 3–5 years out." },
-          { title: "D2C digital opportunity", body: "While KITS strategy is correctly non-digital for Lebanon and GCC physical retail, the Western market entry requires a D2C digital strategy. A direct-to-consumer website for the US market, selling STRIKE PACKS as a premium 'taste of Lebanon' proposition, has zero retail establishment cost. The Lebanese diaspora in the US (approximately 500,000 people) is the beachhead consumer — deeply nostalgic for Lebanese food, willing to pay premium prices online, and highly vocal on social media." },
+          { title: "D2C digital opportunity", body: "While RU2YA strategy is correctly non-digital for Lebanon and GCC physical retail, the Western market entry requires a D2C digital strategy. A direct-to-consumer website for the US market, selling STRIKE PACKS as a premium 'taste of Lebanon' proposition, has zero retail establishment cost. The Lebanese diaspora in the US (approximately 500,000 people) is the beachhead consumer — deeply nostalgic for Lebanese food, willing to pay premium prices online, and highly vocal on social media." },
         ]
       }
     ]
@@ -230,7 +230,7 @@ const ENHANCEMENTS = [
         category: "MARKET RISKS — MONITOR",
         color: C.red,
         points: [
-          { title: "Nutritional claim verification: CRITICAL BLOCKER", body: "All 'PRIMAL PROTEIN' and protein-per-serving callouts require lab verification before print. This has been flagged in prior KITS advisories. The 'primal' positioning specifically attracts consumer scrutiny — fitness consumers will verify claims. A false or exaggerated claim in this segment is brand-ending, not brand-damaging. Lab testing is the mandatory first action before any packaging goes to print." },
+          { title: "Nutritional claim verification: CRITICAL BLOCKER", body: "All 'PRIMAL PROTEIN' and protein-per-serving callouts require lab verification before print. This has been flagged in prior RU2YA advisories. The 'primal' positioning specifically attracts consumer scrutiny — fitness consumers will verify claims. A false or exaggerated claim in this segment is brand-ending, not brand-damaging. Lab testing is the mandatory first action before any packaging goes to print." },
           { title: "Lebanese economic volatility: ONGOING", body: "USD-denominated pricing protects against LBP volatility. The 90-day pricing review cycle must be maintained. The supply chain hybrid model (local + imported) insulates against single-source disruption. No action required — current planning accounts for this risk adequately." },
           { title: "Imitation risk once successful: HIGH by Month 12", body: "In Lebanon, successful products are imitated rapidly. STRIKE's protection: (1) trademark registration executed immediately, (2) the brand equity built through trainer relationships and personal service — which cannot be imitated in months, (3) flavor IP in the supply agreement — the Lebanese BBQ formula is owned by the venture, (4) GS1 barcode registration — counterfeits cannot use the legitimate barcode. Begin all IP protection actions in parallel, not sequentially." },
         ]
@@ -499,7 +499,7 @@ function StrikeBag({ sku, size = 1 }: { sku: any; size?: number }) {
 
       <text x="110" y="338" textAnchor="middle" fill={C.gold} opacity="0.15"
         fontFamily="'Courier New', monospace" fontSize="4.5" letterSpacing="1.5">
-        KITS ADVISORY · STRIKE
+        RU2YA ADVISORY · STRIKE
       </text>
 
       {/* Edge sheens */}
@@ -576,7 +576,7 @@ export default function StrikeBrandStudy() {
         </div>
 
         <div style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 8 : 9, color: C.gold, opacity: 0.5, letterSpacing: "0.4em", marginBottom: isMobile ? 10 : 14 }}>
-          KITS ADVISORY GROUP · BRAND ENHANCEMENT STUDY · REF: KAG-JRK-008 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · BRAND ENHANCEMENT STUDY · REF: KAG-JRK-008 · CONFIDENTIAL
         </div>
 
         <div style={{ display: "flex", alignItems: isMobile ? "flex-start" : "flex-end", gap: isMobile ? 16 : 24, flexWrap: "wrap", flexDirection: isMobile ? "column" : "row" }}>
@@ -746,7 +746,7 @@ export default function StrikeBrandStudy() {
                 {/* Improvements */}
                 <div style={{ padding: isMobile ? "16px 20px" : "20px 28px" }}>
                   <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.2em", marginBottom: 12 }}>
-                    KITS RECOMMENDATIONS
+                    RU2YA RECOMMENDATIONS
                   </div>
                   {vItem.improvements.map((r: any, i: number) => (
                     <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
@@ -761,7 +761,7 @@ export default function StrikeBrandStudy() {
             {/* Overall brand score summary */}
             <div style={{ marginTop: 20, background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: isMobile ? "16px 20px" : "20px 28px" }}>
               <div style={{ fontFamily: "'Courier New', monospace", fontSize: 9, color: C.gold, letterSpacing: "0.25em", marginBottom: 16 }}>
-                OVERALL BRAND ASSESSMENT — KITS VERDICT
+                OVERALL BRAND ASSESSMENT — RU2YA VERDICT
               </div>
               <p style={{ margin: "0 0 12px", fontSize: isMobile ? 13 : 14, color: C.cream, lineHeight: 1.85, fontFamily: "Georgia, serif" }}>
                 <strong style={{ color: C.goldBright }}>STRIKE is a genuinely strong brand name</strong> for this product, this market, and this growth trajectory. It is short, phonetically universal, kinetically charged, and fully trademarkable. The product line architecture (BITES / STRIPS / STICKS) is modular, alliterative, and commercially scalable. The 'primal' positioning is differentiated and correct. The Arabic-English-French trilingual system is exactly right for Lebanon and GCC export.
@@ -1024,7 +1024,7 @@ export default function StrikeBrandStudy() {
         flexWrap: "wrap", gap: 8, background: C.charcoal
       }}>
         <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 7 : 8, color: C.creamDim, opacity: 0.4, letterSpacing: "0.2em" }}>
-          KITS ADVISORY GROUP · BRAND ENHANCEMENT STUDY · KAG-JRK-008 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · BRAND ENHANCEMENT STUDY · KAG-JRK-008 · CONFIDENTIAL
         </span>
         <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 7 : 8, color: C.gold, opacity: 0.3, letterSpacing: "0.15em" }}>
           STRIKE BITES · OVERALL BRAND SCORE: 88/100 · STATUS: APPROVED — STRONG

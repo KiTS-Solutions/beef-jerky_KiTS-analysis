@@ -120,8 +120,8 @@ const MANDATORY_ELEMENTS = [
 ];
 
 const COPY_LINES = [
-  { zone: "Primary headline (front panel)", en: "[BRAND NAME]", ar: PENDING, fr: PENDING, note: "Board decision pending. All languages must be confirmed by KITS before artwork." },
-  { zone: "Flavor descriptor", en: PENDING_FLAVOR, ar: PENDING, fr: PENDING, note: "Flavor name in all three languages. Must be approved by manufacturer and KITS before print." },
+  { zone: "Primary headline (front panel)", en: "[BRAND NAME]", ar: PENDING, fr: PENDING, note: "Board decision pending. All languages must be confirmed by RU2YA before artwork." },
+  { zone: "Flavor descriptor", en: PENDING_FLAVOR, ar: PENDING, fr: PENDING, note: "Flavor name in all three languages. Must be approved by manufacturer and RU2YA before print." },
   { zone: "Protein callout", en: "[X]g Protein", ar: "[X] غرام بروتين", fr: "[X]g Protéine", note: "Replace [X] with lab-confirmed number. Never estimate." },
   { zone: "Calorie callout", en: "[X] Calories", ar: "[X] سعرة حرارية", fr: "[X] Calories", note: "Replace [X] with lab-confirmed number." },
   { zone: "Clean-label claim", en: "No Added Sugar · No Artificial Preservatives", ar: "بدون سكر مضاف · بدون مواد حافظة صناعية", fr: "Sans sucre ajouté · Sans conservateurs artificiels", note: "Confirm with manufacturer before printing. Must be factually verifiable." },
@@ -141,18 +141,18 @@ const IDENTITY_DELIVERABLES = [
   { item: "Packaging artwork — SKU 02", desc: "Press-ready print file for multi-serve resealable pouch. All panels. Same specifications.", required: true },
   { item: "Packaging mockups — 3D", desc: "Photorealistic 3D renders of both SKUs in context: gym counter, pharmacy shelf, hand-held. Minimum 5 angles per SKU.", required: true },
   { item: "Display unit design", desc: "Branded counter display unit design for gym and nutrition store placement. Must accommodate both SKUs. Supplied as print-ready file for local fabrication.", required: true },
-  { item: "Leave-behind document design", desc: "Single A4 page, both sides, print-ready. Design matches brand identity. Content supplied by KITS.", required: true },
+  { item: "Leave-behind document design", desc: "Single A4 page, both sides, print-ready. Design matches brand identity. Content supplied by RU2YA.", required: true },
   { item: "Logo file suite", desc: "All formats: AI, EPS, SVG, PDF (vector), PNG (transparent, white, black — all at 300dpi minimum). All color variants.", required: true },
   { item: "Social media profile assets", desc: "Profile image, cover template, story template — even if digital channels are not priority, these must exist for future use. Size to current platform standards.", required: false },
 ];
 
 const TIMELINE = [
-  { week: "Week 1", task: "Designer briefing meeting with KITS. Brand name confirmed [PENDING BOARD]. Flavor name confirmed [PENDING BOARD]. Manufacturer nutritional panel received.", owner: "KITS + Designer" },
-  { week: "Week 2–3", task: "Brand identity concepts presented — minimum 3 directions. KITS reviews and selects or consolidates direction. One round of revision.", owner: "Designer → KITS review" },
+  { week: "Week 1", task: "Designer briefing meeting with RU2YA. Brand name confirmed [PENDING BOARD]. Flavor name confirmed [PENDING BOARD]. Manufacturer nutritional panel received.", owner: "RU2YA + Designer" },
+  { week: "Week 2–3", task: "Brand identity concepts presented — minimum 3 directions. RU2YA reviews and selects or consolidates direction. One round of revision.", owner: "Designer → RU2YA review" },
   { week: "Week 4", task: "Selected identity refined. Arabic wordmark developed. Color system finalized. Typography locked.", owner: "Designer" },
-  { week: "Week 5–6", task: "Packaging artwork developed for both SKUs. All panels. MoPH compliance check by KITS. Regulatory text placed.", owner: "Designer → KITS compliance check" },
+  { week: "Week 5–6", task: "Packaging artwork developed for both SKUs. All panels. MoPH compliance check by RU2YA. Regulatory text placed.", owner: "Designer → RU2YA compliance check" },
   { week: "Week 7", task: "3D mockups produced. Display unit designed. Leave-behind designed. All files packaged.", owner: "Designer" },
-  { week: "Week 8", task: "Final review by KITS. Minor amends. Press-ready files delivered. Brand guidelines document completed and delivered.", owner: "Designer → KITS final approval" },
+  { week: "Week 8", task: "Final review by RU2YA. Minor amends. Press-ready files delivered. Brand guidelines document completed and delivered.", owner: "Designer → RU2YA final approval" },
 ];
 
 export default function BrandDesignBrief() {
@@ -182,7 +182,7 @@ export default function BrandDesignBrief() {
           background: "repeating-linear-gradient(90deg, #C8A96E 0px, #C8A96E 1px, transparent 1px, transparent 20px)" }} />
 
         <div style={{ fontFamily: "'Courier New', Courier, monospace", fontSize: 10, color: "#5A4A38", letterSpacing: "0.4em", marginBottom: 12 }}>
-          KITS ADVISORY GROUP · BRAND & PACKAGING DESIGN BRIEF · REF: KAG-JRK-006
+          RU2YA ADVISORY GROUP · BRAND & PACKAGING DESIGN BRIEF · REF: KAG-JRK-006
         </div>
         <h1 style={{ margin: "0 0 6px", fontSize: "clamp(22px, 4vw, 40px)", fontWeight: 400, color: "#F5F1EB", letterSpacing: "0.02em", lineHeight: 1.1 }}>
           Brand & Packaging
@@ -239,7 +239,7 @@ export default function BrandDesignBrief() {
               {[
                 { label: "CLIENT", value: "Beef Jerky Venture — Lebanon" },
                 { label: "MARKET", value: "Lebanese Republic — Phase 1 launch" },
-                { label: "MANAGING ADVISOR", value: "KITS Advisory Group" },
+                { label: "MANAGING ADVISOR", value: "RU2YA Advisory Group" },
                 { label: "REF", value: "KAG-JRK-006" },
                 { label: "BRAND NAME", value: PENDING, pending: true },
                 { label: "PRIMARY FLAVOR", value: PENDING_FLAVOR, pending: true },
@@ -295,7 +295,7 @@ export default function BrandDesignBrief() {
                 ⚠ BOARD DECISION REQUIRED BEFORE DESIGN WORK BEGINS
               </div>
               <p style={{ margin: 0, fontSize: 14, color: "#7A6040", lineHeight: 1.8 }}>
-                The brand name has not been confirmed. The board meeting will resolve this decision. Candidates have been researched and scored by KITS (see KAG-JRK-002). The designer should not begin wordmark development until the name is confirmed in writing by KITS. This brief documents all requirements the name must meet so the designer is briefed and ready to begin immediately upon confirmation.
+                The brand name has not been confirmed. The board meeting will resolve this decision. Candidates have been researched and scored by RU2YA (see KAG-JRK-002). The designer should not begin wordmark development until the name is confirmed in writing by RU2YA. This brief documents all requirements the name must meet so the designer is briefed and ready to begin immediately upon confirmation.
               </p>
             </div>
 
@@ -437,7 +437,7 @@ export default function BrandDesignBrief() {
             }}>
               <div style={{ fontFamily: "'Courier New', monospace", fontSize: 10, color: "#E07B6A", marginBottom: 8 }}>COMPLIANCE WARNING</div>
               <p style={{ margin: 0, fontSize: 13, color: "#7A4A40", lineHeight: 1.75 }}>
-                No packaging artwork may be sent to print without KITS compliance sign-off. MoPH registration number must be confirmed before artwork is finalized — printing packaging without it creates a non-compliant batch that cannot be legally sold. The designer is responsible for leaving correctly sized placeholder zones for all elements marked [PENDING].
+                No packaging artwork may be sent to print without RU2YA compliance sign-off. MoPH registration number must be confirmed before artwork is finalized — printing packaging without it creates a non-compliant batch that cannot be legally sold. The designer is responsible for leaving correctly sized placeholder zones for all elements marked [PENDING].
               </p>
             </div>
 
@@ -545,8 +545,8 @@ export default function BrandDesignBrief() {
               { label: "Overprint settings", value: "Check all black text for overprint. 100% black text should overprint. Rich black ([CMYK values from printer]) for large black areas only." },
               { label: "Dieline", value: "Provided by packaging printer. Designer must request dieline template before beginning artwork. Artwork built to exact dieline dimensions." },
               { label: "Matte finish", value: "Exterior surface: matte laminate. Confirm with printer that matte laminate is compatible with selected ink coverage. High-coverage dark backgrounds may require specific matte formulation." },
-              { label: "Print run quantity", value: "[TBC with manufacturer once SKU sizes confirmed] — coordinate with KITS before specifying print quantity to printer." },
-              { label: "Proofing", value: "Physical proof (not digital) mandatory before print approval. KITS must approve physical proof. Color deviation >5% from approved proof is grounds for reprint at printer's cost — include in print contract." },
+              { label: "Print run quantity", value: "[TBC with manufacturer once SKU sizes confirmed] — coordinate with RU2YA before specifying print quantity to printer." },
+              { label: "Proofing", value: "Physical proof (not digital) mandatory before print approval. RU2YA must approve physical proof. Color deviation >5% from approved proof is grounds for reprint at printer's cost — include in print contract." },
             ].map((item, i) => (
               <div key={i} style={{
                 display: "flex", gap: 20,
@@ -629,7 +629,7 @@ export default function BrandDesignBrief() {
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
         <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 9 : 10, color: "#3A2A18", letterSpacing: "0.15em" }}>
-          KITS ADVISORY GROUP · BRAND & PACKAGING DESIGN BRIEF · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · BRAND & PACKAGING DESIGN BRIEF · CONFIDENTIAL
         </span>
         <span style={{ fontFamily: "'Courier New', monospace", fontSize: isMobile ? 9 : 10, color: "#3A2A18" }}>KAG-JRK-006</span>
       </div>

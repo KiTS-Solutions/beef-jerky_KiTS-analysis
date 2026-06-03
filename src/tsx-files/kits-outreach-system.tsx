@@ -184,7 +184,7 @@ const COMMERCIAL = {
       payment: "Net 30 after first order. First order: sale-or-return.",
       moq: "30 units per SKU for first order. 20 units reorder minimum.",
       display: "Branded counter display unit provided free of charge.",
-      terms: "KITS delivers directly. Weekly or bi-weekly replenishment. No distributor margin at this stage."
+      terms: "RU2YA delivers directly. Weekly or bi-weekly replenishment. No distributor margin at this stage."
     },
     {
       channel: "Gyms & Fitness Centers",
@@ -195,7 +195,7 @@ const COMMERCIAL = {
       payment: "Net 15 after first order. First order: sale-or-return.",
       moq: "20 units per SKU for first order. 12 units reorder minimum.",
       display: "Branded bowl or small display unit provided free of charge.",
-      terms: "KITS delivers directly. Personal check-in every 1–2 weeks."
+      terms: "RU2YA delivers directly. Personal check-in every 1–2 weeks."
     }
   ],
   trainer_program: {
@@ -291,13 +291,13 @@ const LEAVE_BEHIND = {
         { label: "Product Cards", value: "Small printed info cards for point-of-sale" },
         { label: "Check-in Frequency", value: "Personal visit every 1–2 weeks" },
         { label: "Reorder Response", value: "Within 24 hours of any request" },
-        { label: "Support", value: "Direct line to KITS contact — always reachable" },
+        { label: "Support", value: "Direct line to RU2YA contact — always reachable" },
       ]
     }
   ],
   headline_statement: "The only locally-produced, Halal-certified, high-protein beef jerky in Lebanon. Your customers have been looking for this. Now you have it.",
   contact_block: {
-    company: "KITS Advisory Group",
+    company: "RU2YA Advisory Group",
     contact: "[Name]",
     phone: "[Number]",
     note: "All enquiries handled directly. No middlemen."
@@ -342,7 +342,7 @@ export default function OutreachSystem() {
         padding: isMobile ? "20px 24px 16px" : "28px 36px 20px",
       }}>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#4A406A", letterSpacing: "0.3em", marginBottom: 8 }}>
-          KITS ADVISORY GROUP · TRADE OUTREACH SYSTEM · REF: KAG-JRK-004 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · TRADE OUTREACH SYSTEM · REF: KAG-JRK-004 · CONFIDENTIAL
         </div>
         <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 28px)" : "clamp(18px, 3vw, 28px)", fontWeight: 400, color: "#DDD5C8", lineHeight: 1.2 }}>
           Gym & Sports Nutrition — Outreach & Trade System
@@ -443,7 +443,7 @@ export default function OutreachSystem() {
             {/* Priority note */}
             <div style={{ background: "#0A0E0C", border: "1px solid #2A3A28", borderRadius: 4, padding: "18px 22px", marginTop: 8 }}>
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", letterSpacing: "0.2em", marginBottom: 8 }}>
-                KITS ACTIVATION NOTE
+                RU2YA ACTIVATION NOTE
               </div>
               <p style={{ margin: 0, fontSize: 13, color: "#6A8A78", lineHeight: 1.8 }}>
                 Your existing relationships eliminate the credibility barrier that kills most first-channel approaches. Do not treat these as cold sales calls — treat them as activating partners who already trust you. The product must do the work from the moment they taste it. Your relationship opens the door; the product closes it. With warm contacts across both channel types, a target of <strong style={{ color: "#8AAA98" }}>20 accounts in the first 3 weeks</strong> is achievable — which creates the sell-through data needed to approach the next wave of accounts without relationships in Week 4 and beyond.
@@ -878,7 +878,7 @@ export default function OutreachSystem() {
                 "Log every visit within 24 hours — memory degrades fast, details matter",
                 "Update status immediately when it changes — stale trackers cause double-visits and missed follow-ups",
                 "Week 2 sell-through data is your most important column — it becomes your sales proof for the next wave",
-                "This tracker is reviewed by KITS at every weekly check-in — it is a live management document",
+                "This tracker is reviewed by RU2YA at every weekly check-in — it is a live management document",
               ].map((rule, i) => (
                 <div key={i} style={{ display: "flex", gap: 10, marginBottom: 6 }}>
                   <span style={{ color: "#7EB5A6", fontSize: 12, flexShrink: 0 }}>→</span>
@@ -897,7 +897,7 @@ export default function OutreachSystem() {
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2040", letterSpacing: "0.15em" }}>
-          KITS ADVISORY GROUP · TRADE OUTREACH SYSTEM · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · TRADE OUTREACH SYSTEM · CONFIDENTIAL
         </span>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2040" }}>
           KAG-JRK-004 · PHASE 1 CHANNEL ACTIVATION

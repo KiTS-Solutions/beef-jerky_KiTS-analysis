@@ -77,9 +77,9 @@ const FLAVOR_PROFILE = {
   ],
   development: [
     "Stage 1: Manufacturer produces 3 flavour variations — mild, medium, bold — based on the Lebanese BBQ profile above. Minimum 200g sample per variation.",
-    "Stage 2: KITS conducts blind tasting with 10 target consumers (gym members, 18–40, mixed gender) across 3 sessions. Feedback documented on standardised form.",
+    "Stage 2: RU2YA conducts blind tasting with 10 target consumers (gym members, 18–40, mixed gender) across 3 sessions. Feedback documented on standardised form.",
     "Stage 3: Manufacturer produces one consolidated version incorporating tasting feedback. Second round of consumer testing.",
-    "Stage 4: KITS and client approve final flavour profile. Written sign-off before first commercial batch.",
+    "Stage 4: RU2YA and client approve final flavour profile. Written sign-off before first commercial batch.",
     "Stage 5: Approved flavour profile documented in a Flavour Specification Sheet signed by both parties. This document governs all future production batches.",
   ],
 };
@@ -89,7 +89,7 @@ const NUTRITION_REQUIREMENTS = [
     parameter: "Protein content",
     target: "Minimum 25g per 100g of finished product",
     rationale: "Competitive positioning requires meaningful protein superiority over imported competitors. Wild West delivers 29.9–35.9g/100g. Jack Link's delivers ~42g/100g. Our target must be competitive in this range while maintaining clean ingredients.",
-    status: "LAB VERIFICATION REQUIRED — submit actual panel to KITS before any claim is printed",
+    status: "LAB VERIFICATION REQUIRED — submit actual panel to RU2YA before any claim is printed",
     critical: true,
   },
   {
@@ -146,7 +146,7 @@ const NUTRITION_REQUIREMENTS = [
 const HALAL_REQUIREMENTS = [
   {
     req: "Beef sourcing — slaughter method",
-    detail: "All beef used in production must be sourced from a Halal-certified slaughterhouse. Certificate of Halal slaughter from the supplier must be provided to KITS for every production batch. This is non-negotiable and is the foundation of the entire Halal certification.",
+    detail: "All beef used in production must be sourced from a Halal-certified slaughterhouse. Certificate of Halal slaughter from the supplier must be provided to RU2YA for every production batch. This is non-negotiable and is the foundation of the entire Halal certification.",
     doc: "Halal slaughter certificate from beef supplier",
   },
   {
@@ -189,7 +189,7 @@ const QUALITY_STANDARDS = [
   {
     stage: "In-Process Controls",
     checks: [
-      "Marinade recipe: weighed ingredients per approved Flavour Specification Sheet. No deviation without written KITS approval.",
+      "Marinade recipe: weighed ingredients per approved Flavour Specification Sheet. No deviation without written RU2YA approval.",
       "Marination time: minimum [TBC with manufacturer] hours. Maximum [TBC]. Document start and end time for every batch.",
       "Drying temperature and duration: per approved process specification. Temperature log kept for every batch.",
       "Water activity measurement: target Aw < 0.85 for shelf stability at ambient temperature. Test every batch.",
@@ -200,7 +200,7 @@ const QUALITY_STANDARDS = [
     checks: [
       "Nutritional analysis: full panel per SKU. First production batch: third-party accredited lab. Subsequent batches: internal testing with annual third-party verification.",
       "Microbiological testing: per Lebanese food safety standards. Total plate count, E. coli, Salmonella, Listeria. Retain results for every batch.",
-      "Organoleptic review: KITS representative tastes from every commercial batch before shipment approval. Deviation from approved flavour profile triggers batch hold.",
+      "Organoleptic review: RU2YA representative tastes from every commercial batch before shipment approval. Deviation from approved flavour profile triggers batch hold.",
       "Weight check: net weight per pack within ±2% of declared weight on every batch. 10-unit minimum weight sample per production run.",
     ],
   },
@@ -210,28 +210,28 @@ const QUALITY_STANDARDS = [
       "Batch number assigned to every production run. Format: [YYYYMMDD-SKU-LOT].",
       "Retain minimum 200g sample from every batch for 12 months from production date.",
       "Full batch record retained for 3 years: raw material lots, process logs, QC results, dispatch records.",
-      "Certificate of Analysis issued by manufacturer for every batch before delivery to KITS.",
+      "Certificate of Analysis issued by manufacturer for every batch before delivery to RU2YA.",
     ],
   },
 ];
 
 const SUPPLY_TERMS = [
   { term: "Minimum Order Quantity (MOQ)", detail: "Phase 1 (Months 1–3): [TBC based on manufacturer capacity and first batch sizing — target 60–90 days sell-through]. Confirm exact units with manufacturer before budget approval. Subsequent orders: minimum [TBC] units per SKU. No single batch below minimum without written agreement." },
-  { term: "Lead time", detail: "Standard lead time from order placement to delivery: [TBC — target 10–14 days for locally produced SKU, 21–28 days for imported component]. Confirm in writing. KITS requires confirmed lead time before setting delivery schedules with trade accounts." },
-  { term: "Pricing structure", detail: "Fixed cost-per-unit agreed in writing for a minimum 6-month period. Any price change requires 30 days written notice minimum. Price changes trigger a renegotiation right for KITS. USD-denominated pricing only." },
-  { term: "Payment terms", detail: "To be negotiated. KITS target: Net 30 from delivery on first three orders, then Net 45 as relationship matures. First order: 50% upfront, 50% on delivery. Confirm with manufacturer." },
-  { term: "Quality rejection protocol", detail: "KITS retains the right to reject any batch that does not meet the specifications in this document. Rejected batches: manufacturer bears cost of replacement or refund. Rejection must be communicated within 5 business days of delivery. Retain rejected batch samples for dispute resolution." },
-  { term: "Exclusivity", detail: "KITS requests a right of first refusal on any equivalent product (same format, same positioning) the manufacturer considers producing for another Lebanese client. Full exclusivity to be negotiated based on volume commitments. Discuss at supply agreement stage." },
-  { term: "Flavour recipe ownership", detail: "The approved Flavour Specification Sheet and Lebanese BBQ recipe developed jointly with KITS is the intellectual property of the client venture. The manufacturer may not produce this specific flavour profile for any other client. This must be written into the supply agreement." },
+  { term: "Lead time", detail: "Standard lead time from order placement to delivery: [TBC — target 10–14 days for locally produced SKU, 21–28 days for imported component]. Confirm in writing. RU2YA requires confirmed lead time before setting delivery schedules with trade accounts." },
+  { term: "Pricing structure", detail: "Fixed cost-per-unit agreed in writing for a minimum 6-month period. Any price change requires 30 days written notice minimum. Price changes trigger a renegotiation right for RU2YA. USD-denominated pricing only." },
+  { term: "Payment terms", detail: "To be negotiated. RU2YA target: Net 30 from delivery on first three orders, then Net 45 as relationship matures. First order: 50% upfront, 50% on delivery. Confirm with manufacturer." },
+  { term: "Quality rejection protocol", detail: "RU2YA retains the right to reject any batch that does not meet the specifications in this document. Rejected batches: manufacturer bears cost of replacement or refund. Rejection must be communicated within 5 business days of delivery. Retain rejected batch samples for dispute resolution." },
+  { term: "Exclusivity", detail: "RU2YA requests a right of first refusal on any equivalent product (same format, same positioning) the manufacturer considers producing for another Lebanese client. Full exclusivity to be negotiated based on volume commitments. Discuss at supply agreement stage." },
+  { term: "Flavour recipe ownership", detail: "The approved Flavour Specification Sheet and Lebanese BBQ recipe developed jointly with RU2YA is the intellectual property of the client venture. The manufacturer may not produce this specific flavour profile for any other client. This must be written into the supply agreement." },
   { term: "Confidentiality", detail: "All formulation information, pricing, client identity, and commercial terms are confidential. Manufacturer may not disclose any information about this product or client to any third party without written consent." },
   { term: "Minimum contract term", detail: "12 months from first commercial batch. Renewable by mutual agreement. Termination requires 60 days written notice after month 6." },
 ];
 
 const TESTING_SEQUENCE = [
-  { phase: "Pre-production", timing: "Before any commercial batch", items: ["Ingredient Halal status declarations received and reviewed", "Beef sourcing Halal certificate confirmed", "Production line cross-contamination protocol approved", "Flavour development samples approved by KITS (blind tasting completed)", "Approved Flavour Specification Sheet signed by both parties"] },
-  { phase: "First batch — pilot", timing: "First commercial production run", items: ["Third-party nutritional analysis — full panel (LIBNOR or accredited private lab)", "Microbiological testing — full panel", "Water activity measurement — every unit batch", "Organoleptic review — KITS representative in person or sample courier", "Shelf life accelerated testing initiated (real-time and accelerated conditions)", "Weight verification — 10-unit sample"] },
+  { phase: "Pre-production", timing: "Before any commercial batch", items: ["Ingredient Halal status declarations received and reviewed", "Beef sourcing Halal certificate confirmed", "Production line cross-contamination protocol approved", "Flavour development samples approved by RU2YA (blind tasting completed)", "Approved Flavour Specification Sheet signed by both parties"] },
+  { phase: "First batch — pilot", timing: "First commercial production run", items: ["Third-party nutritional analysis — full panel (LIBNOR or accredited private lab)", "Microbiological testing — full panel", "Water activity measurement — every unit batch", "Organoleptic review — RU2YA representative in person or sample courier", "Shelf life accelerated testing initiated (real-time and accelerated conditions)", "Weight verification — 10-unit sample"] },
   { phase: "MoPH submission", timing: "Immediately after lab results confirmed", items: ["Lab results submitted with MoPH application", "Label proof submitted for MoPH review", "Halal certificate attached to submission", "Nutritional table verified against lab results — exact match required", "No discrepancy between declared values and lab results > 5%"] },
-  { phase: "Ongoing — every batch", timing: "Every production run", items: ["Internal nutritional and microbiological testing", "Weight verification", "Organoleptic review — KITS approval before delivery", "Batch documentation completed and retained", "Certificate of Analysis issued to KITS on delivery"] },
+  { phase: "Ongoing — every batch", timing: "Every production run", items: ["Internal nutritional and microbiological testing", "Weight verification", "Organoleptic review — RU2YA approval before delivery", "Batch documentation completed and retained", "Certificate of Analysis issued to RU2YA on delivery"] },
   { phase: "Annual", timing: "Every 12 months", items: ["Third-party nutritional verification — full panel", "Halal certification renewal audit", "MoPH registration renewal if required", "Supply agreement review and renewal", "Shelf life data review — update if storage conditions or recipe have changed"] },
 ];
 
@@ -263,7 +263,7 @@ export default function ManufacturerBrief() {
           backgroundSize: "24px 24px" }} />
 
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#2A4A38", letterSpacing: "0.35em", marginBottom: 10 }}>
-          KITS ADVISORY GROUP · MANUFACTURER TECHNICAL BRIEF · REF: KAG-JRK-007 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · MANUFACTURER TECHNICAL BRIEF · REF: KAG-JRK-007 · CONFIDENTIAL
         </div>
         <h1 style={{ margin: "0 0 6px", fontSize: isMobile ? "clamp(18px, 4vw, 34px)" : "clamp(20px, 3.5vw, 34px)", fontWeight: 400, color: "#D8E0D8", lineHeight: 1.15 }}>
           Manufacturer Technical Brief
@@ -311,7 +311,7 @@ export default function ManufacturerBrief() {
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 12 : 10, marginBottom: 24 }}>
               {[
                 { k: "CLIENT", v: "Beef Jerky Venture — Lebanon" },
-                { k: "MANAGING PARTY", v: "KITS Advisory Group" },
+                { k: "MANAGING PARTY", v: "RU2YA Advisory Group" },
                 { k: "PRODUCT TYPE", v: "Portioned Beef Jerky — high protein, clean label" },
                 { k: "TARGET MARKET", v: "Lebanese Republic + GCC (future)" },
                 { k: "BRAND NAME", v: PENDING, p: true },
@@ -334,7 +334,7 @@ export default function ManufacturerBrief() {
             </div>
 
             <GreenBox title="PURPOSE OF THIS DOCUMENT">
-              This brief communicates the complete technical, quality, regulatory, and commercial requirements that the manufacturer must meet for every production batch. It governs the relationship between the manufacturer and KITS Advisory Group on behalf of the client venture. Any deviation from these specifications requires written approval from KITS before implementation.
+              This brief communicates the complete technical, quality, regulatory, and commercial requirements that the manufacturer must meet for every production batch. It governs the relationship between the manufacturer and RU2YA Advisory Group on behalf of the client venture. Any deviation from these specifications requires written approval from RU2YA before implementation.
             </GreenBox>
 
             <GreenBox title="PRODUCT POSITIONING — WHAT THE MANUFACTURER MUST UNDERSTAND">
@@ -354,7 +354,7 @@ export default function ManufacturerBrief() {
             }}>
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#C8A96E", marginBottom: 8 }}>PRIMARY FLAVOR NAME — PENDING BOARD DECISION</div>
               <p style={{ margin: 0, fontSize: 13, color: "#8A7A50", lineHeight: 1.75 }}>
-                The primary flavour name will be confirmed at the board meeting and communicated to the manufacturer in writing by KITS immediately following. All flavour development work specified below can begin using the codename <strong style={{ color: "#C8A96E" }}>"Lebanese BBQ"</strong> until the commercial name is confirmed.
+                The primary flavour name will be confirmed at the board meeting and communicated to the manufacturer in writing by RU2YA immediately following. All flavour development work specified below can begin using the codename <strong style={{ color: "#C8A96E" }}>"Lebanese BBQ"</strong> until the commercial name is confirmed.
               </p>
             </div>
 
@@ -418,7 +418,7 @@ export default function ManufacturerBrief() {
             <SecHead label="NUTRITIONAL REQUIREMENTS" title="Lab-Confirmed Targets Per SKU" color="#7EB5A6" />
 
             <GreenBox title="CRITICAL INSTRUCTION — READ FIRST">
-              All nutritional values below are targets. None may be printed on packaging without laboratory verification from an accredited testing facility (LIBNOR Lebanon or approved private lab). The manufacturer must provide the actual lab-tested nutritional panel to KITS before any artwork is finalized. A discrepancy of more than 5% between declared values and lab results constitutes a non-compliance event and requires reformulation or declaration amendment.
+              All nutritional values below are targets. None may be printed on packaging without laboratory verification from an accredited testing facility (LIBNOR Lebanon or approved private lab). The manufacturer must provide the actual lab-tested nutritional panel to RU2YA before any artwork is finalized. A discrepancy of more than 5% between declared values and lab results constitutes a non-compliance event and requires reformulation or declaration amendment.
             </GreenBox>
 
             <div style={{ marginTop: 20 }}>
@@ -568,7 +568,7 @@ export default function ManufacturerBrief() {
             <div style={{ background: "#C8A96E12", border: "1px solid #C8A96E30", borderRadius: 4, padding: "16px 20px", marginBottom: 22 }}>
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#C8A96E", marginBottom: 8 }}>LEGAL NOTICE</div>
               <p style={{ margin: 0, fontSize: 13, color: "#8A7A50", lineHeight: 1.75 }}>
-                The terms below are the commercial framework for the supply relationship. They must be formalized in a written supply agreement signed by both parties before the first commercial production batch is ordered. KITS will provide a draft supply agreement for legal review. No significant production commitment should be made without a signed agreement in place.
+                The terms below are the commercial framework for the supply relationship. They must be formalized in a written supply agreement signed by both parties before the first commercial production batch is ordered. RU2YA will provide a draft supply agreement for legal review. No significant production commitment should be made without a signed agreement in place.
               </p>
             </div>
 
@@ -621,7 +621,7 @@ export default function ManufacturerBrief() {
             <div style={{ background: "#0A0E0D", border: "1px solid #7EB5A630", borderRadius: 4, padding: "20px 24px", marginTop: 20 }}>
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", letterSpacing: "0.2em", marginBottom: 10 }}>APPROVED TESTING LABORATORY</div>
               <p style={{ margin: 0, fontSize: 13, color: "#5A7A68", lineHeight: 1.8 }}>
-                Primary: LIBNOR (Lebanese Standards Institution) — for MoPH submission purposes. Alternative: accredited private laboratory approved by MoPH. Third-party verification (annual): same facilities. The manufacturer may use their own internal quality lab for ongoing batch testing, but third-party verification is required for the initial batch and annually thereafter. All lab results must be provided to KITS in original format (not transcribed) within 5 business days of result issuance.
+                Primary: LIBNOR (Lebanese Standards Institution) — for MoPH submission purposes. Alternative: accredited private laboratory approved by MoPH. Third-party verification (annual): same facilities. The manufacturer may use their own internal quality lab for ongoing batch testing, but third-party verification is required for the initial batch and annually thereafter. All lab results must be provided to RU2YA in original format (not transcribed) within 5 business days of result issuance.
               </p>
             </div>
           </div>
@@ -636,7 +636,7 @@ export default function ManufacturerBrief() {
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A2820", letterSpacing: "0.15em" }}>
-          KITS ADVISORY GROUP · MANUFACTURER TECHNICAL BRIEF · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · MANUFACTURER TECHNICAL BRIEF · CONFIDENTIAL
         </span>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A2820" }}>KAG-JRK-007</span>
       </div>

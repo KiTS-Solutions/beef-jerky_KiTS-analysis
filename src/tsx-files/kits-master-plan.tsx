@@ -261,7 +261,7 @@ export default function MasterPlan() {
         padding: isMobile ? "20px 20px 16px" : "28px 36px 20px",
       }}>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#5A5040", letterSpacing: "0.3em", marginBottom: isMobile ? 6 : 8 }}>
-          KITS ADVISORY GROUP · REF: KAG-JRK-002 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · REF: KAG-JRK-002 · CONFIDENTIAL
         </div>
         <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 5vw, 28px)" : "clamp(20px, 3.5vw, 32px)", fontWeight: 400, color: "#E8E0D0", lineHeight: 1.2 }}>
           Beef Jerky — Master Launch Plan
@@ -473,7 +473,7 @@ export default function MasterPlan() {
 
             <div style={{ marginTop: isMobile ? 24 : 28, background: "#0E110E", border: "1px solid #2A3020", borderRadius: 4, padding: isMobile ? "16px 18px" : "18px 20px" }}>
               <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#7EB5A6", letterSpacing: "0.2em", marginBottom: 8 }}>
-                KITS RECOMMENDATION
+                RU2YA RECOMMENDATION
               </div>
               <p style={{ margin: 0, fontSize: isMobile ? 13 : 14, lineHeight: 1.8, color: "#8A9E80", fontFamily: "Georgia, serif" }}>
                 <strong style={{ color: "#A8C0A0" }}>QUWWAT</strong> is the strongest candidate. It is short, powerful, trademarkable, genuinely Arabic in origin, and works phonetically in all three of Lebanon's languages. It communicates the product's core value — strength — without being descriptive in a way that prevents trademark protection. <strong style={{ color: "#A8C0A0" }}>BADR</strong> is the creative dark horse: one syllable, pure, and poetic. <strong style={{ color: "#A8C0A0" }}>LAHM+</strong> is bold and direct — highest risk, highest reward if the positioning is confident enough to carry it. Run all three through IP check immediately.
@@ -634,7 +634,7 @@ export default function MasterPlan() {
         flexWrap: "wrap", gap: 8
       }}>
         <span style={{ fontFamily: "monospace", fontSize: 10, color: "#3A3428", letterSpacing: "0.15em" }}>
-          KITS ADVISORY GROUP · CONFIDENTIAL · NOT FOR DISTRIBUTION
+          RU2YA ADVISORY GROUP · CONFIDENTIAL · NOT FOR DISTRIBUTION
         </span>
         <span style={{ fontFamily: "monospace", fontSize: 10, color: "#3A3428" }}>
           {doneSteps}/{totalSteps} STEPS · {pct}% COMPLETE

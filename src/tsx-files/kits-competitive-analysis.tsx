@@ -94,7 +94,7 @@ const MIDDLEMAN_CRITERIA = [
         wildwest:  { score: 1, value: "5–14 days (imported)", note: "Import lead times mean gaps. Seasonal availability issues in Lebanon." },
         questbar:  { score: 2, value: "3–5 days via distributor", note: "Better than import — but still one layer removed." },
         barebells: { score: 2, value: "3–5 days via distributor", note: "Distributor reliability varies. Product not always in stock locally." },
-        ours:      { score: 5, value: "Within 24 hours, personal delivery", note: "KITS delivers directly. Founder-level relationship with every account. No layer between brand and store." },
+        ours:      { score: 5, value: "Within 24 hours, personal delivery", note: "RU2YA delivers directly. Founder-level relationship with every account. No layer between brand and store." },
       },
       {
         label: "Display & point-of-sale support",
@@ -102,7 +102,7 @@ const MIDDLEMAN_CRITERIA = [
         wildwest:  { score: 1, value: "None", note: "No active trade support for Lebanese market." },
         questbar:  { score: 3, value: "Branded shelf strips, boxes", note: "Some materials available via distributor. Varies by account size." },
         barebells: { score: 3, value: "Branded display via distributor", note: "Display provided for larger accounts. Small gyms rarely benefit." },
-        ours:      { score: 5, value: "Free branded display unit + product cards", note: "Provided to every account regardless of size. Setup personally by KITS. Staff briefed at setup." },
+        ours:      { score: 5, value: "Free branded display unit + product cards", note: "Provided to every account regardless of size. Setup personally by RU2YA. Staff briefed at setup." },
       },
     ],
   },
@@ -140,7 +140,7 @@ const MIDDLEMAN_CRITERIA = [
         wildwest:  { score: 1, value: "Minimal awareness in Lebanon", note: "Staff in most Lebanese stores have no education on this brand. It sits on shelf without advocacy." },
         questbar:  { score: 4, value: "Strong brand recognition with gym community", note: "Quest has a distributor and limited marketing presence. Staff in nutrition stores know and recommend it. Difficult to compete with on familiarity alone." },
         barebells: { score: 4, value: "Growing recognition, Nordic premium image", note: "Increasingly visible. Strong packaging. Staff in premium nutrition stores recommend it. High social media presence among Lebanese fitness consumers." },
-        ours:      { score: 5, value: "Personal relationship with every account, trained staff", note: "KITS visits personally, trains staff, provides talking points. Every staff member who handles our product knows exactly what to say and why. Unmatched at launch." },
+        ours:      { score: 5, value: "Personal relationship with every account, trained staff", note: "RU2YA visits personally, trains staff, provides talking points. Every staff member who handles our product knows exactly what to say and why. Unmatched at launch." },
       },
     ],
   },
@@ -344,7 +344,7 @@ const POWER_POINTS = [
     rank: "03",
     title: "Local Production — Price & Story",
     color: "#7EB5A6",
-    middleman: "Local component means no import markup, no customs exposure, no currency risk on the product itself. KITS can price 30–40% below imported competitors while maintaining a better margin for the store.",
+    middleman: "Local component means no import markup, no customs exposure, no currency risk on the product itself. RU2YA can price 30–40% below imported competitors while maintaining a better margin for the store.",
     enduser: "A locally produced product in Lebanon carries a 'supporting the local economy' resonance that imports cannot replicate. In a country that has faced severe economic pressure, buying Lebanese is an emotional differentiator that costs nothing to leverage.",
     competitors_do: "Every competitor is imported. Every one of them contributes zero to Lebanon's economy. Every one of them is subject to import disruption, currency volatility, and customs delays. We are structurally immune to these risks on the local production component.",
   },
@@ -360,7 +360,7 @@ const POWER_POINTS = [
     rank: "05",
     title: "Personal Service — The Relationship Moat",
     color: "#E07B6A",
-    middleman: "KITS delivers personally, trains staff personally, checks in bi-weekly personally. No competitor does this at the gym and nutrition store level. The relationship becomes the product's strongest asset — harder to displace than any ingredient claim.",
+    middleman: "RU2YA delivers personally, trains staff personally, checks in bi-weekly personally. No competitor does this at the gym and nutrition store level. The relationship becomes the product's strongest asset — harder to displace than any ingredient claim.",
     enduser: "Staff who are trained and believe in the product give unsolicited recommendations. This word-of-mouth from a trusted source (trainer, store staff) is the most powerful purchase driver in the Lebanese market.",
     competitors_do: "Importers and distributors manage 50–200 SKUs. Our brand is one of hundreds in their portfolio. No personal delivery, no staff training, no bi-weekly check-in. The relationship gap between us and every competitor is total.",
   },
@@ -467,7 +467,7 @@ export default function CompetitiveAnalysis() {
         padding: "26px 36px 18px",
       }}>
         <div style={{ fontFamily: "monospace", fontSize: 10, color: "#3A3455", letterSpacing: "0.3em", marginBottom: 8 }}>
-          KITS ADVISORY GROUP · COMPETITIVE INTELLIGENCE · REF: KAG-JRK-005 · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · COMPETITIVE INTELLIGENCE · REF: KAG-JRK-005 · CONFIDENTIAL
         </div>
         <h1 style={{ margin: 0, fontSize: "clamp(17px, 3vw, 27px)", fontWeight: 400, color: "#D8D0C8", lineHeight: 1.2 }}>
           Full Competitive Analysis — Beef Jerky & Protein Snacks
@@ -759,7 +759,7 @@ export default function CompetitiveAnalysis() {
           {/* Summary verdict */}
           <div style={{ background: "#080E0A", border: "1px solid #1E3020", borderRadius: 4, padding: "20px 24px", marginTop: 20 }}>
             <div style={{ fontFamily: "monospace", fontSize: 10, color: "#A8D8A8", letterSpacing: "0.2em", marginBottom: 10 }}>
-              KITS COMPETITIVE VERDICT
+              RU2YA COMPETITIVE VERDICT
             </div>
             <p style={{ margin: 0, fontSize: 14, color: "#7A9A80", lineHeight: 1.85, fontFamily: "Palatino, Georgia, serif" }}>
               No single competitor in the Lebanese protein snack market holds more than three of these seven advantages simultaneously. We hold all seven. The imported jerky brands (Jack Link's, Wild West) have product recognition but fail on Halal, sugar content, price accessibility, local flavor, and personal service. The protein bars (Quest, Barebells) compete for the same fitness wallet but fail on ingredient authenticity, digestive comfort, and Halal compliance. <strong style={{ color: "#A8D8A8" }}>The combination of local production, Halal certification, zero-sugar clean ingredients, relationship-first distribution, and trilingual packaging does not exist in any other product in this market.</strong> This is not a competitive gap — it is a competitive vacuum. First mover captures it.
@@ -833,7 +833,7 @@ export default function CompetitiveAnalysis() {
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A1828", letterSpacing: "0.15em" }}>
-          KITS ADVISORY GROUP · COMPETITIVE INTELLIGENCE · CONFIDENTIAL · NOT FOR DISTRIBUTION
+          RU2YA ADVISORY GROUP · COMPETITIVE INTELLIGENCE · CONFIDENTIAL · NOT FOR DISTRIBUTION
         </span>
         <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#1A1828" }}>KAG-JRK-005</span>
       </div>

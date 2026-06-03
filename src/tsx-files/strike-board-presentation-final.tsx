@@ -318,7 +318,7 @@ function useResponsive() {
 //       <rect x={0} y={226} width={160} height={24} fill="#050404"/>
 //       <rect x={12} y={229} width={34} height={10} fill="white" rx={1}/>
 //       {Array.from({length:14}).map((_,i)=><rect key={i} x={13+i*2.1} y="230.5" width={i%3===0?1.2:0.6} height={i%5===0?7:5.5} fill="#080706"/>)}
-//       <text x={80} y={238} textAnchor="middle" fill={C.gold} opacity="0.15" fontFamily="monospace" fontSize="4" letterSpacing="1">KITS ADVISORY · STRIKE</text>
+//       <text x={80} y={238} textAnchor="middle" fill={C.gold} opacity="0.15" fontFamily="monospace" fontSize="4" letterSpacing="1">RU2YA ADVISORY · STRIKE</text>
 //       <rect x={0} y={0} width={160} height={250} fill={`url(#sh${id})`} rx={10}/>
 //       <rect x={0} y={0} width={20} height={250} fill={`url(#el${id})`} rx={10}/>
 //       <rect x={140} y={0} width={20} height={250} fill={`url(#er${id})`} rx={10}/>
@@ -367,7 +367,7 @@ function CoverSlide({ slide }: { slide: CoverSlideData }) {
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom, transparent, ${C.gold}, transparent)` }}/>
       {/* Left content */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : isTablet ? "0 48px" : "0 64px", position: "relative", zIndex: 1 }}>
-        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.45em", marginBottom: isMobile ? 20 : 32 }}>KITS ADVISORY GROUP · CONFIDENTIAL · KAG-JRK-BOARD-001</div>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.45em", marginBottom: isMobile ? 20 : 32 }}>RU2YA ADVISORY GROUP · CONFIDENTIAL · KAG-JRK-BOARD-001</div>
         <div style={{ marginBottom: 8 }}>
           <span style={{ fontFamily: "'Didot','Bodoni MT','Playfair Display',Georgia,serif", fontSize: isMobile ? "clamp(32px,8vw,56px)" : "clamp(56px,8vw,100px)", fontWeight: 400, color: C.strike, letterSpacing: "0.18em", lineHeight: 1, display: "block" }}>STRIKE</span>
           <span style={{ fontFamily: "'Didot','Bodoni MT',Georgia,serif", fontSize: isMobile ? "clamp(16px,4vw,28px)" : "clamp(24px,4vw,44px)", fontWeight: 400, color: C.gold, letterSpacing: "0.18em", display: "block" }}>BITES</span>
@@ -768,7 +768,7 @@ function TiersSlide({ slide }: { slide: TiersSlideData }) {
       <div style={{ display: "flex", gap: 8, marginTop: 16, marginBottom: 16, flexDirection: isMobile ? "column" : "row" }}>
         {slide.tiers.map((tier: TiersSlideData['tiers'][number], i: number) => (
           <button key={i} onClick={() => setActiveTier(i)} style={{ flex: 1, background: activeTier === i ? `${tier.color}18` : C.charcoal, border: `1px solid ${activeTier === i ? tier.color : C.ash}`, borderRadius: 4, padding: isMobile ? "14px 16px" : "12px 16px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>
-            {tier.recommended && <div style={{ position: "absolute", top: isMobile ? -10 : -9, left: "50%", transform: "translateX(-50%)", fontFamily: "monospace", fontSize: isMobile ? 6 : 7, color: C.gold, background: C.obsidian, padding: "2px 8px", border: `1px solid ${C.gold}40`, borderRadius: 2, whiteSpace: "nowrap" }}>KITS RECOMMENDED</div>}
+            {tier.recommended && <div style={{ position: "absolute", top: isMobile ? -10 : -9, left: "50%", transform: "translateX(-50%)", fontFamily: "monospace", fontSize: isMobile ? 6 : 7, color: C.gold, background: C.obsidian, padding: "2px 8px", border: `1px solid ${C.gold}40`, borderRadius: 2, whiteSpace: "nowrap" }}>RU2YA RECOMMENDED</div>}
             <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: tier.color, letterSpacing: "0.15em", marginBottom: 4 }}>{tier.tier}</div>
             <div style={{ fontSize: isMobile ? 12 : 13, color: C.cream, marginBottom: 4 }}>{tier.name}</div>
             <div style={{ fontFamily: "monospace", fontSize: isMobile ? 16 : 18, color: tier.color }}>{tier.total}</div>
@@ -889,7 +889,7 @@ function MandateSlide({ slide }: { slide: MandateSlideData }) {
       <SH slide={slide}/>
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: isMobile ? 20 : 20, marginTop: 16 }}>
         <div>
-          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 12 }}>KITS SCOPE OF AUTHORITY</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 12 }}>RU2YA SCOPE OF AUTHORITY</div>
           {slide.scope.map((area: MandateSlideData['scope'][number], i: number) => (
             <div key={i} style={{ marginBottom: isMobile ? 14 : 14 }}>
               <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, letterSpacing: "0.1em", marginBottom: 6, paddingBottom: 4, borderBottom: `1px solid ${C.ash}` }}>{area.area.toUpperCase()}</div>
@@ -983,7 +983,7 @@ function ClosingSlide({ slide }: { slide: ClosingSlideData }) {
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom, transparent, ${C.gold}, transparent)` }}/>
       {/* Left */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : isTablet ? "0 48px" : "0 56px", position: "relative", zIndex: 1 }}>
-        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 9, color: C.gold, opacity: 0.6, letterSpacing: "0.4em", marginBottom: isMobile ? 16 : 24 }}>KITS ADVISORY GROUP · DECISION REQUIRED</div>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 9, color: C.gold, opacity: 0.6, letterSpacing: "0.4em", marginBottom: isMobile ? 16 : 24 }}>RU2YA ADVISORY GROUP · DECISION REQUIRED</div>
         <h2 style={{ fontFamily: "'Didot','Bodoni MT','Playfair Display',Georgia,serif", fontSize: isMobile ? "clamp(14px,3vw,22px)" : "clamp(16px,2.2vw,26px)", fontWeight: 400, color: C.strike, margin: "0 0 28px", lineHeight: 1.5, maxWidth: 520 }}>{slide.title}</h2>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.red, letterSpacing: "0.2em", marginBottom: isMobile ? 12 : 14 }}>FIVE DECISIONS — REQUIRED TODAY</div>
         {slide.decisions.map((d: string, i: number) => (
@@ -1020,9 +1020,9 @@ const SLIDES: SlideData[] = [
   {
     id: "cover", type: "cover", label: "COVER",
     title: "STRIKE BITES", section: null,
-    meta: "KITS Advisory Group · Confidential · May 2026",
+    meta: "RU2YA Advisory Group · Confidential · May 2026",
     notes: {
-      open: "Good [morning/afternoon]. Thank you for your time. This presentation is the culmination of KITS' full advisory work on STRIKE BITES — covering market research, brand strategy, competitive analysis, go-to-market, financials, and the critical decisions we must make in this room today. We have approximately 75 minutes. The most important section is Section 07 — the blockers. Everything before that is context. That section requires decisions.",
+      open: "Good [morning/afternoon]. Thank you for your time. This presentation is the culmination of RU2YA' full advisory work on STRIKE BITES — covering market research, brand strategy, competitive analysis, go-to-market, financials, and the critical decisions we must make in this room today. We have approximately 75 minutes. The most important section is Section 07 — the blockers. Everything before that is context. That section requires decisions.",
       emphasis: ["This is a working session, not a pitch. Every slide is designed to generate a decision, surface a gap, or confirm a direction. Interrupt freely."],
       timing: "2 minutes"
     }
@@ -1043,7 +1043,7 @@ const SLIDES: SlideData[] = [
       { n: "08", text: "Financial Scenarios — Three Budget Tiers", tag: "8 min", color: C.amber },
       { n: "09", text: "Risk Register — What We're Watching", tag: "4 min", color: C.red },
       { n: "10", text: "Critical Blockers — Decisions Required Today", tag: "8 min", color: C.red },
-      { n: "11", text: "KITS Mandate — Scope, Fees, Governance", tag: "5 min", color: C.gold },
+      { n: "11", text: "RU2YA Mandate — Scope, Fees, Governance", tag: "5 min", color: C.gold },
       { n: "12", text: "Next Steps — Timeline to First Sale", tag: "3 min", color: C.greenBright },
     ],
     notes: {
@@ -1099,14 +1099,14 @@ const SLIDES: SlideData[] = [
       items: [
         "First-mover advantage is available — but not indefinitely. Successful categories attract imitators within 12 months",
         "Imported competitors (Jack Link's, Wild West) are present but weak: high sugar, no Halal, wrong pricing, wrong flavor",
-        "No local competitor is building in this space currently — confirmed by KITS field research",
+        "No local competitor is building in this space currently — confirmed by RU2YA field research",
         "MoPH regulatory timeline: 2–4 months — beginning now means shelf-ready Q4 2026",
         "Warm relationship network across gyms, nutrition stores, and pharmacies compresses outreach from 3 months to 3 weeks",
       ]
     },
     notes: {
       open: "The window is real and open — but first-mover advantage is not permanent. STRIKE's protection layers are: trademark registration (file immediately), brand equity built through relationships (cannot be copied in months), and flavor IP in the supply agreement (the Lebanese BBQ formula is owned by the venture).",
-      emphasis: ["Speed of execution is a competitive moat. The longer we wait, the more we risk someone else discovering what KITS has confirmed through research."],
+      emphasis: ["Speed of execution is a competitive moat. The longer we wait, the more we risk someone else discovering what RU2YA has confirmed through research."],
       timing: "3 minutes"
     }
   },
@@ -1222,7 +1222,7 @@ const SLIDES: SlideData[] = [
       { label: "Cedar Icon", value: "Geometric Abstract", verdict: "EVOLVE", score: 75, note: "5 vector lines — NOT literal illustration. 15% opacity, background only. Cedar is over-used literally in Lebanese brand identity." },
     ],
     notes: {
-      open: "KITS scored the STRIKE brand at 88 out of 100. That is a strong score for a pre-launch brand — most launch with a 70. The name is exceptional. The architecture scales. The visual system is right for this market in 2025–2026. The two items requiring board decision are the front tagline (FUEL THE PRIMAL vs. REAL PRIMAL MUSCLE FUEL) and the cedar icon execution.",
+      open: "RU2YA scored the STRIKE brand at 88 out of 100. That is a strong score for a pre-launch brand — most launch with a 70. The name is exceptional. The architecture scales. The visual system is right for this market in 2025–2026. The two items requiring board decision are the front tagline (FUEL THE PRIMAL vs. REAL PRIMAL MUSCLE FUEL) and the cedar icon execution.",
       emphasis: [
         "The score of 88 is real and defensible. It reflects: name uniqueness, phonetic viability, trademark cleanness, visual identity potential, cultural resonance, and scalability to GCC and Western markets.",
         "The tagline decision is a board call. Both options work. FUEL THE PRIMAL. is the recommendation.",
@@ -1239,7 +1239,7 @@ const SLIDES: SlideData[] = [
       { rank: "02", title: "Zero Added Sugar — The Macro Truth", color: C.gold, middleman: "Staff can make a specific, truthful claim: 'This has zero added sugar.' A claim no competitor can make.", enduser: "Athlete tracking macros sees 0g. No insulin spike, no crash, no guilt. Categorically different from every bar on the shelf.", vs: "Jack Link's: sugar #2. Wild West: 20.6g/100g. Quest: sucralose (GI complaints). Barebells: maltitol (laxative effect). All have a sugar problem." },
       { rank: "03", title: "Local Production — Price & Story", color: C.amber, middleman: "No import markup, no customs exposure, no currency risk. Can price 30–40% below imported competitors while maintaining better margin.", enduser: "'Made in Lebanon' carries economic solidarity weight. A locally produced product in 2026 Lebanon resonates beyond just food provenance.", vs: "Every competitor is imported. All subject to import disruption, currency volatility, and customs delays. We are immune on the local component." },
       { rank: "04", title: "Sale-or-Return Terms", color: C.purple, middleman: "No competitor offers S-O-R to Lebanese trade. Removes the only real objection: 'What if it doesn't sell?' Reframes relationship from vendor to partner.", enduser: "Indirect benefit: a store with zero inventory risk stocks more, places better, recommends more confidently.", vs: "Jack Link's, Wild West, Quest, Barebells — all require upfront payment. No exceptions. STRIKE is the only brand with this proposition." },
-      { rank: "05", title: "Personal Service — The Relationship Moat", color: C.steel, middleman: "KITS delivers personally, trains staff personally, checks in bi-weekly. No competitor does this at gym and nutrition store level.", enduser: "Staff who believe in the product give unsolicited recommendations. The Lebanese community talks — word of mouth starts here.", vs: "Importers manage 50–200 SKUs. Our brand is one of hundreds. No personal delivery, no staff training, no bi-weekly check-in." },
+      { rank: "05", title: "Personal Service — The Relationship Moat", color: C.steel, middleman: "RU2YA delivers personally, trains staff personally, checks in bi-weekly. No competitor does this at gym and nutrition store level.", enduser: "Staff who believe in the product give unsolicited recommendations. The Lebanese community talks — word of mouth starts here.", vs: "Importers manage 50–200 SKUs. Our brand is one of hundreds. No personal delivery, no staff training, no bi-weekly check-in." },
       { rank: "06", title: "Lebanese BBQ — The Only Local Flavor", color: C.amber, middleman: "A flavor people recognize and want. Stores carrying Jack Link's Teriyaki sell to a niche. Lebanese BBQ sells to everyone.", enduser: "Cedar smoke, Aleppo pepper, pomegranate brightness — this tastes like Lebanon. An emotional ownership no import can replicate.", vs: "All direct competitors use American or British flavor profiles. None have designed for the Lebanese palate. The flavor white space is entirely ours." },
       { rank: "07", title: "Trilingual Packaging", color: C.greenBright, middleman: "Full MoPH-compliant Arabic labeling. A store stocking STRIKE faces zero regulatory risk. Stores stocking imports face liability.", enduser: "Consumer reads in Arabic, English, or French. No translation barrier, no guessing at ingredients. Full transparency in every language spoken.", vs: "Every imported competitor uses English-only packaging. None are designed for Lebanon first. We are the only product built for this market from the ground up." },
     ],
@@ -1293,7 +1293,7 @@ const SLIDES: SlideData[] = [
       {
         phase: "PHASE 2", time: "Month 4–6", color: C.amber, title: "Launch",
         principle: "Sports nutrition stores are Priority One. Their customer is already in protein-buying mode on every visit. The cross-sell is automatic.",
-        actions: ["Formal launch: 20–30 accounts (gyms + nutrition stores)", "STRIKE TEAM trainer program — founding 20 trainers activated", "Sale-or-return terms for all first-month placements", "Staff training at every account — done personally by KITS", "Display setup at every account — done by KITS, not left to staff", "Weekly sell-through monitoring across all accounts", "Pharmacy and nutrition shop outreach begins Month 4"],
+        actions: ["Formal launch: 20–30 accounts (gyms + nutrition stores)", "STRIKE TEAM trainer program — founding 20 trainers activated", "Sale-or-return terms for all first-month placements", "Staff training at every account — done personally by RU2YA", "Display setup at every account — done by RU2YA, not left to staff", "Weekly sell-through monitoring across all accounts", "Pharmacy and nutrition shop outreach begins Month 4"],
         targets: [{ label: "Active accounts", value: "20–30" }, { label: "Revenue M6", value: "$18K–28K" }, { label: "Trainer advocates", value: "20" }, { label: "Breakeven target", value: "Month 5–7" }]
       },
       {
@@ -1338,23 +1338,23 @@ const SLIDES: SlideData[] = [
         recommended: true,
         suitable: "Recommended scenario. Serious commercial intent. Full brand identity, 2 SKUs, gym-to-pharmacy channel launch, working capital buffer for regulatory gap.",
         risk: "Mid-range spend requires scope discipline. Brand investment must be executed by professionals — cannot be cut after approval.",
-        includes: ["SARL + all licensing", "MoPH (2 SKUs)", "Full brand identity system", "2 SKU production — 90 days", "50+ account outreach", "KITS Phase 0–2 management fee", "Contingency 15%"],
+        includes: ["SARL + all licensing", "MoPH (2 SKUs)", "Full brand identity system", "2 SKU production — 90 days", "50+ account outreach", "RU2YA Phase 0–2 management fee", "Contingency 15%"],
       },
       {
         tier: "TIER 3", name: "Full Market Entry", total: "$82,000", color: C.amber,
         breakeven: "Month 4–6", margin: "52–60%", accounts_m6: "100–130 accounts", rev_m6: "$35K–55K/mo", rev_m12: "$80K–130K/mo",
         rev_m3: "Soft launch revenue", rev_m3_pct: 25, rev_m6_pct: 50, rev_m12_pct: 100,
         suitable: "Fully committed, capitalized entrepreneur. 3 SKUs, dedicated sales rep, modern trade entry, 6-month working capital runway, GCC pre-filing.",
-        risk: "Higher commitment requires monthly P&L reviews and milestone-gated fund releases. Full KITS co-management mandate required at this tier.",
-        includes: ["Full legal + GCC pre-filing", "MoPH (3 SKUs) + label compliance", "Agency-level brand identity system", "3 SKU production — 120 days", "Dedicated sales rep (6 months)", "KITS Phase 0–3 fee (12 months)", "6-month working capital runway"],
+        risk: "Higher commitment requires monthly P&L reviews and milestone-gated fund releases. Full RU2YA co-management mandate required at this tier.",
+        includes: ["Full legal + GCC pre-filing", "MoPH (3 SKUs) + label compliance", "Agency-level brand identity system", "3 SKU production — 120 days", "Dedicated sales rep (6 months)", "RU2YA Phase 0–3 fee (12 months)", "6-month working capital runway"],
       },
     ],
     notes: {
-      open: "Three scenarios. One decision. KITS recommends Tier 2 as the baseline — it funds a proper brand identity, two SKUs, a full gym-to-pharmacy launch, and a working capital buffer that absorbs the 3–4 month regulatory processing gap. Tier 1 is for validation only — the brand will look underfunded at pharmacy shelf level. Tier 3 is for a fully committed partner with a 2–3 year horizon.",
+      open: "Three scenarios. One decision. RU2YA recommends Tier 2 as the baseline — it funds a proper brand identity, two SKUs, a full gym-to-pharmacy launch, and a working capital buffer that absorbs the 3–4 month regulatory processing gap. Tier 1 is for validation only — the brand will look underfunded at pharmacy shelf level. Tier 3 is for a fully committed partner with a 2–3 year horizon.",
       emphasis: [
         "The working capital buffer is not optional at any tier. MoPH registration takes 2–4 months. During that time, costs run but revenue has not started. The buffer is what keeps the business alive between investment and first sale.",
         "All revenue projections assume USD-denominated pricing and no major Lebanese economic disruption. Review quarterly.",
-        "Budget tier decision is needed today. It determines: production batch size, brand identity budget, KITS fee structure, and scope of first outreach wave. Nothing moves to detailed planning without this number.",
+        "Budget tier decision is needed today. It determines: production batch size, brand identity budget, RU2YA fee structure, and scope of first outreach wave. Nothing moves to detailed planning without this number.",
       ],
       timing: "6 minutes"
     }
@@ -1363,7 +1363,7 @@ const SLIDES: SlideData[] = [
     id: "sec06", type: "section", label: "§06",
     section: "SECTION 06", color: C.red,
     title: "Risk, Blockers & Mandate",
-    sub: "What we are watching. What must be decided today. What KITS commits to.",
+    sub: "What we are watching. What must be decided today. What RU2YA commits to.",
     notes: { open: "Transition slide.", emphasis: [], timing: "15 seconds" }
   },
   {
@@ -1376,7 +1376,7 @@ const SLIDES: SlideData[] = [
       { risk: "Trademark conflict — STRIKE", level: "MEDIUM", levelColor: C.amber, detail: "STRIKE is a common English word. Prior filings exist in beverages (Class 32) — abandoned. Lebanese Class 29 appears clear but requires formal search.", mitigation: "IP lawyer engaged this week for formal search across Classes 29 and 35. File immediately upon clearance." },
       { risk: "Lebanese economic disruption", level: "MEDIUM", levelColor: C.amber, detail: "Political or economic events can disrupt supply chains, consumer spending, and USD availability. Lebanon's macro environment remains volatile.", mitigation: "USD-denominated pricing, hybrid local/import supply model, 90-day pricing review cycle. Lean inventory model insulates against excess stock risk." },
       { risk: "Imitation by local competitor", level: "MEDIUM", levelColor: C.amber, detail: "Successful products in Lebanon are imitated within 12 months. A visible, profitable jerky brand will attract local copycats.", mitigation: "Trademark registration (immediate), flavor IP in supply agreement, brand equity through trainer relationships (cannot be copied in months)." },
-      { risk: "Manufacturer quality incident", level: "MEDIUM", levelColor: C.amber, detail: "One microbiological or quality failure in the Lebanese health market is reputationally irreversible. Community is small and connected.", mitigation: "Full QC protocol in manufacturer brief (KAG-JRK-007). KITS organoleptic review of every batch before delivery. Batch documentation mandatory." },
+      { risk: "Manufacturer quality incident", level: "MEDIUM", levelColor: C.amber, detail: "One microbiological or quality failure in the Lebanese health market is reputationally irreversible. Community is small and connected.", mitigation: "Full QC protocol in manufacturer brief (KAG-JRK-007). RU2YA organoleptic review of every batch before delivery. Batch documentation mandatory." },
       { risk: "Cedar tree over-use in identity", level: "LOW", levelColor: C.gold, detail: "The cedar tree is dramatically over-used in Lebanese brand identity. Literal use would make STRIKE look like every other Lebanese brand.", mitigation: "Geometric abstraction only — 5 vector lines, 15% opacity, background element. Specified explicitly in brand brief (KAG-JRK-006)." },
       { risk: "Over-ranging at launch", level: "LOW", levelColor: C.gold, detail: "Launching multiple SKUs simultaneously dilutes focus, strains cash flow, and complicates inventory. A common FMCG startup error.", mitigation: "One SKU at launch — STRIKE BITES, Smoking BBQ, single-serve. Second SKU only on demonstrated sell-through signal, not on enthusiasm." },
     ],
@@ -1392,12 +1392,12 @@ const SLIDES: SlideData[] = [
     title: "What Must Be Resolved Today",
     subtitle: "Known blockers. Known solutions. Known owners. The question is: by when?",
     blockers: [
-      { urgency: "RESOLVE TODAY", color: C.red, item: "Budget tier selection — Tier 1, 2, or 3", owner: "Board / Funder", impact: "Determines: production batch size, brand identity scope, KITS fee structure, scale of first outreach wave. Everything downstream waits on this number.", action: "Board votes. KITS recommends Tier 2 as baseline. Tier 1 is minimum viable. Tier 3 requires full co-management mandate." },
-      { urgency: "RESOLVE TODAY", color: C.red, item: "KITS Management Mandate — formal signing", owner: "Entrepreneur + KITS", impact: "KITS cannot make introductions, sign on behalf of the venture, or commit resources without a signed mandate. All work to date has been pre-mandate.", action: "Sign today if document has been reviewed. 48-hour legal review maximum if not yet reviewed. Draft available now." },
+      { urgency: "RESOLVE TODAY", color: C.red, item: "Budget tier selection — Tier 1, 2, or 3", owner: "Board / Funder", impact: "Determines: production batch size, brand identity scope, RU2YA fee structure, scale of first outreach wave. Everything downstream waits on this number.", action: "Board votes. RU2YA recommends Tier 2 as baseline. Tier 1 is minimum viable. Tier 3 requires full co-management mandate." },
+      { urgency: "RESOLVE TODAY", color: C.red, item: "RU2YA Management Mandate — formal signing", owner: "Entrepreneur + RU2YA", impact: "RU2YA cannot make introductions, sign on behalf of the venture, or commit resources without a signed mandate. All work to date has been pre-mandate.", action: "Sign today if document has been reviewed. 48-hour legal review maximum if not yet reviewed. Draft available now." },
       { urgency: "RESOLVE TODAY", color: C.red, item: "Brand name — STRIKE confirmed by board", owner: "Board", impact: "Blocks: trademark filing, designer briefing, domain reservation, social handle reservation. IP lawyer cannot file without confirmed name.", action: "Board confirms STRIKE. IP lawyer engaged today for Lebanese Class 29 + 35 filing." },
       { urgency: "THIS WEEK", color: C.amber, item: "Nutritional panel from manufacturer", owner: "Entrepreneur → Manufacturer", impact: "Blocks: MoPH registration, lab testing, packaging artwork, all pricing, all revenue projections. Every [X] value in this deck is a placeholder.", action: "Entrepreneur calls manufacturer today. Full technical data sheet required within 5 business days." },
       { urgency: "THIS WEEK", color: C.amber, item: "Primary flavor name — SMOKING BBQ BITES confirmed", owner: "Board + Manufacturer", impact: "Blocks: flavor development brief to manufacturer, packaging copy, MoPH submission. Codename 'Lebanese BBQ' is in use — commercial name pending.", action: "Board approves 'SMOKING BBQ BITES.' Lebanese BBQ flavor specification brief sent to manufacturer this week." },
-      { urgency: "WEEK 2–3", color: C.gold, item: "Manufacturer supply agreement — signed", owner: "Entrepreneur + Manufacturer", impact: "Blocks: MOQ confirmation, lead time planning, production scheduling, cost-per-unit certainty, final pricing model.", action: "KITS provides supply agreement template. Legal review. Target signing within 14 days of today." },
+      { urgency: "WEEK 2–3", color: C.gold, item: "Manufacturer supply agreement — signed", owner: "Entrepreneur + Manufacturer", impact: "Blocks: MOQ confirmation, lead time planning, production scheduling, cost-per-unit certainty, final pricing model.", action: "RU2YA provides supply agreement template. Legal review. Target signing within 14 days of today." },
     ],
     notes: {
       open: "This is the most important section of the entire presentation. Three of these six blockers can be resolved in this room, today. The budget decision, the mandate signing, and the brand name confirmation all require only the people present right now. There is no external input needed. The question is whether we leave this meeting with those three resolved.",
@@ -1411,8 +1411,8 @@ const SLIDES: SlideData[] = [
   },
   {
     id: "mandate", type: "mandate", label: "MANDATE",
-    section: "08 · KITS MANDATE",
-    title: "KITS Role, Scope & Governance",
+    section: "08 · RU2YA MANDATE",
+    title: "RU2YA Role, Scope & Governance",
     scope: [
       { area: "Commercial Operations", items: ["Channel outreach and account management — all visits", "Trade presentation, sampling, and sales visits", "Account tracker maintenance and weekly reporting", "Reorder management and personal delivery coordination"] },
       { area: "Regulatory & Legal", items: ["MoPH registration process management end-to-end", "Halal certification coordination — Dar Al-Fatwa", "Trademark filing supervision — IP lawyer management", "SARL registration process guidance"] },
@@ -1420,7 +1420,7 @@ const SLIDES: SlideData[] = [
       { area: "Financial Reporting", items: ["Monthly P&L against approved budget tier", "Sell-through reporting by account, weekly", "Cash flow monitoring and early warning alerts", "Budget variance reporting and reforecast"] },
     ],
     governance: [
-      "Weekly: KITS → Entrepreneur check-in (sell-through, blockers, decisions needed)",
+      "Weekly: RU2YA → Entrepreneur check-in (sell-through, blockers, decisions needed)",
       "Monthly: Board update — financial performance, account growth, competitive activity",
       "Quarterly: Pricing review — USD-anchored 90-day cycle with 30-day notice to trade",
       "Milestone-gated: Budget released by phase, not upfront — protects all parties",
@@ -1434,10 +1434,10 @@ const SLIDES: SlideData[] = [
       ]
     },
     notes: {
-      open: "KITS is not an advisor sitting on the side. KITS is the commercial operator. Every account visit, every regulatory filing, every designer brief, every manufacturer check — KITS owns the execution. The entrepreneur owns the decisions. The board owns the capital. The governance structure separates these roles clearly so there is no ambiguity at any decision point.",
+      open: "RU2YA is not an advisor sitting on the side. RU2YA is the commercial operator. Every account visit, every regulatory filing, every designer brief, every manufacturer check — RU2YA owns the execution. The entrepreneur owns the decisions. The board owns the capital. The governance structure separates these roles clearly so there is no ambiguity at any decision point.",
       emphasis: [
-        "Milestone-gated fund release is non-negotiable at any tier. It protects the funder, creates accountability for KITS, and ensures spend is tied to output.",
-        "All IP created by KITS — brand briefs, outreach systems, manufacturer specs, competitive research — transfers to the client upon final payment. This is contractually specified in the mandate.",
+        "Milestone-gated fund release is non-negotiable at any tier. It protects the funder, creates accountability for RU2YA, and ensures spend is tied to output.",
+        "All IP created by RU2YA — brand briefs, outreach systems, manufacturer specs, competitive research — transfers to the client upon final payment. This is contractually specified in the mandate.",
       ],
       timing: "4 minutes"
     }
@@ -1469,7 +1469,7 @@ const SLIDES: SlideData[] = [
     section: null,
     decisions: [
       "Budget tier selection — Tier 1, 2, or 3?",
-      "KITS Management Mandate — sign in this meeting",
+      "RU2YA Management Mandate — sign in this meeting",
       "Brand name — STRIKE, confirmed by board?",
       "Flavor name — SMOKING BBQ BITES, confirmed?",
       "Manufacturer nutritional panel — who calls, by when?",
@@ -1486,10 +1486,10 @@ const SLIDES: SlideData[] = [
     ],
     closingLine: "The category is empty today. The question is whether STRIKE owns it, or whether we watch someone else build it.",
     notes: {
-      open: "That is everything KITS has built and researched. Eight detailed advisory documents, all available for deep review. This meeting has one purpose: to leave with five decisions made. Ask the room directly: 'Which tier?' Do not leave without a number. Offer to sign the mandate document in the room if it has been pre-reviewed.",
+      open: "That is everything RU2YA has built and researched. Eight detailed advisory documents, all available for deep review. This meeting has one purpose: to leave with five decisions made. Ask the room directly: 'Which tier?' Do not leave without a number. Offer to sign the mandate document in the room if it has been pre-reviewed.",
       emphasis: [
         "Ask directly: 'Which tier are we working with?' Then stop talking. Let the room answer.",
-        "If there is resistance on the mandate signing, offer a 48-hour review period — but make clear that KITS cannot begin formal execution without it.",
+        "If there is resistance on the mandate signing, offer a 48-hour review period — but make clear that RU2YA cannot begin formal execution without it.",
         "Close with the final line verbatim: 'The category is empty today. The question is whether STRIKE owns it, or whether we watch someone else build it.'",
       ],
       timing: "5 minutes + Q&A"
@@ -1552,7 +1552,7 @@ export default function BoardPresentation() {
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <span style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, letterSpacing: "0.3em" }}>STRIKE BITES</span>
           <span style={{ width: 1, height: 14, background: C.ash }}/>
-          <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>BOARD PRESENTATION · KITS ADVISORY GROUP · CONFIDENTIAL</span>
+          <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>BOARD PRESENTATION · RU2YA ADVISORY GROUP · CONFIDENTIAL</span>
         </div>
         <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
           <button onClick={() => setShowNav(!showNav)} style={{ background: showNav ? `${C.gold}15` : "transparent", border: `1px solid ${showNav ? C.gold : C.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: showNav ? C.gold : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>SLIDES</button>

@@ -14,7 +14,7 @@ import ComponentTen from './tsx-files/strike-brand-study.tsx';
 import ComponentEleven from './tsx-files/kits-pitch-deck.jsx';
 // 2. Define a list of your components for easy navigation mapping
 const COMPONENT_MAP = {
-'kits pitch deck': <ComponentEleven />,
+  'kits pitch deck': <ComponentEleven />,
   'strike presentation': <ComponentNine />,
   'master plan': <ComponentFive />,
   'beef jerky advisory': <ComponentOne />,
@@ -127,7 +127,7 @@ function AnimatedBackground() {
 }
 
 export default function App() {
-  const [activeView, setActiveView] = useState<ComponentKey>('strike presentation');
+  const [activeView, setActiveView] = useState<ComponentKey>('kits pitch deck');
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   

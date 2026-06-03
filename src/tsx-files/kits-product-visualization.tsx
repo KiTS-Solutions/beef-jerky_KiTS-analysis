@@ -219,10 +219,10 @@ function SingleFront() {
         BEST BEFORE: SEE PACK
       </text>
 
-      {/* KITS watermark */}
+      {/* RU2YA watermark */}
       <text x="240" y="475" fill={GOLD} opacity="0.2"
         fontFamily="'Courier New', monospace" fontSize="6" letterSpacing="1">
-        KITS ADVISORY
+        RU2YA ADVISORY
       </text>
 
       {/* Bottom radius cover */}
@@ -397,7 +397,7 @@ function SingleBack() {
       {/* Manufacturer + storage */}
       <text x="18" y="420" fill={CREAM} opacity="0.3"
         fontFamily="'Courier New', monospace" fontSize="6">
-        DISTRIBUTED BY: KITS ADVISORY GROUP, BEIRUT, LEBANON
+        DISTRIBUTED BY: RU2YA ADVISORY GROUP, BEIRUT, LEBANON
       </text>
       <text x="18" y="430" fill={CREAM} opacity="0.3"
         fontFamily="'Courier New', monospace" fontSize="6">
@@ -427,7 +427,7 @@ function SingleBack() {
       <rect x="0" y="455" width="300" height="25" fill="#0A0806" />
       <text x="150" y="468" textAnchor="middle" fill={GOLD} opacity="0.2"
         fontFamily="'Courier New', monospace" fontSize="6" letterSpacing="2">
-        KITS ADVISORY GROUP · KAG-JRK-001 · CONFIDENTIAL
+        RU2YA ADVISORY GROUP · KAG-JRK-001 · CONFIDENTIAL
       </text>
 
       {/* Edges */}
@@ -595,7 +595,7 @@ function MultiFront() {
       </text>
       <text x="22" y="531" fill={CREAM} opacity="0.2"
         fontFamily="'Courier New', monospace" fontSize="6">
-        DISTRIBUTED BY: KITS ADVISORY GROUP, BEIRUT, LEBANON
+        DISTRIBUTED BY: RU2YA ADVISORY GROUP, BEIRUT, LEBANON
       </text>
       <text x="22" y="542" fill={CREAM} opacity="0.2"
         fontFamily="'Courier New', monospace" fontSize="6">
@@ -632,7 +632,7 @@ function MultiFront() {
 export default function ProductVisualization() {
   const { isMobile } = useResponsive();
   const [sku, setSku] = useState("single");
-  const [panel, setPanel] = useState("front");
+  const [panel, setPanel] = useState("photo");
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -663,7 +663,7 @@ export default function ProductVisualization() {
       }}>
         <div>
           <div style={{ fontSize: isMobile ? 8 : 9, color: GOLD, letterSpacing: "0.35em", marginBottom: 6, opacity: 0.7 }}>
-            KITS ADVISORY GROUP · PRODUCT VISUALIZATION · REF: KAG-JRK-VIZ-001
+            RU2YA ADVISORY GROUP · PRODUCT VISUALIZATION · REF: KAG-JRK-VIZ-001
           </div>
           <div style={{ fontSize: isMobile ? "clamp(15px,4vw,22px)" : "clamp(15px,2.5vw,22px)", color: CREAM, letterSpacing: "0.08em", fontWeight: 400 }}>
             Packaging Concept — Visualization Draft
@@ -722,15 +722,19 @@ export default function ProductVisualization() {
         <div>
           <div style={{ fontSize: 8, color: CREAM, opacity: 0.3, letterSpacing: "0.2em", marginBottom: 6 }}>PANEL VIEW</div>
           <div style={{ display: "flex", gap: 4 }}>
-            {["front", "back"].map(p => (
-              <button key={p} onClick={() => setPanel(p)} style={{
-                background: panel === p ? `${GOLD}18` : "transparent",
-                border: `1px solid ${panel === p ? GOLD : "#2A2418"}`,
+            {[
+              { id: "photo", label: "PRODUCT PHOTO" },
+              { id: "front", label: "FRONT PANEL" },
+              { id: "back", label: "BACK PANEL" },
+            ].map(p => (
+              <button key={p.id} onClick={() => setPanel(p.id)} style={{
+                background: panel === p.id ? `${GOLD}18` : "transparent",
+                border: `1px solid ${panel === p.id ? GOLD : "#2A2418"}`,
                 borderRadius: 4, padding: "8px 16px",
                 cursor: "pointer", transition: "all 0.2s"
               }}>
-                <div style={{ fontSize: 9, color: panel === p ? GOLD : "#6A5A48", letterSpacing: "0.1em" }}>
-                  {p === "front" ? "FRONT PANEL" : "BACK PANEL"}
+                <div style={{ fontSize: 9, color: panel === p.id ? GOLD : "#6A5A48", letterSpacing: "0.1em" }}>
+                  {p.label}
                 </div>
               </button>
             ))}
@@ -762,10 +766,60 @@ export default function ProductVisualization() {
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0) scale(1)" : "translateY(20px) scale(0.97)",
             transition: "all 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
-            filter: "drop-shadow(0px 40px 60px rgba(0,0,0,0.9)) drop-shadow(0px 8px 24px rgba(200,169,110,0.12))",
+            filter: panel === "photo" ? "none" : "drop-shadow(0px 40px 60px rgba(0,0,0,0.9)) drop-shadow(0px 8px 24px rgba(200,169,110,0.12))",
           }}>
-            <svg width={bagW} height={bagH} viewBox={`0 0 ${bagW} ${bagH}`}
-              style={{ display: "block" }}>
+            {/* Product photo view */}
+            {panel === "photo" && (
+              <div style={{
+                width: bagW,
+                height: bagH,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                position: "relative",
+              }}>
+                <div style={{
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: 18,
+                  background: `radial-gradient(ellipse at 50% 40%, #1A1610 0%, #0A0806 100%)`,
+                  border: `1px solid ${GOLD}18`,
+                }} />
+                <img
+                  src="/beef-jerky_KiTS-analysis/bag1.png"
+                  alt="Strike Bites product bag"
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    maxWidth: "86%",
+                    maxHeight: "86%",
+                    objectFit: "contain",
+                    filter: "drop-shadow(0px 32px 56px rgba(0,0,0,0.95)) drop-shadow(0px 6px 20px rgba(200,169,110,0.15))",
+                  }}
+                />
+                <div style={{
+                  position: "absolute",
+                  bottom: 18,
+                  left: 0,
+                  right: 0,
+                  textAlign: "center",
+                  fontFamily: "'Courier New', monospace",
+                  fontSize: 7,
+                  color: GOLD,
+                  opacity: 0.4,
+                  letterSpacing: "0.2em",
+                }}>
+                  ACTUAL PRODUCT · REFERENCE PHOTO
+                </div>
+              </div>
+            )}
+
+            <svg
+              width={bagW}
+              height={bagH}
+              viewBox={`0 0 ${bagW} ${bagH}`}
+              style={{ display: panel === "photo" ? "none" : "block" }}
+            >
               <defs>
                 <filter id="bagShadow">
                   <feDropShadow dx="0" dy="4" stdDeviation="8" floodOpacity="0.4" />
@@ -928,7 +982,7 @@ export default function ProductVisualization() {
                   {/* Manufacturer */}
                   <text x="22" y="426" fill={CREAM} opacity="0.25"
                     fontFamily="'Courier New', monospace" fontSize="6">
-                    DISTRIBUTED BY: KITS ADVISORY GROUP, BEIRUT, LEBANON
+                    DISTRIBUTED BY: RU2YA ADVISORY GROUP, BEIRUT, LEBANON
                   </text>
                   <text x="22" y="437" fill={CREAM} opacity="0.22"
                     fontFamily="'Courier New', monospace" fontSize="6">
@@ -950,7 +1004,7 @@ export default function ProductVisualization() {
                   <rect x="0" y="480" width="360" height="80" fill="#0A0806" />
                   <text x="180" y="500" textAnchor="middle" fill={GOLD} opacity="0.15"
                     fontFamily="'Courier New', monospace" fontSize="7" letterSpacing="2">
-                    KITS ADVISORY GROUP · KAG-JRK-001 · VISUALIZATION DRAFT
+                    RU2YA ADVISORY GROUP · KAG-JRK-001 · VISUALIZATION DRAFT
                   </text>
 
                   <linearGradient id="sheenMB" x1="0" y1="0" x2="1" y2="0">
@@ -1109,7 +1163,7 @@ export default function ProductVisualization() {
         background: "#08060A"
       }}>
         <span style={{ fontSize: isMobile ? 7 : 8, color: CREAM, opacity: 0.2, letterSpacing: "0.2em" }}>
-          KITS ADVISORY GROUP · VISUALIZATION DRAFT · NOT FOR PRINT · CONFIDENTIAL
+          RU2YA ADVISORY GROUP · VISUALIZATION DRAFT · NOT FOR PRINT · CONFIDENTIAL
         </span>
         <span style={{ fontSize: isMobile ? 7 : 8, color: GOLD, opacity: 0.3, letterSpacing: "0.15em" }}>
           KAG-JRK-VIZ-001 · ALL PLACEHOLDERS PENDING BOARD DECISION

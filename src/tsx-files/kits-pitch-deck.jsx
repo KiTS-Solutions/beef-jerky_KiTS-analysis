@@ -69,28 +69,57 @@ function CoverSlide() {
   return (
     <div style={{ height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px" }} />
-      <div style={{ position: "absolute", right: 0, top: 0, width: "44%", height: "100%", background: `linear-gradient(to right,transparent,${C.gold}05)` }} />
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)` }} />
-      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : "0 72px", position: "relative", zIndex: 1 }}>
+
+      {/* Left — text content */}
+      <div style={{ flex: isMobile ? 1 : "0 0 54%", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : "0px 0px 0px 30px", position: "relative", zIndex: 1 }}>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.45em", marginBottom: isMobile ? 20 : 32 }}>
-          KITS ADVISORY GROUP · PRIVATE & CONFIDENTIAL · KAG-JRK-PITCH-001
+          RU2YA ADVISORY GROUP · PRIVATE & CONFIDENTIAL · KAG-JRK-PITCH-001
         </div>
         <div style={{ marginBottom: 8 }}>
-          <span style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(32px,8vw,56px)" : "clamp(56px,8vw,100px)", fontWeight: 400, color: C.strike, letterSpacing: "0.18em", lineHeight: 1, display: "block" }}>STRIKE</span>
-          <span style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? "clamp(16px,4vw,28px)" : "clamp(24px,4vw,44px)", fontWeight: 400, color: C.gold, letterSpacing: "0.18em", display: "block" }}>BITES</span>
+          <span style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(32px,8vw,56px)" : "clamp(48px,6vw,88px)", fontWeight: 400, color: C.strike, letterSpacing: "0.18em", lineHeight: 1, display: "block" }}>STRIKE</span>
+          <span style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? "clamp(16px,4vw,28px)" : "clamp(20px,3.2vw,40px)", fontWeight: 400, color: C.gold, letterSpacing: "0.18em", display: "block" }}>BITES</span>
         </div>
         <div style={{ width: isMobile ? 60 : 80, height: 2, background: `linear-gradient(to right,${C.gold},transparent)`, margin: "24px 0" }} />
         <p style={{ fontSize: isMobile ? 13 : "clamp(13px,1.8vw,18px)", color: C.cream, opacity: 0.75, margin: "0 0 8px", fontFamily: "Georgia,serif" }}>Lebanon's First Premium Beef Jerky Brand</p>
-        <p style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.creamDim, opacity: 0.45, margin: "0 0 36px", letterSpacing: "0.2em" }}>CLIENT ADVISORY PRESENTATION · KITS · JUNE 2026</p>
+        <p style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.creamDim, opacity: 0.45, margin: "0 0 36px", letterSpacing: "0.2em" }}>CLIENT ADVISORY PRESENTATION · RU2YA · JUNE 2026</p>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           {["10 Deliverables Ready","88/100 Brand Score","38-Step Launch Plan","3 Financial Scenarios","$0 Local Competition"].map((t, i) => (
             <span key={i} style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, background: `${C.gold}0D`, border: `1px solid ${C.gold}28`, padding: "5px 11px", borderRadius: 2, letterSpacing: "0.05em" }}>{t}</span>
           ))}
         </div>
         <div style={{ marginTop: 32, fontFamily: "monospace", fontSize: 8, color: C.goldDim, letterSpacing: "0.1em" }}>
-          KITS Advisory Group · Lebanese Market · June 2026
+          RU2YA Advisory Group · Lebanese Market · June 2026
         </div>
       </div>
+
+      {/* Right — product image */}
+      {!isMobile && (
+        <div style={{
+          flex: "0 0 46%",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-start",
+          overflow: "hidden",
+          paddingRight: "6%",
+        }}>
+          <div style={{ position: "absolute", inset: 0, background: `linear-gradient(to right,${C.obsidian} 0%,transparent 18%)`, zIndex: 2 }} />
+          <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse at 50% 50%,${C.gold}08 0%,transparent 70%)` }} />
+          <img
+            src="/beef-jerky_KiTS-analysis/bag1.png"
+            alt="Strike Bites product"
+            style={{
+              position: "relative",
+              zIndex: 1,
+              maxHeight: "78%",
+              maxWidth: "80%",
+              objectFit: "contain",
+              filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.85)) drop-shadow(0 4px 16px rgba(200,160,80,0.18))",
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -277,7 +306,7 @@ function RoadmapSlide({ slide }) {
             ))}
           </div>
           <div style={{ background: `${C.gold}06`, border: `1px solid ${C.gold}15`, borderRadius: 4, padding: "14px 16px", flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.15em", marginBottom: 8 }}>KITS PRINCIPLE</div>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.15em", marginBottom: 8 }}>RU2YA PRINCIPLE</div>
             <p style={{ margin: 0, fontSize: 12, color: C.cream, lineHeight: 1.7, fontFamily: "Georgia,serif", fontStyle: "italic" }}>"{ph.principle}"</p>
           </div>
         </div>
@@ -289,15 +318,16 @@ function RoadmapSlide({ slide }) {
 // ─── FINANCIALS ───────────────────────────────────────────────────────────────
 function FinancialsSlide({ slide }) {
   const { isMobile } = useResponsive();
-  const [at, setAt] = useState(1);
-  const t = slide.tiers[at];
+  const initialAt = Math.max(0, Math.min(1, (slide.tiers || []).length - 1));
+  const [at, setAt] = useState(initialAt);
+  const t = slide.tiers?.[at] || slide.tiers?.[0] || {};
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
       <SH slide={slide} />
       <div style={{ display: "flex", gap: 8, marginTop: 14, marginBottom: 14, flexDirection: isMobile ? "column" : "row" }}>
         {slide.tiers.map((tier, i) => (
           <button key={i} onClick={() => setAt(i)} style={{ flex: 1, background: at === i ? `${tier.color}15` : C.charcoal, border: `1px solid ${at === i ? tier.color : C.ash}`, borderRadius: 4, padding: "11px 13px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative", WebkitTapHighlightColor: "transparent" }}>
-            {tier.rec && <div style={{ position: "absolute", top: -9, left: "50%", transform: "translateX(-50%)", background: C.gold, color: C.obsidian, fontFamily: "monospace", fontSize: 6.5, padding: "2px 8px", borderRadius: 2, whiteSpace: "nowrap" }}>KITS RECOMMENDS</div>}
+            {tier.rec && <div style={{ position: "absolute", top: -9, left: "50%", transform: "translateX(-50%)", background: C.gold, color: C.obsidian, fontFamily: "monospace", fontSize: 6.5, padding: "2px 8px", borderRadius: 2, whiteSpace: "nowrap" }}>RU2YA RECOMMENDS</div>}
             <div style={{ fontFamily: "monospace", fontSize: 7, color: tier.color, letterSpacing: "0.15em", marginBottom: 2 }}>{tier.tier}</div>
             <div style={{ fontSize: 13, color: C.cream, marginBottom: 4 }}>{tier.name}</div>
             <div style={{ fontFamily: "monospace", fontSize: 18, color: tier.color }}>{tier.total}</div>
@@ -350,7 +380,7 @@ function FinancialsSlide({ slide }) {
   );
 }
 
-// ─── WHY KITS ─────────────────────────────────────────────────────────────────
+// ─── WHY RU2YA ─────────────────────────────────────────────────────────────────
 function WhyKITSSlide({ slide }) {
   const { isMobile } = useResponsive();
   const [active, setActive] = useState(0);
@@ -375,7 +405,7 @@ function WhyKITSSlide({ slide }) {
           </div>
           <div style={{ height: 1, background: C.ash }} />
           <div style={{ background: `${C.red}09`, border: `1px solid ${C.red}22`, borderRadius: 3, padding: "11px 15px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, marginBottom: 5 }}>WITHOUT KITS</div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, marginBottom: 5 }}>WITHOUT RU2YA</div>
             <p style={{ margin: 0, fontSize: 11.5, color: C.creamDim, lineHeight: 1.65, fontStyle: "italic" }}>{r.without}</p>
           </div>
         </div>
@@ -393,7 +423,7 @@ function MandateSlide({ slide }) {
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16, marginTop: 14 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           <div style={{ background: `${C.gold}07`, border: `1px solid ${C.gold}1E`, borderRadius: 4, padding: "14px 18px", flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.18em", marginBottom: 10 }}>KITS TAKES FULL RESPONSIBILITY FOR</div>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.18em", marginBottom: 10 }}>RU2YA TAKES FULL RESPONSIBILITY FOR</div>
             {slide.kitsScope.map((item, i) => (
               <div key={i} style={{ display: "flex", gap: 8, marginBottom: 7 }}>
                 <span style={{ color: C.gold, fontSize: 9, flexShrink: 0, marginTop: 1 }}>◈</span>
@@ -427,7 +457,7 @@ function MandateSlide({ slide }) {
           </div>
           <div style={{ background: `${C.gold}0D`, border: `1px solid ${C.gold}28`, borderRadius: 4, padding: "16px 18px", flex: 1, display: "flex", alignItems: "center" }}>
             <p style={{ margin: 0, fontSize: 15, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", textAlign: "center", lineHeight: 1.8, width: "100%" }}>
-              "We don't advise from the side.<br />We execute from the front."
+              <>"We don't advise from the side."<br />"We execute from the front."</>
             </p>
           </div>
         </div>
@@ -475,7 +505,7 @@ function ClosingSlide({ slide }) {
       <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px" }} />
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)` }} />
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : "0 72px", position: "relative", zIndex: 1 }}>
-        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.3em", marginBottom: 22 }}>KITS ADVISORY GROUP · THE MANDATE</div>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.3em", marginBottom: 22 }}>RU2YA ADVISORY GROUP · THE MANDATE</div>
         <h2 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(18px,3vw,28px)" : "clamp(20px,2.5vw,30px)", fontWeight: 400, color: C.cream, margin: "0 0 22px", lineHeight: 1.45 }}>{slide.title}</h2>
         <div style={{ width: 60, height: 2, background: C.gold, marginBottom: 26 }} />
         <div style={{ marginBottom: 26 }}>
@@ -534,7 +564,7 @@ const SLIDES = [
       { color: C.gold, text: "What kind of partner are you looking for? Someone to execute fully on your behalf, or someone to advise while you drive operations yourself?" },
       { color: C.steel, text: "Do you have a budget range in mind for the launch phase? No wrong answer — it shapes which plan we present to you." },
     ],
-    note: "We listen completely before we present anything. Their answers reshape which parts of the presentation we emphasize.",
+    note: "We listen completely before we present anything. Your answers reshape which parts of the presentation we emphasize.",
     notes: { open: "Do not advance past this slide until you have genuinely listened. Take physical notes. Ask follow-ups. The quality of your questions here determines how credible your entire presentation appears in the next 60 minutes.", emphasis: ["The client reveals their fears, ambitions, and constraints here. Every sentence is intel for the close.", "If they mention a manufacturer — ask the name. If they mention a budget number — write it down and reference it later."], timing: "20–30 minutes — do not rush this" }
   },
   {
@@ -550,12 +580,12 @@ const SLIDES = [
     title: "An Empty Category in a Growing Market",
     headline: "There is no established local beef jerky brand in Lebanon. That is not a gap in the market — that is an open category waiting for its owner.",
     stats: [
-      { value: "ZERO", label: "Local beef jerky brands in Lebanon", sub: "Confirmed by KITS field research · Category is fully available today", color: C.greenBright },
+      { value: "ZERO", label: "Local beef jerky brands in Lebanon", sub: "Confirmed by RU2YA field research · Category is fully available today", color: C.greenBright },
       { value: "$1.04B", label: "Middle East sports nutrition market", sub: "+7.3% CAGR through 2033 · Grand View Research 2024", color: C.gold },
       { value: "82.6%", label: "Brick-and-mortar dominance in MENA", sub: "Physical relationships drive sales · Not digital channels", color: C.amber },
       { value: "$8.49B", label: "GCC snacks market 2024", sub: "→ $12.87B by 2030 · Natural export target from Day 1", color: C.purple },
     ],
-    footnote: "Sources: Grand View Research 2024 · Precedence Research 2024 · Cognitive Market Research 2025 · KITS field research",
+    footnote: "Sources: Grand View Research 2024 · Precedence Research 2024 · Cognitive Market Research 2025 · RU2YA field research",
     notes: { open: "Let ZERO sit on screen for five full seconds. Ask: 'When you walk into any gym or nutrition store in Lebanon today, can you buy a locally made beef jerky brand?' The answer is no. That is the business.", emphasis: ["The 82.6% brick-and-mortar statistic validates every strategic choice we made. This is not a conservative approach — it is the statistically correct one.", "Pause on ZERO. Ask the room: 'When did you last see a locally made jerky in a Lebanese gym?' The silence confirms the opportunity."], timing: "4 minutes" }
   },
   {
@@ -577,12 +607,12 @@ const SLIDES = [
       items: [
         "First-mover advantage is available today — but successful categories attract imitators within 12–18 months of launch",
         "Imported competitors (Jack Link's, Wild West) are visible but structurally weak: no Halal, wrong flavor, wrong price, no local presence",
-        "No local competitor is building in this space currently — confirmed by KITS field research completed this quarter",
+        "No local competitor is building in this space currently — confirmed by RU2YA field research completed this quarter",
         "MoPH registration timeline: 2–4 months — beginning now means shelf-ready Q4 2026",
         "Existing warm relationships across gyms and nutrition stores compress outreach from 3 months of cold calling to 2–3 weeks",
       ]
     },
-    notes: { open: "The window is real and open — but first-mover advantage is not permanent. Speed is the only true moat. Trademark, brand equity, and the trainer relationship network are what protect that advantage once built.", emphasis: ["Say directly: 'Every week of delay on decisions is a week closer to someone else discovering what KITS has confirmed through research.'"], timing: "3 minutes" }
+    notes: { open: "The window is real and open — but first-mover advantage is not permanent. Speed is the only true moat. Trademark, brand equity, and the trainer relationship network are what protect that advantage once built.", emphasis: ["Say directly: 'Every week of delay on decisions is a week closer to someone else discovering what RU2YA has confirmed through research.'"], timing: "3 minutes" }
   },
   {
     id: "sec02", type: "section", label: "§02",
@@ -630,7 +660,7 @@ const SLIDES = [
       { label: "Halal Badge", value: "Dar Al-Fatwa · Forest Green", verdict: "APPROVED", score: 95, note: "Single most important regulatory element. Forest green circle, front panel top right. Visible in the first second of shelf encounter. GCC export-recognized from day one." },
       { label: "Pack Languages", value: "Arabic · English · French", verdict: "APPROVED", score: 95, note: "Arabic regulatory primary. English commercial secondary. French market tertiary. No imported competitor does this. Structural shelf authority advantage in Lebanon." },
     ],
-    notes: { open: "Walk through STRIKE and STRIKE BITES. Then ask: 'Does this feel right to you?' Pause. Let them react before advancing. Their response reveals their emotional investment in the brand — this is invaluable for the close.", emphasis: ["The score of 88 is real and defensible. Most brands launch with a 70. Explain the methodology if asked — it will demonstrate the rigor behind all KITS work."], timing: "5 minutes" }
+    notes: { open: "Walk through STRIKE and STRIKE BITES. Then ask: 'Does this feel right to you?' Pause. Let them react before advancing. Their response reveals their emotional investment in the brand — this is invaluable for the close.", emphasis: ["The score of 88 is real and defensible. Most brands launch with a 70. Explain the methodology if asked — it will demonstrate the rigor behind all RU2YA work."], timing: "5 minutes" }
   },
   {
     id: "sec04", type: "section", label: "§04",
@@ -653,7 +683,7 @@ const SLIDES = [
       {
         phase: "PHASE 2", time: "Month 4–6", color: C.amber, title: "Launch",
         principle: "Sports nutrition stores are Priority One — their customer walks in already in protein-buying mode. Every first order is sale-or-return. Zero financial risk to any buyer.",
-        actions: ["Formal launch into 20–30 gym and sports nutrition accounts", "STRIKE TEAM: recruit 20 founding personal trainers as brand ambassadors", "Sale-or-return terms for all first orders — zero risk to every account", "Personal display setup at every account by KITS on delivery day", "Bi-weekly check-in at every account — unit count, feedback, reorder", "Pharmacy outreach begins Month 5 once sell-through data is available", "Weekly P&L reporting against approved budget tier begins"],
+        actions: ["Formal launch into 20–30 gym and sports nutrition accounts", "STRIKE TEAM: recruit 20 founding personal trainers as brand ambassadors", "Sale-or-return terms for all first orders — zero risk to every account", "Personal display setup at every account by RU2YA on delivery day", "Bi-weekly check-in at every account — unit count, feedback, reorder", "Pharmacy outreach begins Month 5 once sell-through data is available", "Weekly P&L reporting against approved budget tier begins"],
         targets: [{ label: "Active Accounts", value: "20–30" }, { label: "Revenue M6", value: "$18K–28K/mo" }, { label: "Trainer Ambassadors", value: "20 founding" }, { label: "Breakeven Target", value: "Month 5–7" }]
       },
       {
@@ -695,14 +725,14 @@ const SLIDES = [
         breakeven: "Month 5–7", margin: "48–55%", roi: "~280%",
         m3: "Revenue building", m3p: 22, m6: "$18K–28K /mo", m6p: 55, m12: "$40K–65K /mo", m12p: 100,
         cumProfit: "~$161K", profitNote: "Est. cumulative gross profit Year 1 at 51.5% avg margin. Investment recovery Month 6–7. Year 1 net positive approx. $119K. The right level of ambition for this opportunity.",
-        includes: ["SARL + all licensing + IP lawyer", "MoPH registration — 2 SKUs", "Full brand identity system + packaging", "Single-serve + multi-serve pouch", "2 production batches", "80-account outreach", "KITS management fee Phases 0–2"]
+        includes: ["SARL + all licensing + IP lawyer", "MoPH registration — 2 SKUs", "Full brand identity system + packaging", "Single-serve + multi-serve pouch", "2 production batches", "80-account outreach", "RU2YA management fee Phases 0–2"]
       },
       {
         tier: "TIER 3", name: "Full Market Entry", total: "$82,000", color: C.amber,
         breakeven: "Month 4–6", margin: "52–60%", roi: "~340%",
         m3: "Soft launch revenue", m3p: 25, m6: "$35K–55K /mo", m6p: 55, m12: "$80K–130K /mo", m12p: 100,
         cumProfit: "~$358K", profitNote: "Est. cumulative gross profit Year 1 at 56% avg margin. Investment recovery Month 5–6. Year 1 net positive approx. $276K. Maximum market capture velocity.",
-        includes: ["Full legal stack + GCC pre-filing", "MoPH 3 SKUs + full label compliance", "Agency-level brand identity", "Dedicated sales rep 6 months", "3-SKU full production batch", "130+ accounts", "KITS management fee Phases 0–3"]
+        includes: ["Full legal stack + GCC pre-filing", "MoPH 3 SKUs + full label compliance", "Agency-level brand identity", "Dedicated sales rep 6 months", "3-SKU full production batch", "130+ accounts", "RU2YA management fee Phases 0–3"]
       }
     ],
     notes: { open: "Lead with Tier 2 as the reference point. Say: 'This is where serious commercial intent meets financial discipline. Enough capital to do this right — not more than you need to prove the concept.'", emphasis: ["Ask directly after presenting all three: 'Which scenario matches where you are right now?' Then stop talking. Let the room decide.", "Memorize these Tier 2 numbers: $42K in. $161K gross profit Year 1. $119K net positive. 280% ROI. Breakeven Month 5–7. You should say these without looking at the slide."], timing: "7 minutes" }
@@ -710,21 +740,21 @@ const SLIDES = [
   {
     id: "sec06", type: "section", label: "§06",
     badge: "SECTION SIX", color: C.purple,
-    title: "Why KITS and Only KITS",
+    title: "Why RU2YA and Only RU2YA",
     sub: "Seven structural advantages. Each one a reason your business will not find this partnership anywhere else.",
     notes: { open: "Present this section with full confidence. This is not modesty time. You built 10 deliverables before a contract existed. You have earned the right to speak directly.", emphasis: [], timing: "15 seconds" }
   },
   {
-    id: "whykits", type: "whykits", label: "WHY KITS",
-    section: "06 · WHY KITS",
-    title: "Why Work With KITS — And Nobody Else",
+    id: "whykits", type: "whykits", label: "WHY RU2YA",
+    section: "06 · WHY RU2YA",
+    title: "Why Work With RU2YA — And Nobody Else",
     reasons: [
       { color: C.gold, title: "We Delivered Before You Decided", body: "We built ten institutional-quality documents before you signed anything. Not slides. Not outlines. Full, referenced, production-ready deliverables — brand study, financial model, manufacturer brief, competitive matrix, outreach scripts, board presentation. This is what a committed partner does. Consultants talk about commitment. We proved it before the contract exists.", without: "You engage a standard consultant who gives you a 15-slide deck of generic advice, calls it a market entry strategy, and leaves you to figure out execution on your own." },
       { color: C.amber, title: "We Know Lebanon's Channels Cold", body: "82.6% of sports nutrition purchases in MENA are brick-and-mortar. Digital marketing is not the priority channel — physical relationship, personal visit, and warm introduction are what open doors in Beirut, Metn, Keserwan, and Jounieh. We built the outreach system and wrote the scripts specifically for Lebanese retail culture.", without: "You work with an advisor who recommends Instagram advertising and an e-commerce store as your primary launch strategy in a relationship-first market where the handshake closes the deal." },
-      { color: C.greenBright, title: "We Execute — We Don't Just Advise", body: "KITS visits accounts personally. Sets up displays personally. Trains store staff personally. Checks in bi-weekly personally. We manage the manufacturer relationship, regulatory submissions, designer briefing, and monthly financial reporting. You make the decisions. We make them happen — every single one.", without: "You receive a comprehensive report and a handshake. You then need to hire someone else to actually execute what the consultant designed, restarting the entire learning curve." },
+      { color: C.greenBright, title: "We Execute — We Don't Just Advise", body: "RU2YA visits accounts personally. Sets up displays personally. Trains store staff personally. Checks in bi-weekly personally. We manage the manufacturer relationship, regulatory submissions, designer briefing, and monthly financial reporting. You make the decisions. We make them happen — every single one.", without: "You receive a comprehensive report and a handshake. You then need to hire someone else to actually execute what the consultant designed, restarting the entire learning curve." },
       { color: C.purple, title: "We Built Your Brand Already", body: "STRIKE is not a name we suggested casually. It is a name we researched, scored against 7 criteria, tested for trademark viability across Lebanon and GCC, evaluated in Arabic, English, and French, and rated at 92/100. The visual system, packaging specifications, and trilingual copy are all documented. Your designer can be briefed tomorrow.", without: "You spend three months in naming workshops, iterate through 40 logo concepts, engage three designers with conflicting visions, and still don't know if the trademark is available in Lebanon or GCC." },
       { color: C.red, title: "Milestone-Gated Financial Accountability", body: "Your budget is released by phase, not paid upfront. Phase 0 funds unlock after the legal entity is formed. Phase 1 after brand identity is approved. Phase 2 after the first batch sells through. You are never at risk of committing full capital before results are demonstrated. Every month you see a P&L against the approved plan.", without: "You hand over a lump sum and receive quarterly updates on 'strategic progress' and 'brand-building activity' with no verifiable output and no accountability structure." },
-      { color: C.gold, title: "You Own Everything We Create", body: "Every deliverable — the brand identity, flavor specifications, outreach scripts, competitor intelligence, financial model, and regulatory roadmap — transfers to you upon final payment. You are not licensing our work. You own it outright, unconditionally. If you ever move on without KITS, you take everything with you.", without: "You discover the 'proprietary methodology' your consultant used is copyrighted and you cannot use the outputs without retaining them permanently at an ongoing monthly fee." },
+      { color: C.gold, title: "You Own Everything We Create", body: "Every deliverable — the brand identity, flavor specifications, outreach scripts, competitor intelligence, financial model, and regulatory roadmap — transfers to you upon final payment. You are not licensing our work. You own it outright, unconditionally. If you ever move on without RU2YA, you take everything with you.", without: "You discover the 'proprietary methodology' your consultant used is copyrighted and you cannot use the outputs without retaining them permanently at an ongoing monthly fee." },
       { color: C.greenBright, title: "We Think in GCC from Day One", body: "The product is being built for Lebanon and GCC simultaneously. Halal certification from Dar Al-Fatwa Lebanon is recognized in UAE and Saudi Arabia. STRIKE PACKS — the variety multipack for GCC hypermarket entry — is already in the product architecture. The Lebanese BBQ flavor is a premium signal in every GCC market. No reformulation needed.", without: "You launch in Lebanon with a product that requires full reformulation, re-certification under ESMA/SFDA, and an entirely new brand before it can enter any export market." },
     ],
     notes: { open: "After all 7: 'No competitor to your business — not Jack Link's, not Wild West, not any future local entrant — will have a partner that brings all seven of these simultaneously. This combination does not exist in Lebanon.'", emphasis: ["Reason 01 — We Delivered — is always the most impactful. It is unique. No other advisory firm in Lebanon has done this.", "Reason 04 — Milestone-Gated — is most reassuring to a careful founder. Emphasize that they pay for progress, not promises."], timing: "7 minutes" }
@@ -732,7 +762,7 @@ const SLIDES = [
   {
     id: "mandate", type: "mandate", label: "MANDATE",
     section: "07 · THE PROPOSAL",
-    title: "What We Are Proposing — The KITS Mandate",
+    title: "What We Are Proposing — The RU2YA Mandate",
     kitsScope: ["All channel outreach — every account visit, every commercial negotiation, every display setup", "Regulatory management — MoPH, Halal, trademark, GS1, lab testing — end to end", "Designer briefing, creative direction, and compliance sign-off on all packaging before print", "Manufacturer relationship — flavor development oversight, QC protocol, supply agreement management", "Monthly financial reporting — P&L against plan, sell-through data, account performance", "Strategic decisions — channel sequencing, pricing reviews, SKU expansion timing"],
     clientScope: ["Capital allocation and final approval on all major financial decisions", "Manufacturer relationship introduction and primary contact access", "Final brand name and tagline confirmation — your choice, our recommendation", "Budget tier selection — Tier 1, 2, or 3", "Board governance and all investor or funder relationships", "Final sign-off on all regulatory filings before submission"],
     fees: [
@@ -752,9 +782,9 @@ const SLIDES = [
       { color: C.amber, q: "What happens if the product doesn't sell?", a: "Every first account is sale-or-return — no retailer takes financial risk on your product. We do not launch until MoPH approval is confirmed, the brand is professionally executed, and the product is lab-verified. Revenue projections are conservative, assuming 20–40 units per week per gym account at steady state. If sell-through is below target, we have a formal feedback and pricing review protocol built into the mandate — not improvised after the fact." },
       { color: C.greenBright, q: "How long before I start making money?", a: "Under the recommended Tier 2 scenario: breakeven is projected between Month 5 and Month 7. By Month 6, revenue is projected at $18,000–$28,000 per month at a gross margin of 48–55%. By Month 12, revenue is projected at $40,000–$65,000 per month. Cumulative Year 1 gross profit is estimated at approximately $161,000 against a $42,000 investment — approximately 280% return in 12 months. These are directional projections based on real channel data, not guarantees." },
       { color: C.purple, q: "What if I want to manage some parts of this myself?", a: "That is entirely your decision and we will document the division clearly in the mandate. However, our methodology is an integrated system. The outreach script connects to the commercial proposal, which connects to the account tracker, which drives the weekly check-in protocol. The more elements are separated, the more the system loses its compounding effect. Our recommendation: run the full system for 6 months, evaluate results, then decide what to internalise based on demonstrated performance." },
-      { color: C.red, q: "What is the minimum I can invest to get started?", a: "Tier 1 at $18,500 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, KITS' recommendation is Tier 2 at $42,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category." },
+      { color: C.red, q: "What is the minimum I can invest to get started?", a: "Tier 1 at $18,500 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, RU2YA' recommendation is Tier 2 at $42,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category." },
       { color: C.gold, q: "Why Lebanon and not start with another market?", a: "Lebanon is the proof-of-concept that unlocks the GCC. 'Made in Lebanon' carries premium weight in UAE and Saudi Arabia — the provenance story is a marketing asset. Halal certification from Dar Al-Fatwa Lebanon is recognized across the GCC. Every product decision — the flavor, the certification, the trilingual packaging — was designed for Lebanon first and GCC second. Starting in Lebanon is not a constraint. It is the strategy." },
-      { color: C.amber, q: "What does KITS do that I couldn't hire someone else to do?", a: "An employee executes tasks. KITS brings the full system: the research base, the brand work already done, the outreach scripts, the financial model, the manufacturer brief, the regulatory knowledge, and the personal relationship network across Lebanese gyms and nutrition stores. Rebuilding this from scratch would take 6–9 months and cost more than Tier 3. You would also be paying for someone to learn the market while we already know it cold." },
+      { color: C.amber, q: "What does RU2YA do that I couldn't hire someone else to do?", a: "An employee executes tasks. RU2YA brings the full system: the research base, the brand work already done, the outreach scripts, the financial model, the manufacturer brief, the regulatory knowledge, and the personal relationship network across Lebanese gyms and nutrition stores. Rebuilding this from scratch would take 6–9 months and cost more than Tier 3. You would also be paying for someone to learn the market while we already know it cold." },
     ],
     notes: { open: "Do not read these answers. Know them. Internalize them. Deliver with confidence and brevity — then stop talking. Silence after a complete answer is a sign of strength, not uncertainty.", emphasis: ["Question #3 is always asked. Have Tier 2 numbers memorized: $42K in, $161K gross profit Year 1, $119K net positive, 280% ROI. Say these without looking at the slide."], timing: "10–15 minutes — this is real Q&A time, not presentation time" }
   },
@@ -763,7 +793,7 @@ const SLIDES = [
     title: "The Category Is Empty. The Brand Is Named. The Plan Is Built. Let Us Begin.",
     decisions: [
       "Select your budget tier — Tier 1 ($18,500) / Tier 2 ($42,000 recommended) / Tier 3 ($82,000)",
-      "Sign the KITS Management Mandate — formal authority to execute the launch plan today",
+      "Sign the RU2YA Management Mandate — formal authority to execute the launch plan today",
       "Confirm STRIKE as your brand name — IP trademark search begins this week",
       "Call your manufacturer this week — nutritional panel required within 5 business days",
     ],
@@ -804,7 +834,7 @@ export default function KITSPitchDeck() {
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <span style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, letterSpacing: "0.3em" }}>STRIKE BITES</span>
           <span style={{ width: 1, height: 14, background: C.ash }} />
-          <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>CLIENT PITCH DECK · KITS ADVISORY GROUP · CONFIDENTIAL</span>
+          <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>CLIENT PITCH DECK · RU2YA ADVISORY GROUP · CONFIDENTIAL</span>
         </div>
         <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
           <button onClick={() => setNav(!nav)} style={{ background: nav ? `${C.gold}15` : "transparent", border: `1px solid ${nav ? C.gold : C.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: nav ? C.gold : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>SLIDES</button>
