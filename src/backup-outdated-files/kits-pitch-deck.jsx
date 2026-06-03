@@ -315,114 +315,6 @@ function RoadmapSlide({ slide }) {
   );
 }
 
-// ─── FINANCIAL CORRECTION SLIDE ──────────────────────────────────────────────
-function FinancialCorrectionSlide({ slide }) {
-  const { isMobile } = useResponsive();
-  const [barReady, setBarReady] = useState(false);
-  useEffect(() => { const t = setTimeout(() => setBarReady(true), 300); return () => clearTimeout(t); }, []);
-
-  const corrections = [
-    { metric: "RETAIL PRICE", old: "$3.00–$3.50", current: "$4.50", severity: "CRITICAL", reason: "Jack Link's 40g sells at $5.62 in Lebanon. Correct floor: $4.00. Wild West has no Lebanese presence — STRIKE has zero direct local competition.", col: C.red },
-    { metric: "M6 REVENUE (TIER 2)", old: "$18K–$28K/mo", current: "$9K–$14K/mo", severity: "HIGH", reason: "Original implied 3.5–7.2 units/account/day — top-quartile velocity for a new SKU. Revised at 1.5 units/day × 70 accounts = base case. $18K retained as upside scenario.", col: C.amber },
-    { metric: "GROSS MARGIN", old: "48–55%", current: "55–62%", severity: "REVISED UP", reason: "At corrected $4.50 RRP and $1.20 COGS, wholesale revenue is $3.15 (gym 30%), delivering 61.9% GM — above original target. The correction is favorable.", col: C.greenBright },
-    { metric: "BREAKEVEN (TIER 2)", old: "Month 5–7", current: "Month 8–11", severity: "REVISED", reason: "Revenue ramp recalibrated ~50% at M6. M12 ($40K–$65K) unchanged — achievable if M6–M12 traction at 2–4 units/day materializes from the corrected base.", col: C.gold },
-    { metric: "MoPH REGISTRATION FEE", old: "$800–$2,500/SKU", current: "REQUIRES QUOTE", severity: "OPEN", reason: "Lebanese MoPH publishes no public fee schedule. This figure cannot be presented as verified. Required: direct written quote from MoPH Food Safety Dept.", col: C.amber },
-    { metric: "GS1 BARCODE FEE", old: "$200–$500", current: "REQUIRES QUOTE", severity: "OPEN", reason: "gs1lb.org has no published fee schedule. Contact customers@gs1lb.org / +961 1 744 161 for a written quote. Working placeholder: $150–$300 reg + $200–$500/yr.", col: C.amber },
-  ];
-
-  const waterfall = [
-    { label: "Retail Price (RRP)", value: "$4.50", col: C.gold, pct: 100, sign: "+" },
-    { label: "Channel Margin 30%", value: "−$1.35", col: C.red, pct: 30, sign: "" },
-    { label: "= Wholesale Revenue", value: "$3.15", col: C.greenBright, pct: 70, sign: "" },
-    { label: "Cost of Goods (COGS)", value: "−$1.20", col: C.red, pct: 27, sign: "" },
-    { label: "= Gross Profit", value: "$1.95", col: C.greenBright, pct: 43, sign: "" },
-  ];
-
-  return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px" : "32px 64px", overflowY: "auto" }}>
-      <SH slide={slide} />
-      <div style={{ display: "flex", gap: 6, marginTop: 10, marginBottom: 14, flexWrap: "wrap" }}>
-        {[{ label: "6 Corrections Applied", col: C.greenBright }, { label: "RRP: $4.50 Confirmed", col: C.gold }, { label: "Jack Links Benchmark: $5.62", col: C.amber }, { label: "v2.0 Model", col: C.steel }].map((b, i) => (
-          <span key={i} style={{ fontFamily: "monospace", fontSize: 7.5, color: b.col, background: `${b.col}10`, border: `1px solid ${b.col}28`, padding: "3px 9px", borderRadius: 2, letterSpacing: "0.05em" }}>{b.label}</span>
-        ))}
-      </div>
-
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1.15fr 0.85fr", gap: 12, minHeight: 0 }}>
-        {/* Left: corrections grid */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 6, overflowY: "auto" }}>
-          <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, letterSpacing: "0.18em", marginBottom: 4 }}>CORRECTIONS — ORIGINAL → REVISED</div>
-          {corrections.map((c, i) => (
-            <div key={i} style={{ background: C.charcoal, border: `1px solid ${c.col}25`, borderLeft: `3px solid ${c.col}`, borderRadius: 3, padding: "9px 12px", display: "flex", gap: 10, alignItems: "flex-start", flexWrap: "wrap" }}>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 5, flexWrap: "wrap" }}>
-                  <span style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, letterSpacing: "0.1em" }}>{c.metric}</span>
-                  <span style={{ fontFamily: "monospace", fontSize: 6.5, color: c.col, background: `${c.col}15`, border: `1px solid ${c.col}30`, padding: "1px 6px", borderRadius: 2 }}>{c.severity}</span>
-                </div>
-                <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 5 }}>
-                  <span style={{ fontFamily: "monospace", fontSize: 10, color: C.creamDim, textDecoration: "line-through", opacity: 0.55 }}>{c.old}</span>
-                  <span style={{ color: C.creamDim, fontSize: 11 }}>→</span>
-                  <span style={{ fontFamily: "monospace", fontSize: 11, color: c.col, fontWeight: 600 }}>{c.current}</span>
-                </div>
-                <p style={{ margin: 0, fontSize: isMobile ? 9.5 : 10, color: C.creamDim, lineHeight: 1.6 }}>{c.reason}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Right: unit economics + key finding */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "12px 16px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 10 }}>UNIT ECONOMICS — $4.50 RRP</div>
-            {waterfall.map((w, i) => {
-              const isTotal = w.label.startsWith("=");
-              return (
-                <div key={i} style={{ marginBottom: isTotal ? 10 : 6 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 3 }}>
-                    <span style={{ fontSize: isMobile ? 9.5 : 10, color: isTotal ? C.cream : C.creamDim, fontWeight: isTotal ? 600 : 400 }}>{w.label}</span>
-                    <span style={{ fontFamily: "monospace", fontSize: isTotal ? 12 : 10, color: w.col, fontWeight: isTotal ? 700 : 400 }}>{w.value}</span>
-                  </div>
-                  <div style={{ height: isTotal ? 4 : 3, background: C.ash, borderRadius: 2 }}>
-                    <div style={{ width: barReady ? `${w.pct}%` : "0%", height: "100%", background: `linear-gradient(to right,${w.col}60,${w.col})`, borderRadius: 2, transition: `width 0.8s cubic-bezier(0.25,0.46,0.45,0.94) ${i * 0.12}s` }} />
-                  </div>
-                </div>
-              );
-            })}
-            <div style={{ marginTop: 8, padding: "7px 10px", background: `${C.greenBright}0A`, border: `1px solid ${C.greenBright}20`, borderRadius: 2 }}>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>GROSS MARGIN %</span>
-                <span style={{ fontFamily: "monospace", fontSize: 13, color: C.greenBright, fontWeight: 700 }}>61.9%</span>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ background: `${C.gold}08`, border: `1px solid ${C.gold}22`, borderRadius: 4, padding: "12px 16px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.gold, letterSpacing: "0.12em", marginBottom: 7 }}>PRESENTER NOTE</div>
-            <p style={{ margin: 0, fontSize: isMobile ? 10 : 11, color: C.creamDim, lineHeight: 1.75, fontStyle: "italic" }}>
-              "These corrections strengthen the investment case. A higher price floor means better margins and a more defensible shelf position versus Jack Link's. The revenue revision is conservative — not pessimistic. The upside scenario remains intact."
-            </p>
-          </div>
-
-          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "12px 16px", flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 8 }}>CORRECTED TIER 2 HEADLINE NUMBERS</div>
-            {[
-              { label: "Investment", value: "$42,000", col: C.gold },
-              { label: "Breakeven", value: "Month 8–11", col: C.amber },
-              { label: "Gross Margin", value: "55–62%", col: C.greenBright },
-              { label: "M6 Revenue (base)", value: "$9K–$14K/mo", col: C.gold },
-              { label: "M12 Revenue", value: "$40K–$65K/mo", col: C.greenBright },
-            ].map((m, i) => (
-              <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "5px 0", borderBottom: i < 4 ? `1px solid ${C.ash}` : "none" }}>
-                <span style={{ fontSize: 10, color: C.creamDim }}>{m.label}</span>
-                <span style={{ fontFamily: "monospace", fontSize: 10, color: m.col }}>{m.value}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 // ─── FINANCIALS ───────────────────────────────────────────────────────────────
 function FinancialsSlide({ slide }) {
   const { isMobile } = useResponsive();
@@ -644,8 +536,7 @@ function RenderSlide({ slide }) {
     case "deliverables": return <DeliverablesSlide slide={slide} />;
     case "brandscore":   return <BrandScoreSlide slide={slide} />;
     case "roadmap":      return <RoadmapSlide slide={slide} />;
-    case "financials":          return <FinancialsSlide slide={slide} />;
-    case "financialcorrection": return <FinancialCorrectionSlide slide={slide} />;
+    case "financials":   return <FinancialsSlide slide={slide} />;
     case "whykits":      return <WhyKITSSlide slide={slide} />;
     case "mandate":      return <MandateSlide slide={slide} />;
     case "qa":           return <QASlide slide={slide} />;
@@ -847,12 +738,6 @@ const SLIDES = [
     notes: { open: "Lead with Tier 2 as the reference point. Say: 'This is where serious commercial intent meets financial discipline. Enough capital to do this right — not more than you need to prove the concept.'", emphasis: ["Ask directly after presenting all three: 'Which scenario matches where you are right now?' Then stop talking. Let the room decide.", "Memorize these Tier 2 numbers: $42K in. $161K gross profit Year 1. $119K net positive. 280% ROI. Breakeven Month 5–7. You should say these without looking at the slide."], timing: "7 minutes" }
   },
   {
-    id: "financialcorrections", type: "financialcorrection", label: "CORRECTIONS",
-    section: "05 · FINANCIAL PLAN",
-    title: "Financial Model — Corrections v2.0",
-    notes: { open: "Present this slide immediately after the tier overview. Say: 'Before you hold any of those numbers — we have already applied six corrections. Here is what changed and why. Two of the corrections actually improve the investment case.' Then walk through the pricing correction first — it is the most impactful.", emphasis: ["Lead with the upside: higher price = better margins. The correction strengthens the case.", "The MoPH and GS1 open items are administrative — they do not affect the investment thesis, only the regulatory budget line. Acknowledge them directly and move on.", "Revised M6 revenue is conservative, not pessimistic. The upside scenario ($15K–$22K) is still on the table contingent on repeat purchasing rates."], timing: "4 minutes" }
-  },
-  {
     id: "sec06", type: "section", label: "§06",
     badge: "SECTION SIX", color: C.purple,
     title: "Why RU2YA and Only RU2YA",
@@ -895,7 +780,7 @@ const SLIDES = [
     qas: [
       { color: C.gold, q: "Why should I give full control to an advisory firm I just met?", a: "You are not giving us control — you are giving us authority to execute within parameters you define. Every major financial commitment and every regulatory filing is approved by you first. What you are giving us is the mandate to move without waiting for a meeting every time we need to visit an account or place a reorder. The 10 deliverables in front of you today were built before you agreed to anything. That is what full commitment looks like before a contract exists." },
       { color: C.amber, q: "What happens if the product doesn't sell?", a: "Every first account is sale-or-return — no retailer takes financial risk on your product. We do not launch until MoPH approval is confirmed, the brand is professionally executed, and the product is lab-verified. Revenue projections are conservative, assuming 20–40 units per week per gym account at steady state. If sell-through is below target, we have a formal feedback and pricing review protocol built into the mandate — not improvised after the fact." },
-      { color: C.greenBright, q: "How long before I start making money?", a: "Under the recommended Tier 2 scenario with corrected projections: breakeven is targeted between Month 8 and Month 11. By Month 6, revenue is projected at $9,000–$14,000 per month at a gross margin of 55–62% — the higher margin figure is due to the corrected $4.50 retail price benchmark against Jack Link's at $5.62. By Month 12, revenue is projected at $40,000–$65,000 per month. These are directional projections based on real Lebanese channel data and competitive pricing research, not guarantees." },
+      { color: C.greenBright, q: "How long before I start making money?", a: "Under the recommended Tier 2 scenario: breakeven is projected between Month 5 and Month 7. By Month 6, revenue is projected at $18,000–$28,000 per month at a gross margin of 48–55%. By Month 12, revenue is projected at $40,000–$65,000 per month. Cumulative Year 1 gross profit is estimated at approximately $161,000 against a $42,000 investment — approximately 280% return in 12 months. These are directional projections based on real channel data, not guarantees." },
       { color: C.purple, q: "What if I want to manage some parts of this myself?", a: "That is entirely your decision and we will document the division clearly in the mandate. However, our methodology is an integrated system. The outreach script connects to the commercial proposal, which connects to the account tracker, which drives the weekly check-in protocol. The more elements are separated, the more the system loses its compounding effect. Our recommendation: run the full system for 6 months, evaluate results, then decide what to internalise based on demonstrated performance." },
       { color: C.red, q: "What is the minimum I can invest to get started?", a: "Tier 1 at $18,500 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, RU2YA' recommendation is Tier 2 at $42,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category." },
       { color: C.gold, q: "Why Lebanon and not start with another market?", a: "Lebanon is the proof-of-concept that unlocks the GCC. 'Made in Lebanon' carries premium weight in UAE and Saudi Arabia — the provenance story is a marketing asset. Halal certification from Dar Al-Fatwa Lebanon is recognized across the GCC. Every product decision — the flavor, the certification, the trilingual packaging — was designed for Lebanon first and GCC second. Starting in Lebanon is not a constraint. It is the strategy." },
