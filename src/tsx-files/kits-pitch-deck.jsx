@@ -428,59 +428,219 @@ function FinancialsSlide({ slide }) {
   const { isMobile } = useResponsive();
   const initialAt = Math.max(0, Math.min(1, (slide.tiers || []).length - 1));
   const [at, setAt] = useState(initialAt);
-  const t = slide.tiers?.[at] || slide.tiers?.[0] || {};
+  const [barReady, setBarReady] = useState(false);
+
+  const handleSetAt = (i) => {
+    setBarReady(false);
+    setAt(i);
+    setTimeout(() => setBarReady(true), 80);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => setBarReady(true), 380);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const t = slide.tiers?.[at] || {};
+
+  // Breakeven dot position on M1–M12 track (midpoint of range)
+  const bePos = [86, 77, 46][at] ?? 77;
+
+  // ROI ratio bar: investment share vs profit share of total
+  const roiNum = parseInt((t.roi ?? "0").replace(/\D/g, ""), 10);
+  const investPct = Math.round(10000 / (100 + roiNum));
+
+  const TICK_MONTHS = [1, 3, 6, 9, 12];
+
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
-      <SH slide={slide} />
-      <div style={{ display: "flex", gap: 8, marginTop: 14, marginBottom: 14, flexDirection: isMobile ? "column" : "row" }}>
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px" : "30px 56px" }}>
+
+      {/* Header row with v2.0 badge */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
+        <SH slide={slide} />
+        <div style={{ display: "flex", gap: 4, flexShrink: 0, marginTop: 3, alignItems: "center", flexWrap: "wrap", justifyContent: "flex-end" }}>
+          <span style={{ fontFamily: "monospace", fontSize: 6.5, color: C.greenBright, background: `${C.greenBright}10`, border: `1px solid ${C.greenBright}28`, padding: "3px 8px", borderRadius: 2, letterSpacing: "0.08em" }}>v2.0 CORRECTED</span>
+          <span style={{ fontFamily: "monospace", fontSize: 6.5, color: C.gold, background: `${C.gold}0D`, border: `1px solid ${C.gold}22`, padding: "3px 8px", borderRadius: 2, letterSpacing: "0.06em" }}>RRP $4.50 · 61.9% GM</span>
+        </div>
+      </div>
+
+      {/* Tier selector */}
+      <div style={{ display: "flex", gap: 8, marginBottom: 12, flexDirection: isMobile ? "column" : "row" }}>
         {slide.tiers.map((tier, i) => (
-          <button key={i} onClick={() => setAt(i)} style={{ flex: 1, background: at === i ? `${tier.color}15` : C.charcoal, border: `1px solid ${at === i ? tier.color : C.ash}`, borderRadius: 4, padding: "11px 13px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", position: "relative", WebkitTapHighlightColor: "transparent" }}>
-            {tier.rec && <div style={{ position: "absolute", top: -9, left: "50%", transform: "translateX(-50%)", background: C.gold, color: C.obsidian, fontFamily: "monospace", fontSize: 6.5, padding: "2px 8px", borderRadius: 2, whiteSpace: "nowrap" }}>RU2YA RECOMMENDS</div>}
+          <button key={i} onClick={() => handleSetAt(i)} style={{
+            flex: 1, background: at === i ? `${tier.color}15` : C.charcoal,
+            border: `1px solid ${at === i ? tier.color : C.ash}`,
+            borderTop: `3px solid ${at === i ? tier.color : C.ash}`,
+            borderRadius: 3, padding: isMobile ? "10px 12px" : "11px 14px",
+            cursor: "pointer", textAlign: "left", transition: "all 0.2s",
+            position: "relative", WebkitTapHighlightColor: "transparent"
+          }}>
+            {tier.rec && <div style={{
+              position: "absolute", top: -9, left: "50%", transform: "translateX(-50%)",
+              background: C.gold, color: C.obsidian, fontFamily: "monospace",
+              fontSize: 6.5, padding: "2px 8px", borderRadius: 2, whiteSpace: "nowrap", zIndex: 1
+            }}>RU2YA RECOMMENDS</div>}
             <div style={{ fontFamily: "monospace", fontSize: 7, color: tier.color, letterSpacing: "0.15em", marginBottom: 2 }}>{tier.tier}</div>
-            <div style={{ fontSize: 13, color: C.cream, marginBottom: 4 }}>{tier.name}</div>
-            <div style={{ fontFamily: "monospace", fontSize: 18, color: tier.color }}>{tier.total}</div>
+            <div style={{ fontSize: 12, color: C.cream, marginBottom: 3 }}>{tier.name}</div>
+            <div style={{ fontFamily: "monospace", fontSize: 18, color: tier.color, marginBottom: 5 }}>{tier.total}</div>
+            <div style={{ display: "flex", gap: 5, flexWrap: "wrap" }}>
+              <span style={{ fontFamily: "monospace", fontSize: 6.5, color: at === i ? tier.color : C.creamDim }}>BEP {tier.breakeven}</span>
+              <span style={{ color: C.ash, fontSize: 7 }}>·</span>
+              <span style={{ fontFamily: "monospace", fontSize: 6.5, color: at === i ? tier.color : C.creamDim }}>{tier.margin} GM</span>
+            </div>
           </button>
         ))}
       </div>
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 12 }}>
+
+      {/* Content grid */}
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 12, minHeight: 0 }}>
+
+        {/* Left column */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+
+          {/* KPI cards */}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 7 }}>
-            {[{ label: "Breakeven", val: t.breakeven }, { label: "Gross Margin", val: t.margin }, { label: "Year 1 ROI", val: t.roi }].map((m, i) => (
-              <div key={i} style={{ background: C.charcoal, border: `1px solid ${t.color}1E`, borderRadius: 3, padding: "11px 12px" }}>
+            {[
+              { label: "Breakeven", val: t.breakeven, v2: true },
+              { label: "Gross Margin", val: t.margin, v2: true },
+              { label: "Year 1 ROI", val: t.roi, v2: false }
+            ].map((m, i) => (
+              <div key={i} style={{ background: C.charcoal, border: `1px solid ${t.color}20`, borderRadius: 3, padding: "10px 11px", position: "relative" }}>
+                {m.v2 && (
+                  <div style={{ position: "absolute", top: -7, right: 5, fontFamily: "monospace", fontSize: 5.5, color: C.greenBright, background: `${C.greenBright}12`, border: `1px solid ${C.greenBright}28`, padding: "1px 4px", borderRadius: 1 }}>v2.0</div>
+                )}
                 <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, marginBottom: 5 }}>{m.label}</div>
-                <div style={{ fontFamily: "monospace", fontSize: 13, color: t.color }}>{m.val}</div>
+                <div style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 13, color: t.color, lineHeight: 1.2 }}>{m.val}</div>
               </div>
             ))}
           </div>
-          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "14px 16px", flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 12 }}>REVENUE TRAJECTORY</div>
-            {[{ label: "Month 3", pct: t.m3p, text: t.m3 }, { label: "Month 6", pct: t.m6p, text: t.m6 }, { label: "Month 12", pct: t.m12p, text: t.m12 }].map((r, i) => (
+
+          {/* Breakeven timeline */}
+          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "12px 14px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, letterSpacing: "0.12em", marginBottom: 14 }}>PROFITABILITY TIMELINE — 12 MONTHS</div>
+            <div style={{ position: "relative", height: 28, marginBottom: 4 }}>
+              {/* Base track */}
+              <div style={{ position: "absolute", top: "50%", left: 0, right: 0, height: 3, background: C.ash, transform: "translateY(-50%)", borderRadius: 2 }} />
+              {/* Filled progress */}
+              <div style={{
+                position: "absolute", top: "50%", left: 0, height: 3,
+                width: barReady ? `${bePos}%` : "0%",
+                background: `linear-gradient(to right,${t.color}40,${t.color}90)`,
+                transform: "translateY(-50%)", borderRadius: 2,
+                transition: "width 1.1s cubic-bezier(0.25,0.46,0.45,0.94) 0.1s"
+              }} />
+              {/* Tick marks */}
+              {TICK_MONTHS.map(mo => {
+                const pos = ((mo - 1) / 11) * 100;
+                return (
+                  <div key={mo} style={{ position: "absolute", top: "50%", left: `${pos}%`, transform: "translate(-50%,-50%)" }}>
+                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: C.ash, border: `1px solid ${C.ember}` }} />
+                    <div style={{ position: "absolute", top: 9, left: "50%", transform: "translateX(-50%)", fontFamily: "monospace", fontSize: 7, color: C.creamDim, whiteSpace: "nowrap" }}>M{mo}</div>
+                  </div>
+                );
+              })}
+              {/* Breakeven glowing dot — slides when tier changes */}
+              <div style={{
+                position: "absolute", top: "50%", left: `${bePos}%`,
+                transform: "translate(-50%,-50%)",
+                width: 12, height: 12, borderRadius: "50%",
+                background: t.color, border: `2px solid ${C.obsidian}`,
+                boxShadow: `0 0 10px ${t.color}70`,
+                transition: "left 0.7s cubic-bezier(0.25,0.46,0.45,0.94), background 0.3s",
+                zIndex: 2
+              }} />
+            </div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: t.color, marginTop: 8 }}>◎ Breakeven: {t.breakeven}</div>
+          </div>
+
+          {/* Revenue trajectory */}
+          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "13px 15px", flex: 1 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 8.5, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 12 }}>REVENUE TRAJECTORY</div>
+            {[
+              { label: "Month 3", pct: t.m3p, text: t.m3, delay: 0, corrected: false },
+              { label: "Month 6", pct: t.m6p, text: t.m6, delay: 0.15, corrected: true },
+              { label: "Month 12", pct: t.m12p, text: t.m12, delay: 0.3, corrected: false }
+            ].map((r, i) => (
               <div key={i} style={{ marginBottom: 11 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4, alignItems: "center" }}>
                   <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>{r.label}</span>
-                  <span style={{ fontFamily: "monospace", fontSize: 9.5, color: t.color }}>{r.text}</span>
+                  <div style={{ display: "flex", alignItems: "center", gap: 5 }}>
+                    {r.corrected && <span style={{ fontFamily: "monospace", fontSize: 5.5, color: C.greenBright, background: `${C.greenBright}12`, border: `1px solid ${C.greenBright}25`, padding: "1px 4px", borderRadius: 1 }}>v2.0</span>}
+                    <span style={{ fontFamily: "monospace", fontSize: 9.5, color: t.color }}>{r.text}</span>
+                  </div>
                 </div>
                 <div style={{ height: 5, background: C.ash, borderRadius: 3 }}>
-                  <div style={{ width: `${r.pct}%`, height: "100%", background: `linear-gradient(to right,${t.color}90,${t.color})`, borderRadius: 3, transition: "width 0.4s ease" }} />
+                  <div style={{
+                    width: barReady ? `${r.pct}%` : "0%",
+                    height: "100%",
+                    background: `linear-gradient(to right,${t.color}70,${t.color})`,
+                    borderRadius: 3,
+                    transition: `width 0.85s cubic-bezier(0.25,0.46,0.45,0.94) ${r.delay}s`
+                  }} />
                 </div>
               </div>
             ))}
           </div>
         </div>
+
+        {/* Right column */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <div style={{ background: `${t.color}08`, border: `1px solid ${t.color}22`, borderRadius: 4, padding: "13px 16px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: t.color, letterSpacing: "0.12em", marginBottom: 8 }}>WHAT THIS FUNDS</div>
-            {t.includes.map((inc, i) => (
-              <div key={i} style={{ display: "flex", gap: 7, marginBottom: 6 }}>
+
+          {/* What this funds */}
+          <div style={{ background: `${t.color}08`, border: `1px solid ${t.color}22`, borderRadius: 4, padding: "13px 15px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 8.5, color: t.color, letterSpacing: "0.12em", marginBottom: 8 }}>WHAT THIS FUNDS</div>
+            {(t.includes || []).map((inc, i) => (
+              <div key={i} style={{ display: "flex", gap: 7, marginBottom: 5 }}>
                 <span style={{ color: t.color, fontSize: 9, flexShrink: 0 }}>✓</span>
-                <span style={{ fontSize: 11.5, color: C.cream, lineHeight: 1.45 }}>{inc}</span>
+                <span style={{ fontSize: 11, color: C.cream, lineHeight: 1.45 }}>{inc}</span>
               </div>
             ))}
           </div>
-          <div style={{ background: `${C.greenBright}08`, border: `1px solid ${C.greenBright}22`, borderRadius: 4, padding: "13px 16px", flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.12em", marginBottom: 7 }}>CUMULATIVE YEAR 1 GROSS PROFIT</div>
-            <div style={{ fontFamily: "monospace", fontSize: 26, color: C.goldBright, marginBottom: 5 }}>{t.cumProfit}</div>
-            <p style={{ margin: 0, fontSize: 11, color: C.creamDim, lineHeight: 1.65 }}>{t.profitNote}</p>
+
+          {/* ROI + cumulative profit */}
+          <div style={{ background: `${C.greenBright}08`, border: `1px solid ${C.greenBright}22`, borderRadius: 4, padding: "13px 15px", flex: 1, display: "flex", flexDirection: "column" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 8.5, color: C.greenBright, letterSpacing: "0.12em", marginBottom: 10 }}>CUMULATIVE YEAR 1 GROSS PROFIT</div>
+
+            {/* Investment vs return ratio bar */}
+            <div style={{ display: "flex", height: 14, borderRadius: 2, overflow: "hidden", gap: 1, marginBottom: 10 }}>
+              <div style={{
+                width: `${investPct}%`,
+                background: `${t.color}45`,
+                display: "flex", alignItems: "center", justifyContent: "center",
+                transition: "width 0.5s ease"
+              }}>
+                <span style={{ fontFamily: "monospace", fontSize: 6, color: C.cream, whiteSpace: "nowrap" }}>CAPITAL IN</span>
+              </div>
+              <div style={{
+                flex: 1,
+                background: `linear-gradient(to right,${C.greenBright}30,${C.greenBright}50)`,
+                display: "flex", alignItems: "center", paddingLeft: 6
+              }}>
+                <span style={{ fontFamily: "monospace", fontSize: 6, color: C.greenBright, whiteSpace: "nowrap" }}>GROSS RETURN · {t.roi}</span>
+              </div>
+            </div>
+
+            <div style={{ fontFamily: "monospace", fontSize: 28, color: C.goldBright, marginBottom: 3, letterSpacing: "-0.02em" }}>{t.cumProfit}</div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.greenBright, marginBottom: 8 }}>Year 1 · {t.roi} ROI · {t.margin} avg GM</div>
+            <p style={{ margin: "0 0 10px", fontSize: 11, color: C.creamDim, lineHeight: 1.65 }}>{t.profitNote}</p>
+
+            <div style={{ height: 1, background: C.ash, marginBottom: 10, marginTop: "auto" }} />
+
+            {/* Unit economics micro-reference */}
+            <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, letterSpacing: "0.1em", marginBottom: 7 }}>UNIT ECONOMICS BASIS (v2.0)</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 5 }}>
+              {[
+                { label: "RRP", val: "$4.50", col: C.gold },
+                { label: "COGS", val: "$1.20", col: C.amber },
+                { label: "GP/UNIT", val: "$1.95", col: C.greenBright },
+                { label: "GM", val: "61.9%", col: C.greenBright },
+              ].map((m, i) => (
+                <div key={i} style={{ textAlign: "center", padding: "5px 4px", background: `${m.col}08`, border: `1px solid ${m.col}15`, borderRadius: 2 }}>
+                  <div style={{ fontFamily: "monospace", fontSize: 6.5, color: C.creamDim, marginBottom: 2 }}>{m.label}</div>
+                  <div style={{ fontFamily: "monospace", fontSize: 10, color: m.col }}>{m.val}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -824,27 +984,27 @@ const SLIDES = [
     tiers: [
       {
         tier: "TIER 1", name: "Lean Launch", total: "$18,500", color: C.greenBright,
-        breakeven: "Month 7–9", margin: "42–48%", roi: "~240%",
-        m3: "Building", m3p: 15, m6: "$8K–14K /mo", m6p: 38, m12: "$18K–28K /mo", m12p: 70,
-        cumProfit: "~$64K", profitNote: "Est. cumulative gross profit Year 1 at 45% avg margin. Investment recovery Month 9–12. Functional but competitively underfunded versus imported brands on pharmacy shelf.",
+        breakeven: "Month 9–12", margin: "48–55%", roi: "~155%",
+        m3: "Building", m3p: 10, m6: "$4K–7K /mo", m6p: 18, m12: "$14K–22K /mo", m12p: 100,
+        cumProfit: "~$45K", profitNote: "Est. cumulative gross profit Year 1 at 51% avg margin. Investment recovery Month 9–12. Functional minimum viable launch — the corrected $4.50 price floor improves margin but the 30-account scope limits revenue velocity.",
         includes: ["SARL registration + core licensing", "MoPH registration — 1 SKU", "Basic brand identity (wordmark + color)", "Single-serve pouch only", "1 production batch", "30-account outreach target"]
       },
       {
         tier: "TIER 2", name: "Standard Launch", total: "$42,000", color: C.gold, rec: true,
-        breakeven: "Month 5–7", margin: "48–55%", roi: "~280%",
-        m3: "Revenue building", m3p: 22, m6: "$18K–28K /mo", m6p: 55, m12: "$40K–65K /mo", m12p: 100,
-        cumProfit: "~$161K", profitNote: "Est. cumulative gross profit Year 1 at 51.5% avg margin. Investment recovery Month 6–7. Year 1 net positive approx. $119K. The right level of ambition for this opportunity.",
+        breakeven: "Month 8–11", margin: "55–62%", roi: "~265%",
+        m3: "Revenue building", m3p: 14, m6: "$9K–14K /mo", m6p: 26, m12: "$40K–65K /mo", m12p: 100,
+        cumProfit: "~$153K", profitNote: "Est. cumulative gross profit Year 1 at 61.9% avg margin. Investment recovery Month 8–11. Year 1 net positive approx. $111K. Higher price benchmark adds $0.75/unit GP vs original model — partially offsetting the conservative M6 revenue ramp. M12 trajectory unchanged.",
         includes: ["SARL + all licensing + IP lawyer", "MoPH registration — 2 SKUs", "Full brand identity system + packaging", "Single-serve + multi-serve pouch", "2 production batches", "80-account outreach", "RU2YA management fee Phases 0–2"]
       },
       {
         tier: "TIER 3", name: "Full Market Entry", total: "$82,000", color: C.amber,
-        breakeven: "Month 4–6", margin: "52–60%", roi: "~340%",
-        m3: "Soft launch revenue", m3p: 25, m6: "$35K–55K /mo", m6p: 55, m12: "$80K–130K /mo", m12p: 100,
-        cumProfit: "~$358K", profitNote: "Est. cumulative gross profit Year 1 at 56% avg margin. Investment recovery Month 5–6. Year 1 net positive approx. $276K. Maximum market capture velocity.",
+        breakeven: "Month 5–7", margin: "58–64%", roi: "~310%",
+        m3: "Soft launch revenue", m3p: 15, m6: "$18K–28K /mo", m6p: 30, m12: "$80K–130K /mo", m12p: 100,
+        cumProfit: "~$310K", profitNote: "Est. cumulative gross profit Year 1 at 61% avg margin. Investment recovery Month 5–7. Modern trade entry from M8–10 drives the M12 step change. Year 1 net positive approx. $228K. Maximum market capture velocity.",
         includes: ["Full legal stack + GCC pre-filing", "MoPH 3 SKUs + full label compliance", "Agency-level brand identity", "Dedicated sales rep 6 months", "3-SKU full production batch", "130+ accounts", "RU2YA management fee Phases 0–3"]
       }
     ],
-    notes: { open: "Lead with Tier 2 as the reference point. Say: 'This is where serious commercial intent meets financial discipline. Enough capital to do this right — not more than you need to prove the concept.'", emphasis: ["Ask directly after presenting all three: 'Which scenario matches where you are right now?' Then stop talking. Let the room decide.", "Memorize these Tier 2 numbers: $42K in. $161K gross profit Year 1. $119K net positive. 280% ROI. Breakeven Month 5–7. You should say these without looking at the slide."], timing: "7 minutes" }
+    notes: { open: "Lead with Tier 2 as the reference point. Say: 'This is where serious commercial intent meets financial discipline. Enough capital to do this right — not more than you need to prove the concept.'", emphasis: ["Ask directly after presenting all three: 'Which scenario matches where you are right now?' Then stop talking. Let the room decide.", "Memorize these Tier 2 v2.0 corrected numbers: $42K in. $153K gross profit Year 1. $111K net positive. 265% ROI. Breakeven Month 8–11. You should say these without looking at the slide."], timing: "7 minutes" }
   },
   {
     id: "financialcorrections", type: "financialcorrection", label: "CORRECTIONS",
