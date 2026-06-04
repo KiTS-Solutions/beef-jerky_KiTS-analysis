@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES · Speaker Guide · RU2YA Advisory</title>
+<style>
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --void:       #050404;
+    --obsidian:   #0A0908;
+    --charcoal:   #141210;
+    --ash:        #1E1B18;
+    --ember:      #2A2520;
+    --smoke:      #2E2A26;
+    --gold:       #C8A050;
+    --gold-br:    #E0B860;
+    --gold-dim:   #7A6030;
+    --cream:      #EDE0CC;
+    --cream-dim:  #8A7A6A;
+    --cream-mid:  #BEB0A0;
+    --green:      #5A9060;
+    --green-br:   #6DB880;
+    --red:        #C04030;
+    --amber:      #C07030;
+    --purple:     #7060A0;
+    --steel:      #506080;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--obsidian);
+    color: var(--cream);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.65;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+  }
+
+  /* ── FIXED TOP BAR ── */
+  .top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: var(--void);
+    border-bottom: 1px solid var(--ash);
+    padding: 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 -24px 0;
+  }
+  .top-bar-left {
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+  }
+  .top-bar-right {
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--cream-dim);
+    letter-spacing: 0.1em;
+  }
+  .gold-bar {
+    height: 2px;
+    background: linear-gradient(to right, var(--gold-dim), var(--gold), var(--gold-br));
+    margin: 0 -24px;
+  }
+
+  /* ── DOCUMENT HEADER ── */
+  .doc-header {
+    padding: 48px 0 32px;
+    border-bottom: 1px solid var(--ash);
+    margin-bottom: 0;
+  }
+  .doc-kicker {
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    color: var(--gold-dim);
+    letter-spacing: 0.4em;
+    margin-bottom: 16px;
+  }
+  .doc-title {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--cream);
+    letter-spacing: 0.1em;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .doc-subtitle {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: var(--cream-dim);
+    letter-spacing: 0.2em;
+    margin-bottom: 28px;
+  }
+  .doc-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .meta-tag {
+    font-family: 'Courier New', monospace;
+    font-size: 7.5px;
+    color: var(--cream-dim);
+    background: rgba(200,160,80,0.07);
+    border: 1px solid rgba(200,160,80,0.2);
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── TABLE OF CONTENTS ── */
+  .toc {
+    background: var(--charcoal);
+    border: 1px solid var(--ash);
+    border-left: 4px solid var(--gold-dim);
+    border-radius: 3px;
+    padding: 20px 22px;
+    margin: 32px 0;
+  }
+  .toc-title {
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    margin-bottom: 14px;
+  }
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    text-decoration: none;
+    color: var(--cream-mid);
+    font-size: 12.5px;
+    border-bottom: 1px solid rgba(30,27,24,0.5);
+    transition: color 0.15s;
+  }
+  .toc-item:hover { color: var(--gold); }
+  .toc-item .toc-num {
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--gold-dim);
+    width: 24px;
+    flex-shrink: 0;
+  }
+  .toc-item .toc-time {
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--cream-dim);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* ── PART HEADERS ── */
+  .part-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 48px 0 24px;
+    padding: 16px 20px;
+    background: rgba(200,160,80,0.04);
+    border: 1px solid rgba(200,160,80,0.12);
+    border-left: 5px solid var(--gold);
+    border-radius: 0 3px 3px 0;
+  }
+  .part-num {
+    font-family: 'Courier New', monospace;
+    font-size: 28px;
+    color: var(--gold);
+    opacity: 0.35;
+    line-height: 1;
+  }
+  .part-info { flex: 1; }
+  .part-label {
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--gold-dim);
+    letter-spacing: 0.3em;
+    margin-bottom: 4px;
+  }
+  .part-title {
+    font-size: 18px;
+    color: var(--cream);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── CHECKLIST ── */
+  .checklist {
+    list-style: none;
+    margin: 12px 0;
+  }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--ash);
+    font-size: 13.5px;
+    color: var(--cream-mid);
+    line-height: 1.55;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-box {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid var(--gold-dim);
+    border-radius: 2px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .checklist li.critical .check-box { border-color: var(--amber); }
+
+  /* ── NUMBERS GRID ── */
+  .numbers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 16px 0;
+  }
+  .number-card {
+    background: var(--charcoal);
+    border: 1px solid var(--ash);
+    border-top: 3px solid var(--gold);
+    border-radius: 3px;
+    padding: 14px 16px;
+  }
+  .number-card.amber { border-top-color: var(--amber); }
+  .number-card.green { border-top-color: var(--green); }
+  .number-card.red   { border-top-color: var(--red); }
+  .number-card .nval {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1;
+  }
+  .number-card.amber .nval { color: var(--amber); }
+  .number-card.green .nval { color: var(--green-br); }
+  .number-card .ndesc {
+    font-size: 11px;
+    color: var(--cream-dim);
+    line-height: 1.45;
+  }
+
+  /* ── PRINCIPLES GRID ── */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 14px 0;
+  }
+  .principle-card {
+    background: var(--charcoal);
+    border: 1px solid var(--ash);
+    border-radius: 3px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .principle-num {
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .principle-body {}
+  .principle-title {
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
+  }
+  .principle-text {
+    font-size: 12.5px;
+    color: var(--cream-mid);
+    line-height: 1.6;
+  }
+
+  /* ── SLIDE CARDS ── */
+  .slide-card {
+    border: 1px solid var(--ash);
+    border-left: 4px solid var(--gold-dim);
+    border-radius: 4px;
+    margin: 18px 0;
+    overflow: hidden;
+  }
+  .slide-card.key      { border-left-color: var(--gold-br); }
+  .slide-card.warning  { border-left-color: var(--amber); }
+  .slide-card.critical { border-left-color: var(--red); }
+  .slide-card.positive { border-left-color: var(--green); }
+  .slide-card.section  { border-left-color: var(--purple); opacity: 0.9; }
+
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 18px;
+    background: var(--charcoal);
+    border-bottom: 1px solid var(--ash);
+    gap: 12px;
+  }
+  .slide-header-left {}
+  .slide-num-label {
+    font-family: 'Courier New', monospace;
+    font-size: 7.5px;
+    color: var(--cream-dim);
+    letter-spacing: 0.2em;
+    margin-bottom: 3px;
+  }
+  .slide-title-text {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: var(--cream);
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  .slide-timing {
+    font-family: 'Courier New', monospace;
+    font-size: 9.5px;
+    color: var(--amber);
+    background: rgba(192,112,48,0.1);
+    border: 1px solid rgba(192,112,48,0.25);
+    padding: 4px 10px;
+    border-radius: 2px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .slide-body {
+    padding: 18px 20px;
+  }
+
+  /* Section transition card */
+  .section-transition {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    background: rgba(112,96,160,0.05);
+    border: 1px solid rgba(112,96,160,0.15);
+    border-left: 4px solid var(--purple);
+    border-radius: 3px;
+    margin: 14px 0;
+  }
+  .st-badge {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    color: var(--purple);
+    opacity: 0.4;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .st-body {}
+  .st-label {
+    font-family: 'Courier New', monospace;
+    font-size: 7.5px;
+    color: rgba(112,96,160,0.6);
+    letter-spacing: 0.25em;
+    margin-bottom: 3px;
+  }
+  .st-title { font-size: 14px; color: var(--cream); }
+  .st-words {
+    font-size: 12.5px;
+    color: rgba(112,96,160,0.85);
+    font-style: italic;
+    margin-top: 4px;
+    line-height: 1.55;
+  }
+  .st-time {
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--cream-dim);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTENT BLOCKS ── */
+  .block { margin: 14px 0; }
+
+  .block-label {
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    letter-spacing: 0.22em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .lbl-open       { color: var(--gold); }
+  .lbl-say        { color: var(--cream-mid); }
+  .lbl-emphasis   { color: var(--amber); }
+  .lbl-avoid      { color: var(--red); }
+  .lbl-transition { color: var(--green); }
+  .lbl-listen     { color: var(--steel); }
+
+  /* Opening Words */
+  .opening-words {
+    background: rgba(200,160,80,0.04);
+    border: 1px solid rgba(200,160,80,0.18);
+    border-left: 3px solid var(--gold);
+    padding: 14px 16px;
+    border-radius: 2px;
+  }
+  .opening-words p {
+    font-size: 14px;
+    color: var(--cream);
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  /* Guide list */
+  .guide-list { list-style: none; margin: 0; padding: 0; }
+  .guide-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(30,27,24,0.6);
+    font-size: 13.5px;
+    color: var(--cream-mid);
+    line-height: 1.6;
+  }
+  .guide-list li:last-child { border-bottom: none; }
+  .gl-bullet { flex-shrink: 0; margin-top: 4px; font-size: 9px; }
+  .gl-bullet.gold   { color: var(--gold); }
+  .gl-bullet.amber  { color: var(--amber); }
+  .gl-bullet.red    { color: var(--red); }
+  .gl-bullet.green  { color: var(--green); }
+
+  /* Emphasis box */
+  .emphasis-box {
+    background: rgba(192,112,48,0.06);
+    border: 1px solid rgba(192,112,48,0.22);
+    border-left: 3px solid var(--amber);
+    padding: 12px 14px;
+    border-radius: 2px;
+    margin: 8px 0;
+  }
+  .emphasis-box p {
+    font-size: 13px;
+    color: rgba(220,140,70,0.95);
+    line-height: 1.72;
+  }
+  .emphasis-box strong { color: var(--gold-br); font-style: normal; font-weight: normal; }
+
+  /* Avoid box */
+  .avoid-box {
+    background: rgba(192,64,48,0.05);
+    border: 1px solid rgba(192,64,48,0.18);
+    border-left: 3px solid var(--red);
+    padding: 11px 14px;
+    border-radius: 2px;
+    margin: 8px 0;
+  }
+  .avoid-box p {
+    font-size: 12.5px;
+    color: rgba(200,80,70,0.85);
+    line-height: 1.65;
+  }
+
+  /* Transition box */
+  .transition-box {
+    background: rgba(90,144,96,0.05);
+    border: 1px solid rgba(90,144,96,0.2);
+    border-left: 3px solid var(--green);
+    padding: 11px 14px;
+    border-radius: 2px;
+    margin: 8px 0;
+  }
+  .transition-box p {
+    font-size: 13px;
+    color: var(--green-br);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* Listen box */
+  .listen-box {
+    background: rgba(80,96,128,0.06);
+    border: 1px solid rgba(80,96,128,0.2);
+    border-left: 3px solid var(--steel);
+    padding: 12px 14px;
+    border-radius: 2px;
+    margin: 8px 0;
+  }
+  .listen-box p {
+    font-size: 13px;
+    color: rgba(120,148,180,0.9);
+    line-height: 1.7;
+  }
+
+  /* Q&A Cards */
+  .qa-card {
+    border: 1px solid var(--ash);
+    border-radius: 3px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  .qa-q {
+    background: var(--charcoal);
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--cream);
+    font-style: italic;
+    border-left: 3px solid var(--gold-dim);
+  }
+  .qa-a {
+    padding: 12px 14px;
+    font-size: 13px;
+    color: var(--cream-mid);
+    line-height: 1.75;
+  }
+  .qa-note {
+    padding: 8px 14px;
+    background: rgba(200,160,80,0.04);
+    border-top: 1px solid var(--ash);
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    color: var(--gold-dim);
+    letter-spacing: 0.05em;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .stat-card {
+    background: var(--charcoal);
+    border: 1px solid var(--ash);
+    border-top: 2px solid var(--green);
+    border-radius: 3px;
+    padding: 12px;
+    text-align: center;
+  }
+  .stat-val {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    color: var(--green-br);
+    display: block;
+    margin-bottom: 5px;
+    line-height: 1;
+  }
+  .stat-lab {
+    font-size: 9.5px;
+    color: var(--cream-dim);
+    line-height: 1.4;
+  }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, var(--gold-dim), transparent);
+    margin: 14px 0;
+  }
+
+  /* Closing line box */
+  .closing-line {
+    background: rgba(200,160,80,0.04);
+    border: 1px solid var(--gold-dim);
+    border-radius: 4px;
+    padding: 22px 24px;
+    margin: 14px 0;
+    text-align: center;
+  }
+  .closing-line p {
+    font-size: 15px;
+    color: var(--cream);
+    font-style: italic;
+    line-height: 1.8;
+  }
+
+  /* Alert box */
+  .alert-box {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 13px 16px;
+    background: rgba(200,160,80,0.06);
+    border: 1px solid rgba(200,160,80,0.2);
+    border-radius: 3px;
+    margin: 12px 0;
+  }
+  .alert-icon {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .alert-text {
+    font-size: 13px;
+    color: var(--cream-mid);
+    line-height: 1.7;
+  }
+  .alert-text strong { color: var(--cream); font-weight: normal; }
+
+  /* Footer */
+  .doc-footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--ash);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-text {
+    font-family: 'Courier New', monospace;
+    font-size: 8px;
+    color: var(--cream-dim);
+    opacity: 0.4;
+    letter-spacing: 0.15em;
+  }
+
+  @media print {
+    body { background: #fff; color: #111; }
+    .top-bar, .gold-bar { display: none; }
+    .slide-card { border: 1px solid #ddd; page-break-inside: avoid; }
+    .opening-words, .emphasis-box, .avoid-box, .transition-box { border: 1px solid #ccc; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div class="top-bar">
+  <div class="top-bar-left">STRIKE BITES · SPEAKER GUIDE · RU2YA ADVISORY</div>
+  <div class="top-bar-right">PRIVATE &amp; CONFIDENTIAL · KAG-JRK-PITCH-GUIDE-001 · JUNE 2026</div>
+</div>
+<div class="gold-bar"></div>
+
+<!-- ── DOCUMENT HEADER ── -->
+<div class="doc-header">
+  <div class="doc-kicker">RU2YA ADVISORY GROUP · KAG-JRK-PITCH-GUIDE-001 · PRIVATE &amp; CONFIDENTIAL</div>
+  <div class="doc-title">STRIKE BITES<br>PITCH SPEAKER GUIDE</div>
+  <div class="doc-subtitle">CLIENT PRESENTATION · COMPLETE SLIDE-BY-SLIDE REFERENCE · JUNE 2026</div>
+  <div class="doc-meta">
+    <span class="meta-tag">22 SLIDES COVERED</span>
+    <span class="meta-tag">~90–105 MIN RUNTIME</span>
+    <span class="meta-tag">WORD-FOR-WORD OPENINGS</span>
+    <span class="meta-tag">ALL Q&amp;A PRE-ANSWERED</span>
+    <span class="meta-tag">CLOSING SCRIPT INCLUDED</span>
+  </div>
+</div>
+
+<!-- ── TABLE OF CONTENTS ── -->
+<div class="toc">
+  <div class="toc-title">GUIDE CONTENTS — QUICK NAVIGATION</div>
+  <div class="toc-grid">
+    <a href="#part1" class="toc-item"><span class="toc-num">I</span> Pre-Presentation Checklist<span class="toc-time"></span></a>
+    <a href="#part2" class="toc-item"><span class="toc-num">II</span> Delivery Principles<span class="toc-time"></span></a>
+    <a href="#part3" class="toc-item"><span class="toc-num">III</span> Numbers to Memorize<span class="toc-time"></span></a>
+    <a href="#part4" class="toc-item"><span class="toc-num">IV</span> Slide-by-Slide Reference<span class="toc-time"></span></a>
+    <a href="#s01" class="toc-item"><span class="toc-num">S1</span> Cover<span class="toc-time">0:30</span></a>
+    <a href="#s02" class="toc-item"><span class="toc-num">S2</span> Listen — Discovery<span class="toc-time">20–30 min</span></a>
+    <a href="#s03" class="toc-item"><span class="toc-num">S3–5</span> Opportunity + Market + Why Now<span class="toc-time">7 min</span></a>
+    <a href="#s06" class="toc-item"><span class="toc-num">S6–7</span> What We Built + Deliverables<span class="toc-time">6 min</span></a>
+    <a href="#s08" class="toc-item"><span class="toc-num">S8–9</span> The Brand + Score<span class="toc-time">5 min</span></a>
+    <a href="#s10" class="toc-item"><span class="toc-num">S10–12</span> Competition Landscape + Matrix<span class="toc-time">9 min</span></a>
+    <a href="#s13" class="toc-item"><span class="toc-num">S13–14</span> The Plan + Roadmap<span class="toc-time">6 min</span></a>
+    <a href="#s15" class="toc-item"><span class="toc-num">S15–17</span> Financial Plan + Corrections<span class="toc-time">11 min</span></a>
+    <a href="#s18" class="toc-item"><span class="toc-num">S18–19</span> Why RU2YA<span class="toc-time">7 min</span></a>
+    <a href="#s20" class="toc-item"><span class="toc-num">S20</span> The Mandate<span class="toc-time">4 min</span></a>
+    <a href="#s21" class="toc-item"><span class="toc-num">S21</span> Q &amp; A<span class="toc-time">10–15 min</span></a>
+    <a href="#s22" class="toc-item"><span class="toc-num">S22</span> The Close<span class="toc-time">5 min + silence</span></a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  PART I — PRE-PRESENTATION                           -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="part1" class="part-header">
+  <div class="part-num">I</div>
+  <div class="part-info">
+    <div class="part-label">PART ONE</div>
+    <div class="part-title">Pre-Presentation Preparation</div>
+  </div>
+</div>
+
+<div class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">THE NIGHT BEFORE</div>
+      <div class="slide-title-text">Evening Preparation — Non-Negotiable</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <span class="block-label lbl-open">REVIEW — IN THIS ORDER</span>
+    <ul class="checklist">
+      <li><div class="check-box"></div>Read the Q&amp;A slide answers three times — out loud. Do not read them tomorrow. Internalize them tonight.</li>
+      <li class="critical"><div class="check-box"></div>Memorize the Tier 2 numbers (see Part III of this guide). These must come without hesitation.</li>
+      <li><div class="check-box"></div>Memorize the closing line word-for-word: <em>"The category is empty today. The question is not whether someone will build it. The question is whether STRIKE owns it — or whether we watch someone else do it first."</em></li>
+      <li><div class="check-box"></div>Review the competitor gaps for the 3 competitor groups — particularly why Halo and Raw Bites are plant-based, not meat-based.</li>
+      <li><div class="check-box"></div>Verify the presentation loads fully in your browser. Test keyboard navigation (→ / ← arrows, Spacebar). Toggle Notes panel with N.</li>
+      <li><div class="check-box"></div>Have all 10 deliverable files accessible — if the client asks to see any one, you say yes immediately.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">30 MINUTES BEFORE</div>
+      <div class="slide-title-text">Room Setup &amp; Technology Checklist</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <ul class="checklist">
+      <li><div class="check-box"></div>Laptop fully charged — charger in bag as backup</li>
+      <li><div class="check-box"></div>Presentation opened in browser, browser in full-screen mode (F11), cover slide visible</li>
+      <li><div class="check-box"></div>Slides panel (top-left button) tested — confirm slide navigation works</li>
+      <li><div class="check-box"></div>Notes panel hidden (press N if visible) — you do not want it on during the presentation</li>
+      <li><div class="check-box"></div>Screen brightness at maximum or near-maximum</li>
+      <li><div class="check-box"></div>Phone on silent — or airplane mode</li>
+      <li><div class="check-box"></div>Physical notepad and pen on the table — for the listening phase</li>
+      <li><div class="check-box"></div>Water available — for yourself</li>
+      <li class="critical"><div class="check-box"></div>Test that images load (competitor logos, product bag) — if they don't, confirm which pages need internet</li>
+    </ul>
+    <div class="block">
+      <span class="block-label lbl-avoid">IF SOMETHING GOES WRONG TECHNICALLY</span>
+      <div class="avoid-box">
+        <p>Do not panic. Do not apologize excessively. Say: <em>"One moment — I want to make sure you see this correctly."</em> If technology fails entirely, keep talking. You know this material better than any slide. The 10 deliverables are your backup — offer to walk through the printed handoff document instead.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">ENTERING THE ROOM</div>
+      <div class="slide-title-text">Mindset — The Frame That Wins</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <ul class="guide-list">
+      <li><span class="gl-bullet gold">→</span>You are not hoping for a yes. You are sharing a completed body of work and inviting them into it.</li>
+      <li><span class="gl-bullet gold">→</span>They called this meeting because the opportunity already interests them. You are not convincing a skeptic — you are confirming a decision they are leaning toward.</li>
+      <li><span class="gl-bullet gold">→</span>Confidence is not certainty about the outcome. It is certainty about the quality of the preparation.</li>
+      <li><span class="gl-bullet gold">→</span>The 10 deliverables were built before a contract existed. That fact — alone — separates this from every other pitch they will ever receive.</li>
+      <li><span class="gl-bullet gold">→</span>The first 30 minutes are about listening, not presenting. The quality of your questions determines the quality of your close.</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  PART II — DELIVERY PRINCIPLES                       -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="part2" class="part-header">
+  <div class="part-num">II</div>
+  <div class="part-info">
+    <div class="part-label">PART TWO</div>
+    <div class="part-title">Delivery Principles — How to Present</div>
+  </div>
+</div>
+
+<div class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">THE FIVE FUNDAMENTALS</div>
+      <div class="slide-title-text">How You Deliver Is As Important As What You Say</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div class="principles-grid">
+      <div class="principle-card">
+        <div class="principle-num">01</div>
+        <div class="principle-body">
+          <div class="principle-title">PACE — Always Slower</div>
+          <div class="principle-text">Nervousness accelerates speech. Consciously slow down. Pause after every key statistic. Two seconds of silence after "ZERO local competitors" is worth more than any sentence that follows it.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">02</div>
+        <div class="principle-body">
+          <div class="principle-title">POSTURE — Open &amp; Still</div>
+          <div class="principle-text">Upright. Hands visible. No crossed arms. Do not fidget with the laptop. Do not sway. Stillness reads as authority. Your body language is communicating before your voice does.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">03</div>
+        <div class="principle-body">
+          <div class="principle-title">EYE CONTACT — To Them</div>
+          <div class="principle-text">80% of your eye contact goes to the client — not the screen. Glance at the slide to cue the transition, then return to them. The slide is support. You are the presentation.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">04</div>
+        <div class="principle-body">
+          <div class="principle-title">SILENCE — Weaponize It</div>
+          <div class="principle-text">After a powerful number or claim — stop talking. Let it sit. The discomfort you feel in that silence is exactly what makes it work. The next person who speaks owns the moment. Make it them.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">05</div>
+        <div class="principle-body">
+          <div class="principle-title">LISTEN — To Their Reactions</div>
+          <div class="principle-text">Read them in real time. A nod means they agree — build on it. A frown means confusion or concern — address it immediately. The best presenters are also the best observers in the room.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">06</div>
+        <div class="principle-body">
+          <div class="principle-title">VOICE — Lower and Project</div>
+          <div class="principle-text">Lower pitch signals authority. High pitch signals nervousness. Project from the chest, not the throat. Vary pace — speed up slightly on supporting detail, slow down on key claims and numbers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-card critical">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">ABSOLUTE RULES</div>
+      <div class="slide-title-text">What You Must Never Do</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <ul class="guide-list">
+      <li><span class="gl-bullet red">✗</span>Never say "Um," "basically," "honestly," or "like" — pause instead. One conscious pause is worth ten filler words.</li>
+      <li><span class="gl-bullet red">✗</span>Never apologize for the material. Not once. Not for the length, not for a number, not for a correction. Own everything.</li>
+      <li><span class="gl-bullet red">✗</span>Never look at the screen for more than 3 consecutive seconds. Eyes back to the client.</li>
+      <li><span class="gl-bullet red">✗</span>Never answer a question before they have finished asking it. Wait. Breathe. Then respond.</li>
+      <li><span class="gl-bullet red">✗</span>Never fill silence after asking for the decision. You have asked. Now wait. The next word spoken is theirs.</li>
+      <li><span class="gl-bullet red">✗</span>Never check your phone — not once, not even while they are reading the slide.</li>
+      <li><span class="gl-bullet red">✗</span>Never volunteer bad news you haven't been asked about. The nutritional panel blocker is known — acknowledge it if raised, do not raise it first.</li>
+      <li><span class="gl-bullet red">✗</span>Never over-explain a complete answer. Say the answer. Stop. Silence signals confidence, not incompleteness.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="slide-card positive">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">IF INTERRUPTED OR CHALLENGED</div>
+      <div class="slide-title-text">Recovery &amp; Composure Protocols</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <span class="block-label lbl-say">WHEN INTERRUPTED MID-SLIDE</span>
+    <div class="opening-words" style="margin-bottom:10px;">
+      <p>"Good question — let me address that now. We have a slide coming that covers exactly this — would you like to go there directly, or shall I answer briefly and we continue the flow?"</p>
+    </div>
+    <span class="block-label lbl-say">WHEN YOU DON'T KNOW THE ANSWER</span>
+    <div class="opening-words" style="margin-bottom:10px;">
+      <p>"I want to give you the right number on that — I'll verify and have it to you by tomorrow morning. What I can tell you right now is [related point you do know]."</p>
+    </div>
+    <span class="block-label lbl-say">WHEN THEY SEEM DISENGAGED</span>
+    <div class="opening-words">
+      <p>"Before I continue — does this resonate with the direction you had in mind? I want to make sure we're covering what matters most to you."</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  PART III — NUMBERS TO MEMORIZE                      -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="part3" class="part-header">
+  <div class="part-num">III</div>
+  <div class="part-info">
+    <div class="part-label">PART THREE</div>
+    <div class="part-title">Numbers to Memorize — No Exceptions</div>
+  </div>
+</div>
+
+<div class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">MEMORIZED NUMBERS — TIER 2 (RECOMMENDED)</div>
+      <div class="slide-title-text">These Must Come Without Looking at the Screen</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div class="numbers-grid">
+      <div class="number-card">
+        <span class="nval">$42,000</span>
+        <span class="ndesc">Total Tier 2 investment (Standard Launch)</span>
+      </div>
+      <div class="number-card amber">
+        <span class="nval" style="color:var(--amber);">Month 8–11</span>
+        <span class="ndesc">Breakeven timeline — Tier 2 corrected</span>
+      </div>
+      <div class="number-card green">
+        <span class="nval" style="color:var(--green-br);">55–62%</span>
+        <span class="ndesc">Gross margin — corrected v2.0 at $4.50 RRP</span>
+      </div>
+      <div class="number-card green">
+        <span class="nval" style="color:var(--green-br);">$9K–$14K</span>
+        <span class="ndesc">Month 6 revenue — conservative base case</span>
+      </div>
+      <div class="number-card green">
+        <span class="nval" style="color:var(--green-br);">$40K–$65K</span>
+        <span class="ndesc">Month 12 revenue — Tier 2 projection</span>
+      </div>
+      <div class="number-card">
+        <span class="nval">~265%</span>
+        <span class="ndesc">Year 1 ROI — v2.0 corrected Tier 2</span>
+      </div>
+    </div>
+    <div class="alert-box">
+      <div class="alert-icon">⚠</div>
+      <div class="alert-text">The Q&amp;A slide notes reference older (pre-correction) Tier 2 numbers ($161K gross profit, 280% ROI). <strong>Always use the v2.0 corrected figures above.</strong> These are the numbers presented on the Financial Corrections slide and they are the ones you must defend if challenged.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">ALL THREE TIERS — SUMMARY</div>
+      <div class="slide-title-text">Know All Scenarios — Client May Ask About Any</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <div class="numbers-grid">
+      <div class="number-card" style="border-top-color:var(--green-br);">
+        <span class="nval" style="color:var(--green-br);">$18,500</span>
+        <span class="ndesc">Tier 1 — Lean Launch. Breakeven Month 9–12. 30 accounts. Viable minimum.</span>
+      </div>
+      <div class="number-card" style="border-top-color:var(--gold-br);">
+        <span class="nval" style="color:var(--gold-br);">$42,000</span>
+        <span class="ndesc">Tier 2 — Standard Launch. ★ RU2YA RECOMMENDED. 80 accounts. Full brand system.</span>
+      </div>
+      <div class="number-card amber">
+        <span class="nval" style="color:var(--amber);">$82,000</span>
+        <span class="ndesc">Tier 3 — Full Market Entry. Breakeven Month 5–7. 130+ accounts. Maximum velocity.</span>
+      </div>
+    </div>
+    <div class="numbers-grid" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+      <div class="number-card" style="padding:10px 12px;">
+        <span class="nval" style="font-size:14px; color:var(--gold);">$4.50</span>
+        <span class="ndesc">Corrected RRP (Jack Link's: $5.62)</span>
+      </div>
+      <div class="number-card" style="padding:10px 12px;">
+        <span class="nval" style="font-size:14px; color:var(--gold);">$1.20</span>
+        <span class="ndesc">Cost of Goods (COGS) per unit</span>
+      </div>
+      <div class="number-card" style="padding:10px 12px;">
+        <span class="nval" style="font-size:14px; color:var(--gold);">$3.15</span>
+        <span class="ndesc">Wholesale revenue (30% gym margin)</span>
+      </div>
+      <div class="number-card" style="padding:10px 12px;">
+        <span class="nval" style="font-size:14px; color:var(--gold);">61.9%</span>
+        <span class="ndesc">Gross margin at corrected price</span>
+      </div>
+    </div>
+    <div class="numbers-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="number-card" style="padding:10px 12px;">
+        <span class="nval" style="font-size:14px; color:var(--green-br);">ZERO</span>
+        <span class="ndesc">Local Lebanese beef jerky brands — confirmed field research</span>
+      </div>
+      <div class="number-card" style="padding:10px 12px;">
+        <span class="nval" style="font-size:14px; color:var(--green-br);">82.6%</span>
+        <span class="ndesc">MENA sports nutrition purchases are brick-and-mortar</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  PART IV — SLIDE-BY-SLIDE REFERENCE                  -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div id="part4" class="part-header">
+  <div class="part-num">IV</div>
+  <div class="part-info">
+    <div class="part-label">PART FOUR</div>
+    <div class="part-title">Slide-by-Slide Reference Guide</div>
+  </div>
+</div>
+
+<div class="alert-box">
+  <div class="alert-icon">★</div>
+  <div class="alert-text">Navigation reminders: <strong>Arrow keys or Spacebar</strong> to advance. <strong>SLIDES button</strong> at top to jump to any slide. <strong>N key</strong> to toggle presenter notes. Screen progress bar shows how far through the deck you are.</div>
+</div>
+
+<!-- ── SLIDE 1: COVER ── -->
+<div id="s01" class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 01 · COVER</div>
+      <div class="slide-title-text">STRIKE BITES — Lebanon's First Premium Beef Jerky Brand</div>
+    </div>
+    <div class="slide-timing">30 SECONDS</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING — BEFORE YOU SPEAK</span>
+      <div class="listen-box">
+        <p>Let the cover slide sit for 5 full seconds before you say anything. Let them read: <em>10 Deliverables Ready · 88/100 Brand Score · 38-Step Launch Plan · 3 Financial Scenarios · $0 Local Competition.</em> Each tag is a statement. Let them land.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-open">FIRST WORDS</span>
+      <div class="opening-words">
+        <p>"Thank you for making the time. What you are looking at is a project we started building before this meeting — ten completed documents, a full financial plan, a brand already designed and scored. But before we open any of it, we want to hear from you."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">ADVANCE TO NEXT SLIDE</span>
+      <div class="transition-box">
+        <p>Move directly to the Listen slide. Do not present. Do not explain the deck structure. The first 20–30 minutes belong to them.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 2: LISTEN ── -->
+<div id="s02" class="slide-card key" style="border-left-color:var(--gold-br); border-left-width:6px;">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 02 · LISTEN — DISCOVERY PHASE</div>
+      <div class="slide-title-text">Before We Present — We Listen</div>
+    </div>
+    <div class="slide-timing">20–30 MIN — DO NOT RUSH</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">WHAT THIS SLIDE IS FOR</span>
+      <div class="emphasis-box">
+        <p>This is the single most important slide in the deck. <strong>Do not advance until you have genuinely listened.</strong> Every answer the client gives here reshapes which parts of the deck you emphasize in the next 60 minutes. Take physical notes on the notepad. Ask follow-up questions.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE</span>
+      <div class="opening-words">
+        <p>"Before we open any slides — we want to understand your story, your intentions, and what success looks like to you. Everything we present afterward will be more relevant because of this conversation."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">SIX QUESTIONS TO ASK — TAKE NOTES ON EACH</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">Q1</span>"How did the idea of beef jerky first come to you? What was the moment you decided this was worth pursuing?"</li>
+        <li><span class="gl-bullet gold">Q2</span>"What do you already have in place? Manufacturer contacts, brand ideas, capital, distribution relationships — what exists today?"</li>
+        <li><span class="gl-bullet gold">Q3</span>"What does success look like in 12 months? In three years? Is this a lifestyle business or a brand you want to scale regionally?"</li>
+        <li><span class="gl-bullet gold">Q4</span>"What worries you most about this venture? What has stopped you from moving forward faster up to now?"</li>
+        <li><span class="gl-bullet gold">Q5</span>"What kind of partner are you looking for — someone to execute fully on your behalf, or someone to advise while you drive operations yourself?"</li>
+        <li><span class="gl-bullet gold">Q6</span>"Do you have a budget range in mind for the launch phase? No wrong answer — it shapes which plan we present to you."</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">INTELLIGENCE TO CAPTURE</span>
+      <div class="emphasis-box">
+        <p>If they mention a manufacturer — ask the name. Write it down. Reference it later.<br>
+        If they mention a budget number — write it down and reference it when presenting tiers.<br>
+        If they reveal a fear — address it directly when you reach the relevant section.<br>
+        If they name a competitor they know — acknowledge it. Do not dismiss it.<br>
+        Their emotions here are the map to your close.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-avoid">WHAT TO AVOID</span>
+      <div class="avoid-box">
+        <p>Do not rush this phase to get to the slides. Do not interrupt. Do not give partial answers about the plan — save that for the presentation. If they try to move forward early ("show me what you have"), gently redirect: "We will — and I want to make sure what we show you is as relevant as possible. One more question..."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION TO PRESENTATION</span>
+      <div class="transition-box">
+        <p>"Thank you — that context changes how we want to walk through this. Let me show you what we found when we researched your market. Some of it will surprise you." → Advance to §01 section slide.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 01 TRANSITION ── -->
+<div class="section-transition">
+  <div class="st-badge">§01</div>
+  <div class="st-body">
+    <div class="st-label">SECTION DIVIDER — 15 SECONDS</div>
+    <div class="st-title">THE OPPORTUNITY</div>
+    <div class="st-words">"Let us now show you what we found when we researched your market. Some of it will surprise you."</div>
+  </div>
+  <div class="st-time">15 sec</div>
+</div>
+
+<!-- ── SLIDE 4: MARKET ── -->
+<div id="s03" class="slide-card positive">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 04 · MARKET — THE OPPORTUNITY</div>
+      <div class="slide-title-text">An Empty Category in a Growing Market</div>
+    </div>
+    <div class="slide-timing">4 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE</span>
+      <div class="opening-words">
+        <p>"When you walk into any gym or nutrition store in Lebanon today — can you buy a locally made beef jerky brand? The answer is no. That is not a gap. That is an open category waiting for its owner."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">LEAD WITH ZERO — LET IT BREATHE</span>
+      <div class="emphasis-box">
+        <p>Point to the ZERO stat on screen. <strong>Say nothing for 5 full seconds.</strong> Then ask the room: <em>"When did you last walk into a Lebanese gym and see a locally made beef jerky on the counter?"</em> The silence confirms the opportunity better than any sentence you could deliver.</p>
+      </div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-val" style="font-size:22px;">ZERO</span>
+        <span class="stat-lab">Local beef jerky brands in Lebanon — field confirmed</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val">$1.04B</span>
+        <span class="stat-lab">ME sports nutrition market · +7.3% CAGR to 2033</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val">82.6%</span>
+        <span class="stat-lab">MENA sports nutrition is brick-and-mortar</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-val">$8.49B</span>
+        <span class="stat-lab">GCC snacks market 2024 → $12.87B by 2030</span>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">TALKING POINTS</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span>82.6% brick-and-mortar validates every strategic choice in this plan. This is not a conservative approach — it is the statistically correct one for Lebanon.</li>
+        <li><span class="gl-bullet gold">→</span>The GCC figure is not a future aspiration — it is the market STRIKE is being designed for from day one.</li>
+        <li><span class="gl-bullet gold">→</span>Sources: Grand View Research 2024, Precedence Research, Cognitive Market Research, RU2YA field research — all verifiable if challenged.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"The market is there. But the question is timing. Let me show you why the window is open right now — and why it will not stay open." → Advance to Why Now.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 5: WHY NOW ── -->
+<div class="slide-card warning">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 05 · WHY NOW — THE WINDOW</div>
+      <div class="slide-title-text">Why Lebanon. Why Now.</div>
+    </div>
+    <div class="slide-timing">3 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE</span>
+      <div class="opening-words">
+        <p>"First-mover advantage in a category is not permanent. The window is open right now. But successful categories attract imitators within 12 to 18 months of launch — and we have confirmed that one of them is already approaching."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">KEY POINTS — LEFT COLUMN (THE TAILWINDS)</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span>Lebanese fitness culture is expanding — gyms, CrossFit, boutique studios proliferating across Beirut, Metn, Keserwan, Jounieh.</li>
+        <li><span class="gl-bullet gold">→</span>Health-conscious youth aged 18–40 actively tracking macros — protein content is now the primary purchase driver, not flavor alone.</li>
+        <li><span class="gl-bullet gold">→</span>USD-denominated market post-2019 creates pricing stability for a premium brand — a structural advantage in a volatile economy.</li>
+        <li><span class="gl-bullet gold">→</span>"Made in Lebanon" carries premium weight in UAE and Saudi Arabia — the provenance story becomes a GCC marketing asset automatically.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">URGENCY ARGUMENT — DELIVER THIS DIRECTLY</span>
+      <div class="emphasis-box">
+        <p><strong>Wild West Halal</strong> launched their Halal beef jerky line in January 2024 from their Forres, Scotland facility. As of June 2026, they are confirmed in Carrefour, Spinneys, and Lulu in UAE. <strong>Lebanon is next.</strong> When Wild West enters Lebanon, STRIKE's first-mover window closes permanently. Every week of decision delay is a week closer to that outcome.<br><br>
+        Say directly: <em>"Every week of delay on the decisions we are asking for today is a week closer to someone else discovering what RU2YA has already confirmed through research."</em></p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"Now — let us show you exactly what we built while that window was still open." → Advance to §02 section slide.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 02 TRANSITION ── -->
+<div class="section-transition">
+  <div class="st-badge">§02</div>
+  <div class="st-body">
+    <div class="st-label">SECTION DIVIDER — 15 SECONDS</div>
+    <div class="st-title">WHAT WE BUILT</div>
+    <div class="st-words">"Before we talked about working together, we built the entire business case. Let me show you exactly what exists today and what is ready to use the moment you decide to move forward."</div>
+  </div>
+  <div class="st-time">15 sec</div>
+</div>
+
+<!-- ── SLIDE 7: DELIVERABLES ── -->
+<div id="s06" class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 07 · DELIVERED — WHAT WE BUILT</div>
+      <div class="slide-title-text">Built Before You Said Yes — Ten Deliverables Ready</div>
+    </div>
+    <div class="slide-timing">6 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE</span>
+      <div class="opening-words">
+        <p>"These are not slides. Not outlines. Every one of these is a completed, referenced, institutional-quality document. Let me walk you through what exists today."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">HOW TO PRESENT THIS SLIDE</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span>Click through 2–3 deliverables slowly on the left panel. Let the client read the status line ("COMPLETE — READY FOR DESIGNER") and the tags. Do not rush.</li>
+        <li><span class="gl-bullet gold">→</span>On each one you click, read the status out loud. Let "COMPLETE" repeat. It compounds.</li>
+        <li><span class="gl-bullet gold">→</span>Do not click through all 10 mechanically. Pick the ones most relevant to what the client revealed during the listening phase.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">THE MOST POWERFUL THING IN THE ROOM</span>
+      <div class="emphasis-box">
+        <p>The weight of <strong>10 completed deliverables before a contract exists</strong> is the most powerful proof of commitment you can present. No other advisory firm in Lebanon has done this. Do not rush past it. Pause between deliverables. Let the volume of completed work accumulate in the room.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">CLOSING LINE FOR THIS SLIDE</span>
+      <div class="opening-words">
+        <p>"Every one of these exists today. If you confirm the mandate after this meeting, your designer can be briefed tomorrow morning and your manufacturer can receive the flavor brief this week."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">IF THEY ASK TO SEE A SPECIFIC DELIVERABLE</span>
+      <div class="listen-box">
+        <p>Say yes immediately. You have all of them. Offer to open the relevant document, walk through it in detail, or leave it with them at the end of the meeting. Never say "I don't have that with me."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"One of those deliverables is the brand. We did not wait for a mandate to name your brand. Let us show you what we built and how we scored it." → Advance to §03.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 03 TRANSITION ── -->
+<div class="section-transition">
+  <div class="st-badge">§03</div>
+  <div class="st-body">
+    <div class="st-label">SECTION DIVIDER — 15 SECONDS</div>
+    <div class="st-title">THE BRAND</div>
+    <div class="st-words">"We did not wait for a mandate to name your brand. We researched it, scored it against seven criteria, and we have a recommendation that rates 88 out of 100."</div>
+  </div>
+  <div class="st-time">15 sec</div>
+</div>
+
+<!-- ── SLIDE 9: BRAND ── -->
+<div id="s08" class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 09 · BRAND — STRIKE, ALREADY BUILT</div>
+      <div class="slide-title-text">STRIKE — Your Brand, Already Built</div>
+    </div>
+    <div class="slide-timing">5 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE</span>
+      <div class="opening-words">
+        <p>"STRIKE is not a name we suggested casually. It is a name we researched against seven criteria, tested for trademark viability in Lebanon and across the GCC, evaluated in Arabic, English, and French — and rated at 92 out of 100."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">KEY POINTS TO MAKE</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span>Single syllable. Universal pronunciation in Arabic, English, and French — سترايك. Functions as both a verb and a noun simultaneously.</li>
+        <li><span class="gl-bullet gold">→</span>Brand architecture scales: STRIKE BITES → STRIKE STRIPS → STRIKE STICKS → STRIKE PACKS. Every future format is pre-architected. No competitor has this system.</li>
+        <li><span class="gl-bullet gold">→</span>Visual system: obsidian dark base, performance gold accent, matte laminate finish. Premium at shelf without over-designed clutter.</li>
+        <li><span class="gl-bullet gold">→</span>Halal badge — Dar Al-Fatwa, forest green, front panel top right — is recognized across the GCC from day one. No reformulation needed for export.</li>
+        <li><span class="gl-bullet gold">→</span>Trilingual packaging: Arabic regulatory primary, English commercial, French market tertiary. No imported competitor does this. Structural shelf authority in Lebanon.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">THE SCORE IS REAL AND DEFENSIBLE</span>
+      <div class="emphasis-box">
+        <p>88/100 overall. 92/100 for the name STRIKE. Most brands launch with a 70. <strong>If they ask how it was scored — explain the methodology.</strong> Seven criteria, element-by-element, with comparisons to rejected alternatives. The rigor of the scoring reflects the rigor behind all RU2YA work. This is not a mood board. This is a brand study.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">THE MOST IMPORTANT MOMENT ON THIS SLIDE</span>
+      <div class="listen-box">
+        <p>After walking through STRIKE and STRIKE BITES, ask: <em>"Does this feel right to you?"</em> Then pause. Let them react. Their emotional response — positive or hesitant — tells you exactly how to calibrate the rest of the presentation and the close. Do not fill the silence.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"Now — a brand only matters if it wins at shelf. Let me show you exactly who is in this market and where STRIKE stands relative to each of them." → Advance to §COMP.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION COMP TRANSITION ── -->
+<div class="section-transition">
+  <div class="st-badge">§C</div>
+  <div class="st-body">
+    <div class="st-label">SECTION DIVIDER — 15 SECONDS</div>
+    <div class="st-title">THE COMPETITIVE LANDSCAPE</div>
+    <div class="st-words">"Before the plan — let us show you exactly who is in this market and what RU2YA found when we went out and priced everything ourselves. Some of what we found will change how you think about this opportunity."</div>
+  </div>
+  <div class="st-time">15 sec</div>
+</div>
+
+<!-- ── SLIDE 11: LANDSCAPE ── -->
+<div id="s10" class="slide-card critical">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 11 · LANDSCAPE — FULL MARKET MAP</div>
+      <div class="slide-title-text">Every Competitor in Lebanon — Field-Mapped by RU2YA</div>
+    </div>
+    <div class="slide-timing">5 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-say">HOW TO NAVIGATE THIS SLIDE</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span>Click through all three tabs. Spend the most time on <strong>Tab 2 — Local / Regional Protein-Branded Snacks.</strong></li>
+        <li><span class="gl-bullet gold">→</span>Tab 1 (Imported Jerky): Jack Link's at $5.62 confirms your $4.50 ceiling is correct. Country Archer at $6–8 is the premium imported ceiling. Wild West is the strategic threat.</li>
+        <li><span class="gl-bullet gold">→</span>Tab 2 (Local): Ask the room — "What is the protein source in Halo? In Raw Bites?" Answer: puffed corn and peas. Plant protein. STRIKE delivers beef.</li>
+        <li><span class="gl-bullet gold">→</span>Tab 3 (Global Bars): Quest is Mushbooh — not halal-cleared. Barebells has mixed halal status by SKU. STRIKE is unambiguous.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">THREE CRITICAL DISTINCTIONS TO DELIVER</span>
+      <div class="emphasis-box">
+        <p><strong>1. Halo and Raw Bites are plant-based.</strong> They are marketed as "protein snacks" but deliver corn and pea protein — no heme iron, no creatine, no B12, no complete amino acid profile. STRIKE delivers beef. This is a fundamentally different category and a fundamentally superior protein source for the gym buyer.<br><br>
+        <strong>2. Wild West Halal is heading to Lebanon.</strong> Confirmed in UAE: Carrefour, Spinneys, Lulu. Lebanon is the next logical market. STRIKE's first-mover window is measured in months, not years. Say this directly.<br><br>
+        <strong>3. MAK Bar has 700 outlets.</strong> They proved Lebanese consumers will pay for locally-made protein snacks in modern trade. STRIKE enters the same shelf as the only meat-based option — a category no one occupies today.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">A CUP — HANDLE WITH ACCURACY</span>
+      <div class="listen-box">
+        <p>A Cup is a genuinely good Lebanese brand with 25g protein per cup, $2.29, in Carrefour and Spinneys since 2016. Acknowledge it. Then say: "A Cup is what you eat after dinner. STRIKE is what you eat on the way to the gym. Different product, different occasion, different shelf — no direct competition."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"Now let me put this on one table — seven criteria, every competitor, one matrix. The picture becomes very clear." → Advance to MATRIX slide.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 12: MATRIX ── -->
+<div class="slide-card critical">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 12 · MATRIX — HEAD-TO-HEAD COMPARISON</div>
+      <div class="slide-title-text">Head-to-Head — Seven Criteria That Decide the Sale</div>
+    </div>
+    <div class="slide-timing">4 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-say">HOW TO PRESENT THE MATRIX</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span>Walk the matrix row by row. Name each criterion. Note openly where A Cup wins (Price + Local Production) — they are a legitimately good brand in a completely different format.</li>
+        <li><span class="gl-bullet gold">→</span>On the Halal row: "Jack Link's gets partial credit — FAMBRAS certification on European packs. A Lebanese Muslim consumer cannot verify this at the shelf. STRIKE is certified by Lebanon's own Dar Al-Fatwa."</li>
+        <li><span class="gl-bullet gold">→</span>On the price row: "Jack Link's: $5.15 to $5.62. Country Archer: $6 to $8. STRIKE: $2.50 to $3.50. We are 40 to 55% cheaper and superior on five other criteria. This combination is structurally impossible for any imported brand to replicate."</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-open">CLOSING LINE — DELIVER THEN STOP</span>
+      <div class="opening-words">
+        <p>"Seven criteria. Seven wins for STRIKE. No competitor holds more than three simultaneously. That is not a competitive gap — that is a structural vacuum."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-avoid">THEN STOP TALKING</span>
+      <div class="avoid-box">
+        <p>After "structural vacuum" — pause. Do not add another sentence. Do not ask if they have questions yet. Let the completeness of the matrix do the work. Then advance to §04.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"Now — the plan. From today's meeting to your first sale, and beyond." → Advance to §04 section slide.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 04 TRANSITION ── -->
+<div class="section-transition">
+  <div class="st-badge">§04</div>
+  <div class="st-body">
+    <div class="st-label">SECTION DIVIDER — 15 SECONDS</div>
+    <div class="st-title">THE PLAN</div>
+    <div class="st-words">"A to Z. Phase 0 through Phase 4. 38 steps. Nothing improvised, nothing left to chance. Let us show you exactly how we take this from today's meeting to your first sale — and beyond."</div>
+  </div>
+  <div class="st-time">15 sec</div>
+</div>
+
+<!-- ── SLIDE 14: ROADMAP ── -->
+<div id="s13" class="slide-card positive">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 14 · ROADMAP — PHASE BY PHASE</div>
+      <div class="slide-title-text">Full Launch Roadmap — Phase 0 Through Phase 4</div>
+    </div>
+    <div class="slide-timing">6 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE</span>
+      <div class="opening-words">
+        <p>"Every action in this plan is sequenced. There is a reason Phase 0 comes before Phase 2. The structure before the product — because every dollar you invest afterward is protected by the legal entity, the regulatory approval, and the brand identity that come first."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">PHASE BY PHASE — WHAT TO EMPHASIZE</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span><strong>Phase 0–1 (Foundation):</strong> SARL registration begins this week. IP lawyer engaged for Class 29 + 35 trademark clearance for STRIKE. MoPH registration is a 2–4 month lead time — it must start immediately, not after branding. Halal certification: 3–6 weeks with Dar Al-Fatwa.</li>
+        <li><span class="gl-bullet gold">→</span><strong>Phase 2 (Launch):</strong> First 20–30 gym and sports nutrition accounts. Every first order is sale-or-return. Zero financial risk to any buyer. Personal display setup by RU2YA at every account on delivery day. Bi-weekly check-ins.</li>
+        <li><span class="gl-bullet gold">→</span><strong>Phase 3 (Expand):</strong> Modern trade approach — Spinneys, TSC, Bou Khalil, Fahed — only after 12 weeks of verified sell-through data. Numbers open doors that relationships alone cannot.</li>
+        <li><span class="gl-bullet gold">→</span><strong>Phase 4 (Scale):</strong> GCC export — UAE first. "Made in Lebanon" is a premium signal. Halal certification already recognized. No reformulation needed.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">WHAT TO SAY IF THEY HAVE EXISTING MANUFACTURER CONTACTS</span>
+      <div class="emphasis-box">
+        <p>"Your contacts cut our Phase 2 timeline by 4–6 weeks versus any other entrant coming into this market cold. Every relationship you bring accelerates the plan — it is an asset we factor in immediately." This connects the intelligence from the listening phase directly to the roadmap.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">THE TRAINER AMBASSADOR PROGRAM</span>
+      <div class="emphasis-box">
+        <p>The STRIKE TEAM — 20 founding personal trainers as brand ambassadors — is the highest-leverage single activation in the entire plan. Say: <em>"Twenty trainers who believe in the product are twenty salespeople who work without a salary. Every recommendation to a client is a sale RU2YA didn't have to make."</em></p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"The plan is built. Now the question is what it costs — and what you get back. Let us walk through every scenario." → Advance to §05.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 05 TRANSITION ── -->
+<div class="section-transition">
+  <div class="st-badge">§05</div>
+  <div class="st-body">
+    <div class="st-label">SECTION DIVIDER — 15 SECONDS</div>
+    <div class="st-title">THE FINANCIAL PLAN</div>
+    <div class="st-words">"Every figure in this plan is derived from actual channel margins, competitive pricing in Lebanon, and realistic sell-through assumptions. We will not put a projection in front of you that we cannot defend number by number."</div>
+  </div>
+  <div class="st-time">15 sec</div>
+</div>
+
+<!-- ── SLIDE 16: FINANCIALS ── -->
+<div id="s15" class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 16 · FINANCIALS — THREE SCENARIOS</div>
+      <div class="slide-title-text">Investment, Return &amp; ROI — Three Scenarios</div>
+    </div>
+    <div class="slide-timing">7 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING — ALWAYS LEAD WITH TIER 2</span>
+      <div class="opening-words">
+        <p>"We recommend Tier 2 as the reference point. This is where serious commercial intent meets financial discipline — enough capital to do this right, not more than you need to prove the concept."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">WALK THROUGH ALL THREE TIERS — SAY THESE OUT LOUD</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span><strong>Tier 1 — $18,500:</strong> Viable minimum. 30 accounts, 1 SKU, basic brand identity. Breakeven Month 9–12. Risk: packaging may appear underfunded relative to Jack Link's and Wild West on the same shelf.</li>
+        <li><span class="gl-bullet gold">→</span><strong>Tier 2 — $42,000 (Recommended):</strong> Full brand identity system, 2 SKUs, 80 accounts, 2 production batches. Breakeven Month 8–11. Gross margin 55–62%. Month 12 revenue $40K–$65K.</li>
+        <li><span class="gl-bullet gold">→</span><strong>Tier 3 — $82,000:</strong> Maximum market capture velocity. 130+ accounts, 3 SKUs, dedicated sales rep 6 months. Breakeven Month 5–7. Month 12 revenue $80K–$130K.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">THE QUESTION — THEN SILENCE</span>
+      <div class="emphasis-box">
+        <p>After presenting all three tiers, ask directly: <strong>"Which scenario matches where you are right now?"</strong><br><br>
+        Then stop talking. Do not add qualifiers. Do not soften. Let the room decide. If there is silence, hold it. Do not renegotiate before they have responded. The next word spoken belongs to them.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-avoid">DO NOT DO THIS</span>
+      <div class="avoid-box">
+        <p>Do not recommend all three as equally good options. You have a recommendation. Lead with Tier 2. Say it is recommended. Then present the alternatives as context — not as equally valid choices.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"Before you hold any of those numbers — we want to show you that we have already done the quality control on them. Six corrections were applied to the original model. Two of the corrections improve the investment case." → Advance to CORRECTIONS.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 17: CORRECTIONS ── -->
+<div class="slide-card warning">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 17 · CORRECTIONS — FINANCIAL MODEL v2.0</div>
+      <div class="slide-title-text">Financial Model — Six Corrections Applied</div>
+    </div>
+    <div class="slide-timing">4 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE — LEAD WITH CONFIDENCE</span>
+      <div class="opening-words">
+        <p>"Before you hold any of those numbers — we have already applied six corrections to the original model. That is what rigorous financial modeling looks like. Here is what changed and why — and two of the corrections actually improve the investment case."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">THE SIX CORRECTIONS — WALK THROUGH IN ORDER</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet amber">1</span><strong>Retail Price (CRITICAL):</strong> Original $3.00–3.50 → Corrected $4.50. Jack Link's sells at $5.62. STRIKE's correct floor is $4.00 minimum. This correction improves margins significantly.</li>
+        <li><span class="gl-bullet amber">2</span><strong>M6 Revenue (HIGH):</strong> Original $18K–$28K → Revised $9K–$14K. Conservative recalibration based on 1.5 units/day across 70 accounts. $18K is retained as the upside scenario — not eliminated.</li>
+        <li><span class="gl-bullet green">3</span><strong>Gross Margin (REVISED UP):</strong> 48–55% → 55–62%. The price correction is favorable. At $4.50 RRP and $1.20 COGS, gross margin is 61.9% — above the original target.</li>
+        <li><span class="gl-bullet amber">4</span><strong>Breakeven (REVISED):</strong> Month 5–7 → Month 8–11. Revenue ramp recalibrated. Month 12 projections unchanged — achievable if traction materializes.</li>
+        <li><span class="gl-bullet amber">5</span><strong>MoPH Fee (OPEN):</strong> No published schedule. A written quote from MoPH Food Safety has been requested. Working placeholder: part of regulatory budget.</li>
+        <li><span class="gl-bullet amber">6</span><strong>GS1 Fee (OPEN):</strong> No published schedule. Contact made with GS1 Lebanon. Working placeholder: $150–$300 registration + $200–$500/yr.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">THE FRAME — CORRECTIONS STRENGTHEN THE CASE</span>
+      <div class="emphasis-box">
+        <p>The MoPH and GS1 open items are administrative — they do not affect the investment thesis, only two line items in the regulatory budget. Acknowledge them and move on. <strong>Lead with the upside:</strong> the pricing correction delivers better gross margin than originally modeled. This is a more robust and defensible plan than the v1.0 model. That is a strength, not a weakness.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"The opportunity is real. The brand is built. The plan is sequenced. The financials are corrected and defensible. Now — why is RU2YA the right partner to execute all of this, and only RU2YA?" → Advance to §06.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION 06 TRANSITION ── -->
+<div class="section-transition">
+  <div class="st-badge">§06</div>
+  <div class="st-body">
+    <div class="st-label">SECTION DIVIDER — 15 SECONDS</div>
+    <div class="st-title">WHY RU2YA AND ONLY RU2YA</div>
+    <div class="st-words">"Seven structural advantages. Each one a reason your business will not find this partnership anywhere else in Lebanon."</div>
+  </div>
+  <div class="st-time">15 sec</div>
+</div>
+
+<!-- ── SLIDE 19: WHY RU2YA ── -->
+<div id="s18" class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 19 · WHY RU2YA — 7 STRUCTURAL ADVANTAGES</div>
+      <div class="slide-title-text">Why Work With RU2YA — And Nobody Else</div>
+    </div>
+    <div class="slide-timing">7 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">MINDSET ENTERING THIS SLIDE</span>
+      <div class="listen-box">
+        <p>This is not modesty time. You built 10 deliverables before a contract existed. You have earned the right to speak directly. Present each reason with full confidence — not as a sales pitch, but as a statement of demonstrated fact.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">THE 7 REASONS — IN ORDER OF IMPACT</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">01</span><strong>We Delivered Before You Decided.</strong> Ten institutional-quality documents before you signed anything. No other advisory firm in Lebanon has done this. This is what committed partners do before a contract exists. (Most impactful — spend the most time here.)</li>
+        <li><span class="gl-bullet gold">02</span><strong>We Know Lebanon's Channels Cold.</strong> 82.6% of sports nutrition purchases in MENA are brick-and-mortar. The handshake closes the deal in Lebanon — not Instagram. We built the outreach system and wrote every script specifically for Lebanese retail culture.</li>
+        <li><span class="gl-bullet gold">03</span><strong>We Execute — We Don't Just Advise.</strong> RU2YA visits accounts personally, sets up displays personally, trains store staff personally, checks in bi-weekly personally. You make the decisions. We make them happen.</li>
+        <li><span class="gl-bullet gold">04</span><strong>Milestone-Gated Financial Accountability.</strong> Budget released by phase. Phase 0 funds after legal entity formed. Phase 1 after brand identity approved. Phase 2 after first batch sells through. You never commit full capital before results are demonstrated. (Most reassuring to a careful founder.)</li>
+        <li><span class="gl-bullet gold">05</span><strong>We Built Your Brand Already.</strong> STRIKE is named, scored, designed, and trademark-checked. Your designer can be briefed tomorrow.</li>
+        <li><span class="gl-bullet gold">06</span><strong>You Own Everything We Create.</strong> Every deliverable transfers to you upon final payment. Unconditional ownership. If you ever move on without RU2YA — you take everything with you.</li>
+        <li><span class="gl-bullet gold">07</span><strong>We Think in GCC from Day One.</strong> Halal from Dar Al-Fatwa is GCC-recognized. STRIKE PACKS for hypermarket entry is already in the product architecture. No reformulation needed for any GCC market.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">EMPHASIS POINTS — DELIVER THESE DIRECTLY</span>
+      <div class="emphasis-box">
+        <p><strong>On Reason 06 (IP Ownership):</strong> "You own everything we create. Unconditionally. If you ever move on without RU2YA — you take every document, every design, every spec with you. That is how RU2YA works." This is almost always the most reassuring statement in this section.<br><br>
+        <strong>On Reason 04 (Milestone-Gated):</strong> "We earn when you progress — not when we sit in meetings. If milestones are not hit, the next phase of funding does not release. Your capital is protected by the structure of the engagement itself."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-open">CLOSING LINE FOR THIS SLIDE — DELIVER VERBATIM</span>
+      <div class="opening-words">
+        <p>"No competitor to your business — not Jack Link's, not Wild West, not any future local entrant — will have a partner that brings all seven of these simultaneously. This combination does not exist in Lebanon."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"Let me put in writing exactly what RU2YA is committing to — and what we are asking of you." → Advance to MANDATE.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 20: MANDATE ── -->
+<div id="s20" class="slide-card warning">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 20 · MANDATE — THE PROPOSAL</div>
+      <div class="slide-title-text">What We Are Proposing — The RU2YA Mandate</div>
+    </div>
+    <div class="slide-timing">4 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-open">OPENING LINE</span>
+      <div class="opening-words">
+        <p>"Our fee is milestone-linked, not time-billed. We earn when you progress. Here is exactly what RU2YA owns — and what remains in your hands."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">RU2YA SCOPE — WHAT WE EXECUTE</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">→</span>All channel outreach — every account visit, every commercial negotiation, every display setup</li>
+        <li><span class="gl-bullet gold">→</span>Regulatory management — MoPH, Halal, trademark, GS1, lab testing — end to end</li>
+        <li><span class="gl-bullet gold">→</span>Designer briefing, creative direction, and compliance sign-off on all packaging before print</li>
+        <li><span class="gl-bullet gold">→</span>Manufacturer relationship — flavor development oversight, QC protocol, supply agreement management</li>
+        <li><span class="gl-bullet gold">→</span>Monthly financial reporting — P&amp;L against plan, sell-through data, account performance</li>
+        <li><span class="gl-bullet gold">→</span>Strategic decisions — channel sequencing, pricing reviews, SKU expansion timing</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">CLIENT SCOPE — WHAT STAYS WITH YOU</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet amber">→</span>Capital allocation and final approval on all major financial decisions</li>
+        <li><span class="gl-bullet amber">→</span>Manufacturer relationship introduction and primary contact access</li>
+        <li><span class="gl-bullet amber">→</span>Final brand name and tagline confirmation — your choice, our recommendation</li>
+        <li><span class="gl-bullet amber">→</span>Budget tier selection and board governance</li>
+        <li><span class="gl-bullet amber">→</span>Final sign-off on all regulatory filings before submission</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">THE IP OWNERSHIP CLAUSE — SAY THIS EXPLICITLY</span>
+      <div class="emphasis-box">
+        <p>"Every deliverable we produce transfers to you upon final payment. You are not licensing RU2YA's work. You own it outright, unconditionally. If you ever move on without us — you take everything with you."<br><br>
+        This is almost always the single most reassuring statement in the entire presentation. Deliver it slowly. Let it land.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-transition">TRANSITION</span>
+      <div class="transition-box">
+        <p>"Before we move to the decisions — I want to address the questions we expect you may have. We have already answered them." → Advance to Q&amp;A.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 21: Q&A ── -->
+<div id="s21" class="slide-card key">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 21 · Q &amp; A — ANTICIPATED QUESTIONS</div>
+      <div class="slide-title-text">Every Question — Pre-Answered</div>
+    </div>
+    <div class="slide-timing">10–15 MINUTES</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-emphasis">HOW TO HANDLE Q&amp;A — THE RULES</span>
+      <div class="emphasis-box">
+        <p><strong>Do not read the answers from the slide.</strong> Know them. Internalize them. Deliver with confidence and brevity — then stop talking. Silence after a complete answer is a sign of strength, not uncertainty. Wait until they finish asking before you begin answering.</p>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q1 — "Why should I give full control to an advisory firm I just met?"</div>
+      <div class="qa-a">You are not giving control — you are giving authority to execute within parameters you define. Every major financial commitment and every regulatory filing requires your approval. What you are giving is the mandate to move without waiting for a meeting every time we need to visit an account. The 10 deliverables in front of you today were built before you agreed to anything. That is what full commitment looks like before a contract exists.</div>
+      <div class="qa-note">EMPHASIS: The 10 deliverables are the proof. Reference them again here.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q2 — "What happens if the product doesn't sell?"</div>
+      <div class="qa-a">Every first account is sale-or-return — no retailer takes financial risk on your product. We do not launch until MoPH approval is confirmed, the brand is professionally executed, and the product is lab-verified. Revenue projections are conservative, assuming 20–40 units per week per gym account at steady state. If sell-through is below target, we have a formal feedback and pricing review protocol built into the mandate — not improvised after the fact.</div>
+      <div class="qa-note">KEY WORD: sale-or-return. Repeat it if needed.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q3 — "How long before I start making money?" ★ ALWAYS ASKED</div>
+      <div class="qa-a">Under the recommended Tier 2 scenario with corrected projections: breakeven is targeted between Month 8 and Month 11. By Month 6, revenue is projected at $9,000 to $14,000 per month at a gross margin of 55 to 62%. By Month 12, revenue is projected at $40,000 to $65,000 per month. These are directional projections based on real Lebanese channel data and competitive pricing research — not guarantees.</div>
+      <div class="qa-note">★ SAY THESE WITHOUT LOOKING AT THE SLIDE: $42K in · M8–11 breakeven · 55–62% GM · $9K–14K M6 · $40K–65K M12</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q4 — "What if I want to manage some parts of this myself?"</div>
+      <div class="qa-a">That is your decision and we will document the division clearly in the mandate. However, our methodology is an integrated system — the outreach script connects to the commercial proposal, which connects to the account tracker, which drives the weekly check-in protocol. The more elements are separated, the more the system loses its compounding effect. Our recommendation: run the full system for 6 months, evaluate results, then decide what to internalise based on demonstrated performance.</div>
+      <div class="qa-note">FRAME: Not a refusal. A professional recommendation with a trial period built in.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q5 — "What is the minimum I can invest to get started?"</div>
+      <div class="qa-a">Tier 1 at $18,500 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, RU2YA's recommendation is Tier 2 at $42,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category.</div>
+      <div class="qa-note">MEMORABLE LINE: "Tier 1 enters the market. Tier 2 owns the category." Say it slowly.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q6 — "Why Lebanon and not start with another market?"</div>
+      <div class="qa-a">Lebanon is the proof-of-concept that unlocks the GCC. "Made in Lebanon" carries premium weight in UAE and Saudi Arabia — the provenance story is a marketing asset. Halal certification from Dar Al-Fatwa Lebanon is recognized across the GCC. Every product decision — the flavor, the certification, the trilingual packaging — was designed for Lebanon first and GCC second. Starting in Lebanon is not a constraint. It is the strategy.</div>
+      <div class="qa-note">FINAL WORD: "It is the strategy." Pause after it.</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">Q7 — "What does RU2YA do that I couldn't hire someone else to do?"</div>
+      <div class="qa-a">An employee executes tasks. RU2YA brings the full system: the research base, the brand work already done, the outreach scripts, the financial model, the manufacturer brief, the regulatory knowledge, and the personal relationship network across Lebanese gyms and nutrition stores. Rebuilding this from scratch would take 6–9 months and cost more than Tier 3. You would also be paying for someone to learn the market while we already know it cold.</div>
+      <div class="qa-note">FRAME: Not a comparison — a replacement cost argument. What would building this yourself actually cost?</div>
+    </div>
+
+    <div class="block" style="margin-top:16px;">
+      <span class="block-label lbl-transition">TRANSITION TO CLOSE</span>
+      <div class="transition-box">
+        <p>"All of that brings us to the decisions we are asking for today. Just four of them." → Advance to CLOSE.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SLIDE 22: CLOSE ── -->
+<div id="s22" class="slide-card key" style="border-left-color:var(--gold-br); border-left-width:6px;">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE 22 · CLOSE — THE DECISION</div>
+      <div class="slide-title-text">The Category Is Empty. The Brand Is Named. The Plan Is Built. Let Us Begin.</div>
+    </div>
+    <div class="slide-timing">5 MIN + SILENCE</div>
+  </div>
+  <div class="slide-body">
+    <div class="block">
+      <span class="block-label lbl-say">THE FOUR DECISIONS ON THIS SLIDE</span>
+      <ul class="guide-list">
+        <li><span class="gl-bullet gold">1</span>Select your budget tier — Tier 1 ($18,500) / Tier 2 ($42,000 recommended) / Tier 3 ($82,000)</li>
+        <li><span class="gl-bullet gold">2</span>Sign the RU2YA Management Mandate — formal authority to execute the launch plan today</li>
+        <li><span class="gl-bullet gold">3</span>Confirm STRIKE as your brand name — IP trademark search begins this week</li>
+        <li><span class="gl-bullet gold">4</span>Call your manufacturer this week — nutritional panel required within 5 business days</li>
+      </ul>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-open">THE CLOSING LINE — DELIVER VERBATIM</span>
+      <div class="closing-line">
+        <p>"The category is empty today. The question is not whether someone will build it. The question is whether STRIKE owns it — or whether we watch someone else do it first."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-emphasis">AFTER THE CLOSING LINE — THE MOST IMPORTANT INSTRUCTION</span>
+      <div class="emphasis-box">
+        <p><strong>Stop talking. Entirely.</strong> Do not add a qualifier. Do not soften. Do not ask "So, what do you think?" Let the room hold the closing line for 5–10 full seconds.<br><br>
+        Then ask the tier question directly: <strong>"Which scenario are we working with?"</strong><br><br>
+        Then silence again. The next person who speaks is not you.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-avoid">WHAT NOT TO DO</span>
+      <div class="avoid-box">
+        <p>Do not renegotiate before they have responded. Do not offer discounts or scope adjustments unprompted. Do not re-explain the deck. Do not say "I know this is a big decision." If they need a moment to think — let them think in silence. You have made your case.</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">IF THEY DO NOT SIGN TODAY</span>
+      <div class="listen-box">
+        <p>This is acceptable and manageable. Offer to leave all 10 deliverables with them. Say: <em>"Everything we walked through today — all ten documents — I am leaving with you. Read them tonight. Every question you might have after this meeting has already been answered somewhere in that body of work."</em><br><br>
+        Then agree on a specific follow-up date and time before leaving the room. A specific time — not "sometime next week."</p>
+      </div>
+    </div>
+    <div class="block">
+      <span class="block-label lbl-say">IF THEY SAY YES TODAY</span>
+      <div class="listen-box">
+        <p>Do not celebrate visibly. Nod. Say: <em>"Good. Here is how we begin."</em> Then outline the immediate next three actions: (1) Mandate signed and dated, (2) Manufacturer contacted within 5 business days for nutritional panel, (3) SARL registration initiated by next week. Move from pitch mode to execution mode immediately.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!--  PART V — QUICK REFERENCE                            -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="part-header" style="margin-top:48px;">
+  <div class="part-num">V</div>
+  <div class="part-info">
+    <div class="part-label">PART FIVE</div>
+    <div class="part-title">Quick Reference — Scan This During the Presentation if Needed</div>
+  </div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">SLIDE SEQUENCE &amp; TIMING</div>
+      <div class="slide-title-text">Full Presentation Map</div>
+    </div>
+    <div class="slide-timing">~95–105 MIN TOTAL</div>
+  </div>
+  <div class="slide-body">
+    <ul class="guide-list">
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S1  COVER</span>Let cover sit. First words: "Thank you — but first we listen." · 30 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S2  LISTEN</span>20–30 minutes. Six questions. Take physical notes. DO NOT RUSH. · 20–30 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">§01 SECTION</span>"Some of what we found will surprise you." · 15 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S4  MARKET</span>ZERO — let it breathe 5 seconds. Ask room the question. · 4 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S5  WHY NOW</span>Wild West urgency. First-mover window is months, not years. · 3 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">§02 SECTION</span>"We built the entire case before you said yes." · 15 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S7  DELIVERED</span>Click 2–3 deliverables slowly. Let COMPLETE compound. · 6 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">§03 SECTION</span>"We did not wait to name your brand." · 15 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S9  BRAND</span>92/100 name score. Ask "Does this feel right?" — pause for reaction. · 5 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">§COMP SECTION</span>"We priced everything ourselves." · 15 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S11 LANDSCAPE</span>Tab 2 most important. Plant vs meat protein distinction. · 5 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S12 MATRIX</span>Row by row. "Seven wins. No one holds more than three." Then stop. · 4 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">§04 SECTION</span>"A to Z. 38 steps. Nothing improvised." · 15 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S14 ROADMAP</span>Phase 2 most important. Their contacts accelerate timeline 4–6 weeks. · 6 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">§05 SECTION</span>"Every figure is real channel data." · 15 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S16 FINANCIALS</span>Lead with Tier 2. Ask "Which scenario?" then silence. · 7 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S17 CORRECTIONS</span>Two corrections improve the case. Own the rigor. · 4 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">§06 SECTION</span>"Seven advantages. None of them found elsewhere." · 15 sec</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S19 WHY RU2YA</span>Reason 01 (delivered) and 06 (IP ownership) are highest impact. · 7 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S20 MANDATE</span>Milestone-linked. IP ownership clause. Direct about fees. · 4 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S21 Q &amp; A</span>Know answers. Don't read. Q3 always asked — numbers from memory. · 10–15 min</li>
+      <li><span class="gl-bullet gold" style="min-width:100px;font-size:11px;">S22 CLOSE</span>Verbatim closing line. "Which scenario?" Then silence. Do not break it. · 5 min+</li>
+    </ul>
+  </div>
+</div>
+
+<div class="slide-card critical">
+  <div class="slide-header">
+    <div class="slide-header-left">
+      <div class="slide-num-label">THE TEN COMMANDMENTS OF THIS PRESENTATION</div>
+      <div class="slide-title-text">Non-Negotiable Standards</div>
+    </div>
+  </div>
+  <div class="slide-body">
+    <ul class="guide-list">
+      <li><span class="gl-bullet gold">I</span>Listen for 20–30 minutes before presenting anything. The quality of your listening determines the quality of your close.</li>
+      <li><span class="gl-bullet gold">II</span>Let ZERO breathe for 5 full seconds on the market slide. Then ask the room. Silence confirms the opportunity.</li>
+      <li><span class="gl-bullet gold">III</span>After "Does this feel right?" — pause for their reaction before advancing. Their emotional response is intel for the close.</li>
+      <li><span class="gl-bullet gold">IV</span>Know the Q&amp;A answers by heart. Never read from the screen during Q&amp;A.</li>
+      <li><span class="gl-bullet gold">V</span>Memorize Tier 2 corrected numbers cold: $42K · M8–11 · 55–62% GM · $9K–14K M6 · $40K–65K M12 · 265% ROI.</li>
+      <li><span class="gl-bullet gold">VI</span>After "Seven wins. No one holds more than three." — stop talking. Let the matrix close.</li>
+      <li><span class="gl-bullet gold">VII</span>Deliver the IP ownership clause slowly: "You own everything we create. Unconditionally." It is the most reassuring sentence in the deck.</li>
+      <li><span class="gl-bullet gold">VIII</span>Deliver the closing line verbatim. Not approximately. Verbatim.</li>
+      <li><span class="gl-bullet gold">IX</span>After "Which scenario are we working with?" — do not speak. The next person who speaks is not you.</li>
+      <li><span class="gl-bullet gold">X</span>If they do not sign today, leave all 10 deliverables and agree on a specific follow-up time before leaving the room.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="doc-footer">
+  <div class="footer-text">KAG-JRK-PITCH-GUIDE-001 · RU2YA ADVISORY GROUP · JUNE 2026 · PRIVATE &amp; CONFIDENTIAL</div>
+  <div class="footer-text">STRIKE BITES · LEBANON MARKET ENTRY</div>
+</div>
+
+</body>
+</html>

@@ -22,6 +22,6 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "backup-outdated-files"],
-  "exclude": ["backup-outdated-files"]
+  "include": ["src"],
+  "exclude": []
 }

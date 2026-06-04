@@ -948,6 +948,10 @@ export default function BoardPresentation() {
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (target && ["INPUT","TEXTAREA","SELECT","BUTTON","A"].includes(target.tagName)) return;
+      if (target && (target.isContentEditable || target.closest("[contenteditable='true']"))) return;
+      if (e.defaultPrevented) return;
       if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === " ") { e.preventDefault(); next(); }
       if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); prev(); }
       if (e.key === "n" || e.key === "N") setShowNotes(s => !s);
@@ -1017,8 +1021,8 @@ export default function BoardPresentation() {
             <div style={{ position: "absolute", top: 0, left: 0, width: `${((current + 1) / total) * 100}%`, height: 2, background: `linear-gradient(to right, ${C.gold}, ${C.goldBright})`, transition: "width 0.3s ease", zIndex: 10 }} />
             {renderSlide()}
             {/* Navigation arrows */}
-            <button onClick={prev} disabled={current === 0} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 44, height: 44, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.3 : 0.7, transition: "opacity 0.2s", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>‹</button>
-            <button onClick={next} disabled={current === total - 1} style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 44, height: 44, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.3 : 0.7, transition: "opacity 0.2s", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>›</button>
+            <button onClick={prev} disabled={current === 0} aria-label="Previous slide" aria-disabled={current === 0} title="Previous slide" style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 44, height: 44, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.3 : 0.7, transition: "opacity 0.2s", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>‹</button>
+            <button onClick={next} disabled={current === total - 1} aria-label="Next slide" aria-disabled={current === total - 1} title="Next slide" style={{ position: "absolute", right: 16, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}CC`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 44, height: 44, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.3 : 0.7, transition: "opacity 0.2s", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>›</button>
           </div>
 
           {/* Presenter notes */}
@@ -1055,7 +1059,7 @@ export default function BoardPresentation() {
         </div>
         <div style={{ display: "flex", gap: 6, flex: 1, justifyContent: "center", minWidth: 0, overflowX: "auto" }}>
           {SLIDES.map((_, i) => (
-            <button key={i} onClick={() => setCurrent(i)} style={{ width: i === current ? 24 : 8, height: 4, borderRadius: 2, background: i === current ? C.gold : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", flexShrink: 0, WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }} />
+            <button key={i} onClick={() => setCurrent(i)} aria-label={`Go to slide ${i + 1}`} aria-current={i === current ? "true" : undefined} style={{ width: i === current ? 24 : 8, height: 4, borderRadius: 2, background: i === current ? C.gold : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", flexShrink: 0, WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }} />
           ))}
         </div>
         <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, opacity: 0.4, letterSpacing: "0.15em", whiteSpace: "nowrap" }}>

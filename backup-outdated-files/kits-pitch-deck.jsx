@@ -670,14 +670,15 @@ function CompLandscapeSlide({ slide }) {
           }}>
             {/* Screenshot / placeholder */}
             {comp.img ? (
-              <div
+              <button
                 onClick={() => setLightbox({ src: comp.img, alt: comp.name })}
                 title="Click to view full size"
+                aria-label={`View ${comp.name} full size`}
                 style={{
-                  background: "#F5F3EF",
+                  background: "#F5F3EF", border: "none",
                   display: "flex", alignItems: "center", justifyContent: "center",
                   padding: "8px 10px", height: isMobile ? 78 : 100, flexShrink: 0,
-                  cursor: "zoom-in", position: "relative",
+                  cursor: "zoom-in", position: "relative", width: "100%",
                 }}
               >
                 <img src={comp.img} alt={comp.name} style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain", pointerEvents: "none" }} />
@@ -688,7 +689,7 @@ function CompLandscapeSlide({ slide }) {
                 }}>
                   ⤢ tap to expand
                 </div>
-              </div>
+              </button>
             ) : (
               <div style={{
                 background: `${group.color}10`, borderBottom: `1px solid ${group.color}20`,

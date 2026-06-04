@@ -36,7 +36,7 @@ function StrikeBagMini({ accent = C.amber, size = 1 }) {
   const W = 160 * size, H = 250 * size;
   const id = `b${Math.round(Math.random() * 9999)}`;
   return (
-    <svg width={W} height={H} viewBox={0} y={0} x={0} style={{ display: "block", filter: `drop-shadow(0 ${12*size}px ${28*size}px rgba(0,0,0,0.9)) drop-shadow(0 2px 8px ${accent}22)` }}>
+    <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ display: "block", filter: `drop-shadow(0 ${12*size}px ${28*size}px rgba(0,0,0,0.9)) drop-shadow(0 2px 8px ${accent}22)` }}>
       <defs>
         <linearGradient id={`bg${id}`} x1={0} y1={0} x2={1} y2={1}>
           <stop offset="0%" stopColor="#161412"/><stop offset="100%" stopColor="#080706"/>
@@ -1296,6 +1296,10 @@ export default function BoardPresentation() {
 
   useEffect(() => {
     const h = (e) => {
+      const target = e.target as HTMLElement;
+      if (target && ["INPUT","TEXTAREA","SELECT","BUTTON","A"].includes(target.tagName)) return;
+      if (target && (target.isContentEditable || target.closest("[contenteditable='true']"))) return;
+      if (e.defaultPrevented) return;
       if (["ArrowRight","ArrowDown"," "].includes(e.key)) { e.preventDefault(); next(); }
       if (["ArrowLeft","ArrowUp"].includes(e.key)) { e.preventDefault(); prev(); }
       if (e.key === "n" || e.key === "N") setShowNotes(s => !s);
@@ -1344,8 +1348,8 @@ export default function BoardPresentation() {
             <RenderSlide slide={slide}/>
           </div>
           {/* Nav arrows */}
-          <button onClick={prev} disabled={current === 0} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>‹</button>
-          <button onClick={next} disabled={current === total - 1} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>›</button>
+          <button onClick={prev} disabled={current === 0} aria-label="Previous slide" aria-disabled={current === 0} title="Previous slide" style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>‹</button>
+          <button onClick={next} disabled={current === total - 1} aria-label="Next slide" aria-disabled={current === total - 1} title="Next slide" style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}>›</button>
         </div>
 
         {/* ── PRESENTER NOTES PANEL ── */}
@@ -1382,7 +1386,7 @@ export default function BoardPresentation() {
         {/* Dot pagination */}
         <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
           {SLIDES.map((s, i) => (
-            <button key={i} onClick={() => setCurrent(i)} style={{ width: i === current ? 22 : s.type === "section" ? 8 : 5, height: s.type === "section" ? 5 : 4, borderRadius: 3, background: i === current ? C.gold : s.type === "section" ? C.goldDim : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}/>
+            <button key={i} onClick={() => setCurrent(i)} aria-label={`Go to slide ${i + 1}`} aria-current={i === current ? "true" : undefined} style={{ width: i === current ? 22 : s.type === "section" ? 8 : 5, height: s.type === "section" ? 5 : 4, borderRadius: 3, background: i === current ? C.gold : s.type === "section" ? C.goldDim : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", WebkitTapHighlightColor: "transparent", touchAction: "manipulation" }}/>
           ))}
         </div>
         <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, opacity: 0.35, letterSpacing: "0.15em" }}>

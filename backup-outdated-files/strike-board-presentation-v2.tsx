@@ -304,7 +304,7 @@ function BrandScoreSlide({ slide }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
         <SH slide={slide}/>
         <div style={{ textAlign: "center", flexShrink: 0, background: `${C.gold}08`, border: `1px solid ${C.gold}25`, borderRadius: 4, padding: "12px 20px" }}>
-          <div style={{ fontFamily: "monospace", fontSize: 36, color: C.goldBright, lineHeight: 1 }}>88</div>
+          <div style={{ fontFamily: "monospace", fontSize: 36, color: C.goldBright, lineHeight: 1 }}>{slide.score ?? 88}</div>
           <div style={{ fontFamily: "monospace", fontSize: 7, color: C.gold, letterSpacing: "0.15em", marginTop: 4 }}>/ 100 BRAND SCORE</div>
           <div style={{ fontFamily: "monospace", fontSize: 7, color: C.greenBright, marginTop: 4 }}>APPROVED — STRONG</div>
         </div>
@@ -1235,6 +1235,10 @@ export default function BoardPresentation() {
 
   useEffect(() => {
     const h = (e) => {
+      const target = e.target as HTMLElement;
+      if (target && ["INPUT","TEXTAREA","SELECT","BUTTON","A"].includes(target.tagName)) return;
+      if (target && (target.isContentEditable || target.closest("[contenteditable='true']"))) return;
+      if (e.defaultPrevented) return;
       if (["ArrowRight","ArrowDown"," "].includes(e.key)) { e.preventDefault(); next(); }
       if (["ArrowLeft","ArrowUp"].includes(e.key)) { e.preventDefault(); prev(); }
       if (e.key === "n" || e.key === "N") setShowNotes(s => !s);
@@ -1288,8 +1292,8 @@ export default function BoardPresentation() {
             <RenderSlide slide={slide}/>
           </div>
           {/* Nav arrows */}
-          <button onClick={prev} disabled={current === 0} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10 }}>‹</button>
-          <button onClick={next} disabled={current === total - 1} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10 }}>›</button>
+          <button onClick={prev} disabled={current === 0} aria-label={`Previous slide, slide ${current} of ${total}`} aria-disabled={current === 0} title="Previous slide" style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === 0 ? "default" : "pointer", color: current === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10 }}>‹</button>
+          <button onClick={next} disabled={current === total - 1} aria-label={`Next slide, slide ${current + 2} of ${total}`} aria-disabled={current === total - 1} title="Next slide" style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: current === total - 1 ? "default" : "pointer", color: current === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: current === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10 }}>›</button>
         </div>
 
         {/* ── PRESENTER NOTES PANEL ── */}
