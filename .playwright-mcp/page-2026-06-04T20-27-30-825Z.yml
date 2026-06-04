@@ -1,0 +1,188 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e6]:
+    - link "Instagram" [ref=e9] [cursor=pointer]:
+      - /url: https://www.instagram.com/livgood.lb/
+      - generic [ref=e10]: Instagram
+      - img [ref=e12]
+    - generic [ref=e14]:
+      - generic:
+        - img
+      - generic [ref=e15]:
+        - generic [ref=e16]: Your Online Market For A Better Lifestyle
+        - generic [ref=e17]: Delivery All Over Lebanon
+      - img [ref=e19] [cursor=pointer]
+    - generic [ref=e24]:
+      - generic [ref=e25]: Country/region
+      - button "(USD $)" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: (USD $)
+        - img [ref=e29]
+  - generic [ref=e33]:
+    - generic [ref=e35]:
+      - link "LivGood Lebanon" [ref=e37] [cursor=pointer]:
+        - /url: /
+        - img "LivGood Lebanon" [ref=e38]
+      - text: ()
+      - button "Open menu" [ref=e39] [cursor=pointer]:
+        - generic [ref=e40]: Open menu
+        - img [ref=e41]
+      - button "Open cart" [ref=e46] [cursor=pointer]:
+        - generic [ref=e47]: Open cart
+        - img [ref=e48]
+        - generic [ref=e52]: "0"
+    - generic [ref=e55] [cursor=pointer]:
+      - img:
+        - img
+      - searchbox "Search for..." [ref=e56]
+  - main [ref=e57]:
+    - navigation "breadcrumbs" [ref=e60]:
+      - link "Home" [ref=e62] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e63]: /
+      - link "Collections" [ref=e65] [cursor=pointer]:
+        - /url: https://livgood.com/pages/categories
+      - generic [ref=e66]: /
+      - generic [ref=e67]: Barebells
+    - generic [ref=e70]:
+      - generic [ref=e72]: 🏷️ Promocodes Are Not Applicable On Items Under Promotions, Bread & Dairy
+      - generic [ref=e74]: 🏷️ Promocodes Are Not Applicable On Items Under Promotions, Bread & Dairy
+    - heading "Barebells" [level=1] [ref=e79]
+    - generic [ref=e80]:
+      - generic [ref=e82]:
+        - status [ref=e84]: 8 products
+        - button "Filter and sort" [ref=e86] [cursor=pointer]:
+          - generic:
+            - img
+          - text: Filter and sort
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: Bars
+            - link "View All" [ref=e94] [cursor=pointer]:
+              - /url: /collections/bars
+          - generic [ref=e95]:
+            - link "Barebells Protein Salty Peanuts Bar Barebells Protein Salty Peanuts Bar $4.66 55g" [ref=e97] [cursor=pointer]:
+              - /url: /products/protein-salty-peanuts-bar
+              - img "Barebells Protein Salty Peanuts Bar" [ref=e98]
+              - generic [ref=e99]: Barebells Protein Salty Peanuts Bar
+              - generic [ref=e100]: $4.66
+              - generic [ref=e101]: 55g
+            - link "Barebells Protein Caramel Cashew Bar Barebells Protein Caramel Cashew Bar $4.63 55g Sold Out" [ref=e103] [cursor=pointer]:
+              - /url: /products/protein-caramel-cashew-bar
+              - img "Barebells Protein Caramel Cashew Bar" [ref=e104]
+              - generic [ref=e105]: Barebells Protein Caramel Cashew Bar
+              - generic [ref=e106]: $4.63
+              - generic [ref=e107]: 55g
+              - generic:
+                - generic: Sold Out
+            - link "Barebells White Chocolate Almond Bar Barebells White Chocolate Almond Bar $4.63 55g" [ref=e109] [cursor=pointer]:
+              - /url: /products/white-chocolate-almond-bar
+              - img "Barebells White Chocolate Almond Bar" [ref=e110]
+              - generic [ref=e111]: Barebells White Chocolate Almond Bar
+              - generic [ref=e112]: $4.63
+              - generic [ref=e113]: 55g
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - generic [ref=e116]: Milkshake
+            - link "View All" [ref=e118] [cursor=pointer]:
+              - /url: /collections/milkshake
+          - generic [ref=e119]:
+            - link "Barebells Milkshake - Vanilla Barebells Milkshake - Vanilla $4.86 33cl" [ref=e121] [cursor=pointer]:
+              - /url: /products/barebells-milkshake-vanilla
+              - img "Barebells Milkshake - Vanilla" [ref=e122]
+              - generic [ref=e123]: Barebells Milkshake - Vanilla
+              - generic [ref=e124]: $4.86
+              - generic [ref=e125]: 33cl
+            - link "Barebells Milkshake - Chocolate Barebells Milkshake - Chocolate $4.86 33cl Sold Out" [ref=e127] [cursor=pointer]:
+              - /url: /products/barebells-milkshake-chocolate
+              - img "Barebells Milkshake - Chocolate" [ref=e128]
+              - generic [ref=e129]: Barebells Milkshake - Chocolate
+              - generic [ref=e130]: $4.86
+              - generic [ref=e131]: 33cl
+              - generic:
+                - generic: Sold Out
+            - link "Barebells Milkshake - Strawberry Barebells Milkshake - Strawberry $4.86 33cl Sold Out" [ref=e133] [cursor=pointer]:
+              - /url: /products/barebells-milkshake-strawberry
+              - img "Barebells Milkshake - Strawberry" [ref=e134]
+              - generic [ref=e135]: Barebells Milkshake - Strawberry
+              - generic [ref=e136]: $4.86
+              - generic [ref=e137]: 33cl
+              - generic:
+                - generic: Sold Out
+        - generic [ref=e138]:
+          - generic [ref=e139]:
+            - generic [ref=e140]: Protein Bars
+            - link "View All" [ref=e142] [cursor=pointer]:
+              - /url: /collections/protein-bars
+          - generic [ref=e143]:
+            - link "Barebells Protein Cookies and Cream Bar Barebells Protein Cookies and Cream Bar $4.62 55g" [ref=e145] [cursor=pointer]:
+              - /url: /products/barebells-protein-cookies-and-cream-bar
+              - img "Barebells Protein Cookies and Cream Bar" [ref=e146]
+              - generic [ref=e147]: Barebells Protein Cookies and Cream Bar
+              - generic [ref=e148]: $4.62
+              - generic [ref=e149]: 55g
+            - link "Barebells Protein Bar - Hazelnut&Nougat - 20g protein Barebells Protein Bar - Hazelnut&Nougat - 20g protein $4.63 55g" [ref=e151] [cursor=pointer]:
+              - /url: /products/barebells-protein-bar-hazelnut-nougat-20g-protein
+              - img "Barebells Protein Bar - Hazelnut&Nougat - 20g protein" [ref=e152]
+              - generic [ref=e153]: Barebells Protein Bar - Hazelnut&Nougat - 20g protein
+              - generic [ref=e154]: $4.63
+              - generic [ref=e155]: 55g
+  - generic [ref=e156]:
+    - generic [ref=e158]:
+      - generic [ref=e159]:
+        - heading "Contact Us" [level=4] [ref=e160]
+        - generic [ref=e161]:
+          - paragraph [ref=e162]: Get in touch and let us know your feedback on our services, online shop and content!
+          - paragraph [ref=e163]:
+            - link "+9613116408" [ref=e164] [cursor=pointer]:
+              - /url: tel:9613116408
+          - paragraph [ref=e165]:
+            - link "info@livgood.com" [ref=e166] [cursor=pointer]:
+              - /url: mailto:info@livgood.com
+          - link "Instagram" [ref=e168] [cursor=pointer]:
+            - /url: https://www.instagram.com/livgood.lb/
+            - generic [ref=e169]: Instagram
+            - img [ref=e171]
+      - generic [ref=e173]:
+        - heading "Quick links" [level=4] [ref=e174]
+        - navigation [ref=e175]:
+          - link "About Us" [ref=e177] [cursor=pointer]:
+            - /url: /pages/about-us
+          - link "LivGood Loyalty Program" [ref=e179] [cursor=pointer]:
+            - /url: /pages/livgood-loyalty-program
+          - link "Reviews" [ref=e181] [cursor=pointer]:
+            - /url: /pages/reviews
+          - link "Gift Cards" [ref=e183] [cursor=pointer]:
+            - /url: /collections/gift-cards
+          - link "Terms of Service" [ref=e185] [cursor=pointer]:
+            - /url: /policies/terms-of-service
+          - link "Delivery Information" [ref=e187] [cursor=pointer]:
+            - /url: /pages/delivery-information
+          - link "Privacy Policy" [ref=e189] [cursor=pointer]:
+            - /url: /policies/privacy-policy
+          - link "Request Account Deletion" [ref=e191] [cursor=pointer]:
+            - /url: /pages/request-account-deletion
+          - link "Refund Policy" [ref=e193] [cursor=pointer]:
+            - /url: /policies/refund-policy
+          - link "Contact Us" [ref=e195] [cursor=pointer]:
+            - /url: /pages/contact-us
+          - link "FAQ's" [ref=e197] [cursor=pointer]:
+            - /url: /pages/faqs
+    - generic [ref=e199]:
+      - generic [ref=e200]:
+        - text: Copyright © 2026
+        - link "LivGood Lebanon" [ref=e201] [cursor=pointer]:
+          - /url: /
+        - text: .
+        - link "Powered by Shopify" [ref=e203] [cursor=pointer]:
+          - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+      - generic [ref=e205]:
+        - generic [ref=e206]: Country/region
+        - button "(USD $)" [ref=e207] [cursor=pointer]:
+          - generic [ref=e208]: (USD $)
+          - img [ref=e210]
+  - generic [ref=e213] [cursor=pointer]:
+    - img [ref=e214]
+    - paragraph [ref=e216]: LivGood Rewards
+    - paragraph

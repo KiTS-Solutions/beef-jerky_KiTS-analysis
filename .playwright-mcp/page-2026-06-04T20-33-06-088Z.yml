@@ -1,0 +1,449 @@
+- generic [active] [ref=e1]:
+  - text: 
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - navigation [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - generic [ref=e10]: 
+            - complementary [ref=e12]:
+              - generic [ref=e15]:
+                - generic [ref=e16]: Explore
+                - button "Close Menu" [ref=e17] [cursor=pointer]:
+                  - generic [ref=e19]: 
+            - generic [ref=e21]: 
+          - text: 
+          - link "Ubuy" [ref=e22] [cursor=pointer]:
+            - /url: https://www.ubuy.com.lb/en/
+            - img "Ubuy" [ref=e23]
+        - generic [ref=e26]:
+          - textbox "Text input with 2 dropdown buttons" [ref=e27]:
+            - /placeholder: Search from 300M+ Premium Products Around the World
+            - text: Country archer
+          - button "us " [ref=e29] [cursor=pointer]:
+            - generic "United States store" [ref=e30]:
+              - generic [ref=e33]: us
+            - text: 
+          - button "Search" [ref=e34] [cursor=pointer]:
+            - generic [ref=e35]: 
+        - list [ref=e37]:
+          - listitem [ref=e38]:
+            - button "delivery LB " [ref=e39] [cursor=pointer]:
+              - img "delivery" [ref=e40]
+              - generic [ref=e41]: LB
+              - text: 
+          - listitem [ref=e42]:
+            - button "language EN " [ref=e43] [cursor=pointer]:
+              - img "language" [ref=e44]
+              - generic [ref=e45]: EN
+              - text: 
+          - listitem [ref=e46]:
+            - button "Account" [ref=e47] [cursor=pointer]:
+              - img "My Account" [ref=e48]
+              - text: 
+          - listitem [ref=e49]:
+            - link "Cart 0" [ref=e51] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/ubcheckout/cart
+              - img "Cart" [ref=e52]
+              - generic [ref=e53]: "0"
+      - text: 
+  - text:  
+  - main [ref=e54]:
+    - list [ref=e56]:
+      - listitem [ref=e57]:
+        - link "Home Page" [ref=e58] [cursor=pointer]:
+          - /url: https://www.ubuy.com.lb/en/
+      - listitem [ref=e59]: /
+      - listitem [ref=e60]: Country archer
+    - generic [ref=e61]:
+      - generic [ref=e64]:
+        - generic [ref=e68]: 
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - paragraph [ref=e72]: "Buy From :"
+            - generic [ref=e73]:
+              - generic [ref=e74] [cursor=pointer]:
+                - img "US store" [ref=e76]
+                - generic [ref=e77]: US store
+              - text: 
+            - generic [ref=e78]:
+              - generic [ref=e80]:
+                - group "1 / 8" [ref=e81]:
+                  - generic [ref=e82] [cursor=pointer]:
+                    - generic [ref=e84]: 
+                    - generic [ref=e85]: Global
+                - group "2 / 8" [ref=e86]:
+                  - generic [ref=e87] [cursor=pointer]:
+                    - img "UK store" [ref=e89]
+                    - generic [ref=e90]: UK store
+                - group "3 / 8" [ref=e91]:
+                  - generic [ref=e92] [cursor=pointer]:
+                    - img "CH store" [ref=e94]
+                    - generic [ref=e95]: CH store
+                - group "4 / 8" [ref=e96]:
+                  - generic [ref=e97] [cursor=pointer]:
+                    - img "JP store" [ref=e99]
+                    - generic [ref=e100]: JP store
+                - group "5 / 8" [ref=e101]:
+                  - generic [ref=e102] [cursor=pointer]:
+                    - img "HK store" [ref=e104]
+                    - generic [ref=e105]: HK store
+                - group "6 / 8" [ref=e106]:
+                  - generic [ref=e107] [cursor=pointer]:
+                    - img "KR store" [ref=e109]
+                    - generic [ref=e110]: KR store
+                - group "7 / 8" [ref=e111]:
+                  - generic [ref=e112] [cursor=pointer]:
+                    - img "TR store" [ref=e114]
+                    - generic [ref=e115]: TR store
+                - group "8 / 8" [ref=e116]:
+                  - generic [ref=e117] [cursor=pointer]:
+                    - img "DE store" [ref=e119]
+                    - generic [ref=e120]: EU store
+              - button "Previous slide" [disabled]:
+                - generic: 
+              - button "Next slide" [ref=e121] [cursor=pointer]:
+                - generic [ref=e122]: 
+          - generic [ref=e123]:
+            - heading "Buy Country archer Products Online in Lebanon" [level=1] [ref=e124]
+            - generic [ref=e125]:
+              - generic [ref=e126]: Sort by
+              - generic [ref=e127]: "|"
+              - button "Featured " [ref=e129] [cursor=pointer]
+          - generic [ref=e130]:
+            - generic [ref=e132]:
+              - figure [ref=e134]
+              - generic [ref=e135]:
+                - heading [level=3] [ref=e139]
+                - heading [level=3] [ref=e140]
+            - generic [ref=e142]:
+              - figure [ref=e144]
+              - generic [ref=e145]:
+                - heading [level=3] [ref=e149]
+                - heading [level=3] [ref=e150]
+            - generic [ref=e152]:
+              - figure [ref=e154]
+              - generic [ref=e155]:
+                - heading [level=3] [ref=e159]
+                - heading [level=3] [ref=e160]
+            - generic [ref=e162]:
+              - figure [ref=e164]
+              - generic [ref=e165]:
+                - heading [level=3] [ref=e169]
+                - heading [level=3] [ref=e170]
+            - generic [ref=e172]:
+              - figure [ref=e174]
+              - generic [ref=e175]:
+                - heading [level=3] [ref=e179]
+                - heading [level=3] [ref=e180]
+            - generic [ref=e182]:
+              - figure [ref=e184]
+              - generic [ref=e185]:
+                - heading [level=3] [ref=e189]
+                - heading [level=3] [ref=e190]
+            - generic [ref=e192]:
+              - figure [ref=e194]
+              - generic [ref=e195]:
+                - heading [level=3] [ref=e199]
+                - heading [level=3] [ref=e200]
+            - generic [ref=e202]:
+              - figure [ref=e204]
+              - generic [ref=e205]:
+                - heading [level=3] [ref=e209]
+                - heading [level=3] [ref=e210]
+          - generic: 
+      - generic: 
+  - generic [ref=e211]:
+    - generic [ref=e212]:
+      - heading "One-Stop-Shop to Purchase Country Archer Products Online in Lebanon" [level=2] [ref=e213]
+      - generic [ref=e214]:
+        - paragraph [ref=e215]: Discover the convenience of online shopping with Ubuy, your ultimate destination for purchasing Country Archer products in Beirut, Tripoli, Jounieh, Sour, Sidon, Zahle, Byblos, Baalbek, Bekaa Valley, Aley, Mount Lebanon, Bint Jbeil, Keserwan, Tyre, Nabatyeh, Chouf, Zgharta, Marjayoun, Saida, Ketermaya and all major cities in Lebanon. We offer a curated selection of international brands and genuine quality global products, ensuring you have access to the best that the world has to offer.
+        - heading "Why Choose Ubuy?" [level=3] [ref=e216]
+        - paragraph [ref=e217]: At Ubuy, we pride ourselves on being a genuine, reliable, and trustworthy online store. With over 100 million products and brands from the international market, we provide a diverse range of options to cater to every requirement. Our user-friendly platform allows you to effortlessly explore our selection and find exclusive Country Archer products that may not be readily available elsewhere.
+        - heading "Exclusive Offers and Savings" [level=3] [ref=e218]
+        - paragraph [ref=e219]: Ubuy is the perfect place to discover unique and popular global products from Country Archer. We regularly update our inventory with the latest offerings and provide exclusive discounts to help you save money on your purchases. With our convenient online platform, there's no need to search for your preferred products and brands across towns and cities - everything you need is just a click away.
+        - paragraph [ref=e220]: Get ready to elevate your shopping experience and indulge in the world of Ubuy, where all your favorite brands and desirable products are at your fingertips.
+    - generic [ref=e222]:
+      - heading "Common Customers Questions About Country Archer" [level=2] [ref=e223]
+      - generic [ref=e224]:
+        - heading "Where can I buy Country Archer products online?" [level=3] [ref=e225]
+        - paragraph [ref=e227]: You can buy Country Archer products online on Ubuy. They offer a wide range of Country Archer products and deliver them right to your doorstep.
+      - generic [ref=e228]:
+        - heading "Where to Buy Country Archer Products Online in Lebanon?" [level=3] [ref=e229]
+        - paragraph [ref=e231]: If you are still wondering about where to buy the Country Archer products? Just get them online from Ubuy Lebanon, which offers a huge range of Country Archer products at discount prices in Lebanon.
+      - generic [ref=e232]:
+        - heading "Does Ubuy Ship Country Archer Products to Lebanon?" [level=3] [ref=e233]
+        - paragraph [ref=e235]: Yes, Ubuy ships Country Archer products in the Lebanon. Ubuy provides its products from 9 international warehouses located in the UK, USA, China, Japan, Korea, Turkey, Hong Kong , EU & India to over 180 countries worldwide at affordable prices.
+      - generic [ref=e236]:
+        - heading "What are the Benefits of Buying Country Archer Products from Ubuy?" [level=3] [ref=e237]
+        - paragraph [ref=e239]: Ubuy allows users to get various coupons and rewards while purchasing Country Archer products. You can purchase the Country Archer products at cost effective prices as compared to other ecommerce stores available in Lebanon.
+      - generic [ref=e240]:
+        - heading "In which cities of Lebanon, Ubuy could deliver Country Archer products online?" [level=3] [ref=e241]
+        - paragraph [ref=e243]: You can order Country Archer products online from Ubuy and get these products delivered in Beirut, Tripoli, Jounieh, Sour, Sidon, Zahle, Byblos, Baalbek, Bekaa Valley, Aley, Mount Lebanon, Bint Jbeil, Keserwan, Tyre, Nabatyeh, Chouf, Zgharta, Marjayoun, Saida, Ketermaya and all major cities of Lebanon.
+      - generic [ref=e244]:
+        - heading "Become A Country Archer Influencer at Ubuy!" [level=3] [ref=e245]
+        - paragraph [ref=e247]:
+          - text: Purchase a Country Archer product from Ubuy and have a chance to earn money by becoming Country Archer influencer with our
+          - link "Influencer Program" [ref=e248] [cursor=pointer]:
+            - /url: https://www.ubuy.com.lb/en/micro-influencer
+          - text: . Become a Ubuy influencer by sharing the product image mentioning Ubuy on your social profiles, YouTube channel, etc. and earn money while sitting at your home.
+  - text: 
+  - contentinfo [ref=e249]:
+    - generic [ref=e250]:
+      - generic [ref=e253]:
+        - paragraph [ref=e254]: Stay Connected
+        - generic [ref=e256]:
+          - textbox "Get coupons, offers, and more" [ref=e257]
+          - generic [ref=e259] [cursor=pointer]:
+            - button "Subscribe" [ref=e260]
+            - emphasis [ref=e261]: 
+      - generic [ref=e263]:
+        - generic [ref=e264]:
+          - paragraph [ref=e266]: QUICK LINKS
+          - separator [ref=e268]
+          - list [ref=e269]:
+            - listitem [ref=e270] [cursor=pointer]:
+              - link "About Us" [ref=e271]:
+                - /url: https://www.ubuy.com.lb/en/about-us
+            - listitem [ref=e272] [cursor=pointer]:
+              - link "Contact Us" [ref=e273]:
+                - /url: https://www.ubuy.com.lb/en/contacts
+            - listitem [ref=e274] [cursor=pointer]:
+              - link "Quotation Request" [ref=e275]:
+                - /url: https://www.ubuy.com.lb/en/quotation-page
+            - listitem [ref=e276] [cursor=pointer]:
+              - link "Intellectual Property" [ref=e277]:
+                - /url: https://www.ubuy.com.lb/en/intellectual-property
+            - listitem [ref=e278] [cursor=pointer]:
+              - link "Sitemap" [ref=e279]:
+                - /url: https://www.ubuy.com.lb/en/html-sitemap
+            - listitem [ref=e280] [cursor=pointer]:
+              - link "Track Order" [ref=e281]:
+                - /url: https://www.ubuy.com.lb/en/trackorder
+            - listitem [ref=e282] [cursor=pointer]:
+              - link "Customs tariffs and fees" [ref=e283]:
+                - /url: https://www.ubuy.com.lb/en/custom-duties
+            - listitem [ref=e284] [cursor=pointer]:
+              - link "Shipping Policy" [ref=e285]:
+                - /url: https://www.ubuy.com.lb/en/shipping-policy
+            - listitem [ref=e286] [cursor=pointer]:
+              - link "Micro Influencer" [ref=e287]:
+                - /url: https://www.ubuy.com.lb/en/micro-influencer
+            - listitem [ref=e288] [cursor=pointer]:
+              - link "Ubuy Membership" [ref=e289]:
+                - /url: https://www.ubuy.com.lb/en/ubuy-membership
+            - listitem [ref=e290] [cursor=pointer]:
+              - link "Ubuy Warranty" [ref=e291]:
+                - /url: https://www.ubuy.com.lb/en/warranty
+            - listitem [ref=e292] [cursor=pointer]:
+              - link "Healthcare Disclaimer" [ref=e293]:
+                - /url: https://www.ubuy.com.lb/en/medical-supplements-disclaimer
+        - generic [ref=e294]:
+          - paragraph [ref=e296]: UBUY
+          - separator [ref=e298]
+          - list [ref=e299]:
+            - listitem [ref=e300] [cursor=pointer]:
+              - link "Download App" [ref=e301]:
+                - /url: https://www.ubuy.com.lb/en/download-app
+            - listitem [ref=e302] [cursor=pointer]:
+              - link "Brands List" [ref=e303]:
+                - /url: https://www.ubuy.com.lb/en/html-sitemap/ubuybrands
+            - listitem [ref=e304] [cursor=pointer]:
+              - link "Customer Reviews" [ref=e305]:
+                - /url: https://www.ubuy.com.lb/en/ubuy-reviews
+            - listitem [ref=e306] [cursor=pointer]:
+              - link "Return Policy" [ref=e307]:
+                - /url: https://www.ubuy.com.lb/en/return-policy
+            - listitem [ref=e308] [cursor=pointer]:
+              - link "Blog" [ref=e309]:
+                - /url: https://blog.ubuy.com/en/
+            - listitem [ref=e310] [cursor=pointer]:
+              - link "FAQ" [ref=e311]:
+                - /url: https://www.ubuy.com.lb/en/faq
+            - listitem [ref=e312] [cursor=pointer]:
+              - link "About Ucredit" [ref=e313]:
+                - /url: https://www.ubuy.com.lb/en/about-ucredit
+            - listitem [ref=e314] [cursor=pointer]:
+              - link "Ubuy Affiliates" [ref=e315]:
+                - /url: https://uglow.ubuy.com/
+            - listitem [ref=e316] [cursor=pointer]:
+              - link "Ubuy Gift Cards" [ref=e317]:
+                - /url: https://www.ubuy.com.lb/en/ubuy-gift-cards
+        - generic [ref=e318]:
+          - paragraph [ref=e320]: PAYMENT
+          - separator [ref=e322]
+          - list [ref=e323]:
+            - listitem [ref=e324]:
+              - generic [ref=e325]:
+                - figure [ref=e326]:
+                  - img "Paypal payment" [ref=e327]
+                - generic [ref=e328]: Paypal
+            - listitem [ref=e329]:
+              - generic [ref=e330]:
+                - figure [ref=e331]:
+                  - img "Visa payment" [ref=e332]
+                - generic [ref=e333]: Visa
+            - listitem [ref=e334]:
+              - generic [ref=e335]:
+                - figure [ref=e336]:
+                  - img "Mastercard payment" [ref=e337]
+                - generic [ref=e338]: Mastercard
+        - generic [ref=e339]:
+          - paragraph [ref=e341]: SHIPPING
+          - separator [ref=e343]
+          - list [ref=e344]:
+            - listitem [ref=e345]:
+              - paragraph [ref=e347]:
+                - text: Express Shipping
+                - generic [ref=e348]: Fast Delivery
+            - listitem [ref=e349]:
+              - paragraph [ref=e351]:
+                - text: Standard Shipping
+                - generic [ref=e352]: 10+ Business Days
+        - generic [ref=e353]:
+          - paragraph [ref=e355]: CITIES COVERED
+          - separator [ref=e357]
+          - list [ref=e358]:
+            - listitem [ref=e359] [cursor=pointer]:
+              - link "Beirut" [ref=e360]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-beirut
+            - listitem [ref=e361] [cursor=pointer]:
+              - link "Tripoli" [ref=e362]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-tripoli
+            - listitem [ref=e363] [cursor=pointer]:
+              - link "Jounieh" [ref=e364]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-jounieh
+            - listitem [ref=e365] [cursor=pointer]:
+              - link "Sour" [ref=e366]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-sour
+            - listitem [ref=e367] [cursor=pointer]:
+              - link "Sidon" [ref=e368]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-sidon
+            - listitem [ref=e369] [cursor=pointer]:
+              - link "Zahle" [ref=e370]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-zahle
+            - listitem [ref=e371] [cursor=pointer]:
+              - link "Byblos" [ref=e372]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-byblos
+            - listitem [ref=e373] [cursor=pointer]:
+              - link "Baalbek" [ref=e374]:
+                - /url: https://www.ubuy.com.lb/en/online-shopping-in-baalbek
+          - link "View More Cities " [ref=e375] [cursor=pointer]:
+            - /url: https://www.ubuy.com.lb/en/html-sitemap/city
+            - text: View More Cities
+            - generic [ref=e376]: 
+        - generic [ref=e377]:
+          - paragraph [ref=e379]: 24/7 Support
+          - separator [ref=e381]
+          - list [ref=e382]:
+            - listitem [ref=e383]:
+              - generic [ref=e384]:
+                - img "24/7 support" [ref=e386]
+                - generic [ref=e387]:
+                  - paragraph [ref=e388]:
+                    - link "24/7 Customer Support" [ref=e389] [cursor=pointer]:
+                      - /url: https://www.ubuy.com.lb/en/contacts
+                  - paragraph [ref=e390]:
+                    - link "Get your texts/emails answered in your native language" [ref=e391] [cursor=pointer]:
+                      - /url: https://www.ubuy.com.lb/en/contacts
+            - listitem [ref=e392]:
+              - text: Customer Services
+              - generic [ref=e393]:
+                - img "coustmer-service" [ref=e394]
+                - link "+961 1957546" [ref=e395] [cursor=pointer]:
+                  - /url: tel:+9611957546
+          - generic [ref=e396]:
+            - paragraph [ref=e397]: Download our App
+            - generic [ref=e398]:
+              - link "App Store" [ref=e399] [cursor=pointer]:
+                - /url: https://ubys.us/apps/?type=apps&utm_source=inhd-ubapp&utm_medium=ubuy-website-abroad&utm_term=bottom-icon&utm_campaign=app-install-ubuy-abroad-web-BTM
+              - link "Play Store" [ref=e400] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=com.ubuy&referrer=utm_source%3Dinhd-ubapp%26utm_medium%3Dubuy-website-abroad%26utm_term%3Dbottom-icon%26utm_campaign%3Dapp-install-ubuy-abroad-web-BTM
+      - generic [ref=e401]:
+        - generic [ref=e402]:
+          - generic [ref=e404]:
+            - generic [ref=e405]: "Delivery :"
+            - button "Lebanon " [ref=e407] [cursor=pointer]:
+              - generic [ref=e410]: Lebanon
+              - text: 
+          - generic [ref=e411]:
+            - paragraph [ref=e412]: TRUST ENSURED WITH
+            - generic [ref=e413]:
+              - link "PCI Security Standards Council" [ref=e414] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/compliance/pci-dss
+                - img "PCI Security Standards Council" [ref=e415]
+              - link "iso certified" [ref=e417] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/iso-27001-2022-certified
+                - img "iso certified" [ref=e418]
+          - separator [ref=e419]
+        - generic [ref=e420]:
+          - paragraph [ref=e421]: Ubuy Popular Stores
+          - list [ref=e422]:
+            - listitem [ref=e423]:
+              - link "Shop from USA" [ref=e424] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-usa
+            - listitem [ref=e425]:
+              - link "Shop from UK" [ref=e426] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-uk
+            - listitem [ref=e427]:
+              - link "Shop from Japan" [ref=e428] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-japan
+            - listitem [ref=e429]:
+              - link "Shop from Hong Kong" [ref=e430] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-hong-kong
+            - listitem [ref=e431]:
+              - link "Shop from Korea" [ref=e432] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-korea
+            - listitem [ref=e433]:
+              - link "Shop from China" [ref=e434] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-china
+            - listitem [ref=e435]:
+              - link "Shop from Turkey" [ref=e436] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-turkey
+            - listitem [ref=e437]:
+              - link "Shop from Europe" [ref=e438] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/shop-import-products-from-germany
+          - separator [ref=e439]
+      - generic [ref=e442]:
+        - paragraph [ref=e444]: Copyright © 2026 Ubuy Co. All rights reserved.
+        - list [ref=e446]:
+          - listitem [ref=e447]:
+            - link "Terms & Conditions" [ref=e448] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/terms
+          - listitem [ref=e449]:
+            - link "Privacy Policy" [ref=e450] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/privacy-policy
+          - listitem [ref=e451]:
+            - link "About Us" [ref=e452] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/about-us
+          - listitem [ref=e453]:
+            - link "Contact Us" [ref=e454] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/contacts
+        - generic [ref=e456]:
+          - generic [ref=e457]: Follow Us
+          - generic [ref=e458]:
+            - link "" [ref=e459] [cursor=pointer]:
+              - /url: https://www.facebook.com/GlobalUbuy
+              - generic [ref=e460]: 
+            - link "" [ref=e461] [cursor=pointer]:
+              - /url: https://www.instagram.com/ubuy.official/
+              - generic [ref=e462]: 
+            - link "" [ref=e463] [cursor=pointer]:
+              - /url: https://www.youtube.com/@ubuyofficial
+              - generic [ref=e464]: 
+            - link "" [ref=e465] [cursor=pointer]:
+              - /url: https://x.com/Ubuyofficial
+              - generic [ref=e466]: 
+            - link "" [ref=e467] [cursor=pointer]:
+              - /url: https://www.pinterest.com/ubuy_co/
+              - generic [ref=e468]: 
+    - text:     
+  - text:  
+  - generic [ref=e470]:
+    - paragraph [ref=e472]:
+      - text: We are using cookies to ensure that we give you the best experience. By continuing to use this site, you agree to our policy. To read more about how we use cookies read our
+      - link "Privacy Policy" [ref=e473] [cursor=pointer]:
+        - /url: https://www.ubuy.com.lb/en/privacy-policy
+    - generic [ref=e474]:
+      - button "Accept" [ref=e476] [cursor=pointer]
+      - button "Reject" [ref=e478] [cursor=pointer]

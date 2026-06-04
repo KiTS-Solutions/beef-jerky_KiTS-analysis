@@ -1,0 +1,158 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]:
+          - button "Mobile Menu" [ref=e7] [cursor=pointer]:
+            - generic [ref=e8]: 
+          - link "Lulu Logo" [ref=e9] [cursor=pointer]:
+            - /url: /en-ae/
+            - img "Lulu Logo" [ref=e11]
+          - generic [ref=e12]:
+            - generic [ref=e13] [cursor=pointer]:
+              - generic [ref=e14]: 
+              - generic [ref=e15]: Al Nahyan
+            - generic [ref=e16]:
+              - paragraph [ref=e17]: Let us locate you!
+              - generic [ref=e18]: Detect your location to get the suitable products and offers.
+              - button " Deliver Here" [ref=e20] [cursor=pointer]:
+                - generic [ref=e21]: 
+                - text: Deliver Here
+              - generic [ref=e22] [cursor=pointer]: Enter Manually
+              - generic [ref=e23] [cursor=pointer]: Add Address
+        - generic [ref=e26]:
+          - generic [ref=e27] [cursor=pointer]:
+            - generic [ref=e28]:
+              - generic [ref=e29]: 
+              - generic [ref=e30]: Scheduled
+            - generic [ref=e31]:
+              - generic [ref=e32]: Get it by
+              - generic [ref=e33]: Tomorrow
+          - generic [ref=e34] [cursor=pointer]:
+            - generic [ref=e35]:
+              - img "Quick" [ref=e37]
+              - generic [ref=e38]: Quick
+            - generic [ref=e39]: Busy
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: 
+            - text:  
+          - text: 
+          - list [ref=e44]:
+            - listitem [ref=e45]:
+              - button "LOGIN" [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]: 
+          - list [ref=e49]:
+            - listitem [ref=e50]:
+              - button " 0" [ref=e51] [cursor=pointer]:
+                - generic [ref=e52]: 
+                - generic [ref=e53]: "0"
+      - text:  
+    - main [ref=e54]:
+      - generic [ref=e56]:
+        - generic [ref=e57]: "404"
+        - heading "Page Not Found" [level=1] [ref=e58]
+        - paragraph [ref=e59]: It looks like the page you're looking for doesn't exist.
+        - link "Return to Home Page" [ref=e60] [cursor=pointer]:
+          - /url: /en-ae/
+          - button "Return to Home Page" [ref=e61]
+    - contentinfo "footer" [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e67]:
+          - generic [ref=e68]:
+            - generic [ref=e69]: Know Us
+            - list [ref=e71]:
+              - listitem [ref=e72]:
+                - link "About Us" [ref=e73] [cursor=pointer]:
+                  - /url: /en-ae/aboutus
+              - listitem [ref=e74]:
+                - link "Feedback" [ref=e75] [cursor=pointer]:
+                  - /url: /en-ae/contact-us
+              - listitem [ref=e76]:
+                - link "FAQs" [ref=e77] [cursor=pointer]:
+                  - /url: /en-ae/faq
+              - listitem [ref=e78]:
+                - link "News & Events" [ref=e79] [cursor=pointer]:
+                  - /url: /en-ae/news
+          - generic [ref=e80]:
+            - generic [ref=e81]: Policies
+            - list [ref=e83]:
+              - listitem [ref=e84]:
+                - link "Terms & Conditions" [ref=e85] [cursor=pointer]:
+                  - /url: /en-ae/termsAndConditions
+              - listitem [ref=e86]:
+                - link "Return Policy" [ref=e87] [cursor=pointer]:
+                  - /url: /en-ae/returnpolicy
+              - listitem [ref=e88]:
+                - link "Website Accessibility" [ref=e89] [cursor=pointer]:
+                  - /url: /en-ae/websiteaccessibility
+              - listitem [ref=e90]:
+                - link "Privacy Policy" [ref=e91] [cursor=pointer]:
+                  - /url: /en-ae/privacy-policy
+              - listitem [ref=e92]:
+                - link "Service & Warranty" [ref=e93] [cursor=pointer]:
+                  - /url: /en-ae/serviceandwarranty
+              - listitem [ref=e94]:
+                - link "Tech Shield (Extended Warranty)" [ref=e95] [cursor=pointer]:
+                  - /url: /en-ae/terms-and-conditions/techshield-extended-warranty/
+              - listitem [ref=e96]:
+                - link "Lulu Happiness" [ref=e97] [cursor=pointer]:
+                  - /url: https://happiness.luluhypermarket.com
+          - generic [ref=e98]:
+            - generic [ref=e99]: Contact
+            - list [ref=e101]:
+              - listitem [ref=e102]:
+                - link "Contact Us" [ref=e103] [cursor=pointer]:
+                  - /url: /en-ae/contactus
+        - generic [ref=e104]:
+          - generic [ref=e105]:
+            - text: Download Application
+            - generic [ref=e106]:
+              - link "App Logo" [ref=e107] [cursor=pointer]:
+                - /url: https://play.google.com/store/apps/details?id=com.akinon.lulushopping&pli=1
+                - img "App Logo" [ref=e109]
+              - link "App Logo" [ref=e110] [cursor=pointer]:
+                - /url: https://apps.apple.com/us/app/lulu-shopping/id6739010114?ls=1
+                - img "App Logo" [ref=e112]
+          - generic [ref=e113]:
+            - text: Get in touch
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - generic [ref=e116]: Whatsapp
+                - link "+9718005858" [ref=e117] [cursor=pointer]:
+                  - /url: https://wa.me/9718005858
+              - generic [ref=e118]:
+                - generic [ref=e119]: Phone
+                - link "+971600540048" [ref=e120] [cursor=pointer]:
+                  - /url: tel:+971600540048
+              - generic [ref=e121]:
+                - generic [ref=e122]: Email
+                - link "customercare@luluhypermarket.com" [ref=e123] [cursor=pointer]:
+                  - /url: mailto:customercare@luluhypermarket.com
+      - generic [ref=e124]:
+        - generic [ref=e125]:
+          - img "Copyright Logo" [ref=e127]
+          - generic [ref=e128]: ⓒ 2025 Lulu Hypermarket
+        - generic [ref=e129]:
+          - link "Terms" [ref=e130] [cursor=pointer]:
+            - /url: /en-ae/termsAndConditions
+          - link "Privacy" [ref=e131] [cursor=pointer]:
+            - /url: /en-ae/privacy-policy
+        - navigation [ref=e132]:
+          - generic [ref=e133]:
+            - link "facebook" [ref=e134] [cursor=pointer]:
+              - /url: https://www.facebook.com/LuLuHypermarketAE/
+              - generic "facebook" [ref=e135]: 
+            - link "twitter" [ref=e136] [cursor=pointer]:
+              - /url: https://x.com/luluhypr
+              - generic "twitter" [ref=e137]: 
+            - link "instagram" [ref=e138] [cursor=pointer]:
+              - /url: https://www.instagram.com/luluhypermarkets/
+              - generic "instagram" [ref=e139]: 
+            - link "youtube" [ref=e140] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/luluhypermarkets
+              - generic "youtube" [ref=e141]: 
+            - link "tiktok" [ref=e142] [cursor=pointer]:
+              - /url: https://www.tiktok.com/@LuLuHyperAE
+              - generic "tiktok" [ref=e143]: 
+  - alert [ref=e144]

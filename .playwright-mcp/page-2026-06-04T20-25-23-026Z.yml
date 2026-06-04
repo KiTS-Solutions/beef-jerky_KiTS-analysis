@@ -1,0 +1,175 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - generic [ref=e10]:
+          - link "Pick up from Hazmieh" [ref=e13] [cursor=pointer]:
+            - /url: "#"
+          - link "1.00 USD = 89,700 LBP" [ref=e16] [cursor=pointer]:
+            - /url: javascript:;
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20] [cursor=pointer]:
+          - text: 
+          - generic [ref=e21]: Toggle Nav
+        - link "store logo" [ref=e22] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/
+          - img "Spinneys Lebanon" [ref=e23]
+        - generic [ref=e24]:
+          - link "My Cart":
+            - /url: https://www.spinneyslebanon.com/default/checkout/cart/
+            - generic [ref=e25] [cursor=pointer]: My Cart
+        - combobox "Submit" [ref=e28]:
+          - search [ref=e29]:
+            - button "Submit" [ref=e30] [cursor=pointer]:
+              - img [ref=e31]
+            - searchbox "Submit" [ref=e34]
+        - list:
+          - listitem: ()
+      - text:                                                                                                                                                                                                                                                                  
+  - main [ref=e36]:
+    - heading "SORRY!" [level=1] [ref=e38]
+    - generic [ref=e40]:
+      - paragraph [ref=e41]: We couldn't find this page
+      - paragraph [ref=e42]:
+        - text: Try searching or go to
+        - link "Spinneys home page" [ref=e43] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/
+        - text: .
+  - link "Back to top" [ref=e44] [cursor=pointer]:
+    - /url: ""
+    - text: Back to top
+  - contentinfo [ref=e46]:
+    - generic [ref=e48]:
+      - generic [ref=e51]:
+        - generic [ref=e53]:
+          - heading "Download our App" [level=5] [ref=e54]
+          - paragraph [ref=e55]: You can now shop using our mobile application
+          - generic [ref=e56]:
+            - link [ref=e57] [cursor=pointer]:
+              - /url: https://apps.apple.com/us/app/id1518229592
+            - link [ref=e59] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.spinneyslebanon.app
+        - generic [ref=e62]:
+          - heading "Spinneys Lebanon" [level=5] [ref=e63]
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - link "About Spinneys Lebanon" [ref=e66] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/about-us/
+            - listitem [ref=e67]:
+              - link "Social Responsibility" [ref=e68] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/social-responsibility/
+            - listitem [ref=e69]: Spinneys Rewards
+            - listitem [ref=e70]:
+              - link "Branch Finder" [ref=e71] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/branch-finder/
+            - listitem [ref=e72]:
+              - link "Mobile App" [ref=e73] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/mobile-app-landing/
+            - listitem [ref=e74]:
+              - link "Careers" [ref=e75] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/careers
+        - generic [ref=e77]:
+          - heading "Curated for You" [level=5] [ref=e78]
+          - list [ref=e79]:
+            - listitem [ref=e80]:
+              - link "Signature for Catering" [ref=e81] [cursor=pointer]:
+                - /url: https://signatureforcatering.com/
+            - listitem [ref=e82]:
+              - link "Promotions" [ref=e83] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/promotions.html
+            - listitem [ref=e84]:
+              - link "Brands" [ref=e85] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/brands/
+            - listitem [ref=e86]:
+              - link "Healthy Living" [ref=e87] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living.html
+            - listitem [ref=e88]:
+              - link "Petfection" [ref=e89] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/petfection-landing/
+            - listitem [ref=e90]:
+              - link "Cellar" [ref=e91] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/cellar.html
+            - listitem [ref=e92]:
+              - link "Beauty" [ref=e93] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/beauty-landing/
+        - generic [ref=e95]:
+          - heading "Customer Care" [level=5] [ref=e96]
+          - list [ref=e97]:
+            - listitem [ref=e98]:
+              - link "My Account" [ref=e99] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/customer/account/
+            - listitem [ref=e100]:
+              - link "Help & Support" [ref=e101] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/help-support/
+            - listitem [ref=e102]:
+              - link "Contact Us" [ref=e103] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/contact/
+            - listitem [ref=e104]:
+              - link "Loyalty Program" [ref=e105] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/loyalty-program/
+            - listitem [ref=e106]:
+              - link "Refund Policy" [ref=e107] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/refund-policy/
+            - listitem [ref=e108]:
+              - link "Delivery Locations" [ref=e109] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/delivery-locations/
+        - generic [ref=e111]:
+          - heading "Follow Us" [level=5] [ref=e112]
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - link "Facebook Instagram" [ref=e115] [cursor=pointer]:
+                - /url: https://www.instagram.com/spinneyslebanon/
+                - img "Facebook" [ref=e117]
+                - text: Instagram
+            - listitem [ref=e118]:
+              - link "Facebook Facebook" [ref=e119] [cursor=pointer]:
+                - /url: https://www.facebook.com/spinneyslebanon
+                - img "Facebook" [ref=e121]
+                - text: Facebook
+            - listitem [ref=e122]:
+              - link "Youtube Youtube" [ref=e123] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/SpinneysChannel
+                - img "Youtube" [ref=e125]
+                - text: Youtube
+            - listitem [ref=e126]:
+              - link "X X" [ref=e127] [cursor=pointer]:
+                - /url: https://twitter.com/spinneyslebanon
+                - img "X" [ref=e129]
+                - text: X
+            - listitem [ref=e130]:
+              - link "Linkedin Linkedin" [ref=e131] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/spinneys/
+                - img "Linkedin" [ref=e133]
+                - text: Linkedin
+      - generic [ref=e136]:
+        - heading "Made with in Lebanon." [level=5] [ref=e140]:
+          - text: Made with
+          - text: in Lebanon.
+        - generic [ref=e143]:
+          - heading "Payment Methods" [level=5] [ref=e144]
+          - link "Cash on Delivery," [ref=e145] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/payment-terms/
+          - link "Credit Card on Delivery" [ref=e146] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/payment-terms/
+          - link "and Online Payments" [ref=e147] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/payment-terms/
+          - generic [ref=e148]:
+            - img "America_Express" [ref=e149]
+            - img "Mastercards" [ref=e150]
+            - img "Visa" [ref=e151]
+  - generic [ref=e154]:
+    - generic [ref=e155]: ® 2020 All Right Reserved. Gray Mackenzie Retail Lebanon SAL.
+    - list [ref=e157]:
+      - listitem [ref=e158]:
+        - link "Terms of Service" [ref=e159] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/terms-of-use/
+      - listitem [ref=e160]:
+        - link "Privacy Policy" [ref=e161] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/privacy-policy/
+      - listitem [ref=e162]:
+        - link "Disclaimer" [ref=e163] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/disclaimer/
+      - listitem [ref=e164]:
+        - link "Cookies" [ref=e165] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/cookies-policy/

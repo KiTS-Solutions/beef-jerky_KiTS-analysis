@@ -1,0 +1,101 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e6]:
+    - link "Instagram" [ref=e9] [cursor=pointer]:
+      - /url: https://www.instagram.com/livgood.lb/
+      - generic [ref=e10]: Instagram
+      - img [ref=e12]
+    - generic [ref=e14]:
+      - generic:
+        - img
+      - generic [ref=e15]:
+        - generic [ref=e16]: Your Online Market For A Better Lifestyle
+        - generic [ref=e17]: Delivery All Over Lebanon
+      - img [ref=e19] [cursor=pointer]
+    - generic [ref=e24]:
+      - generic [ref=e25]: Country/region
+      - button "(USD $)" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: (USD $)
+        - img [ref=e29]
+  - generic [ref=e33]:
+    - generic [ref=e35]:
+      - link "LivGood Lebanon" [ref=e37] [cursor=pointer]:
+        - /url: /
+        - img "LivGood Lebanon" [ref=e38]
+      - text: ()
+      - button "Open menu" [ref=e39] [cursor=pointer]:
+        - generic [ref=e40]: Open menu
+        - img [ref=e41]
+      - button "Open cart" [ref=e46] [cursor=pointer]:
+        - generic [ref=e47]: Open cart
+        - img [ref=e48]
+        - generic [ref=e52]: "0"
+    - generic [ref=e55] [cursor=pointer]:
+      - img:
+        - img
+      - searchbox "Search for..." [ref=e56]
+  - main [ref=e57]:
+    - generic [ref=e59]:
+      - heading "Page not found" [level=1] [ref=e60]
+      - paragraph [ref=e62]: The page you are looking for cannot be found
+      - link "Continue browsing" [ref=e63] [cursor=pointer]:
+        - /url: /collections/all
+  - generic [ref=e64]:
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - heading "Contact Us" [level=4] [ref=e68]
+        - generic [ref=e69]:
+          - paragraph [ref=e70]: Get in touch and let us know your feedback on our services, online shop and content!
+          - paragraph [ref=e71]:
+            - link "+9613116408" [ref=e72] [cursor=pointer]:
+              - /url: tel:9613116408
+          - paragraph [ref=e73]:
+            - link "info@livgood.com" [ref=e74] [cursor=pointer]:
+              - /url: mailto:info@livgood.com
+          - link "Instagram" [ref=e76] [cursor=pointer]:
+            - /url: https://www.instagram.com/livgood.lb/
+            - generic [ref=e77]: Instagram
+            - img [ref=e79]
+      - generic [ref=e81]:
+        - heading "Quick links" [level=4] [ref=e82]
+        - navigation [ref=e83]:
+          - link "About Us" [ref=e85] [cursor=pointer]:
+            - /url: /pages/about-us
+          - link "LivGood Loyalty Program" [ref=e87] [cursor=pointer]:
+            - /url: /pages/livgood-loyalty-program
+          - link "Reviews" [ref=e89] [cursor=pointer]:
+            - /url: /pages/reviews
+          - link "Gift Cards" [ref=e91] [cursor=pointer]:
+            - /url: /collections/gift-cards
+          - link "Terms of Service" [ref=e93] [cursor=pointer]:
+            - /url: /policies/terms-of-service
+          - link "Delivery Information" [ref=e95] [cursor=pointer]:
+            - /url: /pages/delivery-information
+          - link "Privacy Policy" [ref=e97] [cursor=pointer]:
+            - /url: /policies/privacy-policy
+          - link "Request Account Deletion" [ref=e99] [cursor=pointer]:
+            - /url: /pages/request-account-deletion
+          - link "Refund Policy" [ref=e101] [cursor=pointer]:
+            - /url: /policies/refund-policy
+          - link "Contact Us" [ref=e103] [cursor=pointer]:
+            - /url: /pages/contact-us
+          - link "FAQ's" [ref=e105] [cursor=pointer]:
+            - /url: /pages/faqs
+    - generic [ref=e107]:
+      - generic [ref=e108]:
+        - text: Copyright © 2026
+        - link "LivGood Lebanon" [ref=e109] [cursor=pointer]:
+          - /url: /
+        - text: .
+        - link "Powered by Shopify" [ref=e111] [cursor=pointer]:
+          - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+      - generic [ref=e113]:
+        - generic [ref=e114]: Country/region
+        - button "(USD $)" [ref=e115] [cursor=pointer]:
+          - generic [ref=e116]: (USD $)
+          - img [ref=e118]
+  - generic [ref=e121] [cursor=pointer]:
+    - img [ref=e122]
+    - paragraph [ref=e124]: LivGood Rewards
+    - paragraph

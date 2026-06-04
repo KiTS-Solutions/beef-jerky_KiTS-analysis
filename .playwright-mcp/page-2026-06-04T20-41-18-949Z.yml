@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - generic [ref=e4]:
+    - paragraph [ref=e6]: Delivery < 45 min until 12AM
+    - banner [ref=e7]:
+      - generic [ref=e8]:
+        - link "Autobar" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img "Autobar" [ref=e12]
+        - generic [ref=e14]:
+          - button "Search" [ref=e15] [cursor=pointer]:
+            - img
+            - generic: Search
+          - link "Log in" [ref=e16] [cursor=pointer]:
+            - /url: https://autobarlb.com/customer_authentication/redirect?locale=en&region_country=LB
+            - img [ref=e17]
+            - generic [ref=e19]: Log in
+          - link "Cart" [ref=e20] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e21]
+            - generic [ref=e23]: Cart
+          - button "Menu" [ref=e24] [cursor=pointer]:
+            - img
+  - generic [ref=e25]:
+    - main [ref=e26]:
+      - generic [ref=e28]:
+        - 'heading "Search results: 0 results for \"quest bar\"" [level=1] [ref=e29]':
+          - generic [ref=e30]: "Search results:"
+          - text: 0 results for "quest bar"
+        - search [ref=e33]:
+          - generic [ref=e34]:
+            - searchbox "Search" [ref=e35]: quest bar
+            - button "Submit" [ref=e37] [cursor=pointer]
+        - separator [ref=e38]
+        - paragraph [ref=e40]:
+          - text: Please try a different search term or go back to the
+          - link "homepage" [ref=e41] [cursor=pointer]:
+            - /url: /
+          - text: .
+      - heading "Search results" [level=2] [ref=e42]
+      - list
+    - contentinfo [ref=e44]:
+      - generic [ref=e46]:
+        - generic [ref=e48]:
+          - paragraph [ref=e49]: Shop
+          - list [ref=e50]:
+            - listitem [ref=e51]:
+              - link "Liquor" [ref=e52] [cursor=pointer]:
+                - /url: /collections/liquors
+            - listitem [ref=e53]:
+              - link "Wines" [ref=e54] [cursor=pointer]:
+                - /url: /collections/wines
+            - listitem [ref=e55]:
+              - link "Cocktails" [ref=e56] [cursor=pointer]:
+                - /url: /collections/cocktails
+            - listitem [ref=e57]:
+              - link "Gift Cards" [ref=e58] [cursor=pointer]:
+                - /url: /products/autobar-gift-card
+            - listitem [ref=e59]:
+              - link "Bar Equipment" [ref=e60] [cursor=pointer]:
+                - /url: /collections/bar-equipment
+            - listitem [ref=e61]:
+              - link "Drinks & Budget Calculator" [ref=e62] [cursor=pointer]:
+                - /url: /pages/party-planning-calculator
+        - generic [ref=e64]:
+          - paragraph [ref=e65]: Corporate
+          - list [ref=e66]:
+            - listitem [ref=e67]:
+              - link "Who We Are" [ref=e68] [cursor=pointer]:
+                - /url: /pages/who-we-are
+            - listitem [ref=e69]:
+              - link "Book A Bartender" [ref=e70] [cursor=pointer]:
+                - /url: /products/book-a-bartender
+            - listitem [ref=e71]:
+              - link "Book A Bar" [ref=e72] [cursor=pointer]:
+                - /url: /products/book-a-bar
+            - listitem [ref=e73]:
+              - link "Jump Behind The Bar" [ref=e74] [cursor=pointer]:
+                - /url: /pages/jump-behind-the-bar
+            - listitem [ref=e75]:
+              - link "Blog" [ref=e76] [cursor=pointer]:
+                - /url: /blogs/blog
+            - listitem [ref=e77]:
+              - link "Contact us" [ref=e78] [cursor=pointer]:
+                - /url: /pages/contact-us
+            - listitem [ref=e79]:
+              - link "Search" [ref=e80] [cursor=pointer]:
+                - /url: /search
+        - generic [ref=e82]:
+          - paragraph [ref=e83]: T&C Policies
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - link "Privacy Policy" [ref=e86] [cursor=pointer]:
+                - /url: /policies/privacy-policy
+            - listitem [ref=e87]:
+              - link "Terms of Service" [ref=e88] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+        - generic [ref=e90]:
+          - paragraph [ref=e91]: Newsletter
+          - generic [ref=e94]:
+            - textbox "Email address" [ref=e95]
+            - button "Subscribe" [ref=e97] [cursor=pointer]
+      - separator [ref=e98]
+      - generic [ref=e100]:
+        - list [ref=e102]:
+          - listitem [ref=e103]:
+            - link "Facebook" [ref=e104] [cursor=pointer]:
+              - /url: https://www.facebook.com/autobarlb/
+              - img [ref=e105]
+              - generic [ref=e107]: Facebook
+          - listitem [ref=e108]:
+            - link "Instagram" [ref=e109] [cursor=pointer]:
+              - /url: http://instagram.com/autobarlb/
+              - img [ref=e110]
+              - generic [ref=e114]: Instagram
+          - listitem [ref=e115]:
+            - link "YouTube" [ref=e116] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCaM_y2uky1bpeNVZD02gX9Q
+              - img [ref=e117]
+              - generic [ref=e119]: YouTube
+          - listitem [ref=e120]:
+            - link "Apple" [ref=e121] [cursor=pointer]:
+              - /url: https://apps.apple.com/us/app/autobar/id1554733112
+              - img [ref=e122]
+              - generic [ref=e124]: Apple
+          - listitem [ref=e125]:
+            - link "Android" [ref=e126] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=co.shopney.autobar
+              - img [ref=e127]
+              - generic [ref=e129]: Android
+        - generic [ref=e131]:
+          - text: © 2026,
+          - link "Autobar" [ref=e132] [cursor=pointer]:
+            - /url: /
+    - generic [ref=e133]: Use left/right arrows to navigate the slideshow or swipe left/right if using a mobile device
+  - generic "Shopify online store chat" [ref=e134]:
+    - button "Chat" [ref=e136] [cursor=pointer]:
+      - img [ref=e137]
+      - generic [ref=e139]: Chat
+  - iframe [ref=e140]:
+    - generic [ref=f259e3] [cursor=pointer]: Auto pts

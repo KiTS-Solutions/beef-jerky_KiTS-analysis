@@ -1,0 +1,461 @@
+- generic [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - generic [ref=e4]:
+    - banner [ref=e6]:
+      - generic [ref=e8]: Free 1-3 day delivery $99+
+      - link "| How fast will I receive my order?" [ref=e9]:
+        - /url: "#"
+        - generic [ref=e10]: "|"
+        - generic [ref=e11] [cursor=pointer]: How fast will I receive my order?
+    - banner [ref=e14]:
+      - generic [ref=e16]:
+        - button "Site navigation" [ref=e17] [cursor=pointer]:
+          - generic [ref=e20]: Site navigation
+        - link "Quest nutrition - Home page" [ref=e23] [cursor=pointer]:
+          - /url: /
+          - img "Quest nutrition - Home page" [ref=e24]
+        - navigation "Primary" [ref=e25]
+        - generic [ref=e28]:
+          - link "Search" [ref=e29] [cursor=pointer]:
+            - /url: /search
+            - generic [ref=e31]: Search
+          - link "Cart" [ref=e32] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e35]: Cart
+    - region "Announcement" [ref=e37]:
+      - link "Get 15% off When You Subscribe to Your Favorites! Learn More." [ref=e44] [cursor=pointer]:
+        - /url: /pages/subscriptions
+    - main [ref=e45]:
+      - generic [ref=e48]:
+        - navigation "breadcrumbs" [ref=e49]:
+          - link "Home" [ref=e50] [cursor=pointer]:
+            - /url: /
+          - text: / Protein Bars
+        - heading "Protein Bars" [level=1] [ref=e51]
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - navigation: ">"
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - button "Select Product Type" [ref=e64] [cursor=pointer]:
+              - text: Select Product Type
+              - img [ref=e65]
+            - generic [ref=e68]:
+              - generic [ref=e69] [cursor=pointer]: Sort
+              - combobox "Sort" [ref=e70] [cursor=pointer]:
+                - option "Sort"
+                - option "Featured" [selected]
+                - option "Most relevant"
+                - option "Best selling"
+                - option "Alphabetically, A-Z"
+                - option "Alphabetically, Z-A"
+                - option "Price, low to high"
+                - option "Price, high to low"
+                - option "Date, old to new"
+                - option "Date, new to old"
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - generic [ref=e75]: New
+                - link "Strawberry Shortcake Protein Bar Strawberry Shortcake Protein Bar" [ref=e77] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/strawberry-shortcake-protein-bar
+                  - img "Strawberry Shortcake Protein Bar" [ref=e80]
+                  - heading "Strawberry Shortcake Protein Bar" [level=2] [ref=e81]
+              - group "Quick Add to Cart" [ref=e83]:
+                - generic [ref=e84]: Quick Add to Cart
+                - generic [ref=e85]:
+                  - generic [ref=e86] [cursor=pointer]: Select size
+                  - combobox [ref=e87] [cursor=pointer]:
+                    - generic [ref=e90]: 4 Count Box - $10.99
+                - generic [ref=e92]:
+                  - generic [ref=e93] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e94]: "1"
+                  - button "Add to cart" [ref=e95] [cursor=pointer]
+            - generic [ref=e96]:
+              - generic [ref=e97]:
+                - generic [ref=e98]: Sold Out
+                - link "Box of Quest Nutrition chocolate chip cookie dough protein bars Chocolate Chip Cookie Dough Protein Bars" [ref=e100] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/chocolate-chip-cookie-dough-protein-bar
+                  - img "Box of Quest Nutrition chocolate chip cookie dough protein bars" [ref=e103]
+                  - heading "Chocolate Chip Cookie Dough Protein Bars" [level=2] [ref=e104]
+              - group "Quick Add to Cart" [ref=e106]:
+                - generic [ref=e107]: Quick Add to Cart
+                - generic [ref=e108]:
+                  - generic [ref=e109] [cursor=pointer]: Select size
+                  - combobox [ref=e110] [cursor=pointer]
+                - button "Sold Out" [disabled] [ref=e115]
+            - generic [ref=e116]:
+              - link "Box of Quest Oatmeal Chocolate Chip Protein Bars. Blue packaging highlights 20g protein, 5g net carbs, and 1g sugar. Image of cookies on the front. Oatmeal Chocolate Chip Protein Bars" [ref=e119] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/oatmeal-chocolate-chip-protein-bar
+                - img "Box of Quest Oatmeal Chocolate Chip Protein Bars. Blue packaging highlights 20g protein, 5g net carbs, and 1g sugar. Image of cookies on the front." [ref=e122]
+                - heading "Oatmeal Chocolate Chip Protein Bars" [level=2] [ref=e123]
+              - group "Quick Add to Cart" [ref=e125]:
+                - generic [ref=e126]: Quick Add to Cart
+                - generic [ref=e127]:
+                  - generic [ref=e128] [cursor=pointer]: Select size
+                  - combobox [ref=e129] [cursor=pointer]:
+                    - generic [ref=e132]: 4 Count Box - $10.99
+                - generic [ref=e134]:
+                  - generic [ref=e135] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e136]: "1"
+                  - button "Add to cart" [ref=e137] [cursor=pointer]
+            - generic [ref=e138]:
+              - link "Apple Pie Protein Bars Apple Pie Protein Bars" [ref=e141] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/apple-pie-protein-bars
+                - img "Apple Pie Protein Bars" [ref=e144]
+                - heading "Apple Pie Protein Bars" [level=2] [ref=e145]
+              - group "Quick Add to Cart" [ref=e147]:
+                - generic [ref=e148]: Quick Add to Cart
+                - generic [ref=e149]:
+                  - generic [ref=e150] [cursor=pointer]: Select size
+                  - combobox [ref=e151] [cursor=pointer]:
+                    - generic [ref=e154]: 12 Count Box - $31.97
+                - generic [ref=e156]:
+                  - generic [ref=e157] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e158]: "1"
+                  - button "Add to cart" [ref=e159] [cursor=pointer]
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic [ref=e162]: Sold Out
+                - link "Double Chocolate Chunk Protein Bars Double Chocolate Chunk Protein Bars" [ref=e164] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/double-chocolate-chunk-protein-bar
+                  - img "Double Chocolate Chunk Protein Bars" [ref=e167]
+                  - heading "Double Chocolate Chunk Protein Bars" [level=2] [ref=e168]
+              - group "Quick Add to Cart" [ref=e170]:
+                - generic [ref=e171]: Quick Add to Cart
+                - generic [ref=e172]:
+                  - generic [ref=e173] [cursor=pointer]: Select size
+                  - combobox [ref=e174] [cursor=pointer]
+                - button "Sold Out" [disabled] [ref=e179]
+            - generic [ref=e180]:
+              - link "Chocolate Peanut Butter Protein Bar Chocolate Peanut Butter Protein Bar" [ref=e183] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/chocolate-peanut-butter-protein-bar
+                - img "Chocolate Peanut Butter Protein Bar" [ref=e186]
+                - heading "Chocolate Peanut Butter Protein Bar" [level=2] [ref=e187]
+              - group "Quick Add to Cart" [ref=e189]:
+                - generic [ref=e190]: Quick Add to Cart
+                - generic [ref=e191]:
+                  - generic [ref=e192] [cursor=pointer]: Select size
+                  - combobox [ref=e193] [cursor=pointer]:
+                    - generic [ref=e196]: 4 Count Box - $10.99
+                - generic [ref=e198]:
+                  - generic [ref=e199] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e200]: "1"
+                  - button "Add to cart" [ref=e201] [cursor=pointer]
+            - generic [ref=e202]:
+              - link "Box of Quest White Chocolate Raspberry protein bars White Chocolate Raspberry Protein Bars" [ref=e205] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/white-chocolate-raspberry-protein-bar
+                - img "Box of Quest White Chocolate Raspberry protein bars" [ref=e208]
+                - heading "White Chocolate Raspberry Protein Bars" [level=2] [ref=e209]
+              - group "Quick Add to Cart" [ref=e211]:
+                - generic [ref=e212]: Quick Add to Cart
+                - generic [ref=e213]:
+                  - generic [ref=e214] [cursor=pointer]: Select size
+                  - combobox [ref=e215] [cursor=pointer]:
+                    - generic [ref=e218]: 12 Count Box - $31.97
+                - generic [ref=e220]:
+                  - generic [ref=e221] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e222]: "1"
+                  - button "Add to cart" [ref=e223] [cursor=pointer]
+            - generic [ref=e224]:
+              - link "Lemon Cake Protein Bars Lemon Cake Protein Bars" [ref=e227] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/lemon-cake-protein-bar
+                - img "Lemon Cake Protein Bars" [ref=e230]
+                - heading "Lemon Cake Protein Bars" [level=2] [ref=e231]
+              - group "Quick Add to Cart" [ref=e233]:
+                - generic [ref=e234]: Quick Add to Cart
+                - generic [ref=e235]:
+                  - generic [ref=e236] [cursor=pointer]: Select size
+                  - combobox [ref=e237] [cursor=pointer]:
+                    - generic [ref=e240]: 12 Count Box - $31.97
+                - generic [ref=e242]:
+                  - generic [ref=e243] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e244]: "1"
+                  - button "Add to cart" [ref=e245] [cursor=pointer]
+            - generic [ref=e246]:
+              - generic [ref=e247]:
+                - generic [ref=e248]: Sold Out
+                - link "Quest Cookies & Cream protein bar box, with a bar resting on top. The blue packaging highlights 21g protein, 4g net carbs, and 1g sugar per bar. Cookies & Cream Protein Bars" [ref=e250] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/cookies-cream-protein-bar
+                  - img "Quest Cookies & Cream protein bar box, with a bar resting on top. The blue packaging highlights 21g protein, 4g net carbs, and 1g sugar per bar." [ref=e253]
+                  - heading "Cookies & Cream Protein Bars" [level=2] [ref=e254]
+              - group "Quick Add to Cart" [ref=e256]:
+                - generic [ref=e257]: Quick Add to Cart
+                - generic [ref=e258]:
+                  - generic [ref=e259] [cursor=pointer]: Select size
+                  - combobox [ref=e260] [cursor=pointer]
+                - button "Sold Out" [disabled] [ref=e265]
+            - generic [ref=e266]:
+              - link "Box of Quest Blueberry Muffin Protein Bars with a single wrapped bar on top. Packaging highlights 20g protein, low carbs, and showcases blueberry chunks. Blueberry Muffin Protein Bars" [ref=e269] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/blueberry-muffin-protein-bar
+                - img "Box of Quest Blueberry Muffin Protein Bars with a single wrapped bar on top. Packaging highlights 20g protein, low carbs, and showcases blueberry chunks." [ref=e272]
+                - heading "Blueberry Muffin Protein Bars" [level=2] [ref=e273]
+              - group "Quick Add to Cart" [ref=e275]:
+                - generic [ref=e276]: Quick Add to Cart
+                - generic [ref=e277]:
+                  - generic [ref=e278] [cursor=pointer]: Select size
+                  - combobox [ref=e279] [cursor=pointer]:
+                    - generic [ref=e282]: 4 Count Box - $10.99
+                - generic [ref=e284]:
+                  - generic [ref=e285] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e286]: "1"
+                  - button "Add to cart" [ref=e287] [cursor=pointer]
+            - generic [ref=e288]:
+              - link "Box of Quest S'mores protein bars S'Mores Protein Bars" [ref=e291] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/smores-protein-bar
+                - img "Box of Quest S'mores protein bars" [ref=e294]
+                - heading "S'Mores Protein Bars" [level=2] [ref=e295]
+              - group "Quick Add to Cart" [ref=e297]:
+                - generic [ref=e298]: Quick Add to Cart
+                - generic [ref=e299]:
+                  - generic [ref=e300] [cursor=pointer]: Select size
+                  - combobox [ref=e301] [cursor=pointer]:
+                    - generic [ref=e304]: 4 Count Box - $10.99
+                - generic [ref=e306]:
+                  - generic [ref=e307] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e308]: "1"
+                  - button "Add to cart" [ref=e309] [cursor=pointer]
+            - generic [ref=e310]:
+              - 'link "Box of Quest Minis protein bars in chocolate chip cookie dough flavor, featuring images of bars with chocolate chunks. Highlights: 80 calories, 8g protein. Mini Chocolate Chip Cookie Dough Protein Bars" [ref=e313] [cursor=pointer]':
+                - /url: /collections/protein-bars/products/mini-chocolate-chip-cookie-dough-protein-bar
+                - 'img "Box of Quest Minis protein bars in chocolate chip cookie dough flavor, featuring images of bars with chocolate chunks. Highlights: 80 calories, 8g protein." [ref=e316]'
+                - heading "Mini Chocolate Chip Cookie Dough Protein Bars" [level=2] [ref=e317]
+              - group "Quick Add to Cart" [ref=e319]:
+                - generic [ref=e320]: Quick Add to Cart
+                - generic [ref=e321]:
+                  - generic [ref=e322] [cursor=pointer]: Select size
+                  - combobox [ref=e323] [cursor=pointer]:
+                    - generic [ref=e326]: 14 Count Box - $19.99
+                - generic [ref=e328]:
+                  - generic [ref=e329] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e330]: "1"
+                  - button "Add to cart" [ref=e331] [cursor=pointer]
+            - generic [ref=e332]:
+              - generic [ref=e333]:
+                - generic [ref=e334]: Sold Out
+                - link "A red Quest Chocolate Brownie protein bar wrapper displayed on a matching box. The packaging highlights 20g protein, 4g net carbs, 1g sugar, conveying a high-protein, low-sugar snack option. Chocolate Brownie Protein Bars" [ref=e336] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/chocolate-brownie-protein-bar
+                  - img "A red Quest Chocolate Brownie protein bar wrapper displayed on a matching box. The packaging highlights 20g protein, 4g net carbs, 1g sugar, conveying a high-protein, low-sugar snack option." [ref=e339]
+                  - heading "Chocolate Brownie Protein Bars" [level=2] [ref=e340]
+              - group "Quick Add to Cart" [ref=e342]:
+                - generic [ref=e343]: Quick Add to Cart
+                - generic [ref=e344]:
+                  - generic [ref=e345] [cursor=pointer]: Select size
+                  - combobox [ref=e346] [cursor=pointer]
+                - button "Sold Out" [disabled] [ref=e351]
+            - generic [ref=e352]:
+              - generic [ref=e353]:
+                - generic [ref=e354]: Sold Out
+                - link "Dipped Cookies & Cream Protein Bars Dipped Cookies & Cream Protein Bars" [ref=e356] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/dipped-cookies-and-cream-protein-bar
+                  - img "Dipped Cookies & Cream Protein Bars" [ref=e359]
+                  - heading "Dipped Cookies & Cream Protein Bars" [level=2] [ref=e360]
+              - group "Quick Add to Cart" [ref=e362]:
+                - generic [ref=e363]: Quick Add to Cart
+                - generic [ref=e364]:
+                  - generic [ref=e365] [cursor=pointer]: Select size
+                  - combobox [ref=e366] [cursor=pointer]
+                - button "Sold Out" [disabled] [ref=e371]
+            - generic [ref=e372]:
+              - 'link "Box of Quest Mint Chocolate Chunk protein bars. Features green packaging with a bar image and nutrition highlights: 20g protein, 4g net carbs. Mint Chocolate Chunk Protein Bars" [ref=e375] [cursor=pointer]':
+                - /url: /collections/protein-bars/products/mint-chocolate-chunk-protein-bar
+                - 'img "Box of Quest Mint Chocolate Chunk protein bars. Features green packaging with a bar image and nutrition highlights: 20g protein, 4g net carbs." [ref=e378]'
+                - heading "Mint Chocolate Chunk Protein Bars" [level=2] [ref=e379]
+              - group "Quick Add to Cart" [ref=e381]:
+                - generic [ref=e382]: Quick Add to Cart
+                - generic [ref=e383]:
+                  - generic [ref=e384] [cursor=pointer]: Select size
+                  - combobox [ref=e385] [cursor=pointer]:
+                    - generic [ref=e388]: 12 Count Box - $31.97
+                - generic [ref=e390]:
+                  - generic [ref=e391] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e392]: "1"
+                  - button "Add to cart" [ref=e393] [cursor=pointer]
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - generic [ref=e396]: Sold Out
+                - link "Birthday Cake Protein Bars Birthday Cake Protein Bars" [ref=e398] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/birthday-cake-protein-bar
+                  - img "Birthday Cake Protein Bars" [ref=e401]
+                  - heading "Birthday Cake Protein Bars" [level=2] [ref=e402]
+              - group "Quick Add to Cart" [ref=e404]:
+                - generic [ref=e405]: Quick Add to Cart
+                - generic [ref=e406]:
+                  - generic [ref=e407] [cursor=pointer]: Select size
+                  - combobox [ref=e408] [cursor=pointer]
+                - button "Sold Out" [disabled] [ref=e413]
+            - generic [ref=e414]:
+              - generic [ref=e415]:
+                - generic [ref=e416]: Sold Out
+                - link "Dipped Chocolate Chip Cookie Dough Protein Bar Dipped Chocolate Chip Cookie Dough Protein Bar" [ref=e418] [cursor=pointer]:
+                  - /url: /collections/protein-bars/products/dipped-chocolate-chip-cookie-dough-protein-bar
+                  - img "Dipped Chocolate Chip Cookie Dough Protein Bar" [ref=e421]
+                  - heading "Dipped Chocolate Chip Cookie Dough Protein Bar" [level=2] [ref=e422]
+              - group "Quick Add to Cart" [ref=e424]:
+                - generic [ref=e425]: Quick Add to Cart
+                - generic [ref=e426]:
+                  - generic [ref=e427] [cursor=pointer]: Select size
+                  - combobox [ref=e428] [cursor=pointer]
+                - button "Sold Out" [disabled] [ref=e433]
+            - generic [ref=e434]:
+              - link "Box of Quest Minis Cookies & Cream protein bars with a blue background, showing bars and chocolate cookies. Highlights include \"8g protein\" and \"2g net carbs.\" Mini Cookies & Cream Protein Bars" [ref=e437] [cursor=pointer]:
+                - /url: /collections/protein-bars/products/mini-cookie-and-cream-protein-bar
+                - img "Box of Quest Minis Cookies & Cream protein bars with a blue background, showing bars and chocolate cookies. Highlights include \"8g protein\" and \"2g net carbs.\"" [ref=e440]
+                - heading "Mini Cookies & Cream Protein Bars" [level=2] [ref=e441]
+              - group "Quick Add to Cart" [ref=e443]:
+                - generic [ref=e444]: Quick Add to Cart
+                - generic [ref=e445]:
+                  - generic [ref=e446] [cursor=pointer]: Select size
+                  - combobox [ref=e447] [cursor=pointer]:
+                    - generic [ref=e450]: 14 Count Box - $19.99
+                - generic [ref=e452]:
+                  - generic [ref=e453] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e454]: "1"
+                  - button "Add to cart" [ref=e455] [cursor=pointer]
+            - generic [ref=e456]:
+              - 'link "Four Quest protein bar boxes against a black background. Flavors: Oatmeal Chocolate Chip, S''mores, Chocolate Chip Cookie Dough, and Cookies & Cream. Protein Bar Variety Pack" [ref=e459] [cursor=pointer]':
+                - /url: /collections/protein-bars/products/protein-bar-variety-pack
+                - 'img "Four Quest protein bar boxes against a black background. Flavors: Oatmeal Chocolate Chip, S''mores, Chocolate Chip Cookie Dough, and Cookies & Cream." [ref=e462]'
+                - heading "Protein Bar Variety Pack" [level=2] [ref=e463]
+              - group "Quick Add to Cart" [ref=e465]:
+                - generic [ref=e466]: Quick Add to Cart
+                - generic [ref=e467]:
+                  - generic [ref=e468] [cursor=pointer]: Select size
+                  - combobox [ref=e469] [cursor=pointer]:
+                    - generic [ref=e472]: 4 Box Set - $39.96
+                - generic [ref=e474]:
+                  - generic [ref=e475] [cursor=pointer]: "Quantity:"
+                  - spinbutton "Quantity:" [ref=e476]: "1"
+                  - button "Add to cart" [ref=e477] [cursor=pointer]
+      - paragraph [ref=e486]: The crave-worthy classics that started it all. Indulgent flavor meets high protein in deliciously sweet & chewy bars that dial down the sugar and net carbs. Experience the ultimate cheat code.
+      - generic [ref=e490]:
+        - heading "Frequently Asked Questions for Protein Bars" [level=2] [ref=e492]
+        - button "How much protein is in a Quest Protein Bar? Click to expand answer" [ref=e494] [cursor=pointer]:
+          - generic [ref=e495]: How much protein is in a Quest Protein Bar?
+          - generic [ref=e496]: Click to expand answer
+        - button "What type of protein is used in Quest Protein Bars? Click to expand answer" [ref=e498] [cursor=pointer]:
+          - generic [ref=e499]: What type of protein is used in Quest Protein Bars?
+          - generic [ref=e500]: Click to expand answer
+        - button "Do Quest Protein Bars contain sugar alcohols? Click to expand answer" [ref=e502] [cursor=pointer]:
+          - generic [ref=e503]: Do Quest Protein Bars contain sugar alcohols?
+          - generic [ref=e504]: Click to expand answer
+        - button "Are Quest Protein Bars gluten-free? Click to expand answer" [ref=e506] [cursor=pointer]:
+          - generic [ref=e507]: Are Quest Protein Bars gluten-free?
+          - generic [ref=e508]: Click to expand answer
+      - generic [ref=e518]:
+        - heading "SUBSCRIBE TO OUR NEWSLETTER" [level=2] [ref=e519]
+        - paragraph [ref=e520]: and receive a 15% discount on your next purchase!
+        - paragraph [ref=e521]:
+          - text: The offer is only eligible for new subscribers. By subscribing to Quest newsletters, you agree to our
+          - link "Notice Of Financial Incentive" [ref=e522] [cursor=pointer]:
+            - /url: https://www.questnutrition.com/pages/webstore-privacy-policy#fin
+          - text: and
+          - link "Terms & Conditions" [ref=e523] [cursor=pointer]:
+            - /url: https://www.questnutrition.com/pages/terms-conditions
+          - text: .
+    - contentinfo [ref=e526]:
+      - generic [ref=e527]:
+        - img "Quest Nutrition Logo" [ref=e530]
+        - paragraph [ref=e532]: © 2026 Quest Nutrition & WorldPantry.com® LLC
+        - list [ref=e534]:
+          - listitem [ref=e535]:
+            - link "Instagram" [ref=e536] [cursor=pointer]:
+              - /url: https://instagram.com/questnutrition?ref=badge
+              - img "Instagram" [ref=e538]
+          - listitem [ref=e539]:
+            - link "Facebook" [ref=e540] [cursor=pointer]:
+              - /url: https://www.facebook.com/questnutrition
+              - img "Facebook" [ref=e542]
+          - listitem [ref=e543]:
+            - link "Twitter" [ref=e544] [cursor=pointer]:
+              - /url: https://twitter.com/QuestNutrition
+              - img "Twitter" [ref=e546]
+          - listitem [ref=e547]:
+            - link "TikTok" [ref=e548] [cursor=pointer]:
+              - /url: https://www.tiktok.com/t/ZTRdX45Pw/
+              - img "TikTok" [ref=e550]
+          - listitem [ref=e551]:
+            - link "Pinterest" [ref=e552] [cursor=pointer]:
+              - /url: https://www.pinterest.com/questnutrition
+              - img "Pinterest" [ref=e554]
+          - listitem [ref=e555]:
+            - link "youtube" [ref=e556] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/QuestBars
+              - img "youtube" [ref=e558]
+    - list [ref=e566]:
+      - listitem [ref=e567]:
+        - link "Our Mission" [ref=e568] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/our-mission
+      - listitem [ref=e569]:
+        - link "Quest Hub" [ref=e570] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/hub
+      - listitem [ref=e571]:
+        - link "Quest For Impact" [ref=e572] [cursor=pointer]:
+          - /url: /pages/quest-for-impact
+      - listitem [ref=e573]:
+        - link "Questletes" [ref=e574] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/questletes
+      - listitem [ref=e575]:
+        - link "Quest Squad" [ref=e576] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/quest-squad
+      - listitem [ref=e577]:
+        - link "Find A Store" [ref=e578] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/store-locator
+      - listitem [ref=e579]:
+        - link "Recipes" [ref=e580] [cursor=pointer]:
+          - /url: http://blog.questnutrition.com/
+      - listitem [ref=e581]:
+        - link "Contact Us" [ref=e582] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/contactus
+      - listitem [ref=e583]:
+        - link "Quest Achievers Program" [ref=e584] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/rewards-progam
+      - listitem [ref=e585]:
+        - link "Careers" [ref=e586] [cursor=pointer]:
+          - /url: https://thesimplygoodfoodscompany.gcs-web.com/careers
+      - listitem [ref=e587]:
+        - link "CA Supply Chain Act" [ref=e588] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/legal?caSupply
+      - listitem [ref=e589]:
+        - link "About Ads" [ref=e590] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/legal
+      - listitem [ref=e591]:
+        - link "Simply Good Foods" [ref=e592] [cursor=pointer]:
+          - /url: https://www.thesimplygoodfoodscompany.com/
+      - listitem [ref=e593]:
+        - link "Refund Policy" [ref=e594] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/refund-policy
+      - listitem [ref=e595]:
+        - link "Terms of Service" [ref=e596] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/terms-of-service
+      - listitem [ref=e597]:
+        - link "Webstore Privacy Policy" [ref=e598] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/webstore-privacy-policy
+      - listitem [ref=e599]:
+        - link "Terms & Conditions" [ref=e600] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/terms-conditions
+      - listitem [ref=e601]:
+        - link "Shipping Information" [ref=e602] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/shipping-information
+      - listitem [ref=e603]:
+        - link "Accessibility" [ref=e604] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/accessibility
+      - listitem [ref=e605]:
+        - link "Notice Of Fininacial Incentive" [ref=e606] [cursor=pointer]:
+          - /url: https://www.questnutrition.com/pages/webstore-privacy-policy#fin
+  - text: 
+  - region "Cookie Preferences" [active] [ref=e607]:
+    - dialog "Privacy" [ref=e608]:
+      - generic [ref=e609]:
+        - button "Close" [ref=e611] [cursor=pointer]
+        - generic [ref=e612]:
+          - generic [ref=e615]:
+            - text: We and our third-party partners use cookies, pixels, tags, and similar technologies on this website to enable essential site functionality and for businesses purposes, including providing personalized content and targeted advertisements, and for analytics. Our site uses third-party social media “plug-ins." To opt out of certain cookies, please click “Cookie Settings”, make the necessary changes, and click the “Confirm My Choice" button to save your preference. To learn more, visit our
+            - link "More information about your privacy, opens in a new tab" [ref=e616] [cursor=pointer]:
+              - /url: https://www.questnutrition.com/pages/webstore-privacy-policy
+              - text: Privacy Policy
+          - generic [ref=e618]:
+            - button "Accept All" [ref=e620] [cursor=pointer]
+            - button "Reject All" [ref=e622] [cursor=pointer]
+            - button "Cookie Settings, Opens the preference center dialog" [ref=e624] [cursor=pointer]: Cookie Settings

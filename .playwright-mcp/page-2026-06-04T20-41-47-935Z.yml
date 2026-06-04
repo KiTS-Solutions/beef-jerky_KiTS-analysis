@@ -1,0 +1,184 @@
+- generic [active] [ref=e1]:
+  - banner:
+    - generic [ref=e2]:
+      - generic [ref=e3]:
+        - link "Menu" [ref=e4] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - img "Menu" [ref=e5]
+        - link "Spinneys" [ref=e6] [cursor=pointer]:
+          - /url: /en-ae/
+          - img "Spinneys" [ref=e7]
+        - generic [ref=e8]:
+          - link "United Arab Emirates عر" [ref=e9] [cursor=pointer]:
+            - /url: javascript:void(0)
+            - img "United Arab Emirates" [ref=e10]
+            - generic [ref=e11]: عر
+          - generic:
+            - generic:
+              - generic: Language
+              - generic:
+                - generic: EN
+                - generic: عر
+            - generic:
+              - paragraph: Select region
+              - generic:
+                - link "United Arab Emirates UAE":
+                  - /url: javascript:void(0)
+                  - generic:
+                    - img "United Arab Emirates"
+                    - generic: UAE
+                  - img
+              - generic:
+                - link "Saudi Arabia KSA":
+                  - /url: javascript:void(0)
+                  - generic:
+                    - img "Saudi Arabia"
+                    - generic: KSA
+                  - img
+        - link "Search" [ref=e12] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - img "Search" [ref=e13]
+        - link "Card 0" [ref=e14] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e15]:
+            - img "Card" [ref=e16]
+            - generic [ref=e17]: "0"
+        - list [ref=e19]:
+          - listitem [ref=e20]:
+            - link "All Products" [ref=e21] [cursor=pointer]:
+              - /url: /en-ae/catalogue/
+          - listitem [ref=e22]:
+            - link "Flower Shop" [ref=e23] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/flower_1042/
+          - listitem [ref=e24]:
+            - link "Baby & Toddler" [ref=e25] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/baby-toddler_303/
+          - listitem [ref=e26]:
+            - link "Bakery" [ref=e27] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/bakery_333/
+          - listitem [ref=e28]:
+            - link "Beauty & Cosmetics" [ref=e29] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/beauty-cosmetics_344/
+          - listitem [ref=e30]:
+            - link "Beverages" [ref=e31] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/beverages_357/
+          - listitem [ref=e32]:
+            - link "Butchery" [ref=e33] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/butchery_380/
+          - listitem [ref=e34]:
+            - link "Dairy, Deli & Chilled Foods" [ref=e35] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/dairy-deli-chilled-foods_399/
+          - listitem [ref=e36]:
+            - link "Food Cupboard" [ref=e37] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/food-cupboard_460/
+          - listitem [ref=e38]:
+            - link "Fruit & Vegetables" [ref=e39] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/fruit-vegetables_515/
+          - listitem [ref=e40]:
+            - link "Petcare" [ref=e41] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/petcare_566/
+          - listitem [ref=e42]:
+            - link "Seafood" [ref=e43] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/seafood_589/
+          - listitem [ref=e44]:
+            - link "Toiletries & Health" [ref=e45] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/toiletries-health_594/
+          - listitem [ref=e46]:
+            - link "Frozen" [ref=e47] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/frozen_682/
+          - listitem [ref=e48]:
+            - link "Home & Leisure" [ref=e49] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/home-leisure_692/
+          - listitem [ref=e50]:
+            - link "Household" [ref=e51] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/household_717/
+          - listitem [ref=e52]:
+            - link "Non Muslim" [ref=e53] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/non-muslim_563/
+          - listitem [ref=e54]:
+            - link "World Foods" [ref=e55] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/world-foods_780/
+          - listitem [ref=e56]:
+            - link "Seasonal Events" [ref=e57] [cursor=pointer]:
+              - /url: /en-ae/catalogue/category/seasonal-events_1021/
+      - generic [ref=e58]:
+        - generic [ref=e59] [cursor=pointer]:
+          - generic [ref=e60]:
+            - generic [ref=e61]: Free delivery
+            - generic [ref=e62]:
+              - img "Currency" [ref=e64]
+              - text: "0.00"
+          - img "Delivery fee details" [ref=e68]
+        - generic [ref=e69] [cursor=pointer]:
+          - generic [ref=e70]:
+            - img [ref=e71]
+            - generic [ref=e75]:
+              - generic [ref=e76]: Delivery today
+              - generic [ref=e77]: 10:00 – 12:00
+          - img "Delivery Details" [ref=e80]
+  - generic:
+    - generic:
+      - generic:
+        - link "Remove All":
+          - /url: javascript:void
+        - paragraph: IN YOUR BASKET (0)
+        - link:
+          - /url: "#"
+          - img
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - img
+              - paragraph: Your shopping cart is empty
+      - generic:
+        - generic:
+          - text: Total
+          - generic:
+            - img "Currency"
+            - text: "0.00"
+        - generic:
+          - generic: CHECKOUT
+  - main [ref=e81]:
+    - heading "We found 1 search results" [level=3] [ref=e86] [cursor=pointer]
+  - contentinfo [ref=e92]:
+    - generic [ref=e95]:
+      - heading "Who We Are" [level=2] [ref=e97] [cursor=pointer]
+      - heading "Shopping Online" [level=2] [ref=e99] [cursor=pointer]
+      - heading "Customer Services" [level=2] [ref=e101] [cursor=pointer]
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - link "Twitter" [ref=e104] [cursor=pointer]:
+          - /url: https://twitter.com/Spinneys_UAE
+          - img "Twitter" [ref=e105]
+        - link "Instagram" [ref=e106] [cursor=pointer]:
+          - /url: https://www.instagram.com/spinneysuae/
+          - img "Instagram" [ref=e107]
+        - link "Facebook" [ref=e108] [cursor=pointer]:
+          - /url: https://www.facebook.com/SpinneysUAE
+          - img "Facebook" [ref=e109]
+      - generic [ref=e110]:
+        - img [ref=e111]
+        - img [ref=e113]
+        - img [ref=e115]
+      - img "Spinneys" [ref=e117]
+      - generic [ref=e118]:
+        - paragraph [ref=e119]:
+          - text: For anonymous reporting of concerns about breach of laws & regulations, and/or suspected fraud/corruption, please email the issue to
+          - link "ethics@spinneys.com" [ref=e120] [cursor=pointer]:
+            - /url: mailto:ethics@spinneys.com
+        - paragraph [ref=e121]: © 2020-2026 Spinneys. All Rights Reserved.
+      - paragraph
+  - generic [ref=e123]:
+    - heading "This website uses cookies." [level=3] [ref=e124]
+    - heading "We use cookies to make your shopping smoother, personalize your experience, and improve our services. By clicking “Accept,” you agree to our cookie policy." [level=4] [ref=e125]:
+      - text: We use cookies to make your shopping smoother, personalize your experience, and improve our services. By clicking “Accept,” you agree to
+      - link "our cookie" [ref=e126] [cursor=pointer]:
+        - /url: /en-ae/cookie-policy/
+      - text: policy.
+    - button "ACCEPT" [ref=e127] [cursor=pointer]
+    - button "REJECT" [ref=e128] [cursor=pointer]
+  - iframe [ref=e131]:
+    - generic [ref=f265e6]:
+      - text: protected by
+      - strong [ref=f265e7]: reCAPTCHA

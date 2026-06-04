@@ -1,0 +1,135 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - generic [ref=e4]:
+    - paragraph [ref=e6]: Delivery < 45 min until 12AM
+    - banner [ref=e7]:
+      - generic [ref=e8]:
+        - link "Autobar" [ref=e11] [cursor=pointer]:
+          - /url: /
+          - img "Autobar" [ref=e12]
+        - generic [ref=e14]:
+          - button "Search" [ref=e15] [cursor=pointer]:
+            - img
+            - generic: Search
+          - link "Log in" [ref=e16] [cursor=pointer]:
+            - /url: https://autobarlb.com/customer_authentication/redirect?locale=en&region_country=LB
+            - img [ref=e17]
+            - generic [ref=e19]: Log in
+          - link "Cart" [ref=e20] [cursor=pointer]:
+            - /url: /cart
+            - img [ref=e21]
+            - generic [ref=e23]: Cart
+          - button "Menu" [ref=e24] [cursor=pointer]:
+            - img
+  - generic [ref=e25]:
+    - main [ref=e26]:
+      - generic [ref=e28]:
+        - heading "404 Page Not Found" [level=1] [ref=e29]
+        - paragraph [ref=e30]: The page you requested does not exist.
+        - paragraph [ref=e31]:
+          - link "Continue purchasing" [ref=e32] [cursor=pointer]:
+            - /url: /
+            - text: Continue purchasing
+            - img [ref=e33]
+    - contentinfo [ref=e36]:
+      - generic [ref=e38]:
+        - generic [ref=e40]:
+          - paragraph [ref=e41]: Shop
+          - list [ref=e42]:
+            - listitem [ref=e43]:
+              - link "Liquor" [ref=e44] [cursor=pointer]:
+                - /url: /collections/liquors
+            - listitem [ref=e45]:
+              - link "Wines" [ref=e46] [cursor=pointer]:
+                - /url: /collections/wines
+            - listitem [ref=e47]:
+              - link "Cocktails" [ref=e48] [cursor=pointer]:
+                - /url: /collections/cocktails
+            - listitem [ref=e49]:
+              - link "Gift Cards" [ref=e50] [cursor=pointer]:
+                - /url: /products/autobar-gift-card
+            - listitem [ref=e51]:
+              - link "Bar Equipment" [ref=e52] [cursor=pointer]:
+                - /url: /collections/bar-equipment
+            - listitem [ref=e53]:
+              - link "Drinks & Budget Calculator" [ref=e54] [cursor=pointer]:
+                - /url: /pages/party-planning-calculator
+        - generic [ref=e56]:
+          - paragraph [ref=e57]: Corporate
+          - list [ref=e58]:
+            - listitem [ref=e59]:
+              - link "Who We Are" [ref=e60] [cursor=pointer]:
+                - /url: /pages/who-we-are
+            - listitem [ref=e61]:
+              - link "Book A Bartender" [ref=e62] [cursor=pointer]:
+                - /url: /products/book-a-bartender
+            - listitem [ref=e63]:
+              - link "Book A Bar" [ref=e64] [cursor=pointer]:
+                - /url: /products/book-a-bar
+            - listitem [ref=e65]:
+              - link "Jump Behind The Bar" [ref=e66] [cursor=pointer]:
+                - /url: /pages/jump-behind-the-bar
+            - listitem [ref=e67]:
+              - link "Blog" [ref=e68] [cursor=pointer]:
+                - /url: /blogs/blog
+            - listitem [ref=e69]:
+              - link "Contact us" [ref=e70] [cursor=pointer]:
+                - /url: /pages/contact-us
+            - listitem [ref=e71]:
+              - link "Search" [ref=e72] [cursor=pointer]:
+                - /url: /search
+        - generic [ref=e74]:
+          - paragraph [ref=e75]: T&C Policies
+          - list [ref=e76]:
+            - listitem [ref=e77]:
+              - link "Privacy Policy" [ref=e78] [cursor=pointer]:
+                - /url: /policies/privacy-policy
+            - listitem [ref=e79]:
+              - link "Terms of Service" [ref=e80] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+        - generic [ref=e82]:
+          - paragraph [ref=e83]: Newsletter
+          - generic [ref=e86]:
+            - textbox "Email address" [ref=e87]
+            - button "Subscribe" [ref=e89] [cursor=pointer]
+      - separator [ref=e90]
+      - generic [ref=e92]:
+        - list [ref=e94]:
+          - listitem [ref=e95]:
+            - link "Facebook" [ref=e96] [cursor=pointer]:
+              - /url: https://www.facebook.com/autobarlb/
+              - img [ref=e97]
+              - generic [ref=e99]: Facebook
+          - listitem [ref=e100]:
+            - link "Instagram" [ref=e101] [cursor=pointer]:
+              - /url: http://instagram.com/autobarlb/
+              - img [ref=e102]
+              - generic [ref=e106]: Instagram
+          - listitem [ref=e107]:
+            - link "YouTube" [ref=e108] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCaM_y2uky1bpeNVZD02gX9Q
+              - img [ref=e109]
+              - generic [ref=e111]: YouTube
+          - listitem [ref=e112]:
+            - link "Apple" [ref=e113] [cursor=pointer]:
+              - /url: https://apps.apple.com/us/app/autobar/id1554733112
+              - img [ref=e114]
+              - generic [ref=e116]: Apple
+          - listitem [ref=e117]:
+            - link "Android" [ref=e118] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=co.shopney.autobar
+              - img [ref=e119]
+              - generic [ref=e121]: Android
+        - generic [ref=e123]:
+          - text: © 2026,
+          - link "Autobar" [ref=e124] [cursor=pointer]:
+            - /url: /
+    - generic [ref=e125]: Use left/right arrows to navigate the slideshow or swipe left/right if using a mobile device
+  - generic "Shopify online store chat" [ref=e126]:
+    - button "Chat 1" [ref=e128] [cursor=pointer]:
+      - img [ref=e129]
+      - generic [ref=e131]: Chat
+      - generic [ref=e132]: "1"
+  - iframe [ref=e133]:
+    - generic [ref=f264e3] [cursor=pointer]: Auto pts

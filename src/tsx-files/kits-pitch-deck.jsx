@@ -1,4 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
+import jacklinksImg       from '../competition/jacklinks.png';
+import jacklinksFlavorImg from '../competition/jacklinks-flavors.png';
+import haloImg            from '../competition/halo.png';
+import rawBitesFlavorsImg from '../competition/raw-bites-flavors.png';
+import acupFlavorsImg     from '../competition/Acup-flavors.png';
+import wildWestImg        from '../competition/wild-west.png';
+import countryArcherImg   from '../competition/country-archer.png';
+import makBarImg          from '../competition/mak-bar.png';
+import barebellsImg       from '../competition/barebells.png';
+import questBarImg        from '../competition/quest-bar.png';
 
 // ─── DESIGN TOKENS ────────────────────────────────────────────────────────────
 const C = {
@@ -26,6 +36,104 @@ function useResponsive() {
     return () => window.removeEventListener("resize", h);
   }, []);
   return { isMobile, isTablet };
+}
+
+// ─── LIGHTBOX ─────────────────────────────────────────────────────────────────
+function Lightbox({ src, alt, onClose }) {
+  useEffect(() => {
+    // Inject fade-in keyframe once
+    const id = "__lb_kf__";
+    if (!document.getElementById(id)) {
+      const s = document.createElement("style");
+      s.id = id;
+      s.textContent = "@keyframes __lbFadeIn{from{opacity:0;transform:scale(0.96)}to{opacity:1;transform:scale(1)}}";
+      document.head.appendChild(s);
+    }
+    // ESC to close
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", onKey);
+    // Scroll lock
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+      style={{
+        position: "fixed", inset: 0, zIndex: 9999,
+        background: "rgba(5,4,4,0.93)",
+        backdropFilter: "blur(8px)", WebkitBackdropFilter: "blur(8px)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        cursor: "zoom-out",
+      }}
+    >
+      {/* Close button — top-right, 44×44 touch target */}
+      <button
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
+        aria-label="Close image viewer"
+        style={{
+          position: "fixed", top: 16, right: 16, zIndex: 10000,
+          width: 44, height: 44, borderRadius: "50%",
+          background: "rgba(237,224,204,0.12)",
+          border: "1px solid rgba(237,224,204,0.25)",
+          color: C.cream, fontSize: 24, lineHeight: "44px",
+          cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center",
+          fontFamily: "monospace", fontWeight: 300, transition: "background 0.15s, border-color 0.15s",
+          padding: 0,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = "rgba(237,224,204,0.25)";
+          e.currentTarget.style.borderColor = "rgba(237,224,204,0.5)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = "rgba(237,224,204,0.12)";
+          e.currentTarget.style.borderColor = "rgba(237,224,204,0.25)";
+        }}
+      >
+        ×
+      </button>
+
+      {/* Image container — stop propagation so clicking the image doesn't close */}
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          cursor: "default",
+          animation: "__lbFadeIn 0.2s cubic-bezier(0.22,1,0.36,1) both",
+          display: "flex", flexDirection: "column", alignItems: "center", gap: 14,
+        }}
+      >
+        <img
+          src={src}
+          alt={alt || ""}
+          style={{
+            maxWidth: "92vw", maxHeight: "86vh",
+            objectFit: "contain", display: "block",
+            borderRadius: 4,
+            boxShadow: "0 32px 96px rgba(0,0,0,0.85), 0 0 0 1px rgba(200,160,80,0.12)",
+          }}
+        />
+        {alt && (
+          <div style={{
+            fontFamily: "monospace", fontSize: 10, color: C.creamDim,
+            letterSpacing: "0.12em", textTransform: "uppercase",
+          }}>
+            {alt}
+          </div>
+        )}
+        <div style={{ fontFamily: "monospace", fontSize: 8.5, color: C.goldDim, letterSpacing: "0.1em" }}>
+          ESC or click outside to close
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // ─── SHARED SLIDE HEADER ──────────────────────────────────────────────────────
@@ -793,6 +901,187 @@ function ClosingSlide({ slide }) {
   );
 }
 
+// ─── COMPETITION LANDSCAPE ────────────────────────────────────────────────────
+function CompLandscapeSlide({ slide }) {
+  const { isMobile } = useResponsive();
+  const [ag, setAg] = useState(0);
+  const [lightbox, setLightbox] = useState(null);
+  const group = slide.groups[ag];
+
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "20px 16px" : "36px 72px" }}>
+      <SH slide={slide} />
+      <p style={{ fontSize: isMobile ? 10 : 11, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 12px", letterSpacing: "0.04em" }}>{slide.subtitle}</p>
+
+      {/* Group tabs */}
+      <div style={{ display: "flex", gap: 4, marginBottom: 12, flexWrap: "wrap" }}>
+        {slide.groups.map((g, i) => (
+          <button key={i} onClick={() => setAg(i)} style={{
+            flex: "1 1 auto",
+            background: ag === i ? `${g.color}15` : C.charcoal,
+            border: `1px solid ${ag === i ? g.color : C.ash}`,
+            borderTop: `3px solid ${ag === i ? g.color : C.ash}`,
+            borderRadius: 3, padding: isMobile ? "8px 8px" : "8px 12px",
+            cursor: "pointer", textAlign: "left", transition: "all 0.2s",
+            WebkitTapHighlightColor: "transparent", touchAction: "manipulation"
+          }}>
+            <div style={{ fontFamily: "monospace", fontSize: 6.5, color: g.color, letterSpacing: "0.12em", marginBottom: 2, whiteSpace: "nowrap" }}>{g.type}</div>
+            <div style={{ fontSize: isMobile ? 9.5 : 10.5, color: ag === i ? C.cream : C.creamDim, lineHeight: 1.2 }}>{g.label}</div>
+          </button>
+        ))}
+      </div>
+
+      {/* Competitor cards */}
+      <div style={{
+        flex: 1,
+        display: "grid",
+        gridTemplateColumns: isMobile ? "1fr" : `repeat(${Math.min(group.competitors.length, 3)}, 1fr)`,
+        gap: 10, alignContent: "start", overflowY: "auto", WebkitOverflowScrolling: "touch"
+      }}>
+        {group.competitors.map((comp, ci) => (
+          <div key={ci} style={{
+            background: C.charcoal, border: `1px solid ${C.ash}`,
+            borderTop: `3px solid ${group.color}`, borderRadius: 4,
+            overflow: "hidden", display: "flex", flexDirection: "column"
+          }}>
+            {comp.img ? (
+              <div
+                onClick={() => setLightbox({ src: comp.img, alt: comp.name })}
+                title="Click to view full size"
+                style={{
+                  background: "#F5F3EF", display: "flex", alignItems: "center", justifyContent: "center",
+                  padding: "8px 10px", height: isMobile ? 78 : 100, flexShrink: 0,
+                  cursor: "zoom-in", position: "relative",
+                }}
+              >
+                <img src={comp.img} alt={comp.name} style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain", pointerEvents: "none" }} />
+                {/* Expand hint */}
+                <div style={{
+                  position: "absolute", bottom: 4, right: 5,
+                  fontFamily: "monospace", fontSize: 7, color: "rgba(60,50,40,0.55)",
+                  letterSpacing: "0.05em", pointerEvents: "none", userSelect: "none",
+                }}>
+                  ⤢ tap to expand
+                </div>
+              </div>
+            ) : (
+              <div style={{ background: `${group.color}10`, borderBottom: `1px solid ${group.color}20`, padding: "10px 14px", flexShrink: 0, minHeight: 44, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+                <div style={{ fontFamily: "monospace", fontSize: 7, color: group.color, letterSpacing: "0.1em", marginBottom: 3 }}>{comp.category}</div>
+                <div style={{ fontSize: 10, color: C.creamDim, fontStyle: "italic" }}>Screenshot not captured — field confirmed present</div>
+              </div>
+            )}
+            <div style={{ padding: "10px 12px", flex: 1, display: "flex", flexDirection: "column" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 3, gap: 6 }}>
+                <div style={{ fontSize: isMobile ? 11.5 : 12.5, color: C.cream, fontFamily: "Georgia,serif" }}>{comp.name}</div>
+                <span style={{ fontFamily: "monospace", fontSize: 6.5, color: group.color, background: `${group.color}15`, border: `1px solid ${group.color}25`, padding: "2px 6px", borderRadius: 2, flexShrink: 0 }}>{comp.origin}</span>
+              </div>
+              {comp.price && <div style={{ fontFamily: "monospace", fontSize: 8, color: C.amber, marginBottom: 6, lineHeight: 1.3 }}>{comp.price}</div>}
+              <div style={{ height: 1, background: C.ash, marginBottom: 7 }} />
+              <div style={{ flex: 1 }}>
+                {comp.gaps.map((gap, gi) => (
+                  <div key={gi} style={{ display: "flex", gap: 6, marginBottom: 5, alignItems: "flex-start" }}>
+                    <span style={{ color: C.red, fontSize: 9, flexShrink: 0, marginTop: 1.5, lineHeight: 1 }}>✗</span>
+                    <span style={{ fontSize: isMobile ? 9 : 9.5, color: C.creamDim, lineHeight: 1.4 }}>{gap}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style={{ marginTop: 8, padding: "9px 14px", background: `${C.greenBright}0D`, border: `1px solid ${C.greenBright}22`, borderRadius: 3 }}>
+        <p style={{ margin: 0, fontSize: isMobile ? 10.5 : 11.5, color: C.greenBright, fontFamily: "Georgia,serif", lineHeight: 1.4 }}>{slide.verdict}</p>
+      </div>
+
+      {lightbox && <Lightbox src={lightbox.src} alt={lightbox.alt} onClose={() => setLightbox(null)} />}
+    </div>
+  );
+}
+
+// ─── COMPETITION MATRIX ───────────────────────────────────────────────────────
+function CompMatrixSlide({ slide }) {
+  const { isMobile } = useResponsive();
+
+  const badge = (v) => {
+    if (v === "WIN")  return { char: "✓", color: C.greenBright, bg: `${C.greenBright}18` };
+    if (v === "FAIL") return { char: "✗", color: C.red,         bg: `${C.red}14`         };
+    if (v === "PART") return { char: "~", color: C.amber,       bg: `${C.amber}14`        };
+    return { char: "—", color: C.creamDim, bg: "transparent" };
+  };
+
+  return (
+    <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "20px 14px" : "36px 72px" }}>
+      <SH slide={slide} />
+      <p style={{ fontSize: isMobile ? 9 : 10, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 12px", letterSpacing: "0.04em" }}>{slide.subtitle}</p>
+
+      <div style={{ flex: 1, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: isMobile ? "520px" : "auto" }}>
+          <thead>
+            <tr>
+              <th style={{ padding: "8px 10px", fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, textAlign: "left", borderBottom: `2px solid ${C.ash}`, width: 155 }}>CRITERION</th>
+              {slide.competitors.map((comp, i) => {
+                const isUs = i === slide.competitors.length - 1;
+                return (
+                  <th key={i} style={{
+                    padding: "7px 8px", fontFamily: "monospace",
+                    fontSize: isUs ? 8.5 : 7.5, color: isUs ? C.greenBright : C.creamDim,
+                    textAlign: "center", borderBottom: `2px solid ${isUs ? C.greenBright : C.ash}`,
+                    background: isUs ? `${C.greenBright}09` : "transparent",
+                    whiteSpace: "nowrap", lineHeight: 1.4
+                  }}>
+                    {comp.short}
+                    {isUs && <div style={{ fontSize: 6.5, marginTop: 3, letterSpacing: "0.05em" }}>★ OUR BRAND</div>}
+                  </th>
+                );
+              })}
+            </tr>
+          </thead>
+          <tbody>
+            {slide.criteria.map((row, ri) => (
+              <tr key={ri} style={{ background: ri % 2 === 0 ? C.charcoal : C.obsidian }}>
+                <td style={{ padding: "9px 10px", borderBottom: `1px solid ${C.ash}` }}>
+                  <div style={{ fontSize: isMobile ? 10.5 : 11.5, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 2 }}>{row.label}</div>
+                  <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim }}>{row.note}</div>
+                </td>
+                {slide.competitors.map((comp, ci) => {
+                  const v = row.vals[comp.id];
+                  const b = badge(v);
+                  const isUs = ci === slide.competitors.length - 1;
+                  return (
+                    <td key={ci} style={{ padding: "8px", textAlign: "center", borderBottom: `1px solid ${C.ash}`, background: isUs ? `${C.greenBright}07` : "transparent" }}>
+                      <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3, background: b.bg, borderRadius: 3, padding: "4px 8px", minWidth: 40 }}>
+                        <span style={{ fontFamily: "monospace", fontSize: isUs ? 15 : 13, color: b.color, lineHeight: 1 }}>{b.char}</span>
+                        {row.text?.[comp.id] && (
+                          <span style={{ fontFamily: "monospace", fontSize: 6.5, color: isUs ? C.greenBright : C.creamDim, lineHeight: 1.25, whiteSpace: "nowrap" }}>{row.text[comp.id]}</span>
+                        )}
+                      </div>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div style={{ marginTop: 10, display: "flex", gap: 10, alignItems: "center", flexWrap: "wrap" }}>
+        <div style={{ flex: 1, padding: "9px 14px", background: `${C.greenBright}0D`, border: `1px solid ${C.greenBright}22`, borderRadius: 3 }}>
+          <p style={{ margin: 0, fontSize: isMobile ? 10.5 : 11.5, color: C.greenBright, fontFamily: "Georgia,serif", lineHeight: 1.5 }}>{slide.verdict}</p>
+        </div>
+        <div style={{ display: "flex", gap: 12, flexShrink: 0 }}>
+          {[{ char: "✓", color: C.greenBright, label: "WIN" }, { char: "~", color: C.amber, label: "PARTIAL" }, { char: "✗", color: C.red, label: "FAIL" }].map((l, i) => (
+            <div key={i} style={{ display: "flex", gap: 4, alignItems: "center" }}>
+              <span style={{ color: l.color, fontFamily: "monospace", fontSize: 10 }}>{l.char}</span>
+              <span style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim }}>{l.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── SLIDE DISPATCH ───────────────────────────────────────────────────────────
 function RenderSlide({ slide }) {
   switch (slide.type) {
@@ -809,8 +1098,10 @@ function RenderSlide({ slide }) {
     case "whykits":      return <WhyKITSSlide slide={slide} />;
     case "mandate":      return <MandateSlide slide={slide} />;
     case "qa":           return <QASlide slide={slide} />;
-    case "closing":      return <ClosingSlide slide={slide} />;
-    default:             return null;
+    case "closing":        return <ClosingSlide slide={slide} />;
+    case "comp_landscape": return <CompLandscapeSlide slide={slide} />;
+    case "comp_matrix":    return <CompMatrixSlide slide={slide} />;
+    default:               return null;
   }
 }
 
@@ -931,6 +1222,242 @@ const SLIDES = [
     ],
     notes: { open: "Walk through STRIKE and STRIKE BITES. Then ask: 'Does this feel right to you?' Pause. Let them react before advancing. Their response reveals their emotional investment in the brand — this is invaluable for the close.", emphasis: ["The score of 88 is real and defensible. Most brands launch with a 70. Explain the methodology if asked — it will demonstrate the rigor behind all RU2YA work."], timing: "5 minutes" }
   },
+
+  // ── COMPETITION SECTION ─────────────────────────────────────────────────────
+  {
+    id: "sec_comp", type: "section", label: "§COMP",
+    badge: "COMPETITION", color: C.red,
+    title: "The Competitive Landscape",
+    sub: "Every brand competing for the Lebanese protein snack buyer — imported jerky, local protein-branded snacks, global bars. STRIKE is the only local Halal beef jerky in this market.",
+    notes: {
+      open: "Transition: 'Before the plan, let us show you exactly who is in this market and what RU2YA found when we went out and priced everything ourselves. Some of what we found will change how you think about this opportunity.'",
+      emphasis: ["Halo and Raw Bites — brands the client may have seen on shelves — deliver plant-based protein from corn and peas, not meat. STRIKE delivers complete beef protein with heme iron, creatine, and B12 that no plant snack can replicate. This is the category correction."],
+      timing: "15 seconds"
+    }
+  },
+  {
+    id: "comp_landscape", type: "comp_landscape", label: "LANDSCAPE",
+    section: "COMP · MARKET MAP",
+    title: "Every Competitor in Lebanon — Field-Mapped by RU2YA",
+    subtitle: "Three competitive groups · All individually assessed · Pricing verified in Lebanese market · June 2026",
+    verdict: "STRIKE BITES is the only local Halal beef jerky brand in Lebanon. Imported jerky arrives at 2× our price with no Lebanese authority certification. Local 'protein' snacks deliver plant-based protein in cups or puffs — a fundamentally different format and occasion. Wild West Halal (UK) is confirmed in UAE and heading this way. The first-mover window is measured in months.",
+    groups: [
+      {
+        type: "DIRECT — IMPORTED BEEF JERKY",
+        label: "Jack Link's, Country Archer & Wild West",
+        color: C.red,
+        competitors: [
+          {
+            name: "Jack Link's",
+            origin: "USA · Carrefour, LivGood & Spinneys Lebanon",
+            category: "Beef Jerky — Global Market Leader",
+            price: "$5.15–$5.62 / 40g · Teriyaki, Original, Sweet & Hot (all in stock at Carrefour & LivGood Lebanon)",
+            img: jacklinksFlavorImg,
+            gaps: [
+              "No Lebanese halal authority certification — FAMBRAS (Brazil) mark on EU packs only, unverifiable at Lebanese point of sale",
+              "$5.15–$5.62 for 40g — over 2× STRIKE's target price. Structurally priced out of routine daily purchase.",
+              "American flavor conventions — Teriyaki, Sweet & Hot — no Levantine palate connection or cultural resonance",
+              "Import supply chain: FX volatility, customs delays, no Lebanese distributor accountability or shelf support",
+            ]
+          },
+          {
+            name: "Country Archer",
+            origin: "USA · Confirmed at Spinneys Lebanon",
+            category: "Grass-Fed Beef Jerky — Premium Tier",
+            price: "~$6–8 per pack (premium grass-fed; confirmed shelf stock at Spinneys Lebanon)",
+            img: countryArcherImg,
+            gaps: [
+              "No Halal certification — no mark confirmed on Lebanese-market packaging",
+              "Highest price point in the category — above Jack Link's at ~$6–8 per pack, further from daily purchase",
+              "American origin and flavor profile — no cultural resonance or Lebanese market roots",
+              "Spinneys-exclusive footprint — absent from gym, pharmacy, or impulse HoReCa channels",
+            ]
+          },
+          {
+            name: "Wild West",
+            origin: "UK (New World Foods / Valeo Group) · UAE confirmed · Lebanon: monitoring",
+            category: "Beef Jerky — Halal Line Launched Jan 2024 · Approaching MENA",
+            price: "UAE confirmed (Carrefour, Spinneys, Lulu UAE) · Lebanon distribution not yet confirmed",
+            img: wildWestImg,
+            gaps: [
+              "Lebanon presence unconfirmed as of June 2026 — UAE distribution only. STRIKE must establish before this brand enters.",
+              "Halal range only launched January 2024 (Forres, Scotland facility) — new entrant, not established in any Arab market",
+              "No Lebanese cultural story — British producer with zero MENA heritage or local brand connection",
+              "⚠ Strategic threat: Wild West Halal entering Lebanon would be STRIKE's first direct Halal jerky competitor. First-mover window is now.",
+            ]
+          }
+        ]
+      },
+      {
+        type: "LOCAL / REGIONAL — PROTEIN-BRANDED SNACKS",
+        label: "Halo, Raw Bites, A Cup & MAK Bar",
+        color: C.amber,
+        competitors: [
+          {
+            name: "Halo Protein Puffs",
+            origin: "Egypt (HEIM Foods) · Imported to Lebanon",
+            category: "Puffed Corn Snack — Egyptian Import",
+            price: "~$1.50 / 40g · Harissa & Lime, Sour Cream & Onion, Sriracha",
+            img: haloImg,
+            gaps: [
+              "8g protein per 40g from puffed corn — not a complete amino acid profile. No heme iron, no creatine, no B12.",
+              "Corn-based snack marketed as 'protein' — fundamentally different category from meat-based jerky",
+              "Egyptian import — no Lebanese production story, no local accountability or direct trade support",
+              "Halal certification status unconfirmed on available Lebanese market packaging",
+            ]
+          },
+          {
+            name: "Raw Bites",
+            origin: "Beirut-based (Bazco Group s.a.r.l.) · Halal confirmed",
+            category: "Pea/Corn Protein Puffs — Lebanese Brand",
+            price: "$2.80–$3.55 / 50g · Peanut Butter, Thyme & Sesame, Sundried Tomato & Chili",
+            img: rawBitesFlavorsImg,
+            gaps: [
+              "15g protein per 50g from pea and corn base — plant protein only. Incomplete amino acid profile vs beef.",
+              "Corn puff format — different product category and purchase occasion from portable shelf-stable jerky",
+              "Targets health-conscious snack market broadly — not positioned as gym fuel or protein meal replacement",
+              "No beef, no heme iron, no creatine, no B12 — plant protein snack competing on an entirely different axis",
+            ]
+          },
+          {
+            name: "A Cup",
+            origin: "Lebanon (A-Brands International · since 2016)",
+            category: "Protein Cups — Levantine-Flavored · Lebanese · 25g protein/cup",
+            price: "$2.29 / 80g cup · $3.57 / 125g Protein Bomb · at Carrefour, LivGood & Spinneys Lebanon",
+            img: acupFlavorsImg,
+            gaps: [
+              "Refrigerated product — requires cold chain. Cannot compete in gym counter, vending, or ambient shelf channels.",
+              "Dessert-first positioning (Konafa, Vanilla Ice Cream, Coffee Dream) — recovery fuel messaging absent",
+              "Halal certification unconfirmed — operating in Lebanese Muslim market since 2016 but no explicit halal mark confirmed on packaging",
+              "Cup format fundamentally limits occasion: requires utensil, is not pocket-portable, cannot be consumed walking",
+            ]
+          },
+          {
+            name: "MAK Bar",
+            origin: "Lebanon (founded 2020) · 700+ outlets · Carrefour + Spinneys listed",
+            category: "Plant-Based Protein Bar — Largest Local Protein Brand",
+            price: "$1.85 / 42g (11g protein) · $2.32 / 55g (18g protein) · confirmed at Carrefour & Spinneys Lebanon",
+            img: makBarImg,
+            gaps: [
+              "Pea protein + dates + almonds — plant-based. No meat protein, no heme iron, no complete amino acid profile.",
+              "Bar format only — same format as Quest and Barebells. STRIKE's jerky is a unique portable meat occasion.",
+              "700+ outlets including Carrefour and Spinneys — significant retail footprint but no halal certification confirmed",
+              "Proven the Lebanese market buys locally-made protein snacks in modern trade — STRIKE enters that same shelf as the only meat-based option",
+            ]
+          }
+        ]
+      },
+      {
+        type: "INDIRECT — GLOBAL PROTEIN BARS",
+        label: "Quest Bar & Barebells",
+        color: C.purple,
+        competitors: [
+          {
+            name: "Quest Bar",
+            origin: "USA · The Supplements Factory Lebanon · Spinneys Lebanon",
+            category: "Protein Bar — Global Leader · 21g protein / bar",
+            price: "$4.00 per bar (confirmed at The Supplements Factory Lebanon) · 8 flavors available",
+            img: questBarImg,
+            gaps: [
+              "Mushbooh status — no halal certification from any recognized body (no IFANCA, ISNA, or Dar Al-Fatwa). Not cleared for observant Muslim consumers.",
+              "Sucralose sweetener — documented GI complaints in the fitness community. Disqualifying for health-focused daily users.",
+              "American dessert flavors — chocolate chip cookie dough, birthday cake — zero Lebanese cultural connection",
+              "Bar format only — no gym counter impulse size, no format flexibility across Lebanese trade channels",
+            ]
+          },
+          {
+            name: "Barebells",
+            origin: "Sweden (Orkla Group) · confirmed at LivGood & Kelchi Lebanon",
+            category: "Protein Bar — Premium Nordic · Mixed Halal Status",
+            price: "$3.89–$4.66 / 55g bar · LivGood: $4.62–$4.66 · Kelchi.com: $3.89 (confirmed Lebanon pricing)",
+            img: barebellsImg,
+            gaps: [
+              "Mixed halal status — most bars certified, but US-produced SKUs (Double Bite Peanut, some Soft Bars) are not halal-certified. Consumers must verify SKU by SKU.",
+              "Maltitol sweetener — documented laxative effect at repeat consumption volumes. Negative for consistent daily use.",
+              "European-Nordic flavor conventions — no Lebanese cultural anchor in any SKU",
+              "Increasingly visible in Lebanon but premium-priced at $3.89–$4.66 with no local trade support or trainer relationship",
+            ]
+          }
+        ]
+      }
+    ],
+    notes: {
+      open: "Click through each tab. Spend the most time on tab 2 — 'Local Protein-Branded Snacks.' The key distinction: every local brand uses plant-based protein (pea, corn, whey). STRIKE delivers beef. Ask the room: 'What is the protein source in Halo? In Raw Bites?' Answer: puffed corn and peas. Plant protein is nutritionally inferior for muscle use — no heme iron, no creatine, no complete amino acid profile that beef provides. Tab 1: Country Archer just appeared at Spinneys at $6–8 per pack — the premium imported ceiling. Tab 3: Barebells is mostly halal-certified but consumers must check SKU by SKU. STRIKE is unambiguous.",
+      emphasis: [
+        "Wild West Halal launched January 2024. Confirmed at Carrefour, Spinneys, and Lulu in UAE. They are heading to Lebanon. STRIKE's first-mover window is not infinite — it is measured in months, not years. This is the urgency argument.",
+        "MAK Bar has 700 retail outlets including Carrefour and Spinneys Lebanon. They proved the Lebanese consumer will pay for locally-made protein snacks in modern trade. STRIKE enters that same shelf as the only meat-based option — a category no one else occupies.",
+        "A Cup: 25g protein per 80g cup, $2.29, Lebanese-made since 2016, at Carrefour and Spinneys. The most credible local competitor on paper. But it is refrigerated, requires a utensil, and tastes like Konafa. STRIKE is what you eat on the way to the gym — A Cup is what you eat after dinner. Different occasion entirely.",
+      ],
+      timing: "5 minutes"
+    }
+  },
+  {
+    id: "comp_matrix", type: "comp_matrix", label: "MATRIX",
+    section: "COMP · COMPARISON",
+    title: "Head-to-Head — Seven Criteria That Decide the Sale",
+    subtitle: "Rated from both the trade buyer and end consumer perspective. The criteria that win shelf space, drive repeat purchase, and build brand loyalty in Lebanon.",
+    verdict: "STRIKE is the only brand that wins all seven criteria. A Cup — Lebanon's best local competitor — wins on price and local production but is refrigerated and delivers no meat protein. Jack Link's and Country Archer deliver real beef but fail on Halal and price. No single competitor holds more than three criteria simultaneously.",
+    competitors: [
+      { id: "jl",     short: "Jack Link's"    },
+      { id: "ca",     short: "Country Archer" },
+      { id: "acup",   short: "A Cup"          },
+      { id: "quest",  short: "Quest Bar"      },
+      { id: "strike", short: "STRIKE ✦"       },
+    ],
+    criteria: [
+      {
+        label: "Halal Certified",
+        note: "Lebanese authority (Dar Al-Fatwa) or equivalent — verifiable at point of sale",
+        vals:  { jl: "PART", ca: "FAIL", acup: "FAIL",    quest: "FAIL",     strike: "WIN"  },
+        text:  { jl: "FAMBRAS EU only", ca: "No cert", acup: "Unconfirmed", quest: "Mushbooh", strike: "Dar Al-Fatwa" }
+      },
+      {
+        label: "Zero Added Sugar",
+        note: "No sugar or GI-problematic sweetener in any SKU",
+        vals:  { jl: "PART", ca: "PART", acup: "FAIL",    quest: "PART",     strike: "WIN"  },
+        text:  { jl: "0g Original", ca: "Cane sugar", acup: "Dessert-base", quest: "Sucralose", strike: "Zero" }
+      },
+      {
+        label: "Lebanon Price Point",
+        note: "Accessible for routine daily purchase",
+        vals:  { jl: "FAIL", ca: "FAIL", acup: "WIN",     quest: "PART",     strike: "WIN"  },
+        text:  { jl: "$5.15–5.62/40g", ca: "~$6–8/pack", acup: "$2.29–3.57", quest: "$4.00/bar", strike: "$2.50–3.50" }
+      },
+      {
+        label: "Local Production",
+        note: "Made in Lebanon — supply resilience + economic story",
+        vals:  { jl: "FAIL", ca: "FAIL", acup: "WIN",     quest: "FAIL",     strike: "WIN"  },
+        text:  { jl: "USA", ca: "USA", acup: "Lebanon ✓", quest: "USA", strike: "Lebanon" }
+      },
+      {
+        label: "Lebanese Flavor Profile",
+        note: "Designed for the Levantine palate and culture",
+        vals:  { jl: "FAIL", ca: "FAIL", acup: "PART",    quest: "FAIL",     strike: "WIN"  },
+        text:  { jl: "Teriyaki/US", ca: "Classic/US", acup: "Konafa/Sweets", quest: "Cookie/US", strike: "Cedar BBQ" }
+      },
+      {
+        label: "Complete Meat Protein",
+        note: "Beef-derived: heme iron, creatine, B12, all essential amino acids",
+        vals:  { jl: "WIN",  ca: "WIN",  acup: "FAIL",    quest: "FAIL",     strike: "WIN"  },
+        text:  { jl: "Beef ✓", ca: "Beef ✓", acup: "Whey/casein", quest: "Whey/milk", strike: "Beef ✓" }
+      },
+      {
+        label: "Direct Trade Support",
+        note: "Personal delivery, staff training, no middleman markup",
+        vals:  { jl: "FAIL", ca: "FAIL", acup: "FAIL",    quest: "PART",     strike: "WIN"  },
+        text:  { jl: "Importer only", ca: "Spinneys only", acup: "None", quest: "Via distrib.", strike: "Founder direct" }
+      },
+    ],
+    notes: {
+      open: "Walk the matrix row by row. Note openly that A Cup wins on Price Point and Local Production — they are a genuinely good Lebanese brand, just a completely different product format (refrigerated cup). Jack Link's and Country Archer share the 'Complete Meat Protein' win with STRIKE — but they fail on Halal and price. STRIKE is the only brand that holds all seven. After the last row: 'Seven criteria. Seven wins for STRIKE. No competitor holds more than three simultaneously. That is not a competitive gap — that is a structural vacuum.' Then stop talking.",
+      emphasis: [
+        "The Halal row is decisive: Jack Link's gets PARTIAL credit — FAMBRAS certification on European packs, but a Lebanese Muslim consumer cannot verify this at the shelf. Country Archer has nothing. STRIKE is certified by Lebanon's own Dar Al-Fatwa. This is not a minor distinction in a market that is 60%+ Muslim.",
+        "The price row: Jack Link's at $5.15–$5.62, Country Archer at $6–8, vs STRIKE at $2.50–$3.50. We are 40–55% cheaper AND superior on five other criteria. This price-quality combination is structurally impossible for any imported brand to replicate without destroying their global pricing architecture.",
+      ],
+      timing: "4 minutes"
+    }
+  },
+
   {
     id: "sec04", type: "section", label: "§04",
     badge: "SECTION FOUR", color: C.greenBright,

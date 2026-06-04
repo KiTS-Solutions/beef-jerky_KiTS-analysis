@@ -1,0 +1,369 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - navigation [ref=e7]:
+          - link "Kelchi.com Lebanon Shopping Buy Online" [ref=e9] [cursor=pointer]:
+            - /url: https://kelchi.com/
+            - img "Kelchi.com Lebanon Shopping Buy Online" [ref=e10]
+          - list [ref=e12]:
+            - listitem [ref=e13]:
+              - search [ref=e16]:
+                - generic [ref=e17]:
+                  - generic [ref=e18]:
+                    - generic [ref=e19]: "Search for:"
+                    - searchbox "Search for:" [ref=e20]: quest bar
+                  - button "Submit" [ref=e22] [cursor=pointer]:
+                    - generic [ref=e23]: 
+          - list [ref=e25]:
+            - listitem [ref=e26]:
+              - list [ref=e27]:
+                - listitem [ref=e28]:
+                  - link "info@kelchi.com" [ref=e29] [cursor=pointer]:
+                    - /url: mailto:info@kelchi.com
+                    - generic [ref=e30]: 
+                - listitem [ref=e31]:
+                  - link "+96181410840" [ref=e32] [cursor=pointer]:
+                    - /url: tel:+96181410840
+                    - generic [ref=e33]: 
+            - listitem [ref=e34]
+            - listitem [ref=e35]:
+              - button "Login / Register" [ref=e37] [cursor=pointer]:
+                - generic [ref=e38]: Login / Register
+            - listitem [ref=e39]
+            - listitem [ref=e40]:
+              - button "View cart" [ref=e41] [cursor=pointer]:
+                - generic [ref=e42]: Cart
+                - strong [ref=e44]: "0"
+          - text:  
+        - generic [ref=e46]:
+          - list [ref=e48]:
+            - listitem [ref=e49]:
+              - link "Kitchen Cookware" [ref=e50] [cursor=pointer]:
+                - /url: https://kelchi.com/product-category/kitchen-essentials-cookware/
+            - listitem [ref=e51]:
+              - link "Appliances" [ref=e52] [cursor=pointer]:
+                - /url: https://kelchi.com/product-category/electronics/
+                - text: Appliances
+                - generic [ref=e53]: 
+            - listitem [ref=e54]:
+              - link "Home Improvement" [ref=e55] [cursor=pointer]:
+                - /url: https://kelchi.com/product-category/home-improvement/
+            - listitem [ref=e56]:
+              - link "Supermarket" [ref=e57] [cursor=pointer]:
+                - /url: https://kelchi.com/product-category/supermarket/
+                - text: Supermarket
+                - generic [ref=e58]: 
+            - listitem [ref=e59]:
+              - link "MakeUp" [ref=e60] [cursor=pointer]:
+                - /url: https://kelchi.com/product-category/beauty-personal-care/makeup/
+            - listitem [ref=e61]:
+              - link "Personal Care" [ref=e62] [cursor=pointer]:
+                - /url: https://kelchi.com/product-category/beauty-personal-care/
+                - text: Personal Care
+                - generic [ref=e63]: 
+            - listitem [ref=e64]:
+              - link "Health" [ref=e65] [cursor=pointer]:
+                - /url: https://kelchi.com/product-category/vitamins-supplements/?orderby=popularity
+            - listitem [ref=e66]:
+              - link "Alcohol Deals" [ref=e67] [cursor=pointer]:
+                - /url: https://kelchi.com/lebanon-drinks-deals/
+          - text: 
+    - main [ref=e71]:
+      - generic [ref=e72]:
+        - 'heading "Search Results for: quest bar" [level=1] [ref=e76]'
+        - generic [ref=e77]:
+          - generic [ref=e79]:
+            - article [ref=e80]:
+              - generic [ref=e81]:
+                - generic [ref=e82]:
+                  - generic [ref=e83]:
+                    - heading [level=6]
+                    - heading "Astro Bot Playstation (PS5)" [level=2] [ref=e84]:
+                      - link "Astro Bot Playstation (PS5)" [ref=e85] [cursor=pointer]:
+                        - /url: https://kelchi.com/product/astro-bot-playstation-ps5/
+                  - generic [ref=e87]:
+                    - link [ref=e88] [cursor=pointer]:
+                      - /url: https://kelchi.com/product/astro-bot-playstation-ps5/
+                    - generic:
+                      - generic:
+                        - text: "21"
+                        - text: Nov
+                - generic [ref=e90]:
+                  - paragraph [ref=e91]:
+                    - text: Embark on a galactic quest and explore more than 50 planets in search of ASTRO’s lost crew!
+                    - text: Dash, swing, and rocket-punch your way through this journey, with all-new power-ups.
+                    - text: Feel the world come to life via your DualSense wireless controller.
+                    - text: Team up with iconic PlayStation heroes to save the galaxy!
+                  - link "Continue reading →" [ref=e93] [cursor=pointer]:
+                    - /url: https://kelchi.com/product/astro-bot-playstation-ps5/
+                    - text: Continue reading
+                    - generic [ref=e94]: →
+                - link "Leave a comment" [ref=e97] [cursor=pointer]:
+                  - /url: https://kelchi.com/product/astro-bot-playstation-ps5/#respond
+            - article [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e101]:
+                  - heading [level=6]
+                  - heading "Terms and Conditions" [level=2] [ref=e102]:
+                    - link "Terms and Conditions" [ref=e103] [cursor=pointer]:
+                      - /url: https://kelchi.com/terms-and-conditions/
+                - generic [ref=e106]:
+                  - paragraph [ref=e107]: 1. Introduction Welcome to Kelchi.com (“Company”, “we”, “our”, “us”)! These Terms of Service (“Terms”, “Terms of Service”) govern your use of our website located at www.Kelchi.com (together or individually “Service”) operated by Kelchi.com. Our Privacy Policy also governs your use of our Service and explains how we collect, safeguard and disclose information that results from your use of our web pages. […]
+                  - link "Continue reading →" [ref=e109] [cursor=pointer]:
+                    - /url: https://kelchi.com/terms-and-conditions/
+                    - text: Continue reading
+                    - generic [ref=e110]: →
+          - complementary [ref=e113]:
+            - complementary [ref=e114]:
+              - generic [ref=e115]: Search
+            - complementary [ref=e117]:
+              - generic [ref=e118]: "Golden Draw:"
+              - generic [ref=e120]:
+                - text: So many Gold tickets generated and assigned to orders so far, very few left before the Draw.
+                - text: Get yours by making a purchase over $100 !
+    - contentinfo [ref=e121]:
+      - generic [ref=e123]:
+        - generic [ref=e124]:
+          - text: New Products
+          - list [ref=e126]:
+            - listitem [ref=e127]:
+              - link "Mobex 33 pieces BBQ Grill set Stainless Steel Mobex 33 pieces BBQ Grill set Stainless Steel" [ref=e128] [cursor=pointer]:
+                - /url: https://kelchi.com/product/mobex-33-pieces-bbq-grill-set-stainless-steel/
+                - img "Mobex 33 pieces BBQ Grill set Stainless Steel" [ref=e129]
+                - text: Mobex 33 pieces BBQ Grill set Stainless Steel
+              - deletion [ref=e130]:
+                - generic [ref=e132]: 72.00 $
+              - generic [ref=e133]: "Original price was: 72.00 $."
+              - insertion [ref=e134]:
+                - generic [ref=e136]: 55.00 $
+              - generic [ref=e137]: "Current price is: 55.00 $."
+            - listitem [ref=e138]:
+              - link "Pro Barbecue BBQ Charcoal Grill and Smoker, 3 grilling levels , thermometer 109cm + Protection Cover, Dimension (WxDxH) 109x40x95 cm Pro Barbecue BBQ Charcoal Grill and Smoker, 3 grilling levels , thermometer 109cm + Protection Cover, Dimension (WxDxH) 109x40x95 cm" [ref=e139] [cursor=pointer]:
+                - /url: https://kelchi.com/product/pro-barbecue-bbq-charcoal-grill-and-smoker-3-grilling-levels-thermometer-109cm-protection-cover-dimension-wxdxh-109x40x95-cm/
+                - img "Pro Barbecue BBQ Charcoal Grill and Smoker, 3 grilling levels , thermometer 109cm + Protection Cover, Dimension (WxDxH) 109x40x95 cm" [ref=e140]
+                - text: Pro Barbecue BBQ Charcoal Grill and Smoker, 3 grilling levels , thermometer 109cm + Protection Cover, Dimension (WxDxH) 109x40x95 cm
+              - deletion [ref=e141]:
+                - generic [ref=e143]: 189.00 $
+              - generic [ref=e144]: "Original price was: 189.00 $."
+              - insertion [ref=e145]:
+                - generic [ref=e147]: 149.00 $
+              - generic [ref=e148]: "Current price is: 149.00 $."
+            - listitem [ref=e149]:
+              - link "Pro Barbecue BBQ Charcoal Grill 138cm x 60cm x 108cm, 3 Slide Shelves , Center Thermometer , Warming Rack , heat resistant paint Cooking grid + Protectiob Cover Pro Barbecue BBQ Charcoal Grill 138cm x 60cm x 108cm, 3 Slide Shelves , Center Thermometer , Warming Rack , heat resistant paint Cooking grid + Protectiob Cover" [ref=e150] [cursor=pointer]:
+                - /url: https://kelchi.com/product/pro-barbecue-bbq-charcoal-grill-138cm-x-60cm-x-108cm-3-slide-shelves-center-thermometer-warming-rack-heat-resistant-paint-cooking-grid-protectiob-cover/
+                - img "Pro Barbecue BBQ Charcoal Grill 138cm x 60cm x 108cm, 3 Slide Shelves , Center Thermometer , Warming Rack , heat resistant paint Cooking grid + Protectiob Cover" [ref=e151]
+                - text: Pro Barbecue BBQ Charcoal Grill 138cm x 60cm x 108cm, 3 Slide Shelves , Center Thermometer , Warming Rack , heat resistant paint Cooking grid + Protectiob Cover
+              - deletion [ref=e152]:
+                - generic [ref=e154]: 351.00 $
+              - generic [ref=e155]: "Original price was: 351.00 $."
+              - insertion [ref=e156]:
+                - generic [ref=e158]: 275.00 $
+              - generic [ref=e159]: "Current price is: 275.00 $."
+            - listitem [ref=e160]:
+              - link "Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer" [ref=e161] [cursor=pointer]:
+                - /url: https://kelchi.com/product/natural-box-fan-12-inch-3-speeds-40w-grey-with-timer-3/
+                - img "Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer" [ref=e162]
+                - text: Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer
+              - deletion [ref=e163]:
+                - generic [ref=e165]: 23.00 $
+              - generic [ref=e166]: "Original price was: 23.00 $."
+              - insertion [ref=e167]:
+                - generic [ref=e169]: 18.99 $
+              - generic [ref=e170]: "Current price is: 18.99 $."
+            - listitem [ref=e171]:
+              - link "Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer" [ref=e172] [cursor=pointer]:
+                - /url: https://kelchi.com/product/natural-box-fan-12-inch-3-speeds-40w-grey-with-timer-2/
+                - img "Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer" [ref=e173]
+                - text: Natural Box Fan 12 inch, 3 speeds, 40W Grey with timer
+              - deletion [ref=e174]:
+                - generic [ref=e176]: 24.00 $
+              - generic [ref=e177]: "Original price was: 24.00 $."
+              - insertion [ref=e178]:
+                - generic [ref=e180]: 19.99 $
+              - generic [ref=e181]: "Current price is: 19.99 $."
+            - listitem [ref=e182]:
+              - link "Natural Box Fan 20 inch, 3 speeds, 60W Black Natural Box Fan 20 inch, 3 speeds, 60W Black" [ref=e183] [cursor=pointer]:
+                - /url: https://kelchi.com/product/natural-box-fan-20-inch-3-speeds-60w-black/
+                - img "Natural Box Fan 20 inch, 3 speeds, 60W Black" [ref=e184]
+                - text: Natural Box Fan 20 inch, 3 speeds, 60W Black
+              - deletion [ref=e185]:
+                - generic [ref=e187]: 48.00 $
+              - generic [ref=e188]: "Original price was: 48.00 $."
+              - insertion [ref=e189]:
+                - generic [ref=e191]: 39.99 $
+              - generic [ref=e192]: "Current price is: 39.99 $."
+            - listitem [ref=e193]:
+              - link "Natural Table Fan 16 inch, 3 speeds, 45W, white and blue Natural Table Fan 16 inch, 3 speeds, 45W, white and blue" [ref=e194] [cursor=pointer]:
+                - /url: https://kelchi.com/product/natural-table-fan-16-inch-3-speeds-45w-white-and-blue/
+                - img "Natural Table Fan 16 inch, 3 speeds, 45W, white and blue" [ref=e195]
+                - text: Natural Table Fan 16 inch, 3 speeds, 45W, white and blue
+              - deletion [ref=e196]:
+                - generic [ref=e198]: 30.00 $
+              - generic [ref=e199]: "Original price was: 30.00 $."
+              - insertion [ref=e200]:
+                - generic [ref=e202]: 24.99 $
+              - generic [ref=e203]: "Current price is: 24.99 $."
+        - generic [ref=e204]:
+          - text: Best Deals
+          - list [ref=e206]:
+            - listitem [ref=e207]:
+              - link "Taurus Air Fryer Duo 9 Liters, 2 Drawers, 12 programs Taurus Air Fryer Duo 9 Liters, 2 Drawers, 12 programs" [ref=e208] [cursor=pointer]:
+                - /url: https://kelchi.com/product/taurus-air-fryer-duo-9-liters-2-drawers-12-programs/
+                - img "Taurus Air Fryer Duo 9 Liters, 2 Drawers, 12 programs" [ref=e209]
+                - text: Taurus Air Fryer Duo 9 Liters, 2 Drawers, 12 programs
+              - generic [ref=e211]: 279.00 $
+            - listitem [ref=e212]:
+              - link "Martini Prosecco 75cl Martini Prosecco 75cl" [ref=e213] [cursor=pointer]:
+                - /url: https://kelchi.com/product/martini-prosecco-75cl/
+                - img "Martini Prosecco 75cl" [ref=e214]
+                - text: Martini Prosecco 75cl
+              - deletion [ref=e215]:
+                - generic [ref=e217]: 15.50 $
+              - generic [ref=e218]: "Original price was: 15.50 $."
+              - insertion [ref=e219]:
+                - generic [ref=e221]: 12.50 $
+              - generic [ref=e222]: "Current price is: 12.50 $."
+            - listitem [ref=e223]:
+              - link "Korkmaz Turbo 9 Liter Top Pressure Cooker Stainless Steel Cookware Induction Compatible Korkmaz Turbo 9 Liter Top Pressure Cooker Stainless Steel Cookware Induction Compatible" [ref=e224] [cursor=pointer]:
+                - /url: https://kelchi.com/product/korkmaz-turbo-9-liter-top-pressure-cooker-stainless-steel-cookware-induction-compatible/
+                - img "Korkmaz Turbo 9 Liter Top Pressure Cooker Stainless Steel Cookware Induction Compatible" [ref=e225]
+                - text: Korkmaz Turbo 9 Liter Top Pressure Cooker Stainless Steel Cookware Induction Compatible
+              - deletion [ref=e226]:
+                - generic [ref=e228]: 79.00 $
+              - generic [ref=e229]: "Original price was: 79.00 $."
+              - insertion [ref=e230]:
+                - generic [ref=e232]: 66.93 $
+              - generic [ref=e233]: "Current price is: 66.93 $."
+            - listitem [ref=e234]:
+              - link "(Top Seller) Grants Whitening & Peppermint 110g - Buy 4 and get 10% off Kelchi Offer (Top Seller) Grants Whitening & Peppermint 110g - Buy 4 and get 10% off Kelchi Offer" [ref=e235] [cursor=pointer]:
+                - /url: https://kelchi.com/product/grants-whitening-peppermint-110g-buy-4-and-get-10-off-kelchi-offer/
+                - img "(Top Seller) Grants Whitening & Peppermint 110g - Buy 4 and get 10% off Kelchi Offer" [ref=e236]
+                - text: (Top Seller) Grants Whitening & Peppermint 110g - Buy 4 and get 10% off Kelchi Offer
+              - deletion [ref=e237]:
+                - generic [ref=e239]: 22.00 $
+              - generic [ref=e240]: "Original price was: 22.00 $."
+              - insertion [ref=e241]:
+                - generic [ref=e243]: 19.80 $
+              - generic [ref=e244]: "Current price is: 19.80 $."
+            - listitem [ref=e245]:
+              - link "PYREX 31 cm Round Glass Tart Mold - Oven, microwave, dishwasher and freezer safe. Scratch resistant PYREX 31 cm Round Glass Tart Mold - Oven, microwave, dishwasher and freezer safe. Scratch resistant" [ref=e246] [cursor=pointer]:
+                - /url: https://kelchi.com/product/pyrex-31-cm-round-glass-tart-mold-oven-microwave-dishwasher-and-freezer-safe-scratch-resistant/
+                - img "PYREX 31 cm Round Glass Tart Mold - Oven, microwave, dishwasher and freezer safe. Scratch resistant" [ref=e247]
+                - text: PYREX 31 cm Round Glass Tart Mold - Oven, microwave, dishwasher and freezer safe. Scratch resistant
+              - deletion [ref=e248]:
+                - generic [ref=e250]: 15.00 $
+              - generic [ref=e251]: "Original price was: 15.00 $."
+              - insertion [ref=e252]:
+                - generic [ref=e254]: 9.50 $
+              - generic [ref=e255]: "Current price is: 9.50 $."
+            - listitem [ref=e256]:
+              - link "BUY 3 and get 1 Free TRIAL Unit. Grants of Australia - Xylitol Natural Toothpaste Fluoride Free. KELCHI OFFER BUY 3 and get 1 Free TRIAL Unit. Grants of Australia - Xylitol Natural Toothpaste Fluoride Free. KELCHI OFFER" [ref=e257] [cursor=pointer]:
+                - /url: https://kelchi.com/product/special-offer-grants-xylitol-natural-toothpaste-fluoride-free-and-natural-buy-3-get-1-free-grants-fresh-mint-100g-toothpaste/
+                - img "BUY 3 and get 1 Free TRIAL Unit. Grants of Australia - Xylitol Natural Toothpaste Fluoride Free. KELCHI OFFER" [ref=e258]
+                - text: BUY 3 and get 1 Free TRIAL Unit. Grants of Australia - Xylitol Natural Toothpaste Fluoride Free. KELCHI OFFER
+              - deletion [ref=e259]:
+                - generic [ref=e261]: 18.00 $
+              - generic [ref=e262]: "Original price was: 18.00 $."
+              - insertion [ref=e263]:
+                - generic [ref=e265]: 10.00 $
+              - generic [ref=e266]: "Current price is: 10.00 $."
+            - listitem [ref=e267]:
+              - link "Braun Series X Beard and Body Trimmer, for Face and Body Hair, XT5100 Braun Series X Beard and Body Trimmer, for Face and Body Hair, XT5100" [ref=e268] [cursor=pointer]:
+                - /url: https://kelchi.com/product/braun-series-x-beard-and-body-trimmer-for-face-and-body-hair-xt5100/
+                - img "Braun Series X Beard and Body Trimmer, for Face and Body Hair, XT5100" [ref=e269]
+                - text: Braun Series X Beard and Body Trimmer, for Face and Body Hair, XT5100
+              - deletion [ref=e270]:
+                - generic [ref=e272]: 96.00 $
+              - generic [ref=e273]: "Original price was: 96.00 $."
+              - insertion [ref=e274]:
+                - generic [ref=e276]: 67.00 $
+              - generic [ref=e277]: "Current price is: 67.00 $."
+      - generic [ref=e279]:
+        - generic [ref=e280]:
+          - text: About
+          - paragraph [ref=e283]: Kelchi Shopping has been created by the team behind Beiruting.com
+        - generic [ref=e284]:
+          - text: Tag Cloud
+          - generic [ref=e286]:
+            - link "apple (1 item)" [ref=e287] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/apple/
+              - text: apple
+            - link "apple glasses (1 item)" [ref=e288] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/apple-glasses/
+              - text: apple glasses
+            - link "augmented reality (1 item)" [ref=e289] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/augmented-reality/
+              - text: augmented reality
+            - link "cheap tefal (1 item)" [ref=e290] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/cheap-tefal/
+              - text: cheap tefal
+            - link "cooking (1 item)" [ref=e291] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/cooking/
+              - text: cooking
+            - link "gaming (1 item)" [ref=e292] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/gaming/
+              - text: gaming
+            - link "iphone 12 (1 item)" [ref=e293] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/iphone-12/
+              - text: iphone 12
+            - link "lebanese women (1 item)" [ref=e294] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/lebanese-women/
+              - text: lebanese women
+            - link "lebanon (1 item)" [ref=e295] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/lebanon/
+              - text: lebanon
+            - link "lebanon release (1 item)" [ref=e296] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/lebanon-release/
+              - text: lebanon release
+            - link "new iphone (1 item)" [ref=e297] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/new-iphone/
+              - text: new iphone
+            - link "Playstation 5 (1 item)" [ref=e298] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/playstation-5/
+              - text: Playstation 5
+            - link "PS5 (1 item)" [ref=e299] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/ps5/
+              - text: PS5
+            - link "quality (1 item)" [ref=e300] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/quality/
+              - text: quality
+            - link "release (1 item)" [ref=e301] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/release/
+              - text: release
+            - link "smartphone (1 item)" [ref=e302] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/smartphone/
+              - text: smartphone
+            - link "sony (1 item)" [ref=e303] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/sony/
+              - text: sony
+            - link "tefal (1 item)" [ref=e304] [cursor=pointer]:
+              - /url: https://kelchi.com/tag/tefal/
+              - text: tefal
+      - generic [ref=e306]:
+        - group "Payment icons" [ref=e308]:
+          - generic [ref=e309]:
+            - img [ref=e310]
+            - generic [ref=e312]: Visa
+          - generic [ref=e313]:
+            - img [ref=e314]
+            - generic [ref=e319]: MasterCard
+          - generic [ref=e320]:
+            - img [ref=e321]
+            - generic [ref=e323]: Cash On Delivery
+          - generic [ref=e324]:
+            - img [ref=e325]
+            - generic [ref=e327]: Cash on Pickup
+        - generic [ref=e329]:
+          - text: Copyright 2026 ©
+          - strong [ref=e330]: Kelchi.com
+      - button "Go to top":
+        - generic: 
+  - text:             
+  - iframe [ref=e333]:
+    - generic [ref=f49e6]:
+      - text: protected by
+      - strong [ref=f49e7]: reCAPTCHA
+  - status [ref=e334]

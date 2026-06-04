@@ -1,0 +1,1821 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - list [ref=e7]:
+      - listitem [ref=e8]:
+        - generic [ref=e10]:
+          - link "PICK UP FROM Hazmieh" [ref=e13] [cursor=pointer]:
+            - /url: "#"
+          - link "1.00 USD = 89,700 LBP" [ref=e16] [cursor=pointer]:
+            - /url: javascript:;
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20] [cursor=pointer]:
+          - text: 
+          - generic [ref=e21]: Toggle Nav
+        - link "store logo" [ref=e22] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/
+          - img "Spinneys Lebanon" [ref=e23]
+        - generic [ref=e24]:
+          - link "My Cart":
+            - /url: https://www.spinneyslebanon.com/default/checkout/cart/
+            - generic [ref=e25] [cursor=pointer]: My Cart
+        - combobox "Submit" [ref=e28]:
+          - search [ref=e29]:
+            - button "Submit" [ref=e30] [cursor=pointer]:
+              - img [ref=e31]
+            - searchbox "Submit" [ref=e34]
+        - list:
+          - listitem: ()
+      - text:                                                                                                                                                                                                                                                                  
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e44]:
+        - generic [ref=e49]:
+          - link "alt=" [ref=e50] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/plein-soleil.html/
+            - img "alt=" [ref=e51]
+          - generic [ref=e54]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e55]
+            - link "CREATE YOUR FIRST ORDER" [ref=e56] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e57] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e62]:
+          - link [ref=e63] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/turbo-for-the-win.html/
+          - generic [ref=e66]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e67]
+            - link "CREATE YOUR FIRST ORDER" [ref=e68] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e69] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e74]:
+          - link "alt=" [ref=e75] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/palette.html/
+            - img "alt=" [ref=e76]
+          - generic [ref=e79]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e80]
+            - link "CREATE YOUR FIRST ORDER" [ref=e81] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e82] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e87]:
+          - link "alt=" [ref=e88] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/maretti.html/
+            - img "alt=" [ref=e89]
+          - generic [ref=e92]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e93]
+            - link "CREATE YOUR FIRST ORDER" [ref=e94] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e95] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e100]:
+          - link [ref=e101] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/pre-order-dumpling.html/
+          - generic [ref=e104]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e105]
+            - link "CREATE YOUR FIRST ORDER" [ref=e106] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e107] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e112]:
+          - link "alt=" [ref=e113] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/pally.html/
+            - img "alt=" [ref=e114]
+          - generic [ref=e117]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e118]
+            - link "CREATE YOUR FIRST ORDER" [ref=e119] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e120] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e125]:
+          - link "alt=" [ref=e126] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/all-fresh.html/
+            - img "alt=" [ref=e127]
+          - generic [ref=e130]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e131]
+            - link "CREATE YOUR FIRST ORDER" [ref=e132] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e133] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e138]:
+          - link "400" [ref=e139] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/ice-cream-lovers.html/
+            - img "400" [ref=e140]
+          - generic [ref=e143]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e144]
+            - link "CREATE YOUR FIRST ORDER" [ref=e145] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e146] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e151]:
+          - link "400" [ref=e152] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/electromania-deals.html/
+            - img "400" [ref=e153]
+          - generic [ref=e156]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e157]
+            - link "CREATE YOUR FIRST ORDER" [ref=e158] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e159] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e164]:
+          - link "alt=" [ref=e165] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/shop-beauty-win-big.html/
+            - img "alt=" [ref=e166]
+          - generic [ref=e169]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e170]
+            - link "CREATE YOUR FIRST ORDER" [ref=e171] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e172] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e177]:
+          - link [ref=e178] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/summer-essentials.html/
+          - generic [ref=e181]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e182]
+            - link "CREATE YOUR FIRST ORDER" [ref=e183] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e184] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e189]:
+          - link "alt=" [ref=e190] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/plein-soleil.html/
+            - img "alt=" [ref=e191]
+          - generic [ref=e194]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e195]
+            - link "CREATE YOUR FIRST ORDER" [ref=e196] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e197] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e202]:
+          - link [ref=e203] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/turbo-for-the-win.html/
+          - generic [ref=e206]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e207]
+            - link "CREATE YOUR FIRST ORDER" [ref=e208] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e209] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e214]:
+          - link "alt=" [ref=e215] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/palette.html/
+            - img "alt=" [ref=e216]
+          - generic [ref=e219]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e220]
+            - link "CREATE YOUR FIRST ORDER" [ref=e221] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e222] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e227]:
+          - link "alt=" [ref=e228] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/maretti.html/
+            - img "alt=" [ref=e229]
+          - generic [ref=e232]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e233]
+            - link "CREATE YOUR FIRST ORDER" [ref=e234] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e235] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e240]:
+          - link [ref=e241] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/pre-order-dumpling.html/
+          - generic [ref=e244]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e245]
+            - link "CREATE YOUR FIRST ORDER" [ref=e246] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e247] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e252]:
+          - link "alt=" [ref=e253] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/pally.html/
+            - img "alt=" [ref=e254]
+          - generic [ref=e257]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e258]
+            - link "CREATE YOUR FIRST ORDER" [ref=e259] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e260] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e265]:
+          - link "alt=" [ref=e266] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/all-fresh.html/
+            - img "alt=" [ref=e267]
+          - generic [ref=e270]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e271]
+            - link "CREATE YOUR FIRST ORDER" [ref=e272] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e273] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e278]:
+          - link "400" [ref=e279] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/ice-cream-lovers.html/
+            - img "400" [ref=e280]
+          - generic [ref=e283]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e284]
+            - link "CREATE YOUR FIRST ORDER" [ref=e285] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e286] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e291]:
+          - link "400" [ref=e292] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/electromania-deals.html/
+            - img "400" [ref=e293]
+          - generic [ref=e296]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e297]
+            - link "CREATE YOUR FIRST ORDER" [ref=e298] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e299] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e304]:
+          - link "alt=" [ref=e305] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/shop-beauty-win-big.html/
+            - img "alt=" [ref=e306]
+          - generic [ref=e309]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e310]
+            - link "CREATE YOUR FIRST ORDER" [ref=e311] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e312] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e317]:
+          - link [ref=e318] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/summer-essentials.html/
+          - generic [ref=e321]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e322]
+            - link "CREATE YOUR FIRST ORDER" [ref=e323] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e324] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+        - generic [ref=e329]:
+          - link "alt=" [ref=e330] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/special-promotions/plein-soleil.html/
+            - img "alt=" [ref=e331]
+          - generic [ref=e334]:
+            - heading "Welcome to<br/>Spinneys Online" [level=3] [ref=e335]
+            - link "CREATE YOUR FIRST ORDER" [ref=e336] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/create/
+            - link "ALREADY A CUSTOMER? LOG IN" [ref=e337] [cursor=pointer]:
+              - /url: https://www.spinneyslebanon.com/default/customer/account/login/
+      - figure [ref=e364]:
+        - link [ref=e366] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/special-promotions/hot-deals.html
+      - generic [ref=e369]:
+        - heading "Get Started Today" [level=1] [ref=e372]
+        - generic [ref=e373]:
+          - generic [ref=e374]:
+            - generic [ref=e376]:
+              - heading "Create an account." [level=3] [ref=e378]
+              - paragraph [ref=e379]: Explore our wide range of premium products.
+            - generic [ref=e381]:
+              - heading "Fill your trolley." [level=3] [ref=e383]
+              - paragraph [ref=e384]: The minimum order is just 30$ .
+            - generic [ref=e386]:
+              - heading "Book a slot." [level=3] [ref=e388]
+              - paragraph [ref=e389]: Delivery 7 Days a Week.
+            - generic [ref=e391]:
+              - heading "Checkout & earn points." [level=3] [ref=e393]
+              - paragraph [ref=e394]: Secure online payment, cash or credit card on delivery.
+          - link "SIGN UP" [ref=e396] [cursor=pointer]:
+            - /url: https://spinneyslebanon.com/customer/account/create
+      - paragraph
+      - generic [ref=e401]:
+        - heading "Best Sellers" [level=1] [ref=e403]
+        - generic "Best Sellers" [ref=e404]:
+          - list [ref=e406]:
+            - generic [ref=e408]:
+              - listitem [ref=e410]:
+                - generic [ref=e411]:
+                  - link "CANDIA UHT MILK ENTIER" [ref=e412] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/uht-milk-entier.html
+                    - img "CANDIA UHT MILK ENTIER" [ref=e415]
+                  - generic [ref=e416]:
+                    - link "CANDIA UHT MILK ENTIER" [ref=e417] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/uht-milk-entier.html
+                      - strong [ref=e418]: CANDIA UHT MILK ENTIER
+                    - generic [ref=e419]:
+                      - generic [ref=e420]: 1 L
+                      - link "By Candia" [ref=e423] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/candia
+                    - generic [ref=e426]: $ 1.85
+                    - generic [ref=e427]:
+                      - generic [ref=e428]:
+                        - generic [ref=e429]: "Rating:"
+                        - link " " [ref=e430] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/uht-milk-entier.html#review-form-section
+                          - generic [ref=e431]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e433] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/uht-milk-entier.html#review-form-section
+                    - generic [ref=e434]:
+                      - generic [ref=e437]:
+                        - generic [ref=e439] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e440]: "1"
+                        - generic [ref=e442] [cursor=pointer]: 
+                      - button "Add" [ref=e444] [cursor=pointer]
+                    - list [ref=e446]:
+                      - listitem [ref=e447]:
+                        - button "Add to Favorites & Lists" [ref=e448] [cursor=pointer]
+              - listitem [ref=e450]:
+                - generic [ref=e451]:
+                  - link "PRIL PRIL COLD POWER SECRETS OF THE COOK 3L LEMON" [ref=e452] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pril-100-lemons.html
+                    - img "PRIL PRIL COLD POWER SECRETS OF THE COOK 3L LEMON" [ref=e455]
+                  - generic [ref=e456]:
+                    - link "PRIL PRIL COLD POWER SECRETS OF THE COOK 3L LEMON" [ref=e457] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pril-100-lemons.html
+                      - strong [ref=e458]: PRIL PRIL COLD POWER SECRETS OF THE COOK 3L LEMON
+                    - generic [ref=e459]:
+                      - generic [ref=e460]: 3 L
+                      - link "By Pril" [ref=e463] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pril
+                    - generic [ref=e464]:
+                      - generic [ref=e467]: $ 6.69
+                      - generic [ref=e468]:
+                        - generic [ref=e471]: $ 7.89
+                        - generic [ref=e472]: 16% OFF
+                        - generic [ref=e473]: Offer ends on 06/06/2026
+                    - generic [ref=e474]:
+                      - generic [ref=e475]:
+                        - generic [ref=e476]: "Rating:"
+                        - link " " [ref=e477] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pril-100-lemons.html#review-form-section
+                          - generic [ref=e478]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e480] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pril-100-lemons.html#review-form-section
+                    - generic [ref=e481]:
+                      - generic [ref=e484]:
+                        - generic [ref=e486] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e487]: "1"
+                        - generic [ref=e489] [cursor=pointer]: 
+                      - button "Add" [ref=e491] [cursor=pointer]
+                    - list [ref=e493]:
+                      - listitem [ref=e494]:
+                        - button "Add to Favorites & Lists" [ref=e495] [cursor=pointer]
+                    - strong [ref=e497]: Offer
+              - listitem [ref=e499]:
+                - generic [ref=e500]:
+                  - link "COFFEEMATE COFFEE MATE POUCH" [ref=e501] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/coffee-mate-original-pouch-450g.html
+                    - img "COFFEEMATE COFFEE MATE POUCH" [ref=e504]
+                  - generic [ref=e505]:
+                    - link "COFFEEMATE COFFEE MATE POUCH" [ref=e506] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/coffee-mate-original-pouch-450g.html
+                      - strong [ref=e507]: COFFEEMATE COFFEE MATE POUCH
+                    - generic [ref=e508]:
+                      - generic [ref=e509]: 450 G
+                      - link "By Nestle" [ref=e512] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/nestle
+                    - generic [ref=e515]: $ 3.09
+                    - generic [ref=e516]:
+                      - generic [ref=e517]:
+                        - generic [ref=e518]: "Rating:"
+                        - link " " [ref=e519] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/coffee-mate-original-pouch-450g.html#review-form-section
+                          - generic [ref=e520]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e522] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/coffee-mate-original-pouch-450g.html#review-form-section
+                    - generic [ref=e523]:
+                      - generic [ref=e526]:
+                        - generic [ref=e528] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e529]: "1"
+                        - generic [ref=e531] [cursor=pointer]: 
+                      - button "Add" [ref=e533] [cursor=pointer]
+                    - list [ref=e535]:
+                      - listitem [ref=e536]:
+                        - button "Add to Favorites & Lists" [ref=e537] [cursor=pointer]
+              - listitem [ref=e539]:
+                - generic [ref=e540]:
+                  - link "FLASH TOILET CLEANER" [ref=e541] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/flash-toilet-cleaner-1l.html
+                    - img "FLASH TOILET CLEANER" [ref=e544]
+                  - generic [ref=e545]:
+                    - link "FLASH TOILET CLEANER" [ref=e546] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/flash-toilet-cleaner-1l.html
+                      - strong [ref=e547]: FLASH TOILET CLEANER
+                    - generic [ref=e548]:
+                      - generic [ref=e549]: 1 L
+                      - link "By Spartan" [ref=e552] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/spartan
+                    - generic [ref=e555]: $ 3.39
+                    - generic [ref=e556]:
+                      - generic [ref=e557]:
+                        - generic [ref=e558]: "Rating:"
+                        - link " " [ref=e559] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/flash-toilet-cleaner-1l.html#review-form-section
+                          - generic [ref=e560]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e562] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/flash-toilet-cleaner-1l.html#review-form-section
+                    - generic [ref=e563]:
+                      - generic [ref=e566]:
+                        - generic [ref=e568] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e569]: "1"
+                        - generic [ref=e571] [cursor=pointer]: 
+                      - button "Add" [ref=e573] [cursor=pointer]
+                    - list [ref=e575]:
+                      - listitem [ref=e576]:
+                        - button "Add to Favorites & Lists" [ref=e577] [cursor=pointer]
+              - listitem [ref=e579]:
+                - generic [ref=e580]:
+                  - link "LURPAK DANISH BUTTER" [ref=e581] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/lurpack-unsalted-butter-400g.html
+                    - img "LURPAK DANISH BUTTER" [ref=e584]
+                  - generic [ref=e585]:
+                    - link "LURPAK DANISH BUTTER" [ref=e586] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/lurpack-unsalted-butter-400g.html
+                      - strong [ref=e587]: LURPAK DANISH BUTTER
+                    - generic [ref=e588]:
+                      - generic [ref=e589]: 400 G
+                      - link "By Lurpak" [ref=e592] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/lurpak
+                    - generic [ref=e595]: $ 5.69
+                    - generic [ref=e596]:
+                      - generic [ref=e597]:
+                        - generic [ref=e598]: "Rating:"
+                        - link " " [ref=e599] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/lurpack-unsalted-butter-400g.html#review-form-section
+                          - generic [ref=e600]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e602] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/lurpack-unsalted-butter-400g.html#review-form-section
+                    - generic [ref=e603]:
+                      - generic [ref=e606]:
+                        - generic [ref=e608] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e609]: "1"
+                        - generic [ref=e611] [cursor=pointer]: 
+                      - button "Add" [ref=e613] [cursor=pointer]
+                    - list [ref=e615]:
+                      - listitem [ref=e616]:
+                        - button "Add to Favorites & Lists" [ref=e617] [cursor=pointer]
+              - listitem [ref=e619]:
+                - generic [ref=e620]:
+                  - link "SPINNEYS ESSENTIALS TRASH BAG BLUE 30PC" [ref=e621] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/spinneys-trash-bags-large-blue-30-sacks.html
+                    - img "SPINNEYS ESSENTIALS TRASH BAG BLUE 30PC" [ref=e624]
+                  - generic [ref=e625]:
+                    - link "SPINNEYS ESSENTIALS TRASH BAG BLUE 30PC" [ref=e626] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/spinneys-trash-bags-large-blue-30-sacks.html
+                      - strong [ref=e627]: SPINNEYS ESSENTIALS TRASH BAG BLUE 30PC
+                    - link "By Spinneys Essentials" [ref=e631] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/brands/spinneys-essentials
+                    - generic [ref=e634]: $ 3.69
+                    - generic [ref=e635]:
+                      - generic [ref=e636]:
+                        - generic [ref=e637]: "Rating:"
+                        - link " " [ref=e638] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/spinneys-trash-bags-large-blue-30-sacks.html#review-form-section
+                          - generic [ref=e639]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e641] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/spinneys-trash-bags-large-blue-30-sacks.html#review-form-section
+                    - generic [ref=e642]:
+                      - generic [ref=e645]:
+                        - generic [ref=e647] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e648]: "1"
+                        - generic [ref=e650] [cursor=pointer]: 
+                      - button "Add" [ref=e652] [cursor=pointer]
+                    - list [ref=e654]:
+                      - listitem [ref=e655]:
+                        - button "Add to Favorites & Lists" [ref=e656] [cursor=pointer]
+              - listitem [ref=e658]:
+                - generic [ref=e659]:
+                  - link "PUCK COOKING CREAM" [ref=e660] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/puck-cooking-cream-500ml.html
+                    - img "PUCK COOKING CREAM" [ref=e663]
+                  - generic [ref=e664]:
+                    - link "PUCK COOKING CREAM" [ref=e665] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/puck-cooking-cream-500ml.html
+                      - strong [ref=e666]: PUCK COOKING CREAM
+                    - generic [ref=e667]:
+                      - generic [ref=e668]: 500 ML
+                      - link "By Puck" [ref=e671] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/puck
+                    - generic [ref=e674]: $ 3.75
+                    - generic [ref=e675]:
+                      - generic [ref=e676]:
+                        - generic [ref=e677]: "Rating:"
+                        - link " " [ref=e678] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/puck-cooking-cream-500ml.html#review-form-section
+                          - generic [ref=e679]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e681] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/puck-cooking-cream-500ml.html#review-form-section
+                    - generic [ref=e682]:
+                      - generic [ref=e685]:
+                        - generic [ref=e687] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e688]: "1"
+                        - generic [ref=e690] [cursor=pointer]: 
+                      - button "Add" [ref=e692] [cursor=pointer]
+                    - list [ref=e694]:
+                      - listitem [ref=e695]:
+                        - button "Add to Favorites & Lists" [ref=e696] [cursor=pointer]
+              - listitem [ref=e698]:
+                - generic [ref=e699]:
+                  - link "CAFE NAJJAR CLASSIC BLEND COFFEE VAC." [ref=e700] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/classic-blend-coffee-vac.html
+                    - img "CAFE NAJJAR CLASSIC BLEND COFFEE VAC." [ref=e703]
+                  - generic [ref=e704]:
+                    - link "CAFE NAJJAR CLASSIC BLEND COFFEE VAC." [ref=e705] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/classic-blend-coffee-vac.html
+                      - strong [ref=e706]: CAFE NAJJAR CLASSIC BLEND COFFEE VAC.
+                    - generic [ref=e707]:
+                      - generic [ref=e708]: 180 G
+                      - link "By Cafe Najjar" [ref=e711] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/cafe-najjar
+                    - generic [ref=e714]: $ 3.39
+                    - generic [ref=e715]:
+                      - generic [ref=e716]:
+                        - generic [ref=e717]: "Rating:"
+                        - link " " [ref=e718] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/classic-blend-coffee-vac.html#review-form-section
+                          - generic [ref=e719]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e721] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/classic-blend-coffee-vac.html#review-form-section
+                    - generic [ref=e722]:
+                      - generic [ref=e725]:
+                        - generic [ref=e727] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e728]: "1"
+                        - generic [ref=e730] [cursor=pointer]: 
+                      - button "Add" [ref=e732] [cursor=pointer]
+                    - list [ref=e734]:
+                      - listitem [ref=e735]:
+                        - button "Add to Favorites & Lists" [ref=e736] [cursor=pointer]
+              - listitem [ref=e738]:
+                - generic [ref=e739]:
+                  - link "AL KANATER TAHINEH" [ref=e740] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/al-kanater-tahineh-900g.html
+                    - img "AL KANATER TAHINEH" [ref=e743]
+                  - generic [ref=e744]:
+                    - link "AL KANATER TAHINEH" [ref=e745] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/al-kanater-tahineh-900g.html
+                      - strong [ref=e746]: AL KANATER TAHINEH
+                    - generic [ref=e747]:
+                      - generic [ref=e748]: 900 G
+                      - link "By Al Kanater" [ref=e751] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/al-kanater
+                    - generic [ref=e754]: $ 5.89
+                    - generic [ref=e755]:
+                      - generic [ref=e756]:
+                        - generic [ref=e757]: "Rating:"
+                        - link " " [ref=e758] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/al-kanater-tahineh-900g.html#review-form-section
+                          - generic [ref=e759]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e761] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/al-kanater-tahineh-900g.html#review-form-section
+                    - generic [ref=e762]:
+                      - generic [ref=e765]:
+                        - generic [ref=e767] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e768]: "1"
+                        - generic [ref=e770] [cursor=pointer]: 
+                      - button "Add" [ref=e772] [cursor=pointer]
+                    - list [ref=e774]:
+                      - listitem [ref=e775]:
+                        - button "Add to Favorites & Lists" [ref=e776] [cursor=pointer]
+              - listitem [ref=e778]:
+                - generic [ref=e779]:
+                  - link "GIPSY TOILET ROLL" [ref=e780] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/sanita-toilet-roll.html
+                    - img "GIPSY TOILET ROLL" [ref=e783]
+                  - generic [ref=e784]:
+                    - link "GIPSY TOILET ROLL" [ref=e785] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/sanita-toilet-roll.html
+                      - strong [ref=e786]: GIPSY TOILET ROLL
+                    - generic [ref=e787]:
+                      - generic [ref=e788]: 32 ROLL
+                      - link "By Sanita" [ref=e791] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/sanita
+                    - generic [ref=e794]: $ 11.29
+                    - generic [ref=e795]:
+                      - generic [ref=e796]:
+                        - generic [ref=e797]: "Rating:"
+                        - link " " [ref=e798] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/sanita-toilet-roll.html#review-form-section
+                          - generic [ref=e799]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e801] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/sanita-toilet-roll.html#review-form-section
+                    - generic [ref=e802]:
+                      - generic [ref=e805]:
+                        - generic [ref=e807] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e808]: "1"
+                        - generic [ref=e810] [cursor=pointer]: 
+                      - button "Add" [ref=e812] [cursor=pointer]
+                    - list [ref=e814]:
+                      - listitem [ref=e815]:
+                        - button "Add to Favorites & Lists" [ref=e816] [cursor=pointer]
+              - listitem [ref=e818]:
+                - generic [ref=e819]:
+                  - link "NESCAFE GOLD COFFEE" [ref=e820] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/nescafe-gold-blend-instant-coffee-powder-200g.html
+                    - img "NESCAFE GOLD COFFEE" [ref=e823]
+                  - generic [ref=e824]:
+                    - link "NESCAFE GOLD COFFEE" [ref=e825] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/nescafe-gold-blend-instant-coffee-powder-200g.html
+                      - strong [ref=e826]: NESCAFE GOLD COFFEE
+                    - generic [ref=e827]:
+                      - generic [ref=e828]: 190 G
+                      - link "By Nestle" [ref=e831] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/nestle
+                    - generic [ref=e834]: $ 10.99
+                    - generic [ref=e835]:
+                      - generic [ref=e836]:
+                        - generic [ref=e837]: "Rating:"
+                        - link " " [ref=e838] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/nescafe-gold-blend-instant-coffee-powder-200g.html#review-form-section
+                          - generic [ref=e839]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e841] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/nescafe-gold-blend-instant-coffee-powder-200g.html#review-form-section
+                    - generic [ref=e842]:
+                      - generic [ref=e845]:
+                        - generic [ref=e847] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e848]: "1"
+                        - generic [ref=e850] [cursor=pointer]: 
+                      - button "Add" [ref=e852] [cursor=pointer]
+                    - list [ref=e854]:
+                      - listitem [ref=e855]:
+                        - button "Add to Favorites & Lists" [ref=e856] [cursor=pointer]
+              - listitem [ref=e858]:
+                - generic [ref=e859]:
+                  - link "PERSIL WASHING POWDER D.CLN PLUS UNIVERSAL" [ref=e860] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/laundry-wash-co-regular-eco-551908-v001.html
+                    - img "PERSIL WASHING POWDER D.CLN PLUS UNIVERSAL" [ref=e863]
+                  - generic [ref=e864]:
+                    - link "PERSIL WASHING POWDER D.CLN PLUS UNIVERSAL" [ref=e865] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/laundry-wash-co-regular-eco-551908-v001.html
+                      - strong [ref=e866]: PERSIL WASHING POWDER D.CLN PLUS UNIVERSAL
+                    - generic [ref=e867]:
+                      - generic [ref=e868]: 10 KG
+                      - link "By Persil" [ref=e871] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/persil
+                    - generic [ref=e872]:
+                      - generic [ref=e875]: $ 19.99
+                      - generic [ref=e876]:
+                        - generic [ref=e879]: $ 24.09
+                        - generic [ref=e880]: 18% OFF
+                        - generic [ref=e881]: Offer ends on 06/06/2026
+                    - generic [ref=e882]:
+                      - generic [ref=e883]:
+                        - generic [ref=e884]: "Rating:"
+                        - link " " [ref=e885] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/laundry-wash-co-regular-eco-551908-v001.html#review-form-section
+                          - generic [ref=e886]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e888] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/laundry-wash-co-regular-eco-551908-v001.html#review-form-section
+                    - generic [ref=e889]:
+                      - generic [ref=e892]:
+                        - generic [ref=e894] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e895]: "1"
+                        - generic [ref=e897] [cursor=pointer]: 
+                      - button "Add" [ref=e899] [cursor=pointer]
+                    - list [ref=e901]:
+                      - listitem [ref=e902]:
+                        - button "Add to Favorites & Lists" [ref=e903] [cursor=pointer]
+                    - strong [ref=e905]: Offer
+        - link "VIEW ALL" [ref=e913] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/productlist/index/bestseller/
+      - generic [ref=e918]:
+        - heading "New Arrivals" [level=1] [ref=e920]
+        - generic "New Arrivals" [ref=e921]:
+          - list [ref=e923]:
+            - generic [ref=e925]:
+              - listitem [ref=e927]:
+                - generic [ref=e928]:
+                  - link "PANINI FIFA WORLD CUP STICKERS PACK" [ref=e929] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/panini-fifa-world-cup-stickers-pack-653083-v001.html
+                    - img "PANINI FIFA WORLD CUP STICKERS PACK" [ref=e932]
+                  - generic [ref=e933]:
+                    - link "PANINI FIFA WORLD CUP STICKERS PACK" [ref=e934] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/panini-fifa-world-cup-stickers-pack-653083-v001.html
+                      - strong [ref=e935]: PANINI FIFA WORLD CUP STICKERS PACK
+                    - generic [ref=e936]:
+                      - generic [ref=e937]: 1 PC
+                      - link "By PANINI" [ref=e940] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/panini
+                    - generic [ref=e943]: $ 1.79
+                    - generic [ref=e944]:
+                      - generic [ref=e945]:
+                        - generic [ref=e946]: "Rating:"
+                        - link " " [ref=e947] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/panini-fifa-world-cup-stickers-pack-653083-v001.html#review-form-section
+                          - generic [ref=e948]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e950] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/panini-fifa-world-cup-stickers-pack-653083-v001.html#review-form-section
+                    - generic [ref=e951]:
+                      - generic [ref=e954]:
+                        - generic [ref=e956] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e957]: "1"
+                        - generic [ref=e959] [cursor=pointer]: 
+                      - button "Add" [ref=e961] [cursor=pointer]
+                    - list [ref=e963]:
+                      - listitem [ref=e964]:
+                        - button "Add to Favorites & Lists" [ref=e965] [cursor=pointer]
+                    - strong [ref=e967]: New-Arrival
+              - listitem [ref=e969]:
+                - generic [ref=e970]:
+                  - link "NEEDOH FUZZ BALL ASSORTED" [ref=e971] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/fuzz-ball-assorted.html
+                    - img "NEEDOH FUZZ BALL ASSORTED" [ref=e974]
+                  - generic [ref=e975]:
+                    - link "NEEDOH FUZZ BALL ASSORTED" [ref=e976] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/fuzz-ball-assorted.html
+                      - strong [ref=e977]: NEEDOH FUZZ BALL ASSORTED
+                    - generic [ref=e978]:
+                      - generic [ref=e979]: 1 PC
+                      - link "By NEEDOH" [ref=e982] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/needoh
+                    - generic [ref=e985]: $ 12
+                    - generic [ref=e986]:
+                      - generic [ref=e987]:
+                        - generic [ref=e988]: "Rating:"
+                        - link " " [ref=e989] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/fuzz-ball-assorted.html#review-form-section
+                          - generic [ref=e990]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e992] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/fuzz-ball-assorted.html#review-form-section
+                    - button "Customize" [ref=e995] [cursor=pointer]
+                    - list [ref=e997]:
+                      - listitem [ref=e998]:
+                        - button "Add to Favorites & Lists" [ref=e999] [cursor=pointer]
+                    - strong [ref=e1001]: New-Arrival
+              - listitem [ref=e1003]:
+                - generic [ref=e1004]:
+                  - link "NEEDOH JELLY SQUISH ASSORTED" [ref=e1005] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/needoh-jelly-squish-assorted-653073-v001.html
+                    - img "NEEDOH JELLY SQUISH ASSORTED" [ref=e1008]
+                  - generic [ref=e1009]:
+                    - link "NEEDOH JELLY SQUISH ASSORTED" [ref=e1010] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/needoh-jelly-squish-assorted-653073-v001.html
+                      - strong [ref=e1011]: NEEDOH JELLY SQUISH ASSORTED
+                    - generic [ref=e1012]:
+                      - generic [ref=e1013]: 1 PC
+                      - link "By NEEDOH" [ref=e1016] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/needoh
+                    - generic [ref=e1019]: $ 15
+                    - generic [ref=e1020]:
+                      - generic [ref=e1021]:
+                        - generic [ref=e1022]: "Rating:"
+                        - link " " [ref=e1023] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/needoh-jelly-squish-assorted-653073-v001.html#review-form-section
+                          - generic [ref=e1024]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1026] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/needoh-jelly-squish-assorted-653073-v001.html#review-form-section
+                    - button "Customize" [ref=e1029] [cursor=pointer]
+                    - list [ref=e1031]:
+                      - listitem [ref=e1032]:
+                        - button "Add to Favorites & Lists" [ref=e1033] [cursor=pointer]
+                    - strong [ref=e1035]: New-Arrival
+              - listitem [ref=e1037]:
+                - generic [ref=e1038]:
+                  - link "PALLY COCONUT BISCUIT" [ref=e1039] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-coconut-biscuit-629596-v001.html
+                    - img "PALLY COCONUT BISCUIT" [ref=e1042]
+                  - generic [ref=e1043]:
+                    - link "PALLY COCONUT BISCUIT" [ref=e1044] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-coconut-biscuit-629596-v001.html
+                      - strong [ref=e1045]: PALLY COCONUT BISCUIT
+                    - generic [ref=e1046]:
+                      - generic [ref=e1047]: 300 G
+                      - link "By PALLY" [ref=e1050] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1053]: $ 2.99
+                    - generic [ref=e1054]:
+                      - generic [ref=e1055]:
+                        - generic [ref=e1056]: "Rating:"
+                        - link " " [ref=e1057] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-coconut-biscuit-629596-v001.html#review-form-section
+                          - generic [ref=e1058]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1060] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-coconut-biscuit-629596-v001.html#review-form-section
+                    - generic [ref=e1061]:
+                      - generic [ref=e1064]:
+                        - generic [ref=e1066] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1067]: "1"
+                        - generic [ref=e1069] [cursor=pointer]: 
+                      - button "Add" [ref=e1071] [cursor=pointer]
+                    - list [ref=e1073]:
+                      - listitem [ref=e1074]:
+                        - button "Add to Favorites & Lists" [ref=e1075] [cursor=pointer]
+                    - strong [ref=e1077]: New-Arrival
+              - listitem [ref=e1079]:
+                - generic [ref=e1080]:
+                  - link "PALLY TARWE BISCUIT" [ref=e1081] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-tarwe-biscuit-629601-v001.html
+                    - img "PALLY TARWE BISCUIT" [ref=e1084]
+                  - generic [ref=e1085]:
+                    - link "PALLY TARWE BISCUIT" [ref=e1086] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-tarwe-biscuit-629601-v001.html
+                      - strong [ref=e1087]: PALLY TARWE BISCUIT
+                    - generic [ref=e1088]:
+                      - generic [ref=e1089]: 2 XG
+                      - link "By PALLY" [ref=e1092] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1095]: $ 3.99
+                    - generic [ref=e1096]:
+                      - generic [ref=e1097]:
+                        - generic [ref=e1098]: "Rating:"
+                        - link " " [ref=e1099] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-tarwe-biscuit-629601-v001.html#review-form-section
+                          - generic [ref=e1100]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1102] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-tarwe-biscuit-629601-v001.html#review-form-section
+                    - generic [ref=e1103]:
+                      - generic [ref=e1106]:
+                        - generic [ref=e1108] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1109]: "1"
+                        - generic [ref=e1111] [cursor=pointer]: 
+                      - button "Add" [ref=e1113] [cursor=pointer]
+                    - list [ref=e1115]:
+                      - listitem [ref=e1116]:
+                        - button "Add to Favorites & Lists" [ref=e1117] [cursor=pointer]
+                    - strong [ref=e1119]: New-Arrival
+              - listitem [ref=e1121]:
+                - generic [ref=e1122]:
+                  - link "PALLY OAT BISCUITS" [ref=e1123] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-oat-biscuits-629598-v001.html
+                    - img "PALLY OAT BISCUITS" [ref=e1126]
+                  - generic [ref=e1127]:
+                    - link "PALLY OAT BISCUITS" [ref=e1128] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-oat-biscuits-629598-v001.html
+                      - strong [ref=e1129]: PALLY OAT BISCUITS
+                    - generic [ref=e1130]:
+                      - generic [ref=e1131]: 300 G
+                      - link "By PALLY" [ref=e1134] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1137]: $ 2.99
+                    - generic [ref=e1138]:
+                      - generic [ref=e1139]:
+                        - generic [ref=e1140]: "Rating:"
+                        - link " " [ref=e1141] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-oat-biscuits-629598-v001.html#review-form-section
+                          - generic [ref=e1142]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1144] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-oat-biscuits-629598-v001.html#review-form-section
+                    - generic [ref=e1145]:
+                      - generic [ref=e1148]:
+                        - generic [ref=e1150] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1151]: "1"
+                        - generic [ref=e1153] [cursor=pointer]: 
+                      - button "Add" [ref=e1155] [cursor=pointer]
+                    - list [ref=e1157]:
+                      - listitem [ref=e1158]:
+                        - button "Add to Favorites & Lists" [ref=e1159] [cursor=pointer]
+                    - strong [ref=e1161]: New-Arrival
+              - listitem [ref=e1163]:
+                - generic [ref=e1164]:
+                  - link "PALLY CARMELISED BISCUIT" [ref=e1165] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-carmelised-biscuit-629603-v001.html
+                    - img "PALLY CARMELISED BISCUIT" [ref=e1168]
+                  - generic [ref=e1169]:
+                    - link "PALLY CARMELISED BISCUIT" [ref=e1170] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-carmelised-biscuit-629603-v001.html
+                      - strong [ref=e1171]: PALLY CARMELISED BISCUIT
+                    - generic [ref=e1172]:
+                      - generic [ref=e1173]: 250 G
+                      - link "By PALLY" [ref=e1176] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1179]: $ 2.99
+                    - generic [ref=e1180]:
+                      - generic [ref=e1181]:
+                        - generic [ref=e1182]: "Rating:"
+                        - link " " [ref=e1183] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-carmelised-biscuit-629603-v001.html#review-form-section
+                          - generic [ref=e1184]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1186] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-carmelised-biscuit-629603-v001.html#review-form-section
+                    - generic [ref=e1187]:
+                      - generic [ref=e1190]:
+                        - generic [ref=e1192] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1193]: "1"
+                        - generic [ref=e1195] [cursor=pointer]: 
+                      - button "Add" [ref=e1197] [cursor=pointer]
+                    - list [ref=e1199]:
+                      - listitem [ref=e1200]:
+                        - button "Add to Favorites & Lists" [ref=e1201] [cursor=pointer]
+                    - strong [ref=e1203]: New-Arrival
+              - listitem [ref=e1205]:
+                - generic [ref=e1206]:
+                  - link "PALLY THEE PLAIN BISCUIT" [ref=e1207] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-thee-plain-biscuit-629595-v001.html
+                    - img "PALLY THEE PLAIN BISCUIT" [ref=e1210]
+                  - generic [ref=e1211]:
+                    - link "PALLY THEE PLAIN BISCUIT" [ref=e1212] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-thee-plain-biscuit-629595-v001.html
+                      - strong [ref=e1213]: PALLY THEE PLAIN BISCUIT
+                    - generic [ref=e1214]:
+                      - generic [ref=e1215]: 300 G
+                      - link "By PALLY" [ref=e1218] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1221]: $ 2.99
+                    - generic [ref=e1222]:
+                      - generic [ref=e1223]:
+                        - generic [ref=e1224]: "Rating:"
+                        - link " " [ref=e1225] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-thee-plain-biscuit-629595-v001.html#review-form-section
+                          - generic [ref=e1226]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1228] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-thee-plain-biscuit-629595-v001.html#review-form-section
+                    - generic [ref=e1229]:
+                      - generic [ref=e1232]:
+                        - generic [ref=e1234] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1235]: "1"
+                        - generic [ref=e1237] [cursor=pointer]: 
+                      - button "Add" [ref=e1239] [cursor=pointer]
+                    - list [ref=e1241]:
+                      - listitem [ref=e1242]:
+                        - button "Add to Favorites & Lists" [ref=e1243] [cursor=pointer]
+                    - strong [ref=e1245]: New-Arrival
+              - listitem [ref=e1247]:
+                - generic [ref=e1248]:
+                  - link "PALLY MARIE BISCUIT" [ref=e1249] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-marie-biscuit-629600-v001.html
+                    - img "PALLY MARIE BISCUIT" [ref=e1252]
+                  - generic [ref=e1253]:
+                    - link "PALLY MARIE BISCUIT" [ref=e1254] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-marie-biscuit-629600-v001.html
+                      - strong [ref=e1255]: PALLY MARIE BISCUIT
+                    - generic [ref=e1256]:
+                      - generic [ref=e1257]: 2 XG
+                      - link "By PALLY" [ref=e1260] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1263]: $ 3.99
+                    - generic [ref=e1264]:
+                      - generic [ref=e1265]:
+                        - generic [ref=e1266]: "Rating:"
+                        - link " " [ref=e1267] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-marie-biscuit-629600-v001.html#review-form-section
+                          - generic [ref=e1268]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1270] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-marie-biscuit-629600-v001.html#review-form-section
+                    - generic [ref=e1271]:
+                      - generic [ref=e1274]:
+                        - generic [ref=e1276] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1277]: "1"
+                        - generic [ref=e1279] [cursor=pointer]: 
+                      - button "Add" [ref=e1281] [cursor=pointer]
+                    - list [ref=e1283]:
+                      - listitem [ref=e1284]:
+                        - button "Add to Favorites & Lists" [ref=e1285] [cursor=pointer]
+                    - strong [ref=e1287]: New-Arrival
+              - listitem [ref=e1289]:
+                - generic [ref=e1290]:
+                  - link "PALLY DIGESTIVE PLAIN BISCUIT" [ref=e1291] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-digestive-plain-biscuit-629597-v001.html
+                    - img "PALLY DIGESTIVE PLAIN BISCUIT" [ref=e1294]
+                  - generic [ref=e1295]:
+                    - link "PALLY DIGESTIVE PLAIN BISCUIT" [ref=e1296] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-digestive-plain-biscuit-629597-v001.html
+                      - strong [ref=e1297]: PALLY DIGESTIVE PLAIN BISCUIT
+                    - generic [ref=e1298]:
+                      - generic [ref=e1299]: 400 G
+                      - link "By PALLY" [ref=e1302] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1305]: $ 2.99
+                    - generic [ref=e1306]:
+                      - generic [ref=e1307]:
+                        - generic [ref=e1308]: "Rating:"
+                        - link " " [ref=e1309] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-digestive-plain-biscuit-629597-v001.html#review-form-section
+                          - generic [ref=e1310]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1312] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-digestive-plain-biscuit-629597-v001.html#review-form-section
+                    - generic [ref=e1313]:
+                      - generic [ref=e1316]:
+                        - generic [ref=e1318] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1319]: "1"
+                        - generic [ref=e1321] [cursor=pointer]: 
+                      - button "Add" [ref=e1323] [cursor=pointer]
+                    - list [ref=e1325]:
+                      - listitem [ref=e1326]:
+                        - button "Add to Favorites & Lists" [ref=e1327] [cursor=pointer]
+                    - strong [ref=e1329]: New-Arrival
+              - listitem [ref=e1331]:
+                - generic [ref=e1332]:
+                  - link "PALLY MILK CHOCOLATE BISCUIT" [ref=e1333] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-milk-chocolate-biscuit-629602-v001.html
+                    - img "PALLY MILK CHOCOLATE BISCUIT" [ref=e1336]
+                  - generic [ref=e1337]:
+                    - link "PALLY MILK CHOCOLATE BISCUIT" [ref=e1338] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-milk-chocolate-biscuit-629602-v001.html
+                      - strong [ref=e1339]: PALLY MILK CHOCOLATE BISCUIT
+                    - generic [ref=e1340]:
+                      - generic [ref=e1341]: 300 G
+                      - link "By PALLY" [ref=e1344] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1347]: $ 4.25
+                    - generic [ref=e1348]:
+                      - generic [ref=e1349]:
+                        - generic [ref=e1350]: "Rating:"
+                        - link " " [ref=e1351] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-milk-chocolate-biscuit-629602-v001.html#review-form-section
+                          - generic [ref=e1352]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1354] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-milk-chocolate-biscuit-629602-v001.html#review-form-section
+                    - generic [ref=e1355]:
+                      - generic [ref=e1358]:
+                        - generic [ref=e1360] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1361]: "1"
+                        - generic [ref=e1363] [cursor=pointer]: 
+                      - button "Add" [ref=e1365] [cursor=pointer]
+                    - list [ref=e1367]:
+                      - listitem [ref=e1368]:
+                        - button "Add to Favorites & Lists" [ref=e1369] [cursor=pointer]
+                    - strong [ref=e1371]: New-Arrival
+              - listitem [ref=e1373]:
+                - generic [ref=e1374]:
+                  - link "PALLY RICH TEA BISCUIT" [ref=e1375] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pally-rich-tea-biscuit-629599-v001.html
+                    - img "PALLY RICH TEA BISCUIT" [ref=e1378]
+                  - generic [ref=e1379]:
+                    - link "PALLY RICH TEA BISCUIT" [ref=e1380] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pally-rich-tea-biscuit-629599-v001.html
+                      - strong [ref=e1381]: PALLY RICH TEA BISCUIT
+                    - generic [ref=e1382]:
+                      - generic [ref=e1383]: 300 G
+                      - link "By PALLY" [ref=e1386] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/pally
+                    - generic [ref=e1389]: $ 2.99
+                    - generic [ref=e1390]:
+                      - generic [ref=e1391]:
+                        - generic [ref=e1392]: "Rating:"
+                        - link " " [ref=e1393] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pally-rich-tea-biscuit-629599-v001.html#review-form-section
+                          - generic [ref=e1394]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1396] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pally-rich-tea-biscuit-629599-v001.html#review-form-section
+                    - generic [ref=e1397]:
+                      - generic [ref=e1400]:
+                        - generic [ref=e1402] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1403]: "1"
+                        - generic [ref=e1405] [cursor=pointer]: 
+                      - button "Add" [ref=e1407] [cursor=pointer]
+                    - list [ref=e1409]:
+                      - listitem [ref=e1410]:
+                        - button "Add to Favorites & Lists" [ref=e1411] [cursor=pointer]
+                    - strong [ref=e1413]: New-Arrival
+        - link "VIEW ALL" [ref=e1421] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/productlist/index/newproduct/?_from=home
+      - generic [ref=e1426]:
+        - heading "Promotions" [level=1] [ref=e1428]
+        - generic "Promotions" [ref=e1429]:
+          - list [ref=e1431]:
+            - generic [ref=e1433]:
+              - listitem [ref=e1435]:
+                - generic [ref=e1436]:
+                  - link "NIVEA CAROTENE SUN LOTION SPF6" [ref=e1437] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/nivea-carotene-sun-lotion-spf6-323408-v001.html
+                    - img "NIVEA CAROTENE SUN LOTION SPF6" [ref=e1440]
+                  - generic [ref=e1441]:
+                    - link "NIVEA CAROTENE SUN LOTION SPF6" [ref=e1442] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/nivea-carotene-sun-lotion-spf6-323408-v001.html
+                      - strong [ref=e1443]: NIVEA CAROTENE SUN LOTION SPF6
+                    - generic [ref=e1444]:
+                      - generic [ref=e1445]: 200 ML
+                      - link "By Nivea" [ref=e1448] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/nivea
+                    - generic [ref=e1449]:
+                      - generic [ref=e1452]: $ 5.01
+                      - generic [ref=e1453]:
+                        - generic [ref=e1456]: $ 7.15
+                        - generic [ref=e1457]: 30% OFF
+                        - generic [ref=e1458]: Offer ends on 10/06/2026
+                    - generic [ref=e1459]:
+                      - generic [ref=e1460]:
+                        - generic [ref=e1461]: "Rating:"
+                        - link " " [ref=e1462] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/nivea-carotene-sun-lotion-spf6-323408-v001.html#review-form-section
+                          - generic [ref=e1463]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1465] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/nivea-carotene-sun-lotion-spf6-323408-v001.html#review-form-section
+                    - generic [ref=e1466]:
+                      - generic [ref=e1469]:
+                        - generic [ref=e1471] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1472]: "1"
+                        - generic [ref=e1474] [cursor=pointer]: 
+                      - button "Add" [ref=e1476] [cursor=pointer]
+                    - list [ref=e1478]:
+                      - listitem [ref=e1479]:
+                        - button "Add to Favorites & Lists" [ref=e1480] [cursor=pointer]
+                    - strong [ref=e1482]: Offer
+              - listitem [ref=e1484]:
+                - generic [ref=e1485]:
+                  - link "MAZOLA CORN OIL" [ref=e1486] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/mazola-corn-oil-3l.html
+                    - img "MAZOLA CORN OIL" [ref=e1489]
+                  - generic [ref=e1490]:
+                    - link "MAZOLA CORN OIL" [ref=e1491] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/mazola-corn-oil-3l.html
+                      - strong [ref=e1492]: MAZOLA CORN OIL
+                    - generic [ref=e1493]:
+                      - generic [ref=e1494]: 3 L
+                      - link "By Mazola" [ref=e1497] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/mazola
+                    - generic [ref=e1498]:
+                      - generic [ref=e1501]: $ 13.99
+                      - generic [ref=e1502]:
+                        - generic [ref=e1505]: $ 14.69
+                        - generic [ref=e1506]: 5% OFF
+                        - generic [ref=e1507]: Offer ends on 30/06/2026
+                    - generic [ref=e1508]:
+                      - generic [ref=e1509]:
+                        - generic [ref=e1510]: "Rating:"
+                        - link " " [ref=e1511] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/mazola-corn-oil-3l.html#review-form-section
+                          - generic [ref=e1512]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1514] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/mazola-corn-oil-3l.html#review-form-section
+                    - generic [ref=e1515]:
+                      - generic [ref=e1518]:
+                        - generic [ref=e1520] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1521]: "1"
+                        - generic [ref=e1523] [cursor=pointer]: 
+                      - button "Add" [ref=e1525] [cursor=pointer]
+                    - list [ref=e1527]:
+                      - listitem [ref=e1528]:
+                        - button "Add to Favorites & Lists" [ref=e1529] [cursor=pointer]
+                    - strong [ref=e1531]: Offer
+              - listitem [ref=e1533]:
+                - generic [ref=e1534]:
+                  - link "BEESLINE ULTRA SCREEN CREAM ACTIVE SPF50+" [ref=e1535] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-active-spf50-539265-v001.html
+                    - img "BEESLINE ULTRA SCREEN CREAM ACTIVE SPF50+" [ref=e1538]
+                  - generic [ref=e1539]:
+                    - link "BEESLINE ULTRA SCREEN CREAM ACTIVE SPF50+" [ref=e1540] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-active-spf50-539265-v001.html
+                      - strong [ref=e1541]: BEESLINE ULTRA SCREEN CREAM ACTIVE SPF50+
+                    - generic [ref=e1542]:
+                      - generic [ref=e1543]: 60 ML
+                      - link "By Beesline" [ref=e1546] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/beesline
+                    - generic [ref=e1547]:
+                      - generic [ref=e1550]: $ 6.29
+                      - generic [ref=e1551]:
+                        - generic [ref=e1554]: $ 8.99
+                        - generic [ref=e1555]: 31% OFF
+                        - generic [ref=e1556]: Offer ends on 10/06/2026
+                    - generic [ref=e1557]:
+                      - generic [ref=e1558]:
+                        - generic [ref=e1559]: "Rating:"
+                        - link " " [ref=e1560] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-active-spf50-539265-v001.html#review-form-section
+                          - generic [ref=e1561]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1563] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-active-spf50-539265-v001.html#review-form-section
+                    - generic [ref=e1564]:
+                      - generic [ref=e1567]:
+                        - generic [ref=e1569] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1570]: "1"
+                        - generic [ref=e1572] [cursor=pointer]: 
+                      - button "Add" [ref=e1574] [cursor=pointer]
+                    - list [ref=e1576]:
+                      - listitem [ref=e1577]:
+                        - button "Add to Favorites & Lists" [ref=e1578] [cursor=pointer]
+                    - strong [ref=e1580]: Offer
+              - listitem [ref=e1582]:
+                - generic [ref=e1583]:
+                  - link "FRANUI RASPBERRIES COATED IN DARK CHOCOLATE" [ref=e1584] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-dark-chocolate-613790-v001.html
+                    - img "FRANUI RASPBERRIES COATED IN DARK CHOCOLATE" [ref=e1587]
+                  - generic [ref=e1588]:
+                    - link "FRANUI RASPBERRIES COATED IN DARK CHOCOLATE" [ref=e1589] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-dark-chocolate-613790-v001.html
+                      - strong [ref=e1590]: FRANUI RASPBERRIES COATED IN DARK CHOCOLATE
+                    - generic [ref=e1591]:
+                      - generic [ref=e1592]: 150 G
+                      - link "By FRANUI" [ref=e1595] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/franui
+                    - generic [ref=e1596]:
+                      - generic [ref=e1599]: $ 8.99
+                      - generic [ref=e1600]:
+                        - generic [ref=e1603]: $ 10.35
+                        - generic [ref=e1604]: 14% OFF
+                        - generic [ref=e1605]: Offer ends on 10/06/2026
+                    - generic [ref=e1606]:
+                      - generic [ref=e1607]:
+                        - generic [ref=e1608]: "Rating:"
+                        - link "  100%" [ref=e1609] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-dark-chocolate-613790-v001.html#customer-reviews
+                          - generic "100%" [ref=e1610]:
+                            - text: 
+                            - generic [ref=e1611]:
+                              - text: 
+                              - generic [ref=e1612]: 100%
+                      - link "(1)" [ref=e1614] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-dark-chocolate-613790-v001.html#customer-reviews
+                    - generic [ref=e1615]:
+                      - generic [ref=e1618]:
+                        - generic [ref=e1620] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1621]: "1"
+                        - generic [ref=e1623] [cursor=pointer]: 
+                      - button "Add" [ref=e1625] [cursor=pointer]
+                    - list [ref=e1627]:
+                      - listitem [ref=e1628]:
+                        - button "Add to Favorites & Lists" [ref=e1629] [cursor=pointer]
+                    - strong [ref=e1631]: Offer
+              - listitem [ref=e1633]:
+                - generic [ref=e1634]:
+                  - link "CAMPOMATIC AIR FRYER DIGITAL GLASS WINDOW 1500W 11 FUNCTIONS" [ref=e1635] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/campomatic-air-fryer-digital-glass-window-1500w-11-functions-625817-v001.html
+                    - img "CAMPOMATIC AIR FRYER DIGITAL GLASS WINDOW 1500W 11 FUNCTIONS" [ref=e1638]
+                  - generic [ref=e1639]:
+                    - link "CAMPOMATIC AIR FRYER DIGITAL GLASS WINDOW 1500W 11 FUNCTIONS" [ref=e1640] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/campomatic-air-fryer-digital-glass-window-1500w-11-functions-625817-v001.html
+                      - strong [ref=e1641]: CAMPOMATIC AIR FRYER DIGITAL GLASS WINDOW 1500W 11 FUNCTIONS
+                    - generic [ref=e1642]:
+                      - generic [ref=e1643]: 6 L
+                      - link "By Campomatic" [ref=e1646] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/campomatic
+                    - generic [ref=e1647]:
+                      - generic [ref=e1650]: $ 64.99
+                      - generic [ref=e1651]:
+                        - generic [ref=e1654]: $ 79.99
+                        - generic [ref=e1655]: 19% OFF
+                        - generic [ref=e1656]: Offer ends on 24/06/2026
+                    - generic [ref=e1657]:
+                      - generic [ref=e1658]:
+                        - generic [ref=e1659]: "Rating:"
+                        - link " " [ref=e1660] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/campomatic-air-fryer-digital-glass-window-1500w-11-functions-625817-v001.html#review-form-section
+                          - generic [ref=e1661]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1663] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/campomatic-air-fryer-digital-glass-window-1500w-11-functions-625817-v001.html#review-form-section
+                    - generic [ref=e1664]:
+                      - generic [ref=e1667]:
+                        - generic [ref=e1669] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1670]: "1"
+                        - generic [ref=e1672] [cursor=pointer]: 
+                      - button "Add" [ref=e1674] [cursor=pointer]
+                    - list [ref=e1676]:
+                      - listitem [ref=e1677]:
+                        - button "Add to Favorites & Lists" [ref=e1678] [cursor=pointer]
+                    - strong [ref=e1680]: Offer
+              - listitem [ref=e1682]:
+                - generic [ref=e1683]:
+                  - link "BEESLINE ULTRA SCREEN CREAM INVISIBLE SPF50+" [ref=e1684] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-invisible-spf50-539267-v001.html
+                    - img "BEESLINE ULTRA SCREEN CREAM INVISIBLE SPF50+" [ref=e1687]
+                  - generic [ref=e1688]:
+                    - link "BEESLINE ULTRA SCREEN CREAM INVISIBLE SPF50+" [ref=e1689] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-invisible-spf50-539267-v001.html
+                      - strong [ref=e1690]: BEESLINE ULTRA SCREEN CREAM INVISIBLE SPF50+
+                    - generic [ref=e1691]:
+                      - generic [ref=e1692]: 60 ML
+                      - link "By Beesline" [ref=e1695] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/beesline
+                    - generic [ref=e1696]:
+                      - generic [ref=e1699]: $ 8.18
+                      - generic [ref=e1700]:
+                        - generic [ref=e1703]: $ 11.69
+                        - generic [ref=e1704]: 31% OFF
+                        - generic [ref=e1705]: Offer ends on 10/06/2026
+                    - generic [ref=e1706]:
+                      - generic [ref=e1707]:
+                        - generic [ref=e1708]: "Rating:"
+                        - link " " [ref=e1709] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-invisible-spf50-539267-v001.html#review-form-section
+                          - generic [ref=e1710]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1712] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/beesline-ultra-screen-cream-invisible-spf50-539267-v001.html#review-form-section
+                    - generic [ref=e1713]:
+                      - generic [ref=e1716]:
+                        - generic [ref=e1718] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1719]: "1"
+                        - generic [ref=e1721] [cursor=pointer]: 
+                      - button "Add" [ref=e1723] [cursor=pointer]
+                    - list [ref=e1725]:
+                      - listitem [ref=e1726]:
+                        - button "Add to Favorites & Lists" [ref=e1727] [cursor=pointer]
+                    - strong [ref=e1729]: Offer
+              - listitem [ref=e1731]:
+                - generic [ref=e1732]:
+                  - link "FRANUI RASPBERRIES COATED IN MILK CHOCOLATE" [ref=e1733] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-milk-chocolate-613791-v001.html
+                    - img "FRANUI RASPBERRIES COATED IN MILK CHOCOLATE" [ref=e1736]
+                  - generic [ref=e1737]:
+                    - link "FRANUI RASPBERRIES COATED IN MILK CHOCOLATE" [ref=e1738] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-milk-chocolate-613791-v001.html
+                      - strong [ref=e1739]: FRANUI RASPBERRIES COATED IN MILK CHOCOLATE
+                    - generic [ref=e1740]:
+                      - generic [ref=e1741]: 150 G
+                      - link "By FRANUI" [ref=e1744] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/franui
+                    - generic [ref=e1745]:
+                      - generic [ref=e1748]: $ 8.99
+                      - generic [ref=e1749]:
+                        - generic [ref=e1752]: $ 10.35
+                        - generic [ref=e1753]: 14% OFF
+                        - generic [ref=e1754]: Offer ends on 10/06/2026
+                    - generic [ref=e1755]:
+                      - generic [ref=e1756]:
+                        - generic [ref=e1757]: "Rating:"
+                        - link " " [ref=e1758] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-milk-chocolate-613791-v001.html#review-form-section
+                          - generic [ref=e1759]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1761] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/franui-raspberries-coated-in-milk-chocolate-613791-v001.html#review-form-section
+                    - generic [ref=e1762]:
+                      - generic [ref=e1765]:
+                        - generic [ref=e1767] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1768]: "1"
+                        - generic [ref=e1770] [cursor=pointer]: 
+                      - button "Add" [ref=e1772] [cursor=pointer]
+                    - list [ref=e1774]:
+                      - listitem [ref=e1775]:
+                        - button "Add to Favorites & Lists" [ref=e1776] [cursor=pointer]
+                    - strong [ref=e1778]: Offer
+              - listitem [ref=e1780]:
+                - generic [ref=e1781]:
+                  - link "BANANA BOAT GOLDEN TANNING BLEND" [ref=e1782] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/banana-boat-golden-tanning-blend-335869-v001.html
+                    - img "BANANA BOAT GOLDEN TANNING BLEND" [ref=e1785]
+                  - generic [ref=e1786]:
+                    - link "BANANA BOAT GOLDEN TANNING BLEND" [ref=e1787] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/banana-boat-golden-tanning-blend-335869-v001.html
+                      - strong [ref=e1788]: BANANA BOAT GOLDEN TANNING BLEND
+                    - generic [ref=e1789]:
+                      - generic [ref=e1790]: 236 ML
+                      - link "By BANAN BOAT" [ref=e1793] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/banan-boat
+                    - generic [ref=e1794]:
+                      - generic [ref=e1797]: $ 8.51
+                      - generic [ref=e1798]:
+                        - generic [ref=e1801]: $ 12.15
+                        - generic [ref=e1802]: 30% OFF
+                        - generic [ref=e1803]: Offer ends on 10/06/2026
+                    - generic [ref=e1804]:
+                      - generic [ref=e1805]:
+                        - generic [ref=e1806]: "Rating:"
+                        - link " " [ref=e1807] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/banana-boat-golden-tanning-blend-335869-v001.html#review-form-section
+                          - generic [ref=e1808]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1810] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/banana-boat-golden-tanning-blend-335869-v001.html#review-form-section
+                    - generic [ref=e1811]:
+                      - generic [ref=e1814]:
+                        - generic [ref=e1816] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1817]: "1"
+                        - generic [ref=e1819] [cursor=pointer]: 
+                      - button "Add" [ref=e1821] [cursor=pointer]
+                    - list [ref=e1823]:
+                      - listitem [ref=e1824]:
+                        - button "Add to Favorites & Lists" [ref=e1825] [cursor=pointer]
+                    - strong [ref=e1827]: Offer
+              - listitem [ref=e1829]:
+                - generic [ref=e1830]:
+                  - link "PRODUCE PINEAPPLE DEL AIRPLANE" [ref=e1831] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/pineapple-honey-diew.html
+                    - img "PRODUCE PINEAPPLE DEL AIRPLANE" [ref=e1834]
+                  - generic [ref=e1835]:
+                    - link "PRODUCE PINEAPPLE DEL AIRPLANE" [ref=e1836] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/pineapple-honey-diew.html
+                      - strong [ref=e1837]: PRODUCE PINEAPPLE DEL AIRPLANE
+                    - generic [ref=e1839]: "1"
+                    - generic [ref=e1841]:
+                      - generic [ref=e1844]: $ 10.03
+                      - generic [ref=e1845]:
+                        - generic [ref=e1848]: $ 14.49
+                        - generic [ref=e1849]: 31% OFF
+                        - generic [ref=e1850]: Offer ends on 08/06/2026
+                    - generic [ref=e1851]:
+                      - generic [ref=e1852]:
+                        - generic [ref=e1853]: "Rating:"
+                        - link " " [ref=e1854] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/pineapple-honey-diew.html#review-form-section
+                          - generic [ref=e1855]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1857] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/pineapple-honey-diew.html#review-form-section
+                    - generic [ref=e1858]:
+                      - generic [ref=e1861]:
+                        - generic [ref=e1863] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1864]: "1"
+                        - generic [ref=e1866] [cursor=pointer]: 
+                      - button "Add" [ref=e1868] [cursor=pointer]
+                    - list [ref=e1870]:
+                      - listitem [ref=e1871]:
+                        - button "Add to Favorites & Lists" [ref=e1872] [cursor=pointer]
+                    - strong [ref=e1874]: Offer
+              - listitem [ref=e1876]:
+                - generic [ref=e1877]:
+                  - link "BEESLINE AGE DEFENSE FACIAL FLUID SUNSCREEN SPF 50" [ref=e1878] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/age-defense-facial-fluid-sunscreen-spf-50-541184-v001.html
+                    - img "BEESLINE AGE DEFENSE FACIAL FLUID SUNSCREEN SPF 50" [ref=e1881]
+                  - generic [ref=e1882]:
+                    - link "BEESLINE AGE DEFENSE FACIAL FLUID SUNSCREEN SPF 50" [ref=e1883] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/age-defense-facial-fluid-sunscreen-spf-50-541184-v001.html
+                      - strong [ref=e1884]: BEESLINE AGE DEFENSE FACIAL FLUID SUNSCREEN SPF 50
+                    - generic [ref=e1885]:
+                      - generic [ref=e1886]: 40 ML
+                      - link "By Beesline" [ref=e1889] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/beesline
+                    - generic [ref=e1890]:
+                      - generic [ref=e1893]: $ 9.09
+                      - generic [ref=e1894]:
+                        - generic [ref=e1897]: $ 12.99
+                        - generic [ref=e1898]: 31% OFF
+                        - generic [ref=e1899]: Offer ends on 10/06/2026
+                    - generic [ref=e1900]:
+                      - generic [ref=e1901]:
+                        - generic [ref=e1902]: "Rating:"
+                        - link " " [ref=e1903] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/age-defense-facial-fluid-sunscreen-spf-50-541184-v001.html#review-form-section
+                          - generic [ref=e1904]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1906] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/age-defense-facial-fluid-sunscreen-spf-50-541184-v001.html#review-form-section
+                    - generic [ref=e1907]:
+                      - generic [ref=e1910]:
+                        - generic [ref=e1912] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1913]: "1"
+                        - generic [ref=e1915] [cursor=pointer]: 
+                      - button "Add" [ref=e1917] [cursor=pointer]
+                    - list [ref=e1919]:
+                      - listitem [ref=e1920]:
+                        - button "Add to Favorites & Lists" [ref=e1921] [cursor=pointer]
+                    - strong [ref=e1923]: Offer
+              - listitem [ref=e1925]:
+                - generic [ref=e1926]:
+                  - link "BANANA BOAT DARK TANNING OIL SPF 4" [ref=e1927] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/banana-boat-dark-tanning-oil-spf-4-335873-v001.html
+                    - img "BANANA BOAT DARK TANNING OIL SPF 4" [ref=e1930]
+                  - generic [ref=e1931]:
+                    - link "BANANA BOAT DARK TANNING OIL SPF 4" [ref=e1932] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/banana-boat-dark-tanning-oil-spf-4-335873-v001.html
+                      - strong [ref=e1933]: BANANA BOAT DARK TANNING OIL SPF 4
+                    - generic [ref=e1934]:
+                      - generic [ref=e1935]: 236 ML
+                      - link "By BANAN BOAT" [ref=e1938] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/banan-boat
+                    - generic [ref=e1939]:
+                      - generic [ref=e1942]: $ 8.51
+                      - generic [ref=e1943]:
+                        - generic [ref=e1946]: $ 12.15
+                        - generic [ref=e1947]: 30% OFF
+                        - generic [ref=e1948]: Offer ends on 10/06/2026
+                    - generic [ref=e1949]:
+                      - generic [ref=e1950]:
+                        - generic [ref=e1951]: "Rating:"
+                        - link " " [ref=e1952] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/banana-boat-dark-tanning-oil-spf-4-335873-v001.html#review-form-section
+                          - generic [ref=e1953]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e1955] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/banana-boat-dark-tanning-oil-spf-4-335873-v001.html#review-form-section
+                    - generic [ref=e1956]:
+                      - generic [ref=e1959]:
+                        - generic [ref=e1961] [cursor=pointer]: 
+                        - spinbutton "Quantity" [ref=e1962]: "1"
+                        - generic [ref=e1964] [cursor=pointer]: 
+                      - button "Add" [ref=e1966] [cursor=pointer]
+                    - list [ref=e1968]:
+                      - listitem [ref=e1969]:
+                        - button "Add to Favorites & Lists" [ref=e1970] [cursor=pointer]
+                    - strong [ref=e1972]: Offer
+              - listitem [ref=e1974]:
+                - generic [ref=e1975]:
+                  - link "BEEF MAKANIK LOOSE" [ref=e1976] [cursor=pointer]:
+                    - /url: https://www.spinneyslebanon.com/default/makanek.html
+                    - img "BEEF MAKANIK LOOSE" [ref=e1979]
+                  - generic [ref=e1980]:
+                    - link "BEEF MAKANIK LOOSE" [ref=e1981] [cursor=pointer]:
+                      - /url: https://www.spinneyslebanon.com/default/makanek.html
+                      - strong [ref=e1982]: BEEF MAKANIK LOOSE
+                    - generic [ref=e1983]:
+                      - generic [ref=e1984]: 1 PER KG
+                      - link "By Spinneys Butcher .." [ref=e1987] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/brands/spinneys-butcher-shop
+                        - text: By Spinneys Butcher
+                        - generic [ref=e1988]: ..
+                    - generic [ref=e1989]:
+                      - generic [ref=e1992]: $ 8.99
+                      - generic [ref=e1993]:
+                        - generic [ref=e1996]: $ 10.99
+                        - generic [ref=e1997]: 19% OFF
+                        - generic [ref=e1998]: Offer ends on 08/06/2026
+                    - generic [ref=e1999]:
+                      - generic [ref=e2000]:
+                        - generic [ref=e2001]: "Rating:"
+                        - link " " [ref=e2002] [cursor=pointer]:
+                          - /url: https://www.spinneyslebanon.com/default/makanek.html#review-form-section
+                          - generic [ref=e2003]:
+                            - text: 
+                            - generic: 
+                      - link "(0)" [ref=e2005] [cursor=pointer]:
+                        - /url: https://www.spinneyslebanon.com/default/makanek.html#review-form-section
+                    - button "Customize" [ref=e2008] [cursor=pointer]
+                    - list [ref=e2010]:
+                      - listitem [ref=e2011]:
+                        - button "Add to Favorites & Lists" [ref=e2012] [cursor=pointer]
+                    - strong [ref=e2014]: Offer
+        - link "VIEW ALL" [ref=e2022] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/promotions.html
+      - generic [ref=e2025]:
+        - heading "Healthy Living" [level=2] [ref=e2028]
+        - generic [ref=e2029]:
+          - generic [ref=e2032]:
+            - generic [ref=e2034]:
+              - link "Organic" [ref=e2036] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/organic.html
+                - img "Organic" [ref=e2037]
+              - heading "Organic" [level=4] [ref=e2039]:
+                - link "Organic" [ref=e2040] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/organic.html
+            - generic [ref=e2042]:
+              - link "Kids Food" [ref=e2044] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/vegitarian.html
+                - img "Kids Food" [ref=e2045]
+              - heading "Kids Food" [level=4] [ref=e2047]:
+                - link "Kids Food" [ref=e2048] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/vegitarian.html
+            - generic [ref=e2050]:
+              - link "Vegan" [ref=e2052] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/vegan.html
+                - img "Vegan" [ref=e2053]
+              - heading "Vegan" [level=4] [ref=e2055]:
+                - link "Vegan" [ref=e2056] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/vegan.html
+            - generic [ref=e2058]:
+              - link "Protein Boost" [ref=e2060] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/protein-boost.html
+                - img "Protein Boost" [ref=e2061]
+              - heading "Protein Boost" [level=4] [ref=e2063]:
+                - link "Protein Boost" [ref=e2064] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/protein-boost.html
+            - generic [ref=e2066]:
+              - link "Ketogenic" [ref=e2068] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/ketogenic.html
+                - img "Ketogenic" [ref=e2069]
+              - heading "Ketogenic" [level=4] [ref=e2071]:
+                - link "Ketogenic" [ref=e2072] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/ketogenic.html
+            - generic [ref=e2074]:
+              - link "High Fiber" [ref=e2076] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/dairy-free.html
+                - img "High Fiber" [ref=e2077]
+              - heading "High Fiber" [level=4] [ref=e2079]:
+                - link "High Fiber" [ref=e2080] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/dairy-free.html
+            - generic [ref=e2082]:
+              - link "Gluten Free" [ref=e2084] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/gluten-free.html
+                - img "Gluten Free" [ref=e2085]
+              - heading "Gluten Free" [level=4] [ref=e2087]:
+                - link "Gluten Free" [ref=e2088] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/gluten-free.html
+            - generic [ref=e2090]:
+              - link "Better Alternatives" [ref=e2092] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/lactose-free.html
+                - img "Better Alternatives" [ref=e2093]
+              - heading "Better Alternatives" [level=4] [ref=e2095]:
+                - link "Better Alternatives" [ref=e2096] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/lactose-free.html
+            - generic [ref=e2098]:
+              - link "Low Sugar" [ref=e2100] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/healthy-snacking.html
+                - img "Low Sugar" [ref=e2101]
+              - heading "Low Sugar" [level=4] [ref=e2103]:
+                - link "Low Sugar" [ref=e2104] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/healthy-snacking.html
+            - generic [ref=e2106]:
+              - link "Super Food" [ref=e2108] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living/super-food.html
+                - img "Super Food" [ref=e2109]
+              - heading "Super Food" [level=4] [ref=e2111]:
+                - link "Super Food" [ref=e2112] [cursor=pointer]:
+                  - /url: https://www.spinneyslebanon.com/default/healthy-living/super-food.html
+          - link "View All" [ref=e2115] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/healthy-living.html
+      - paragraph
+      - generic [ref=e2118]:
+        - heading "Why Choose Spinneys" [level=1] [ref=e2121]
+        - generic [ref=e2123]:
+          - heading "Freshness Guaranteed" [level=3] [ref=e2125]
+          - paragraph [ref=e2126]:
+            - text: All your groceries are
+            - text: delivered in refrigerated
+            - text: trucks!
+        - generic [ref=e2128]:
+          - heading "Delivery 7 days a week" [level=3] [ref=e2130]
+          - paragraph [ref=e2131]:
+            - text: Pick your convenient date
+            - text: and time and we will
+            - text: deliver to your doorstep!
+        - generic [ref=e2133]:
+          - heading "Spinneys Rewards" [level=3] [ref=e2135]
+          - paragraph [ref=e2136]:
+            - text: The more points you earn, the
+            - text: bigger your reward.
+        - generic [ref=e2138]:
+          - heading "Shop your Favorites & Lists" [level=3] [ref=e2140]
+          - paragraph [ref=e2141]: Order your most loved products from your saved lists.
+      - generic [ref=e2144]:
+        - generic [ref=e2146]:
+          - paragraph [ref=e2147]: WE'RE HERE FOR YOU
+          - heading "Help & Support" [level=4] [ref=e2148]
+          - link "VIEW NOW" [ref=e2149] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/help-support/
+        - generic [ref=e2151]:
+          - paragraph [ref=e2152]: Subscribe to our
+          - heading "Newsletter" [level=4] [ref=e2153]
+          - generic [ref=e2156]:
+            - textbox "Email Address" [ref=e2159]
+            - button "Subscribe" [ref=e2161] [cursor=pointer]: Send
+        - generic [ref=e2163]:
+          - paragraph [ref=e2164]: Shop on the go
+          - heading "Download Our App" [level=4] [ref=e2165]
+          - generic [ref=e2166]:
+            - generic [ref=e2167] [cursor=pointer]: App Store
+            - generic [ref=e2168] [cursor=pointer]: Google Play
+  - link "Back to top" [ref=e2169] [cursor=pointer]:
+    - /url: ""
+    - text: Back to top
+  - contentinfo [ref=e2171]:
+    - generic [ref=e2173]:
+      - generic [ref=e2176]:
+        - generic [ref=e2178]:
+          - heading "Download our App" [level=5] [ref=e2179]
+          - paragraph [ref=e2180]: You can now shop using our mobile application
+          - generic [ref=e2181]:
+            - link [ref=e2182] [cursor=pointer]:
+              - /url: https://apps.apple.com/us/app/id1518229592
+            - link [ref=e2184] [cursor=pointer]:
+              - /url: https://play.google.com/store/apps/details?id=com.spinneyslebanon.app
+        - generic [ref=e2187]:
+          - heading "Spinneys Lebanon" [level=5] [ref=e2188]
+          - list [ref=e2189]:
+            - listitem [ref=e2190]:
+              - link "About Spinneys Lebanon" [ref=e2191] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/about-us/
+            - listitem [ref=e2192]:
+              - link "Social Responsibility" [ref=e2193] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/social-responsibility/
+            - listitem [ref=e2194]: Spinneys Rewards
+            - listitem [ref=e2195]:
+              - link "Branch Finder" [ref=e2196] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/branch-finder/
+            - listitem [ref=e2197]:
+              - link "Mobile App" [ref=e2198] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/mobile-app-landing/
+            - listitem [ref=e2199]:
+              - link "Careers" [ref=e2200] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/careers
+        - generic [ref=e2202]:
+          - heading "Curated for You" [level=5] [ref=e2203]
+          - list [ref=e2204]:
+            - listitem [ref=e2205]:
+              - link "Signature for Catering" [ref=e2206] [cursor=pointer]:
+                - /url: https://signatureforcatering.com/
+            - listitem [ref=e2207]:
+              - link "Promotions" [ref=e2208] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/promotions.html
+            - listitem [ref=e2209]:
+              - link "Brands" [ref=e2210] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/brands/
+            - listitem [ref=e2211]:
+              - link "Healthy Living" [ref=e2212] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/healthy-living.html
+            - listitem [ref=e2213]:
+              - link "Petfection" [ref=e2214] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/petfection-landing/
+            - listitem [ref=e2215]:
+              - link "Cellar" [ref=e2216] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/cellar.html
+            - listitem [ref=e2217]:
+              - link "Beauty" [ref=e2218] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/beauty-landing/
+        - generic [ref=e2220]:
+          - heading "Customer Care" [level=5] [ref=e2221]
+          - list [ref=e2222]:
+            - listitem [ref=e2223]:
+              - link "My Account" [ref=e2224] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/customer/account/
+            - listitem [ref=e2225]:
+              - link "Help & Support" [ref=e2226] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/help-support/
+            - listitem [ref=e2227]:
+              - link "Contact Us" [ref=e2228] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/contact/
+            - listitem [ref=e2229]:
+              - link "Loyalty Program" [ref=e2230] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/loyalty-program/
+            - listitem [ref=e2231]:
+              - link "Refund Policy" [ref=e2232] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/refund-policy/
+            - listitem [ref=e2233]:
+              - link "Delivery Locations" [ref=e2234] [cursor=pointer]:
+                - /url: https://www.spinneyslebanon.com/default/delivery-locations/
+        - generic [ref=e2236]:
+          - heading "Follow Us" [level=5] [ref=e2237]
+          - list [ref=e2238]:
+            - listitem [ref=e2239]:
+              - link "Facebook Instagram" [ref=e2240] [cursor=pointer]:
+                - /url: https://www.instagram.com/spinneyslebanon/
+                - img "Facebook" [ref=e2242]
+                - text: Instagram
+            - listitem [ref=e2243]:
+              - link "Facebook Facebook" [ref=e2244] [cursor=pointer]:
+                - /url: https://www.facebook.com/spinneyslebanon
+                - img "Facebook" [ref=e2246]
+                - text: Facebook
+            - listitem [ref=e2247]:
+              - link "Youtube Youtube" [ref=e2248] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/SpinneysChannel
+                - img "Youtube" [ref=e2250]
+                - text: Youtube
+            - listitem [ref=e2251]:
+              - link "X X" [ref=e2252] [cursor=pointer]:
+                - /url: https://twitter.com/spinneyslebanon
+                - img "X" [ref=e2254]
+                - text: X
+            - listitem [ref=e2255]:
+              - link "Linkedin Linkedin" [ref=e2256] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/spinneys/
+                - img "Linkedin" [ref=e2258]
+                - text: Linkedin
+      - generic [ref=e2261]:
+        - heading "Made with in Lebanon." [level=5] [ref=e2265]:
+          - text: Made with
+          - text: in Lebanon.
+        - generic [ref=e2268]:
+          - heading "Payment Methods" [level=5] [ref=e2269]
+          - link "Cash on Delivery," [ref=e2270] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/payment-terms/
+          - link "Credit Card on Delivery" [ref=e2271] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/payment-terms/
+          - link "and Online Payments" [ref=e2272] [cursor=pointer]:
+            - /url: https://www.spinneyslebanon.com/default/payment-terms/
+          - generic [ref=e2273]:
+            - img "America_Express" [ref=e2274]
+            - img "Mastercards" [ref=e2275]
+            - img "Visa" [ref=e2276]
+  - generic [ref=e2279]:
+    - generic [ref=e2280]: ® 2020 All Right Reserved. Gray Mackenzie Retail Lebanon SAL.
+    - list [ref=e2282]:
+      - listitem [ref=e2283]:
+        - link "Terms of Service" [ref=e2284] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/terms-of-use/
+      - listitem [ref=e2285]:
+        - link "Privacy Policy" [ref=e2286] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/privacy-policy/
+      - listitem [ref=e2287]:
+        - link "Disclaimer" [ref=e2288] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/disclaimer/
+      - listitem [ref=e2289]:
+        - link "Cookies" [ref=e2290] [cursor=pointer]:
+          - /url: https://www.spinneyslebanon.com/default/cookies-policy/

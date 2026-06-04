@@ -1,0 +1,150 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - button "Scheduled Scheduled" [ref=e6] [cursor=pointer]:
+        - img "Scheduled" [ref=e8]
+        - generic [ref=e9]: Scheduled
+      - generic [ref=e10]:
+        - button "Hazmieh - Baabda" [ref=e12] [cursor=pointer]:
+          - generic [ref=e13]: Hazmieh - Baabda
+        - generic [ref=e18]:
+          - textbox [active] [ref=e19]
+          - generic:
+            - generic: Search
+            - generic:
+              - strong: 70,000+
+            - generic: items
+          - button [ref=e20] [cursor=pointer]
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]: Trending Now
+        - generic [ref=e26]:
+          - link "potato potato" [ref=e27] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=potato
+            - generic [ref=e29]:
+              - img "potato" [ref=e30]
+              - generic [ref=e31]: potato
+          - link "water water" [ref=e32] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=water
+            - generic [ref=e34]:
+              - img "water" [ref=e35]
+              - generic [ref=e36]: water
+          - link "milk milk" [ref=e37] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=milk
+            - generic [ref=e39]:
+              - img "milk" [ref=e40]
+              - generic [ref=e41]: milk
+          - link "cheese cheese" [ref=e42] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=cheese
+            - generic [ref=e44]:
+              - img "cheese" [ref=e45]
+              - generic [ref=e46]: cheese
+          - link "nescafe nescafe" [ref=e47] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=nescafe
+            - generic [ref=e49]:
+              - img "nescafe" [ref=e50]
+              - generic [ref=e51]: nescafe
+          - link "shampoo shampoo" [ref=e52] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=shampoo
+            - generic [ref=e54]:
+              - img "shampoo" [ref=e55]
+              - generic [ref=e56]: shampoo
+          - link "bread bread" [ref=e57] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=bread
+            - generic [ref=e59]:
+              - img "bread" [ref=e60]
+              - generic [ref=e61]: bread
+          - link "chocolate chocolate" [ref=e62] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=chocolate
+            - generic [ref=e64]:
+              - img "chocolate" [ref=e65]
+              - generic [ref=e66]: chocolate
+          - link "oil oil" [ref=e67] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=oil
+            - generic [ref=e69]:
+              - img "oil" [ref=e70]
+              - generic [ref=e71]: oil
+          - link "chips chips" [ref=e72] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=chips
+            - generic [ref=e74]:
+              - img "chips" [ref=e75]
+              - generic [ref=e76]: chips
+      - generic [ref=e80]:
+        - img [ref=e83]
+        - img [ref=e89]
+        - img [ref=e95]
+        - img [ref=e101]
+        - img [ref=e107]
+        - img [ref=e113]
+        - img [ref=e119]
+        - img [ref=e125]
+        - img [ref=e131]
+        - img [ref=e137]
+  - navigation "Mobile navigation" [ref=e141]:
+    - link "Home Home" [ref=e142] [cursor=pointer]:
+      - /url: /maflbn/en
+      - img "Home" [ref=e145]
+      - generic [ref=e146]: Home
+    - link "Categories Categories" [ref=e147] [cursor=pointer]:
+      - /url: /maflbn/en/all-categories
+      - img "Categories" [ref=e150]
+      - generic [ref=e151]: Categories
+    - link "MyClub" [ref=e152] [cursor=pointer]:
+      - /url: /maflbn/en/profile/loyalty
+      - img "MyClub" [ref=e155]
+    - link "Profile Profile" [ref=e156] [cursor=pointer]:
+      - /url: /maflbn/en/profile/login
+      - img "Profile" [ref=e159]
+      - generic [ref=e160]: Profile
+    - link "Cart Cart" [ref=e161] [cursor=pointer]:
+      - /url: /maflbn/en/app/cart
+      - img "Cart" [ref=e164]
+      - generic [ref=e165]: Cart
+  - contentinfo [ref=e166]:
+    - generic [ref=e167]:
+      - generic [ref=e168]:
+        - link [ref=e169] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e171]:
+          - generic [ref=e172]: Stay in touch with us
+          - link "Facebook" [ref=e173] [cursor=pointer]:
+            - /url: https://www.facebook.com/carrefourlebanon
+            - img "Facebook" [ref=e174]
+          - link "twitter" [ref=e175] [cursor=pointer]:
+            - /url: https://twitter.com/carrefourle
+            - img "twitter" [ref=e176]
+          - link "Instgram" [ref=e177] [cursor=pointer]:
+            - /url: https://instagram.com/carrefourlebanon
+            - img "Instgram" [ref=e178]
+          - link "Youtube" [ref=e179] [cursor=pointer]:
+            - /url: https://www.youtube.com/user/carrefourlebanon
+            - img "Youtube" [ref=e180]
+      - generic [ref=e181]:
+        - heading "Customer service" [level=3] [ref=e183]:
+          - button "Customer service" [ref=e184] [cursor=pointer]:
+            - text: Customer service
+            - img [ref=e185]
+        - heading "About Us" [level=3] [ref=e188]:
+          - button "About Us" [ref=e189] [cursor=pointer]:
+            - text: About Us
+            - img [ref=e190]
+        - heading "Helping you save" [level=3] [ref=e193]:
+          - button "Helping you save" [ref=e194] [cursor=pointer]:
+            - text: Helping you save
+            - img [ref=e195]
+        - heading "Help & Support" [level=3] [ref=e198]:
+          - button "Help & Support" [ref=e199] [cursor=pointer]:
+            - text: Help & Support
+            - img [ref=e200]
+        - heading "Download Our App" [level=3] [ref=e203]:
+          - button "Download Our App" [ref=e204] [cursor=pointer]:
+            - text: Download Our App
+            - img [ref=e205]
+      - generic [ref=e207]:
+        - generic [ref=e208]: Have a question? We are here to help.
+        - generic [ref=e210]:
+          - img [ref=e211]
+          - generic [ref=e215]: "1548"
+    - generic [ref=e217]: © 2026 Carrefour. All rights reserved.
+  - alert [ref=e220]

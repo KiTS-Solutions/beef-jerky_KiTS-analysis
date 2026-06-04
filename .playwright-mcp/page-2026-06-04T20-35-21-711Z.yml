@@ -1,0 +1,221 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - button "Scheduled Scheduled" [ref=e6] [cursor=pointer]:
+          - img "Scheduled" [ref=e8]
+          - generic [ref=e9]: Scheduled
+        - button "NOW NOW" [ref=e11] [cursor=pointer]:
+          - img "NOW" [ref=e13]
+          - generic [ref=e14]: NOW
+        - button "Rapid Rapid" [ref=e16] [cursor=pointer]:
+          - img "Rapid" [ref=e18]
+          - generic [ref=e19]: Rapid
+        - button "Electronics Electronics" [ref=e21] [cursor=pointer]:
+          - img "Electronics" [ref=e23]
+          - generic [ref=e24]: Electronics
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e28]: Today 12:00 PM
+          - button "DubaiFestivalCity-Dubai" [ref=e29] [cursor=pointer]:
+            - generic [ref=e30]: DubaiFestivalCity-Dubai
+        - generic [ref=e35]:
+          - textbox [active] [ref=e36]
+          - generic:
+            - generic: Search
+            - generic:
+              - strong: 50,000+
+            - generic: items
+          - button [ref=e37] [cursor=pointer]
+  - main [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e63]:
+        - img [ref=e66]
+        - img [ref=e73]
+        - img [ref=e80]
+        - img [ref=e87]
+        - img [ref=e94]
+        - img [ref=e101]
+        - img [ref=e108]
+        - img [ref=e115]
+        - img [ref=e122]
+        - img [ref=e129]
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - img [ref=e142]
+          - img [ref=e150]
+        - generic [ref=e156]:
+          - img [ref=e162]
+          - img [ref=e170]
+        - generic [ref=e176]:
+          - img [ref=e182]
+          - img [ref=e190]
+      - generic [ref=e200]:
+        - img [ref=e203]
+        - img [ref=e210]
+        - img [ref=e217]
+        - img [ref=e224]
+        - img [ref=e231]
+        - img [ref=e238]
+        - img [ref=e245]
+        - img [ref=e252]
+        - img [ref=e259]
+        - img [ref=e266]
+      - generic [ref=e275]:
+        - img [ref=e278]
+        - img [ref=e285]
+        - img [ref=e292]
+        - img [ref=e299]
+        - img [ref=e306]
+        - img [ref=e313]
+        - img [ref=e320]
+        - img [ref=e327]
+        - img [ref=e334]
+        - img [ref=e341]
+      - generic [ref=e350]:
+        - img [ref=e353]
+        - img [ref=e360]
+        - img [ref=e367]
+        - img [ref=e374]
+        - img [ref=e381]
+        - img [ref=e388]
+        - img [ref=e395]
+        - img [ref=e402]
+        - img [ref=e409]
+        - img [ref=e416]
+      - generic [ref=e425]:
+        - img [ref=e428]
+        - img [ref=e435]
+        - img [ref=e442]
+        - img [ref=e449]
+        - img [ref=e456]
+        - img [ref=e463]
+        - img [ref=e470]
+        - img [ref=e477]
+        - img [ref=e484]
+        - img [ref=e491]
+      - generic [ref=e497]:
+        - generic [ref=e498]:
+          - img [ref=e504]
+          - img [ref=e512]
+        - generic [ref=e518]:
+          - img [ref=e524]
+          - img [ref=e532]
+        - generic [ref=e538]:
+          - img [ref=e544]
+          - img [ref=e552]
+      - generic [ref=e562]:
+        - img [ref=e565]
+        - img [ref=e572]
+        - img [ref=e579]
+        - img [ref=e586]
+        - img [ref=e593]
+        - img [ref=e600]
+        - img [ref=e607]
+        - img [ref=e614]
+        - img [ref=e621]
+        - img [ref=e628]
+      - generic [ref=e637]:
+        - img [ref=e640]
+        - img [ref=e647]
+        - img [ref=e654]
+        - img [ref=e661]
+        - img [ref=e668]
+        - img [ref=e675]
+        - img [ref=e682]
+        - img [ref=e689]
+        - img [ref=e696]
+        - img [ref=e703]
+      - generic [ref=e712]:
+        - img [ref=e715]
+        - img [ref=e722]
+        - img [ref=e729]
+        - img [ref=e736]
+        - img [ref=e743]
+        - img [ref=e750]
+        - img [ref=e757]
+        - img [ref=e764]
+        - img [ref=e771]
+        - img [ref=e778]
+      - generic [ref=e786]:
+        - img [ref=e789]
+        - img [ref=e795]
+        - img [ref=e801]
+        - img [ref=e807]
+        - img [ref=e813]
+        - img [ref=e819]
+        - img [ref=e825]
+        - img [ref=e831]
+        - img [ref=e837]
+        - img [ref=e843]
+  - navigation "Mobile navigation" [ref=e847]:
+    - link "Home Home" [ref=e848] [cursor=pointer]:
+      - /url: /mafuae/en
+      - img "Home" [ref=e851]
+      - generic [ref=e852]: Home
+    - link "Categories Categories" [ref=e853] [cursor=pointer]:
+      - /url: /mafuae/en/all-categories
+      - img "Categories" [ref=e856]
+      - generic [ref=e857]: Categories
+    - link "Pts" [ref=e858] [cursor=pointer]:
+      - /url: /mafuae/en/profile/loyalty
+      - img "Pts" [ref=e861]
+    - link "Profile Profile" [ref=e862] [cursor=pointer]:
+      - /url: /mafuae/en/profile/login
+      - img "Profile" [ref=e865]
+      - generic [ref=e866]: Profile
+    - link "Cart Cart" [ref=e867] [cursor=pointer]:
+      - /url: /mafuae/en/app/cart
+      - img "Cart" [ref=e870]
+      - generic [ref=e871]: Cart
+  - contentinfo [ref=e872]:
+    - generic [ref=e873]:
+      - generic [ref=e874]:
+        - link [ref=e875] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e877]:
+          - generic [ref=e878]: Stay in touch with us
+          - link "Facebook" [ref=e879] [cursor=pointer]:
+            - /url: https://www.facebook.com/carrefouruae
+            - img "Facebook" [ref=e880]
+          - link "twitter" [ref=e881] [cursor=pointer]:
+            - /url: https://twitter.com/carrefouruae
+            - img "twitter" [ref=e882]
+          - link "Instgram" [ref=e883] [cursor=pointer]:
+            - /url: https://www.instagram.com/carrefouruae/
+            - img "Instgram" [ref=e884]
+          - link "Youtube" [ref=e885] [cursor=pointer]:
+            - /url: https://www.youtube.com/CarrefourUAE
+            - img "Youtube" [ref=e886]
+      - generic [ref=e887]:
+        - heading "Customer service" [level=3] [ref=e889]:
+          - button "Customer service" [ref=e890] [cursor=pointer]:
+            - text: Customer service
+            - img [ref=e891]
+        - heading "About Us" [level=3] [ref=e894]:
+          - button "About Us" [ref=e895] [cursor=pointer]:
+            - text: About Us
+            - img [ref=e896]
+        - heading "Helping you save" [level=3] [ref=e899]:
+          - button "Helping you save" [ref=e900] [cursor=pointer]:
+            - text: Helping you save
+            - img [ref=e901]
+        - heading "Help & Support" [level=3] [ref=e904]:
+          - button "Help & Support" [ref=e905] [cursor=pointer]:
+            - text: Help & Support
+            - img [ref=e906]
+        - heading "Download Our App" [level=3] [ref=e909]:
+          - button "Download Our App" [ref=e910] [cursor=pointer]:
+            - text: Download Our App
+            - img [ref=e911]
+      - generic [ref=e913]:
+        - generic [ref=e914]: Have a question? We are here to help.
+        - generic [ref=e915]:
+          - link "Chat with us for assistance" [ref=e916] [cursor=pointer]:
+            - /url: https://api.whatsapp.com/send?phone=%2B97180073232
+            - generic [ref=e917]: Chat with us for assistance
+          - generic [ref=e918]:
+            - img [ref=e919]
+            - generic [ref=e923]: 800-73232
+    - generic [ref=e925]: © 2026 Carrefour. All rights reserved.
+  - alert [ref=e928]

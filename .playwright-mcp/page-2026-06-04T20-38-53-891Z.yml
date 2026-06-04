@@ -1,0 +1,667 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - link "Skip to main content" [ref=e2] [cursor=pointer]
+      - link "Accessibility help" [ref=e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=en-LB
+  - generic [ref=e8]:
+    - search [ref=e9]:
+      - generic [ref=e12]:
+        - link "Go to Google Home" [ref=e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=0ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQpYkNCAo
+          - img "Go to Google Home" [ref=e14]
+        - generic [ref=e19]:
+          - combobox "Search" [ref=e22]: quest bar lebanon buy online site:*.lb quest bar lebanon buy online site:*.lb
+          - generic [ref=e23]:
+            - button "Clear" [ref=e25] [cursor=pointer]:
+              - img [ref=e27]
+            - generic [ref=e30]:
+              - button "Search by voice" [ref=e31] [cursor=pointer]:
+                - img [ref=e32]
+              - button "Search by image" [ref=e34] [cursor=pointer]:
+                - img [ref=e35]
+        - button "Search" [ref=e37] [cursor=pointer]:
+          - img [ref=e40]
+    - generic [ref=e42]:
+      - button "Settings" [ref=e44] [cursor=pointer]:
+        - img [ref=e47]
+      - generic [ref=e50]:
+        - button "Google apps" [ref=e52] [cursor=pointer]:
+          - img [ref=e53]
+        - link "Sign in" [ref=e57] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/search%3Fq%3Dquest%2Bbar%2Blebanon%2Bbuy%2Bonline%2Bsite:*.lb&ec=futura_srp_og_si_72236_p
+  - generic [ref=e59]:
+    - navigation [ref=e65]:
+      - generic [ref=e71]:
+        - list [ref=e72]:
+          - listitem [ref=e73]:
+            - link "AI Mode" [ref=e76] [cursor=pointer]:
+              - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&udm=50&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vxYI1tojT_24H7Q4iMwclQvV5D9BlBw55EmBElwpyk3UeM6W0BttXZ8_MvpIwZGm7O9G3vakkRaPIY1gBwsxS4wsxfNkGyOmI8UrwukocvT7wRbGb__6XMKP3sINelccWlKKiojq3dqOMF7DBwZxVuW6E5spHfqUEeMzvQ-nfC7cgsjeA&aep=1&ntc=1&sa=X&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ2J8OegQIEBAD
+              - generic [ref=e79]: AI Mode
+          - listitem [ref=e80]:
+            - link "All" [disabled] [ref=e81]:
+              - generic [ref=e83]: All
+          - listitem [ref=e84]:
+            - link "Images" [ref=e85] [cursor=pointer]:
+              - /url: /search?sca_esv=c378b476f9719619&udm=2&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vxYI1tojT_24H7Q4iMwclQvV5D9BlBw55EmBElwpyk3UeM6W0BttXZ8_MvpIwZGm7O9G3vakkRaPIY1gBwsxS4wsxfNkGyOmI8UrwukocvT7wRbGb__6XMKP3sINelccWlKKiojq3dqOMF7DBwZxVuW6E5spHfqUEeMzvQ-nfC7cgsjeA&q=quest+bar+lebanon+buy+online+site:*.lb&sa=X&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQtKgLegQIFhAB
+              - generic [ref=e87]: Images
+          - listitem [ref=e88]:
+            - link "Short videos" [ref=e89] [cursor=pointer]:
+              - /url: /search?sca_esv=c378b476f9719619&udm=39&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vxYI1tojT_24H7Q4iMwclQvV5D9BlBw55EmBElwpyk3UeM6W0BttXZ8_MvpIwZGm7O9G3vakkRaPIY1gBwsxS4wsxfNkGyOmI8UrwukocvT7wRbGb__6XMKP3sINelccWlKKiojq3dqOMF7DBwZxVuW6E5spHfqUEeMzvQ-nfC7cgsjeA&q=quest+bar+lebanon+buy+online+site:*.lb&sa=X&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQs6gLegQIFRAB
+              - generic [ref=e91]: Short videos
+          - listitem [ref=e92]:
+            - link "Forums" [ref=e93] [cursor=pointer]:
+              - /url: /search?sca_esv=c378b476f9719619&udm=18&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vxYI1tojT_24H7Q4iMwclQvV5D9BlBw55EmBElwpyk3UeM6W0BttXZ8_MvpIwZGm7O9G3vakkRaPIY1gBwsxS4wsxfNkGyOmI8UrwukocvT7wRbGb__6XMKP3sINelccWlKKiojq3dqOMF7DBwZxVuW6E5spHfqUEeMzvQ-nfC7cgsjeA&q=quest+bar+lebanon+buy+online+site:*.lb&sa=X&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQs6gLegQIFBAB
+              - generic [ref=e95]: Forums
+          - listitem [ref=e96]:
+            - link "Videos" [ref=e97] [cursor=pointer]:
+              - /url: /search?sca_esv=c378b476f9719619&udm=7&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vxYI1tojT_24H7Q4iMwclQvV5D9BlBw55EmBElwpyk3UeM6W0BttXZ8_MvpIwZGm7O9G3vakkRaPIY1gBwsxS4wsxfNkGyOmI8UrwukocvT7wRbGb__6XMKP3sINelccWlKKiojq3dqOMF7DBwZxVuW6E5spHfqUEeMzvQ-nfC7cgsjeA&q=quest+bar+lebanon+buy+online+site:*.lb&sa=X&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQtKgLegQIExAB
+              - generic [ref=e99]: Videos
+          - listitem [ref=e100]:
+            - link "News" [ref=e101] [cursor=pointer]:
+              - /url: /search?sca_esv=c378b476f9719619&q=quest+bar+lebanon+buy+online+site:*.lb&tbm=nws&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vxYI1tojT_24H7Q4iMwclQvV5D9BlBw55EmBElwpyk3UeM6W0BttXZ8_MvpIwZGm7O9G3vakkRaPIY1gBwsxS4wsxfNkGyOmI8UrwukocvT7wRbGb__6XMKP3sINelccWlKKiojq3dqOMF7DBwZxVuW6E5spHfqUEeMzvQ-nfC7cgsjeA&sa=X&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ0pQJegQIEhAB
+              - generic [ref=e103]: News
+          - listitem [ref=e104]:
+            - button "More filters" [ref=e105] [cursor=pointer]:
+              - generic "More filters" [ref=e106]:
+                - generic [ref=e107]:
+                  - generic [ref=e108]: More
+                  - img [ref=e110]
+        - button "Tools" [ref=e113] [cursor=pointer]:
+          - generic [ref=e115]:
+            - generic [ref=e116]: Tools
+            - img [ref=e118]
+    - heading "Search Results" [level=1] [ref=e120]
+    - generic [ref=e133]:
+      - heading "Sponsored products" [level=3] [ref=e135]:
+        - generic [ref=e136]: Sponsored products
+      - button "Why this ad?" [ref=e142] [cursor=pointer]:
+        - img [ref=e144]
+      - generic [ref=e150]:
+        - generic [ref=e154]:
+          - generic [ref=e155]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e156] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940019540282&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e157]:
+              - link [ref=e159]:
+                - link [ref=e160] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940019540282&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e164]:
+                - heading "Quest bars View Product / Cookies & Cream / Box of 12" [level=3] [ref=e165]:
+                  - generic [ref=e166]: Quest bars View Product / Cookies & Cream / Box of 12
+                - generic [ref=e168]: LBP 4,299,755 + tax
+                - generic "From The supplements factory" [ref=e170]: The supplements factory
+                - generic [ref=e174]: $48.00 + tax
+            - link "Shop now" [ref=e175]:
+              - link "Shop now" [ref=e176] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQFBoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYASACEgInfvD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_0SGWed93wzh2aFx-E-zv5_hF1Obw&adurl=&ctype=5&q=
+                - generic [ref=e177]: Shop now
+          - generic [ref=e178]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e179] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=53241013600570&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e180]:
+              - link [ref=e182]:
+                - link [ref=e183] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=53241013600570&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e187]:
+                - heading "Quest bars View Product / White Chocolate Raspberry / 1 Bar" [level=3] [ref=e188]:
+                  - generic [ref=e189]: Quest bars View Product / White Chocolate Raspberry / 1 Bar
+                - generic [ref=e191]: LBP 358,313 + tax
+                - generic "From The supplements factory" [ref=e193]: The supplements factory
+                - generic [ref=e197]: $4.00 + tax
+            - link "Shop now" [ref=e198]:
+              - link "Shop now" [ref=e199] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQIRoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYAiACEgLKnPD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_02vvw1s7_N8-nlVyESvByzBaCoCQ&adurl=&ctype=5&q=
+                - generic [ref=e200]: Shop now
+          - generic [ref=e201]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e202] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940024684858&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e203]:
+              - link [ref=e205]:
+                - link [ref=e206] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940024684858&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e210]:
+                - heading "Quest bars View Product / Cookies & Cream / 1 Bar" [level=3] [ref=e211]:
+                  - generic [ref=e212]: Quest bars View Product / Cookies & Cream / 1 Bar
+                - generic [ref=e214]: LBP 358,313 + tax
+                - generic "From The supplements factory" [ref=e216]: The supplements factory
+                - generic [ref=e220]: $4.00 + tax
+            - link "Shop now" [ref=e221]:
+              - link "Shop now" [ref=e222] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQGhoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYAyACEgIeSvD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_2ShIRVF_XgmXx9oTbrbXrxQePl-g&adurl=&ctype=5&q=
+                - generic [ref=e223]: Shop now
+          - generic [ref=e224]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e225] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940024652090&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e226]:
+              - link [ref=e228]:
+                - link [ref=e229] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940024652090&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e233]:
+                - heading "Quest bars View Product / Chocolate Chip Cookie dough / 1 Bar" [level=3] [ref=e234]:
+                  - generic [ref=e235]: Quest bars View Product / Chocolate Chip Cookie dough / 1 Bar
+                - generic [ref=e237]: LBP 358,311 + tax
+                - generic "From The supplements factory" [ref=e239]: The supplements factory
+                - generic [ref=e243]: $4.00 + tax
+            - link "Shop now" [ref=e244]:
+              - link "Shop now" [ref=e245] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQIxoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYBCACEgL8u_D_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_02SxAuC4ap5OtgXRlSpU-8iLes3g&adurl=&ctype=5&q=
+                - generic [ref=e246]: Shop now
+          - generic [ref=e247]:
+            - link "for from SkinSociety":
+              - link "for from SkinSociety" [ref=e248] [cursor=pointer]:
+                - /url: https://skinsociety.me/products/double-chocolate-chunk-protein-bar?variant=44248406229085&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e249]:
+              - link [ref=e251]:
+                - link [ref=e252] [cursor=pointer]:
+                  - /url: https://skinsociety.me/products/double-chocolate-chunk-protein-bar?variant=44248406229085&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e256]:
+                - heading "Double Chocolate Chunk Protein Bar" [level=3] [ref=e257]:
+                  - generic [ref=e258]: Double Chocolate Chunk Protein Bar
+                - generic [ref=e260]: LBP 636,901 + tax
+                - generic "From SkinSociety" [ref=e262]: SkinSociety
+                - generic [ref=e266]: $7.11 + tax
+            - link "Shop now" [ref=e267]:
+              - link "Shop now" [ref=e268] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQKBoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYBSACEgIT8vD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_3drDUbpha_3qurtGUYco1i-YcqWg&adurl=&ctype=5&q=
+                - generic [ref=e269]: Shop now
+          - generic [ref=e270]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e271] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940001943866&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e272]:
+              - link [ref=e274]:
+                - link [ref=e275] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940001943866&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e279]:
+                - heading "Quest bars View Product / Chocolate Chip Cookie dough / Box of 12" [level=3] [ref=e280]:
+                  - generic [ref=e281]: Quest bars View Product / Chocolate Chip Cookie dough / Box of 12
+                - generic [ref=e283]: LBP 4,299,755 + tax
+                - generic "From The supplements factory" [ref=e285]: The supplements factory
+                - generic [ref=e289]: $48.00 + tax
+            - link "Shop now" [ref=e290]:
+              - link "Shop now" [ref=e291] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQLhoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYBiACEgIvdfD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_1tD8Q3TalEer_3kqrSzHlMWRWO5A&adurl=&ctype=5&q=
+                - generic [ref=e292]: Shop now
+          - generic [ref=e293]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e294] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=53241013567802&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e295]:
+              - link [ref=e297]:
+                - link [ref=e298] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=53241013567802&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e302]:
+                - heading "Quest bars View Product / White Chocolate Raspberry / Box of 12" [level=3] [ref=e303]:
+                  - generic [ref=e304]: Quest bars View Product / White Chocolate Raspberry / Box of 12
+                - generic [ref=e306]: LBP 4,299,755 + tax
+                - generic "From The supplements factory" [ref=e308]: The supplements factory
+                - generic [ref=e312]: $48.00 + tax
+            - link "Shop now" [ref=e313]:
+              - link "Shop now" [ref=e314] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQJxoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYByACEgJKBfD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_1IxNinchfUkfOdV9MlhhfdkT-1_g&adurl=&ctype=5&q=
+                - generic [ref=e315]: Shop now
+          - generic [ref=e316]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e317] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940019573050&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e318]:
+              - link [ref=e320]:
+                - link [ref=e321] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940019573050&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e325]:
+                - heading "Quest bars View Product / Caramel Chocolate / Box of 12" [level=3] [ref=e326]:
+                  - generic [ref=e327]: Quest bars View Product / Caramel Chocolate / Box of 12
+                - generic [ref=e329]: LBP 4,299,755 + tax
+                - generic "From The supplements factory" [ref=e331]: The supplements factory
+                - generic [ref=e335]: $48.00 + tax
+            - link "Shop now" [ref=e336]:
+              - link "Shop now" [ref=e337] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQNRoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYCCACEgLEKfD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_01vfGd9g7_P8kxZFRzjaF_QX_FPg&adurl=&ctype=5&q=
+                - generic [ref=e338]: Shop now
+          - generic [ref=e339]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e340] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940019638586&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e341]:
+              - link [ref=e343]:
+                - link [ref=e344] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940019638586&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e348]:
+                - heading "Quest bars View Product / Birthday Cake / Box of 12" [level=3] [ref=e349]:
+                  - generic [ref=e350]: Quest bars View Product / Birthday Cake / Box of 12
+                - generic [ref=e352]: LBP 4,299,755 + tax
+                - generic "From The supplements factory" [ref=e354]: The supplements factory
+                - generic [ref=e358]: $48.00 + tax
+            - link "Shop now" [ref=e359]:
+              - link "Shop now" [ref=e360] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQHBoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYCSACEgKuN_D_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_2fbDpD1F_Lq-7S_L8rZOFImDxXcw&adurl=&ctype=5&q=
+                - generic [ref=e361]: Shop now
+          - generic [ref=e362]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e363] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940094218554&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e364]:
+              - link [ref=e366]:
+                - link [ref=e367] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=50940094218554&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e371]:
+                - heading "Quest bars View Product / Chocolate Peanut Butter / Box of 12" [level=3] [ref=e372]:
+                  - generic [ref=e373]: Quest bars View Product / Chocolate Peanut Butter / Box of 12
+                - generic [ref=e375]: LBP 4,299,755 + tax
+                - generic "From The supplements factory" [ref=e377]: The supplements factory
+                - generic [ref=e381]: $48.00 + tax
+            - link "Shop now" [ref=e382]:
+              - link "Shop now" [ref=e383] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQMRoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYCiACEgIRH_D_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_106JXasCTkjkx_Y2v3U6W9jBD25g&adurl=&ctype=5&q=
+                - generic [ref=e384]: Shop now
+          - generic [ref=e385]:
+            - link "for from Healthy 961":
+              - link "for from Healthy 961" [ref=e386] [cursor=pointer]:
+                - /url: https://www.healthy961.com/products/mak-bar-pro-cookies-n-cream-protein-bar-case?variant=47558436389147&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e387]:
+              - link [ref=e389]:
+                - link [ref=e390] [cursor=pointer]:
+                  - /url: https://www.healthy961.com/products/mak-bar-pro-cookies-n-cream-protein-bar-case?variant=47558436389147&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e394]:
+                - heading "MAK BAR PRO Cookies 'N' Cream Protein Bar Case" [level=3] [ref=e395]:
+                  - generic [ref=e396]: MAK BAR PRO Cookies 'N' Cream Protein Bar Case
+                - generic [ref=e398]: LBP 2,329,034 + tax
+                - generic "From Healthy 961" [ref=e400]: Healthy 961
+                - generic [ref=e404]: $26.00 + tax
+            - link "Visit Healthy 961" [ref=e405]:
+              - link "Visit Healthy 961" [ref=e406] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQJhoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYCyACEgJTLvD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_2O1NgqeMQFccpmZI2EfURA6q31jA&adurl=&ctype=5&q=
+                - generic [ref=e408]: Visit Healthy 961
+          - generic [ref=e409]:
+            - link "for from Zigzag Beauty and Skincare":
+              - link "for from Zigzag Beauty and Skincare" [ref=e410] [cursor=pointer]:
+                - /url: https://www.zigzagcare.com/products/grapeful-vegan-chocolate-hazelnut-protein-bar-65g-healthy-energy-snack?variant=48567914594533&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e411]:
+              - link [ref=e413]:
+                - link [ref=e414] [cursor=pointer]:
+                  - /url: https://www.zigzagcare.com/products/grapeful-vegan-chocolate-hazelnut-protein-bar-65g-healthy-energy-snack?variant=48567914594533&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e418]:
+                - heading "Grapeful Vegan Chocolate Hazelnut Protein Bar 65g – Healthy Energy Snack" [level=3] [ref=e419]:
+                  - generic [ref=e420]: Grapeful Vegan Chocolate Hazelnut Protein Bar 65g – Healthy Energy Snack
+                - generic [ref=e422]: LBP 100,328 + tax
+                - generic "From Zigzag Beauty and Skincare" [ref=e424]: Zigzag Beauty and Skincare
+                - generic [ref=e428]: $1.12 + tax
+            - link "Shop now" [ref=e429]:
+              - link "Shop now" [ref=e430] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQMBoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYDCACEgLEbfD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_3jrP1v-wzzC_Xo4RNY6M7vTEVjeA&adurl=&ctype=5&q=
+                - generic [ref=e431]: Shop now
+          - generic [ref=e432]:
+            - link "for from The supplements factory":
+              - link "for from The supplements factory" [ref=e433] [cursor=pointer]:
+                - /url: https://thesupplementsfactory.com/products/quest-bars?variant=53241041027386&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e434]:
+              - link [ref=e436]:
+                - link [ref=e437] [cursor=pointer]:
+                  - /url: https://thesupplementsfactory.com/products/quest-bars?variant=53241041027386&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e441]:
+                - heading "Quest bars View Product / Apple Pie / Box of 12" [level=3] [ref=e442]:
+                  - generic [ref=e443]: Quest bars View Product / Apple Pie / Box of 12
+                - generic [ref=e445]: LBP 4,299,755 + tax
+                - generic "From The supplements factory" [ref=e447]: The supplements factory
+                - generic [ref=e451]: $48.00 + tax
+            - link "Shop now" [ref=e452]:
+              - link "Shop now" [ref=e453] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQHhoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYDSACEgLnSPD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_1bSRF9v5DxAJdYZqX-x-Nb4pGTBg&adurl=&ctype=5&q=
+                - generic [ref=e454]: Shop now
+          - generic [ref=e455]:
+            - link "for from SkinSociety":
+              - link "for from SkinSociety" [ref=e456] [cursor=pointer]:
+                - /url: https://skinsociety.me/products/apple-pie-protein-bar?variant=44248405901405&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e457]:
+              - link [ref=e459]:
+                - link [ref=e460] [cursor=pointer]:
+                  - /url: https://skinsociety.me/products/apple-pie-protein-bar?variant=44248405901405&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e464]:
+                - heading "Apple Pie Protein Bar" [level=3] [ref=e465]:
+                  - generic [ref=e466]: Apple Pie Protein Bar
+                - generic [ref=e468]: LBP 636,901 + tax
+                - generic "From SkinSociety" [ref=e470]: SkinSociety
+                - generic [ref=e474]: $7.11 + tax
+            - link "Shop now" [ref=e475]:
+              - link "Shop now" [ref=e476] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQJBoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYDiACEgLA6PD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_3VelZ9cUsK8y2xHyBvHsO0m7KrlA&adurl=&ctype=5&q=
+                - generic [ref=e477]: Shop now
+          - generic [ref=e478]:
+            - link "for from SkinSociety":
+              - link "for from SkinSociety" [ref=e479] [cursor=pointer]:
+                - /url: https://skinsociety.me/products/quest-cookies-cream-protein-bar?variant=44248405934173&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e480]:
+              - link [ref=e482]:
+                - link [ref=e483] [cursor=pointer]:
+                  - /url: https://skinsociety.me/products/quest-cookies-cream-protein-bar?variant=44248405934173&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e487]:
+                - heading "Quest Cookies & Cream Protein Bar" [level=3] [ref=e488]:
+                  - generic [ref=e489]: Quest Cookies & Cream Protein Bar
+                - generic [ref=e491]: LBP 636,901 + tax
+                - generic "From SkinSociety" [ref=e493]: SkinSociety
+                - generic [ref=e497]: $7.11 + tax
+            - link "Shop now" [ref=e498]:
+              - link "Shop now" [ref=e499] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQLxoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYDyACEgLZRfD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_1V8pQkoxcpPMrJSLO1kCEu7GYAcw&adurl=&ctype=5&q=
+                - generic [ref=e500]: Shop now
+          - generic [ref=e501]:
+            - link "for from Zigzag Beauty and Skincare":
+              - link "for from Zigzag Beauty and Skincare" [ref=e502] [cursor=pointer]:
+                - /url: https://www.zigzagcare.com/products/barebells-protein-bar-salty-peanuts-55g-copy?variant=48995696115941&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e503]:
+              - link [ref=e505]:
+                - link [ref=e506] [cursor=pointer]:
+                  - /url: https://www.zigzagcare.com/products/barebells-protein-bar-salty-peanuts-55g-copy?variant=48995696115941&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e510]:
+                - heading "Barebells Protein Bar Caramel Cashew 55g" [level=3] [ref=e511]:
+                  - generic [ref=e512]: Barebells Protein Bar Caramel Cashew 55g
+                - generic [ref=e514]: LBP 412,956 + tax
+                - generic "From Zigzag Beauty and Skincare" [ref=e516]: Zigzag Beauty and Skincare
+                - generic [ref=e520]: $4.61 + tax
+            - link "Shop now" [ref=e521]:
+              - link "Shop now" [ref=e522] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQMxoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYECACEgId0_D_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_29pAWBHeHBo-x4nUyB0Trhnn6Flw&adurl=&ctype=5&q=
+                - generic [ref=e523]: Shop now
+          - generic [ref=e524]:
+            - link "for from SkinSociety":
+              - link "for from SkinSociety" [ref=e525] [cursor=pointer]:
+                - /url: https://skinsociety.me/products/quest-chocolate-peanut-butter-protein-bar?variant=44248406032477&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e526]:
+              - link [ref=e528]:
+                - link [ref=e529] [cursor=pointer]:
+                  - /url: https://skinsociety.me/products/quest-chocolate-peanut-butter-protein-bar?variant=44248406032477&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e533]:
+                - heading "Quest Chocolate Peanut Butter Protein Bar" [level=3] [ref=e534]:
+                  - generic [ref=e535]: Quest Chocolate Peanut Butter Protein Bar
+                - generic [ref=e537]: LBP 636,901 + tax
+                - generic "From SkinSociety" [ref=e539]: SkinSociety
+                - generic [ref=e543]: $7.11 + tax
+            - link "Shop now" [ref=e544]:
+              - link "Shop now" [ref=e545] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQMhoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYESACEgJZxPD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_0-Oylykkcb4KO4gCwg4e9Tz7JpYQ&adurl=&ctype=5&q=
+                - generic [ref=e546]: Shop now
+          - generic [ref=e547]:
+            - link "for from Healthy 961":
+              - link "for from Healthy 961" [ref=e548] [cursor=pointer]:
+                - /url: https://www.healthy961.com/products/mak-bar-pro-choco-vanilla-protein-bar-case?variant=47558425018651&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+            - generic [ref=e549]:
+              - link [ref=e551]:
+                - link [ref=e552] [cursor=pointer]:
+                  - /url: https://www.healthy961.com/products/mak-bar-pro-choco-vanilla-protein-bar-case?variant=47558425018651&country=LB&currency=USD&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic
+              - generic [ref=e556]:
+                - heading "MAK BAR PRO Choco Vanilla Protein Bar Case" [level=3] [ref=e557]:
+                  - generic [ref=e558]: MAK BAR PRO Choco Vanilla Protein Bar Case
+                - generic [ref=e560]: LBP 2,329,034 + tax
+                - generic "From Healthy 961" [ref=e562]: Healthy 961
+                - generic [ref=e566]: $26.00 + tax
+            - link "Visit Healthy 961" [ref=e567]:
+              - link "Visit Healthy 961" [ref=e568] [cursor=pointer]:
+                - /url: /aclk?sa=L&ai=DChsSEwiA-bTCuO6UAxWem1AGHU_oIUEYACICCAEQKRoCZGc&co=1&ase=2&gclid=EAIaIQobChMIgPm0wrjulAMVnptQBh1P6CFBEAQYEiACEgJd3fD_BwE&cid=CAASuwHkaNS9grIMuPtfo5b0K2XYHsLNHAJ07WkkA3E0ZRptyYBhTwyzsDqgX6abng8N0tQYEKbBks0vHTM7JdY2MyZztSnTNbt8NQkN7VMbyV6lCTPv9XfGTMKE63DII0__a90xHuPtRyXlW4CtCpVBIsYu992HcM9gET9CiwiskT9XlihiBkpsOJwcMRE1K0yP7mpKcxUtRZWUlPMhLOJ8nINdYk7wxBi9iz-TcqkpQ0AAaAf1QFH7Kmj6PXzL&cce=2&category=acrcp_v1_32&sig=AOD64_3h5EQA23IP8lUf2URokQEso6-8BA&adurl=&ctype=5&q=
+                - generic [ref=e570]: Visit Healthy 961
+        - button [ref=e571] [cursor=pointer]:
+          - img [ref=e574]
+    - main [ref=e579]:
+      - generic [ref=e583]:
+        - generic [ref=e586]:
+          - heading "Web results" [level=2] [ref=e587]
+          - generic [ref=e588]:
+            - generic [ref=e591]:
+              - link "Quest Protein Bar, Blueberry Muffin Flavor, 21g of Lebanon Ubuy Lebanon https://www.ubuy.com.lb › ... › Protein › Protein Bars" [ref=e593] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/product/CJ07MZS-quest-protein-bar-blueberry-muffin-21g-protein-4pk?srsltid=AfmBOoqNAASesE5MVcLGGXPrCudQGVOR7Qy0lX4XyS2PP_xrhwgywAA3
+                - heading "Quest Protein Bar, Blueberry Muffin Flavor, 21g of Lebanon" [level=3] [ref=e594]
+                - generic [ref=e599]:
+                  - generic [ref=e601]: Ubuy Lebanon
+                  - generic [ref=e603]: https://www.ubuy.com.lb › ... › Protein › Protein Bars
+              - button "About this result" [ref=e604] [cursor=pointer]:
+                - img [ref=e607]
+            - generic [ref=e610]:
+              - generic [ref=e611]:
+                - emphasis [ref=e612]: A blueberry muffin protein bar
+                - text: with real blueberries and sweet muffin chunks with 21g of protein and 2g of sugar. Indulge your blueberry breakfast muffin ...
+              - link "Read more" [ref=e613] [cursor=pointer]:
+                - /url: https://www.ubuy.com.lb/en/product/CJ07MZS-quest-protein-bar-blueberry-muffin-21g-protein-4pk?srsltid=AfmBOoqNAASesE5MVcLGGXPrCudQGVOR7Qy0lX4XyS2PP_xrhwgywAA3#:~:text=A%20blueberry%20muffin%20protein%20bar,your%20blueberry%20breakfast%20muffin%20cravings!
+            - img "Rated 4.3 out of 5, (18,138) user reviews" [ref=e618]:
+              - text: "4.3"
+              - img [ref=e619]
+              - text: (18,138)
+        - generic [ref=e625]:
+          - generic [ref=e628]:
+            - link "Quest Protein Bar, White Chocolate Raspberry, 20g Lebanon Ubuy Lebanon https://www.ubuy.com.lb › ... › Protein › Protein Bars" [ref=e630] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/product/1EZDYH4-quest-protein-bar-white-chocolate-raspberry-20g-protein-12-ct?srsltid=AfmBOoqlDFjmz5E-KavCCRGrEkZrGYT3znzkNi-SS5RtPtX2g8VCFSwy
+              - heading "Quest Protein Bar, White Chocolate Raspberry, 20g Lebanon" [level=3] [ref=e631]
+              - generic [ref=e636]:
+                - generic [ref=e638]: Ubuy Lebanon
+                - generic [ref=e640]: https://www.ubuy.com.lb › ... › Protein › Protein Bars
+            - button "About this result" [ref=e641] [cursor=pointer]:
+              - img [ref=e644]
+          - generic [ref=e647]:
+            - generic [ref=e648]:
+              - emphasis [ref=e649]: Shop
+              - text: now at Ubuy
+              - emphasis [ref=e650]: Lebanon
+              - text: . Quest White Chocolate Raspberry
+              - emphasis [ref=e651]: Protein Bars
+              - text: have 20g protein and 1g sugar per bar; Made with complete, dairy-based proteins for ...
+            - link "Read more" [ref=e652] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/product/1EZDYH4-quest-protein-bar-white-chocolate-raspberry-20g-protein-12-ct?srsltid=AfmBOoqlDFjmz5E-KavCCRGrEkZrGYT3znzkNi-SS5RtPtX2g8VCFSwy#:~:text=Shop%20now%20at%20Ubuy%20Lebanon.,proteins%20for%20essential%20amino%20acids
+          - img "Rated 4.3 out of 5, (18,249) user reviews" [ref=e657]:
+            - text: "4.3"
+            - img [ref=e658]
+            - text: (18,249)
+        - generic [ref=e664]:
+          - generic [ref=e667]:
+            - link "Fresh Groceries Delivered Across Lebanon promarche https://promarche.com.lb › products › 24-7-protein-bar-..." [ref=e669] [cursor=pointer]:
+              - /url: https://promarche.com.lb/products/102455/24-7-protein-bar-chocolate-banana-50g
+              - heading "Fresh Groceries Delivered Across Lebanon" [level=3] [ref=e670]
+              - generic [ref=e675]:
+                - generic [ref=e677]: promarche
+                - generic [ref=e679]: https://promarche.com.lb › products › 24-7-protein-bar-...
+            - button "About this result" [ref=e680] [cursor=pointer]:
+              - img [ref=e683]
+          - generic [ref=e687]:
+            - emphasis [ref=e688]: Shop fresh groceries essentials, and more at Promarché
+            - text: "- Lebanon's premium supermarket chain. Enjoy a seamless shopping experience, exclusive offers, ..."
+          - img "Rated 4.6 out of 5, (30) user reviews" [ref=e693]:
+            - text: "4.6"
+            - img [ref=e694]
+            - text: (30)
+        - generic [ref=e700]:
+          - generic [ref=e703]:
+            - link "Quest Chocolate Peanut Butter Protein Bar, 2.12 Oz Ubuy Lebanon https://www.ubuy.com.lb › ... › Protein › Protein Bars" [ref=e705] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/product/6VQVI7B6-quest-chocolate-peanut-butter-protein-bar-2-12-oz?srsltid=AfmBOoqRdLwE_oOZwaj-v_60kQPFkTKvIaZbWn7sZgzEcjW9biQ5sW7E
+              - heading "Quest Chocolate Peanut Butter Protein Bar, 2.12 Oz" [level=3] [ref=e706]
+              - generic [ref=e711]:
+                - generic [ref=e713]: Ubuy Lebanon
+                - generic [ref=e715]: https://www.ubuy.com.lb › ... › Protein › Protein Bars
+            - button "About this result" [ref=e716] [cursor=pointer]:
+              - img [ref=e719]
+          - generic [ref=e722]:
+            - generic [ref=e723]:
+              - text: Discover the delicious
+              - emphasis [ref=e724]: Quest Chocolate Peanut Butter Protein Bar at Ubuy Lebanon
+              - text: . Shop now and enjoy the perfect blend of chocolate and peanut butter flavors.
+            - link "Read more" [ref=e725] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/product/6VQVI7B6-quest-chocolate-peanut-butter-protein-bar-2-12-oz?srsltid=AfmBOoqRdLwE_oOZwaj-v_60kQPFkTKvIaZbWn7sZgzEcjW9biQ5sW7E#:~:text=Discover%20the%20delicious%20Quest%20Chocolate,chocolate%20and%20peanut%20butter%20flavors.
+          - img "Rated 5.0 out of 5, (1) user reviews" [ref=e730]:
+            - text: "5.0"
+            - img [ref=e731]
+            - text: (1)
+        - generic [ref=e737]:
+          - generic [ref=e740]:
+            - link "Antoine Farhat - NDU ndu.edu.lb https://www.ndu.edu.lb › about-the-faculty › professors" [ref=e742] [cursor=pointer]:
+              - /url: https://www.ndu.edu.lb/academics/faculties/fnhs/about-the-faculty/fulltime-faculty-members/professors/antoine-farhat
+              - heading "Antoine Farhat - NDU" [level=3] [ref=e743]
+              - generic [ref=e748]:
+                - generic [ref=e750]: ndu.edu.lb
+                - generic [ref=e752]: https://www.ndu.edu.lb › about-the-faculty › professors
+            - button "About this result" [ref=e753] [cursor=pointer]:
+              - img [ref=e756]
+          - generic [ref=e759]:
+            - generic [ref=e760]:
+              - text: Antoine Farhat is a Professor of
+              - emphasis [ref=e761]: Nutrition
+              - text: and currently the Vice-President for University Advancement and formerly the Dean of Faculty of Nursing & Health ...
+            - link "Read more" [ref=e762] [cursor=pointer]:
+              - /url: https://www.ndu.edu.lb/academics/faculties/fnhs/about-the-faculty/fulltime-faculty-members/professors/antoine-farhat#:~:text=Antoine%20Farhat%20is%20a%20Professor,%26%20Health%20Sciences%20at%20NDU.
+        - generic [ref=e766]:
+          - generic [ref=e769]:
+            - link "Quest Protein Bar Variety Pack, Chocolate Chip Lebanon Ubuy Lebanon https://www.ubuy.com.lb › ... › Protein › Protein Bars" [ref=e771] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/product/19USICTFA-quest-protein-bar-variety-pack-14-ct?srsltid=AfmBOoq6Q9cde38gDU0oOwl8QNu10MoUmhRurGXudhrzRgLufRSKHZ6a
+              - heading "Quest Protein Bar Variety Pack, Chocolate Chip Lebanon" [level=3] [ref=e772]
+              - generic [ref=e777]:
+                - generic [ref=e779]: Ubuy Lebanon
+                - generic [ref=e781]: https://www.ubuy.com.lb › ... › Protein › Protein Bars
+            - button "About this result" [ref=e782] [cursor=pointer]:
+              - img [ref=e785]
+          - generic [ref=e789]:
+            - emphasis [ref=e790]: Shop
+            - text: Quest
+            - emphasis [ref=e791]: Protein Bar
+            - text: Variety Pack, Chocolate Chip Cookie Dough and Cookies & Cream 14 ct.
+            - emphasis [ref=e792]: online
+            - text: at a
+            - emphasis [ref=e793]: best price
+            - text: in
+            - emphasis [ref=e794]: Lebanon
+            - text: . 959489711.
+          - img "Rated 4.0 out of 5, (1) user reviews" [ref=e799]:
+            - text: "4.0"
+            - img [ref=e800]
+            - text: (1)
+        - generic [ref=e806]:
+          - generic [ref=e809]:
+            - link "AUBMC launches an annual conference to promote ... American University of Beirut | AUB https://www.aub.edu.lb › Pages › first-neuro-oncology" [ref=e811] [cursor=pointer]:
+              - /url: https://www.aub.edu.lb/articles/Pages/first-neuro-oncology.aspx
+              - heading "AUBMC launches an annual conference to promote ..." [level=3] [ref=e812]
+              - generic [ref=e817]:
+                - generic [ref=e819]: American University of Beirut | AUB
+                - generic [ref=e821]: https://www.aub.edu.lb › Pages › first-neuro-oncology
+            - button "About this result" [ref=e822] [cursor=pointer]:
+              - img [ref=e825]
+          - generic [ref=e828]:
+            - text: The 1st Annual Middle East Neuro-Oncology Conference was held on September 21 and 22, 2018, at the American University of Beirut's (AUB) Bathish Auditorium.
+            - link "Read more" [ref=e829] [cursor=pointer]:
+              - /url: https://www.aub.edu.lb/articles/Pages/first-neuro-oncology.aspx#:~:text=The%201st%20Annual%20Middle%20East,of%20Beirut's%20(AUB)%20Bathish%20Auditorium.
+        - generic [ref=e833]:
+          - generic [ref=e836]:
+            - link "Alain Sayad, MD | Find a Doctor lau.edu.lb https://medicine.lau.edu.lb › patient-care › physician › al..." [ref=e838] [cursor=pointer]:
+              - /url: https://medicine.lau.edu.lb/patient-care/physician/alain-sayad.php
+              - heading "Alain Sayad, MD | Find a Doctor" [level=3] [ref=e839]
+              - generic [ref=e844]:
+                - generic [ref=e846]: lau.edu.lb
+                - generic [ref=e848]: https://medicine.lau.edu.lb › patient-care › physician › al...
+            - button "About this result" [ref=e849] [cursor=pointer]:
+              - img [ref=e852]
+          - generic [ref=e856]:
+            - text: Alain Sayad is a distinguished specialist in pediatric gastroenterology and
+            - emphasis [ref=e857]: nutrition
+            - text: ", Beirut,"
+            - emphasis [ref=e858]: Lebanon
+            - text: ", Phone: + 961 1 200800. Email: alain.sayad@laumcrh.com"
+        - generic [ref=e862]:
+          - generic [ref=e865]:
+            - link "Quest Nutrition Overload Protein Bars, Chocolate Lebanon Ubuy Lebanon https://www.ubuy.com.lb › ... › Protein Bars" [ref=e867] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/product/NB28I2CTS-quest-nutrition-overload-protein-bars-chocolate-explosion-20g-protein-1g-sugar-3g-net-carbs-gluten-free-12-count?UTM=LTD&srsltid=AfmBOopt1EnlHiKPpWcCVqg44tM7-pYW8dmuFO2CERMkHFR40Nl4Y8JQ
+              - heading "Quest Nutrition Overload Protein Bars, Chocolate Lebanon" [level=3] [ref=e868]
+              - generic [ref=e873]:
+                - generic [ref=e875]: Ubuy Lebanon
+                - generic [ref=e877]: https://www.ubuy.com.lb › ... › Protein Bars
+            - button "About this result" [ref=e878] [cursor=pointer]:
+              - img [ref=e881]
+          - generic [ref=e884]:
+            - generic [ref=e885]: May 20, 2026 —
+            - generic [ref=e886]:
+              - text: HACK YOUR SNACK.
+              - emphasis [ref=e887]: Quest Chocolate Explosion Bars feature 1g of sugar, 3g of net carbs
+              - text: ", and even more of the exciting flavors you love."
+            - link "Read more" [ref=e888] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/product/NB28I2CTS-quest-nutrition-overload-protein-bars-chocolate-explosion-20g-protein-1g-sugar-3g-net-carbs-gluten-free-12-count?UTM=LTD&srsltid=AfmBOopt1EnlHiKPpWcCVqg44tM7-pYW8dmuFO2CERMkHFR40Nl4Y8JQ#:~:text=HACK%20YOUR%20SNACK.%20Quest%20Chocolate,the%20exciting%20flavors%20you%20love.
+          - generic [ref=e890]:
+            - generic [ref=e891]: $23.00
+            - text: ·
+            - img "Rated 4.6 out of 5, (541) user reviews" [ref=e895]:
+              - text: "4.6"
+              - img [ref=e896]
+              - text: (541)
+        - generic [ref=e902]:
+          - generic [ref=e905]:
+            - link "National Nutrition Strategy and Action Plan moph.gov.lb https://www.moph.gov.lb › Prevention › Nutrition" [ref=e907] [cursor=pointer]:
+              - /url: https://www.moph.gov.lb/userfiles/files/Prevention/Nutrition/Lebanon%20National%20Nutrition%20Strategy_20220322%20F.pdf
+              - heading "National Nutrition Strategy and Action Plan" [level=3] [ref=e908]
+              - generic [ref=e913]:
+                - generic [ref=e915]: moph.gov.lb
+                - generic [ref=e917]: https://www.moph.gov.lb › Prevention › Nutrition
+            - generic [ref=e918]:
+              - generic:
+                - generic: PDF
+            - button "About this result" [ref=e919] [cursor=pointer]:
+              - img [ref=e922]
+          - generic [ref=e925]:
+            - generic [ref=e926]:
+              - text: Available information on nutritional status in
+              - emphasis [ref=e927]: Lebanon
+              - text: shows there is a double burden of malnutrition with prevalence of overnutrition illustrated by the high ...
+            - link "Read more" [ref=e928] [cursor=pointer]:
+              - /url: https://www.moph.gov.lb/userfiles/files/Prevention/Nutrition/Lebanon%20National%20Nutrition%20Strategy_20220322%20F.pdf#:~:text=Available%20information%20on%20nutritional,of%20non%2Dcommunicable%20diseases%2C%20coupled%20with
+      - navigation [ref=e931]:
+        - heading "Page navigation" [level=1] [ref=e932]
+        - text: "1"
+        - link "Page 2" [ref=e935] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=10&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAE
+          - text: "2"
+        - link "Page 3" [ref=e937] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=20&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAG
+          - text: "3"
+        - link "Page 4" [ref=e939] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=30&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAI
+          - text: "4"
+        - link "Page 5" [ref=e941] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=40&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAK
+          - text: "5"
+        - link "Page 6" [ref=e943] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=50&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAM
+          - text: "6"
+        - link "Page 7" [ref=e945] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=60&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAO
+          - text: "7"
+        - link "Page 8" [ref=e947] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=70&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAQ
+          - text: "8"
+        - link "Page 9" [ref=e949] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=80&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAS
+          - text: "9"
+        - link "Page 10" [ref=e951] [cursor=pointer]:
+          - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=90&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8tMDegQIOxAU
+          - text: "10"
+        - heading "Next" [level=2] [ref=e953]:
+          - link "Next" [ref=e954] [cursor=pointer]:
+            - /url: /search?q=quest+bar+lebanon+buy+online+site:*.lb&sca_esv=c378b476f9719619&ei=XeIharD3DseKhbIPhcnFuQI&start=10&sa=N&sstk=AU9db-ASMJeyslG4lV3KdgIBoGlQTsR-8fS2k44EX09T2K7I_XnZgMQPuc1RJNFGtwILQ7PgDWVWskAhNxihxh_gYmg9WElMUXNIqA&ved=2ahUKEwjwma3CuO6UAxVHRUEAHYVkMScQ8NMDegQIOxAW
+            - generic [ref=e956]: Next
+      - navigation
+    - contentinfo [ref=e957]:
+      - heading "Footer links" [level=1] [ref=e958]
+      - generic [ref=e962]:
+        - generic [ref=e964]:
+          - text: Lebanon
+          - generic [ref=e966]:
+            - button "Greater Jounieh, Beirut - Based on your past activity" [ref=e968] [cursor=pointer]:
+              - generic [ref=e969]: Greater Jounieh, Beirut
+              - generic [ref=e971]:
+                - text: "-"
+                - generic [ref=e972]: Based on your past activity
+            - text: "-"
+            - button "Update location" [ref=e974] [cursor=pointer]: Update location
+        - generic [ref=e977]:
+          - link "Help" [ref=e978] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=en-LB&fg=1
+          - link "Send feedback" [ref=e979] [cursor=pointer]:
+            - /url: "#"
+          - link "Privacy" [ref=e980] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=en-LB&fg=1
+          - link "Terms" [ref=e981] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=en-LB&fg=1

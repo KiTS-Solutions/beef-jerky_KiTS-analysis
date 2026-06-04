@@ -1,0 +1,212 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=e6]:
+    - link "Instagram" [ref=e9] [cursor=pointer]:
+      - /url: https://www.instagram.com/livgood.lb/
+      - generic [ref=e10]: Instagram
+      - img [ref=e12]
+    - generic [ref=e14]:
+      - generic:
+        - img
+      - generic [ref=e15]:
+        - generic [ref=e16]: Your Online Market For A Better Lifestyle
+        - generic [ref=e17]: Delivery All Over Lebanon
+      - img [ref=e19] [cursor=pointer]
+    - generic [ref=e24]:
+      - generic [ref=e25]: Country/region
+      - button "(USD $)" [ref=e26] [cursor=pointer]:
+        - generic [ref=e27]: (USD $)
+        - img [ref=e29]
+  - generic [ref=e33]:
+    - generic [ref=e35]:
+      - link "LivGood Lebanon" [ref=e37] [cursor=pointer]:
+        - /url: /
+        - img "LivGood Lebanon" [ref=e38]
+      - text: ()
+      - button "Open menu" [ref=e39] [cursor=pointer]:
+        - generic [ref=e40]: Open menu
+        - img [ref=e41]
+      - button "Open cart" [ref=e46] [cursor=pointer]:
+        - generic [ref=e47]: Open cart
+        - img [ref=e48]
+        - generic [ref=e52]: "0"
+    - generic [ref=e55] [cursor=pointer]:
+      - img:
+        - img
+      - searchbox "Search for..." [ref=e56]
+  - main [ref=e57]:
+    - navigation "breadcrumbs" [ref=e60]:
+      - link "Home" [ref=e62] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e63]: /
+      - link "Collections" [ref=e65] [cursor=pointer]:
+        - /url: https://livgood.com/pages/categories
+      - generic [ref=e66]: /
+      - generic [ref=e67]: Mak Bar
+    - generic [ref=e70]:
+      - generic [ref=e72]: 🏷️ Promocodes Are Not Applicable On Items Under Promotions, Bread & Dairy
+      - generic [ref=e74]: 🏷️ Promocodes Are Not Applicable On Items Under Promotions, Bread & Dairy
+    - heading "Mak Bar" [level=1] [ref=e79]
+    - generic [ref=e80]:
+      - generic [ref=e82]:
+        - status [ref=e84]: 11 products
+        - button "Filter and sort" [ref=e86] [cursor=pointer]:
+          - generic:
+            - img
+          - text: Filter and sort
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: Protein Bars
+            - link "View All" [ref=e94] [cursor=pointer]:
+              - /url: /collections/protein-bars
+          - generic [ref=e95]:
+            - link "Mak Bar Chocolate Chip Bar Mak Bar Chocolate Chip Bar $1.85 42g" [ref=e97] [cursor=pointer]:
+              - /url: /products/chocolate-chip-bar-mak-bar
+              - img "Mak Bar Chocolate Chip Bar" [ref=e98]
+              - generic [ref=e99]: Mak Bar Chocolate Chip Bar
+              - generic [ref=e100]: $1.85
+              - generic [ref=e101]: 42g
+            - link "Mak Bar Vanilla Choco Chip With 18 G Protein Mak Bar Vanilla Choco Chip With 18 G Protein $2.32 55g Sold Out" [ref=e103] [cursor=pointer]:
+              - /url: /products/18-grs-protein-vanilla-choco-chip
+              - img "Mak Bar Vanilla Choco Chip With 18 G Protein" [ref=e104]
+              - generic [ref=e105]: Mak Bar Vanilla Choco Chip With 18 G Protein
+              - generic [ref=e106]: $2.32
+              - generic [ref=e107]: 55g
+              - generic:
+                - generic: Sold Out
+            - link "Mak Bar Cookies N' Cream Mak Bar Cookies N' Cream $2.32 55g" [ref=e109] [cursor=pointer]:
+              - /url: /products/cookies-n-cream
+              - img "Mak Bar Cookies N' Cream" [ref=e110]
+              - generic [ref=e111]: Mak Bar Cookies N' Cream
+              - generic [ref=e112]: $2.32
+              - generic [ref=e113]: 55g
+            - link "Mak Bar Peanut Butter Bar Mak Bar Peanut Butter Bar $1.85 42g" [ref=e115] [cursor=pointer]:
+              - /url: /products/peanut-butter-bar-mak-bar
+              - img "Mak Bar Peanut Butter Bar" [ref=e116]
+              - generic [ref=e117]: Mak Bar Peanut Butter Bar
+              - generic [ref=e118]: $1.85
+              - generic [ref=e119]: 42g
+            - link "Mak Bar Vegan Hazelnut Crunch Mak Bar Vegan Hazelnut Crunch $1.85 45g" [ref=e121] [cursor=pointer]:
+              - /url: /products/vegan-hazelnut-crunch
+              - img "Mak Bar Vegan Hazelnut Crunch" [ref=e122]
+              - generic [ref=e123]: Mak Bar Vegan Hazelnut Crunch
+              - generic [ref=e124]: $1.85
+              - generic [ref=e125]: 45g
+            - link "Mak Protein Bar Almond Crunch - 11g protein Mak Protein Bar Almond Crunch - 11g protein $1.85 42g" [ref=e127] [cursor=pointer]:
+              - /url: /products/mak-protein-bar-almond-crunch-11g-protein
+              - img "Mak Protein Bar Almond Crunch - 11g protein" [ref=e128]
+              - generic [ref=e129]: Mak Protein Bar Almond Crunch - 11g protein
+              - generic [ref=e130]: $1.85
+              - generic [ref=e131]: 42g
+        - generic [ref=e132]:
+          - generic [ref=e133]:
+            - generic [ref=e134]: Bundle
+            - link "View All" [ref=e136] [cursor=pointer]:
+              - /url: /collections/bundle
+          - generic [ref=e137]:
+            - link "Mak Bar Chocolate Chip Bar Box Mak Bar Chocolate Chip Bar Box $18.87 42g -15%" [ref=e139] [cursor=pointer]:
+              - /url: /products/copy-of-mak-bar-chocolate-chip-bar
+              - img "Mak Bar Chocolate Chip Bar Box" [ref=e140]
+              - generic [ref=e141]: Mak Bar Chocolate Chip Bar Box
+              - generic [ref=e142]: $18.87
+              - generic [ref=e143]: 42g
+              - generic:
+                - generic: "-15%"
+            - link "Mak Bar Cookies N' Cream Box Mak Bar Cookies N' Cream Box $23.66 55g -15%" [ref=e145] [cursor=pointer]:
+              - /url: /products/copy-of-mak-bar-cookies-n-cream
+              - img "Mak Bar Cookies N' Cream Box" [ref=e146]
+              - generic [ref=e147]: Mak Bar Cookies N' Cream Box
+              - generic [ref=e148]: $23.66
+              - generic [ref=e149]: 55g
+              - generic:
+                - generic: "-15%"
+            - link "Mak Bar Peanut Butter Bar Box Mak Bar Peanut Butter Bar Box $18.87 42g -15%" [ref=e151] [cursor=pointer]:
+              - /url: /products/copy-of-mak-bar-peanut-butter-bar
+              - img "Mak Bar Peanut Butter Bar Box" [ref=e152]
+              - generic [ref=e153]: Mak Bar Peanut Butter Bar Box
+              - generic [ref=e154]: $18.87
+              - generic [ref=e155]: 42g
+              - generic:
+                - generic: "-15%"
+            - link "Mak Protein Bar Almond Crunch - 11g protein Box Mak Protein Bar Almond Crunch - 11g protein Box $19.98 42g -10%" [ref=e157] [cursor=pointer]:
+              - /url: /products/mak-protein-bar-almond-crunch-11g-protein-box
+              - img "Mak Protein Bar Almond Crunch - 11g protein Box" [ref=e158]
+              - generic [ref=e159]: Mak Protein Bar Almond Crunch - 11g protein Box
+              - generic [ref=e160]: $19.98
+              - generic [ref=e161]: 42g
+              - generic:
+                - generic: "-10%"
+            - link "Mak Bar Vegan Hazelnut Crunch Box Mak Bar Vegan Hazelnut Crunch Box $19.98 45g -10%" [ref=e163] [cursor=pointer]:
+              - /url: /products/mak-bar-vegan-hazelnut-crunch-box
+              - img "Mak Bar Vegan Hazelnut Crunch Box" [ref=e164]
+              - generic [ref=e165]: Mak Bar Vegan Hazelnut Crunch Box
+              - generic [ref=e166]: $19.98
+              - generic [ref=e167]: 45g
+              - generic:
+                - generic: "-10%"
+  - generic [ref=e168]:
+    - generic [ref=e170]:
+      - generic [ref=e171]:
+        - heading "Contact Us" [level=4] [ref=e172]
+        - generic [ref=e173]:
+          - paragraph [ref=e174]: Get in touch and let us know your feedback on our services, online shop and content!
+          - paragraph [ref=e175]:
+            - link "+9613116408" [ref=e176] [cursor=pointer]:
+              - /url: tel:9613116408
+          - paragraph [ref=e177]:
+            - link "info@livgood.com" [ref=e178] [cursor=pointer]:
+              - /url: mailto:info@livgood.com
+          - link "Instagram" [ref=e180] [cursor=pointer]:
+            - /url: https://www.instagram.com/livgood.lb/
+            - generic [ref=e181]: Instagram
+            - img [ref=e183]
+      - generic [ref=e185]:
+        - heading "Quick links" [level=4] [ref=e186]
+        - navigation [ref=e187]:
+          - link "About Us" [ref=e189] [cursor=pointer]:
+            - /url: /pages/about-us
+          - link "LivGood Loyalty Program" [ref=e191] [cursor=pointer]:
+            - /url: /pages/livgood-loyalty-program
+          - link "Reviews" [ref=e193] [cursor=pointer]:
+            - /url: /pages/reviews
+          - link "Gift Cards" [ref=e195] [cursor=pointer]:
+            - /url: /collections/gift-cards
+          - link "Terms of Service" [ref=e197] [cursor=pointer]:
+            - /url: /policies/terms-of-service
+          - link "Delivery Information" [ref=e199] [cursor=pointer]:
+            - /url: /pages/delivery-information
+          - link "Privacy Policy" [ref=e201] [cursor=pointer]:
+            - /url: /policies/privacy-policy
+          - link "Request Account Deletion" [ref=e203] [cursor=pointer]:
+            - /url: /pages/request-account-deletion
+          - link "Refund Policy" [ref=e205] [cursor=pointer]:
+            - /url: /policies/refund-policy
+          - link "Contact Us" [ref=e207] [cursor=pointer]:
+            - /url: /pages/contact-us
+          - link "FAQ's" [ref=e209] [cursor=pointer]:
+            - /url: /pages/faqs
+    - generic [ref=e211]:
+      - generic [ref=e212]:
+        - text: Copyright © 2026
+        - link "LivGood Lebanon" [ref=e213] [cursor=pointer]:
+          - /url: /
+        - text: .
+        - link "Powered by Shopify" [ref=e215] [cursor=pointer]:
+          - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+      - generic [ref=e217]:
+        - generic [ref=e218]: Country/region
+        - button "(USD $)" [ref=e219] [cursor=pointer]:
+          - generic [ref=e220]: (USD $)
+          - img [ref=e222]
+  - generic [ref=e225] [cursor=pointer]:
+    - img [ref=e226]
+    - paragraph [ref=e228]: LivGood Rewards
+    - paragraph
+  - generic:
+    - generic:
+      - generic [ref=e229]:
+        - img [ref=e230]
+        - generic [ref=e232]: Get Updated with Latest Offers and Products.
+      - button [ref=e233] [cursor=pointer]: Subscribe

@@ -1,0 +1,80 @@
+- generic [ref=e3]:
+  - link "Logo" [ref=e5] [cursor=pointer]:
+    - /url: https://www.ubuy.com.lb/en/
+    - img "Logo" [ref=e6]
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e10]:
+        - img [ref=e12]
+        - generic [ref=e192]:
+          - textbox "Search entire store here..." [ref=e194]
+          - img "search" [ref=e195] [cursor=pointer]
+      - generic [ref=e197]:
+        - generic [ref=e198]:
+          - img "404" [ref=e199]
+          - paragraph [ref=e200]: PAGE NOT FOUND
+        - paragraph [ref=e201]: It seems that the page you were trying to reach doesn't exist anymore, or maybe it has just been removed.
+        - paragraph [ref=e202]:
+          - text: We think that the best thing to do is to start again from the
+          - link "homepage" [ref=e203] [cursor=pointer]:
+            - /url: https://www.ubuy.com.lb/en/
+          - text: .
+        - paragraph [ref=e204]:
+          - text: Feel free to
+          - link "contact us" [ref=e205] [cursor=pointer]:
+            - /url: https://www.ubuy.com.lb/en/contacts
+          - text: if the problem persists or if you definitely can't find what you are looking for.
+        - paragraph [ref=e206]: "Important Links :"
+        - list [ref=e207]:
+          - listitem [ref=e208]:
+            - img "FAQ's" [ref=e210]
+            - link "FAQ's" [ref=e212] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/faq
+          - listitem [ref=e213]:
+            - img "Brands Currently Trending" [ref=e215]
+            - link "Brands Currently Trending" [ref=e217] [cursor=pointer]:
+              - /url: https://www.ubuy.com.lb/en/html-sitemap/ubuybrands
+    - generic [ref=e218]:
+      - heading "Why Choose Ubuy?" [level=1] [ref=e219]
+      - list [ref=e220]:
+        - listitem [ref=e221]:
+          - img "Delivery" [ref=e223]
+          - generic [ref=e224]:
+            - paragraph [ref=e225]:
+              - text: Over
+              - strong [ref=e226]: "1000000"
+              - text: Successfully Shipped
+              - text: Orders
+            - generic [ref=e227]:
+              - text: We made as many happy
+              - text: customers as many orders
+              - text: we shipped.
+        - listitem [ref=e228]:
+          - img "Repeat" [ref=e230]
+          - generic [ref=e231]:
+            - paragraph [ref=e232]:
+              - text: 75% Repeated
+              - text: Customers
+            - generic [ref=e233]:
+              - text: 75% of Our orders come
+              - text: from repeat customers.
+        - listitem [ref=e234]:
+          - img "Delivery in 180+ countries" [ref=e236]
+          - generic [ref=e237]:
+            - paragraph [ref=e238]:
+              - text: Delivering in 180+
+              - text: Countries
+            - generic [ref=e239]:
+              - text: Ubuy is successfully delivering
+              - text: orders in 180+ countries,
+              - text: worldwide.
+        - listitem [ref=e240]:
+          - img "Verified" [ref=e242]
+          - generic [ref=e243]:
+            - paragraph [ref=e244]:
+              - text: 100% Secure
+              - text: Payment
+            - generic [ref=e245]:
+              - text: We guarantee you that
+              - text: all your details are safe
+              - text: with Ubuy.

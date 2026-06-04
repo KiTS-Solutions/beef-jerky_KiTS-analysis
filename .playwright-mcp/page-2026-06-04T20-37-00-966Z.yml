@@ -1,0 +1,469 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - banner [ref=e4]:
+    - link "Archer logo" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - img "Archer logo" [ref=e7]
+    - group [ref=e9]:
+      - button "Menu" [ref=e10] [cursor=pointer]:
+        - img [ref=e12]
+  - main [ref=e16]:
+    - heading "Products" [level=1] [ref=e20]
+    - generic [ref=e26]:
+      - list [ref=e27]:
+        - listitem [ref=e28]:
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - img "Archer Beef and Cheese Mini Sticks front of package" [ref=e34]
+              - generic [ref=e36]: In stock
+            - generic [ref=e38]:
+              - generic [ref=e39]: Meat Sticks
+              - heading "Beef & Cheese Mini Sticks In stock" [level=3] [ref=e40]:
+                - link "Beef & Cheese Mini Sticks In stock" [ref=e41] [cursor=pointer]:
+                  - /url: /products/beef-cheese-mini-sticks
+                  - text: Beef & Cheese Mini Sticks
+              - link "5.0 out of 5 stars. 2 reviews" [ref=e45]:
+                - /url: /products/beef-cheese-mini-sticks
+                - generic [ref=e48]:
+                  - img [ref=e49]
+                  - img [ref=e51]
+                  - img [ref=e53]
+                  - img [ref=e55]
+                  - img [ref=e57]
+                - generic [ref=e59]:
+                  - generic [ref=e61]: "5.0"
+                  - generic [ref=e63]: (2)
+              - link "Beef & Cheese Mini Sticks" [ref=e65] [cursor=pointer]:
+                - /url: /products/beef-cheese-mini-sticks
+                - text: Product Details
+        - listitem [ref=e66]:
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - img "Beef Taco Mini Sticks" [ref=e72]
+              - generic [ref=e74]: In stock
+            - generic [ref=e76]:
+              - generic [ref=e77]: Meat Sticks
+              - heading "Beef Taco Mini Sticks In stock" [level=3] [ref=e78]:
+                - link "Beef Taco Mini Sticks In stock" [ref=e79] [cursor=pointer]:
+                  - /url: /products/beef-taco-minis
+                  - text: Beef Taco Mini Sticks
+              - link "5.0 out of 5 stars. 1 review" [ref=e83]:
+                - /url: /products/beef-taco-minis
+                - generic [ref=e86]:
+                  - img [ref=e87]
+                  - img [ref=e89]
+                  - img [ref=e91]
+                  - img [ref=e93]
+                  - img [ref=e95]
+                - generic [ref=e97]:
+                  - generic [ref=e99]: "5.0"
+                  - generic [ref=e101]: (1)
+              - link "Beef Taco Mini Sticks" [ref=e103] [cursor=pointer]:
+                - /url: /products/beef-taco-minis
+                - text: Product Details
+        - listitem [ref=e104]:
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - img "Archer 2 ounce Original Bison Jerky front of package" [ref=e110]
+              - generic [ref=e112]: Sold out
+            - generic [ref=e114]:
+              - generic [ref=e115]: Bison Jerky
+              - heading "Bison Jerky Sold out" [level=3] [ref=e116]:
+                - link "Bison Jerky Sold out" [ref=e117] [cursor=pointer]:
+                  - /url: /products/original-bison-jerky
+                  - text: Bison Jerky
+              - link "0.0 out of 5 stars." [ref=e121]:
+                - /url: /products/original-bison-jerky
+                - generic [ref=e124]:
+                  - img [ref=e125]
+                  - img [ref=e127]
+                  - img [ref=e129]
+                  - img [ref=e131]
+                  - img [ref=e133]
+                - generic [ref=e135]:
+                  - generic [ref=e137]: "0.0"
+                  - generic [ref=e139]: (0)
+              - link "Bison Jerky" [ref=e141] [cursor=pointer]:
+                - /url: /products/original-bison-jerky
+                - text: Product Details
+        - listitem [ref=e142]:
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - img "Classic Beef Mini Sticks" [ref=e148]
+              - generic [ref=e150]: Sold out
+            - generic [ref=e152]:
+              - generic [ref=e153]: Meat Sticks
+              - heading "Classic Beef Mini Sticks Sold out" [level=3] [ref=e154]:
+                - link "Classic Beef Mini Sticks Sold out" [ref=e155] [cursor=pointer]:
+                  - /url: /products/classic-beef-mini-sticks
+                  - text: Classic Beef Mini Sticks
+              - link "0.0 out of 5 stars." [ref=e159]:
+                - /url: /products/classic-beef-mini-sticks
+                - generic [ref=e162]:
+                  - img [ref=e163]
+                  - img [ref=e165]
+                  - img [ref=e167]
+                  - img [ref=e169]
+                  - img [ref=e171]
+                - generic [ref=e173]:
+                  - generic [ref=e175]: "0.0"
+                  - generic [ref=e177]: (0)
+              - link "Classic Beef Mini Sticks" [ref=e179] [cursor=pointer]:
+                - /url: /products/classic-beef-mini-sticks
+                - text: Product Details
+        - listitem [ref=e180]:
+          - generic [ref=e182]:
+            - generic [ref=e183]:
+              - img "Classic Beef Stick" [ref=e186]
+              - generic [ref=e188]: Sold out
+            - generic [ref=e190]:
+              - generic [ref=e191]: Meat Sticks
+              - heading "Classic Beef Stick Sold out" [level=3] [ref=e192]:
+                - link "Classic Beef Stick Sold out" [ref=e193] [cursor=pointer]:
+                  - /url: /products/classic-beef-sticks
+                  - text: Classic Beef Stick
+              - link "5.0 out of 5 stars. 3 reviews" [ref=e197]:
+                - /url: /products/classic-beef-sticks
+                - generic [ref=e200]:
+                  - img [ref=e201]
+                  - img [ref=e203]
+                  - img [ref=e205]
+                  - img [ref=e207]
+                  - img [ref=e209]
+                - generic [ref=e211]:
+                  - generic [ref=e213]: "5.0"
+                  - generic [ref=e215]: (3)
+              - link "Classic Beef Stick" [ref=e217] [cursor=pointer]:
+                - /url: /products/classic-beef-sticks
+                - text: Product Details
+        - listitem [ref=e218]:
+          - generic [ref=e220]:
+            - generic [ref=e221]:
+              - img "Cowboy Cut Mustard BBQ Beef Jerky" [ref=e224]
+              - generic [ref=e226]: In stock
+            - generic [ref=e228]:
+              - generic [ref=e229]: Beef Jerky
+              - heading "Cowboy Cut Mustard BBQ Beef Jerky In stock" [level=3] [ref=e230]:
+                - link "Cowboy Cut Mustard BBQ Beef Jerky In stock" [ref=e231] [cursor=pointer]:
+                  - /url: /products/zero-sugar-mustard-bbq-beef-jerky
+                  - text: Cowboy Cut Mustard BBQ Beef Jerky
+              - link "4.0 out of 5 stars. 37 reviews" [ref=e235]:
+                - /url: /products/zero-sugar-mustard-bbq-beef-jerky
+                - generic [ref=e238]:
+                  - img [ref=e239]
+                  - img [ref=e241]
+                  - img [ref=e243]
+                  - img [ref=e245]
+                  - img [ref=e247]
+                - generic [ref=e249]:
+                  - generic [ref=e251]: "4.0"
+                  - generic [ref=e253]: (37)
+              - link "Cowboy Cut Mustard BBQ Beef Jerky" [ref=e255] [cursor=pointer]:
+                - /url: /products/zero-sugar-mustard-bbq-beef-jerky
+                - text: Product Details
+        - listitem [ref=e256]:
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - img "Cowboy Cut Old Fashioned Beef Jerky" [ref=e262]
+              - generic [ref=e264]: In stock
+            - generic [ref=e266]:
+              - generic [ref=e267]: Beef Jerky
+              - heading "Cowboy Cut Old Fashioned Beef Jerky In stock" [level=3] [ref=e268]:
+                - link "Cowboy Cut Old Fashioned Beef Jerky In stock" [ref=e269] [cursor=pointer]:
+                  - /url: /products/zero-sugar-classic-beef-jerky
+                  - text: Cowboy Cut Old Fashioned Beef Jerky
+              - link "4.4 out of 5 stars. 56 reviews" [ref=e273]:
+                - /url: /products/zero-sugar-classic-beef-jerky
+                - generic [ref=e276]:
+                  - img [ref=e277]
+                  - img [ref=e279]
+                  - img [ref=e281]
+                  - img [ref=e283]
+                  - img [ref=e285]
+                - generic [ref=e287]:
+                  - generic [ref=e289]: "4.4"
+                  - generic [ref=e291]: (56)
+              - link "Cowboy Cut Old Fashioned Beef Jerky" [ref=e293] [cursor=pointer]:
+                - /url: /products/zero-sugar-classic-beef-jerky
+                - text: Product Details
+        - listitem [ref=e294]:
+          - generic [ref=e296]:
+            - generic [ref=e297]:
+              - img "Cowboy Cut Spicy Beef Jerky" [ref=e300]
+              - generic [ref=e302]: In stock
+            - generic [ref=e304]:
+              - generic [ref=e305]: Beef Jerky
+              - heading "Cowboy Cut Spicy Beef Jerky In stock" [level=3] [ref=e306]:
+                - link "Cowboy Cut Spicy Beef Jerky In stock" [ref=e307] [cursor=pointer]:
+                  - /url: /products/zero-sugar-spicy-sesame-garlic-beef-jerky
+                  - text: Cowboy Cut Spicy Beef Jerky
+              - link "4.0 out of 5 stars. 46 reviews" [ref=e311]:
+                - /url: /products/zero-sugar-spicy-sesame-garlic-beef-jerky
+                - generic [ref=e314]:
+                  - img [ref=e315]
+                  - img [ref=e317]
+                  - img [ref=e319]
+                  - img [ref=e321]
+                  - img [ref=e323]
+                - generic [ref=e325]:
+                  - generic [ref=e327]: "4.0"
+                  - generic [ref=e329]: (46)
+              - link "Cowboy Cut Spicy Beef Jerky" [ref=e331] [cursor=pointer]:
+                - /url: /products/zero-sugar-spicy-sesame-garlic-beef-jerky
+                - text: Product Details
+        - listitem [ref=e332]:
+          - generic [ref=e334]:
+            - generic [ref=e335]:
+              - img "Archer Hatch Chile Beef Jerky front of package" [ref=e338]
+              - generic [ref=e340]: In stock
+            - generic [ref=e342]:
+              - generic [ref=e343]: Beef Jerky
+              - heading "Hatch Chile Beef Jerky In stock" [level=3] [ref=e344]:
+                - link "Hatch Chile Beef Jerky In stock" [ref=e345] [cursor=pointer]:
+                  - /url: /products/hatch-chile-beef-jerky
+                  - text: Hatch Chile Beef Jerky
+              - link "4.1 out of 5 stars. 71 reviews" [ref=e349]:
+                - /url: /products/hatch-chile-beef-jerky
+                - generic [ref=e352]:
+                  - img [ref=e353]
+                  - img [ref=e355]
+                  - img [ref=e357]
+                  - img [ref=e359]
+                  - img [ref=e361]
+                - generic [ref=e363]:
+                  - generic [ref=e365]: "4.1"
+                  - generic [ref=e367]: (71)
+              - link "Hatch Chile Beef Jerky" [ref=e369] [cursor=pointer]:
+                - /url: /products/hatch-chile-beef-jerky
+                - text: Product Details
+        - listitem [ref=e370]:
+          - generic [ref=e372]:
+            - generic [ref=e373]:
+              - img "Hickory Smoke Turkey Jerky front of package" [ref=e376]
+              - generic [ref=e378]: In stock
+            - generic [ref=e380]:
+              - generic [ref=e381]: Turkey Jerky
+              - heading "Hickory Smoke Turkey Jerky In stock" [level=3] [ref=e382]:
+                - link "Hickory Smoke Turkey Jerky In stock" [ref=e383] [cursor=pointer]:
+                  - /url: /products/hickory-smoke-turkey-jerky
+                  - text: Hickory Smoke Turkey Jerky
+              - link "4.6 out of 5 stars. 908 reviews" [ref=e387]:
+                - /url: /products/hickory-smoke-turkey-jerky
+                - generic [ref=e390]:
+                  - img [ref=e391]
+                  - img [ref=e393]
+                  - img [ref=e395]
+                  - img [ref=e397]
+                  - img [ref=e399]
+                - generic [ref=e401]:
+                  - generic [ref=e403]: "4.6"
+                  - generic [ref=e405]: (908)
+              - link "Hickory Smoke Turkey Jerky" [ref=e407] [cursor=pointer]:
+                - /url: /products/hickory-smoke-turkey-jerky
+                - text: Product Details
+        - listitem [ref=e408]:
+          - generic [ref=e410]:
+            - generic [ref=e411]:
+              - img "Archer Jalapeno Beef Stick front of package" [ref=e414]
+              - generic [ref=e416]: In stock
+            - generic [ref=e418]:
+              - generic [ref=e419]: Meat Sticks
+              - heading "Jalapeño Beef Stick In stock" [level=3] [ref=e420]:
+                - link "Jalapeño Beef Stick In stock" [ref=e421] [cursor=pointer]:
+                  - /url: /products/jalapeno-beef-stick
+                  - text: Jalapeño Beef Stick
+              - link "4.4 out of 5 stars. 52 reviews" [ref=e425]:
+                - /url: /products/jalapeno-beef-stick
+                - generic [ref=e428]:
+                  - img [ref=e429]
+                  - img [ref=e431]
+                  - img [ref=e433]
+                  - img [ref=e435]
+                  - img [ref=e437]
+                - generic [ref=e439]:
+                  - generic [ref=e441]: "4.4"
+                  - generic [ref=e443]: (52)
+              - link "Jalapeño Beef Stick" [ref=e445] [cursor=pointer]:
+                - /url: /products/jalapeno-beef-stick
+                - text: Product Details
+        - listitem [ref=e446]:
+          - generic [ref=e448]:
+            - generic [ref=e449]:
+              - img "Archer Mango Habanero Beef Jerky front of package" [ref=e452]
+              - generic [ref=e454]: In stock
+            - generic [ref=e456]:
+              - generic [ref=e457]: Beef Jerky
+              - heading "Mango Habanero Beef Jerky In stock" [level=3] [ref=e458]:
+                - link "Mango Habanero Beef Jerky In stock" [ref=e459] [cursor=pointer]:
+                  - /url: /products/mango-habanero-beef-jerky
+                  - text: Mango Habanero Beef Jerky
+              - link "4.8 out of 5 stars. 224 reviews" [ref=e463]:
+                - /url: /products/mango-habanero-beef-jerky
+                - generic [ref=e466]:
+                  - img [ref=e467]
+                  - img [ref=e469]
+                  - img [ref=e471]
+                  - img [ref=e473]
+                  - img [ref=e475]
+                - generic [ref=e477]:
+                  - generic [ref=e479]: "4.8"
+                  - generic [ref=e481]: (224)
+              - link "Mango Habanero Beef Jerky" [ref=e483] [cursor=pointer]:
+                - /url: /products/mango-habanero-beef-jerky
+                - text: Product Details
+        - listitem [ref=e484]:
+          - generic [ref=e486]:
+            - generic [ref=e487]:
+              - img "Archer 1 ounce Ancestral Beef Stick front of package" [ref=e490]
+              - generic [ref=e492]: Sold out
+            - generic [ref=e494]:
+              - generic [ref=e495]: Meat Sticks
+              - heading "Original Ancestral Beef Stick Sold out" [level=3] [ref=e496]:
+                - link "Original Ancestral Beef Stick Sold out" [ref=e497] [cursor=pointer]:
+                  - /url: /products/original-ancestral-blend-stick
+                  - text: Original Ancestral Beef Stick
+              - link "4.8 out of 5 stars. 4 reviews" [ref=e501]:
+                - /url: /products/original-ancestral-blend-stick
+                - generic [ref=e504]:
+                  - img [ref=e505]
+                  - img [ref=e507]
+                  - img [ref=e509]
+                  - img [ref=e511]
+                  - img [ref=e513]
+                - generic [ref=e515]:
+                  - generic [ref=e517]: "4.8"
+                  - generic [ref=e519]: (4)
+              - link "Original Ancestral Beef Stick" [ref=e521] [cursor=pointer]:
+                - /url: /products/original-ancestral-blend-stick
+                - text: Product Details
+        - listitem [ref=e522]:
+          - generic [ref=e524]:
+            - generic [ref=e525]:
+              - img "Archer Original Beef Jerky front of package" [ref=e528]
+              - generic [ref=e530]: In stock
+            - generic [ref=e532]:
+              - generic [ref=e533]: Beef Jerky
+              - heading "Original Beef Jerky In stock" [level=3] [ref=e534]:
+                - link "Original Beef Jerky In stock" [ref=e535] [cursor=pointer]:
+                  - /url: /products/original-beef-jerky
+                  - text: Original Beef Jerky
+              - link "4.6 out of 5 stars. 2130 reviews" [ref=e539]:
+                - /url: /products/original-beef-jerky
+                - generic [ref=e542]:
+                  - img [ref=e543]
+                  - img [ref=e545]
+                  - img [ref=e547]
+                  - img [ref=e549]
+                  - img [ref=e551]
+                - generic [ref=e553]:
+                  - generic [ref=e555]: "4.6"
+                  - generic [ref=e557]: (2130)
+              - link "Original Beef Jerky" [ref=e559] [cursor=pointer]:
+                - /url: /products/original-beef-jerky
+                - text: Product Details
+        - listitem [ref=e560]:
+          - generic [ref=e562]:
+            - generic [ref=e563]:
+              - img "Original Beef Mini Sticks" [ref=e566]
+              - generic [ref=e568]: In stock
+            - generic [ref=e570]:
+              - generic [ref=e571]: Meat Sticks
+              - heading "Original Beef Mini Sticks In stock" [level=3] [ref=e572]:
+                - link "Original Beef Mini Sticks In stock" [ref=e573] [cursor=pointer]:
+                  - /url: /products/mini-beef-sticks
+                  - text: Original Beef Mini Sticks
+              - link "4.5 out of 5 stars. 1306 reviews" [ref=e577]:
+                - /url: /products/mini-beef-sticks
+                - generic [ref=e580]:
+                  - img [ref=e581]
+                  - img [ref=e583]
+                  - img [ref=e585]
+                  - img [ref=e587]
+                  - img [ref=e589]
+                - generic [ref=e591]:
+                  - generic [ref=e593]: "4.5"
+                  - generic [ref=e595]: (1306)
+              - link "Original Beef Mini Sticks" [ref=e597] [cursor=pointer]:
+                - /url: /products/mini-beef-sticks
+                - text: Product Details
+        - listitem [ref=e598]:
+          - generic [ref=e600]:
+            - generic [ref=e601]:
+              - img "Archer Original Beef Stick front of package" [ref=e604]
+              - generic [ref=e606]: In stock
+            - generic [ref=e608]:
+              - generic [ref=e609]: Meat Sticks
+              - heading "Original Beef Stick In stock" [level=3] [ref=e610]:
+                - link "Original Beef Stick In stock" [ref=e611] [cursor=pointer]:
+                  - /url: /products/original-beef-stick
+                  - text: Original Beef Stick
+              - link "4.6 out of 5 stars. 109 reviews" [ref=e615]:
+                - /url: /products/original-beef-stick
+                - generic [ref=e618]:
+                  - img [ref=e619]
+                  - img [ref=e621]
+                  - img [ref=e623]
+                  - img [ref=e625]
+                  - img [ref=e627]
+                - generic [ref=e629]:
+                  - generic [ref=e631]: "4.6"
+                  - generic [ref=e633]: (109)
+              - link "Original Beef Stick" [ref=e635] [cursor=pointer]:
+                - /url: /products/original-beef-stick
+                - text: Product Details
+      - navigation "Pagination" [ref=e637]:
+        - list [ref=e638]:
+          - listitem [ref=e639]:
+            - link "Page 1" [disabled] [ref=e640]: "1"
+          - listitem [ref=e641]:
+            - link "Page 2" [ref=e642] [cursor=pointer]:
+              - /url: /collections/all?page=2
+              - text: "2"
+          - listitem [ref=e643]:
+            - link "Next page" [ref=e644] [cursor=pointer]:
+              - /url: /collections/all?page=2
+              - img [ref=e646]
+    - generic [ref=e650]:
+      - text: Sign Up For Our
+      - generic [ref=e651]: Newsletter
+      - generic [ref=e656]:
+        - textbox "Email" [ref=e659]
+        - button "Subscribe" [ref=e661] [cursor=pointer]
+  - contentinfo [ref=e663]:
+    - generic [ref=e666]:
+      - img "Archer logo" [ref=e669]
+      - generic [ref=e670]:
+        - list [ref=e671]:
+          - listitem [ref=e672]:
+            - link "Contact" [ref=e673] [cursor=pointer]:
+              - /url: /pages/contact
+          - listitem [ref=e674]:
+            - link "Blog" [ref=e675] [cursor=pointer]:
+              - /url: /blogs/the-range
+          - listitem [ref=e676]:
+            - link "Media Reviews" [ref=e677] [cursor=pointer]:
+              - /url: /blogs/press
+        - list [ref=e678]:
+          - listitem [ref=e679]:
+            - link "Careers" [ref=e680] [cursor=pointer]:
+              - /url: /pages/careers
+          - listitem [ref=e681]:
+            - link "FAQ" [ref=e682] [cursor=pointer]:
+              - /url: /pages/faqs
+    - generic [ref=e683]:
+      - link "Instagram" [ref=e685] [cursor=pointer]:
+        - /url: https://www.instagram.com/archerjerky
+        - img "Instagram" [ref=e686]
+      - link "Facebook" [ref=e688] [cursor=pointer]:
+        - /url: https://www.facebook.com/archerjerky
+        - img "Facebook" [ref=e689]
+    - generic [ref=e690]:
+      - link "Privacy Policy" [ref=e691] [cursor=pointer]:
+        - /url: /policies/privacy-policy
+      - text: "|"
+      - link "Terms and Conditions" [ref=e692] [cursor=pointer]:
+        - /url: /policies/terms-of-service
+      - text: "|"
+      - link "Accessibility" [ref=e693] [cursor=pointer]:
+        - /url: /pages/accessibility

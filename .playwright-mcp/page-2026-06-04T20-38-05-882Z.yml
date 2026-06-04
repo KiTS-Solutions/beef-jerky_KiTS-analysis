@@ -1,0 +1,185 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - paragraph: For information about our available products and their ingredients, please filter below.
+        - generic:
+          - generic: Filter
+          - generic:
+            - combobox:
+              - option "Product" [disabled] [selected]
+              - option "Banana"
+              - option "Banana Choco"
+              - option "Banana Dream"
+              - option "Berry Licorice"
+              - option "Birthday Cake"
+              - option "Caffé Caramello"
+              - option "Caffé Latte"
+              - option "Caramel Cashew"
+              - option "Caramel Choco"
+              - option "Choco Hazelnut"
+              - option "Chocolate"
+              - option "Chocolate Ball"
+              - option "Chocolate Dough"
+              - option "Chocolate Spread"
+              - option "Cinnamon Bun"
+              - option "Coco Caramel Almond"
+              - option "Coco Choco"
+              - option "Cookies & Caramel"
+              - option "Cookies & Cream"
+              - option "Creamy Crisp"
+              - option "Creamy Pear"
+              - option "Crispy Nougat"
+              - option "Fast Food Chocolate"
+              - option "Fast Food Strawberry"
+              - option "Fast Food Vanilla"
+              - option "Fizzy Cola"
+              - option "Hazelnut Nougat"
+              - option "Hazelnut Spread"
+              - option "Key Lime Pie"
+              - option "Lemon Cheesecake"
+              - option "Marshmallow Rocky Road"
+              - option "Milkshake Cookies and Cream"
+              - option "Minty Chocolate"
+              - option "Peachy Peach"
+              - option "Peanut Butter"
+              - option "Peanut Butter & Jelly"
+              - option "Peanut Cloud"
+              - option "Peppermint Bark"
+              - option "Pistachio Spread"
+              - option "Pumpkin Spice"
+              - option "Raspberry Cream"
+              - option "Raspberry Gelato"
+              - option "Salt Licorice Night Craver"
+              - option "Salted Peanut Caramel"
+              - option "Salty Caramel Crunch"
+              - option "Salty Chocolate"
+              - option "Salty Peanut"
+              - option "Strawberry"
+              - option "Strawberry Sundae"
+              - option "Sunny Smoothie"
+              - option "Sunny Strawberry"
+              - option "Vanilla"
+              - option "Vegan Caramel Choco Chip"
+              - option "Vegan Caramel Peanut"
+              - option "Vegan Chocolate Dough"
+              - option "Vegan Fudge Brownie"
+              - option "Vegan Hazelnut Nougat"
+              - option "Vegan Orange Chocolate"
+              - option "Vegan Salty Peanut"
+              - option "White Chocolate Almond"
+              - option "White Salty Peanut"
+          - generic:
+            - combobox:
+              - option "Country" [disabled] [selected]
+              - option "Austria"
+              - option "Canada"
+              - option "Denmark"
+              - option "Finland"
+              - option "France"
+              - option "Germany"
+              - option "Iceland"
+              - option "International"
+              - option "Norway"
+              - option "Other"
+              - option "Spain"
+              - option "Sweden"
+              - option "Switzerland"
+              - option "The Netherlands"
+              - option "UK/Ireland"
+              - option "USA"
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - navigation [ref=e7]:
+          - button "Open menu" [ref=e8] [cursor=pointer]
+        - link [ref=e11] [cursor=pointer]:
+          - /url: https://barebells.com
+          - img [ref=e13]
+    - generic [ref=e19]:
+      - heading "Page Not Found" [level=1] [ref=e20]
+      - paragraph [ref=e21]: Oh no, you’re totally lost. 404 and so on. Quickly click below to get back to the comfort zone of soooft protein bars and smooth milkshakes.
+      - link "Take me back!" [ref=e24] [cursor=pointer]:
+        - /url: https://barebells.com
+    - contentinfo [ref=e26]:
+      - generic [ref=e28]:
+        - heading "Don’t be a stranger" [level=4] [ref=e29]
+        - list [ref=e30]:
+          - listitem [ref=e31]:
+            - link "Instagram" [ref=e32] [cursor=pointer]:
+              - /url: https://barebells.com/about/#anchor_socials
+              - img [ref=e33]
+              - generic [ref=e35]: Instagram
+          - listitem [ref=e36]:
+            - link "TikTok" [ref=e37] [cursor=pointer]:
+              - /url: https://barebells.com/about/#anchor_socials
+              - img [ref=e38]
+              - generic [ref=e40]: TikTok
+          - listitem [ref=e41]:
+            - link "Mail" [ref=e42] [cursor=pointer]:
+              - /url: https://barebells.com/about/#anchor_contact
+              - img [ref=e43]
+              - generic [ref=e45]: Mail
+        - img [ref=e47]
+        - generic [ref=e49]:
+          - paragraph [ref=e50]:
+            - link "News" [ref=e51] [cursor=pointer]:
+              - /url: https://barebells.com/news/
+            - text: "|"
+            - link "Contact us" [ref=e52] [cursor=pointer]:
+              - /url: https://barebells.com/about/#anchor_contact
+            - text: "|"
+            - strong [ref=e53]:
+              - link "Company information" [ref=e54] [cursor=pointer]:
+                - /url: https://barebells.com/about/#anchor_companyinfo
+            - text: "|"
+            - strong [ref=e55]:
+              - link "Cookies settings" [ref=e56] [cursor=pointer]:
+                - /url: "#cookiesAndContentPolicySettings"
+            - text: "|"
+            - link "Privacy" [ref=e57] [cursor=pointer]:
+              - /url: https://barebells.com/barebells-privacy-policy/
+              - strong [ref=e58]: Privacy
+            - strong [ref=e59]:
+              - link "policy" [ref=e60] [cursor=pointer]:
+                - /url: https://barebells.com/barebells-privacy-policy/
+          - paragraph [ref=e61]:
+            - strong [ref=e62]: © 2025 Barebells Functional Foods AB
+          - paragraph [ref=e63]:
+            - strong [ref=e64]: Barebells, Box 5024, 102 41 Stockholm
+  - generic:
+    - link "×" [ref=e65] [cursor=pointer]:
+      - /url: "#"
+    - generic:
+      - generic [ref=e66]: Cookies
+      - generic [ref=e67]:
+        - text: To improve your experience, we're using cookies on this website. You can accept all, or choose what you're okay with. Our cookies comes without added sugar.
+        - link "Our policy" [ref=e68] [cursor=pointer]:
+          - /url: https://barebells.com/cookie-policy/
+      - generic [ref=e69]:
+        - link "Settings" [ref=e70] [cursor=pointer]:
+          - /url: "#"
+        - link "Deny all" [ref=e71] [cursor=pointer]:
+          - /url: "#"
+        - link "Accept all" [ref=e72] [cursor=pointer]:
+          - /url: "#"
+    - generic:
+      - generic [ref=e73]: Cookies
+      - generic [ref=e74]:
+        - text: Choose your settings. These will be saved in your web browser's memory for up to a year.
+        - link "Our policy" [ref=e75] [cursor=pointer]:
+          - /url: https://barebells.com/cookie-policy/
+      - generic:
+        - list:
+          - listitem [ref=e76]:
+            - generic [ref=e77]:
+              - text: Necessary
+              - text: These cookies are necessary for the site to function. You can't disable them.
+      - generic [ref=e81]:
+        - link "Save" [ref=e82] [cursor=pointer]:
+          - /url: "#"
+        - link "Deny all" [ref=e83] [cursor=pointer]:
+          - /url: "#"
+        - link "Accept all" [ref=e84] [cursor=pointer]:
+          - /url: "#"

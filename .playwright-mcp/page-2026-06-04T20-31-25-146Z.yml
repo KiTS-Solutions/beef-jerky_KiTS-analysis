@@ -1,0 +1,282 @@
+- generic [ref=e1]:
+  - dialog "cookieconsent" [ref=e2]:
+    - paragraph [ref=e5]:
+      - text: By clicking “Continue”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
+      - strong [ref=e6]:
+        - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+          - /url: https://privacy-center.majidalfuttaim.com/client/9dbce182-3ec8-44db-b76e-3e58365b528f#/privacy-notice
+    - generic [ref=e8]:
+      - button "Continue" [ref=e9] [cursor=pointer]
+      - button "Cookies Settings" [ref=e10] [cursor=pointer]:
+        - img [ref=e12]
+        - generic [ref=e22]: Cookies Settings
+  - banner [ref=e23]:
+    - generic [ref=e24]:
+      - button "Scheduled Scheduled" [ref=e27] [cursor=pointer]:
+        - img "Scheduled" [ref=e29]
+        - generic [ref=e30]: Scheduled
+      - generic [ref=e31]:
+        - button "Hazmieh - Baabda" [ref=e33] [cursor=pointer]:
+          - generic [ref=e34]: Hazmieh - Baabda
+        - generic [ref=e39]:
+          - textbox [active] [ref=e40]
+          - generic:
+            - generic: Search
+            - generic:
+              - strong: 70,000+
+            - generic: items
+          - button [ref=e41] [cursor=pointer]
+  - main [ref=e43]:
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]: Trending Now
+        - generic [ref=e47]:
+          - link "potato potato" [ref=e48] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=potato
+            - generic [ref=e50]:
+              - img "potato" [ref=e51]
+              - generic [ref=e52]: potato
+          - link "water water" [ref=e53] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=water
+            - generic [ref=e55]:
+              - img "water" [ref=e56]
+              - generic [ref=e57]: water
+          - link "milk milk" [ref=e58] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=milk
+            - generic [ref=e60]:
+              - img "milk" [ref=e61]
+              - generic [ref=e62]: milk
+          - link "cheese cheese" [ref=e63] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=cheese
+            - generic [ref=e65]:
+              - img "cheese" [ref=e66]
+              - generic [ref=e67]: cheese
+          - link "nescafe nescafe" [ref=e68] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=nescafe
+            - generic [ref=e70]:
+              - img "nescafe" [ref=e71]
+              - generic [ref=e72]: nescafe
+          - link "shampoo shampoo" [ref=e73] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=shampoo
+            - generic [ref=e75]:
+              - img "shampoo" [ref=e76]
+              - generic [ref=e77]: shampoo
+          - link "bread bread" [ref=e78] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=bread
+            - generic [ref=e80]:
+              - img "bread" [ref=e81]
+              - generic [ref=e82]: bread
+          - link "chocolate chocolate" [ref=e83] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=chocolate
+            - generic [ref=e85]:
+              - img "chocolate" [ref=e86]
+              - generic [ref=e87]: chocolate
+          - link "oil oil" [ref=e88] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=oil
+            - generic [ref=e90]:
+              - img "oil" [ref=e91]
+              - generic [ref=e92]: oil
+          - link "chips chips" [ref=e93] [cursor=pointer]:
+            - /url: /maflbn/en/search?keyword=chips
+            - generic [ref=e95]:
+              - img "chips" [ref=e96]
+              - generic [ref=e97]: chips
+      - generic [ref=e98]:
+        - generic [ref=e99]: Discover More
+        - button "See All" [ref=e100] [cursor=pointer]:
+          - generic [ref=e101]: See All
+      - region [ref=e102]:
+        - generic [ref=e104]:
+          - group [ref=e105]:
+            - link "Fresh Food Fresh Food" [ref=e106] [cursor=pointer]:
+              - /url: /n/c/clp_FLEB1600000
+              - generic [ref=e107]:
+                - img "Fresh Food" [ref=e108]
+                - generic [ref=e109]: Fresh Food
+          - group [ref=e110]:
+            - link "Fruits & Vegetables Fruits & Vegetables" [ref=e111] [cursor=pointer]:
+              - /url: /c/FLEB1660000
+              - generic [ref=e112]:
+                - img "Fruits & Vegetables" [ref=e113]
+                - generic [ref=e114]: Fruits & Vegetables
+          - group [ref=e115]:
+            - link "Food Cupboard Food Cupboard" [ref=e116] [cursor=pointer]:
+              - /url: /c/FLEB1700000
+              - generic [ref=e117]:
+                - img "Food Cupboard" [ref=e118]
+                - generic [ref=e119]: Food Cupboard
+          - group [ref=e120]:
+            - link "Beverages Beverages" [ref=e121] [cursor=pointer]:
+              - /url: /c/FLEB1500000
+              - generic [ref=e122]:
+                - img "Beverages" [ref=e123]
+                - generic [ref=e124]: Beverages
+          - group [ref=e125]:
+            - link "Frozen Food Frozen Food" [ref=e126] [cursor=pointer]:
+              - /url: /c/FLEB6000000
+              - generic [ref=e127]:
+                - img "Frozen Food" [ref=e128]
+                - generic [ref=e129]: Frozen Food
+          - group [ref=e130]:
+            - link "Alcohol Alcohol" [ref=e131] [cursor=pointer]:
+              - /url: /c/NFLEB21000000
+              - generic [ref=e132]:
+                - img "Alcohol" [ref=e133]
+                - generic [ref=e134]: Alcohol
+          - group [ref=e135]:
+            - link "Baby Products Baby Products" [ref=e136] [cursor=pointer]:
+              - /url: /c/FLEB1000000
+              - generic [ref=e137]:
+                - img "Baby Products" [ref=e138]
+                - generic [ref=e139]: Baby Products
+          - group [ref=e140]:
+            - link "Bakery Bakery" [ref=e141] [cursor=pointer]:
+              - /url: /n/c/clp_FLEB1610000
+              - generic [ref=e142]:
+                - img "Bakery" [ref=e143]
+                - generic [ref=e144]: Bakery
+          - group [ref=e145]:
+            - link "Bio & Organic Food Bio & Organic Food" [ref=e146] [cursor=pointer]:
+              - /url: /c/FLEB1200000
+              - generic [ref=e147]:
+                - img "Bio & Organic Food" [ref=e148]
+                - generic [ref=e149]: Bio & Organic Food
+          - group [ref=e150]:
+            - link "Electronics & Appliances Electronics & Appliances" [ref=e151] [cursor=pointer]:
+              - /url: /n/c/clp_NFLEB4000000
+              - generic [ref=e152]:
+                - img "Electronics & Appliances" [ref=e153]
+                - generic [ref=e154]: Electronics & Appliances
+          - group [ref=e155]:
+            - link "Smartphones, Tablets & Wearables Smartphones, Tablets & Wearables" [ref=e156] [cursor=pointer]:
+              - /url: /n/c/clp_clp-smartphones
+              - generic [ref=e157]:
+                - img "Smartphones, Tablets & Wearables" [ref=e158]
+                - generic [ref=e159]: Smartphones, Tablets & Wearables
+          - group [ref=e160]:
+            - link "Cleaning & Household Cleaning & Household" [ref=e161] [cursor=pointer]:
+              - /url: /c/NFLEB3000000
+              - generic [ref=e162]:
+                - img "Cleaning & Household" [ref=e163]
+                - generic [ref=e164]: Cleaning & Household
+          - group [ref=e165]:
+            - link "Beauty & Personal Care Beauty & Personal Care" [ref=e166] [cursor=pointer]:
+              - /url: /c/NFLEB2000000
+              - generic [ref=e167]:
+                - img "Beauty & Personal Care" [ref=e168]
+                - generic [ref=e169]: Beauty & Personal Care
+          - group [ref=e170]:
+            - link "Health & Fitness Health & Fitness" [ref=e171] [cursor=pointer]:
+              - /url: /c/NFLEB7000000
+              - generic [ref=e172]:
+                - img "Health & Fitness" [ref=e173]
+                - generic [ref=e174]: Health & Fitness
+          - group [ref=e175]:
+            - link "Pet Supplies Pet Supplies" [ref=e176] [cursor=pointer]:
+              - /url: /n/c/clp_clp-pet-supplies
+              - generic [ref=e177]:
+                - img "Pet Supplies" [ref=e178]
+                - generic [ref=e179]: Pet Supplies
+          - group [ref=e180]:
+            - link "Home & Garden Home & Garden" [ref=e181] [cursor=pointer]:
+              - /url: /n/c/clp_NFLEB8000000
+              - generic [ref=e182]:
+                - img "Home & Garden" [ref=e183]
+                - generic [ref=e184]: Home & Garden
+          - group [ref=e185]:
+            - link "Stationery & School Supplies Stationery & School Supplies" [ref=e186] [cursor=pointer]:
+              - /url: /n/c/clp_NFLEB1300000
+              - generic [ref=e187]:
+                - img "Stationery & School Supplies" [ref=e188]
+                - generic [ref=e189]: Stationery & School Supplies
+          - group [ref=e190]:
+            - link "Fashion, Accessories & Luggage Fashion, Accessories & Luggage" [ref=e191] [cursor=pointer]:
+              - /url: /c/NFLEB5000000
+              - generic [ref=e192]:
+                - img "Fashion, Accessories & Luggage" [ref=e193]
+                - generic [ref=e194]: Fashion, Accessories & Luggage
+          - group [ref=e195]:
+            - link "Toys & Outdoor Toys & Outdoor" [ref=e196] [cursor=pointer]:
+              - /url: /c/NFLEB1400000
+              - generic [ref=e197]:
+                - img "Toys & Outdoor" [ref=e198]
+                - generic [ref=e199]: Toys & Outdoor
+          - group [ref=e200]:
+            - link "Kiosk Kiosk" [ref=e201] [cursor=pointer]:
+              - /url: /c/NFLEB9000000
+              - generic [ref=e202]:
+                - img "Kiosk" [ref=e203]
+                - generic [ref=e204]: Kiosk
+          - group [ref=e205]:
+            - link "Automotive Automotive" [ref=e206] [cursor=pointer]:
+              - /url: /c/NFLEB2300000
+              - generic [ref=e207]:
+                - img "Automotive" [ref=e208]
+                - generic [ref=e209]: Automotive
+  - navigation "Mobile navigation" [ref=e210]:
+    - link "Home Home" [ref=e211] [cursor=pointer]:
+      - /url: /maflbn/en
+      - img "Home" [ref=e214]
+      - generic [ref=e215]: Home
+    - link "Categories Categories" [ref=e216] [cursor=pointer]:
+      - /url: /maflbn/en/all-categories
+      - img "Categories" [ref=e219]
+      - generic [ref=e220]: Categories
+    - link "MyClub" [ref=e221] [cursor=pointer]:
+      - /url: /maflbn/en/profile/loyalty
+      - img "MyClub" [ref=e224]
+    - link "Profile Profile" [ref=e225] [cursor=pointer]:
+      - /url: /maflbn/en/profile/login
+      - img "Profile" [ref=e228]
+      - generic [ref=e229]: Profile
+    - link "Cart Cart" [ref=e230] [cursor=pointer]:
+      - /url: /maflbn/en/app/cart
+      - img "Cart" [ref=e233]
+      - generic [ref=e234]: Cart
+  - contentinfo [ref=e235]:
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - link [ref=e238] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e240]:
+          - generic [ref=e241]: Stay in touch with us
+          - link "Facebook" [ref=e242] [cursor=pointer]:
+            - /url: https://www.facebook.com/carrefourlebanon
+            - img "Facebook" [ref=e243]
+          - link "twitter" [ref=e244] [cursor=pointer]:
+            - /url: https://twitter.com/carrefourle
+            - img "twitter" [ref=e245]
+          - link "Instgram" [ref=e246] [cursor=pointer]:
+            - /url: https://instagram.com/carrefourlebanon
+            - img "Instgram" [ref=e247]
+          - link "Youtube" [ref=e248] [cursor=pointer]:
+            - /url: https://www.youtube.com/user/carrefourlebanon
+            - img "Youtube" [ref=e249]
+      - generic [ref=e250]:
+        - heading "Customer service" [level=3] [ref=e252]:
+          - button "Customer service" [ref=e253] [cursor=pointer]:
+            - text: Customer service
+            - img [ref=e254]
+        - heading "About Us" [level=3] [ref=e257]:
+          - button "About Us" [ref=e258] [cursor=pointer]:
+            - text: About Us
+            - img [ref=e259]
+        - heading "Helping you save" [level=3] [ref=e262]:
+          - button "Helping you save" [ref=e263] [cursor=pointer]:
+            - text: Helping you save
+            - img [ref=e264]
+        - heading "Help & Support" [level=3] [ref=e267]:
+          - button "Help & Support" [ref=e268] [cursor=pointer]:
+            - text: Help & Support
+            - img [ref=e269]
+        - heading "Download Our App" [level=3] [ref=e272]:
+          - button "Download Our App" [ref=e273] [cursor=pointer]:
+            - text: Download Our App
+            - img [ref=e274]
+      - generic [ref=e276]:
+        - generic [ref=e277]: Have a question? We are here to help.
+        - generic [ref=e279]:
+          - img [ref=e280]
+          - generic [ref=e284]: "1548"
+    - generic [ref=e286]: © 2026 Carrefour. All rights reserved.
+  - alert [ref=e289]

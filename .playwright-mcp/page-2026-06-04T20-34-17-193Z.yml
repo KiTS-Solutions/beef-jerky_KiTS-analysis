@@ -1,0 +1,136 @@
+- generic [ref=e2]:
+  - link "Skip to main content":
+    - /url: exhibitor-products#main-content
+  - generic:
+    - generic: 
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Homepage link" [ref=e6] [cursor=pointer]:
+        - /url: https://www.gulfood.com/
+        - img "Gulfood - 15 to 19 March 2027 at Dubai World Trade Center and Dubai Expo City" [ref=e7]
+      - generic [ref=e8]:
+        - generic [ref=e11] [cursor=pointer]: 
+        - navigation "Main navigation" [ref=e12]:
+          - button "Explore" [ref=e13] [cursor=pointer]:
+            - generic [ref=e14]: Explore
+            - text: 
+          - list [ref=e15]:
+            - listitem "facebook" [ref=e16]:
+              - link " facebook" [ref=e18] [cursor=pointer]:
+                - /url: https://www.facebook.com/Gulfood
+            - listitem "instagram" [ref=e19]:
+              - link " instagram" [ref=e21] [cursor=pointer]:
+                - /url: https://www.instagram.com/Gulfood
+            - listitem "x" [ref=e22]:
+              - link " x" [ref=e24] [cursor=pointer]:
+                - /url: https://x.com/gulfood
+            - listitem "linkedin" [ref=e25]:
+              - link " linkedin" [ref=e27] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/gulfood
+            - listitem "youtube" [ref=e28]:
+              - link " youtube" [ref=e30] [cursor=pointer]:
+                - /url: https://www.youtube.com/@gulfood6596
+  - heading "Exhibitor Products" [level=1] [ref=e33]
+  - main [ref=e34]:
+    - generic [ref=e36]:
+      - article [ref=e40]:
+        - paragraph [ref=e44]:
+          - link "Products" [ref=e45] [cursor=pointer]:
+            - /url: exhibitor-products
+          - link "Press Releases" [ref=e46] [cursor=pointer]:
+            - /url: exhibitor-press-releases
+          - link "Brochures" [ref=e47] [cursor=pointer]:
+            - /url: exhibitor-brochures
+          - link "Videos" [ref=e48] [cursor=pointer]:
+            - /url: exhibitor-videos
+      - article [ref=e52]:
+        - emphasis [ref=e56]: Library couldn't be loaded. It might not be active.
+  - contentinfo [ref=e57]:
+    - generic [ref=e58]:
+      - generic [ref=e59]:
+        - link "Gulfood - 15 - 19 March 2027 at Dubai World Trade Center and Dubai Exhibition Centre" [ref=e60] [cursor=pointer]:
+          - /url: https://www.gulfood.com/
+          - img "Gulfood - 15 - 19 March 2027 at Dubai World Trade Center and Dubai Exhibition Centre" [ref=e61]
+        - paragraph [ref=e62]:
+          - strong [ref=e63]: SHOW TIMINGS
+          - text: Dubai World Trade Centre & Dubai Exhibition Centre
+          - strong [ref=e64]: 15 - 18 March 2027
+          - text: 10:00 AM to 6:00 PM
+          - strong [ref=e65]: 19 March 2027
+          - text: 10:00 AM to 5:00 PM
+        - list [ref=e66]:
+          - listitem [ref=e67]:
+            - link " Facebook" [ref=e68] [cursor=pointer]:
+              - /url: https://www.facebook.com/Gulfood
+          - listitem [ref=e69]:
+            - link " Instagram" [ref=e70] [cursor=pointer]:
+              - /url: https://www.instagram.com/Gulfood
+          - listitem [ref=e71]:
+            - link " Linkedin" [ref=e72] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/gulfood?
+          - listitem [ref=e73]:
+            - link " Youtube" [ref=e74] [cursor=pointer]:
+              - /url: http://www.youtube.com/@gulfood6596
+          - listitem [ref=e75]:
+            - link " X" [ref=e76] [cursor=pointer]:
+              - /url: https://x.com/gulfood
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - heading "Lets Talk" [level=2] [ref=e79]
+          - generic [ref=e80]:
+            - paragraph [ref=e81]:
+              - strong [ref=e82]: Registration Inquiry
+              - link "support@gulfood.com" [ref=e84] [cursor=pointer]:
+                - /url: mailto:support@gulfood.com?Subject=
+            - paragraph [ref=e85]:
+              - strong [ref=e86]: Sales Inquiry
+              - link "gulfood@dwtc.com" [ref=e88] [cursor=pointer]:
+                - /url: mailto:gulfood@dwtc.com?Subject=
+            - paragraph [ref=e89]:
+              - strong [ref=e90]: Marketing Inquiry
+              - link "gulfoodmarketing@dwtc.com" [ref=e92] [cursor=pointer]:
+                - /url: mailto:gulfoodmarketing@dwtc.com?Subject=
+            - paragraph [ref=e93]:
+              - strong [ref=e94]: Investor Programme
+              - link "Investors@dwtc.com" [ref=e96] [cursor=pointer]:
+                - /url: mailto:Investors@dwtc.com?Subject=
+            - paragraph [ref=e97]:
+              - strong [ref=e98]: Partnerships
+              - link "partnerships@gulfood.com" [ref=e100] [cursor=pointer]:
+                - /url: mailto:partnerships@gulfood.com?Subject=
+        - generic [ref=e101]:
+          - heading "Organised by" [level=2] [ref=e102]
+          - img "DWTC logo" [ref=e104]
+      - list [ref=e106]:
+        - listitem [ref=e107]:
+          - link "NEWSLETTER SIGN UP " [ref=e108] [cursor=pointer]:
+            - /url: https://mktg.gulfood.com/2027-newsletter
+        - listitem [ref=e109]:
+          - link "REGISTER TODAY " [ref=e110] [cursor=pointer]:
+            - /url: https://visit.gulfood.com
+        - listitem [ref=e111]:
+          - link "EXHIBITOR ENQUIRY " [ref=e112] [cursor=pointer]:
+            - /url: https://mktg.gulfood.com/2027-exhibitor-enquiry
+        - listitem [ref=e113]:
+          - link "MEDIA ENQUIRY " [ref=e114] [cursor=pointer]:
+            - /url: https://mktg.gulfood.com/2027-media
+    - navigation "Footer navigation" [ref=e115]:
+      - list [ref=e116]:
+        - listitem "© Copyright 2025" [ref=e117]
+        - listitem "Cookies Policy" [ref=e118]:
+          - link "Cookies Policy" [ref=e119] [cursor=pointer]:
+            - /url: cookies-policy-6tlp
+        - listitem "Privacy Policy" [ref=e120]:
+          - link "Privacy Policy" [ref=e121] [cursor=pointer]:
+            - /url: gulfood-privacy-policy
+        - listitem "Terms & Conditions" [ref=e122]:
+          - link "Terms & Conditions" [ref=e123] [cursor=pointer]:
+            - /url: terms-conditions
+        - listitem "Contact Us" [ref=e124]:
+          - link "Contact Us" [ref=e125] [cursor=pointer]:
+            - /url: https://event.gulfood.com/2026-contact-us
+    - generic [ref=e126]:
+      - img [ref=e127]
+      - link "Exhibition Website by ASP" [ref=e128] [cursor=pointer]:
+        - /url: https://www.asp.events/client
+  - text:   Type in what you're looking for then press search

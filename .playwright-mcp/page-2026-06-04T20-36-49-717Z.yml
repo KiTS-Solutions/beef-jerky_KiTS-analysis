@@ -1,0 +1,53 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - banner [ref=e4]:
+    - link "Archer logo" [ref=e5] [cursor=pointer]:
+      - /url: /
+      - img "Archer logo" [ref=e7]
+    - group [ref=e9]:
+      - button "Menu" [ref=e10] [cursor=pointer]:
+        - img [ref=e12]
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - paragraph [ref=e19]: "404"
+      - heading "Page not found" [level=1] [ref=e20]
+      - link "Continue shopping" [ref=e21] [cursor=pointer]:
+        - /url: /collections/all
+  - contentinfo [ref=e23]:
+    - generic [ref=e26]:
+      - img "Archer logo" [ref=e29]
+      - generic [ref=e30]:
+        - list [ref=e31]:
+          - listitem [ref=e32]:
+            - link "Contact" [ref=e33] [cursor=pointer]:
+              - /url: /pages/contact
+          - listitem [ref=e34]:
+            - link "Blog" [ref=e35] [cursor=pointer]:
+              - /url: /blogs/the-range
+          - listitem [ref=e36]:
+            - link "Media Reviews" [ref=e37] [cursor=pointer]:
+              - /url: /blogs/press
+        - list [ref=e38]:
+          - listitem [ref=e39]:
+            - link "Careers" [ref=e40] [cursor=pointer]:
+              - /url: /pages/careers
+          - listitem [ref=e41]:
+            - link "FAQ" [ref=e42] [cursor=pointer]:
+              - /url: /pages/faqs
+    - generic [ref=e43]:
+      - link "Instagram" [ref=e45] [cursor=pointer]:
+        - /url: https://www.instagram.com/archerjerky
+        - img "Instagram" [ref=e46]
+      - link "Facebook" [ref=e48] [cursor=pointer]:
+        - /url: https://www.facebook.com/archerjerky
+        - img "Facebook" [ref=e49]
+    - generic [ref=e50]:
+      - link "Privacy Policy" [ref=e51] [cursor=pointer]:
+        - /url: /policies/privacy-policy
+      - text: "|"
+      - link "Terms and Conditions" [ref=e52] [cursor=pointer]:
+        - /url: /policies/terms-of-service
+      - text: "|"
+      - link "Accessibility" [ref=e53] [cursor=pointer]:
+        - /url: /pages/accessibility
