@@ -400,13 +400,13 @@ export default function App() {
           borderRadius: isFullscreen ? '0px' : (isMobile ? '16px' : '12px'),
           padding: isFullscreen ? '0px' : (isMobile ? '16px' : (isTablet ? '20px' : '24px')),
           minHeight: isFullscreen ? '100vh' : 'calc(100vh - 40px)',
+          height: isFullscreen ? '100vh' : undefined,
           width: '100%',
           maxWidth: '100%',
           backgroundColor: isFullscreen ? 'transparent' : 'rgba(10, 10, 20, 0.8)',
           boxShadow: isFullscreen ? 'none' : '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(102, 126, 234, 0.1)',
           boxSizing: 'border-box',
-          overflowX: 'auto', // Adds fallback scrolling if individual components are wide
-          overflowY: 'auto',
+          overflow: isFullscreen ? 'hidden' : 'auto',
           backdropFilter: isFullscreen ? 'none' : 'blur(20px)',
         }}>
           {COMPONENT_MAP[activeView]}

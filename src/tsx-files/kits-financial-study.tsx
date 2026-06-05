@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { ThemeCtx } from './pitch-theme';
 
 // ─── RESPONSIVE HOOK ───────────────────────────────────────────────────────────
 function useResponsive() {
@@ -8,7 +9,7 @@ function useResponsive() {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -17,16 +18,61 @@ function useResponsive() {
   return { isMobile };
 }
 
+// ─── FINANCIAL STUDY PALETTES ─────────────────────────────────────────────────
+const FS_DARK = {
+  bg: "#08070A",
+  header: "#0A0910",
+  border: "#1C1A24",
+  rowBorder: "#140F1C",
+  card: "#0C0B12",
+  altBg: "#09080E",
+  noteBg: "#0A0C08",
+  noteBorder: "#2A3020",
+  text: "#E2D8CC",
+  textMid: "#C8BCAC",
+  textDim: "#7A7090",
+  textFaint: "#4A4060",
+  textFainter: "#3A3050",
+  noteText: "#6A7A60",
+  readyText: "#6A9A80",
+  notReadyText: "#6A6080",
+  footerText: "#2A2038",
+  tabActive: "#E2D8CC",
+  tabInactive: "#4A4060",
+};
+
+const FS_LIGHT = {
+  bg: "#FFFFFF",
+  header: "#F9F7F5",
+  border: "#D5CCC0",
+  rowBorder: "#E8E0D4",
+  card: "#F2EEE8",
+  altBg: "#F9F7F5",
+  noteBg: "#F0F4EE",
+  noteBorder: "#C0CCA8",
+  text: "#1A1410",
+  textMid: "#3A2C20",
+  textDim: "#5A4838",
+  textFaint: "#8A7868",
+  textFainter: "#A08898",
+  noteText: "#506040",
+  readyText: "#2E6838",
+  notReadyText: "#5A3A58",
+  footerText: "#8A7868",
+  tabActive: "#1A1410",
+  tabInactive: "#8A7868",
+};
+
 const TIERS = [
   {
     id: "lean",
     label: "TIER 1",
     name: "Lean Launch",
     tagline: "Minimum viable, maximum discipline",
-    total: 18500,
+    total: 19000,
     color: "#7EB5A6",
     description: "Designed for an entrepreneur who wants to validate the concept with real market data before committing to a full build. Every spend is stripped to the essential minimum. Zero waste. Tight execution. Exit ramp available at Phase 1 if market signals are weak.",
-    suitable: "Entrepreneur is risk-averse or liquidity-constrained. RU2YA operates lean with a milestone-based release of funds.",
+    suitable: "Entrepreneur is risk-averse or liquidity-constrained. Ru'ya 360° operates lean with a milestone-based release of funds.",
     risk: "Lower spend means slower brand build. Packaging and identity at this tier are functional, not exceptional. Risk of appearing underfunded vs. imported competitors at pharmacy shelf level.",
     categories: [
       {
@@ -85,7 +131,7 @@ const TIERS = [
       rev_m12: "$18,000–$28,000 / month",
       breakeven: "Month 7–9",
       gross_margin: "42–48%",
-      note: "Assumes $3.00 average retail price, 30% channel margin, 15% RU2YA operating overhead"
+      note: "Assumes $3.00 average retail price, 30% channel margin, 15% Ru'ya 360° operating overhead"
     }
   },
   {
@@ -93,10 +139,10 @@ const TIERS = [
     label: "TIER 2",
     name: "Standard Launch",
     tagline: "Professional entry. Shelf-ready from day one.",
-    total: 42000,
+    total: 50000,
     color: "#C8A96E",
-    description: "The recommended scenario for a venture with serious commercial intent. Funds a proper brand identity, two SKUs, a full gym-to-pharmacy distribution launch, and a working capital buffer that absorbs the 3–4 month revenue lag during regulatory processing. This is the scenario RU2YA recommends presenting to the entrepreneur as the baseline.",
-    suitable: "Entrepreneur has real commercial ambition and is willing to invest in a proper launch. RU2YA operates with full mandate and milestone reporting.",
+    description: "The recommended scenario for a venture with serious commercial intent. Funds a proper brand identity, two SKUs, a full gym-to-pharmacy distribution launch, and a working capital buffer that absorbs the 3–4 month revenue lag during regulatory processing. This is the scenario Ru'ya 360° recommends presenting to the entrepreneur as the baseline.",
+    suitable: "Entrepreneur has real commercial ambition and is willing to invest in a proper launch. Ru'ya 360° operates with full mandate and milestone reporting.",
     risk: "Mid-range spend requires discipline to avoid scope creep. Packaging and brand investment here must be executed by professionals — not cut post-budget-approval.",
     categories: [
       {
@@ -145,11 +191,11 @@ const TIERS = [
         ]
       },
       {
-        name: "Operations & RU2YA",
+        name: "Operations & Ru'ya 360°",
         color: "#C8A96E",
         items: [
           { label: "Accounting + bookkeeping setup (first year)", low: 600, high: 1200 },
-          { label: "RU2YA management fee — Phase 0–2 (6 months)", low: 3000, high: 5000 },
+          { label: "Ru'ya 360° management fee — Phase 0–2 (6 months)", low: 3000, high: 5000 },
           { label: "Contingency & working capital (15% of above)", low: 4500, high: 6500 },
         ]
       }
@@ -170,10 +216,10 @@ const TIERS = [
     label: "TIER 3",
     name: "Full Market Entry",
     tagline: "Category creation. Export-ready from launch.",
-    total: 82000,
+    total: 105000,
     color: "#E07B6A",
-    description: "A comprehensive market entry that positions the brand to own the Lebanese protein snack category and be export-ready for GCC within 12 months. Funds a full brand system, 3 SKUs at launch, a dedicated sales representative, modern trade entry, corporate channel development, and a 6-month working capital runway. Recommended only if the entrepreneur has confirmed long-term capital commitment and RU2YA has a formalized co-management or equity stake.",
-    suitable: "Entrepreneur is fully committed, capitalized, and aligned with RU2YA on a 2–3 year growth plan. RU2YA operates as full commercial operator with equity or significant performance fees.",
+    description: "A comprehensive market entry that positions the brand to own the Lebanese protein snack category and be export-ready for GCC within 12 months. Funds a full brand system, 3 SKUs at launch, a dedicated sales representative, modern trade entry, corporate channel development, and a 6-month working capital runway. Recommended only if the entrepreneur has confirmed long-term capital commitment and Ru'ya 360° has a formalized co-management or equity stake.",
+    suitable: "Entrepreneur is fully committed, capitalized, and aligned with Ru'ya 360° on a 2–3 year growth plan. Ru'ya 360° operates as full commercial operator with equity or significant performance fees.",
     risk: "Higher commitment requires proportionally stronger governance. Budget at this tier must be managed with monthly P&L reviews and milestone-gated releases.",
     categories: [
       {
@@ -225,11 +271,11 @@ const TIERS = [
         ]
       },
       {
-        name: "Operations & RU2YA",
+        name: "Operations & Ru'ya 360°",
         color: "#C8A96E",
         items: [
           { label: "Accounting, bookkeeping + financial reporting system", low: 1200, high: 2500 },
-          { label: "RU2YA management fee — Phase 0–3 (12 months)", low: 8000, high: 14000 },
+          { label: "Ru'ya 360° management fee — Phase 0–3 (12 months)", low: 8000, high: 14000 },
           { label: "Contingency + working capital runway (6 months)", low: 8000, high: 14000 },
         ]
       }
@@ -254,7 +300,7 @@ const ASSUMPTIONS = [
   { label: "Channel margin — pharmacies / nutrition", value: "30–35%" },
   { label: "Channel margin — supermarkets", value: "35–40%" },
   { label: "Distributor margin (when engaged)", value: "15–20%" },
-  { label: "RU2YA gross margin target", value: "48–55% at MSP" },
+  { label: "Ru'ya 360° gross margin target", value: "48–55% at MSP" },
   { label: "Currency basis", value: "USD — all pricing USD-denominated" },
   { label: "Exchange rate review cycle", value: "Every 90 days" },
   { label: "Regulatory timeline (MoPH)", value: "2–4 months from submission" },
@@ -265,13 +311,17 @@ const ASSUMPTIONS = [
 
 const BLOCKERS = [
   { label: "Nutritional panel from manufacturer", urgency: "IMMEDIATE", detail: "Blocks: MoPH registration, lab testing, packaging, all pricing. Get the technical data sheet this week." },
-  { label: "RU2YA Management Mandate — signed", urgency: "IMMEDIATE", detail: "Blocks: all further RU2YA advisory spend and introductions on client's behalf. Execute before next deliverable." },
+  { label: "Ru'ya 360° Management Mandate — signed", urgency: "IMMEDIATE", detail: "Blocks: all further Ru'ya 360° advisory spend and introductions on client's behalf. Execute before next deliverable." },
   { label: "Brand name — final selection", urgency: "WEEK 2", detail: "Blocks: trademark filing, brand identity brief, domain/social handle reservation." },
-  { label: "Budget tier — entrepreneur decision", urgency: "WEEK 2", detail: "Blocks: scope of first production batch, brand identity budget, RU2YA fee structure." },
+  { label: "Budget tier — entrepreneur decision", urgency: "WEEK 2", detail: "Blocks: scope of first production batch, brand identity budget, Ru'ya 360° fee structure." },
   { label: "Manufacturer supply agreement — signed", urgency: "WEEK 3", detail: "Blocks: MOQ confirmation, lead time planning, production scheduling, cost-per-unit certainty." },
 ];
 
 export default function FinancialStudy() {
+  const palette = useContext(ThemeCtx);
+  const isLight = palette.void === "#FFFFFF";
+  const S = isLight ? FS_LIGHT : FS_DARK;
+
   const { isMobile } = useResponsive();
   const [activeTier, setActiveTier] = useState("standard");
   const [expandedCat, setExpandedCat] = useState<string | null>(null);
@@ -292,38 +342,38 @@ export default function FinancialStudy() {
   return (
     <div style={{
       fontFamily: "'Georgia', 'Times New Roman', serif",
-      background: "#08070A",
-      minHeight: "100vh",
-      color: "#E2D8CC",
+      background: S.bg,
+      minHeight: "100%",
+      color: S.text,
     }}>
       {/* Header */}
       <div style={{
-        background: "#0A0910",
-        borderBottom: "1px solid #1C1A24",
+        background: S.header,
+        borderBottom: `1px solid ${S.border}`,
         padding: isMobile ? "20px 24px 16px" : "28px 36px 22px",
       }}>
-        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: "#4A4060", letterSpacing: "0.3em", marginBottom: 8 }}>
-          RU2YA ADVISORY GROUP · FINANCIAL FEASIBILITY STUDY · REF: KAG-JRK-003 · CONFIDENTIAL
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: S.textFaint, letterSpacing: "0.3em", marginBottom: 8 }}>
+          Ru'ya 360° ADVISORY GROUP · FINANCIAL FEASIBILITY STUDY · REF: KAG-JRK-003 · CONFIDENTIAL
         </div>
-        <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 30px)" : "clamp(18px, 3vw, 30px)", fontWeight: 400, color: "#E2D8CC", lineHeight: 1.2 }}>
+        <h1 style={{ margin: 0, fontSize: isMobile ? "clamp(18px, 4vw, 30px)" : "clamp(18px, 3vw, 30px)", fontWeight: 400, color: S.text, lineHeight: 1.2 }}>
           Beef Jerky Venture — Financial Feasibility
         </h1>
-        <p style={{ margin: "6px 0 0", fontSize: isMobile ? 12 : 13, color: "#7A7090", fontFamily: "Georgia, serif" }}>
+        <p style={{ margin: "6px 0 0", fontSize: isMobile ? 12 : 13, color: S.textDim, fontFamily: "Georgia, serif" }}>
           Three budget scenarios · Lebanon Market Entry · Phase 0 → 12 months
         </p>
       </div>
 
       {/* Tier Selector */}
       <div style={{
-        background: "#09080E",
-        borderBottom: "1px solid #1C1A24",
+        background: S.altBg,
+        borderBottom: `1px solid ${S.border}`,
         padding: isMobile ? "16px 20px" : "20px 36px",
         display: "flex", gap: isMobile ? 8 : 12, flexWrap: "wrap"
       }}>
         {TIERS.map(t => (
           <button key={t.id} onClick={() => setActiveTier(t.id)} style={{
             background: activeTier === t.id ? `${t.color}18` : "transparent",
-            border: `1px solid ${activeTier === t.id ? t.color : "#1C1A24"}`,
+            border: `1px solid ${activeTier === t.id ? t.color : S.border}`,
             borderRadius: 4,
             padding: isMobile ? "12px 16px" : "14px 22px",
             cursor: "pointer",
@@ -334,13 +384,13 @@ export default function FinancialStudy() {
             WebkitTapHighlightColor: "transparent",
             touchAction: "manipulation",
           }}>
-            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: activeTier === t.id ? t.color : "#4A4060", letterSpacing: "0.2em", marginBottom: 4 }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: activeTier === t.id ? t.color : S.textFaint, letterSpacing: "0.2em", marginBottom: 4 }}>
               {t.label}
             </div>
-            <div style={{ fontSize: isMobile ? 14 : 15, color: activeTier === t.id ? "#E2D8CC" : "#7A7090", fontWeight: 400, marginBottom: 2 }}>
+            <div style={{ fontSize: isMobile ? 14 : 15, color: activeTier === t.id ? S.text : S.textDim, fontWeight: 400, marginBottom: 2 }}>
               {t.name}
             </div>
-            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 12, color: activeTier === t.id ? t.color : "#3A3050" }}>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 12, color: activeTier === t.id ? t.color : S.textFainter }}>
               ~${t.total.toLocaleString()}
             </div>
           </button>
@@ -352,31 +402,31 @@ export default function FinancialStudy() {
         background: `${tier?.color}0A`,
         borderBottom: `1px solid ${tier?.color}30`,
         padding: isMobile ? "14px 20px" : "16px 36px",
-        display: "flex", gap: isMobile ? 16 : 24, flexWrap: "wrap", alignItems: isMobile ? "flex-start" : "flex-start", flexDirection: isMobile ? "column" : "row"
+        display: "flex", gap: isMobile ? 16 : 24, flexWrap: "wrap", alignItems: "flex-start", flexDirection: isMobile ? "column" : "row"
       }}>
         <div style={{ flex: isMobile ? "auto" : 2, minWidth: isMobile ? "auto" : 260 }}>
-          <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: "#9A90A0", lineHeight: 1.75, fontFamily: "Georgia, serif" }}>
+          <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: S.textDim, lineHeight: 1.75, fontFamily: "Georgia, serif" }}>
             {tier?.description}
           </p>
         </div>
         <div style={{ flex: isMobile ? "auto" : 1, minWidth: isMobile ? "auto" : 200 }}>
           <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: tier?.color, letterSpacing: "0.15em", marginBottom: 6 }}>SUITABLE WHEN</div>
-          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.suitable}</p>
+          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: S.textDim, lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.suitable}</p>
         </div>
         <div style={{ flex: isMobile ? "auto" : 1, minWidth: isMobile ? "auto" : 200 }}>
           <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#E07B6A", letterSpacing: "0.15em", marginBottom: 6 }}>RISK FACTOR</div>
-          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: "#7A7090", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.risk}</p>
+          <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: S.textDim, lineHeight: 1.7, fontFamily: "Georgia, serif" }}>{tier?.risk}</p>
         </div>
       </div>
 
       {/* Tabs */}
-      <div style={{ background: "#09080E", borderBottom: "1px solid #1C1A24", display: "flex", padding: isMobile ? "0 16px" : "0 36px", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+      <div style={{ background: S.altBg, borderBottom: `1px solid ${S.border}`, display: "flex", padding: isMobile ? "0 16px" : "0 36px", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
         {tabs.map(t => (
           <button key={t.id} onClick={() => setActiveTab(t.id)} style={{
             background: "transparent",
             border: "none",
             borderBottom: activeTab === t.id ? `2px solid ${tier?.color}` : "2px solid transparent",
-            color: activeTab === t.id ? "#E2D8CC" : "#4A4060",
+            color: activeTab === t.id ? S.tabActive : S.tabInactive,
             fontFamily: "monospace",
             fontSize: isMobile ? 9 : 10,
             letterSpacing: "0.15em",
@@ -410,12 +460,12 @@ export default function FinancialStudy() {
                 <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: tier?.color, letterSpacing: "0.2em", marginBottom: 6 }}>
                   TOTAL INVESTMENT RANGE — {tier?.label}: {tier?.name.toUpperCase()}
                 </div>
-                <div style={{ fontSize: isMobile ? "clamp(18px, 5vw, 36px)" : "clamp(22px, 4vw, 36px)", color: "#E2D8CC", fontWeight: 400, letterSpacing: "0.05em" }}>
+                <div style={{ fontSize: isMobile ? "clamp(18px, 5vw, 36px)" : "clamp(22px, 4vw, 36px)", color: S.text, fontWeight: 400, letterSpacing: "0.05em" }}>
                   ${totalLow.toLocaleString()} – ${totalHigh.toLocaleString()}
                 </div>
               </div>
               <div style={{ textAlign: "right" }}>
-                <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", marginBottom: 4 }}>MIDPOINT ESTIMATE</div>
+                <div style={{ fontFamily: "monospace", fontSize: 10, color: S.textFaint, marginBottom: 4 }}>MIDPOINT ESTIMATE</div>
                 <div style={{ fontSize: 24, color: tier?.color }}>${Math.round((totalLow + totalHigh) / 2).toLocaleString()}</div>
               </div>
             </div>
@@ -427,8 +477,8 @@ export default function FinancialStudy() {
               const isOpen = expandedCat === `${activeTier}-${ci}`;
               return (
                 <div key={ci} style={{
-                  background: "#0C0B12",
-                  border: "1px solid #1C1A24",
+                  background: S.card,
+                  border: `1px solid ${S.border}`,
                   borderLeft: `3px solid ${cat.color}`,
                   borderRadius: 4,
                   marginBottom: 4,
@@ -440,8 +490,8 @@ export default function FinancialStudy() {
                     padding: "14px 20px", cursor: "pointer", gap: 16
                   }}>
                     <div style={{ display: "flex", alignItems: "center", gap: 14, flex: 1 }}>
-                      <span style={{ fontSize: 13, color: "#C8BCAC", fontFamily: "Georgia, serif" }}>{cat.name}</span>
-                      <span style={{ fontFamily: "monospace", fontSize: 11, color: "#4A4060" }}>
+                      <span style={{ fontSize: 13, color: S.textMid, fontFamily: "Georgia, serif" }}>{cat.name}</span>
+                      <span style={{ fontFamily: "monospace", fontSize: 11, color: S.textFaint }}>
                         {cat.items.length} items
                       </span>
                     </div>
@@ -449,22 +499,22 @@ export default function FinancialStudy() {
                       <span style={{ fontFamily: "monospace", fontSize: 12, color: cat.color }}>
                         ${catLow.toLocaleString()} – ${catHigh.toLocaleString()}
                       </span>
-                      <span style={{ color: "#4A4060", fontSize: 14 }}>{isOpen ? "−" : "+"}</span>
+                      <span style={{ color: S.textFaint, fontSize: 14 }}>{isOpen ? "−" : "+"}</span>
                     </div>
                   </button>
 
                   {isOpen && (
                     <div style={{ padding: "0 20px 16px" }}>
-                      <div style={{ height: 1, background: "#1C1A24", marginBottom: 12 }} />
+                      <div style={{ height: 1, background: S.border, marginBottom: 12 }} />
                       {cat.items.map((item, ii) => (
                         <div key={ii} style={{
                           display: "flex", justifyContent: "space-between", alignItems: "baseline",
-                          padding: "8px 0", borderBottom: "1px solid #120F1A", gap: 16
+                          padding: "8px 0", borderBottom: `1px solid ${S.rowBorder}`, gap: 16
                         }}>
-                          <span style={{ fontSize: 12, color: "#7A7090", lineHeight: 1.5, fontFamily: "Georgia, serif", flex: 1 }}>
+                          <span style={{ fontSize: 12, color: S.textDim, lineHeight: 1.5, fontFamily: "Georgia, serif", flex: 1 }}>
                             {item.label}
                           </span>
-                          <span style={{ fontFamily: "monospace", fontSize: 11, color: "#9A90A8", whiteSpace: "nowrap" }}>
+                          <span style={{ fontFamily: "monospace", fontSize: 11, color: S.textMid, whiteSpace: "nowrap" }}>
                             ${item.low.toLocaleString()} – ${item.high.toLocaleString()}
                           </span>
                         </div>
@@ -476,8 +526,8 @@ export default function FinancialStudy() {
             })}
 
             {/* Stacked bar visualization */}
-            <div style={{ marginTop: 28, background: "#0C0B12", border: "1px solid #1C1A24", borderRadius: 4, padding: "20px 24px" }}>
-              <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", letterSpacing: "0.15em", marginBottom: 16 }}>
+            <div style={{ marginTop: 28, background: S.card, border: `1px solid ${S.border}`, borderRadius: 4, padding: "20px 24px" }}>
+              <div style={{ fontFamily: "monospace", fontSize: 10, color: S.textFaint, letterSpacing: "0.15em", marginBottom: 16 }}>
                 ALLOCATION BREAKDOWN — MIDPOINT VALUES
               </div>
               {tier?.categories.map((cat, ci) => {
@@ -487,10 +537,10 @@ export default function FinancialStudy() {
                 return (
                   <div key={ci} style={{ marginBottom: 10 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                      <span style={{ fontSize: 11, color: "#7A7090", fontFamily: "Georgia, serif" }}>{cat.name}</span>
+                      <span style={{ fontSize: 11, color: S.textDim, fontFamily: "Georgia, serif" }}>{cat.name}</span>
                       <span style={{ fontFamily: "monospace", fontSize: 10, color: cat.color }}>{pct}% · ${Math.round(catMid).toLocaleString()}</span>
                     </div>
-                    <div style={{ height: 4, background: "#1C1A24", borderRadius: 2 }}>
+                    <div style={{ height: 4, background: S.border, borderRadius: 2 }}>
                       <div style={{ width: `${pct}%`, height: "100%", background: cat.color, borderRadius: 2, transition: "width 0.6s ease" }} />
                     </div>
                   </div>
@@ -507,20 +557,20 @@ export default function FinancialStudy() {
               <div style={{ fontFamily: "monospace", fontSize: 10, color: tier?.color, letterSpacing: "0.2em", marginBottom: 8 }}>
                 REVENUE PROJECTIONS — {tier?.name?.toUpperCase()}
               </div>
-              <p style={{ margin: 0, fontSize: 13, color: "#7A7090", lineHeight: 1.75 }}>
-                All projections are directional estimates based on comparable FMCG launches in the Lebanese market under RU2YA' advisory scope. They assume successful MoPH registration, product-market fit validation in Phase 1, and no major currency or political disruption events.
+              <p style={{ margin: 0, fontSize: 13, color: S.textDim, lineHeight: 1.75 }}>
+                All projections are directional estimates based on comparable FMCG launches in the Lebanese market under Ru'ya 360°'s advisory scope. They assume successful MoPH registration, product-market fit validation in Phase 1, and no major currency or political disruption events.
               </p>
             </div>
 
             {/* Milestone cards */}
             {[
-              { period: "Month 3", label: "End of Phase 1", accounts: tier?.projections?.accounts_m3, rev: "Revenue building — not yet material", color: "#4A4060" },
+              { period: "Month 3", label: "End of Phase 1", accounts: tier?.projections?.accounts_m3, rev: "Revenue building — not yet material", color: S.textFaint },
               { period: "Month 6", label: "End of Phase 2", accounts: tier?.projections?.accounts_m6, rev: tier?.projections?.rev_m6, color: tier?.color },
               { period: "Month 12", label: "End of Phase 3", accounts: tier?.projections?.accounts_m12, rev: tier?.projections?.rev_m12, color: "#7EB5A6" },
             ].map((m, i) => (
               <div key={i} style={{
-                background: "#0C0B12",
-                border: `1px solid ${m.color}40`,
+                background: S.card,
+                border: `1px solid ${S.border}`,
                 borderLeft: `3px solid ${m.color}`,
                 borderRadius: 4,
                 padding: isMobile ? "14px 18px" : "18px 24px",
@@ -529,14 +579,14 @@ export default function FinancialStudy() {
               }}>
                 <div style={{ minWidth: 100 }}>
                   <div style={{ fontFamily: "monospace", fontSize: 12, color: m.color, marginBottom: 4 }}>{m.period}</div>
-                  <div style={{ fontSize: 11, color: "#4A4060", fontFamily: "monospace" }}>{m.label}</div>
+                  <div style={{ fontSize: 11, color: S.textFaint, fontFamily: "monospace" }}>{m.label}</div>
                 </div>
                 <div style={{ flex: 1, minWidth: 180 }}>
-                  <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", marginBottom: 4 }}>ACCOUNTS</div>
-                  <div style={{ fontSize: 13, color: "#C8BCAC", fontFamily: "Georgia, serif" }}>{m.accounts}</div>
+                  <div style={{ fontFamily: "monospace", fontSize: 10, color: S.textFaint, marginBottom: 4 }}>ACCOUNTS</div>
+                  <div style={{ fontSize: 13, color: S.textMid, fontFamily: "Georgia, serif" }}>{m.accounts}</div>
                 </div>
                 <div style={{ flex: 1, minWidth: 180 }}>
-                  <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", marginBottom: 4 }}>MONTHLY REVENUE</div>
+                  <div style={{ fontFamily: "monospace", fontSize: 10, color: S.textFaint, marginBottom: 4 }}>MONTHLY REVENUE</div>
                   <div style={{ fontSize: 13, color: m.color, fontFamily: "monospace" }}>{m.rev}</div>
                 </div>
               </div>
@@ -550,18 +600,18 @@ export default function FinancialStudy() {
                 { label: "Investment Recovery", value: activeTier === "lean" ? "Month 9–12" : activeTier === "standard" ? "Month 8–11" : "Month 10–14", color: "#9B8EC4" },
               ].map((m: any, i: number) => (
                 <div key={i} style={{
-                  background: "#0C0B12", border: "1px solid #1C1A24",
+                  background: S.card, border: `1px solid ${S.border}`,
                   borderRadius: 4, padding: "16px 20px"
                 }}>
-                  <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", marginBottom: 8 }}>{m.label}</div>
+                  <div style={{ fontFamily: "monospace", fontSize: 10, color: S.textFaint, marginBottom: 8 }}>{m.label}</div>
                   <div style={{ fontSize: 18, color: m.color, fontFamily: "monospace" }}>{m.value}</div>
                 </div>
               ))}
             </div>
 
-            <div style={{ marginTop: 20, background: "#0A0C08", border: "1px solid #2A3020", borderRadius: 4, padding: "16px 20px" }}>
+            <div style={{ marginTop: 20, background: S.noteBg, border: `1px solid ${S.noteBorder}`, borderRadius: 4, padding: "16px 20px" }}>
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", marginBottom: 6 }}>MODEL ASSUMPTIONS NOTE</div>
-              <p style={{ margin: 0, fontSize: 12, color: "#6A7A60", lineHeight: 1.7, fontFamily: "Georgia, serif" }}>
+              <p style={{ margin: 0, fontSize: 12, color: S.noteText, lineHeight: 1.7, fontFamily: "Georgia, serif" }}>
                 {tier?.projections?.note}. Revenue projections assume no major Lebanese economic disruption and are expressed in USD equivalent. All projections should be revised at Month 3 using actual sell-through data from the gym launch phase.
               </p>
             </div>
@@ -575,17 +625,17 @@ export default function FinancialStudy() {
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#9B8EC4", letterSpacing: "0.2em", marginBottom: 8 }}>
                 MODEL ASSUMPTIONS
               </div>
-              <p style={{ margin: 0, fontSize: 13, color: "#7A7090", lineHeight: 1.75 }}>
+              <p style={{ margin: 0, fontSize: 13, color: S.textDim, lineHeight: 1.75 }}>
                 All financial projections are built on these foundational assumptions. Any change to these inputs changes the output materially. Review at Month 3, Month 6, and Month 12.
               </p>
             </div>
             {ASSUMPTIONS.map((a, i) => (
               <div key={i} style={{
                 display: "flex", justifyContent: "space-between", alignItems: isMobile ? "flex-start" : "baseline",
-                padding: "12px 0", borderBottom: "1px solid #140F1C", gap: isMobile ? 12 : 24, flexDirection: isMobile ? "column" : "row"
+                padding: "12px 0", borderBottom: `1px solid ${S.rowBorder}`, gap: isMobile ? 12 : 24, flexDirection: isMobile ? "column" : "row"
               }}>
-                <span style={{ fontSize: 13, color: "#7A7090", fontFamily: "Georgia, serif", flex: 1 }}>{a.label}</span>
-                <span style={{ fontFamily: "monospace", fontSize: 12, color: "#C8BCAC", whiteSpace: "nowrap" }}>{a.value}</span>
+                <span style={{ fontSize: 13, color: S.textDim, fontFamily: "Georgia, serif", flex: 1 }}>{a.label}</span>
+                <span style={{ fontFamily: "monospace", fontSize: 12, color: S.textMid, whiteSpace: "nowrap" }}>{a.value}</span>
               </div>
             ))}
           </div>
@@ -598,17 +648,17 @@ export default function FinancialStudy() {
               <div style={{ fontFamily: "monospace", fontSize: 10, color: "#E07B6A", letterSpacing: "0.2em", marginBottom: 8 }}>
                 EXECUTION BLOCKERS — RESOLVE IN SEQUENCE
               </div>
-              <p style={{ margin: 0, fontSize: 13, color: "#7A7090", lineHeight: 1.75 }}>
+              <p style={{ margin: 0, fontSize: 13, color: S.textDim, lineHeight: 1.75 }}>
                 These items are currently blocking progress on the rest of the advisory framework. Each one must be resolved in order before the next phase of deliverables can be produced.
               </p>
             </div>
             {BLOCKERS.map((b, i) => (
               <div key={i} style={{
-                background: "#0C0B12",
-                border: "1px solid #1C1A24",
+                background: S.card,
+                border: `1px solid ${S.border}`,
                 borderLeft: `3px solid ${b.urgency === "IMMEDIATE" ? "#E07B6A" : "#C8A96E"}`,
                 borderRadius: 4, marginBottom: 6, padding: isMobile ? "14px 18px" : "16px 20px",
-                display: "flex", gap: isMobile ? 12 : 16, flexWrap: "wrap", alignItems: isMobile ? "flex-start" : "flex-start", flexDirection: isMobile ? "column" : "row"
+                display: "flex", gap: isMobile ? 12 : 16, flexWrap: "wrap", alignItems: "flex-start", flexDirection: isMobile ? "column" : "row"
               }}>
                 <div style={{ minWidth: 90 }}>
                   <span style={{
@@ -622,14 +672,14 @@ export default function FinancialStudy() {
                   </span>
                 </div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontSize: 13, color: "#C8BCAC", fontFamily: "Georgia, serif", marginBottom: 6 }}>{b.label}</div>
-                  <p style={{ margin: 0, fontSize: 12, color: "#7A7090", lineHeight: 1.6, fontFamily: "Georgia, serif" }}>{b.detail}</p>
+                  <div style={{ fontSize: 13, color: S.textMid, fontFamily: "Georgia, serif", marginBottom: 6 }}>{b.label}</div>
+                  <p style={{ margin: 0, fontSize: 12, color: S.textDim, lineHeight: 1.6, fontFamily: "Georgia, serif" }}>{b.detail}</p>
                 </div>
               </div>
             ))}
 
-            <div style={{ marginTop: 24, background: "#0A0910", border: "1px solid #1C1A24", borderRadius: 4, padding: "18px 20px" }}>
-              <div style={{ fontFamily: "monospace", fontSize: 10, color: "#4A4060", letterSpacing: "0.15em", marginBottom: 10 }}>
+            <div style={{ marginTop: 24, background: S.altBg, border: `1px solid ${S.border}`, borderRadius: 4, padding: "18px 20px" }}>
+              <div style={{ fontFamily: "monospace", fontSize: 10, color: S.textFaint, letterSpacing: "0.15em", marginBottom: 10 }}>
                 NEXT DELIVERABLES — UNLOCKED UPON BLOCKER RESOLUTION
               </div>
               {[
@@ -637,16 +687,16 @@ export default function FinancialStudy() {
                 "Packaging design brief (needs brand name + nutritional panel)",
                 "MoPH submission document checklist (needs nutritional panel + manufacturer details)",
                 "Gym outreach script + trade presentation template (ready to produce now)",
-                "RU2YA management mandate template (ready to produce now)",
+                "Ru'ya 360° management mandate template (ready to produce now)",
                 "Flavor development brief for manufacturer (ready to produce now)",
               ].map((item, i) => {
                 const ready = item.includes("ready to produce now");
                 return (
                   <div key={i} style={{ display: "flex", gap: 10, marginBottom: 8, alignItems: "flex-start" }}>
-                    <span style={{ color: ready ? "#7EB5A6" : "#4A4060", fontSize: 12, flexShrink: 0, marginTop: 2 }}>
+                    <span style={{ color: ready ? "#7EB5A6" : S.textFaint, fontSize: 12, flexShrink: 0, marginTop: 2 }}>
                       {ready ? "✓" : "→"}
                     </span>
-                    <p style={{ margin: 0, fontSize: 12, color: ready ? "#6A9A80" : "#6A6080", lineHeight: 1.6, fontFamily: "Georgia, serif" }}>
+                    <p style={{ margin: 0, fontSize: 12, color: ready ? S.readyText : S.notReadyText, lineHeight: 1.6, fontFamily: "Georgia, serif" }}>
                       {item.replace(" (ready to produce now)", "")}
                       {ready && <span style={{ fontFamily: "monospace", fontSize: 10, color: "#7EB5A6", marginLeft: 8 }}>READY NOW</span>}
                     </p>
@@ -661,13 +711,13 @@ export default function FinancialStudy() {
       {/* Footer */}
       <div style={{
         padding: isMobile ? "16px 24px" : "16px 36px",
-        borderTop: "1px solid #1C1A24",
+        borderTop: `1px solid ${S.border}`,
         display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8
       }}>
-        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2038", letterSpacing: "0.15em" }}>
-          RU2YA ADVISORY GROUP · FINANCIAL FEASIBILITY · CONFIDENTIAL · NOT FOR DISTRIBUTION
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: S.footerText, letterSpacing: "0.15em" }}>
+          Ru'ya 360° ADVISORY GROUP · FINANCIAL FEASIBILITY · CONFIDENTIAL · NOT FOR DISTRIBUTION
         </span>
-        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: "#2A2038" }}>
+        <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: S.footerText }}>
           KAG-JRK-003 · THREE-TIER MODEL
         </span>
       </div>

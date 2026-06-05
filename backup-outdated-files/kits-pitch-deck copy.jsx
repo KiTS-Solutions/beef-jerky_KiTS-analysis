@@ -1,6 +1,4 @@
-import { useState, useEffect, useCallback, useContext } from "react";
-import { DARK as C, LIGHT, ThemeCtx } from './pitch-theme';
-import FinancialStudy from './kits-financial-study.tsx';
+import { useState, useEffect, useCallback } from "react";
 import jacklinksImg       from '../competition/jacklinks.png';
 import jacklinksFlavorImg from '../competition/jacklinks-flavors.png';
 import haloImg            from '../competition/halo.png';
@@ -11,6 +9,17 @@ import countryArcherImg   from '../competition/country-archer.png';
 import makBarImg          from '../competition/mak-bar.png';
 import barebellsImg       from '../competition/barebells.png';
 import questBarImg        from '../competition/quest-bar.png';
+
+// ─── DESIGN TOKENS ────────────────────────────────────────────────────────────
+const C = {
+  void: "#050404", obsidian: "#0A0908", charcoal: "#141210", ash: "#1E1B18",
+  ember: "#2A2520", smoke: "#2E2A26",
+  gold: "#C8A050", goldBright: "#E0B860", goldDim: "#7A6030",
+  cream: "#EDE0CC", creamDim: "#8A7A6A", creamMid: "#BEB0A0",
+  green: "#3A6040", greenBright: "#5A9060",
+  red: "#C04030", amber: "#C07030",
+  purple: "#7060A0", steel: "#506080", strike: "#E8D0A0",
+};
 
 // ─── RESPONSIVE HOOK ──────────────────────────────────────────────────────────
 function useResponsive() {
@@ -129,15 +138,14 @@ function Lightbox({ src, alt, onClose }) {
 
 // ─── SHARED SLIDE HEADER ──────────────────────────────────────────────────────
 function SH({ slide }) {
-  const C = useContext(ThemeCtx);
   return (
     <div style={{ marginBottom: 4 }}>
       {slide.section && (
-        <div style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, opacity: 0.6, letterSpacing: "0.3em", marginBottom: 6 }}>
+        <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, opacity: 0.6, letterSpacing: "0.3em", marginBottom: 6 }}>
           {slide.section}
         </div>
       )}
-      <h2 style={{ margin: "0 0 4px", fontFamily: "Georgia,'Times New Roman',serif", fontSize: "clamp(22px,2.7vw,42px)", fontWeight: 400, color: C.cream, lineHeight: 1.2 }}>
+      <h2 style={{ margin: "0 0 4px", fontFamily: "Georgia,'Times New Roman',serif", fontSize: "clamp(17px,2.3vw,30px)", fontWeight: 400, color: C.cream, lineHeight: 1.2 }}>
         {slide.title}
       </h2>
       <div style={{ width: 48, height: 2, background: `linear-gradient(to right,${C.gold},transparent)`, marginTop: 8 }} />
@@ -147,7 +155,6 @@ function SH({ slide }) {
 
 // ─── SECTION DIVIDER ──────────────────────────────────────────────────────────
 function SectionDivider({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden" }}>
@@ -155,10 +162,10 @@ function SectionDivider({ slide }) {
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 4, background: slide.color }} />
       <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "40px 40px" }} />
       <div style={{ textAlign: "center", position: "relative", zIndex: 1, padding: isMobile ? "20px" : "40px" }}>
-        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 13, color: slide.color, opacity: 0.7, letterSpacing: "0.5em", marginBottom: isMobile ? 16 : 20 }}>{slide.badge}</div>
-        <h1 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(30px,6vw,52px)" : "clamp(42px,5.5vw,72px)", fontWeight: 400, color: C.strike, margin: "0 0 20px", lineHeight: 1.1 }}>{slide.title}</h1>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 11, color: slide.color, opacity: 0.7, letterSpacing: "0.5em", marginBottom: isMobile ? 16 : 20 }}>{slide.badge}</div>
+        <h1 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(28px,6vw,48px)" : "clamp(36px,5vw,64px)", fontWeight: 400, color: C.strike, margin: "0 0 20px", lineHeight: 1.1 }}>{slide.title}</h1>
         <div style={{ width: isMobile ? 48 : 64, height: 2, background: `linear-gradient(to right,${slide.color},transparent)`, margin: "0 auto 20px" }} />
-        {slide.sub && <p style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 16 : 19, color: C.creamDim, margin: 0, maxWidth: 560, lineHeight: 1.65 }}>{slide.sub}</p>}
+        {slide.sub && <p style={{ fontFamily: "Georgia,serif", fontSize: isMobile ? 14 : 16, color: C.creamDim, margin: 0, maxWidth: 520, lineHeight: 1.65 }}>{slide.sub}</p>}
       </div>
     </div>
   );
@@ -166,7 +173,6 @@ function SectionDivider({ slide }) {
 
 // ─── COVER ────────────────────────────────────────────────────────────────────
 function CoverSlide() {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
@@ -176,7 +182,7 @@ function CoverSlide() {
       {/* Left — text content */}
       <div style={{ flex: isMobile ? 1 : "0 0 54%", display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : "0px 0px 0px 30px", position: "relative", zIndex: 1 }}>
         <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.45em", marginBottom: isMobile ? 20 : 32 }}>
-          Ru'ya 360° ADVISORY GROUP · PRIVATE & CONFIDENTIAL · KAG-JRK-PITCH-001
+          RU2YA ADVISORY GROUP · PRIVATE & CONFIDENTIAL · KAG-JRK-PITCH-001
         </div>
         <div style={{ marginBottom: 8 }}>
           <span style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(32px,8vw,56px)" : "clamp(48px,6vw,88px)", fontWeight: 400, color: C.strike, letterSpacing: "0.18em", lineHeight: 1, display: "block" }}>STRIKE</span>
@@ -184,14 +190,14 @@ function CoverSlide() {
         </div>
         <div style={{ width: isMobile ? 60 : 80, height: 2, background: `linear-gradient(to right,${C.gold},transparent)`, margin: "24px 0" }} />
         <p style={{ fontSize: isMobile ? 13 : "clamp(13px,1.8vw,18px)", color: C.cream, opacity: 0.75, margin: "0 0 8px", fontFamily: "Georgia,serif" }}>Lebanon's First Premium Beef Jerky Brand</p>
-        <p style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.creamDim, opacity: 0.45, margin: "0 0 36px", letterSpacing: "0.2em" }}>CLIENT ADVISORY PRESENTATION · Ru'ya 360° · JUNE 2026</p>
+        <p style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.creamDim, opacity: 0.45, margin: "0 0 36px", letterSpacing: "0.2em" }}>CLIENT ADVISORY PRESENTATION · RU2YA · JUNE 2026</p>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
           {["10 Deliverables Ready","88/100 Brand Score","38-Step Launch Plan","3 Financial Scenarios","$0 Local Competition"].map((t, i) => (
             <span key={i} style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, background: `${C.gold}0D`, border: `1px solid ${C.gold}28`, padding: "5px 11px", borderRadius: 2, letterSpacing: "0.05em" }}>{t}</span>
           ))}
         </div>
         <div style={{ marginTop: 32, fontFamily: "monospace", fontSize: 8, color: C.goldDim, letterSpacing: "0.1em" }}>
-          Ru'ya 360° Advisory Group · Lebanese Market · June 2026
+          RU2YA Advisory Group · Lebanese Market · June 2026
         </div>
       </div>
 
@@ -228,22 +234,21 @@ function CoverSlide() {
 
 // ─── LISTEN SLIDE ─────────────────────────────────────────────────────────────
 function ListenSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "44px 72px" }}>
       <SH slide={slide} />
-      <p style={{ fontSize: isMobile ? 15 : 17, color: C.cream, fontFamily: "Georgia,serif", margin: "8px 0 20px", lineHeight: 1.75, opacity: 0.85 }}>{slide.intro}</p>
+      <p style={{ fontSize: isMobile ? 13 : 15, color: C.cream, fontFamily: "Georgia,serif", margin: "8px 0 20px", lineHeight: 1.75, opacity: 0.85 }}>{slide.intro}</p>
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 10 }}>
         {slide.questions.map((q, i) => (
           <div key={i} style={{ background: `${q.color}07`, border: `1px solid ${q.color}22`, borderLeft: `3px solid ${q.color}`, borderRadius: 3, padding: isMobile ? "14px 16px" : "16px 18px", display: "flex", gap: 12, alignItems: "flex-start" }}>
-            <span style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 12, color: q.color, flexShrink: 0, marginTop: 2 }}>Q{String(i + 1).padStart(2, "0")}</span>
-            <p style={{ margin: 0, fontSize: isMobile ? 14 : 15, color: C.cream, lineHeight: 1.65 }}>{q.text}</p>
+            <span style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: q.color, flexShrink: 0, marginTop: 2 }}>Q{String(i + 1).padStart(2, "0")}</span>
+            <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: C.cream, lineHeight: 1.65 }}>{q.text}</p>
           </div>
         ))}
       </div>
       <div style={{ marginTop: 16, padding: "12px 18px", background: `${C.gold}08`, border: `1px solid ${C.gold}20`, borderRadius: 3 }}>
-        <p style={{ margin: 0, fontSize: isMobile ? 13 : 14, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic" }}>"{slide.note}"</p>
+        <p style={{ margin: 0, fontSize: isMobile ? 11 : 12, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic" }}>"{slide.note}"</p>
       </div>
     </div>
   );
@@ -251,21 +256,20 @@ function ListenSlide({ slide }) {
 
 // ─── STATS / MARKET ───────────────────────────────────────────────────────────
 function StatsSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "44px 72px" }}>
       <SH slide={slide} />
       <div style={{ margin: "12px 0 20px", padding: isMobile ? "12px 16px" : "14px 20px", background: `${C.greenBright}10`, border: `1px solid ${C.greenBright}30`, borderLeft: `4px solid ${C.greenBright}`, borderRadius: 3 }}>
-        <p style={{ margin: 0, fontSize: isMobile ? 16 : 20, color: C.greenBright, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.5 }}>{slide.headline}</p>
+        <p style={{ margin: 0, fontSize: isMobile ? 14 : 17, color: C.greenBright, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.5 }}>{slide.headline}</p>
       </div>
       <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4,1fr)", gap: 12, flex: 1, alignContent: "start" }}>
         {slide.stats.map((s, i) => (
           <div key={i} style={{ background: `${s.color}08`, border: `1px solid ${s.color}25`, borderTop: `3px solid ${s.color}`, borderRadius: 4, padding: isMobile ? "16px 14px" : "22px 18px", display: "flex", flexDirection: "column", gap: 12 }}>
             <div style={{ fontFamily: "monospace", fontSize: isMobile ? "clamp(20px,5vw,32px)" : "clamp(22px,2.5vw,38px)", color: s.color, lineHeight: 1, letterSpacing: "-0.02em" }}>{s.value}</div>
             <div>
-              <div style={{ fontSize: isMobile ? 13 : 15, color: C.cream, marginBottom: 4, lineHeight: 1.4 }}>{s.label}</div>
-              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: C.creamDim, lineHeight: 1.4 }}>{s.sub}</div>
+              <div style={{ fontSize: isMobile ? 11 : 13, color: C.cream, marginBottom: 4, lineHeight: 1.4 }}>{s.label}</div>
+              <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 9, color: C.creamDim, lineHeight: 1.4 }}>{s.sub}</div>
             </div>
           </div>
         ))}
@@ -277,7 +281,6 @@ function StatsSlide({ slide }) {
 
 // ─── TWO COL ──────────────────────────────────────────────────────────────────
 function TwoColSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "44px 72px" }}>
@@ -285,11 +288,11 @@ function TwoColSlide({ slide }) {
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 20, marginTop: 20 }}>
         {[slide.left, slide.right].map((col, ci) => (
           <div key={ci} style={{ background: ci === 0 ? `${C.gold}07` : `${C.greenBright}07`, border: `1px solid ${ci === 0 ? C.gold : C.greenBright}20`, borderTop: `3px solid ${ci === 0 ? C.gold : C.greenBright}`, borderRadius: 4, padding: "22px 24px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 12, color: ci === 0 ? C.gold : C.greenBright, letterSpacing: "0.2em", marginBottom: 16, paddingBottom: 10, borderBottom: `1px solid ${ci === 0 ? C.gold : C.greenBright}20` }}>{col.heading}</div>
+            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 9 : 10, color: ci === 0 ? C.gold : C.greenBright, letterSpacing: "0.2em", marginBottom: 16, paddingBottom: 10, borderBottom: `1px solid ${ci === 0 ? C.gold : C.greenBright}20` }}>{col.heading}</div>
             {col.items.map((item, ii) => (
               <div key={ii} style={{ display: "flex", gap: 10, marginBottom: 12, alignItems: "flex-start" }}>
-                <span style={{ color: ci === 0 ? C.gold : C.greenBright, fontSize: 11, flexShrink: 0, marginTop: 3 }}>→</span>
-                <p style={{ margin: 0, fontSize: isMobile ? 14 : 15, color: C.cream, opacity: 0.85, lineHeight: 1.65 }}>{item}</p>
+                <span style={{ color: ci === 0 ? C.gold : C.greenBright, fontSize: 9, flexShrink: 0, marginTop: 3 }}>→</span>
+                <p style={{ margin: 0, fontSize: isMobile ? 12 : 13, color: C.cream, opacity: 0.85, lineHeight: 1.65 }}>{item}</p>
               </div>
             ))}
           </div>
@@ -301,28 +304,27 @@ function TwoColSlide({ slide }) {
 
 // ─── DELIVERABLES ─────────────────────────────────────────────────────────────
 function DeliverablesSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   const [active, setActive] = useState(0);
   const item = slide.items[active];
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 16px" : "40px 60px" }}>
       <SH slide={slide} />
-      <p style={{ fontSize: isMobile ? 13 : 15, color: C.creamDim, fontFamily: "Georgia,serif", margin: "4px 0 12px", lineHeight: 1.65 }}>{slide.subtitle}</p>
+      <p style={{ fontSize: isMobile ? 11 : 13, color: C.creamDim, fontFamily: "Georgia,serif", margin: "4px 0 12px", lineHeight: 1.65 }}>{slide.subtitle}</p>
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "240px 1fr", gap: 12, minHeight: 0 }}>
         <div style={{ display: "flex", flexDirection: isMobile ? "row" : "column", gap: 3, overflowX: isMobile ? "auto" : "hidden", overflowY: isMobile ? "hidden" : "auto", WebkitOverflowScrolling: "touch" }}>
           {slide.items.map((it, i) => (
             <button key={i} onClick={() => setActive(i)} style={{ background: active === i ? `${it.color}15` : "transparent", border: `1px solid ${active === i ? it.color : C.ash}`, borderLeft: `3px solid ${it.color}`, borderRadius: 3, padding: isMobile ? "8px 10px" : "9px 13px", cursor: "pointer", textAlign: "left", transition: "all 0.15s", flexShrink: 0, WebkitTapHighlightColor: "transparent" }}>
-              <div style={{ fontFamily: "monospace", fontSize: 9, color: it.color, marginBottom: 2 }}>{it.ref}</div>
-              <div style={{ fontSize: isMobile ? 11 : 12.5, color: active === i ? C.cream : C.creamDim, lineHeight: 1.3, whiteSpace: isMobile ? "nowrap" : "normal" }}>{it.title}</div>
+              <div style={{ fontFamily: "monospace", fontSize: 7, color: it.color, marginBottom: 2 }}>{it.ref}</div>
+              <div style={{ fontSize: isMobile ? 9.5 : 10.5, color: active === i ? C.cream : C.creamDim, lineHeight: 1.3, whiteSpace: isMobile ? "nowrap" : "normal" }}>{it.title}</div>
             </button>
           ))}
         </div>
         <div style={{ background: `${item.color}07`, border: `1px solid ${item.color}22`, borderRadius: 4, padding: "20px 22px", display: "flex", flexDirection: "column", gap: 12, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
           <div>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: item.color, letterSpacing: "0.2em", marginBottom: 6 }}>{item.ref}</div>
-            <h3 style={{ margin: "0 0 10px", fontSize: isMobile ? 17 : 21, fontWeight: 400, color: C.cream, fontFamily: "Georgia,serif" }}>{item.title}</h3>
-            <p style={{ margin: 0, fontSize: isMobile ? 13 : 15, color: C.creamDim, lineHeight: 1.8 }}>{item.desc}</p>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: item.color, letterSpacing: "0.2em", marginBottom: 6 }}>{item.ref}</div>
+            <h3 style={{ margin: "0 0 10px", fontSize: isMobile ? 15 : 17, fontWeight: 400, color: C.cream, fontFamily: "Georgia,serif" }}>{item.title}</h3>
+            <p style={{ margin: 0, fontSize: isMobile ? 11.5 : 12.5, color: C.creamDim, lineHeight: 1.8 }}>{item.desc}</p>
           </div>
           <div style={{ height: 1, background: C.ash }} />
           <div>
@@ -344,30 +346,29 @@ function DeliverablesSlide({ slide }) {
 
 // ─── BRAND SCORE ──────────────────────────────────────────────────────────────
 function BrandScoreSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexDirection: isMobile ? "column" : "row", gap: isMobile ? 12 : 0 }}>
         <SH slide={slide} />
         <div style={{ textAlign: "center", flexShrink: 0, background: `${C.gold}08`, border: `1px solid ${C.gold}25`, borderRadius: 4, padding: isMobile ? "10px 16px" : "12px 20px" }}>
-          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 32 : 44, color: C.goldBright, lineHeight: 1 }}>{slide.score}</div>
-          <div style={{ fontFamily: "monospace", fontSize: 10, color: C.gold, letterSpacing: "0.15em", marginTop: 4 }}>/ 100 BRAND SCORE</div>
-          <div style={{ fontFamily: "monospace", fontSize: 10, color: C.greenBright, marginTop: 4 }}>APPROVED — STRONG</div>
+          <div style={{ fontFamily: "monospace", fontSize: isMobile ? 28 : 36, color: C.goldBright, lineHeight: 1 }}>{slide.score}</div>
+          <div style={{ fontFamily: "monospace", fontSize: 7, color: C.gold, letterSpacing: "0.15em", marginTop: 4 }}>/ 100 BRAND SCORE</div>
+          <div style={{ fontFamily: "monospace", fontSize: 7, color: C.greenBright, marginTop: 4 }}>APPROVED — STRONG</div>
         </div>
       </div>
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: 8, marginTop: 16 }}>
         {slide.elements.map((el, i) => (
           <div key={i} style={{ background: C.charcoal, border: `1px solid ${el.verdict === "APPROVED" ? C.greenBright : C.gold}15`, borderLeft: `3px solid ${el.verdict === "APPROVED" ? C.greenBright : C.gold}`, borderRadius: 3, padding: "12px 14px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, alignItems: "flex-start", gap: 4 }}>
-              <div style={{ fontFamily: "monospace", fontSize: 11, color: C.creamDim, letterSpacing: "0.1em", lineHeight: 1.3 }}>{el.label}</div>
-              <span style={{ fontFamily: "monospace", fontSize: 9, color: el.verdict === "APPROVED" ? C.greenBright : C.gold, background: `${el.verdict === "APPROVED" ? C.greenBright : C.gold}15`, padding: "1px 6px", borderRadius: 2, flexShrink: 0 }}>{el.verdict}</span>
+              <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, letterSpacing: "0.1em", lineHeight: 1.3 }}>{el.label}</div>
+              <span style={{ fontFamily: "monospace", fontSize: 7, color: el.verdict === "APPROVED" ? C.greenBright : C.gold, background: `${el.verdict === "APPROVED" ? C.greenBright : C.gold}15`, padding: "1px 6px", borderRadius: 2, flexShrink: 0 }}>{el.verdict}</span>
             </div>
-            <div style={{ fontSize: isMobile ? 16 : 20, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 6 }}>{el.value}</div>
-            <div style={{ height: 3, background: C.ash, borderRadius: 2, marginBottom: 7 }}>
+            <div style={{ fontSize: isMobile ? 12 : 14, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 5 }}>{el.value}</div>
+            <div style={{ height: 3, background: C.ash, borderRadius: 2, marginBottom: 6 }}>
               <div style={{ width: `${el.score}%`, height: "100%", background: el.verdict === "APPROVED" ? C.greenBright : C.gold, borderRadius: 2 }} />
             </div>
-            <p style={{ margin: 0, fontSize: 13, color: C.creamDim, lineHeight: 1.55 }}>{el.note}</p>
+            <p style={{ margin: 0, fontSize: 10, color: C.creamDim, lineHeight: 1.5 }}>{el.note}</p>
           </div>
         ))}
       </div>
@@ -377,7 +378,6 @@ function BrandScoreSlide({ slide }) {
 
 // ─── ROADMAP / PHASES ─────────────────────────────────────────────────────────
 function RoadmapSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   const [active, setActive] = useState(0);
   const ph = slide.phases[active];
@@ -387,35 +387,35 @@ function RoadmapSlide({ slide }) {
       <div style={{ display: "flex", gap: 6, marginTop: 16, marginBottom: 16, flexDirection: isMobile ? "column" : "row" }}>
         {slide.phases.map((p, i) => (
           <button key={i} onClick={() => setActive(i)} style={{ flex: 1, background: active === i ? `${p.color}18` : C.charcoal, border: `1px solid ${active === i ? p.color : C.ash}`, borderTop: `3px solid ${active === i ? p.color : C.ash}`, borderRadius: 3, padding: "10px 12px", cursor: "pointer", textAlign: "left", transition: "all 0.2s", WebkitTapHighlightColor: "transparent" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: p.color, letterSpacing: "0.15em", marginBottom: 4 }}>{p.phase}</div>
-            <div style={{ fontSize: 14, color: active === i ? C.cream : C.creamDim, marginBottom: 2 }}>{p.title}</div>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: C.creamDim }}>{p.time}</div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: p.color, letterSpacing: "0.15em", marginBottom: 4 }}>{p.phase}</div>
+            <div style={{ fontSize: 12, color: active === i ? C.cream : C.creamDim, marginBottom: 2 }}>{p.title}</div>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>{p.time}</div>
           </button>
         ))}
       </div>
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14 }}>
         <div>
-          <div style={{ fontFamily: "monospace", fontSize: 11, color: ph.color, letterSpacing: "0.2em", marginBottom: 12 }}>KEY ACTIONS</div>
+          <div style={{ fontFamily: "monospace", fontSize: 9, color: ph.color, letterSpacing: "0.2em", marginBottom: 12 }}>KEY ACTIONS</div>
           {ph.actions.map((a, i) => (
             <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, alignItems: "flex-start" }}>
-              <span style={{ color: ph.color, fontSize: 11, flexShrink: 0, marginTop: 3 }}>→</span>
-              <p style={{ margin: 0, fontSize: 14, color: C.creamDim, lineHeight: 1.6 }}>{a}</p>
+              <span style={{ color: ph.color, fontSize: 9, flexShrink: 0, marginTop: 3 }}>→</span>
+              <p style={{ margin: 0, fontSize: 12, color: C.creamDim, lineHeight: 1.6 }}>{a}</p>
             </div>
           ))}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           <div style={{ background: `${ph.color}08`, border: `1px solid ${ph.color}25`, borderRadius: 4, padding: "14px 16px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 11, color: ph.color, letterSpacing: "0.15em", marginBottom: 10 }}>TARGETS AT END OF PHASE</div>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: ph.color, letterSpacing: "0.15em", marginBottom: 10 }}>TARGETS AT END OF PHASE</div>
             {ph.targets.map((t, i) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "7px 0", borderBottom: `1px solid ${ph.color}15` }}>
-                <span style={{ fontSize: 14, color: C.creamDim }}>{t.label}</span>
-                <span style={{ fontFamily: "monospace", fontSize: 14, color: ph.color }}>{t.value}</span>
+                <span style={{ fontSize: 12, color: C.creamDim }}>{t.label}</span>
+                <span style={{ fontFamily: "monospace", fontSize: 12, color: ph.color }}>{t.value}</span>
               </div>
             ))}
           </div>
           <div style={{ background: `${C.gold}06`, border: `1px solid ${C.gold}15`, borderRadius: 4, padding: "14px 16px", flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, letterSpacing: "0.15em", marginBottom: 8 }}>Ru'ya 360° PRINCIPLE</div>
-            <p style={{ margin: 0, fontSize: 14, color: C.cream, lineHeight: 1.7, fontFamily: "Georgia,serif", fontStyle: "italic" }}>"{ph.principle}"</p>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.15em", marginBottom: 8 }}>RU2YA PRINCIPLE</div>
+            <p style={{ margin: 0, fontSize: 12, color: C.cream, lineHeight: 1.7, fontFamily: "Georgia,serif", fontStyle: "italic" }}>"{ph.principle}"</p>
           </div>
         </div>
       </div>
@@ -425,7 +425,6 @@ function RoadmapSlide({ slide }) {
 
 // ─── FINANCIAL CORRECTION SLIDE ──────────────────────────────────────────────
 function FinancialCorrectionSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   const [barReady, setBarReady] = useState(false);
   useEffect(() => { const t = setTimeout(() => setBarReady(true), 300); return () => clearTimeout(t); }, []);
@@ -534,7 +533,6 @@ function FinancialCorrectionSlide({ slide }) {
 
 // ─── FINANCIALS ───────────────────────────────────────────────────────────────
 function FinancialsSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   const initialAt = Math.max(0, Math.min(1, (slide.tiers || []).length - 1));
   const [at, setAt] = useState(initialAt);
@@ -589,7 +587,7 @@ function FinancialsSlide({ slide }) {
               position: "absolute", top: -9, left: "50%", transform: "translateX(-50%)",
               background: C.gold, color: C.obsidian, fontFamily: "monospace",
               fontSize: 6.5, padding: "2px 8px", borderRadius: 2, whiteSpace: "nowrap", zIndex: 1
-            }}>Ru'ya 360° RECOMMENDS</div>}
+            }}>RU2YA RECOMMENDS</div>}
             <div style={{ fontFamily: "monospace", fontSize: 7, color: tier.color, letterSpacing: "0.15em", marginBottom: 2 }}>{tier.tier}</div>
             <div style={{ fontSize: 12, color: C.cream, marginBottom: 3 }}>{tier.name}</div>
             <div style={{ fontFamily: "monospace", fontSize: 18, color: tier.color, marginBottom: 5 }}>{tier.total}</div>
@@ -758,9 +756,8 @@ function FinancialsSlide({ slide }) {
   );
 }
 
-// ─── WHY Ru'ya 360° ──────────────────────────────────────────────────────────
+// ─── WHY RU2YA ─────────────────────────────────────────────────────────────────
 function WhyKITSSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   const [active, setActive] = useState(0);
   const r = slide.reasons[active];
@@ -771,21 +768,21 @@ function WhyKITSSlide({ slide }) {
         <div style={{ display: "flex", flexDirection: isMobile ? "row" : "column", gap: 4, overflowX: isMobile ? "auto" : "hidden", WebkitOverflowScrolling: "touch" }}>
           {slide.reasons.map((reason, i) => (
             <button key={i} onClick={() => setActive(i)} style={{ background: active === i ? `${reason.color}12` : "transparent", border: `1px solid ${active === i ? reason.color : C.ash}`, borderLeft: `3px solid ${reason.color}`, borderRadius: 3, padding: "9px 12px", cursor: "pointer", textAlign: "left", transition: "all 0.15s", flexShrink: 0, WebkitTapHighlightColor: "transparent" }}>
-              <div style={{ fontFamily: "monospace", fontSize: 9, color: reason.color, marginBottom: 2 }}>REASON {String(i + 1).padStart(2, "0")}</div>
-              <div style={{ fontSize: 12.5, color: active === i ? C.cream : C.creamDim, lineHeight: 1.35, whiteSpace: isMobile ? "nowrap" : "normal" }}>{reason.title}</div>
+              <div style={{ fontFamily: "monospace", fontSize: 7, color: reason.color, marginBottom: 2 }}>REASON {String(i + 1).padStart(2, "0")}</div>
+              <div style={{ fontSize: 10.5, color: active === i ? C.cream : C.creamDim, lineHeight: 1.35, whiteSpace: isMobile ? "nowrap" : "normal" }}>{reason.title}</div>
             </button>
           ))}
         </div>
         <div style={{ background: `${r.color}07`, border: `1px solid ${r.color}22`, borderRadius: 4, padding: "22px 24px", display: "flex", flexDirection: "column", gap: 14 }}>
           <div>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: r.color, letterSpacing: "0.2em", marginBottom: 8 }}>WHY THIS MATTERS TO YOU</div>
-            <h3 style={{ margin: "0 0 10px", fontSize: isMobile ? 19 : 22, fontWeight: 400, color: C.cream, fontFamily: "Georgia,serif" }}>{r.title}</h3>
-            <p style={{ margin: 0, fontSize: 15, color: C.creamDim, lineHeight: 1.8 }}>{r.body}</p>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: r.color, letterSpacing: "0.2em", marginBottom: 8 }}>WHY THIS MATTERS TO YOU</div>
+            <h3 style={{ margin: "0 0 10px", fontSize: isMobile ? 17 : 19, fontWeight: 400, color: C.cream, fontFamily: "Georgia,serif" }}>{r.title}</h3>
+            <p style={{ margin: 0, fontSize: 12.5, color: C.creamDim, lineHeight: 1.8 }}>{r.body}</p>
           </div>
           <div style={{ height: 1, background: C.ash }} />
           <div style={{ background: `${C.red}09`, border: `1px solid ${C.red}22`, borderRadius: 3, padding: "11px 15px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 10, color: C.red, marginBottom: 5 }}>WITHOUT Ru'ya 360°</div>
-            <p style={{ margin: 0, fontSize: 14, color: C.creamDim, lineHeight: 1.65, fontStyle: "italic" }}>{r.without}</p>
+            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, marginBottom: 5 }}>WITHOUT RU2YA</div>
+            <p style={{ margin: 0, fontSize: 11.5, color: C.creamDim, lineHeight: 1.65, fontStyle: "italic" }}>{r.without}</p>
           </div>
         </div>
       </div>
@@ -795,7 +792,6 @@ function WhyKITSSlide({ slide }) {
 
 // ─── MANDATE ──────────────────────────────────────────────────────────────────
 function MandateSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
@@ -803,20 +799,20 @@ function MandateSlide({ slide }) {
       <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 16, marginTop: 14 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           <div style={{ background: `${C.gold}07`, border: `1px solid ${C.gold}1E`, borderRadius: 4, padding: "14px 18px", flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, letterSpacing: "0.18em", marginBottom: 10 }}>Ru'ya 360° TAKES FULL RESPONSIBILITY FOR</div>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.18em", marginBottom: 10 }}>RU2YA TAKES FULL RESPONSIBILITY FOR</div>
             {slide.kitsScope.map((item, i) => (
               <div key={i} style={{ display: "flex", gap: 8, marginBottom: 7 }}>
-                <span style={{ color: C.gold, fontSize: 11, flexShrink: 0, marginTop: 1 }}>◈</span>
-                <span style={{ fontSize: 14, color: C.cream, lineHeight: 1.45 }}>{item}</span>
+                <span style={{ color: C.gold, fontSize: 9, flexShrink: 0, marginTop: 1 }}>◈</span>
+                <span style={{ fontSize: 11.5, color: C.cream, lineHeight: 1.45 }}>{item}</span>
               </div>
             ))}
           </div>
           <div style={{ background: `${C.greenBright}07`, border: `1px solid ${C.greenBright}1E`, borderRadius: 4, padding: "14px 18px" }}>
-            <div style={{ fontFamily: "monospace", fontSize: 11, color: C.greenBright, letterSpacing: "0.18em", marginBottom: 10 }}>YOU RETAIN FULL CONTROL OVER</div>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.18em", marginBottom: 10 }}>YOU RETAIN FULL CONTROL OVER</div>
             {slide.clientScope.map((item, i) => (
               <div key={i} style={{ display: "flex", gap: 8, marginBottom: 6 }}>
-                <span style={{ color: C.greenBright, fontSize: 11, flexShrink: 0 }}>✓</span>
-                <span style={{ fontSize: 14, color: C.cream, lineHeight: 1.45 }}>{item}</span>
+                <span style={{ color: C.greenBright, fontSize: 9, flexShrink: 0 }}>✓</span>
+                <span style={{ fontSize: 11.5, color: C.cream, lineHeight: 1.45 }}>{item}</span>
               </div>
             ))}
           </div>
@@ -826,17 +822,17 @@ function MandateSlide({ slide }) {
             <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, letterSpacing: "0.18em", marginBottom: 10 }}>ADVISORY FEE STRUCTURE</div>
             {slide.fees.map((f, i) => (
               <div key={i} style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: i < slide.fees.length - 1 ? `1px solid ${C.ash}` : "none" }}>
-                <span style={{ fontSize: 14, color: C.creamDim }}>{f.tier}</span>
-                <span style={{ fontFamily: "monospace", fontSize: 13, color: C.gold }}>{f.range}</span>
+                <span style={{ fontSize: 11.5, color: C.creamDim }}>{f.tier}</span>
+                <span style={{ fontFamily: "monospace", fontSize: 10.5, color: C.gold }}>{f.range}</span>
               </div>
             ))}
           </div>
           <div style={{ background: `${C.greenBright}07`, border: `1px solid ${C.greenBright}1E`, borderRadius: 4, padding: "14px 18px" }}>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.18em", marginBottom: 8 }}>IP OWNERSHIP — FULL TRANSFER ON FINAL PAYMENT</div>
-            <p style={{ margin: 0, fontSize: 14, color: C.creamDim, lineHeight: 1.75 }}>Every deliverable — brand identity, flavor specs, outreach scripts, regulatory submissions, competitive intelligence — transfers fully to you. You own everything. Zero conditions.</p>
+            <p style={{ margin: 0, fontSize: 11.5, color: C.creamDim, lineHeight: 1.75 }}>Every deliverable — brand identity, flavor specs, outreach scripts, regulatory submissions, competitive intelligence — transfers fully to you. You own everything. Zero conditions.</p>
           </div>
           <div style={{ background: `${C.gold}0D`, border: `1px solid ${C.gold}28`, borderRadius: 4, padding: "16px 18px", flex: 1, display: "flex", alignItems: "center" }}>
-            <p style={{ margin: 0, fontSize: 18, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", textAlign: "center", lineHeight: 1.8, width: "100%" }}>
+            <p style={{ margin: 0, fontSize: 15, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", textAlign: "center", lineHeight: 1.8, width: "100%" }}>
               <>"We don't advise from the side."<br />"We execute from the front."</>
             </p>
           </div>
@@ -848,27 +844,26 @@ function MandateSlide({ slide }) {
 
 // ─── Q & A ────────────────────────────────────────────────────────────────────
 function QASlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   const [aq, setAq] = useState(null);
   return (
     <div style={{ height: "100%", display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "36px 72px" }}>
       <SH slide={slide} />
-      <p style={{ fontSize: 14, color: C.creamDim, fontFamily: "Georgia,serif", margin: "4px 0 12px", lineHeight: 1.6 }}>{slide.subtitle}</p>
+      <p style={{ fontSize: 12, color: C.creamDim, fontFamily: "Georgia,serif", margin: "4px 0 12px", lineHeight: 1.6 }}>{slide.subtitle}</p>
       <div style={{ flex: 1, overflowY: "auto", display: "flex", flexDirection: "column", gap: 5, WebkitOverflowScrolling: "touch" }}>
         {slide.qas.map((qa, i) => (
           <div key={i} style={{ background: C.charcoal, border: `1px solid ${aq === i ? qa.color : C.ash}`, borderLeft: `3px solid ${qa.color}`, borderRadius: 3, overflow: "hidden", transition: "border-color 0.15s" }}>
             <button onClick={() => setAq(aq === i ? null : i)} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", width: "100%", background: "transparent", border: "none", padding: "12px 16px", cursor: "pointer", textAlign: "left", gap: 14, WebkitTapHighlightColor: "transparent" }}>
               <div style={{ display: "flex", gap: 10, alignItems: "flex-start", flex: 1 }}>
-                <span style={{ fontFamily: "monospace", fontSize: 10, color: qa.color, flexShrink: 0, marginTop: 2 }}>Q</span>
-                <span style={{ fontSize: isMobile ? 14 : 15, color: C.cream, lineHeight: 1.5, fontFamily: "Georgia,serif" }}>{qa.q}</span>
+                <span style={{ fontFamily: "monospace", fontSize: 8, color: qa.color, flexShrink: 0, marginTop: 2 }}>Q</span>
+                <span style={{ fontSize: isMobile ? 12 : 12.5, color: C.cream, lineHeight: 1.5, fontFamily: "Georgia,serif" }}>{qa.q}</span>
               </div>
-              <span style={{ color: C.creamDim, fontSize: 17, flexShrink: 0 }}>{aq === i ? "−" : "+"}</span>
+              <span style={{ color: C.creamDim, fontSize: 15, flexShrink: 0 }}>{aq === i ? "−" : "+"}</span>
             </button>
             {aq === i && (
               <div style={{ padding: "0 16px 14px 38px" }}>
                 <div style={{ height: 1, background: C.ash, marginBottom: 10 }} />
-                <p style={{ margin: 0, fontSize: 14, color: C.creamDim, lineHeight: 1.85, fontFamily: "Georgia,serif" }}>{qa.a}</p>
+                <p style={{ margin: 0, fontSize: 12, color: C.creamDim, lineHeight: 1.85, fontFamily: "Georgia,serif" }}>{qa.a}</p>
               </div>
             )}
           </div>
@@ -880,27 +875,26 @@ function QASlide({ slide }) {
 
 // ─── CLOSING ──────────────────────────────────────────────────────────────────
 function ClosingSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   return (
     <div style={{ height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px" }} />
       <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)` }} />
       <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: isMobile ? "0 24px" : "0 72px", position: "relative", zIndex: 1 }}>
-        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.3em", marginBottom: 22 }}>Ru'ya 360° ADVISORY GROUP · THE MANDATE</div>
-        <h2 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(22px,3.2vw,34px)" : "clamp(26px,2.8vw,38px)", fontWeight: 400, color: C.cream, margin: "0 0 22px", lineHeight: 1.45 }}>{slide.title}</h2>
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.3em", marginBottom: 22 }}>RU2YA ADVISORY GROUP · THE MANDATE</div>
+        <h2 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(18px,3vw,28px)" : "clamp(20px,2.5vw,30px)", fontWeight: 400, color: C.cream, margin: "0 0 22px", lineHeight: 1.45 }}>{slide.title}</h2>
         <div style={{ width: 60, height: 2, background: C.gold, marginBottom: 26 }} />
         <div style={{ marginBottom: 26 }}>
           <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, letterSpacing: "0.2em", marginBottom: 10 }}>FOUR DECISIONS NEEDED TODAY</div>
           {slide.decisions.map((d, i) => (
             <div key={i} style={{ display: "flex", gap: 12, marginBottom: 6, padding: "10px 14px", background: `${C.gold}07`, border: `1px solid ${C.gold}18`, borderRadius: 3 }}>
-              <span style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, flexShrink: 0 }}>{String(i + 1).padStart(2, "0")}</span>
-              <p style={{ margin: 0, fontSize: isMobile ? 14 : 15.5, color: C.cream, lineHeight: 1.55 }}>{d}</p>
+              <span style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, flexShrink: 0 }}>{String(i + 1).padStart(2, "0")}</span>
+              <p style={{ margin: 0, fontSize: isMobile ? 12 : 12.5, color: C.cream, lineHeight: 1.55 }}>{d}</p>
             </div>
           ))}
         </div>
         <div style={{ background: `${C.gold}09`, border: `1px solid ${C.gold}25`, borderRadius: 4, padding: "20px 24px" }}>
-          <p style={{ margin: 0, fontSize: isMobile ? 16 : 19, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.75 }}>"{slide.closingLine}"</p>
+          <p style={{ margin: 0, fontSize: isMobile ? 14 : 16, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.75 }}>"{slide.closingLine}"</p>
         </div>
       </div>
     </div>
@@ -909,7 +903,6 @@ function ClosingSlide({ slide }) {
 
 // ─── COMPETITION LANDSCAPE ────────────────────────────────────────────────────
 function CompLandscapeSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
   const [ag, setAg] = useState(0);
   const [lightbox, setLightbox] = useState(null);
@@ -932,8 +925,8 @@ function CompLandscapeSlide({ slide }) {
             cursor: "pointer", textAlign: "left", transition: "all 0.2s",
             WebkitTapHighlightColor: "transparent", touchAction: "manipulation"
           }}>
-            <div style={{ fontFamily: "monospace", fontSize: 8.5, color: g.color, letterSpacing: "0.12em", marginBottom: 2, whiteSpace: "nowrap" }}>{g.type}</div>
-            <div style={{ fontSize: isMobile ? 11.5 : 12.5, color: ag === i ? C.cream : C.creamDim, lineHeight: 1.2 }}>{g.label}</div>
+            <div style={{ fontFamily: "monospace", fontSize: 6.5, color: g.color, letterSpacing: "0.12em", marginBottom: 2, whiteSpace: "nowrap" }}>{g.type}</div>
+            <div style={{ fontSize: isMobile ? 9.5 : 10.5, color: ag === i ? C.cream : C.creamDim, lineHeight: 1.2 }}>{g.label}</div>
           </button>
         ))}
       </div>
@@ -979,16 +972,16 @@ function CompLandscapeSlide({ slide }) {
             )}
             <div style={{ padding: "10px 12px", flex: 1, display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 3, gap: 6 }}>
-                <div style={{ fontSize: isMobile ? 13.5 : 15, color: C.cream, fontFamily: "Georgia,serif" }}>{comp.name}</div>
-                <span style={{ fontFamily: "monospace", fontSize: 8, color: group.color, background: `${group.color}15`, border: `1px solid ${group.color}25`, padding: "2px 6px", borderRadius: 2, flexShrink: 0 }}>{comp.origin}</span>
+                <div style={{ fontSize: isMobile ? 11.5 : 12.5, color: C.cream, fontFamily: "Georgia,serif" }}>{comp.name}</div>
+                <span style={{ fontFamily: "monospace", fontSize: 6.5, color: group.color, background: `${group.color}15`, border: `1px solid ${group.color}25`, padding: "2px 6px", borderRadius: 2, flexShrink: 0 }}>{comp.origin}</span>
               </div>
               {comp.price && <div style={{ fontFamily: "monospace", fontSize: 8, color: C.amber, marginBottom: 6, lineHeight: 1.3 }}>{comp.price}</div>}
               <div style={{ height: 1, background: C.ash, marginBottom: 7 }} />
               <div style={{ flex: 1 }}>
                 {comp.gaps.map((gap, gi) => (
                   <div key={gi} style={{ display: "flex", gap: 6, marginBottom: 5, alignItems: "flex-start" }}>
-                    <span style={{ color: C.red, fontSize: 11, flexShrink: 0, marginTop: 1.5, lineHeight: 1 }}>✗</span>
-                    <span style={{ fontSize: isMobile ? 11 : 12, color: C.creamDim, lineHeight: 1.4 }}>{gap}</span>
+                    <span style={{ color: C.red, fontSize: 9, flexShrink: 0, marginTop: 1.5, lineHeight: 1 }}>✗</span>
+                    <span style={{ fontSize: isMobile ? 9 : 9.5, color: C.creamDim, lineHeight: 1.4 }}>{gap}</span>
                   </div>
                 ))}
               </div>
@@ -1008,7 +1001,6 @@ function CompLandscapeSlide({ slide }) {
 
 // ─── COMPETITION MATRIX ───────────────────────────────────────────────────────
 function CompMatrixSlide({ slide }) {
-  const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
 
   const badge = (v) => {
@@ -1027,13 +1019,13 @@ function CompMatrixSlide({ slide }) {
         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: isMobile ? "520px" : "auto" }}>
           <thead>
             <tr>
-              <th style={{ padding: "8px 10px", fontFamily: "monospace", fontSize: 9.5, color: C.creamDim, textAlign: "left", borderBottom: `2px solid ${C.ash}`, width: 155 }}>CRITERION</th>
+              <th style={{ padding: "8px 10px", fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, textAlign: "left", borderBottom: `2px solid ${C.ash}`, width: 155 }}>CRITERION</th>
               {slide.competitors.map((comp, i) => {
                 const isUs = i === slide.competitors.length - 1;
                 return (
                   <th key={i} style={{
                     padding: "7px 8px", fontFamily: "monospace",
-                    fontSize: isUs ? 10.5 : 9.5, color: isUs ? C.greenBright : C.creamDim,
+                    fontSize: isUs ? 8.5 : 7.5, color: isUs ? C.greenBright : C.creamDim,
                     textAlign: "center", borderBottom: `2px solid ${isUs ? C.greenBright : C.ash}`,
                     background: isUs ? `${C.greenBright}09` : "transparent",
                     whiteSpace: "nowrap", lineHeight: 1.4
@@ -1049,8 +1041,8 @@ function CompMatrixSlide({ slide }) {
             {slide.criteria.map((row, ri) => (
               <tr key={ri} style={{ background: ri % 2 === 0 ? C.charcoal : C.obsidian }}>
                 <td style={{ padding: "9px 10px", borderBottom: `1px solid ${C.ash}` }}>
-                  <div style={{ fontSize: isMobile ? 12.5 : 14, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 2 }}>{row.label}</div>
-                  <div style={{ fontFamily: "monospace", fontSize: 9.5, color: C.creamDim }}>{row.note}</div>
+                  <div style={{ fontSize: isMobile ? 10.5 : 11.5, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 2 }}>{row.label}</div>
+                  <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim }}>{row.note}</div>
                 </td>
                 {slide.competitors.map((comp, ci) => {
                   const v = row.vals[comp.id];
@@ -1059,9 +1051,9 @@ function CompMatrixSlide({ slide }) {
                   return (
                     <td key={ci} style={{ padding: "8px", textAlign: "center", borderBottom: `1px solid ${C.ash}`, background: isUs ? `${C.greenBright}07` : "transparent" }}>
                       <div style={{ display: "inline-flex", flexDirection: "column", alignItems: "center", gap: 3, background: b.bg, borderRadius: 3, padding: "4px 8px", minWidth: 40 }}>
-                        <span style={{ fontFamily: "monospace", fontSize: isUs ? 18 : 16, color: b.color, lineHeight: 1 }}>{b.char}</span>
+                        <span style={{ fontFamily: "monospace", fontSize: isUs ? 15 : 13, color: b.color, lineHeight: 1 }}>{b.char}</span>
                         {row.text?.[comp.id] && (
-                          <span style={{ fontFamily: "monospace", fontSize: 8.5, color: isUs ? C.greenBright : C.creamDim, lineHeight: 1.25, whiteSpace: "nowrap" }}>{row.text[comp.id]}</span>
+                          <span style={{ fontFamily: "monospace", fontSize: 6.5, color: isUs ? C.greenBright : C.creamDim, lineHeight: 1.25, whiteSpace: "nowrap" }}>{row.text[comp.id]}</span>
                         )}
                       </div>
                     </td>
@@ -1103,7 +1095,6 @@ function RenderSlide({ slide }) {
     case "roadmap":      return <RoadmapSlide slide={slide} />;
     case "financials":          return <FinancialsSlide slide={slide} />;
     case "financialcorrection": return <FinancialCorrectionSlide slide={slide} />;
-    case "financialstudy":      return <FinancialStudy />;
     case "whykits":      return <WhyKITSSlide slide={slide} />;
     case "mandate":      return <MandateSlide slide={slide} />;
     case "qa":           return <QASlide slide={slide} />;
@@ -1130,8 +1121,8 @@ const SLIDES = [
       { color: C.amber, text: "What do you already have in place? Manufacturer contacts, brand ideas, capital, distribution relationships — what exists today?" },
       { color: C.greenBright, text: "What does success look like in 12 months? In three years? Is this a lifestyle business or a brand you want to scale regionally?" },
       { color: C.purple, text: "What worries you most about this venture? What has stopped you from moving forward faster up to now?" },
-      // { color: C.gold, text: "What kind of partner are you looking for? Someone to execute fully on your behalf, or someone to advise while you drive operations yourself?" },
-      // { color: C.steel, text: "Do you have a budget range in mind for the launch phase? No wrong answer — it shapes which plan we present to you." },
+      { color: C.gold, text: "What kind of partner are you looking for? Someone to execute fully on your behalf, or someone to advise while you drive operations yourself?" },
+      { color: C.steel, text: "Do you have a budget range in mind for the launch phase? No wrong answer — it shapes which plan we present to you." },
     ],
     note: "We listen completely before we present anything. Your answers reshape which parts of the presentation we emphasize.",
     notes: { open: "Do not advance past this slide until you have genuinely listened. Take physical notes. Ask follow-ups. The quality of your questions here determines how credible your entire presentation appears in the next 60 minutes.", emphasis: ["The client reveals their fears, ambitions, and constraints here. Every sentence is intel for the close.", "If they mention a manufacturer — ask the name. If they mention a budget number — write it down and reference it later."], timing: "20–30 minutes — do not rush this" }
@@ -1149,12 +1140,12 @@ const SLIDES = [
     title: "An Empty Category in a Growing Market",
     headline: "There is no established local beef jerky brand in Lebanon. That is not a gap in the market — that is an open category waiting for its owner.",
     stats: [
-      { value: "ZERO", label: "Local beef jerky brands in Lebanon", sub: "Confirmed by Ru'ya 360° field research · Category is fully available today", color: C.greenBright },
+      { value: "ZERO", label: "Local beef jerky brands in Lebanon", sub: "Confirmed by RU2YA field research · Category is fully available today", color: C.greenBright },
       { value: "$1.04B", label: "Middle East sports nutrition market", sub: "+7.3% CAGR through 2033 · Grand View Research 2024", color: C.gold },
       { value: "82.6%", label: "Brick-and-mortar dominance in MENA", sub: "Physical relationships drive sales · Not digital channels", color: C.amber },
       { value: "$8.49B", label: "GCC snacks market 2024", sub: "→ $12.87B by 2030 · Natural export target from Day 1", color: C.purple },
     ],
-    footnote: "Sources: Grand View Research 2024 · Precedence Research 2024 · Cognitive Market Research 2025 · Ru'ya 360° field research",
+    footnote: "Sources: Grand View Research 2024 · Precedence Research 2024 · Cognitive Market Research 2025 · RU2YA field research",
     notes: { open: "Let ZERO sit on screen for five full seconds. Ask: 'When you walk into any gym or nutrition store in Lebanon today, can you buy a locally made beef jerky brand?' The answer is no. That is the business.", emphasis: ["The 82.6% brick-and-mortar statistic validates every strategic choice we made. This is not a conservative approach — it is the statistically correct one.", "Pause on ZERO. Ask the room: 'When did you last see a locally made jerky in a Lebanese gym?' The silence confirms the opportunity."], timing: "4 minutes" }
   },
   {
@@ -1176,12 +1167,12 @@ const SLIDES = [
       items: [
         "First-mover advantage is available today — but successful categories attract imitators within 12–18 months of launch",
         "Imported competitors (Jack Link's, Wild West) are visible but structurally weak: no Halal, wrong flavor, wrong price, no local presence",
-        "No local competitor is building in this space currently — confirmed by Ru'ya 360° field research completed this quarter",
+        "No local competitor is building in this space currently — confirmed by RU2YA field research completed this quarter",
         "MoPH registration timeline: 2–4 months — beginning now means shelf-ready Q4 2026",
         "Existing warm relationships across gyms and nutrition stores compress outreach from 3 months of cold calling to 2–3 weeks",
       ]
     },
-    notes: { open: "The window is real and open — but first-mover advantage is not permanent. Speed is the only true moat. Trademark, brand equity, and the trainer relationship network are what protect that advantage once built.", emphasis: ["Say directly: 'Every week of delay on decisions is a week closer to someone else discovering what Ru'ya 360° has confirmed through research.'"], timing: "3 minutes" }
+    notes: { open: "The window is real and open — but first-mover advantage is not permanent. Speed is the only true moat. Trademark, brand equity, and the trainer relationship network are what protect that advantage once built.", emphasis: ["Say directly: 'Every week of delay on decisions is a week closer to someone else discovering what RU2YA has confirmed through research.'"], timing: "3 minutes" }
   },
   {
     id: "sec02", type: "section", label: "§02",
@@ -1229,7 +1220,7 @@ const SLIDES = [
       { label: "Halal Badge", value: "Dar Al-Fatwa · Forest Green", verdict: "APPROVED", score: 95, note: "Single most important regulatory element. Forest green circle, front panel top right. Visible in the first second of shelf encounter. GCC export-recognized from day one." },
       { label: "Pack Languages", value: "Arabic · English · French", verdict: "APPROVED", score: 95, note: "Arabic regulatory primary. English commercial secondary. French market tertiary. No imported competitor does this. Structural shelf authority advantage in Lebanon." },
     ],
-    notes: { open: "Walk through STRIKE and STRIKE BITES. Then ask: 'Does this feel right to you?' Pause. Let them react before advancing. Their response reveals their emotional investment in the brand — this is invaluable for the close.", emphasis: ["The score of 88 is real and defensible. Most brands launch with a 70. Explain the methodology if asked — it will demonstrate the rigor behind all Ru'ya 360° work."], timing: "5 minutes" }
+    notes: { open: "Walk through STRIKE and STRIKE BITES. Then ask: 'Does this feel right to you?' Pause. Let them react before advancing. Their response reveals their emotional investment in the brand — this is invaluable for the close.", emphasis: ["The score of 88 is real and defensible. Most brands launch with a 70. Explain the methodology if asked — it will demonstrate the rigor behind all RU2YA work."], timing: "5 minutes" }
   },
 
   // ── COMPETITION SECTION ─────────────────────────────────────────────────────
@@ -1239,7 +1230,7 @@ const SLIDES = [
     title: "The Competitive Landscape",
     sub: "Every brand competing for the Lebanese protein snack buyer — imported jerky, local protein-branded snacks, global bars. STRIKE is the only local Halal beef jerky in this market.",
     notes: {
-      open: "Transition: 'Before the plan, let us show you exactly who is in this market and what Ru'ya 360° found when we went out and priced everything ourselves. Some of what we found will change how you think about this opportunity.'",
+      open: "Transition: 'Before the plan, let us show you exactly who is in this market and what RU2YA found when we went out and priced everything ourselves. Some of what we found will change how you think about this opportunity.'",
       emphasis: ["Halo and Raw Bites — brands the client may have seen on shelves — deliver plant-based protein from corn and peas, not meat. STRIKE delivers complete beef protein with heme iron, creatine, and B12 that no plant snack can replicate. This is the category correction."],
       timing: "15 seconds"
     }
@@ -1247,7 +1238,7 @@ const SLIDES = [
   {
     id: "comp_landscape", type: "comp_landscape", label: "LANDSCAPE",
     section: "COMP · MARKET MAP",
-    title: "Every Competitor in Lebanon — Field-Mapped by Ru'ya 360°",
+    title: "Every Competitor in Lebanon — Field-Mapped by RU2YA",
     subtitle: "Three competitive groups · All individually assessed · Pricing verified in Lebanese market · June 2026",
     verdict: "STRIKE BITES is the only local Halal beef jerky brand in Lebanon. Imported jerky arrives at 2× our price with no Lebanese authority certification. Local 'protein' snacks deliver plant-based protein in cups or puffs — a fundamentally different format and occasion. Wild West Halal (UK) is confirmed in UAE and heading this way. The first-mover window is measured in months.",
     groups: [
@@ -1488,7 +1479,7 @@ const SLIDES = [
       {
         phase: "PHASE 2", time: "Month 4–6", color: C.amber, title: "Launch",
         principle: "Sports nutrition stores are Priority One — their customer walks in already in protein-buying mode. Every first order is sale-or-return. Zero financial risk to any buyer.",
-        actions: ["Formal launch into 20–30 gym and sports nutrition accounts", "STRIKE TEAM: recruit 20 founding personal trainers as brand ambassadors", "Sale-or-return terms for all first orders — zero risk to every account", "Personal display setup at every account by Ru'ya 360° on delivery day", "Bi-weekly check-in at every account — unit count, feedback, reorder", "Pharmacy outreach begins Month 5 once sell-through data is available", "Weekly P&L reporting against approved budget tier begins"],
+        actions: ["Formal launch into 20–30 gym and sports nutrition accounts", "STRIKE TEAM: recruit 20 founding personal trainers as brand ambassadors", "Sale-or-return terms for all first orders — zero risk to every account", "Personal display setup at every account by RU2YA on delivery day", "Bi-weekly check-in at every account — unit count, feedback, reorder", "Pharmacy outreach begins Month 5 once sell-through data is available", "Weekly P&L reporting against approved budget tier begins"],
         targets: [{ label: "Active Accounts", value: "20–30" }, { label: "Revenue M6", value: "$18K–28K/mo" }, { label: "Trainer Ambassadors", value: "20 founding" }, { label: "Breakeven Target", value: "Month 5–7" }]
       },
       {
@@ -1519,53 +1510,53 @@ const SLIDES = [
     title: "Investment, Return & ROI — Three Scenarios",
     tiers: [
       {
-        tier: "TIER 1", name: "Lean Launch", total: "$19,000", color: C.greenBright,
+        tier: "TIER 1", name: "Lean Launch", total: "$18,500", color: C.greenBright,
         breakeven: "Month 9–12", margin: "48–55%", roi: "~155%",
         m3: "Building", m3p: 10, m6: "$4K–7K /mo", m6p: 18, m12: "$14K–22K /mo", m12p: 100,
         cumProfit: "~$45K", profitNote: "Est. cumulative gross profit Year 1 at 51% avg margin. Investment recovery Month 9–12. Functional minimum viable launch — the corrected $4.50 price floor improves margin but the 30-account scope limits revenue velocity.",
         includes: ["SARL registration + core licensing", "MoPH registration — 1 SKU", "Basic brand identity (wordmark + color)", "Single-serve pouch only", "1 production batch", "30-account outreach target"]
       },
       {
-        tier: "TIER 2", name: "Standard Launch", total: "$50,000", color: C.gold, rec: true,
+        tier: "TIER 2", name: "Standard Launch", total: "$42,000", color: C.gold, rec: true,
         breakeven: "Month 8–11", margin: "55–62%", roi: "~265%",
         m3: "Revenue building", m3p: 14, m6: "$9K–14K /mo", m6p: 26, m12: "$40K–65K /mo", m12p: 100,
         cumProfit: "~$153K", profitNote: "Est. cumulative gross profit Year 1 at 61.9% avg margin. Investment recovery Month 8–11. Year 1 net positive approx. $111K. Higher price benchmark adds $0.75/unit GP vs original model — partially offsetting the conservative M6 revenue ramp. M12 trajectory unchanged.",
-        includes: ["SARL + all licensing + IP lawyer", "MoPH registration — 2 SKUs", "Full brand identity system + packaging", "Single-serve + multi-serve pouch", "2 production batches", "80-account outreach", "Ru'ya 360° management fee Phases 0–2"]
+        includes: ["SARL + all licensing + IP lawyer", "MoPH registration — 2 SKUs", "Full brand identity system + packaging", "Single-serve + multi-serve pouch", "2 production batches", "80-account outreach", "RU2YA management fee Phases 0–2"]
       },
       {
-        tier: "TIER 3", name: "Full Market Entry", total: "$105,000", color: C.amber,
+        tier: "TIER 3", name: "Full Market Entry", total: "$82,000", color: C.amber,
         breakeven: "Month 5–7", margin: "58–64%", roi: "~310%",
         m3: "Soft launch revenue", m3p: 15, m6: "$18K–28K /mo", m6p: 30, m12: "$80K–130K /mo", m12p: 100,
         cumProfit: "~$310K", profitNote: "Est. cumulative gross profit Year 1 at 61% avg margin. Investment recovery Month 5–7. Modern trade entry from M8–10 drives the M12 step change. Year 1 net positive approx. $228K. Maximum market capture velocity.",
-        includes: ["Full legal stack + GCC pre-filing", "MoPH 3 SKUs + full label compliance", "Agency-level brand identity", "Dedicated sales rep 6 months", "3-SKU full production batch", "130+ accounts", "Ru'ya 360° management fee Phases 0–3"]
+        includes: ["Full legal stack + GCC pre-filing", "MoPH 3 SKUs + full label compliance", "Agency-level brand identity", "Dedicated sales rep 6 months", "3-SKU full production batch", "130+ accounts", "RU2YA management fee Phases 0–3"]
       }
     ],
     notes: { open: "Lead with Tier 2 as the reference point. Say: 'This is where serious commercial intent meets financial discipline. Enough capital to do this right — not more than you need to prove the concept.'", emphasis: ["Ask directly after presenting all three: 'Which scenario matches where you are right now?' Then stop talking. Let the room decide.", "Memorize these Tier 2 v2.0 corrected numbers: $42K in. $153K gross profit Year 1. $111K net positive. 265% ROI. Breakeven Month 8–11. You should say these without looking at the slide."], timing: "7 minutes" }
   },
   {
-    id: "financialcorrections", type: "financialstudy", label: "FINANCIAL",
+    id: "financialcorrections", type: "financialcorrection", label: "CORRECTIONS",
     section: "05 · FINANCIAL PLAN",
-    title: "Financial Feasibility Study — Full Model",
-    notes: { open: "This is the full three-tier financial model. Walk the client through each tier — Lean, Standard (recommended), and Full Market Entry — using the interactive breakdown. Present Tier 2 as the reference point. The investment breakdown, revenue projections, assumptions, and blockers are all interactive.", emphasis: ["Lead with Tier 2 (Standard Launch) — $42,000. Show the investment breakdown first, then projections. Let them click through.", "The Blockers tab is operational — use it to set the agenda for what needs to happen immediately after this meeting."], timing: "7 minutes" }
+    title: "Financial Model — Corrections v2.0",
+    notes: { open: "Present this slide immediately after the tier overview. Say: 'Before you hold any of those numbers — we have already applied six corrections. Here is what changed and why. Two of the corrections actually improve the investment case.' Then walk through the pricing correction first — it is the most impactful.", emphasis: ["Lead with the upside: higher price = better margins. The correction strengthens the case.", "The MoPH and GS1 open items are administrative — they do not affect the investment thesis, only the regulatory budget line. Acknowledge them directly and move on.", "Revised M6 revenue is conservative, not pessimistic. The upside scenario ($15K–$22K) is still on the table contingent on repeat purchasing rates."], timing: "4 minutes" }
   },
   {
     id: "sec06", type: "section", label: "§06",
     badge: "SECTION SIX", color: C.purple,
-    title: "Why Ru'ya 360° and Only Ru'ya 360°",
+    title: "Why RU2YA and Only RU2YA",
     sub: "Seven structural advantages. Each one a reason your business will not find this partnership anywhere else.",
     notes: { open: "Present this section with full confidence. This is not modesty time. You built 10 deliverables before a contract existed. You have earned the right to speak directly.", emphasis: [], timing: "15 seconds" }
   },
   {
-    id: "whykits", type: "whykits", label: "WHY Ru'ya 360°",
-    section: "06 · WHY Ru'ya 360°",
-    title: "Why Work With Ru'ya 360° — And Nobody Else",
+    id: "whykits", type: "whykits", label: "WHY RU2YA",
+    section: "06 · WHY RU2YA",
+    title: "Why Work With RU2YA — And Nobody Else",
     reasons: [
       { color: C.gold, title: "We Delivered Before You Decided", body: "We built ten institutional-quality documents before you signed anything. Not slides. Not outlines. Full, referenced, production-ready deliverables — brand study, financial model, manufacturer brief, competitive matrix, outreach scripts, board presentation. This is what a committed partner does. Consultants talk about commitment. We proved it before the contract exists.", without: "You engage a standard consultant who gives you a 15-slide deck of generic advice, calls it a market entry strategy, and leaves you to figure out execution on your own." },
       { color: C.amber, title: "We Know Lebanon's Channels Cold", body: "82.6% of sports nutrition purchases in MENA are brick-and-mortar. Digital marketing is not the priority channel — physical relationship, personal visit, and warm introduction are what open doors in Beirut, Metn, Keserwan, and Jounieh. We built the outreach system and wrote the scripts specifically for Lebanese retail culture.", without: "You work with an advisor who recommends Instagram advertising and an e-commerce store as your primary launch strategy in a relationship-first market where the handshake closes the deal." },
-      { color: C.greenBright, title: "We Execute — We Don't Just Advise", body: "Ru'ya 360° visits accounts personally. Sets up displays personally. Trains store staff personally. Checks in bi-weekly personally. We manage the manufacturer relationship, regulatory submissions, designer briefing, and monthly financial reporting. You make the decisions. We make them happen — every single one.", without: "You receive a comprehensive report and a handshake. You then need to hire someone else to actually execute what the consultant designed, restarting the entire learning curve." },
+      { color: C.greenBright, title: "We Execute — We Don't Just Advise", body: "RU2YA visits accounts personally. Sets up displays personally. Trains store staff personally. Checks in bi-weekly personally. We manage the manufacturer relationship, regulatory submissions, designer briefing, and monthly financial reporting. You make the decisions. We make them happen — every single one.", without: "You receive a comprehensive report and a handshake. You then need to hire someone else to actually execute what the consultant designed, restarting the entire learning curve." },
       { color: C.purple, title: "We Built Your Brand Already", body: "STRIKE is not a name we suggested casually. It is a name we researched, scored against 7 criteria, tested for trademark viability across Lebanon and GCC, evaluated in Arabic, English, and French, and rated at 92/100. The visual system, packaging specifications, and trilingual copy are all documented. Your designer can be briefed tomorrow.", without: "You spend three months in naming workshops, iterate through 40 logo concepts, engage three designers with conflicting visions, and still don't know if the trademark is available in Lebanon or GCC." },
       { color: C.red, title: "Milestone-Gated Financial Accountability", body: "Your budget is released by phase, not paid upfront. Phase 0 funds unlock after the legal entity is formed. Phase 1 after brand identity is approved. Phase 2 after the first batch sells through. You are never at risk of committing full capital before results are demonstrated. Every month you see a P&L against the approved plan.", without: "You hand over a lump sum and receive quarterly updates on 'strategic progress' and 'brand-building activity' with no verifiable output and no accountability structure." },
-      { color: C.gold, title: "You Own Everything We Create", body: "Every deliverable — the brand identity, flavor specifications, outreach scripts, competitor intelligence, financial model, and regulatory roadmap — transfers to you upon final payment. You are not licensing our work. You own it outright, unconditionally. If you ever move on without Ru'ya 360°, you take everything with you.", without: "You discover the 'proprietary methodology' your consultant used is copyrighted and you cannot use the outputs without retaining them permanently at an ongoing monthly fee." },
+      { color: C.gold, title: "You Own Everything We Create", body: "Every deliverable — the brand identity, flavor specifications, outreach scripts, competitor intelligence, financial model, and regulatory roadmap — transfers to you upon final payment. You are not licensing our work. You own it outright, unconditionally. If you ever move on without RU2YA, you take everything with you.", without: "You discover the 'proprietary methodology' your consultant used is copyrighted and you cannot use the outputs without retaining them permanently at an ongoing monthly fee." },
       { color: C.greenBright, title: "We Think in GCC from Day One", body: "The product is being built for Lebanon and GCC simultaneously. Halal certification from Dar Al-Fatwa Lebanon is recognized in UAE and Saudi Arabia. STRIKE PACKS — the variety multipack for GCC hypermarket entry — is already in the product architecture. The Lebanese BBQ flavor is a premium signal in every GCC market. No reformulation needed.", without: "You launch in Lebanon with a product that requires full reformulation, re-certification under ESMA/SFDA, and an entirely new brand before it can enter any export market." },
     ],
     notes: { open: "After all 7: 'No competitor to your business — not Jack Link's, not Wild West, not any future local entrant — will have a partner that brings all seven of these simultaneously. This combination does not exist in Lebanon.'", emphasis: ["Reason 01 — We Delivered — is always the most impactful. It is unique. No other advisory firm in Lebanon has done this.", "Reason 04 — Milestone-Gated — is most reassuring to a careful founder. Emphasize that they pay for progress, not promises."], timing: "7 minutes" }
@@ -1573,7 +1564,7 @@ const SLIDES = [
   {
     id: "mandate", type: "mandate", label: "MANDATE",
     section: "07 · THE PROPOSAL",
-    title: "What We Are Proposing — The Ru'ya 360° Mandate",
+    title: "What We Are Proposing — The RU2YA Mandate",
     kitsScope: ["All channel outreach — every account visit, every commercial negotiation, every display setup", "Regulatory management — MoPH, Halal, trademark, GS1, lab testing — end to end", "Designer briefing, creative direction, and compliance sign-off on all packaging before print", "Manufacturer relationship — flavor development oversight, QC protocol, supply agreement management", "Monthly financial reporting — P&L against plan, sell-through data, account performance", "Strategic decisions — channel sequencing, pricing reviews, SKU expansion timing"],
     clientScope: ["Capital allocation and final approval on all major financial decisions", "Manufacturer relationship introduction and primary contact access", "Final brand name and tagline confirmation — your choice, our recommendation", "Budget tier selection — Tier 1, 2, or 3", "Board governance and all investor or funder relationships", "Final sign-off on all regulatory filings before submission"],
     fees: [
@@ -1593,9 +1584,9 @@ const SLIDES = [
       { color: C.amber, q: "What happens if the product doesn't sell?", a: "Every first account is sale-or-return — no retailer takes financial risk on your product. We do not launch until MoPH approval is confirmed, the brand is professionally executed, and the product is lab-verified. Revenue projections are conservative, assuming 20–40 units per week per gym account at steady state. If sell-through is below target, we have a formal feedback and pricing review protocol built into the mandate — not improvised after the fact." },
       { color: C.greenBright, q: "How long before I start making money?", a: "Under the recommended Tier 2 scenario with corrected projections: breakeven is targeted between Month 8 and Month 11. By Month 6, revenue is projected at $9,000–$14,000 per month at a gross margin of 55–62% — the higher margin figure is due to the corrected $4.50 retail price benchmark against Jack Link's at $5.62. By Month 12, revenue is projected at $40,000–$65,000 per month. These are directional projections based on real Lebanese channel data and competitive pricing research, not guarantees." },
       { color: C.purple, q: "What if I want to manage some parts of this myself?", a: "That is entirely your decision and we will document the division clearly in the mandate. However, our methodology is an integrated system. The outreach script connects to the commercial proposal, which connects to the account tracker, which drives the weekly check-in protocol. The more elements are separated, the more the system loses its compounding effect. Our recommendation: run the full system for 6 months, evaluate results, then decide what to internalise based on demonstrated performance." },
-      { color: C.red, q: "What is the minimum I can invest to get started?", a: "Tier 1 at $18,500 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, Ru'ya 360°'s recommendation is Tier 2 at $42,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category." },
+      { color: C.red, q: "What is the minimum I can invest to get started?", a: "Tier 1 at $18,500 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, RU2YA' recommendation is Tier 2 at $42,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category." },
       { color: C.gold, q: "Why Lebanon and not start with another market?", a: "Lebanon is the proof-of-concept that unlocks the GCC. 'Made in Lebanon' carries premium weight in UAE and Saudi Arabia — the provenance story is a marketing asset. Halal certification from Dar Al-Fatwa Lebanon is recognized across the GCC. Every product decision — the flavor, the certification, the trilingual packaging — was designed for Lebanon first and GCC second. Starting in Lebanon is not a constraint. It is the strategy." },
-      { color: C.amber, q: "What does Ru'ya 360° do that I couldn't hire someone else to do?", a: "An employee executes tasks. Ru'ya 360° brings the full system: the research base, the brand work already done, the outreach scripts, the financial model, the manufacturer brief, the regulatory knowledge, and the personal relationship network across Lebanese gyms and nutrition stores. Rebuilding this from scratch would take 6–9 months and cost more than Tier 3. You would also be paying for someone to learn the market while we already know it cold." },
+      { color: C.amber, q: "What does RU2YA do that I couldn't hire someone else to do?", a: "An employee executes tasks. RU2YA brings the full system: the research base, the brand work already done, the outreach scripts, the financial model, the manufacturer brief, the regulatory knowledge, and the personal relationship network across Lebanese gyms and nutrition stores. Rebuilding this from scratch would take 6–9 months and cost more than Tier 3. You would also be paying for someone to learn the market while we already know it cold." },
     ],
     notes: { open: "Do not read these answers. Know them. Internalize them. Deliver with confidence and brevity — then stop talking. Silence after a complete answer is a sign of strength, not uncertainty.", emphasis: ["Question #3 is always asked. Have Tier 2 numbers memorized: $42K in, $161K gross profit Year 1, $119K net positive, 280% ROI. Say these without looking at the slide."], timing: "10–15 minutes — this is real Q&A time, not presentation time" }
   },
@@ -1604,7 +1595,7 @@ const SLIDES = [
     title: "The Category Is Empty. The Brand Is Named. The Plan Is Built. Let Us Begin.",
     decisions: [
       "Select your budget tier — Tier 1 ($18,500) / Tier 2 ($42,000 recommended) / Tier 3 ($82,000)",
-      "Sign the Ru'ya 360° Management Mandate — formal authority to execute the launch plan today",
+      "Sign the RU2YA Management Mandate — formal authority to execute the launch plan today",
       "Confirm STRIKE as your brand name — IP trademark search begins this week",
       "Call your manufacturer this week — nutritional panel required within 5 business days",
     ],
@@ -1618,9 +1609,6 @@ export default function KITSPitchDeck() {
   const [curr, setCurr] = useState(0);
   const [notes, setNotes] = useState(false);
   const [nav, setNav] = useState(false);
-  const [whiteMode, setWhiteMode] = useState(false);
-  // palette drives both this component's chrome AND all child components via ThemeCtx
-  const palette = whiteMode ? LIGHT : C;
   const total = SLIDES.length;
   const slide = SLIDES[curr];
 
@@ -1641,42 +1629,29 @@ export default function KITSPitchDeck() {
   const pct = ((curr + 1) / total) * 100;
 
   return (
-    <ThemeCtx.Provider value={palette}>
-    <div style={{ height: "100vh", width: "100%", background: palette.void, display: "flex", flexDirection: "column", fontFamily: "Georgia,serif", userSelect: "none", overflow: "hidden", boxSizing: "border-box" }}>
+    <div style={{ minHeight: "100vh", background: C.void, display: "flex", flexDirection: "column", fontFamily: "Georgia,serif", userSelect: "none" }}>
 
       {/* ── TOP BAR ── */}
-      <div style={{ background: palette.void, borderBottom: `1px solid ${palette.ash}`, padding: "7px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, zIndex: 20 }}>
+      <div style={{ background: C.void, borderBottom: `1px solid ${C.ash}`, padding: "7px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, zIndex: 20 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <span style={{ fontFamily: "monospace", fontSize: 11, color: palette.gold, letterSpacing: "0.3em" }}>STRIKE BITES</span>
-          <span style={{ width: 1, height: 14, background: palette.ash }} />
-          <span style={{ fontFamily: "monospace", fontSize: 8, color: palette.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>CLIENT PITCH DECK · Ru'ya 360° ADVISORY GROUP · CONFIDENTIAL</span>
+          <span style={{ fontFamily: "monospace", fontSize: 11, color: C.gold, letterSpacing: "0.3em" }}>STRIKE BITES</span>
+          <span style={{ width: 1, height: 14, background: C.ash }} />
+          <span style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>CLIENT PITCH DECK · RU2YA ADVISORY GROUP · CONFIDENTIAL</span>
         </div>
         <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-          <button onClick={() => setNav(!nav)} style={{ background: nav ? `${palette.gold}15` : "transparent", border: `1px solid ${nav ? palette.gold : palette.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: nav ? palette.gold : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>SLIDES</button>
-          <button onClick={() => setNotes(!notes)} style={{ background: notes ? `${palette.gold}15` : "transparent", border: `1px solid ${notes ? palette.gold : palette.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: notes ? palette.gold : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NOTES {notes ? "▲" : "▼"}</button>
-          <button
-            onClick={() => setWhiteMode(w => !w)}
-            title={whiteMode ? "Switch to dark mode" : "Switch to light mode for TV presentation"}
-            style={{
-              background: whiteMode ? `${palette.gold}20` : `${palette.gold}12`,
-              border: `1px solid ${palette.gold}`,
-              borderRadius: 3, padding: "4px 10px", cursor: "pointer",
-              fontFamily: "monospace", fontSize: 8, color: palette.gold,
-              letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent",
-              fontWeight: 600,
-            }}
-          >{whiteMode ? "◑ DARK" : "☀ DAY"}</button>
-          <div style={{ fontFamily: "monospace", fontSize: 9, color: palette.creamDim, background: palette.charcoal, padding: "4px 10px", borderRadius: 3, border: `1px solid ${palette.ash}` }}>{String(curr + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</div>
+          <button onClick={() => setNav(!nav)} style={{ background: nav ? `${C.gold}15` : "transparent", border: `1px solid ${nav ? C.gold : C.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: nav ? C.gold : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>SLIDES</button>
+          <button onClick={() => setNotes(!notes)} style={{ background: notes ? `${C.gold}15` : "transparent", border: `1px solid ${notes ? C.gold : C.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: notes ? C.gold : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NOTES {notes ? "▲" : "▼"}</button>
+          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.creamDim, background: C.charcoal, padding: "4px 10px", borderRadius: 3, border: `1px solid ${C.ash}` }}>{String(curr + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</div>
         </div>
       </div>
 
       {/* ── SLIDE NAVIGATOR ── */}
       {nav && (
-        <div style={{ background: palette.obsidian, borderBottom: `1px solid ${palette.ash}`, padding: "10px 24px", display: "flex", gap: 4, flexWrap: "wrap", flexShrink: 0, zIndex: 19 }}>
+        <div style={{ background: C.obsidian, borderBottom: `1px solid ${C.ash}`, padding: "10px 24px", display: "flex", gap: 4, flexWrap: "wrap", flexShrink: 0, zIndex: 19 }}>
           {SLIDES.map((s, i) => (
-            <button key={i} onClick={() => { setCurr(i); setNav(false); }} style={{ background: curr === i ? `${palette.gold}18` : s.type === "section" ? palette.ember : "transparent", border: `1px solid ${curr === i ? palette.gold : palette.ash}`, borderRadius: 3, padding: "5px 10px", cursor: "pointer", transition: "all 0.15s", minWidth: s.type === "section" ? 70 : 48, WebkitTapHighlightColor: "transparent" }}>
-              <div style={{ fontFamily: "monospace", fontSize: 6, color: curr === i ? palette.gold : palette.creamDim, marginBottom: 1 }}>{String(i + 1).padStart(2, "0")}</div>
-              <div style={{ fontSize: 8, color: curr === i ? palette.cream : s.type === "section" ? palette.gold : palette.creamDim }}>{s.label}</div>
+            <button key={i} onClick={() => { setCurr(i); setNav(false); }} style={{ background: curr === i ? `${C.gold}18` : s.type === "section" ? C.ember : "transparent", border: `1px solid ${curr === i ? C.gold : C.ash}`, borderRadius: 3, padding: "5px 10px", cursor: "pointer", transition: "all 0.15s", minWidth: s.type === "section" ? 70 : 48, WebkitTapHighlightColor: "transparent" }}>
+              <div style={{ fontFamily: "monospace", fontSize: 6, color: curr === i ? C.gold : C.creamDim, marginBottom: 1 }}>{String(i + 1).padStart(2, "0")}</div>
+              <div style={{ fontSize: 8, color: curr === i ? C.cream : s.type === "section" ? C.gold : C.creamDim }}>{s.label}</div>
             </button>
           ))}
         </div>
@@ -1684,30 +1659,30 @@ export default function KITSPitchDeck() {
 
       {/* ── MAIN SLIDE AREA ── */}
       <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
-        <div style={{ flex: notes ? "0 0 62%" : 1, background: palette.obsidian, position: "relative", overflow: "hidden" }}>
-          <div style={{ position: "absolute", top: 0, left: 0, width: `${pct}%`, height: 2, background: `linear-gradient(to right,${palette.goldDim},${palette.gold},${palette.goldBright})`, transition: "width 0.35s ease", zIndex: 10 }} />
+        <div style={{ flex: notes ? "0 0 62%" : 1, background: C.obsidian, position: "relative", overflow: "hidden" }}>
+          <div style={{ position: "absolute", top: 0, left: 0, width: `${pct}%`, height: 2, background: `linear-gradient(to right,${C.goldDim},${C.gold},${C.goldBright})`, transition: "width 0.35s ease", zIndex: 10 }} />
           <div style={{ position: "absolute", inset: 0, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
             <RenderSlide slide={slide} />
           </div>
-          <button onClick={prev} disabled={curr === 0} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${palette.obsidian}DD`, border: `1px solid ${palette.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === 0 ? "default" : "pointer", color: curr === 0 ? palette.ash : palette.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>‹</button>
-          <button onClick={next} disabled={curr === total - 1} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${palette.obsidian}DD`, border: `1px solid ${palette.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === total - 1 ? "default" : "pointer", color: curr === total - 1 ? palette.ash : palette.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>›</button>
+          <button onClick={prev} disabled={curr === 0} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === 0 ? "default" : "pointer", color: curr === 0 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>‹</button>
+          <button onClick={next} disabled={curr === total - 1} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${C.obsidian}DD`, border: `1px solid ${C.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === total - 1 ? "default" : "pointer", color: curr === total - 1 ? C.ash : C.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>›</button>
         </div>
 
         {/* ── PRESENTER NOTES ── */}
         {notes && slide.notes && (
-          <div style={{ flex: "0 0 38%", background: "#08070A", borderTop: `2px solid ${palette.gold}35`, overflowY: "auto", padding: "16px 32px", WebkitOverflowScrolling: "touch" }}>
+          <div style={{ flex: "0 0 38%", background: "#08070A", borderTop: `2px solid ${C.gold}35`, overflowY: "auto", padding: "16px 32px", WebkitOverflowScrolling: "touch" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
-              <div style={{ fontFamily: "monospace", fontSize: 9, color: palette.gold, letterSpacing: "0.25em" }}>PRESENTER NOTES · {slide.label}</div>
-              <div style={{ fontFamily: "monospace", fontSize: 8, color: palette.creamDim }}>TIMING: {slide.notes.timing}</div>
+              <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.25em" }}>PRESENTER NOTES · {slide.label}</div>
+              <div style={{ fontFamily: "monospace", fontSize: 8, color: C.creamDim }}>TIMING: {slide.notes.timing}</div>
             </div>
-            <p style={{ margin: "0 0 16px", fontSize: 13, color: palette.cream, lineHeight: 1.8, borderLeft: `3px solid ${palette.gold}35`, paddingLeft: 14 }}>{slide.notes.open}</p>
+            <p style={{ margin: "0 0 16px", fontSize: 13, color: C.cream, lineHeight: 1.8, borderLeft: `3px solid ${C.gold}35`, paddingLeft: 14 }}>{slide.notes.open}</p>
             {slide.notes.emphasis && slide.notes.emphasis.length > 0 && (
               <div>
-                <div style={{ fontFamily: "monospace", fontSize: 8, color: palette.amber, letterSpacing: "0.2em", marginBottom: 10 }}>★ EMPHASIS POINTS</div>
+                <div style={{ fontFamily: "monospace", fontSize: 8, color: C.amber, letterSpacing: "0.2em", marginBottom: 10 }}>★ EMPHASIS POINTS</div>
                 {slide.notes.emphasis.map((e, i) => (
-                  <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, padding: "10px 14px", background: `${palette.amber}08`, border: `1px solid ${palette.amber}18`, borderLeft: `3px solid ${palette.amber}50`, borderRadius: 3 }}>
-                    <span style={{ color: palette.amber, fontSize: 10, flexShrink: 0, marginTop: 1 }}>★</span>
-                    <p style={{ margin: 0, fontSize: 12, color: palette.amber, opacity: 0.9, lineHeight: 1.7 }}>{e}</p>
+                  <div key={i} style={{ display: "flex", gap: 10, marginBottom: 10, padding: "10px 14px", background: `${C.amber}08`, border: `1px solid ${C.amber}18`, borderLeft: `3px solid ${C.amber}50`, borderRadius: 3 }}>
+                    <span style={{ color: C.amber, fontSize: 10, flexShrink: 0, marginTop: 1 }}>★</span>
+                    <p style={{ margin: 0, fontSize: 12, color: C.amber, opacity: 0.9, lineHeight: 1.7 }}>{e}</p>
                   </div>
                 ))}
               </div>
@@ -1717,19 +1692,18 @@ export default function KITSPitchDeck() {
       </div>
 
       {/* ── BOTTOM BAR ── */}
-      <div style={{ background: palette.void, borderTop: `1px solid ${palette.ash}`, padding: "6px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
+      <div style={{ background: C.void, borderTop: `1px solid ${C.ash}`, padding: "6px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
         <div style={{ display: "flex", gap: 20 }}>
-          <button onClick={prev} disabled={curr === 0} style={{ background: "transparent", border: "none", cursor: curr === 0 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === 0 ? palette.ash : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>← PREV</button>
-          <button onClick={next} disabled={curr === total - 1} style={{ background: "transparent", border: "none", cursor: curr === total - 1 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === total - 1 ? palette.ash : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NEXT →</button>
+          <button onClick={prev} disabled={curr === 0} style={{ background: "transparent", border: "none", cursor: curr === 0 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === 0 ? C.ash : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>← PREV</button>
+          <button onClick={next} disabled={curr === total - 1} style={{ background: "transparent", border: "none", cursor: curr === total - 1 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === total - 1 ? C.ash : C.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NEXT →</button>
         </div>
         <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
           {SLIDES.map((s, i) => (
-            <button key={i} onClick={() => setCurr(i)} style={{ width: i === curr ? 22 : s.type === "section" ? 8 : 5, height: s.type === "section" ? 5 : 4, borderRadius: 3, background: i === curr ? palette.gold : s.type === "section" ? palette.goldDim : palette.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", WebkitTapHighlightColor: "transparent" }} />
+            <button key={i} onClick={() => setCurr(i)} style={{ width: i === curr ? 22 : s.type === "section" ? 8 : 5, height: s.type === "section" ? 5 : 4, borderRadius: 3, background: i === curr ? C.gold : s.type === "section" ? C.goldDim : C.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", WebkitTapHighlightColor: "transparent" }} />
           ))}
         </div>
-        <div style={{ fontFamily: "monospace", fontSize: 7, color: palette.creamDim, opacity: 0.35, letterSpacing: "0.15em" }}>N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW</div>
+        <div style={{ fontFamily: "monospace", fontSize: 7, color: C.creamDim, opacity: 0.35, letterSpacing: "0.15em" }}>N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW</div>
       </div>
     </div>
-    </ThemeCtx.Provider>
   );
 }
