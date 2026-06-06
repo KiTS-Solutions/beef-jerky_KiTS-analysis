@@ -1088,6 +1088,116 @@ function CompMatrixSlide({ slide }) {
   );
 }
 
+// ─── WHAT NOW (CLOSING) ───────────────────────────────────────────────────────
+function WhatNowSlide() {
+  const C = useContext(ThemeCtx);
+  const { isMobile } = useResponsive();
+
+  const built = [
+    "Brand architecture — STRIKE. Named, scored 92/100, trademark-vetted across Lebanon and GCC.",
+    "Financial model — three-tier, corrected to Jack Link's benchmark. Investment and ROI mapped to month 12.",
+    "Market intelligence — full competitive landscape, regulatory roadmap, and manufacturing brief.",
+    "Go-to-market — outreach system for 80+ accounts, digital strategy, and this presentation.",
+  ];
+
+  const steps = [
+    {
+      n: "01", color: C.gold,
+      title: "Confirm Your Tier and Release the Initial Investment",
+      body: "Select Tier 1 ($24,000), Tier 2 ($62,000 — recommended), or Tier 3 ($96,000). The mandate is signed the same day. There is nothing else to arrange on your end.",
+    },
+    {
+      n: "02", color: C.greenBright,
+      title: "Ru'ya 360° Activates the Launch Plan",
+      body: "Phase 0 begins within 72 hours — legal entity, trademark filing, manufacturer engagement, MoPH registration timeline set. You receive the first field report at the end of week one.",
+    },
+    {
+      n: "03", color: C.amber,
+      title: "You Stay in the Loop — On a Fixed Schedule",
+      body: "Weekly field activity reports. Monthly P&L versus the approved plan. Every capital release requires your sign-off before the next phase begins. You are never out of the picture.",
+    },
+  ];
+
+  const cadence = [
+    { freq: "WEEKLY", desc: "Field activity — accounts visited, orders placed, conversations" },
+    { freq: "MONTHLY", desc: "P&L vs. plan — sell-through, margin, milestone status" },
+    { freq: "PHASE GATES", desc: "Your approval required before each capital release" },
+  ];
+
+  return (
+    <div style={{ height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)` }} />
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "30px 72px", position: "relative", zIndex: 1, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.3em", marginBottom: 14 }}>
+          Ru'ya 360° ADVISORY GROUP · WHAT HAPPENS NEXT
+        </div>
+
+        <h2 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(30px,5.5vw,48px)" : "clamp(36px,4.5vw,58px)", fontWeight: 400, color: C.cream, margin: "0 0 6px", lineHeight: 1.1 }}>
+          What Now?
+        </h2>
+        <p style={{ margin: "0 0 18px", fontSize: isMobile ? 13 : 15, color: C.creamDim, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.6 }}>
+          Eleven deliverables. Zero placeholders. All built before this contract exists.
+        </p>
+        <div style={{ width: 60, height: 2, background: C.gold, marginBottom: 20 }} />
+
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14, marginBottom: 14 }}>
+
+          {/* Left — what was built */}
+          <div style={{ background: `${C.gold}06`, border: `1px solid ${C.gold}1A`, borderRadius: 4, padding: "15px 18px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 11 }}>WHAT RU'YA 360° HAS ALREADY DELIVERED</div>
+            {built.map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: 9, marginBottom: i < built.length - 1 ? 8 : 0 }}>
+                <span style={{ color: C.gold, fontSize: 10, flexShrink: 0, marginTop: 3, lineHeight: 1 }}>◈</span>
+                <span style={{ fontSize: isMobile ? 12.5 : 13.5, color: C.creamDim, lineHeight: 1.55 }}>{item}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Right — three steps */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.2em", marginBottom: 2 }}>THREE STEPS TO BEGIN</div>
+            {steps.map((s) => (
+              <div key={s.n} style={{ background: `${s.color}07`, border: `1px solid ${s.color}1A`, borderLeft: `3px solid ${s.color}`, borderRadius: 3, padding: "11px 14px", flex: 1 }}>
+                <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <span style={{ fontFamily: "monospace", fontSize: 20, color: `${s.color}50`, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{s.n}</span>
+                  <div>
+                    <div style={{ fontSize: isMobile ? 13 : 14, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 5, lineHeight: 1.3 }}>{s.title}</div>
+                    <p style={{ margin: 0, fontSize: isMobile ? 11.5 : 12.5, color: C.creamDim, lineHeight: 1.65 }}>{s.body}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Reporting cadence */}
+        <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "11px 18px", marginBottom: 14, display: "flex", gap: isMobile ? 10 : 0, flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "flex-start" : "center", flexWrap: "wrap" }}>
+          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.amber, letterSpacing: "0.15em", flexShrink: 0, marginRight: isMobile ? 0 : 20 }}>REPORTING CADENCE</div>
+          <div style={{ display: "flex", gap: isMobile ? 8 : 16, flexWrap: "wrap" }}>
+            {cadence.map((r, i) => (
+              <div key={i} style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                <span style={{ fontFamily: "monospace", fontSize: 8.5, color: C.amber, background: `${C.amber}15`, border: `1px solid ${C.amber}25`, padding: "2px 7px", borderRadius: 2, flexShrink: 0, whiteSpace: "nowrap" }}>{r.freq}</span>
+                <span style={{ fontSize: isMobile ? 11 : 12, color: C.creamDim, lineHeight: 1.4 }}>{r.desc}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Closing statement */}
+        <div style={{ background: `${C.gold}09`, border: `1px solid ${C.gold}25`, borderRadius: 4, padding: "18px 24px" }}>
+          <p style={{ margin: 0, fontSize: isMobile ? 15 : 18, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.8 }}>
+            "The work is done. The plan is built. The category is empty. Everything standing between STRIKE and the market is a single decision — and you have everything you need to make it."
+          </p>
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
 // ─── SLIDE DISPATCH ───────────────────────────────────────────────────────────
 function RenderSlide({ slide }) {
   switch (slide.type) {
@@ -1106,6 +1216,7 @@ function RenderSlide({ slide }) {
     case "whykits":      return <WhyKITSSlide slide={slide} />;
     case "mandate":      return <MandateSlide slide={slide} />;
     case "qa":           return <QASlide slide={slide} />;
+    case "whatnow":        return <WhatNowSlide />;
     case "closing":        return <ClosingSlide slide={slide} />;
     case "comp_landscape": return <CompLandscapeSlide slide={slide} />;
     case "comp_matrix":    return <CompMatrixSlide slide={slide} />;
@@ -1562,39 +1673,11 @@ const SLIDES = [
     notes: { open: "Navigate through each of the 8 tabs using the tab bar at the top of the document. Start with OVERVIEW to set the strategic position, then walk through INFRASTRUCTURE → PLATFORMS → E-COMMERCE → CONTENT → COMMUNITY → FINANCIALS → ROADMAP. Let the client drive which section they want to explore in depth.", emphasis: ["The FINANCIALS tab shows the three digital budget tiers (A: $9K / B: $27K / C: $58K Year 1). Present Tier B as the recommended digital investment to run alongside the Standard $42K physical launch — combined Year 1: $69K.", "The Lebanon-specific context in every section is the differentiator. No global marketing agency knows that Lebanon Facebook CPC is $0.15–0.60 — vs $1.72 globally. This is the intelligence that justifies the partnership."], timing: "8–12 minutes depending on client engagement" }
   },
   {
-    id: "sec06", type: "section", label: "§06",
-    badge: "SECTION SIX", color: C.purple,
-    title: "Why Ru'ya 360° and Only Ru'ya 360°",
-    sub: "Seven structural advantages. Each one a reason your business will not find this partnership anywhere else.",
-    notes: { open: "Present this section with full confidence. This is not modesty time. You built 10 deliverables before a contract existed. You have earned the right to speak directly.", emphasis: [], timing: "15 seconds" }
-  },
-  {
-    id: "whykits", type: "whykits", label: "WHY Ru'ya 360°",
-    section: "06 · WHY Ru'ya 360°",
-    title: "Why Work With Ru'ya 360° — And Nobody Else",
-    reasons: [
-      { color: C.gold, title: "We Delivered Before You Decided", body: "We built ten institutional-quality documents before you signed anything. Not slides. Not outlines. Full, referenced, production-ready deliverables — brand study, financial model, manufacturer brief, competitive matrix, outreach scripts, board presentation. This is what a committed partner does. Consultants talk about commitment. We proved it before the contract exists.", without: "You engage a standard consultant who gives you a 15-slide deck of generic advice, calls it a market entry strategy, and leaves you to figure out execution on your own." },
-      { color: C.amber, title: "We Know Lebanon's Channels Cold", body: "82.6% of sports nutrition purchases in MENA are brick-and-mortar. Digital marketing is not the priority channel — physical relationship, personal visit, and warm introduction are what open doors in Beirut, Metn, Keserwan, and Jounieh. We built the outreach system and wrote the scripts specifically for Lebanese retail culture.", without: "You work with an advisor who recommends Instagram advertising and an e-commerce store as your primary launch strategy in a relationship-first market where the handshake closes the deal." },
-      { color: C.greenBright, title: "We Execute — We Don't Just Advise", body: "Ru'ya 360° visits accounts personally. Sets up displays personally. Trains store staff personally. Checks in bi-weekly personally. We manage the manufacturer relationship, regulatory submissions, designer briefing, and monthly financial reporting. You make the decisions. We make them happen — every single one.", without: "You receive a comprehensive report and a handshake. You then need to hire someone else to actually execute what the consultant designed, restarting the entire learning curve." },
-      { color: C.purple, title: "We Built Your Brand Already", body: "STRIKE is not a name we suggested casually. It is a name we researched, scored against 7 criteria, tested for trademark viability across Lebanon and GCC, evaluated in Arabic, English, and French, and rated at 92/100. The visual system, packaging specifications, and trilingual copy are all documented. Your designer can be briefed tomorrow.", without: "You spend three months in naming workshops, iterate through 40 logo concepts, engage three designers with conflicting visions, and still don't know if the trademark is available in Lebanon or GCC." },
-      { color: C.red, title: "Milestone-Gated Financial Accountability", body: "Your budget is released by phase, not paid upfront. Phase 0 funds unlock after the legal entity is formed. Phase 1 after brand identity is approved. Phase 2 after the first batch sells through. You are never at risk of committing full capital before results are demonstrated. Every month you see a P&L against the approved plan.", without: "You hand over a lump sum and receive quarterly updates on 'strategic progress' and 'brand-building activity' with no verifiable output and no accountability structure." },
-      { color: C.gold, title: "You Own Everything We Create", body: "Every deliverable — the brand identity, flavor specifications, outreach scripts, competitor intelligence, financial model, and regulatory roadmap — transfers to you upon final payment. You are not licensing our work. You own it outright, unconditionally. If you ever move on without Ru'ya 360°, you take everything with you.", without: "You discover the 'proprietary methodology' your consultant used is copyrighted and you cannot use the outputs without retaining them permanently at an ongoing monthly fee." },
-      { color: C.greenBright, title: "We Think in GCC from Day One", body: "The product is being built for Lebanon and GCC simultaneously. Halal certification from Dar Al-Fatwa Lebanon is recognized in UAE and Saudi Arabia. STRIKE PACKS — the variety multipack for GCC hypermarket entry — is already in the product architecture. The Lebanese BBQ flavor is a premium signal in every GCC market. No reformulation needed.", without: "You launch in Lebanon with a product that requires full reformulation, re-certification under ESMA/SFDA, and an entirely new brand before it can enter any export market." },
-    ],
-    notes: { open: "After all 7: 'No competitor to your business — not Jack Link's, not Wild West, not any future local entrant — will have a partner that brings all seven of these simultaneously. This combination does not exist in Lebanon.'", emphasis: ["Reason 01 — We Delivered — is always the most impactful. It is unique. No other advisory firm in Lebanon has done this.", "Reason 04 — Milestone-Gated — is most reassuring to a careful founder. Emphasize that they pay for progress, not promises."], timing: "7 minutes" }
-  },
-  {
-    id: "mandate", type: "mandate", label: "MANDATE",
-    section: "07 · THE PROPOSAL",
-    title: "What We Are Proposing — The Ru'ya 360° Mandate",
-    kitsScope: ["All channel outreach — every account visit, every commercial negotiation, every display setup", "Regulatory management — MoPH, Halal, trademark, GS1, lab testing — end to end", "Designer briefing, creative direction, and compliance sign-off on all packaging before print", "Manufacturer relationship — flavor development oversight, QC protocol, supply agreement management", "Monthly financial reporting — P&L against plan, sell-through data, account performance", "Strategic decisions — channel sequencing, pricing reviews, SKU expansion timing"],
-    clientScope: ["Capital allocation and final approval on all major financial decisions", "Manufacturer relationship introduction and primary contact access", "Final brand name and tagline confirmation — your choice, our recommendation", "Budget tier selection — Tier 1, 2, or 3", "Board governance and all investor or funder relationships", "Final sign-off on all regulatory filings before submission"],
-    fees: [
-      { tier: "Tier 1 — Lean Launch", range: "Included in contingency" },
-      { tier: "Tier 2 — Standard Launch", range: "$3,000–5,000 / Phases 0–2 (6 mo)" },
-      { tier: "Tier 3 — Full Market Entry", range: "$8,000–14,000 / Phases 0–3 (12 mo)" },
-    ],
-    notes: { open: "Be direct about fee structure. Say: 'Our fee is milestone-linked, not time-billed. We earn when you progress — not when we sit in meetings. If milestones are not hit, the next phase of funding does not release.'", emphasis: ["The IP ownership clause is almost always the most reassuring thing in this section. Emphasize it: 'You own everything we create. Unconditionally.'"], timing: "4 minutes" }
+    id: "sec_close", type: "section", label: "§CLOSE",
+    badge: "FINAL SECTION", color: C.gold,
+    title: "Closing the Deal",
+    sub: "The plan is built. The case is made. Every question has an answer. This is where STRIKE begins.",
+    notes: { open: "Pause before advancing. Let everything that came before sit for a moment. Then: 'We have one final section. It is the shortest — and the most important.'", emphasis: ["Do not rush this transition. The weight of what was just presented — 11 deliverables, a full financial model, a complete market study — should be felt before the next word is spoken."], timing: "15 seconds" }
   },
   {
     id: "qa", type: "qa", label: "Q & A",
@@ -1609,20 +1692,13 @@ const SLIDES = [
       { color: C.red, q: "What is the minimum I can invest to get started?", a: "Tier 1 at $24,000 is the viable minimum — it registers the entity, begins MoPH registration for one SKU, and gives you market presence. However, Ru'ya 360°'s recommendation is Tier 2 at $62,000. At Tier 1, there is a real risk that the packaging appears underfunded relative to Jack Link's and Wild West on the same shelf. The difference between Tier 1 and Tier 2 is the difference between entering the market and owning the category." },
       { color: C.gold, q: "Why Lebanon and not start with another market?", a: "Lebanon is the proof-of-concept that unlocks the GCC. 'Made in Lebanon' carries premium weight in UAE and Saudi Arabia — the provenance story is a marketing asset. Halal certification from Dar Al-Fatwa Lebanon is recognized across the GCC. Every product decision — the flavor, the certification, the trilingual packaging — was designed for Lebanon first and GCC second. Starting in Lebanon is not a constraint. It is the strategy." },
       { color: C.amber, q: "What does Ru'ya 360° do that I couldn't hire someone else to do?", a: "An employee executes tasks. Ru'ya 360° brings the full system: the research base, the brand work already done, the outreach scripts, the financial model, the manufacturer brief, the regulatory knowledge, and the personal relationship network across Lebanese gyms and nutrition stores. Rebuilding this from scratch would take 6–9 months and cost more than Tier 3. You would also be paying for someone to learn the market while we already know it cold." },
+      { color: C.gold, q: "What happens right now, at the end of this conversation?", a: "One decision. Select your tier — Tier 1 ($24,000), Tier 2 ($62,000 recommended), or Tier 3 ($96,000). Sign the mandate. Ru'ya 360° activates Phase 0 within 72 hours. Everything you need to make that decision is already in front of you — the market analysis, the financial model, the brand work, the competitive intelligence, the regulatory roadmap. We built all of it before asking for anything. The work is done. The only question is whether STRIKE launches with you at the front." },
     ],
     notes: { open: "Do not read these answers. Know them. Internalize them. Deliver with confidence and brevity — then stop talking. Silence after a complete answer is a sign of strength, not uncertainty.", emphasis: ["Question #3 is always asked. Have Tier 2 numbers memorized: $62K in, $153K gross profit Year 1, ~$91K net positive, 265% ROI. Say these without looking at the slide."], timing: "10–15 minutes — this is real Q&A time, not presentation time" }
   },
   {
-    id: "close", type: "closing", label: "CLOSE",
-    title: "The Category Is Empty. The Brand Is Named. The Plan Is Built. Let Us Begin.",
-    decisions: [
-      "Select your budget tier — Tier 1 ($18,500) / Tier 2 ($42,000 recommended) / Tier 3 ($82,000)",
-      "Sign the Ru'ya 360° Management Mandate — formal authority to execute the launch plan today",
-      "Confirm STRIKE as your brand name — IP trademark search begins this week",
-      "Call your manufacturer this week — nutritional panel required within 5 business days",
-    ],
-    closingLine: "The category is empty today. The question is not whether someone will build it. The question is whether STRIKE owns it — or whether we watch someone else do it first.",
-    notes: { open: "Deliver the closing line verbatim. Then stop talking entirely. Let the room decide. Do not fill the silence. Do not renegotiate before they have responded. The next person who speaks is not you.", emphasis: ["Ask which tier directly: 'Which scenario are we working with?' Then silence.", "If they do not sign today — offer to leave all 10 deliverables with them. There is no better closing gift than handing over 10 completed documents they can read tonight."], timing: "5 minutes + close" }
+    id: "whatnow", type: "whatnow", label: "WHAT NOW?",
+    notes: { open: "This is the close. Do not pitch. Do not add to what the deck has already said. Present each section slowly — let the weight of what was delivered land on its own. Then deliver the closing line and stop talking entirely.", emphasis: ["The silence after the closing line is the close. The next voice in the room is his.", "If he asks about timeline: 'Phase 0 begins within 72 hours of the mandate being signed.' That is all you need to say.", "If he does not commit today — offer to leave the full deck and all eleven documents with him. The work is the closer."], timing: "3 minutes — then silence" }
   }
 ];
 
