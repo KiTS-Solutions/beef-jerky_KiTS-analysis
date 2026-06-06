@@ -1023,7 +1023,7 @@ function CompMatrixSlide({ slide }) {
         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: isMobile ? "520px" : "auto" }}>
           <thead>
             <tr>
-              <th style={{ padding: "8px 10px", fontFamily: "monospace", fontSize: 9.5, color: C.creamDim, textAlign: "left", borderBottom: `2px solid ${C.ash}`, width: 155 }}>CRITERION</th>
+              <th style={{ padding: "8px 10px", fontFamily: "monospace", fontSize: 9.5, color: C.creamDim, textAlign: "left", borderBottom: `2px solid ${C.ash}`, width: 155, position: "sticky", top: 0, zIndex: 10, background: C.charcoal }}>CRITERION</th>
               {slide.competitors.map((comp, i) => {
                 const isUs = i === slide.competitors.length - 1;
                 return (
@@ -1031,8 +1031,9 @@ function CompMatrixSlide({ slide }) {
                     padding: "7px 8px", fontFamily: "monospace",
                     fontSize: isUs ? 10.5 : 9.5, color: isUs ? C.greenBright : C.creamDim,
                     textAlign: "center", borderBottom: `2px solid ${isUs ? C.greenBright : C.ash}`,
-                    background: isUs ? `${C.greenBright}09` : "transparent",
-                    whiteSpace: "nowrap", lineHeight: 1.4
+                    background: isUs ? `${C.greenBright}09` : C.charcoal,
+                    whiteSpace: "nowrap", lineHeight: 1.4,
+                    position: "sticky", top: 0, zIndex: 10
                   }}>
                     {comp.short}
                     {isUs && <div style={{ fontSize: 6.5, marginTop: 3, letterSpacing: "0.05em" }}>★ OUR BRAND</div>}
