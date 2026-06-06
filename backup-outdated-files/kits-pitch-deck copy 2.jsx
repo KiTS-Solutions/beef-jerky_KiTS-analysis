@@ -1088,329 +1088,112 @@ function CompMatrixSlide({ slide }) {
   );
 }
 
-// ─── WHAT NOW (CLOSING) — v2.0 ───────────────────────────────────────────────
-// Cialdini reciprocity · Kahneman peak-end + loss aversion ·
-// Hopkins / Tracy / Voss silence close · Khakhar & Rammal MENA norms ·
-// MBB / Goldman visual discipline · Lieberman & Montgomery first-mover urgency
+// ─── WHAT NOW (CLOSING) ───────────────────────────────────────────────────────
 function WhatNowSlide() {
   const C = useContext(ThemeCtx);
   const { isMobile } = useResponsive();
-  const [selectedTier, setSelectedTier] = useState(1);
-  const [animIn, setAnimIn] = useState(false);
 
-  useEffect(() => {
-    const t = setTimeout(() => setAnimIn(true), 180);
-    return () => clearTimeout(t);
-  }, []);
-
-  const deliverables = [
-    { ref: "KAG-JRK-001", label: "Advisory Framework",   col: C.gold        },
-    { ref: "KAG-JRK-002", label: "Launch Checklist",     col: C.amber       },
-    { ref: "KAG-JRK-003", label: "Financial Study",      col: C.greenBright },
-    { ref: "KAG-JRK-004", label: "Outreach System",      col: C.purple      },
-    { ref: "KAG-JRK-005", label: "Competitive Analysis", col: C.red         },
-    { ref: "KAG-JRK-006", label: "Brand Design Brief",   col: C.gold        },
-    { ref: "KAG-JRK-007", label: "Manufacturer Brief",   col: C.amber       },
-    { ref: "KAG-JRK-008", label: "Brand Study 92/100",   col: C.greenBright },
-    { ref: "KAG-JRK-009", label: "Board Presentation",   col: C.purple      },
-    { ref: "KAG-JRK-010", label: "Handoff Document",     col: C.red         },
-    { ref: "KAG-JRK-MKT", label: "Digital Strategy",     col: C.teal        },
+  const built = [
+    "Brand architecture — STRIKE. Named, scored 92/100, trademark-vetted across Lebanon and GCC.",
+    "Financial model — three-tier, corrected to Jack Link's benchmark. Investment and ROI mapped to month 12.",
+    "Market intelligence — full competitive landscape, regulatory roadmap, and manufacturing brief.",
+    "Go-to-market — outreach system for 80+ accounts, digital strategy, and this presentation.",
   ];
 
-  const proofClaims = [
+  const steps = [
     {
-      color: C.gold, label: "THE MARKET CLAIM",
-      text: "Zero local beef jerky brands in Lebanon. The category is uncontested and available to its first owner — confirmed by Ru’ya 360° field research, June 2026.",
+      n: "01", color: C.gold,
+      title: "Confirm Your Tier and Release the Initial Investment",
+      body: "Select Tier 1 ($24,000), Tier 2 ($62,000 — recommended), or Tier 3 ($96,000). The mandate is signed the same day. There is nothing else to arrange on your end.",
     },
     {
-      color: C.greenBright, label: "THE BRAND CLAIM",
-      text: "STRIKE scores 92/100 on name alone. Visual identity, technical brief, and designer brief are production-ready today. No contract was required to build any of it.",
+      n: "02", color: C.greenBright,
+      title: "Ru'ya 360° Activates the Launch Plan",
+      body: "Phase 0 begins within 72 hours — legal entity, trademark filing, manufacturer engagement, MoPH registration timeline set. You receive the first field report at the end of week one.",
     },
     {
-      color: C.amber, label: "THE FINANCIAL CLAIM",
-      text: "Tier 2: $40K–$65K/mo by Month 12. Gross margin 61.9%. Breakeven Month 8–11. Every number field-corrected and verified against the Jack Link’s benchmark.",
+      n: "03", color: C.amber,
+      title: "You Stay in the Loop — On a Fixed Schedule",
+      body: "Weekly field activity reports. Monthly P&L versus the approved plan. Every capital release requires your sign-off before the next phase begins. You are never out of the picture.",
     },
   ];
 
-  const verdict = [
-    { yes: "Shelf-ready Q4 2026",            wait: "Q1 2027 at the earliest"      },
-    { yes: "Category ownership — secured", wait: "Wild West Halal arrives first" },
-    { yes: "Phase 0 in 72 hours",            wait: "Another planning cycle begins" },
-  ];
-
-  const tiers = [
-    {
-      id: "TIER 1", name: "Lean Launch",       amount: "$24,000", color: C.amber,       rec: false,
-      m12: "$14K–$22K/mo", roi: "~155%", bep: "Month 9–12",
-      phase0: [
-        "SARL legal entity registration",
-        "MoPH food product registration — 1 SKU",
-        "Trademark clearance — STRIKE Class 29 Lebanon",
-        "Manufacturer supply agreement initiation",
-        "20–30 gym account outreach activates Day 8",
-      ],
-    },
-    {
-      id: "TIER 2", name: "Standard Launch",   amount: "$62,000", color: C.gold,        rec: true,
-      m12: "$40K–$65K/mo", roi: "~265%", bep: "Month 8–11",
-      phase0: [
-        "SARL registration + full corporate structure",
-        "MoPH registration — 2 SKUs + Halal certification",
-        "Trademark filing — Classes 29 & 35, Lebanon",
-        "Brand designer formally briefed — 8-week identity delivery",
-        "Manufacturer supply agreement + QC protocol signed",
-        "GS1 Lebanon barcode allocation — 2 SKUs",
-        "60+ account outreach activates Day 8",
-      ],
-    },
-    {
-      id: "TIER 3", name: "Full Market Entry", amount: "$96,000", color: C.greenBright, rec: false,
-      m12: "$80K–$130K/mo", roi: "~310%", bep: "Month 5–7",
-      phase0: [
-        "All Tier 2 elements running in parallel",
-        "STRIKE STRIPS secondary line development begins",
-        "Modern trade pre-engagement — Carrefour, Spinneys",
-        "Digital infrastructure — full brand ecosystem live",
-        "GCC trademark filing — UAE Class 29",
-        "40-trainer founding ambassador programme",
-      ],
-    },
+  const cadence = [
+    { freq: "WEEKLY", desc: "Field activity — accounts visited, orders placed, conversations" },
+    { freq: "MONTHLY", desc: "P&L vs. plan — sell-through, margin, milestone status" },
+    { freq: "PHASE GATES", desc: "Your approval required before each capital release" },
   ];
 
   return (
-    <div style={{ height: "100%", display: "flex", flexDirection: "column", position: "relative", overflow: "hidden" }}>
+    <div style={{ height: "100%", display: "flex", position: "relative", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)` }} />
 
-      {/* Grid texture */}
-      <div style={{ position: "absolute", inset: 0, opacity: 0.022, backgroundImage: `linear-gradient(${C.gold} 1px,transparent 1px),linear-gradient(90deg,${C.gold} 1px,transparent 1px)`, backgroundSize: "36px 36px", pointerEvents: "none" }} />
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", padding: isMobile ? "24px 20px" : "30px 72px", position: "relative", zIndex: 1, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
 
-      {/* Left accent bar */}
-      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: `linear-gradient(to bottom,transparent,${C.gold},transparent)`, zIndex: 2 }} />
-
-      {/* ── STRIP A · PROOF OF WORK ── */}
-      <div style={{
-        flexShrink: 0,
-        padding: isMobile ? "9px 16px 9px 20px" : "10px 36px 9px 36px",
-        borderBottom: `1px solid ${C.ash}`,
-        background: `${C.gold}04`,
-        position: "relative", zIndex: 1,
-      }}>
-        <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.gold, letterSpacing: "0.4em", marginBottom: 8, opacity: 0.72 }}>
-          PROOF OF COMMITMENT · 11 DELIVERABLES COMPLETE · BUILT BEFORE THIS CONTRACT EXISTS
+        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.gold, opacity: 0.55, letterSpacing: "0.3em", marginBottom: 14 }}>
+          Ru'ya 360° ADVISORY GROUP · WHAT HAPPENS NEXT
         </div>
-        <div style={{ display: "flex", gap: isMobile ? 4 : 5, flexWrap: "wrap" }}>
-          {deliverables.map((d, i) => (
-            <div key={i} style={{
-              display: "flex", alignItems: "center", gap: 4,
-              background: `${d.col}0D`, border: `1px solid ${d.col}28`,
-              borderRadius: 2, padding: "3px 9px",
-              opacity: animIn ? 1 : 0,
-              transform: animIn ? "translateY(0)" : "translateY(6px)",
-              transition: `opacity 0.4s ease ${i * 0.045}s, transform 0.4s ease ${i * 0.045}s`,
-            }}>
-              <span style={{ color: d.col, fontSize: 9 }}>✓</span>
-              <span style={{ fontFamily: "monospace", fontSize: 7, color: d.col, opacity: 0.6 }}>{d.ref}</span>
-              <span style={{ fontSize: 10, color: C.creamDim }}>{d.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* ── BODY · Two columns ── */}
-      <div style={{
-        flex: 1,
-        display: "grid",
-        gridTemplateColumns: isMobile ? "1fr" : "1fr 1.1fr",
-        minHeight: 0, position: "relative", zIndex: 1, overflow: "hidden",
-      }}>
+        <h2 style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: isMobile ? "clamp(30px,5.5vw,48px)" : "clamp(36px,4.5vw,58px)", fontWeight: 400, color: C.cream, margin: "0 0 6px", lineHeight: 1.1 }}>
+          What Now?
+        </h2>
+        <p style={{ margin: "0 0 18px", fontSize: isMobile ? 13 : 15, color: C.creamDim, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.6 }}>
+          Eleven deliverables. Zero placeholders. All built before this contract exists.
+        </p>
+        <div style={{ width: 60, height: 2, background: C.gold, marginBottom: 20 }} />
 
-        {/* LEFT · Summary close + cost-of-inaction */}
-        <div style={{
-          padding: isMobile ? "14px 16px" : "16px 24px 14px 36px",
-          display: "flex", flexDirection: "column", gap: 9,
-          borderRight: isMobile ? "none" : `1px solid ${C.ash}`,
-          overflowY: "auto", WebkitOverflowScrolling: "touch",
-        }}>
-          <div style={{ fontFamily: "monospace", fontSize: 8, color: C.gold, letterSpacing: "0.3em" }}>
-            THE CASE — CLOSED
-          </div>
+        <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14, marginBottom: 14 }}>
 
-          {proofClaims.map((p, i) => (
-            <div key={i} style={{
-              padding: "9px 13px",
-              background: `${p.color}08`,
-              border: `1px solid ${p.color}1E`,
-              borderLeft: `3px solid ${p.color}`,
-              borderRadius: 3,
-              opacity: animIn ? 1 : 0,
-              transform: animIn ? "translateX(0)" : "translateX(-10px)",
-              transition: `opacity 0.5s ease ${0.2 + i * 0.1}s, transform 0.5s ease ${0.2 + i * 0.1}s`,
-            }}>
-              <div style={{ fontFamily: "monospace", fontSize: 7.5, color: p.color, letterSpacing: "0.18em", marginBottom: 4 }}>{p.label}</div>
-              <p style={{ margin: 0, fontSize: isMobile ? 11.5 : 12.5, color: C.cream, lineHeight: 1.65 }}>{p.text}</p>
-            </div>
-          ))}
-
-          {/* YES vs WAIT — loss aversion */}
-          <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 7 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, letterSpacing: "0.3em" }}>
-              YES VS. WAIT — THE REAL COST
-            </div>
-            <div style={{ flex: 1, border: `1px solid ${C.ash}`, borderRadius: 3, overflow: "hidden" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
-                <div style={{ padding: "6px 10px", background: `${C.greenBright}12`, borderBottom: `1px solid ${C.ash}` }}>
-                  <div style={{ fontFamily: "monospace", fontSize: 8, color: C.greenBright, letterSpacing: "0.15em" }}>SIGN TODAY</div>
-                </div>
-                <div style={{ padding: "6px 10px", background: `${C.red}10`, borderBottom: `1px solid ${C.ash}`, borderLeft: `1px solid ${C.ash}` }}>
-                  <div style={{ fontFamily: "monospace", fontSize: 8, color: C.red, letterSpacing: "0.15em" }}>IF YOU WAIT</div>
-                </div>
-                {verdict.flatMap((row, ri) => [
-                  <div key={`y${ri}`} style={{ padding: "8px 10px", background: `${C.greenBright}06`, borderTop: `1px solid ${C.ash}`, display: "flex", gap: 6, alignItems: "flex-start" }}>
-                    <span style={{ color: C.greenBright, fontSize: 10, flexShrink: 0, marginTop: 1 }}>✓</span>
-                    <span style={{ fontSize: isMobile ? 10.5 : 11.5, color: C.cream, lineHeight: 1.45 }}>{row.yes}</span>
-                  </div>,
-                  <div key={`w${ri}`} style={{ padding: "8px 10px", background: `${C.red}06`, borderTop: `1px solid ${C.ash}`, borderLeft: `1px solid ${C.ash}`, display: "flex", gap: 6, alignItems: "flex-start" }}>
-                    <span style={{ color: C.red, fontSize: 10, flexShrink: 0, marginTop: 1 }}>✗</span>
-                    <span style={{ fontSize: isMobile ? 10.5 : 11.5, color: C.creamDim, lineHeight: 1.45 }}>{row.wait}</span>
-                  </div>,
-                ])}
+          {/* Left — what was built */}
+          <div style={{ background: `${C.gold}06`, border: `1px solid ${C.gold}1A`, borderRadius: 4, padding: "15px 18px" }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.gold, letterSpacing: "0.2em", marginBottom: 11 }}>WHAT RU'YA 360° HAS ALREADY DELIVERED</div>
+            {built.map((item, i) => (
+              <div key={i} style={{ display: "flex", gap: 9, marginBottom: i < built.length - 1 ? 8 : 0 }}>
+                <span style={{ color: C.gold, fontSize: 10, flexShrink: 0, marginTop: 3, lineHeight: 1 }}>◈</span>
+                <span style={{ fontSize: isMobile ? 12.5 : 13.5, color: C.creamDim, lineHeight: 1.55 }}>{item}</span>
               </div>
-            </div>
+            ))}
+          </div>
+
+          {/* Right — three steps */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            <div style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, letterSpacing: "0.2em", marginBottom: 2 }}>THREE STEPS TO BEGIN</div>
+            {steps.map((s) => (
+              <div key={s.n} style={{ background: `${s.color}07`, border: `1px solid ${s.color}1A`, borderLeft: `3px solid ${s.color}`, borderRadius: 3, padding: "11px 14px", flex: 1 }}>
+                <div style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                  <span style={{ fontFamily: "monospace", fontSize: 20, color: `${s.color}50`, lineHeight: 1, flexShrink: 0, marginTop: 1 }}>{s.n}</span>
+                  <div>
+                    <div style={{ fontSize: isMobile ? 13 : 14, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 5, lineHeight: 1.3 }}>{s.title}</div>
+                    <p style={{ margin: 0, fontSize: isMobile ? 11.5 : 12.5, color: C.creamDim, lineHeight: 1.65 }}>{s.body}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* RIGHT · Tier selector — choice close + assumptive close */}
-        <div style={{
-          padding: isMobile ? "14px 16px" : "16px 36px 14px 24px",
-          display: "flex", flexDirection: "column", gap: 7,
-          overflowY: "auto", WebkitOverflowScrolling: "touch",
-        }}>
-          <div style={{ fontFamily: "monospace", fontSize: 8, color: C.greenBright, letterSpacing: "0.3em", marginBottom: 3 }}>
-            ONE DECISION — SELECT YOUR TIER
-          </div>
-
-          {tiers.map((t, i) => (
-            <div key={i}>
-              <button
-                onClick={() => setSelectedTier(i)}
-                style={{
-                  width: "100%", textAlign: "left", cursor: "pointer",
-                  background: selectedTier === i ? `${t.color}12` : C.charcoal,
-                  border: `1px solid ${selectedTier === i ? t.color : C.ash}`,
-                  borderTop: `3px solid ${selectedTier === i ? t.color : C.ash}`,
-                  borderRadius: selectedTier === i ? "3px 3px 0 0" : 3,
-                  padding: isMobile ? "10px 12px" : "11px 16px",
-                  transition: "all 0.2s ease", position: "relative",
-                  WebkitTapHighlightColor: "transparent",
-                }}
-              >
-                {t.rec && (
-                  <div style={{
-                    position: "absolute", top: -9, left: "50%", transform: "translateX(-50%)",
-                    background: C.gold, color: C.obsidian,
-                    fontFamily: "monospace", fontSize: 8, fontWeight: 700,
-                    padding: "2px 12px", borderRadius: 2, whiteSpace: "nowrap",
-                    letterSpacing: "0.05em", zIndex: 1,
-                  }}>Ru’ya 360° RECOMMENDS</div>
-                )}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-                    <span style={{ fontFamily: "monospace", fontSize: 9, color: t.color, letterSpacing: "0.2em", opacity: 0.85 }}>{t.id}</span>
-                    <span style={{ fontSize: isMobile ? 13 : 14.5, color: selectedTier === i ? C.cream : C.creamDim }}>{t.name}</span>
-                  </div>
-                  <span style={{ fontFamily: "monospace", fontSize: isMobile ? 17 : 22, color: t.color, letterSpacing: "-0.02em" }}>{t.amount}</span>
-                </div>
-                {selectedTier === i && (
-                  <div style={{ display: "flex", gap: 16, marginTop: 7, flexWrap: "wrap" }}>
-                    {[
-                      { label: "M12 REVENUE", val: t.m12 },
-                      { label: "YEAR 1 ROI",  val: t.roi  },
-                      { label: "BREAKEVEN",   val: t.bep  },
-                    ].map((m, mi) => (
-                      <div key={mi}>
-                        <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, letterSpacing: "0.1em", marginBottom: 2 }}>{m.label}</div>
-                        <div style={{ fontFamily: "monospace", fontSize: isMobile ? 11 : 12.5, color: t.color }}>{m.val}</div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </button>
-
-              {/* Phase 0 expansion — assumptive close */}
-              {selectedTier === i && (
-                <div style={{
-                  background: `${t.color}06`,
-                  border: `1px solid ${t.color}1E`, borderTop: "none",
-                  borderRadius: "0 0 3px 3px", padding: "10px 14px",
-                }}>
-                  <div style={{ fontFamily: "monospace", fontSize: 7.5, color: t.color, letterSpacing: "0.22em", marginBottom: 8 }}>
-                    PHASE 0 ACTIVATES · 72 HOURS FROM SIGNING
-                  </div>
-                  {t.phase0.map((step, si) => (
-                    <div key={si} style={{ display: "flex", gap: 7, marginBottom: 5 }}>
-                      <span style={{ color: t.color, fontSize: 10, flexShrink: 0, marginTop: 2 }}>→</span>
-                      <span style={{ fontSize: isMobile ? 11 : 12, color: C.creamDim, lineHeight: 1.5 }}>{step}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-
-          {/* Mandate control — MENA norm: client retains authority */}
-          <div style={{ marginTop: "auto", padding: "9px 13px", background: `${C.amber}08`, border: `1px solid ${C.amber}1E`, borderRadius: 3 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.amber, letterSpacing: "0.2em", marginBottom: 7 }}>
-              YOUR CONTROL · BUILT INTO THE MANDATE
-            </div>
-            <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              {[
-                { freq: "WEEKLY",      desc: "Field activity report"  },
-                { freq: "MONTHLY",     desc: "P&L vs. approved plan"  },
-                { freq: "PHASE GATES", desc: "Your sign-off required" },
-              ].map((r, ri) => (
-                <div key={ri} style={{ display: "flex", gap: 5, alignItems: "center" }}>
-                  <span style={{ fontFamily: "monospace", fontSize: 7.5, color: C.amber, background: `${C.amber}15`, border: `1px solid ${C.amber}28`, padding: "1px 6px", borderRadius: 2, whiteSpace: "nowrap" }}>{r.freq}</span>
-                  <span style={{ fontSize: 10.5, color: C.creamDim }}>{r.desc}</span>
-                </div>
-              ))}
-            </div>
+        {/* Reporting cadence */}
+        <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "11px 18px", marginBottom: 14, display: "flex", gap: isMobile ? 10 : 0, flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "flex-start" : "center", flexWrap: "wrap" }}>
+          <div style={{ fontFamily: "monospace", fontSize: 9, color: C.amber, letterSpacing: "0.15em", flexShrink: 0, marginRight: isMobile ? 0 : 20 }}>REPORTING CADENCE</div>
+          <div style={{ display: "flex", gap: isMobile ? 8 : 16, flexWrap: "wrap" }}>
+            {cadence.map((r, i) => (
+              <div key={i} style={{ display: "flex", gap: 6, alignItems: "center" }}>
+                <span style={{ fontFamily: "monospace", fontSize: 8.5, color: C.amber, background: `${C.amber}15`, border: `1px solid ${C.amber}25`, padding: "2px 7px", borderRadius: 2, flexShrink: 0, whiteSpace: "nowrap" }}>{r.freq}</span>
+                <span style={{ fontSize: isMobile ? 11 : 12, color: C.creamDim, lineHeight: 1.4 }}>{r.desc}</span>
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Closing statement */}
+        <div style={{ background: `${C.gold}09`, border: `1px solid ${C.gold}25`, borderRadius: 4, padding: "18px 24px" }}>
+          <p style={{ margin: 0, fontSize: isMobile ? 15 : 18, color: C.gold, fontFamily: "Georgia,serif", fontStyle: "italic", lineHeight: 1.8 }}>
+            "The work is done. The plan is built. The category is empty. Everything standing between STRIKE and the market is a single decision — and you have everything you need to make it."
+          </p>
+        </div>
+
       </div>
-
-      {/* ── FOOTER · THE ONE DECISION ──
-          Peak-end rule: last visual the board sees and retains.
-          Written ask + silence directive. Whoever speaks next owns the room.
-      ── */}
-      {/* <div style={{
-        flexShrink: 0,
-        borderTop: `2px solid ${C.gold}38`,
-        background: `linear-gradient(to right,${C.gold}10,${C.gold}07,${C.gold}04)`,
-        padding: isMobile ? "13px 20px" : "15px 36px",
-        position: "relative", zIndex: 1,
-      }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, flexWrap: isMobile ? "wrap" : "nowrap" }}>
-          <div style={{ flex: 1 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.gold, letterSpacing: "0.42em", marginBottom: 6, opacity: 0.65 }}>
-              THE QUESTION — STATED ONCE · THEN SILENCE
-            </div>
-            <p style={{ margin: 0, fontSize: isMobile ? 15 : 20, color: C.gold, fontFamily: "Georgia,'Times New Roman',serif", fontStyle: "italic", lineHeight: 1.35 }}>
-              "Which tier do we start with — and shall we sign today?"
-            </p>
-          </div>
-          <div style={{ textAlign: "right", flexShrink: 0, borderLeft: `1px solid ${C.gold}28`, paddingLeft: 24 }}>
-            <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 5 }}>
-              PHASE 0 ACTIVATION
-            </div>
-            <div style={{ fontFamily: "monospace", fontSize: isMobile ? 14 : 19, color: C.greenBright, fontWeight: 700, letterSpacing: "0.04em" }}>
-              72 HRS · SIGN TODAY
-            </div>
-            <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, marginTop: 5, opacity: 0.38, letterSpacing: "0.12em" }}>
-              PRESENTER: DELIVER. THEN STOP TALKING.
-            </div>
-          </div>
-        </div>
-      </div> */}
-
     </div>
   );
 }
@@ -1915,16 +1698,7 @@ const SLIDES = [
   },
   {
     id: "whatnow", type: "whatnow", label: "WHAT NOW?",
-    notes: {
-      open: "This is the close. Do not pitch. Do not narrate the slide. Let the structure carry the weight of what was delivered in the last 60 minutes. Move through the three zones deliberately: gesture to the 11 proof chips at the top — say nothing, let them read the names. Point to the three proof claims — one sentence each, then stop. Let the YES vs WAIT table sit on screen for 10 full seconds in silence. Then select Tier 2 on the tier selector — pre-select it before walking into the room. The Phase 0 steps expand. Let them sit. Then look up, deliver the footer question clearly and slowly, and stop talking entirely.",
-      emphasis: [
-        "SILENCE IS THE CLOSE. After the closing question, stop. The first person to speak after the question has lost the initiative. Undecided buyers rarely hold silence beyond 30–40 seconds. Hold it. A slow sip of water is your cover. Keep open, relaxed body language, slight forward lean, and sustained eye contact. Do not fill the pause.",
-        "If asked about timeline: 'Phase 0 activates within 72 hours of the mandate being signed.' That is the complete answer. Do not add to it.",
-        "If asked which tier: 'Tier 2 is where serious commercial intent meets financial discipline — enough to execute correctly, not more than is needed to prove the concept.' Then silence again.",
-        "If he does not commit today: show no disappointment. Say: 'I will leave everything with you. The mandate is the only outstanding document.' Leave all eleven deliverables and a printed mandate summary on the table. The work is the closer.",
-      ],
-      timing: "4 minutes — deliver the question — then unlimited silence"
-    }
+    notes: { open: "This is the close. Do not pitch. Do not add to what the deck has already said. Present each section slowly — let the weight of what was delivered land on its own. Then deliver the closing line and stop talking entirely.", emphasis: ["The silence after the closing line is the close. The next voice in the room is his.", "If he asks about timeline: 'Phase 0 begins within 72 hours of the mandate being signed.' That is all you need to say.", "If he does not commit today — offer to leave the full deck and all eleven documents with him. The work is the closer."], timing: "3 minutes — then silence" }
   }
 ];
 
