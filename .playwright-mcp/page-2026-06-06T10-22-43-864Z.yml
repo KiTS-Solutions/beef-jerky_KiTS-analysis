@@ -1,0 +1,193 @@
+- generic [ref=e3]:
+  - button "✕" [ref=e5] [cursor=pointer]
+  - navigation [ref=e6]:
+    - heading "Components" [level=3] [ref=e7]
+    - button "📺 Presentation Mode" [ref=e8] [cursor=pointer]:
+      - generic [ref=e9]: 📺
+      - generic [ref=e10]: Presentation Mode
+    - list [ref=e11]:
+      - listitem [ref=e12]:
+        - button "kits pitch deck" [ref=e13] [cursor=pointer]
+      - listitem [ref=e14]:
+        - button "financial snapshot" [ref=e15] [cursor=pointer]
+      - listitem [ref=e16]:
+        - button "strike presentation" [ref=e17] [cursor=pointer]
+      - listitem [ref=e18]:
+        - button "master plan" [ref=e19] [cursor=pointer]
+      - listitem [ref=e20]:
+        - button "beef jerky advisory" [ref=e21] [cursor=pointer]
+      - listitem [ref=e22]:
+        - button "financial study" [ref=e23] [cursor=pointer]
+      - listitem [ref=e24]:
+        - button "outreach system" [ref=e25] [cursor=pointer]
+      - listitem [ref=e26]:
+        - button "manufacturer brief" [ref=e27] [cursor=pointer]
+      - listitem [ref=e28]:
+        - button "brand design brief" [ref=e29] [cursor=pointer]
+      - listitem [ref=e30]:
+        - button "competitive analysis" [ref=e31] [cursor=pointer]
+      - listitem [ref=e32]:
+        - button "strike brand study" [ref=e33] [cursor=pointer]
+      - listitem [ref=e34]:
+        - button "product visualization" [ref=e35] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: STRIKE BITES
+          - generic [ref=e43]: CLIENT PITCH DECK · Ru'ya 360° ADVISORY GROUP · CONFIDENTIAL
+        - generic [ref=e44]:
+          - button "SLIDES" [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 16 / 22
+      - generic [ref=e50]:
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - generic [ref=e175]: 05 · FINANCIAL PLAN
+              - heading "Investment, Return & ROI — Three Scenarios" [level=2] [ref=e176]
+            - generic [ref=e178]:
+              - generic [ref=e179]: v2.0 CORRECTED
+              - generic [ref=e180]: RRP $4.50 · 61.9% GM
+          - generic [ref=e181]:
+            - button "TIER 1 Lean Launch $24,000 BEP Month 9–12 · 42–48% GM" [ref=e182] [cursor=pointer]:
+              - generic [ref=e183]: TIER 1
+              - generic [ref=e184]: Lean Launch
+              - generic [ref=e185]: $24,000
+              - generic [ref=e186]:
+                - generic [ref=e187]: BEP Month 9–12
+                - generic [ref=e188]: ·
+                - generic [ref=e189]: 42–48% GM
+            - button "Ru'ya 360° RECOMMENDS TIER 2 Standard Launch $62,000 BEP Month 8–11 · 55–62% GM" [ref=e190] [cursor=pointer]:
+              - generic [ref=e191]: Ru'ya 360° RECOMMENDS
+              - generic [ref=e192]: TIER 2
+              - generic [ref=e193]: Standard Launch
+              - generic [ref=e194]: $62,000
+              - generic [ref=e195]:
+                - generic [ref=e196]: BEP Month 8–11
+                - generic [ref=e197]: ·
+                - generic [ref=e198]: 55–62% GM
+            - button "TIER 3 Full Market Entry $96,000 BEP Month 5–7 · 58–64% GM" [ref=e199] [cursor=pointer]:
+              - generic [ref=e200]: TIER 3
+              - generic [ref=e201]: Full Market Entry
+              - generic [ref=e202]: $96,000
+              - generic [ref=e203]:
+                - generic [ref=e204]: BEP Month 5–7
+                - generic [ref=e205]: ·
+                - generic [ref=e206]: 58–64% GM
+          - generic [ref=e207]:
+            - generic [ref=e208]:
+              - generic [ref=e209]:
+                - generic [ref=e210]:
+                  - generic [ref=e211]: v2.0
+                  - generic [ref=e212]: Breakeven
+                  - generic [ref=e213]: Month 8–11
+                - generic [ref=e214]:
+                  - generic [ref=e215]: v2.0
+                  - generic [ref=e216]: Gross Margin
+                  - generic [ref=e217]: 55–62%
+                - generic [ref=e218]:
+                  - generic [ref=e219]: Year 1 ROI
+                  - generic [ref=e220]: ~265%
+              - generic [ref=e221]:
+                - generic [ref=e222]: PROFITABILITY TIMELINE — 12 MONTHS
+                - generic [ref=e223]:
+                  - generic [ref=e228]: M1
+                  - generic [ref=e231]: M3
+                  - generic [ref=e234]: M6
+                  - generic [ref=e237]: M9
+                  - generic [ref=e240]: M12
+                - generic [ref=e242]: "◎ Breakeven: Month 8–11"
+              - generic [ref=e243]:
+                - generic [ref=e244]: REVENUE TRAJECTORY
+                - generic [ref=e246]:
+                  - generic [ref=e247]: Month 3
+                  - generic [ref=e249]: Revenue building
+                - generic [ref=e253]:
+                  - generic [ref=e254]: Month 6
+                  - generic [ref=e255]:
+                    - generic [ref=e256]: v2.0
+                    - generic [ref=e257]: $9K–14K /mo
+                - generic [ref=e261]:
+                  - generic [ref=e262]: Month 12
+                  - generic [ref=e264]: $40K–65K /mo
+            - generic [ref=e267]:
+              - generic [ref=e268]:
+                - generic [ref=e269]: WHAT THIS FUNDS
+                - generic [ref=e270]:
+                  - generic [ref=e271]: ✓
+                  - generic [ref=e272]: SARL + all licensing + IP lawyer + food regulatory consultant
+                - generic [ref=e273]:
+                  - generic [ref=e274]: ✓
+                  - generic [ref=e275]: MoPH 2 SKUs + halal + lab testing × 2 rounds
+                - generic [ref=e276]:
+                  - generic [ref=e277]: ✓
+                  - generic [ref=e278]: Full brand identity + 2 SKU packaging (40g + 120g)
+                - generic [ref=e279]:
+                  - generic [ref=e280]: ✓
+                  - generic [ref=e281]: 2 production batches (90-day stock)
+                - generic [ref=e282]:
+                  - generic [ref=e283]: ✓
+                  - generic [ref=e284]: Delivery vehicle lease + fuel — 60–80 account route (NEW)
+                - generic [ref=e285]:
+                  - generic [ref=e286]: ✓
+                  - generic [ref=e287]: Workspace, product liability + vehicle insurance, generator (NEW)
+                - generic [ref=e288]:
+                  - generic [ref=e289]: ✓
+                  - generic [ref=e290]: Offshore USD banking + full technology stack (NEW)
+                - generic [ref=e291]:
+                  - generic [ref=e292]: ✓
+                  - generic [ref=e293]: Ru'ya 360° management fee Phases 0–2
+              - generic [ref=e294]:
+                - generic [ref=e295]: CUMULATIVE YEAR 1 GROSS PROFIT
+                - generic [ref=e296]:
+                  - generic [ref=e298]: CAPITAL IN
+                  - generic [ref=e300]: GROSS RETURN · ~265%
+                - generic [ref=e301]: ~$153K
+                - generic [ref=e302]: Year 1 · ~265% ROI · 55–62% avg GM
+                - paragraph [ref=e303]: Est. cumulative gross profit Year 1 at 61.9% avg margin. Investment recovery Month 8–11. Year 1 net positive approx. $91K. Revised from $50K to $62K — now includes transport (van lease + fuel), workspace, insurance, generator, offshore USD banking, and full technology stack. Revenue trajectory unchanged.
+                - generic [ref=e305]: UNIT ECONOMICS BASIS (v2.0)
+                - generic [ref=e306]:
+                  - generic [ref=e307]:
+                    - generic [ref=e308]: RRP
+                    - generic [ref=e309]: $4.50
+                  - generic [ref=e310]:
+                    - generic [ref=e311]: COGS
+                    - generic [ref=e312]: $1.20
+                  - generic [ref=e313]:
+                    - generic [ref=e314]: GP/UNIT
+                    - generic [ref=e315]: $1.95
+                  - generic [ref=e316]:
+                    - generic [ref=e317]: GM
+                    - generic [ref=e318]: 61.9%
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]
+        - generic [ref=e104]: N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW

@@ -1,0 +1,242 @@
+- generic [ref=e3]:
+  - button "✕" [ref=e5] [cursor=pointer]
+  - navigation [ref=e6]:
+    - heading "Components" [level=3] [ref=e7]
+    - button "📺 Presentation Mode" [ref=e8] [cursor=pointer]:
+      - generic [ref=e9]: 📺
+      - generic [ref=e10]: Presentation Mode
+    - list [ref=e11]:
+      - listitem [ref=e12]:
+        - button "kits pitch deck" [ref=e13] [cursor=pointer]
+      - listitem [ref=e14]:
+        - button "financial snapshot" [ref=e15] [cursor=pointer]
+      - listitem [ref=e16]:
+        - button "strike presentation" [ref=e17] [cursor=pointer]
+      - listitem [ref=e18]:
+        - button "master plan" [ref=e19] [cursor=pointer]
+      - listitem [ref=e20]:
+        - button "beef jerky advisory" [ref=e21] [cursor=pointer]
+      - listitem [ref=e22]:
+        - button "financial study" [ref=e23] [cursor=pointer]
+      - listitem [ref=e24]:
+        - button "outreach system" [ref=e25] [cursor=pointer]
+      - listitem [ref=e26]:
+        - button "manufacturer brief" [ref=e27] [cursor=pointer]
+      - listitem [ref=e28]:
+        - button "brand design brief" [ref=e29] [cursor=pointer]
+      - listitem [ref=e30]:
+        - button "competitive analysis" [ref=e31] [cursor=pointer]
+      - listitem [ref=e32]:
+        - button "strike brand study" [ref=e33] [cursor=pointer]
+      - listitem [ref=e34]:
+        - button "product visualization" [ref=e35] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: STRIKE BITES
+          - generic [ref=e43]: CLIENT PITCH DECK · Ru'ya 360° ADVISORY GROUP · CONFIDENTIAL
+        - generic [ref=e44]:
+          - button "SLIDES" [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 17 / 22
+      - generic [ref=e50]:
+        - generic [ref=e780]:
+          - generic [ref=e782]:
+            - generic [ref=e783]:
+              - generic [ref=e784]: Ru'ya 360 Advisory Group · Detailed Investment Usage · KAG-JRK-INV-001 · Confidential
+              - heading "STRIKE BITES — Where Every Dollar Goes" [level=1] [ref=e785]
+              - paragraph [ref=e786]: Full investment breakdown · 10 categories · 3 tiers · Team & phase allocation · Lebanon 2025–2026
+            - generic [ref=e787]:
+              - generic [ref=e788]: Research-Grounded
+              - generic [ref=e789]: All Costs Included
+              - generic [ref=e790]: Ru'ya Team Detailed
+          - generic [ref=e791]:
+            - button "TIER 1 Lean Launch $24,000" [ref=e792] [cursor=pointer]:
+              - generic [ref=e793]: TIER 1
+              - generic [ref=e794]: Lean Launch
+              - generic [ref=e795]: $24,000
+            - button "RECOMMENDED TIER 2 Standard Launch $62,000" [ref=e796] [cursor=pointer]:
+              - generic [ref=e797]: RECOMMENDED
+              - generic [ref=e798]: TIER 2
+              - generic [ref=e799]: Standard Launch
+              - generic [ref=e800]: $62,000
+            - button "TIER 3 Full Market Entry $96,000" [ref=e801] [cursor=pointer]:
+              - generic [ref=e802]: TIER 3
+              - generic [ref=e803]: Full Market Entry
+              - generic [ref=e804]: $96,000
+            - generic [ref=e805]:
+              - generic [ref=e806]:
+                - generic [ref=e807]: ~265%
+                - generic [ref=e808]: ROI Year 1
+              - generic [ref=e809]:
+                - generic [ref=e810]: M8–M11
+                - generic [ref=e811]: Breakeven
+              - generic [ref=e812]:
+                - generic [ref=e813]: 55–62%
+                - generic [ref=e814]: Gross Margin
+              - generic [ref=e815]:
+                - generic [ref=e816]: 60–80
+                - generic [ref=e817]: Accounts
+          - generic [ref=e818]:
+            - button "Overview" [ref=e819] [cursor=pointer]
+            - button "Full Breakdown" [ref=e820] [cursor=pointer]
+            - button "Phase Timeline" [ref=e821] [cursor=pointer]
+            - button "Ru'ya Team" [ref=e822] [cursor=pointer]
+            - button "GCC Horizon" [ref=e823] [cursor=pointer]
+          - generic [ref=e825]:
+            - generic [ref=e826]:
+              - generic [ref=e827]:
+                - generic [ref=e828]: ALLOCATION BY CATEGORY
+                - img [ref=e829]:
+                  - generic [ref=e841]: $62,000
+                  - generic [ref=e842]: TOTAL
+                - generic [ref=e843]:
+                  - generic [ref=e846]: Legal & Regulatory
+                  - generic [ref=e849]: Brand & Design
+                  - generic [ref=e852]: Production & Supply
+                  - generic [ref=e855]: Transportation & Logistics
+                  - generic [ref=e858]: Non-Digital Marketing & Activation
+                  - generic [ref=e861]: Operational Overhead
+                  - generic [ref=e864]: Technology & Tools
+                  - generic [ref=e867]: Banking & Financial Setup
+                  - generic [ref=e870]: Ru'ya 360 — Management & Team
+                  - generic [ref=e873]: Working Capital & Contingency
+              - generic [ref=e874]:
+                - generic [ref=e875]: CATEGORY BREAKDOWN — TIER 2 · $62,000 TOTAL
+                - generic [ref=e877]:
+                  - generic [ref=e878]:
+                    - generic [ref=e879]: ⚖
+                    - generic [ref=e880]: Legal & Regulatory
+                    - generic [ref=e881]: M0–M2
+                  - generic [ref=e882]:
+                    - generic [ref=e883]: 17%
+                    - generic [ref=e884]: $10,500
+                - generic [ref=e888]:
+                  - generic [ref=e889]:
+                    - generic [ref=e890]: ◈
+                    - generic [ref=e891]: Brand & Design
+                    - generic [ref=e892]: M0–M2
+                  - generic [ref=e893]:
+                    - generic [ref=e894]: 16%
+                    - generic [ref=e895]: $10,000
+                - generic [ref=e899]:
+                  - generic [ref=e900]:
+                    - generic [ref=e901]: ◎
+                    - generic [ref=e902]: Production & Supply
+                    - generic [ref=e903]: M1–M4
+                  - generic [ref=e904]:
+                    - generic [ref=e905]: 20%
+                    - generic [ref=e906]: $12,500
+                - generic [ref=e910]:
+                  - generic [ref=e911]:
+                    - generic [ref=e912]: ◬
+                    - generic [ref=e913]: Transportation & Logistics
+                    - generic [ref=e914]: M1–M6
+                  - generic [ref=e915]:
+                    - generic [ref=e916]: 7%
+                    - generic [ref=e917]: $4,500
+                - generic [ref=e921]:
+                  - generic [ref=e922]:
+                    - generic [ref=e923]: ◑
+                    - generic [ref=e924]: Non-Digital Marketing & Activation
+                    - generic [ref=e925]: M2–M6
+                  - generic [ref=e926]:
+                    - generic [ref=e927]: 11%
+                    - generic [ref=e928]: $7,000
+                - generic [ref=e932]:
+                  - generic [ref=e933]:
+                    - generic [ref=e934]: ⊙
+                    - generic [ref=e935]: Operational Overhead
+                    - generic [ref=e936]: M0–M6
+                  - generic [ref=e937]:
+                    - generic [ref=e938]: 7%
+                    - generic [ref=e939]: $4,500
+                - generic [ref=e943]:
+                  - generic [ref=e944]:
+                    - generic [ref=e945]: ◧
+                    - generic [ref=e946]: Technology & Tools
+                    - generic [ref=e947]: Month 0
+                  - generic [ref=e948]:
+                    - generic [ref=e949]: 3%
+                    - generic [ref=e950]: $1,800
+                - generic [ref=e954]:
+                  - generic [ref=e955]:
+                    - generic [ref=e956]: ◫
+                    - generic [ref=e957]: Banking & Financial Setup
+                    - generic [ref=e958]: Month 0–1
+                  - generic [ref=e959]:
+                    - generic [ref=e960]: 3%
+                    - generic [ref=e961]: $2,000
+                - generic [ref=e965]:
+                  - generic [ref=e966]:
+                    - generic [ref=e967]: ◉
+                    - generic [ref=e968]: Ru'ya 360 — Management & Team
+                    - generic [ref=e969]: M0–M6
+                  - generic [ref=e970]:
+                    - generic [ref=e971]: 12%
+                    - generic [ref=e972]: $7,500
+                - generic [ref=e976]:
+                  - generic [ref=e977]:
+                    - generic [ref=e978]: ◰
+                    - generic [ref=e979]: Working Capital & Contingency
+                    - generic [ref=e980]: M0–M12
+                  - generic [ref=e981]:
+                    - generic [ref=e982]: 3%
+                    - generic [ref=e983]: $1,700
+                - paragraph [ref=e987]: "Recommended — revised from $42K to $62K. Now includes all missing cost categories: transport, overhead, banking setup, and full technology stack."
+            - generic [ref=e988]:
+              - generic [ref=e989]: REVISED FROM $42,000 → $62,000 — WHAT CHANGED AND WHY
+              - generic [ref=e990]:
+                - generic [ref=e991]:
+                  - generic [ref=e992]: Transportation (NEW) +$4,500
+                  - paragraph [ref=e993]: Vehicle lease + fuel for 6 months across 60–80 accounts. Entirely absent from original model.
+                - generic [ref=e994]:
+                  - generic [ref=e995]: Operational Overhead (NEW) +$4,500
+                  - paragraph [ref=e996]: Workspace, phone, internet, generator, and insurance. Required for any Lebanese operation.
+                - generic [ref=e997]:
+                  - generic [ref=e998]: Banking Setup (NEW) +$2,000
+                  - paragraph [ref=e999]: Offshore USD account for cross-border payments. Circular 158 makes this mandatory.
+                - generic [ref=e1000]:
+                  - generic [ref=e1001]: Technology Stack (NEW) +$1,800
+                  - paragraph [ref=e1002]: Accounting, inventory, CRM, and website. Required for monthly board P&L reporting.
+                - generic [ref=e1003]:
+                  - generic [ref=e1004]: Legal Uplift +$2,500
+                  - paragraph [ref=e1005]: Food regulatory consultant, full trademark scope, and more realistic SARL formation cost.
+                - generic [ref=e1006]:
+                  - generic [ref=e1007]: Marketing Uplift +$3,000
+                  - paragraph [ref=e1008]: Proper trainer ambassador program, premium POS hardware, and trade show participation.
+          - generic [ref=e1009]:
+            - generic [ref=e1010]: RU'YA 360 ADVISORY GROUP · DETAILED INVESTMENT USAGE · CONFIDENTIAL · NOT FOR DISTRIBUTION
+            - generic [ref=e1011]: KAG-JRK-INV-001 · STRIKE BITES · JUNE 2026
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [active] [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]
+        - generic [ref=e104]: N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW
