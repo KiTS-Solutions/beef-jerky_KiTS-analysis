@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useContext } from "react";
 import { DARK as C, LIGHT, ThemeCtx } from './pitch-theme';
 import FinancialStudy from './kits-financial-study.tsx';
+import MarketingDigitalStrategy from './strike-marketing-digital-strategy.tsx';
 import jacklinksImg       from '../competition/jacklinks.png';
 import jacklinksFlavorImg from '../competition/jacklinks-flavors.png';
 import haloImg            from '../competition/halo.png';
@@ -186,7 +187,7 @@ function CoverSlide() {
         <p style={{ fontSize: isMobile ? 13 : "clamp(13px,1.8vw,18px)", color: C.cream, opacity: 0.75, margin: "0 0 8px", fontFamily: "Georgia,serif" }}>Lebanon's First Premium Beef Jerky Brand</p>
         <p style={{ fontFamily: "monospace", fontSize: isMobile ? 8 : 10, color: C.creamDim, opacity: 0.45, margin: "0 0 36px", letterSpacing: "0.2em" }}>CLIENT ADVISORY PRESENTATION · Ru'ya 360° · JUNE 2026</p>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          {["10 Deliverables Ready","88/100 Brand Score","38-Step Launch Plan","3 Financial Scenarios","$0 Local Competition"].map((t, i) => (
+          {["11 Deliverables Ready","88/100 Brand Score","38-Step Launch Plan","3 Financial Scenarios","$0 Local Competition"].map((t, i) => (
             <span key={i} style={{ fontFamily: "monospace", fontSize: 7.5, color: C.creamDim, background: `${C.gold}0D`, border: `1px solid ${C.gold}28`, padding: "5px 11px", borderRadius: 2, letterSpacing: "0.05em" }}>{t}</span>
           ))}
         </div>
@@ -1101,6 +1102,7 @@ function RenderSlide({ slide }) {
     case "financials":          return <FinancialsSlide slide={slide} />;
     case "financialcorrection": return <FinancialCorrectionSlide slide={slide} />;
     case "financialstudy":      return <FinancialStudy />;
+    case "marketingstrategy":   return <MarketingDigitalStrategy />;
     case "whykits":      return <WhyKITSSlide slide={slide} />;
     case "mandate":      return <MandateSlide slide={slide} />;
     case "qa":           return <QASlide slide={slide} />;
@@ -1190,8 +1192,8 @@ const SLIDES = [
   {
     id: "deliverables", type: "deliverables", label: "DELIVERED",
     section: "02 · WHAT WE BUILT",
-    title: "Built Before You Said Yes — Ten Deliverables Ready",
-    subtitle: "Not slides. Not outlines. Completed, referenced, institutional-quality work. Every one of these can be actioned tomorrow.",
+    title: "Built Before You Said Yes — Eleven Deliverables Ready",
+    subtitle: "Not slides. Not outlines. Completed, referenced, institutional-quality work. Eleven deliverables — every one actionable tomorrow.",
     items: [
       { ref: "KAG-JRK-001", color: C.gold, title: "Full Advisory Framework", status: "COMPLETE — READY TO HAND OVER", desc: "A 10-section A-to-Z market entry guide covering legal structure, regulatory approvals, market research, product development, brand positioning, distribution strategy, pricing architecture, and full commercial operations.", tags: ["10 Sections", "A to Z Guide", "Full Market Map", "Reference Index"] },
       { ref: "KAG-JRK-002", color: C.amber, title: "Master Launch Checklist", status: "COMPLETE — ACTIONABLE FROM DAY ONE", desc: "38 verified action steps across 5 phases from Foundation (Month 1) to Scale (Month 12+). Each step includes detailed implementation guidance, the responsible party, and a milestone gate before the next phase begins.", tags: ["38 Steps", "5 Phases", "Milestone-Gated", "Progress Tracker"] },
@@ -1203,6 +1205,7 @@ const SLIDES = [
       { ref: "KAG-JRK-008", color: C.greenBright, title: "STRIKE Brand Enhancement Study", status: "COMPLETE — BRAND APPROVED 88/100", desc: "Element-by-element brand scoring: STRIKE name 92/100, STRIKE BITES 88/100, full tagline analysis, packaging renders for all three SKUs in vector format. Keep / Evolve / Add framework for each brand element.", tags: ["88/100 Overall", "3 SKU Renders", "Keep/Evolve/Add", "92/100 Name Score"] },
       { ref: "KAG-JRK-009", color: C.purple, title: "Board Meeting Presentation", status: "COMPLETE — FUNDER-READY", desc: "25-slide institutional-quality board presentation with structured presenter notes on every slide. Interactive sections covering financial tiers, competitive power points, GTM phases, and full keyboard navigation. Estimated run time: 73 minutes.", tags: ["25 Slides", "Presenter Notes", "Interactive", "Funder-Ready"] },
       { ref: "KAG-JRK-010", color: C.red, title: "Complete Project Handoff", status: "COMPLETE — NOTHING OMITTED", desc: "A 16-part operational handoff document covering every dimension of the engagement: product status, brand decisions, market intelligence, critical blockers, financial scenarios, regulatory roadmap, manufacturer contacts, and execution standards.", tags: ["16 Parts", "Full Operational", "All Blockers Flagged", "A to Z Coverage"] },
+      { ref: "KAG-JRK-MKT-001", color: C.teal, title: "Marketing & Digital Strategy", status: "COMPLETE — 8 SECTIONS READY", desc: "Full marketing and e-marketing strategy across 8 interactive sections: digital infrastructure setup, platform strategy (Instagram, TikTok, Facebook, WhatsApp, Email), phase-gated e-commerce roadmap, content framework, influencer and community plan, and a three-tier financial model with channel-level ROI projections.", tags: ["8 Sections", "Platform Strategy", "E-Commerce Phases", "Financial Model", "24-Month Roadmap"] },
     ],
     notes: { open: "Click through 2–3 deliverables slowly. Let the client read the tags and the status line. Then say: 'Every one of these exists today. If you sign the mandate after this meeting, your designer can be briefed tomorrow and your manufacturer can receive the flavor brief this week.'", emphasis: ["The weight of 10 completed deliverables before a contract is the most powerful proof of commitment in the room. Do not rush past it.", "If the client asks to see a specific deliverable — say yes. You have them all. Offer to walk through any one in detail."], timing: "6 minutes" }
   },
@@ -1544,6 +1547,19 @@ const SLIDES = [
     section: "05 · FINANCIAL PLAN",
     title: "Financial Feasibility Study — Full Model",
     notes: { open: "This is the full three-tier financial model. Walk the client through each tier — Lean, Standard (recommended), and Full Market Entry — using the interactive breakdown. Present Tier 2 as the reference point. The investment breakdown, revenue projections, assumptions, and blockers are all interactive.", emphasis: ["Lead with Tier 2 (Standard Launch) — $42,000. Show the investment breakdown first, then projections. Let them click through.", "The Blockers tab is operational — use it to set the agenda for what needs to happen immediately after this meeting."], timing: "7 minutes" }
+  },
+  {
+    id: "sec_mkt", type: "section", label: "§MKT",
+    badge: "SECTION — MARKETING", color: C.teal,
+    title: "Marketing & Digital Strategy",
+    sub: "The full digital amplification layer — infrastructure, platforms, content, e-commerce, and 24-month financial model. Delivered complete.",
+    notes: { open: "Transition: 'The physical go-to-market gets STRIKE into 80 accounts. This is what makes 300,000 Lebanese fitness consumers know your name before they ever walk into one of those accounts.'", emphasis: ["KAG-JRK-MKT-001 is the eleventh deliverable — the complete digital strategy, not a summary. Eight interactive sections covering every digital channel and the full financial model.", "The three digital budget tiers (A / B / C) are separate from and in addition to the physical launch budget tiers. Frame as: Standard physical launch ($42K) + Tier B digital ($27K) = $69K combined Year 1 investment."], timing: "15 seconds" }
+  },
+  {
+    id: "marketingstrategy", type: "marketingstrategy", label: "DIGITAL MKT",
+    section: "05.5 · MARKETING & DIGITAL STRATEGY",
+    title: "Marketing & E-Marketing Strategy — KAG-JRK-MKT-001",
+    notes: { open: "Navigate through each of the 8 tabs using the tab bar at the top of the document. Start with OVERVIEW to set the strategic position, then walk through INFRASTRUCTURE → PLATFORMS → E-COMMERCE → CONTENT → COMMUNITY → FINANCIALS → ROADMAP. Let the client drive which section they want to explore in depth.", emphasis: ["The FINANCIALS tab shows the three digital budget tiers (A: $9K / B: $27K / C: $58K Year 1). Present Tier B as the recommended digital investment to run alongside the Standard $42K physical launch — combined Year 1: $69K.", "The Lebanon-specific context in every section is the differentiator. No global marketing agency knows that Lebanon Facebook CPC is $0.15–0.60 — vs $1.72 globally. This is the intelligence that justifies the partnership."], timing: "8–12 minutes depending on client engagement" }
   },
   {
     id: "sec06", type: "section", label: "§06",
