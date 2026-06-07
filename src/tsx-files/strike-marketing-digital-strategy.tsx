@@ -417,7 +417,7 @@ function InfoCard({ children, color, style = {} }: { children: React.ReactNode; 
 function OverviewSection() {
   const C = useContext(MktCtx);
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§01 · MARKETING & E-MARKETING STRATEGY"
         title="The Strategy That Makes STRIKE a Trend"
@@ -450,7 +450,7 @@ function OverviewSection() {
       {/* What's missing from the pitch */}
       <div style={{ marginBottom: 28 }}>
         <div style={{ fontFamily: "monospace", fontSize: 9, color: C.amber, letterSpacing: "0.3em", marginBottom: 16 }}>★ WHAT THIS DOCUMENT ADDS TO THE PITCH</div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: 8 }}>
           {[
             ["Digital Infrastructure", "Which accounts, in which order, with which tools — from Week 1."],
             ["Platform Strategy", "Instagram, TikTok, Facebook, WhatsApp, Email — role and cadence for each."],
@@ -471,7 +471,7 @@ function OverviewSection() {
       </div>
 
       {/* Lebanon-specific context box */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(160px,1fr))", gap: 12 }}>
         {[
           { label: "LEBANON META CPM", value: "$1.50–5.00", sub: "vs. $8–20 in GCC — extraordinary value", color: C.gold },
           { label: "LEBANON META CPC", value: "$0.15–0.60", sub: "Meaningful campaigns from $300–500/month", color: C.teal },
@@ -493,7 +493,7 @@ function InfrastructureSection() {
   const C = useContext(MktCtx);
   const [openPhase, setOpenPhase] = useState(0);
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§02 · DIGITAL INFRASTRUCTURE"
         title="Setup Checklist — In Priority Order"
@@ -574,7 +574,7 @@ function PlatformsSection() {
   const [active, setActive] = useState(0);
   const p = PLATFORMS_DATA[active];
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§03 · PLATFORM STRATEGY"
         title="Six Channels. One Brand Voice."
@@ -602,7 +602,7 @@ function PlatformsSection() {
           <Tag text={p.priority} color={p.color} />
         </div>
 
-        <div style={{ padding: "24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div style={{ padding: "20px clamp(14px,2vw,24px)", display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", gap: 20 }}>
           <div>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: p.color, letterSpacing: "0.2em", marginBottom: 10 }}>WHY THIS PLATFORM</div>
             <p style={{ fontSize: 13, color: C.creamMid, lineHeight: 1.75, margin: 0 }}>{p.why}</p>
@@ -647,7 +647,7 @@ function ECommerceSection() {
   const [activePhase, setActivePhase] = useState(2);
   const ep = ECOMMERCE_PHASES[activePhase];
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§04 · E-COMMERCE STRATEGY"
         title="Online Store — Phase-Gated Approach"
@@ -657,7 +657,7 @@ function ECommerceSection() {
 
       <InfoCard color={C.amber} style={{ marginBottom: 24 }}>
         <div style={{ fontFamily: "monospace", fontSize: 8.5, color: C.amber, letterSpacing: "0.2em", marginBottom: 6 }}>KEY LEBANON E-COMMERCE CONTEXT</div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(180px,1fr))", gap: 12 }}>
           {[
             ["Payment Gateway Approval", "4–8 weeks for Areeba or NetCommerce merchant approval. Start the process at Month 4, not Month 6."],
             ["WhatsApp Commerce First", "Lebanese consumers will DM on WhatsApp before they'll complete a Shopify checkout. Build WhatsApp ordering first."],
@@ -689,7 +689,7 @@ function ECommerceSection() {
           </div>
           <p style={{ fontSize: 13, color: C.creamMid, margin: 0, lineHeight: 1.7 }}>{ep.why}</p>
         </div>
-        <div style={{ padding: "20px 24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+        <div style={{ padding: "20px 24px", display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: 20 }}>
           <div>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: ep.color, letterSpacing: "0.2em", marginBottom: 10 }}>SETUP ACTIONS</div>
             {ep.setup.map((s, i) => (
@@ -747,7 +747,7 @@ function ContentSection() {
   const [activePillar, setActivePillar] = useState(0);
   const pl = CONTENT_PILLARS[activePillar];
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§05 · CONTENT STRATEGY"
         title="Five Pillars. One Brand. Zero Generic Posts."
@@ -765,7 +765,7 @@ function ContentSection() {
         ))}
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 32 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: 16, marginBottom: 32 }}>
         <InfoCard color={pl.color}>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: pl.color, letterSpacing: "0.2em", marginBottom: 8 }}>PILLAR {pl.n} · {pl.title}</div>
           <p style={{ fontSize: 13.5, color: C.cream, margin: "0 0 14px", lineHeight: 1.7 }}>{pl.desc}</p>
@@ -784,7 +784,8 @@ function ContentSection() {
 
       {/* Weekly Calendar */}
       <div style={{ fontFamily: "monospace", fontSize: 9, color: C.green, letterSpacing: "0.3em", marginBottom: 16 }}>WEEKLY PUBLISHING CALENDAR</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: 6, marginBottom: 28 }}>
+      <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", marginBottom: 28 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7,1fr)", gap: 6, minWidth: 560 }}>
         {WEEKLY_CALENDAR.map((day, di) => {
           return (
             <div key={di} style={{ background: C.charcoal, border: `1px solid ${C.ash}40`, borderRadius: 3, padding: "10px 8px", minHeight: 100 }}>
@@ -802,9 +803,10 @@ function ContentSection() {
           );
         })}
       </div>
+      </div>
 
       {/* UGC and Trending Content */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: 12 }}>
         <InfoCard color={C.teal}>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: C.teal, letterSpacing: "0.2em", marginBottom: 10 }}>UGC STRATEGY (USER-GENERATED CONTENT)</div>
           {[
@@ -845,7 +847,7 @@ function CommunitySection() {
   const [activeTier, setActiveTier] = useState(0);
   const it = INFLUENCER_TIERS[activeTier];
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§06 · COMMUNITY & EVENTS"
         title="Influencer Strategy · Sports Events · WhatsApp Communities"
@@ -864,7 +866,7 @@ function CommunitySection() {
         ))}
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 28 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(260px,1fr))", gap: 16, marginBottom: 28 }}>
         <InfoCard color={it.color}>
           <div style={{ fontFamily: "monospace", fontSize: 9, color: it.color, letterSpacing: "0.15em", marginBottom: 10 }}>{it.tier} · {it.followers}</div>
           <div style={{ marginBottom: 12 }}>
@@ -896,7 +898,8 @@ function CommunitySection() {
 
       {/* Events */}
       <div style={{ fontFamily: "monospace", fontSize: 9, color: C.red, letterSpacing: "0.3em", marginBottom: 14 }}>EVENTS & ACTIVATIONS CALENDAR</div>
-      <div style={{ display: "grid", gap: 8, marginBottom: 28 }}>
+      <div style={{ overflowX: "auto", WebkitOverflowScrolling: "touch", marginBottom: 28 }}>
+      <div style={{ display: "grid", gap: 8, minWidth: 480 }}>
         {EVENTS_DATA.map((ev, i) => (
           <div key={i} style={{ display: "grid", gridTemplateColumns: "120px 140px 1fr 100px", gap: 12, padding: "12px 16px", background: C.charcoal, border: `1px solid ${C.ash}30`, borderRadius: 3, alignItems: "center" }}>
             <div>
@@ -914,10 +917,11 @@ function CommunitySection() {
           </div>
         ))}
       </div>
+      </div>
 
       {/* WhatsApp Community Strategy */}
       <div style={{ fontFamily: "monospace", fontSize: 9, color: C.red, letterSpacing: "0.3em", marginBottom: 14 }}>WHATSAPP COMMUNITY ARCHITECTURE</div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(200px,1fr))", gap: 10 }}>
         {[
           { title: "STRIKE TEAM (Private)", color: C.gold, desc: "20 founding trainers. Daily updates, product restocks, training content, ambassador offers. Managed by KITS. Trainers self-post — no forced content." },
           { title: "STOCKIST UPDATES (Broadcast)", color: C.teal, desc: "Retail accounts receive restock notifications, pricing updates, and sell-through tips. One-way broadcast. No group chaos." },
@@ -943,7 +947,7 @@ function FinancialsSection() {
   const setupTotal = FIN.setup.reduce((s, r) => s + (r[tier] || 0), 0);
 
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§07 · FINANCIAL MODEL — DIGITAL MARKETING"
         title="Every Cost. Every Phase. Every Return."
@@ -963,7 +967,7 @@ function FinancialsSection() {
       </div>
 
       {/* Year 1 summary banner */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 10, marginBottom: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(150px,1fr))", gap: 10, marginBottom: 24 }}>
         {[
           { label: "TOTAL SETUP COSTS", value: `$${setupTotal.toLocaleString()}`, sub: "One-time investments" },
           { label: "AVG MONTHLY SPEND", value: `$${Math.round((totals.ph1_mo + totals.ph2_mo + totals.ph3_mo) / 3).toLocaleString()}`, sub: "Across all phases" },
@@ -1098,7 +1102,7 @@ function RoadmapSection() {
   const [activeMonth, setActiveMonth] = useState(1);
   const rm = ROADMAP[activeMonth];
   return (
-    <div style={{ padding: "36px 40px 60px", maxWidth: 1100 }}>
+    <div style={{ padding: "clamp(20px,3vw,36px) clamp(16px,4vw,40px) clamp(40px,5vw,60px)", maxWidth: 1100 }}>
       <SectionHead
         label="§08 · PHASE ROADMAP"
         title="Month-by-Month Digital Execution Plan"
@@ -1117,7 +1121,7 @@ function RoadmapSection() {
       </div>
 
       <div style={{ border: `1px solid ${rm.color}25`, borderRadius: 4, overflow: "hidden", marginBottom: 24 }}>
-        <div style={{ background: `${rm.color}10`, padding: "18px 24px", borderBottom: `1px solid ${rm.color}20`, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div style={{ background: `${rm.color}10`, padding: "18px 24px", borderBottom: `1px solid ${rm.color}20`, display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: 10 }}>
           <div>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: rm.color, letterSpacing: "0.3em" }}>{rm.month}</div>
             <div style={{ fontFamily: "Georgia,serif", fontSize: 22, color: C.cream, marginTop: 4 }}>{rm.label} PHASE</div>
@@ -1127,7 +1131,7 @@ function RoadmapSection() {
             <div style={{ fontSize: 11, color: C.cream, lineHeight: 1.5 }}>{rm.gate}</div>
           </InfoCard>
         </div>
-        <div style={{ padding: "20px 24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+        <div style={{ padding: "20px 24px", display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(240px,1fr))", gap: 24 }}>
           <div>
             <div style={{ fontFamily: "monospace", fontSize: 9, color: rm.color, letterSpacing: "0.2em", marginBottom: 12 }}>DIGITAL ACTIONS</div>
             {rm.digital.map((action, i) => (
@@ -1151,7 +1155,7 @@ function RoadmapSection() {
 
       {/* Full timeline bar */}
       <div style={{ fontFamily: "monospace", fontSize: 9, color: C.purple, letterSpacing: "0.3em", marginBottom: 14 }}>FULL 24-MONTH DIGITAL MARKETING TIMELINE</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 8, marginBottom: 28 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(160px,1fr))", gap: 8, marginBottom: 28 }}>
         {ROADMAP.map((r, i) => (
           <div key={i} onClick={() => setActiveMonth(i)} style={{ cursor: "pointer", padding: "12px 14px", background: activeMonth === i ? `${r.color}15` : C.charcoal, border: `1px solid ${activeMonth === i ? r.color : C.ash}30`, borderTop: `3px solid ${r.color}`, borderRadius: 3, transition: "all 0.15s" }}>
             <div style={{ fontFamily: "monospace", fontSize: 8, color: r.color, letterSpacing: "0.15em", marginBottom: 5 }}>{r.month}</div>
@@ -1209,7 +1213,7 @@ export default function MarketingDigitalStrategy() {
     <div style={{ background: theme.obsidian, minHeight: "100%", color: theme.cream, fontFamily: "Georgia,'Times New Roman',serif" }}>
 
       {/* ── DOCUMENT HEADER ── */}
-      <div style={{ background: theme.void, borderBottom: `1px solid ${theme.ash}`, padding: "10px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
+      <div style={{ background: theme.void, borderBottom: `1px solid ${theme.ash}`, padding: "10px clamp(16px,4vw,40px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <span style={{ fontFamily: "monospace", fontSize: 10, color: C.gold, letterSpacing: "0.35em" }}>STRIKE BITES</span>
           <span style={{ width: 1, height: 14, background: theme.ash }} />
@@ -1223,7 +1227,7 @@ export default function MarketingDigitalStrategy() {
 
       {/* ── TAB NAVIGATION ── */}
       <div style={{ background: theme.charcoal, borderBottom: `1px solid ${theme.ash}`, overflowX: "auto", whiteSpace: "nowrap" }}>
-        <div style={{ display: "inline-flex", padding: "0 40px" }}>
+        <div style={{ display: "inline-flex", padding: "0 clamp(16px,4vw,40px)" }}>
           {TABS.map((t, i) => (
             <button key={i} onClick={() => setTab(i)} style={{ background: "transparent", border: "none", borderBottom: `2px solid ${tab === i ? C.gold : "transparent"}`, padding: "12px 20px", cursor: "pointer", fontFamily: "monospace", fontSize: 9, color: tab === i ? C.gold : theme.creamDim, letterSpacing: "0.2em", transition: "all 0.15s", WebkitTapHighlightColor: "transparent" }}>
               {t.short} · {t.label}
@@ -1238,7 +1242,7 @@ export default function MarketingDigitalStrategy() {
       </main>
 
       {/* ── DOCUMENT FOOTER ── */}
-      <div style={{ borderTop: `1px solid ${theme.ash}`, padding: "10px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
+      <div style={{ borderTop: `1px solid ${theme.ash}`, padding: "10px clamp(16px,4vw,40px)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 8 }}>
         <span style={{ fontFamily: "monospace", fontSize: 8, color: C.goldDim, letterSpacing: "0.2em" }}>{DOC.ref} · KITS ADVISORY GROUP · {DOC.client}</span>
         <div style={{ display: "flex", gap: 4 }}>
           {TABS.map((_t, i) => (

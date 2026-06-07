@@ -357,7 +357,7 @@ function BrandScoreSlide({ slide }) {
           <div style={{ fontFamily: "monospace", fontSize: 10, color: C.greenBright, marginTop: 4 }}>APPROVED — STRONG</div>
         </div>
       </div>
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr 1fr", gap: 8, marginTop: 16 }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "1fr 1fr 1fr", gap: 8, marginTop: 16 }}>
         {slide.elements.map((el, i) => (
           <div key={i} style={{ background: C.charcoal, border: `1px solid ${el.verdict === "APPROVED" ? C.greenBright : C.gold}15`, borderLeft: `3px solid ${el.verdict === "APPROVED" ? C.greenBright : C.gold}`, borderRadius: 3, padding: "12px 14px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 6, alignItems: "flex-start", gap: 4 }}>
@@ -610,13 +610,13 @@ function FinancialsSlide({ slide }) {
         <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflow: "hidden" }}>
 
           {/* KPI cards */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 7 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: isMobile ? 5 : 7 }}>
             {[
               { label: "Breakeven", val: t.breakeven, v2: true },
               { label: "Gross Margin", val: t.margin, v2: true },
               { label: "Year 1 ROI", val: t.roi, v2: false }
             ].map((m, i) => (
-              <div key={i} style={{ background: C.charcoal, border: `1px solid ${t.color}20`, borderRadius: 3, padding: "10px 12px", position: "relative" }}>
+              <div key={i} style={{ background: C.charcoal, border: `1px solid ${t.color}20`, borderRadius: 3, padding: isMobile ? "8px 8px" : "10px 12px", position: "relative" }}>
                 {m.v2 && (
                   <div style={{ position: "absolute", top: -8, right: 5, fontFamily: "monospace", fontSize: 8, color: C.greenBright, background: `${C.greenBright}12`, border: `1px solid ${C.greenBright}28`, padding: "1px 5px", borderRadius: 1 }}>v2.0</div>
                 )}
@@ -718,16 +718,16 @@ function FinancialsSlide({ slide }) {
                 width: `${investPct}%`,
                 background: `${t.color}45`,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                transition: "width 0.5s ease"
+                transition: "width 0.5s ease", minWidth: 0, overflow: "hidden"
               }}>
-                <span style={{ fontFamily: "monospace", fontSize: 9, color: C.cream, whiteSpace: "nowrap" }}>CAPITAL IN</span>
+                <span style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 9, color: C.cream, whiteSpace: "nowrap" }}>IN</span>
               </div>
               <div style={{
                 flex: 1,
                 background: `linear-gradient(to right,${C.greenBright}30,${C.greenBright}50)`,
-                display: "flex", alignItems: "center", paddingLeft: 8
+                display: "flex", alignItems: "center", paddingLeft: isMobile ? 4 : 8, overflow: "hidden"
               }}>
-                <span style={{ fontFamily: "monospace", fontSize: 9, color: C.greenBright, whiteSpace: "nowrap" }}>GROSS RETURN · {t.roi}</span>
+                <span style={{ fontFamily: "monospace", fontSize: isMobile ? 7 : 9, color: C.greenBright, whiteSpace: "nowrap" }}>{isMobile ? t.roi : `GROSS RETURN · ${t.roi}`}</span>
               </div>
             </div>
 
@@ -1020,11 +1020,11 @@ function CompMatrixSlide({ slide }) {
       <SH slide={slide} />
       <p style={{ fontSize: isMobile ? 9 : 10, color: C.creamDim, fontFamily: "monospace", margin: "4px 0 12px", letterSpacing: "0.04em" }}>{slide.subtitle}</p>
 
-      <div style={{ flex: 1, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
-        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: isMobile ? "520px" : "auto" }}>
+      <div style={{ flex: 1, overflowX: "auto", overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: isMobile ? "500px" : "auto" }}>
           <thead>
             <tr>
-              <th style={{ padding: "8px 10px", fontFamily: "monospace", fontSize: 9.5, color: C.creamDim, textAlign: "left", borderBottom: `2px solid ${C.ash}`, width: 155, position: "sticky", top: 0, zIndex: 10, background: C.charcoal }}>CRITERION</th>
+              <th style={{ padding: "8px 10px", fontFamily: "monospace", fontSize: 9.5, color: C.creamDim, textAlign: "left", borderBottom: `2px solid ${C.ash}`, width: isMobile ? 120 : 155, position: "sticky", left: 0, top: 0, zIndex: 11, background: C.charcoal }}>CRITERION</th>
               {slide.competitors.map((comp, i) => {
                 const isUs = i === slide.competitors.length - 1;
                 return (
@@ -1046,9 +1046,9 @@ function CompMatrixSlide({ slide }) {
           <tbody>
             {slide.criteria.map((row, ri) => (
               <tr key={ri} style={{ background: ri % 2 === 0 ? C.charcoal : C.obsidian }}>
-                <td style={{ padding: "9px 10px", borderBottom: `1px solid ${C.ash}` }}>
-                  <div style={{ fontSize: isMobile ? 12.5 : 14, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 2 }}>{row.label}</div>
-                  <div style={{ fontFamily: "monospace", fontSize: 9.5, color: C.creamDim }}>{row.note}</div>
+                <td style={{ padding: "9px 10px", borderBottom: `1px solid ${C.ash}`, position: isMobile ? "sticky" : "static", left: 0, background: ri % 2 === 0 ? C.charcoal : C.obsidian, zIndex: isMobile ? 5 : "auto" }}>
+                  <div style={{ fontSize: isMobile ? 12 : 14, color: C.cream, fontFamily: "Georgia,serif", marginBottom: 2 }}>{row.label}</div>
+                  {!isMobile && <div style={{ fontFamily: "monospace", fontSize: 9.5, color: C.creamDim }}>{row.note}</div>}
                 </td>
                 {slide.competitors.map((comp, ci) => {
                   const v = row.vals[comp.id];
@@ -1197,7 +1197,7 @@ function WhatNowSlide() {
         <div style={{ fontFamily: "monospace", fontSize: 7.5, color: C.gold, letterSpacing: "0.4em", marginBottom: 8, opacity: 0.72 }}>
           PROOF OF COMMITMENT · 11 DELIVERABLES COMPLETE · BUILT BEFORE THIS CONTRACT EXISTS
         </div>
-        <div style={{ display: "flex", gap: isMobile ? 4 : 5, flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: isMobile ? 4 : 5, flexWrap: isMobile ? "nowrap" : "wrap", overflowX: isMobile ? "auto" : "visible", WebkitOverflowScrolling: "touch", paddingBottom: isMobile ? 4 : 0 }}>
           {deliverables.map((d, i) => (
             <div key={i} style={{
               display: "flex", alignItems: "center", gap: 4,
@@ -1938,6 +1938,7 @@ export default function KITSPitchDeck() {
   const palette = whiteMode ? LIGHT : C;
   const total = SLIDES.length;
   const slide = SLIDES[curr];
+  const { isMobile } = useResponsive();
 
   const prev = useCallback(() => setCurr(c => Math.max(0, c - 1)), []);
   const next = useCallback(() => setCurr(c => Math.min(total - 1, c + 1)), [total]);
@@ -1960,36 +1961,38 @@ export default function KITSPitchDeck() {
     <div style={{ height: "100vh", width: "100%", background: palette.void, display: "flex", flexDirection: "column", fontFamily: "Georgia,serif", userSelect: "none", overflow: "hidden", boxSizing: "border-box" }}>
 
       {/* ── TOP BAR ── */}
-      <div style={{ background: palette.void, borderBottom: `1px solid ${palette.ash}`, padding: "7px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, zIndex: 20 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-          <span style={{ fontFamily: "monospace", fontSize: 11, color: palette.gold, letterSpacing: "0.3em" }}>STRIKE BITES</span>
-          <span style={{ width: 1, height: 14, background: palette.ash }} />
-          <span style={{ fontFamily: "monospace", fontSize: 8, color: palette.creamDim, opacity: 0.5, letterSpacing: "0.1em" }}>CLIENT PITCH DECK · Ru'ya 360° ADVISORY GROUP · CONFIDENTIAL</span>
+      <div style={{ background: palette.void, borderBottom: `1px solid ${palette.ash}`, padding: isMobile ? "6px 12px" : "7px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0, zIndex: 20, gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 8 : 16, minWidth: 0, overflow: "hidden" }}>
+          <span style={{ fontFamily: "monospace", fontSize: isMobile ? 10 : 11, color: palette.gold, letterSpacing: "0.3em", flexShrink: 0 }}>STRIKE BITES</span>
+          {!isMobile && <>
+            <span style={{ width: 1, height: 14, background: palette.ash, flexShrink: 0 }} />
+            <span style={{ fontFamily: "monospace", fontSize: 8, color: palette.creamDim, opacity: 0.5, letterSpacing: "0.1em", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>CLIENT PITCH DECK · Ru'ya 360° ADVISORY GROUP · CONFIDENTIAL</span>
+          </>}
         </div>
-        <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-          <button onClick={() => setNav(!nav)} style={{ background: nav ? `${palette.gold}15` : "transparent", border: `1px solid ${nav ? palette.gold : palette.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: nav ? palette.gold : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>SLIDES</button>
-          <button onClick={() => setNotes(!notes)} style={{ background: notes ? `${palette.gold}15` : "transparent", border: `1px solid ${notes ? palette.gold : palette.ash}`, borderRadius: 3, padding: "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: 8, color: notes ? palette.gold : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NOTES {notes ? "▲" : "▼"}</button>
+        <div style={{ display: "flex", gap: isMobile ? 4 : 6, alignItems: "center", flexShrink: 0 }}>
+          <button onClick={() => setNav(!nav)} style={{ background: nav ? `${palette.gold}15` : "transparent", border: `1px solid ${nav ? palette.gold : palette.ash}`, borderRadius: 3, padding: isMobile ? "5px 8px" : "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: nav ? palette.gold : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent", minHeight: 30 }}>SLIDES</button>
+          <button onClick={() => setNotes(!notes)} style={{ background: notes ? `${palette.gold}15` : "transparent", border: `1px solid ${notes ? palette.gold : palette.ash}`, borderRadius: 3, padding: isMobile ? "5px 8px" : "4px 10px", cursor: "pointer", fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: notes ? palette.gold : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent", minHeight: 30 }}>NOTES {notes ? "▲" : "▼"}</button>
           <button
             onClick={() => setWhiteMode(w => !w)}
             title={whiteMode ? "Switch to dark mode" : "Switch to light mode for TV presentation"}
             style={{
               background: whiteMode ? `${palette.gold}20` : `${palette.gold}12`,
               border: `1px solid ${palette.gold}`,
-              borderRadius: 3, padding: "4px 10px", cursor: "pointer",
-              fontFamily: "monospace", fontSize: 8, color: palette.gold,
+              borderRadius: 3, padding: isMobile ? "5px 8px" : "4px 10px", cursor: "pointer",
+              fontFamily: "monospace", fontSize: isMobile ? 7 : 8, color: palette.gold,
               letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent",
-              fontWeight: 600,
+              fontWeight: 600, minHeight: 30,
             }}
           >{whiteMode ? "◑ DARK" : "☀ DAY"}</button>
-          <div style={{ fontFamily: "monospace", fontSize: 9, color: palette.creamDim, background: palette.charcoal, padding: "4px 10px", borderRadius: 3, border: `1px solid ${palette.ash}` }}>{String(curr + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</div>
+          <div style={{ fontFamily: "monospace", fontSize: 9, color: palette.creamDim, background: palette.charcoal, padding: isMobile ? "5px 8px" : "4px 10px", borderRadius: 3, border: `1px solid ${palette.ash}`, minHeight: 30, display: "flex", alignItems: "center" }}>{String(curr + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}</div>
         </div>
       </div>
 
       {/* ── SLIDE NAVIGATOR ── */}
       {nav && (
-        <div style={{ background: palette.obsidian, borderBottom: `1px solid ${palette.ash}`, padding: "10px 24px", display: "flex", gap: 4, flexWrap: "wrap", flexShrink: 0, zIndex: 19 }}>
+        <div style={{ background: palette.obsidian, borderBottom: `1px solid ${palette.ash}`, padding: isMobile ? "8px 12px" : "10px 24px", display: "flex", gap: 4, flexWrap: "wrap", flexShrink: 0, zIndex: 19 }}>
           {SLIDES.map((s, i) => (
-            <button key={i} onClick={() => { setCurr(i); setNav(false); }} style={{ background: curr === i ? `${palette.gold}18` : s.type === "section" ? palette.ember : "transparent", border: `1px solid ${curr === i ? palette.gold : palette.ash}`, borderRadius: 3, padding: "5px 10px", cursor: "pointer", transition: "all 0.15s", minWidth: s.type === "section" ? 70 : 48, WebkitTapHighlightColor: "transparent" }}>
+            <button key={i} onClick={() => { setCurr(i); setNav(false); }} style={{ background: curr === i ? `${palette.gold}18` : s.type === "section" ? palette.ember : "transparent", border: `1px solid ${curr === i ? palette.gold : palette.ash}`, borderRadius: 3, padding: isMobile ? "7px 10px" : "5px 10px", cursor: "pointer", transition: "all 0.15s", minWidth: s.type === "section" ? (isMobile ? 60 : 70) : (isMobile ? 40 : 48), minHeight: isMobile ? 40 : "auto", WebkitTapHighlightColor: "transparent" }}>
               <div style={{ fontFamily: "monospace", fontSize: 6, color: curr === i ? palette.gold : palette.creamDim, marginBottom: 1 }}>{String(i + 1).padStart(2, "0")}</div>
               <div style={{ fontSize: 8, color: curr === i ? palette.cream : s.type === "section" ? palette.gold : palette.creamDim }}>{s.label}</div>
             </button>
@@ -2004,13 +2007,13 @@ export default function KITSPitchDeck() {
           <div style={{ position: "absolute", inset: 0, overflowY: "auto", WebkitOverflowScrolling: "touch" }}>
             <RenderSlide slide={slide} />
           </div>
-          <button onClick={prev} disabled={curr === 0} style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)", background: `${palette.obsidian}DD`, border: `1px solid ${palette.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === 0 ? "default" : "pointer", color: curr === 0 ? palette.ash : palette.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>‹</button>
-          <button onClick={next} disabled={curr === total - 1} style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", background: `${palette.obsidian}DD`, border: `1px solid ${palette.ash}`, borderRadius: "50%", width: 34, height: 34, cursor: curr === total - 1 ? "default" : "pointer", color: curr === total - 1 ? palette.ash : palette.cream, fontSize: 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>›</button>
+          <button onClick={prev} disabled={curr === 0} style={{ position: "absolute", left: isMobile ? 8 : 12, top: "50%", transform: "translateY(-50%)", background: `${palette.obsidian}DD`, border: `1px solid ${palette.ash}`, borderRadius: "50%", width: isMobile ? 44 : 34, height: isMobile ? 44 : 34, cursor: curr === 0 ? "default" : "pointer", color: curr === 0 ? palette.ash : palette.cream, fontSize: isMobile ? 22 : 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === 0 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>‹</button>
+          <button onClick={next} disabled={curr === total - 1} style={{ position: "absolute", right: isMobile ? 8 : 12, top: "50%", transform: "translateY(-50%)", background: `${palette.obsidian}DD`, border: `1px solid ${palette.ash}`, borderRadius: "50%", width: isMobile ? 44 : 34, height: isMobile ? 44 : 34, cursor: curr === total - 1 ? "default" : "pointer", color: curr === total - 1 ? palette.ash : palette.cream, fontSize: isMobile ? 22 : 18, display: "flex", alignItems: "center", justifyContent: "center", opacity: curr === total - 1 ? 0.2 : 0.65, transition: "opacity 0.2s", zIndex: 10, WebkitTapHighlightColor: "transparent" }}>›</button>
         </div>
 
         {/* ── PRESENTER NOTES ── */}
         {notes && slide.notes && (
-          <div style={{ flex: "0 0 38%", background: "#08070A", borderTop: `2px solid ${palette.gold}35`, overflowY: "auto", padding: "16px 32px", WebkitOverflowScrolling: "touch" }}>
+          <div style={{ flex: "0 0 38%", background: "#08070A", borderTop: `2px solid ${palette.gold}35`, overflowY: "auto", padding: isMobile ? "12px 16px" : "16px 32px", WebkitOverflowScrolling: "touch" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
               <div style={{ fontFamily: "monospace", fontSize: 9, color: palette.gold, letterSpacing: "0.25em" }}>PRESENTER NOTES · {slide.label}</div>
               <div style={{ fontFamily: "monospace", fontSize: 8, color: palette.creamDim }}>TIMING: {slide.notes.timing}</div>
@@ -2032,17 +2035,17 @@ export default function KITSPitchDeck() {
       </div>
 
       {/* ── BOTTOM BAR ── */}
-      <div style={{ background: palette.void, borderTop: `1px solid ${palette.ash}`, padding: "6px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
-        <div style={{ display: "flex", gap: 20 }}>
-          <button onClick={prev} disabled={curr === 0} style={{ background: "transparent", border: "none", cursor: curr === 0 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === 0 ? palette.ash : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>← PREV</button>
-          <button onClick={next} disabled={curr === total - 1} style={{ background: "transparent", border: "none", cursor: curr === total - 1 ? "default" : "pointer", fontFamily: "monospace", fontSize: 8, color: curr === total - 1 ? palette.ash : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent" }}>NEXT →</button>
+      <div style={{ background: palette.void, borderTop: `1px solid ${palette.ash}`, padding: isMobile ? "5px 12px" : "6px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", flexShrink: 0 }}>
+        <div style={{ display: "flex", gap: isMobile ? 14 : 20, flexShrink: 0 }}>
+          <button onClick={prev} disabled={curr === 0} style={{ background: "transparent", border: "none", cursor: curr === 0 ? "default" : "pointer", fontFamily: "monospace", fontSize: isMobile ? 9 : 8, color: curr === 0 ? palette.ash : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent", padding: isMobile ? "4px 0" : 0, minHeight: isMobile ? 32 : "auto" }}>← PREV</button>
+          <button onClick={next} disabled={curr === total - 1} style={{ background: "transparent", border: "none", cursor: curr === total - 1 ? "default" : "pointer", fontFamily: "monospace", fontSize: isMobile ? 9 : 8, color: curr === total - 1 ? palette.ash : palette.creamDim, letterSpacing: "0.1em", WebkitTapHighlightColor: "transparent", padding: isMobile ? "4px 0" : 0, minHeight: isMobile ? 32 : "auto" }}>NEXT →</button>
         </div>
-        <div style={{ display: "flex", gap: 5, alignItems: "center" }}>
+        <div style={{ flex: 1, display: "flex", gap: 5, alignItems: "center", justifyContent: "center", overflowX: "auto", padding: "0 8px", WebkitOverflowScrolling: "touch" }}>
           {SLIDES.map((s, i) => (
-            <button key={i} onClick={() => setCurr(i)} style={{ width: i === curr ? 22 : s.type === "section" ? 8 : 5, height: s.type === "section" ? 5 : 4, borderRadius: 3, background: i === curr ? palette.gold : s.type === "section" ? palette.goldDim : palette.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", WebkitTapHighlightColor: "transparent" }} />
+            <button key={i} onClick={() => setCurr(i)} style={{ flexShrink: 0, width: i === curr ? 22 : s.type === "section" ? 8 : 5, height: s.type === "section" ? 5 : 4, borderRadius: 3, background: i === curr ? palette.gold : s.type === "section" ? palette.goldDim : palette.ash, border: "none", cursor: "pointer", padding: 0, transition: "all 0.25s ease", WebkitTapHighlightColor: "transparent" }} />
           ))}
         </div>
-        <div style={{ fontFamily: "monospace", fontSize: 7, color: palette.creamDim, opacity: 0.35, letterSpacing: "0.15em" }}>N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW</div>
+        {!isMobile && <div style={{ fontFamily: "monospace", fontSize: 7, color: palette.creamDim, opacity: 0.35, letterSpacing: "0.15em", flexShrink: 0 }}>N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW</div>}
       </div>
     </div>
     </ThemeCtx.Provider>
