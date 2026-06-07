@@ -1,0 +1,55 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e106] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 01 / 22
+      - generic [ref=e50]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: Ru'ya 360° ADVISORY GROUP · PRIVATE & CONFIDENTIAL · KAG-JRK-PITCH-001
+          - generic [ref=e58]:
+            - generic [ref=e59]: STRIKE
+            - generic [ref=e60]: BITES
+          - paragraph [ref=e62]: Lebanon's First Premium Beef Jerky Brand
+          - paragraph [ref=e63]: CLIENT ADVISORY PRESENTATION · Ru'ya 360° · JUNE 2026
+          - generic [ref=e64]:
+            - generic [ref=e65]: 11 Deliverables Ready
+            - generic [ref=e66]: 88/100 Brand Score
+            - generic [ref=e67]: 38-Step Launch Plan
+            - generic [ref=e68]: 3 Financial Scenarios
+            - generic [ref=e69]: $0 Local Competition
+          - generic [ref=e70]: Ru'ya 360° Advisory Group · Lebanese Market · June 2026
+        - button "‹" [disabled] [ref=e75]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [disabled] [ref=e79]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]

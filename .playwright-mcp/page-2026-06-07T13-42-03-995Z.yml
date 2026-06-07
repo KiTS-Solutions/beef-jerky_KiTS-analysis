@@ -1,0 +1,191 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e106] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 22 / 22
+      - generic [ref=e50]:
+        - generic [ref=e1665]:
+          - generic [ref=e1667]:
+            - generic [ref=e1668]: PROOF OF COMMITMENT · 11 DELIVERABLES COMPLETE · BUILT BEFORE THIS CONTRACT EXISTS
+            - generic [ref=e1669]:
+              - generic [ref=e1670]:
+                - generic [ref=e1671]: ✓
+                - generic [ref=e1672]: KAG-JRK-001
+                - generic [ref=e1673]: Advisory Framework
+              - generic [ref=e1674]:
+                - generic [ref=e1675]: ✓
+                - generic [ref=e1676]: KAG-JRK-002
+                - generic [ref=e1677]: Launch Checklist
+              - generic [ref=e1678]:
+                - generic [ref=e1679]: ✓
+                - generic [ref=e1680]: KAG-JRK-003
+                - generic [ref=e1681]: Financial Study
+              - generic [ref=e1682]:
+                - generic [ref=e1683]: ✓
+                - generic [ref=e1684]: KAG-JRK-004
+                - generic [ref=e1685]: Outreach System
+              - generic [ref=e1686]:
+                - generic [ref=e1687]: ✓
+                - generic [ref=e1688]: KAG-JRK-005
+                - generic [ref=e1689]: Competitive Analysis
+              - generic [ref=e1690]:
+                - generic [ref=e1691]: ✓
+                - generic [ref=e1692]: KAG-JRK-006
+                - generic [ref=e1693]: Brand Design Brief
+              - generic [ref=e1694]:
+                - generic [ref=e1695]: ✓
+                - generic [ref=e1696]: KAG-JRK-007
+                - generic [ref=e1697]: Manufacturer Brief
+              - generic [ref=e1698]:
+                - generic [ref=e1699]: ✓
+                - generic [ref=e1700]: KAG-JRK-008
+                - generic [ref=e1701]: Brand Study 92/100
+              - generic [ref=e1702]:
+                - generic [ref=e1703]: ✓
+                - generic [ref=e1704]: KAG-JRK-009
+                - generic [ref=e1705]: Board Presentation
+              - generic [ref=e1706]:
+                - generic [ref=e1707]: ✓
+                - generic [ref=e1708]: KAG-JRK-010
+                - generic [ref=e1709]: Handoff Document
+              - generic [ref=e1710]:
+                - generic [ref=e1711]: ✓
+                - generic [ref=e1712]: KAG-JRK-MKT
+                - generic [ref=e1713]: Digital Strategy
+          - generic [ref=e1714]:
+            - generic [ref=e1715]:
+              - generic [ref=e1716]: THE CASE — CLOSED
+              - generic [ref=e1717]:
+                - generic [ref=e1718]: THE MARKET CLAIM
+                - paragraph [ref=e1719]: Zero local beef jerky brands in Lebanon. The category is uncontested and available to its first owner — confirmed by Ru’ya 360° field research, June 2026.
+              - generic [ref=e1720]:
+                - generic [ref=e1721]: THE BRAND CLAIM
+                - paragraph [ref=e1722]: STRIKE scores 92/100 on name alone. Visual identity, technical brief, and designer brief are production-ready today. No contract was required to build any of it.
+              - generic [ref=e1723]:
+                - generic [ref=e1724]: THE FINANCIAL CLAIM
+                - paragraph [ref=e1725]: "Tier 2: $40K–$65K/mo by Month 12. Gross margin 61.9%. Breakeven Month 8–11. Every number field-corrected and verified against the Jack Link’s benchmark."
+              - generic [ref=e1726]:
+                - generic [ref=e1727]: YES VS. WAIT — THE REAL COST
+                - generic [ref=e1729]:
+                  - generic [ref=e1731]: SIGN TODAY
+                  - generic [ref=e1733]: IF YOU WAIT
+                  - generic [ref=e1734]:
+                    - generic [ref=e1735]: ✓
+                    - generic [ref=e1736]: Shelf-ready Q4 2026
+                  - generic [ref=e1737]:
+                    - generic [ref=e1738]: ✗
+                    - generic [ref=e1739]: Q1 2027 at the earliest
+                  - generic [ref=e1740]:
+                    - generic [ref=e1741]: ✓
+                    - generic [ref=e1742]: Category ownership — secured
+                  - generic [ref=e1743]:
+                    - generic [ref=e1744]: ✗
+                    - generic [ref=e1745]: Wild West Halal arrives first
+                  - generic [ref=e1746]:
+                    - generic [ref=e1747]: ✓
+                    - generic [ref=e1748]: Phase 0 in 72 hours
+                  - generic [ref=e1749]:
+                    - generic [ref=e1750]: ✗
+                    - generic [ref=e1751]: Another planning cycle begins
+            - generic [ref=e1752]:
+              - generic [ref=e1753]: ONE DECISION — SELECT YOUR TIER
+              - button "TIER 1 Lean Launch $24,000" [ref=e1755] [cursor=pointer]:
+                - generic [ref=e1756]:
+                  - generic [ref=e1757]:
+                    - generic [ref=e1758]: TIER 1
+                    - generic [ref=e1759]: Lean Launch
+                  - generic [ref=e1760]: $24,000
+              - generic [ref=e1761]:
+                - button "Ru’ya 360° RECOMMENDS TIER 2 Standard Launch $62,000 M12 REVENUE $40K–$65K/mo YEAR 1 ROI ~265% BREAKEVEN Month 8–11" [ref=e1762] [cursor=pointer]:
+                  - generic [ref=e1763]: Ru’ya 360° RECOMMENDS
+                  - generic [ref=e1764]:
+                    - generic [ref=e1765]:
+                      - generic [ref=e1766]: TIER 2
+                      - generic [ref=e1767]: Standard Launch
+                    - generic [ref=e1768]: $62,000
+                  - generic [ref=e1769]:
+                    - generic [ref=e1770]:
+                      - generic [ref=e1771]: M12 REVENUE
+                      - generic [ref=e1772]: $40K–$65K/mo
+                    - generic [ref=e1773]:
+                      - generic [ref=e1774]: YEAR 1 ROI
+                      - generic [ref=e1775]: ~265%
+                    - generic [ref=e1776]:
+                      - generic [ref=e1777]: BREAKEVEN
+                      - generic [ref=e1778]: Month 8–11
+                - generic [ref=e1779]:
+                  - generic [ref=e1780]: PHASE 0 ACTIVATES · 72 HOURS FROM SIGNING
+                  - generic [ref=e1781]:
+                    - generic [ref=e1782]: →
+                    - generic [ref=e1783]: SARL registration + full corporate structure
+                  - generic [ref=e1784]:
+                    - generic [ref=e1785]: →
+                    - generic [ref=e1786]: MoPH registration — 2 SKUs + Halal certification
+                  - generic [ref=e1787]:
+                    - generic [ref=e1788]: →
+                    - generic [ref=e1789]: Trademark filing — Classes 29 & 35, Lebanon
+                  - generic [ref=e1790]:
+                    - generic [ref=e1791]: →
+                    - generic [ref=e1792]: Brand designer formally briefed — 8-week identity delivery
+                  - generic [ref=e1793]:
+                    - generic [ref=e1794]: →
+                    - generic [ref=e1795]: Manufacturer supply agreement + QC protocol signed
+                  - generic [ref=e1796]:
+                    - generic [ref=e1797]: →
+                    - generic [ref=e1798]: GS1 Lebanon barcode allocation — 2 SKUs
+                  - generic [ref=e1799]:
+                    - generic [ref=e1800]: →
+                    - generic [ref=e1801]: 60+ account outreach activates Day 8
+              - button "TIER 3 Full Market Entry $96,000" [ref=e1803] [cursor=pointer]:
+                - generic [ref=e1804]:
+                  - generic [ref=e1805]:
+                    - generic [ref=e1806]: TIER 3
+                    - generic [ref=e1807]: Full Market Entry
+                  - generic [ref=e1808]: $96,000
+              - generic [ref=e1809]:
+                - generic [ref=e1810]: YOUR CONTROL · BUILT INTO THE MANDATE
+                - generic [ref=e1811]:
+                  - generic [ref=e1812]:
+                    - generic [ref=e1813]: WEEKLY
+                    - generic [ref=e1814]: Field activity report
+                  - generic [ref=e1815]:
+                    - generic [ref=e1816]: MONTHLY
+                    - generic [ref=e1817]: P&L vs. approved plan
+                  - generic [ref=e1818]:
+                    - generic [ref=e1819]: PHASE GATES
+                    - generic [ref=e1820]: Your sign-off required
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [disabled] [ref=e76]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [disabled] [ref=e80]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]

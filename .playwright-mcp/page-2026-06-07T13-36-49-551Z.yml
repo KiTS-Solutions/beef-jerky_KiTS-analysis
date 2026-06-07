@@ -1,0 +1,231 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e106] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 12 / 22
+      - generic [ref=e50]:
+        - generic [ref=e382]:
+          - generic [ref=e383]:
+            - generic [ref=e384]: COMP · COMPARISON
+            - heading "Head-to-Head — Seven Criteria That Decide the Sale" [level=2] [ref=e385]
+          - paragraph [ref=e387]: Rated from both the trade buyer and end consumer perspective. The criteria that win shelf space, drive repeat purchase, and build brand loyalty in Lebanon.
+          - table [ref=e389]:
+            - rowgroup [ref=e390]:
+              - row "CRITERION Jack Link's Country Archer A Cup Quest Bar STRIKE ✦ ★ OUR BRAND" [ref=e391]:
+                - columnheader "CRITERION" [ref=e392]
+                - columnheader "Jack Link's" [ref=e393]
+                - columnheader "Country Archer" [ref=e394]
+                - columnheader "A Cup" [ref=e395]
+                - columnheader "Quest Bar" [ref=e396]
+                - columnheader "STRIKE ✦ ★ OUR BRAND" [ref=e397]:
+                  - text: STRIKE ✦
+                  - generic [ref=e398]: ★ OUR BRAND
+            - rowgroup [ref=e399]:
+              - row "Halal Certified ~ FAMBRAS EU only ✗ No cert ✗ Unconfirmed ✗ Mushbooh ✓ Dar Al-Fatwa" [ref=e400]:
+                - cell "Halal Certified" [ref=e401]:
+                  - generic [ref=e402]: Halal Certified
+                - cell "~ FAMBRAS EU only" [ref=e403]:
+                  - generic [ref=e404]:
+                    - generic [ref=e405]: ~
+                    - generic [ref=e406]: FAMBRAS EU only
+                - cell "✗ No cert" [ref=e407]:
+                  - generic [ref=e408]:
+                    - generic [ref=e409]: ✗
+                    - generic [ref=e410]: No cert
+                - cell "✗ Unconfirmed" [ref=e411]:
+                  - generic [ref=e412]:
+                    - generic [ref=e413]: ✗
+                    - generic [ref=e414]: Unconfirmed
+                - cell "✗ Mushbooh" [ref=e415]:
+                  - generic [ref=e416]:
+                    - generic [ref=e417]: ✗
+                    - generic [ref=e418]: Mushbooh
+                - cell "✓ Dar Al-Fatwa" [ref=e419]:
+                  - generic [ref=e420]:
+                    - generic [ref=e421]: ✓
+                    - generic [ref=e422]: Dar Al-Fatwa
+              - row "Zero Added Sugar ~ 0g Original ~ Cane sugar ✗ Dessert-base ~ Sucralose ✓ Zero" [ref=e423]:
+                - cell "Zero Added Sugar" [ref=e424]:
+                  - generic [ref=e425]: Zero Added Sugar
+                - cell "~ 0g Original" [ref=e426]:
+                  - generic [ref=e427]:
+                    - generic [ref=e428]: ~
+                    - generic [ref=e429]: 0g Original
+                - cell "~ Cane sugar" [ref=e430]:
+                  - generic [ref=e431]:
+                    - generic [ref=e432]: ~
+                    - generic [ref=e433]: Cane sugar
+                - cell "✗ Dessert-base" [ref=e434]:
+                  - generic [ref=e435]:
+                    - generic [ref=e436]: ✗
+                    - generic [ref=e437]: Dessert-base
+                - cell "~ Sucralose" [ref=e438]:
+                  - generic [ref=e439]:
+                    - generic [ref=e440]: ~
+                    - generic [ref=e441]: Sucralose
+                - cell "✓ Zero" [ref=e442]:
+                  - generic [ref=e443]:
+                    - generic [ref=e444]: ✓
+                    - generic [ref=e445]: Zero
+              - row "Lebanon Price Point ✗ $5.15–5.62/40g ✗ ~$6–8/pack ✓ $2.29–3.57 ~ $4.00/bar ✓ $2.50–3.50" [ref=e446]:
+                - cell "Lebanon Price Point" [ref=e447]:
+                  - generic [ref=e448]: Lebanon Price Point
+                - cell "✗ $5.15–5.62/40g" [ref=e449]:
+                  - generic [ref=e450]:
+                    - generic [ref=e451]: ✗
+                    - generic [ref=e452]: $5.15–5.62/40g
+                - cell "✗ ~$6–8/pack" [ref=e453]:
+                  - generic [ref=e454]:
+                    - generic [ref=e455]: ✗
+                    - generic [ref=e456]: ~$6–8/pack
+                - cell "✓ $2.29–3.57" [ref=e457]:
+                  - generic [ref=e458]:
+                    - generic [ref=e459]: ✓
+                    - generic [ref=e460]: $2.29–3.57
+                - cell "~ $4.00/bar" [ref=e461]:
+                  - generic [ref=e462]:
+                    - generic [ref=e463]: ~
+                    - generic [ref=e464]: $4.00/bar
+                - cell "✓ $2.50–3.50" [ref=e465]:
+                  - generic [ref=e466]:
+                    - generic [ref=e467]: ✓
+                    - generic [ref=e468]: $2.50–3.50
+              - row "Local Production ✗ USA ✗ USA ✓ Lebanon ✓ ✗ USA ✓ Lebanon" [ref=e469]:
+                - cell "Local Production" [ref=e470]:
+                  - generic [ref=e471]: Local Production
+                - cell "✗ USA" [ref=e472]:
+                  - generic [ref=e473]:
+                    - generic [ref=e474]: ✗
+                    - generic [ref=e475]: USA
+                - cell "✗ USA" [ref=e476]:
+                  - generic [ref=e477]:
+                    - generic [ref=e478]: ✗
+                    - generic [ref=e479]: USA
+                - cell "✓ Lebanon ✓" [ref=e480]:
+                  - generic [ref=e481]:
+                    - generic [ref=e482]: ✓
+                    - generic [ref=e483]: Lebanon ✓
+                - cell "✗ USA" [ref=e484]:
+                  - generic [ref=e485]:
+                    - generic [ref=e486]: ✗
+                    - generic [ref=e487]: USA
+                - cell "✓ Lebanon" [ref=e488]:
+                  - generic [ref=e489]:
+                    - generic [ref=e490]: ✓
+                    - generic [ref=e491]: Lebanon
+              - row "Lebanese Flavor Profile ✗ Teriyaki/US ✗ Classic/US ~ Konafa/Sweets ✗ Cookie/US ✓ Cedar BBQ" [ref=e492]:
+                - cell "Lebanese Flavor Profile" [ref=e493]:
+                  - generic [ref=e494]: Lebanese Flavor Profile
+                - cell "✗ Teriyaki/US" [ref=e495]:
+                  - generic [ref=e496]:
+                    - generic [ref=e497]: ✗
+                    - generic [ref=e498]: Teriyaki/US
+                - cell "✗ Classic/US" [ref=e499]:
+                  - generic [ref=e500]:
+                    - generic [ref=e501]: ✗
+                    - generic [ref=e502]: Classic/US
+                - cell "~ Konafa/Sweets" [ref=e503]:
+                  - generic [ref=e504]:
+                    - generic [ref=e505]: ~
+                    - generic [ref=e506]: Konafa/Sweets
+                - cell "✗ Cookie/US" [ref=e507]:
+                  - generic [ref=e508]:
+                    - generic [ref=e509]: ✗
+                    - generic [ref=e510]: Cookie/US
+                - cell "✓ Cedar BBQ" [ref=e511]:
+                  - generic [ref=e512]:
+                    - generic [ref=e513]: ✓
+                    - generic [ref=e514]: Cedar BBQ
+              - row "Complete Meat Protein ✓ Beef ✓ ✓ Beef ✓ ✗ Whey/casein ✗ Whey/milk ✓ Beef ✓" [ref=e515]:
+                - cell "Complete Meat Protein" [ref=e516]:
+                  - generic [ref=e517]: Complete Meat Protein
+                - cell "✓ Beef ✓" [ref=e518]:
+                  - generic [ref=e519]:
+                    - generic [ref=e520]: ✓
+                    - generic [ref=e521]: Beef ✓
+                - cell "✓ Beef ✓" [ref=e522]:
+                  - generic [ref=e523]:
+                    - generic [ref=e524]: ✓
+                    - generic [ref=e525]: Beef ✓
+                - cell "✗ Whey/casein" [ref=e526]:
+                  - generic [ref=e527]:
+                    - generic [ref=e528]: ✗
+                    - generic [ref=e529]: Whey/casein
+                - cell "✗ Whey/milk" [ref=e530]:
+                  - generic [ref=e531]:
+                    - generic [ref=e532]: ✗
+                    - generic [ref=e533]: Whey/milk
+                - cell "✓ Beef ✓" [ref=e534]:
+                  - generic [ref=e535]:
+                    - generic [ref=e536]: ✓
+                    - generic [ref=e537]: Beef ✓
+              - row "Direct Trade Support ✗ Importer only ✗ Spinneys only ✗ None ~ Via distrib. ✓ Founder direct" [ref=e538]:
+                - cell "Direct Trade Support" [ref=e539]:
+                  - generic [ref=e540]: Direct Trade Support
+                - cell "✗ Importer only" [ref=e541]:
+                  - generic [ref=e542]:
+                    - generic [ref=e543]: ✗
+                    - generic [ref=e544]: Importer only
+                - cell "✗ Spinneys only" [ref=e545]:
+                  - generic [ref=e546]:
+                    - generic [ref=e547]: ✗
+                    - generic [ref=e548]: Spinneys only
+                - cell "✗ None" [ref=e549]:
+                  - generic [ref=e550]:
+                    - generic [ref=e551]: ✗
+                    - generic [ref=e552]: None
+                - cell "~ Via distrib." [ref=e553]:
+                  - generic [ref=e554]:
+                    - generic [ref=e555]: ~
+                    - generic [ref=e556]: Via distrib.
+                - cell "✓ Founder direct" [ref=e557]:
+                  - generic [ref=e558]:
+                    - generic [ref=e559]: ✓
+                    - generic [ref=e560]: Founder direct
+          - generic [ref=e561]:
+            - paragraph [ref=e563]: STRIKE is the only brand that wins all seven criteria. A Cup — Lebanon's best local competitor — wins on price and local production but is refrigerated and delivers no meat protein. Jack Link's and Country Archer deliver real beef but fail on Halal and price. No single competitor holds more than three criteria simultaneously.
+            - generic [ref=e564]:
+              - generic [ref=e565]:
+                - generic [ref=e566]: ✓
+                - generic [ref=e567]: WIN
+              - generic [ref=e568]:
+                - generic [ref=e569]: ~
+                - generic [ref=e570]: PARTIAL
+              - generic [ref=e571]:
+                - generic [ref=e572]: ✗
+                - generic [ref=e573]: FAIL
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]

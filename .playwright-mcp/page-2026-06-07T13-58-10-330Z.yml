@@ -1,0 +1,159 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e2623] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [active] [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 16 / 22
+      - generic [ref=e50]:
+        - generic [ref=e2478]:
+          - generic [ref=e2479]:
+            - generic [ref=e2480]:
+              - generic [ref=e2481]: 05 · FINANCIAL PLAN
+              - heading "Investment, Return & ROI — Three Scenarios" [level=2] [ref=e2482]
+            - generic [ref=e2484]:
+              - generic [ref=e2485]: v2.0 CORRECTED
+              - generic [ref=e2486]: RRP $4.50 · 61.9% GM
+          - generic [ref=e2487]:
+            - button "TIER 1 Lean Launch $24,000 BEP Month 9–12 · 42–48% GM" [ref=e2488] [cursor=pointer]:
+              - generic [ref=e2489]: TIER 1
+              - generic [ref=e2490]: Lean Launch
+              - generic [ref=e2491]: $24,000
+              - generic [ref=e2492]:
+                - generic [ref=e2493]: BEP Month 9–12
+                - generic [ref=e2494]: ·
+                - generic [ref=e2495]: 42–48% GM
+            - button "Ru'ya 360° RECOMMENDS TIER 2 Standard Launch $62,000 BEP Month 8–11 · 55–62% GM" [ref=e2496] [cursor=pointer]:
+              - generic [ref=e2497]: Ru'ya 360° RECOMMENDS
+              - generic [ref=e2498]: TIER 2
+              - generic [ref=e2499]: Standard Launch
+              - generic [ref=e2500]: $62,000
+              - generic [ref=e2501]:
+                - generic [ref=e2502]: BEP Month 8–11
+                - generic [ref=e2503]: ·
+                - generic [ref=e2504]: 55–62% GM
+            - button "TIER 3 Full Market Entry $96,000 BEP Month 5–7 · 58–64% GM" [ref=e2505] [cursor=pointer]:
+              - generic [ref=e2506]: TIER 3
+              - generic [ref=e2507]: Full Market Entry
+              - generic [ref=e2508]: $96,000
+              - generic [ref=e2509]:
+                - generic [ref=e2510]: BEP Month 5–7
+                - generic [ref=e2511]: ·
+                - generic [ref=e2512]: 58–64% GM
+          - generic [ref=e2513]:
+            - generic [ref=e2514]:
+              - generic [ref=e2515]:
+                - generic [ref=e2516]:
+                  - generic [ref=e2517]: v2.0
+                  - generic [ref=e2518]: Breakeven
+                  - generic [ref=e2519]: Month 8–11
+                - generic [ref=e2520]:
+                  - generic [ref=e2521]: v2.0
+                  - generic [ref=e2522]: Gross Margin
+                  - generic [ref=e2523]: 55–62%
+                - generic [ref=e2524]:
+                  - generic [ref=e2525]: Year 1 ROI
+                  - generic [ref=e2526]: ~265%
+              - generic [ref=e2527]:
+                - generic [ref=e2528]: PROFITABILITY TIMELINE — 12 MONTHS
+                - generic [ref=e2529]:
+                  - generic [ref=e2534]: M1
+                  - generic [ref=e2537]: M3
+                  - generic [ref=e2540]: M6
+                  - generic [ref=e2543]: M9
+                  - generic [ref=e2546]: M12
+                - generic [ref=e2548]: "◎ Breakeven: Month 8–11"
+              - generic [ref=e2549]:
+                - generic [ref=e2550]: REVENUE TRAJECTORY
+                - generic [ref=e2552]:
+                  - generic [ref=e2553]: Month 3
+                  - generic [ref=e2555]: Revenue building
+                - generic [ref=e2559]:
+                  - generic [ref=e2560]: Month 6
+                  - generic [ref=e2561]:
+                    - generic [ref=e2562]: v2.0
+                    - generic [ref=e2563]: $9K–14K /mo
+                - generic [ref=e2567]:
+                  - generic [ref=e2568]: Month 12
+                  - generic [ref=e2570]: $40K–65K /mo
+            - generic [ref=e2573]:
+              - generic [ref=e2574]:
+                - generic [ref=e2575]: WHAT THIS FUNDS
+                - generic [ref=e2576]:
+                  - generic [ref=e2577]: ✓
+                  - generic [ref=e2578]: SARL + all licensing + IP lawyer + food regulatory consultant
+                - generic [ref=e2579]:
+                  - generic [ref=e2580]: ✓
+                  - generic [ref=e2581]: MoPH 2 SKUs + halal + lab testing × 2 rounds
+                - generic [ref=e2582]:
+                  - generic [ref=e2583]: ✓
+                  - generic [ref=e2584]: Full brand identity + 2 SKU packaging (40g + 120g)
+                - generic [ref=e2585]:
+                  - generic [ref=e2586]: ✓
+                  - generic [ref=e2587]: 2 production batches (90-day stock)
+                - generic [ref=e2588]:
+                  - generic [ref=e2589]: ✓
+                  - generic [ref=e2590]: Delivery vehicle lease + fuel — 60–80 account route (NEW)
+                - generic [ref=e2591]:
+                  - generic [ref=e2592]: ✓
+                  - generic [ref=e2593]: Workspace, product liability + vehicle insurance, generator (NEW)
+                - generic [ref=e2594]:
+                  - generic [ref=e2595]: ✓
+                  - generic [ref=e2596]: Offshore USD banking + full technology stack (NEW)
+                - generic [ref=e2597]:
+                  - generic [ref=e2598]: ✓
+                  - generic [ref=e2599]: Ru'ya 360° management fee Phases 0–2
+              - generic [ref=e2600]:
+                - generic [ref=e2601]: CUMULATIVE YEAR 1 GROSS PROFIT
+                - generic:
+                  - generic [ref=e2604]: IN
+                  - generic [ref=e2606]: ~265%
+                - generic [ref=e2607]: ~$153K
+                - generic [ref=e2608]: Year 1 · ~265% ROI · 55–62% avg GM
+                - paragraph: Est. cumulative gross profit Year 1 at 61.9% avg margin. Investment recovery Month 8–11. Year 1 net positive approx. $91K. Revised from $50K to $62K — now includes transport (van lease + fuel), workspace, insurance, generator, offshore USD banking, and full technology stack. Revenue trajectory unchanged.
+                - generic [ref=e2610]:
+                  - generic [ref=e2611]:
+                    - generic [ref=e2612]: RRP
+                    - generic [ref=e2613]: $4.50
+                  - generic [ref=e2614]:
+                    - generic [ref=e2615]: COGS
+                    - generic [ref=e2616]: $1.20
+                  - generic [ref=e2617]:
+                    - generic [ref=e2618]: GP/UNIT
+                    - generic [ref=e2619]: $1.95
+                  - generic [ref=e2620]:
+                    - generic [ref=e2621]: GM
+                    - generic [ref=e2622]: 61.9%
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]

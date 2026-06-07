@@ -1,0 +1,186 @@
+- generic [ref=e3]:
+  - button "➔" [ref=e1943] [cursor=pointer]
+  - navigation [ref=e6]:
+    - button "📺" [ref=e1944] [cursor=pointer]:
+      - generic [ref=e9]: 📺
+    - list [ref=e11]:
+      - listitem [ref=e12]:
+        - button "K" [ref=e1945] [cursor=pointer]
+      - listitem [ref=e14]:
+        - button "F" [ref=e1946] [cursor=pointer]
+      - listitem [ref=e16]:
+        - button "S" [ref=e1947] [cursor=pointer]
+      - listitem [ref=e18]:
+        - button "M" [ref=e1948] [cursor=pointer]
+      - listitem [ref=e20]:
+        - button "B" [ref=e1949] [cursor=pointer]
+      - listitem [ref=e22]:
+        - button "F" [ref=e1950] [cursor=pointer]
+      - listitem [ref=e24]:
+        - button "O" [ref=e1951] [cursor=pointer]
+      - listitem [ref=e26]:
+        - button "M" [ref=e1952] [cursor=pointer]
+      - listitem [ref=e28]:
+        - button "B" [ref=e1953] [cursor=pointer]
+      - listitem [ref=e30]:
+        - button "C" [ref=e1954] [cursor=pointer]
+      - listitem [ref=e32]:
+        - button "S" [ref=e1955] [cursor=pointer]
+      - listitem [ref=e34]:
+        - button "P" [ref=e1956] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]: STRIKE BITES
+          - generic [ref=e1958]: CLIENT PITCH DECK · Ru'ya 360° ADVISORY GROUP · CONFIDENTIAL
+        - generic [ref=e44]:
+          - button "SLIDES" [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 19 / 22
+      - generic [ref=e50]:
+        - generic [ref=e2293]:
+          - generic [ref=e2294]:
+            - generic [ref=e2295]:
+              - generic [ref=e2296]: STRIKE BITES
+              - generic [ref=e2298]: MARKETING & E-MARKETING STRATEGY
+            - generic [ref=e2299]:
+              - generic [ref=e2300]: KAG-JRK-MKT-001
+              - generic [ref=e2301]: JUNE 2026
+          - generic [ref=e2303]:
+            - button "01 · OVERVIEW" [ref=e2304] [cursor=pointer]
+            - button "02 · INFRASTRUCTURE" [ref=e2305] [cursor=pointer]
+            - button "03 · PLATFORMS" [ref=e2306] [cursor=pointer]
+            - button "04 · E-COMMERCE" [ref=e2307] [cursor=pointer]
+            - button "05 · CONTENT" [ref=e2308] [cursor=pointer]
+            - button "06 · COMMUNITY" [ref=e2309] [cursor=pointer]
+            - button "07 · FINANCIALS" [ref=e2310] [cursor=pointer]
+            - button "08 · ROADMAP" [ref=e2311] [cursor=pointer]
+          - main [ref=e2312]:
+            - generic [ref=e2313]:
+              - generic [ref=e2314]:
+                - generic [ref=e2315]: §01 · MARKETING & E-MARKETING STRATEGY
+                - heading "The Strategy That Makes STRIKE a Trend" [level=2] [ref=e2316]
+                - paragraph [ref=e2317]: A brand that is only known in the gym cannot scale. A brand that is felt on the street, seen on every feed, and spoken about in every WhatsApp group becomes a cultural fixture — and a cultural fixture sells itself. This is the framework for making STRIKE inevitable.
+              - generic [ref=e2319]:
+                - generic [ref=e2320]: STRATEGIC POSITION
+                - paragraph [ref=e2321]: STRIKE's go-to-market is correctly physical-first. This document does not change that. What it adds is the digital amplification layer that transforms a product sold in 30 gyms into a brand that 300,000 Lebanese fitness consumers know, want, and seek out — before they ever see it on a shelf.
+              - generic [ref=e2322]:
+                - generic [ref=e2323]:
+                  - generic [ref=e2324]:
+                    - generic [ref=e2325]: ◈
+                    - generic [ref=e2326]: Physical-First. Digital-Amplified.
+                  - paragraph [ref=e2327]: 82.6% of MENA sports nutrition purchases are in-store. The handshake closes the deal. Digital is the megaphone that makes the handshake mean something before it happens.
+                - generic [ref=e2328]:
+                  - generic [ref=e2329]:
+                    - generic [ref=e2330]: ◉
+                    - generic [ref=e2331]: Build the Trend. Not Just the Brand.
+                  - paragraph [ref=e2332]: Beef jerky is a non-essential snack. In Lebanon, non-essential wins when it feels inevitable — when everyone at the gym has seen it, talked about it, and wants to be the one who introduced it.
+                - generic [ref=e2333]:
+                  - generic [ref=e2334]:
+                    - generic [ref=e2335]: ◇
+                    - generic [ref=e2336]: Community Before Commerce.
+                  - paragraph [ref=e2337]: Sell to the gym community, the trainer network, and the macro-tracking community — not to a generic audience. The first 1,000 customers build the brand more than any ad campaign.
+                - generic [ref=e2338]:
+                  - generic [ref=e2339]:
+                    - generic [ref=e2340]: ▣
+                    - generic [ref=e2341]: Organic Engine. Paid Accelerant.
+                  - paragraph [ref=e2342]: Organic content builds the brand. Paid ads accelerate what's already working. Never run paid ads on content that hasn't proven organic traction first. This sequencing saves budget and improves ROAS 3×.
+                - generic [ref=e2343]:
+                  - generic [ref=e2344]:
+                    - generic [ref=e2345]: ◆
+                    - generic [ref=e2346]: WhatsApp is Your CRM.
+                  - paragraph [ref=e2347]: In Lebanon, WhatsApp is where business happens. A well-managed WhatsApp Business account is worth more than a sophisticated CRM system. Every customer interaction starts and ends there.
+                - generic [ref=e2348]:
+                  - generic [ref=e2349]:
+                    - generic [ref=e2350]: ◐
+                    - generic [ref=e2351]: Lebanese Pride. GCC-Ready From Day One.
+                  - paragraph [ref=e2352]: Every piece of content should be producible in Arabic + English. Every digital asset should be structurally export-ready. The Lebanese story IS the GCC marketing asset — document it from the beginning.
+              - generic [ref=e2354]:
+                - generic [ref=e2355]: ★ WHAT THIS DOCUMENT ADDS TO THE PITCH
+                - generic [ref=e2356]:
+                  - generic [ref=e2357]:
+                    - generic [ref=e2358]: →
+                    - generic [ref=e2359]:
+                      - generic [ref=e2360]: Digital Infrastructure
+                      - paragraph [ref=e2361]: Which accounts, in which order, with which tools — from Week 1.
+                  - generic [ref=e2362]:
+                    - generic [ref=e2363]: →
+                    - generic [ref=e2364]:
+                      - generic [ref=e2365]: Platform Strategy
+                      - paragraph [ref=e2366]: Instagram, TikTok, Facebook, WhatsApp, Email — role and cadence for each.
+                  - generic [ref=e2367]:
+                    - generic [ref=e2368]: →
+                    - generic [ref=e2369]:
+                      - generic [ref=e2370]: E-Commerce Roadmap
+                      - paragraph [ref=e2371]: "Phase-gated online store strategy: website → WhatsApp → Shopify → GCC."
+                  - generic [ref=e2372]:
+                    - generic [ref=e2373]: →
+                    - generic [ref=e2374]:
+                      - generic [ref=e2375]: Content Framework
+                      - paragraph [ref=e2376]: 5 content pillars, weekly calendar, and format guide for every channel.
+                  - generic [ref=e2377]:
+                    - generic [ref=e2378]: →
+                    - generic [ref=e2379]:
+                      - generic [ref=e2380]: Influencer & Community Plan
+                      - paragraph [ref=e2381]: Nano-to-mid-tier influencer strategy. Trainer ambassador digital extension.
+                  - generic [ref=e2382]:
+                    - generic [ref=e2383]: →
+                    - generic [ref=e2384]:
+                      - generic [ref=e2385]: Full Financial Model
+                      - paragraph [ref=e2386]: Every cost, by phase, by tier — with ROI projection per channel.
+              - generic [ref=e2387]:
+                - generic [ref=e2388]:
+                  - generic [ref=e2389]: LEBANON META CPM
+                  - generic [ref=e2390]: $1.50–5.00
+                  - generic [ref=e2391]: vs. $8–20 in GCC — extraordinary value
+                - generic [ref=e2392]:
+                  - generic [ref=e2393]: LEBANON META CPC
+                  - generic [ref=e2394]: $0.15–0.60
+                  - generic [ref=e2395]: Meaningful campaigns from $300–500/month
+                - generic [ref=e2396]:
+                  - generic [ref=e2397]: INSTAGRAM PENETRATION
+                  - generic [ref=e2398]: 92%
+                  - generic [ref=e2399]: Of Lebanese 18–35 urban consumers
+          - generic [ref=e2400]:
+            - generic [ref=e2401]: KAG-JRK-MKT-001 · KITS ADVISORY GROUP · STRIKE BITES — CONFIDENTIAL
+            - generic [ref=e2402]:
+              - button [ref=e2403] [cursor=pointer]
+              - button [ref=e2404] [cursor=pointer]
+              - button [ref=e2405] [cursor=pointer]
+              - button [ref=e2406] [cursor=pointer]
+              - button [ref=e2407] [cursor=pointer]
+              - button [ref=e2408] [cursor=pointer]
+              - button [ref=e2409] [cursor=pointer]
+              - button [ref=e2410] [cursor=pointer]
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]
+        - generic [ref=e2026]: N = NOTES · ← → = NAVIGATE · SLIDES = OVERVIEW

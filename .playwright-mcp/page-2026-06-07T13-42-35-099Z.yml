@@ -1,0 +1,87 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e106] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 21 / 22
+      - generic [ref=e50]:
+        - generic [ref=e1888]:
+          - generic [ref=e1889]:
+            - generic [ref=e1890]: 08 · ANTICIPATED QUESTIONS
+            - heading "Every Question — Pre-Answered" [level=2] [ref=e1891]
+          - paragraph [ref=e1893]: The questions most founders ask at this stage. Delivered with confidence and without hesitation.
+          - generic [ref=e1894]:
+            - button "Q Why should I give full control to an advisory firm I just met? +" [ref=e1896] [cursor=pointer]:
+              - generic [ref=e1897]:
+                - generic [ref=e1898]: Q
+                - generic [ref=e1899]: Why should I give full control to an advisory firm I just met?
+              - generic [ref=e1900]: +
+            - button "Q What happens if the product doesn't sell? +" [ref=e1902] [cursor=pointer]:
+              - generic [ref=e1903]:
+                - generic [ref=e1904]: Q
+                - generic [ref=e1905]: What happens if the product doesn't sell?
+              - generic [ref=e1906]: +
+            - button "Q How long before I start making money? +" [ref=e1908] [cursor=pointer]:
+              - generic [ref=e1909]:
+                - generic [ref=e1910]: Q
+                - generic [ref=e1911]: How long before I start making money?
+              - generic [ref=e1912]: +
+            - button "Q What if I want to manage some parts of this myself? +" [ref=e1914] [cursor=pointer]:
+              - generic [ref=e1915]:
+                - generic [ref=e1916]: Q
+                - generic [ref=e1917]: What if I want to manage some parts of this myself?
+              - generic [ref=e1918]: +
+            - button "Q What is the minimum I can invest to get started? +" [ref=e1920] [cursor=pointer]:
+              - generic [ref=e1921]:
+                - generic [ref=e1922]: Q
+                - generic [ref=e1923]: What is the minimum I can invest to get started?
+              - generic [ref=e1924]: +
+            - button "Q Why Lebanon and not start with another market? +" [ref=e1926] [cursor=pointer]:
+              - generic [ref=e1927]:
+                - generic [ref=e1928]: Q
+                - generic [ref=e1929]: Why Lebanon and not start with another market?
+              - generic [ref=e1930]: +
+            - button "Q What does Ru'ya 360° do that I couldn't hire someone else to do? +" [ref=e1932] [cursor=pointer]:
+              - generic [ref=e1933]:
+                - generic [ref=e1934]: Q
+                - generic [ref=e1935]: What does Ru'ya 360° do that I couldn't hire someone else to do?
+              - generic [ref=e1936]: +
+            - button "Q What happens right now, at the end of this conversation? +" [ref=e1938] [cursor=pointer]:
+              - generic [ref=e1939]:
+                - generic [ref=e1940]: Q
+                - generic [ref=e1941]: What happens right now, at the end of this conversation?
+              - generic [ref=e1942]: +
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]

@@ -1,0 +1,222 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e106] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [active] [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 19 / 22
+      - generic [ref=e982]:
+        - button "01 COVER" [ref=e983] [cursor=pointer]:
+          - generic [ref=e984]: "01"
+          - generic [ref=e985]: COVER
+        - button "02 LISTEN" [ref=e986] [cursor=pointer]:
+          - generic [ref=e987]: "02"
+          - generic [ref=e988]: LISTEN
+        - button "03 §01" [ref=e989] [cursor=pointer]:
+          - generic [ref=e990]: "03"
+          - generic [ref=e991]: §01
+        - button "04 MARKET" [ref=e992] [cursor=pointer]:
+          - generic [ref=e993]: "04"
+          - generic [ref=e994]: MARKET
+        - button "05 WHY NOW" [ref=e995] [cursor=pointer]:
+          - generic [ref=e996]: "05"
+          - generic [ref=e997]: WHY NOW
+        - button "06 §02" [ref=e998] [cursor=pointer]:
+          - generic [ref=e999]: "06"
+          - generic [ref=e1000]: §02
+        - button "07 DELIVERED" [ref=e1001] [cursor=pointer]:
+          - generic [ref=e1002]: "07"
+          - generic [ref=e1003]: DELIVERED
+        - button "08 §03" [ref=e1004] [cursor=pointer]:
+          - generic [ref=e1005]: "08"
+          - generic [ref=e1006]: §03
+        - button "09 BRAND" [ref=e1007] [cursor=pointer]:
+          - generic [ref=e1008]: "09"
+          - generic [ref=e1009]: BRAND
+        - button "10 §COMP" [ref=e1010] [cursor=pointer]:
+          - generic [ref=e1011]: "10"
+          - generic [ref=e1012]: §COMP
+        - button "11 LANDSCAPE" [ref=e1013] [cursor=pointer]:
+          - generic [ref=e1014]: "11"
+          - generic [ref=e1015]: LANDSCAPE
+        - button "12 MATRIX" [ref=e1016] [cursor=pointer]:
+          - generic [ref=e1017]: "12"
+          - generic [ref=e1018]: MATRIX
+        - button "13 §04" [ref=e1019] [cursor=pointer]:
+          - generic [ref=e1020]: "13"
+          - generic [ref=e1021]: §04
+        - button "14 ROADMAP" [ref=e1022] [cursor=pointer]:
+          - generic [ref=e1023]: "14"
+          - generic [ref=e1024]: ROADMAP
+        - button "15 §05" [ref=e1025] [cursor=pointer]:
+          - generic [ref=e1026]: "15"
+          - generic [ref=e1027]: §05
+        - button "16 FINANCIALS" [ref=e1028] [cursor=pointer]:
+          - generic [ref=e1029]: "16"
+          - generic [ref=e1030]: FINANCIALS
+        - button "17 FINANCIAL" [ref=e1031] [cursor=pointer]:
+          - generic [ref=e1032]: "17"
+          - generic [ref=e1033]: FINANCIAL
+        - button "18 §MKT" [ref=e1034] [cursor=pointer]:
+          - generic [ref=e1035]: "18"
+          - generic [ref=e1036]: §MKT
+        - button "19 DIGITAL MKT" [ref=e1037] [cursor=pointer]:
+          - generic [ref=e1038]: "19"
+          - generic [ref=e1039]: DIGITAL MKT
+        - button "20 §CLOSE" [ref=e1040] [cursor=pointer]:
+          - generic [ref=e1041]: "20"
+          - generic [ref=e1042]: §CLOSE
+        - button "21 Q & A" [ref=e1043] [cursor=pointer]:
+          - generic [ref=e1044]: "21"
+          - generic [ref=e1045]: Q & A
+        - button "22 WHAT NOW?" [ref=e1046] [cursor=pointer]:
+          - generic [ref=e1047]: "22"
+          - generic [ref=e1048]: WHAT NOW?
+      - generic [ref=e50]:
+        - generic [ref=e864]:
+          - generic [ref=e865]:
+            - generic [ref=e866]:
+              - generic [ref=e867]: STRIKE BITES
+              - generic [ref=e869]: MARKETING & E-MARKETING STRATEGY
+            - generic [ref=e870]:
+              - generic [ref=e871]: KAG-JRK-MKT-001
+              - generic [ref=e872]: JUNE 2026
+          - generic [ref=e874]:
+            - button "01 · OVERVIEW" [ref=e875] [cursor=pointer]
+            - button "02 · INFRASTRUCTURE" [ref=e876] [cursor=pointer]
+            - button "03 · PLATFORMS" [ref=e877] [cursor=pointer]
+            - button "04 · E-COMMERCE" [ref=e878] [cursor=pointer]
+            - button "05 · CONTENT" [ref=e879] [cursor=pointer]
+            - button "06 · COMMUNITY" [ref=e880] [cursor=pointer]
+            - button "07 · FINANCIALS" [ref=e881] [cursor=pointer]
+            - button "08 · ROADMAP" [ref=e882] [cursor=pointer]
+          - main [ref=e883]:
+            - generic [ref=e884]:
+              - generic [ref=e885]:
+                - generic [ref=e886]: §01 · MARKETING & E-MARKETING STRATEGY
+                - heading "The Strategy That Makes STRIKE a Trend" [level=2] [ref=e887]
+                - paragraph [ref=e888]: A brand that is only known in the gym cannot scale. A brand that is felt on the street, seen on every feed, and spoken about in every WhatsApp group becomes a cultural fixture — and a cultural fixture sells itself. This is the framework for making STRIKE inevitable.
+              - generic [ref=e890]:
+                - generic [ref=e891]: STRATEGIC POSITION
+                - paragraph [ref=e892]: STRIKE's go-to-market is correctly physical-first. This document does not change that. What it adds is the digital amplification layer that transforms a product sold in 30 gyms into a brand that 300,000 Lebanese fitness consumers know, want, and seek out — before they ever see it on a shelf.
+              - generic [ref=e893]:
+                - generic [ref=e894]:
+                  - generic [ref=e895]:
+                    - generic [ref=e896]: ◈
+                    - generic [ref=e897]: Physical-First. Digital-Amplified.
+                  - paragraph [ref=e898]: 82.6% of MENA sports nutrition purchases are in-store. The handshake closes the deal. Digital is the megaphone that makes the handshake mean something before it happens.
+                - generic [ref=e899]:
+                  - generic [ref=e900]:
+                    - generic [ref=e901]: ◉
+                    - generic [ref=e902]: Build the Trend. Not Just the Brand.
+                  - paragraph [ref=e903]: Beef jerky is a non-essential snack. In Lebanon, non-essential wins when it feels inevitable — when everyone at the gym has seen it, talked about it, and wants to be the one who introduced it.
+                - generic [ref=e904]:
+                  - generic [ref=e905]:
+                    - generic [ref=e906]: ◇
+                    - generic [ref=e907]: Community Before Commerce.
+                  - paragraph [ref=e908]: Sell to the gym community, the trainer network, and the macro-tracking community — not to a generic audience. The first 1,000 customers build the brand more than any ad campaign.
+                - generic [ref=e909]:
+                  - generic [ref=e910]:
+                    - generic [ref=e911]: ▣
+                    - generic [ref=e912]: Organic Engine. Paid Accelerant.
+                  - paragraph [ref=e913]: Organic content builds the brand. Paid ads accelerate what's already working. Never run paid ads on content that hasn't proven organic traction first. This sequencing saves budget and improves ROAS 3×.
+                - generic [ref=e914]:
+                  - generic [ref=e915]:
+                    - generic [ref=e916]: ◆
+                    - generic [ref=e917]: WhatsApp is Your CRM.
+                  - paragraph [ref=e918]: In Lebanon, WhatsApp is where business happens. A well-managed WhatsApp Business account is worth more than a sophisticated CRM system. Every customer interaction starts and ends there.
+                - generic [ref=e919]:
+                  - generic [ref=e920]:
+                    - generic [ref=e921]: ◐
+                    - generic [ref=e922]: Lebanese Pride. GCC-Ready From Day One.
+                  - paragraph [ref=e923]: Every piece of content should be producible in Arabic + English. Every digital asset should be structurally export-ready. The Lebanese story IS the GCC marketing asset — document it from the beginning.
+              - generic [ref=e925]:
+                - generic [ref=e926]: ★ WHAT THIS DOCUMENT ADDS TO THE PITCH
+                - generic [ref=e927]:
+                  - generic [ref=e928]:
+                    - generic [ref=e929]: →
+                    - generic [ref=e930]:
+                      - generic [ref=e931]: Digital Infrastructure
+                      - paragraph [ref=e932]: Which accounts, in which order, with which tools — from Week 1.
+                  - generic [ref=e933]:
+                    - generic [ref=e934]: →
+                    - generic [ref=e935]:
+                      - generic [ref=e936]: Platform Strategy
+                      - paragraph [ref=e937]: Instagram, TikTok, Facebook, WhatsApp, Email — role and cadence for each.
+                  - generic [ref=e938]:
+                    - generic [ref=e939]: →
+                    - generic [ref=e940]:
+                      - generic [ref=e941]: E-Commerce Roadmap
+                      - paragraph [ref=e942]: "Phase-gated online store strategy: website → WhatsApp → Shopify → GCC."
+                  - generic [ref=e943]:
+                    - generic [ref=e944]: →
+                    - generic [ref=e945]:
+                      - generic [ref=e946]: Content Framework
+                      - paragraph [ref=e947]: 5 content pillars, weekly calendar, and format guide for every channel.
+                  - generic [ref=e948]:
+                    - generic [ref=e949]: →
+                    - generic [ref=e950]:
+                      - generic [ref=e951]: Influencer & Community Plan
+                      - paragraph [ref=e952]: Nano-to-mid-tier influencer strategy. Trainer ambassador digital extension.
+                  - generic [ref=e953]:
+                    - generic [ref=e954]: →
+                    - generic [ref=e955]:
+                      - generic [ref=e956]: Full Financial Model
+                      - paragraph [ref=e957]: Every cost, by phase, by tier — with ROI projection per channel.
+              - generic [ref=e958]:
+                - generic [ref=e959]:
+                  - generic [ref=e960]: LEBANON META CPM
+                  - generic [ref=e961]: $1.50–5.00
+                  - generic [ref=e962]: vs. $8–20 in GCC — extraordinary value
+                - generic [ref=e963]:
+                  - generic [ref=e964]: LEBANON META CPC
+                  - generic [ref=e965]: $0.15–0.60
+                  - generic [ref=e966]: Meaningful campaigns from $300–500/month
+                - generic [ref=e967]:
+                  - generic [ref=e968]: INSTAGRAM PENETRATION
+                  - generic [ref=e969]: 92%
+                  - generic [ref=e970]: Of Lebanese 18–35 urban consumers
+          - generic [ref=e971]:
+            - generic [ref=e972]: KAG-JRK-MKT-001 · KITS ADVISORY GROUP · STRIKE BITES — CONFIDENTIAL
+            - generic [ref=e973]:
+              - button [ref=e974] [cursor=pointer]
+              - button [ref=e975] [cursor=pointer]
+              - button [ref=e976] [cursor=pointer]
+              - button [ref=e977] [cursor=pointer]
+              - button [ref=e978] [cursor=pointer]
+              - button [ref=e979] [cursor=pointer]
+              - button [ref=e980] [cursor=pointer]
+              - button [ref=e981] [cursor=pointer]
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]

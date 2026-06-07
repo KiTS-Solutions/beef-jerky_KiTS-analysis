@@ -1,0 +1,258 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e106] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [active] [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 22 / 22
+      - generic [ref=e797]:
+        - button "01 COVER" [ref=e798] [cursor=pointer]:
+          - generic [ref=e799]: "01"
+          - generic [ref=e800]: COVER
+        - button "02 LISTEN" [ref=e801] [cursor=pointer]:
+          - generic [ref=e802]: "02"
+          - generic [ref=e803]: LISTEN
+        - button "03 §01" [ref=e804] [cursor=pointer]:
+          - generic [ref=e805]: "03"
+          - generic [ref=e806]: §01
+        - button "04 MARKET" [ref=e807] [cursor=pointer]:
+          - generic [ref=e808]: "04"
+          - generic [ref=e809]: MARKET
+        - button "05 WHY NOW" [ref=e810] [cursor=pointer]:
+          - generic [ref=e811]: "05"
+          - generic [ref=e812]: WHY NOW
+        - button "06 §02" [ref=e813] [cursor=pointer]:
+          - generic [ref=e814]: "06"
+          - generic [ref=e815]: §02
+        - button "07 DELIVERED" [ref=e816] [cursor=pointer]:
+          - generic [ref=e817]: "07"
+          - generic [ref=e818]: DELIVERED
+        - button "08 §03" [ref=e819] [cursor=pointer]:
+          - generic [ref=e820]: "08"
+          - generic [ref=e821]: §03
+        - button "09 BRAND" [ref=e822] [cursor=pointer]:
+          - generic [ref=e823]: "09"
+          - generic [ref=e824]: BRAND
+        - button "10 §COMP" [ref=e825] [cursor=pointer]:
+          - generic [ref=e826]: "10"
+          - generic [ref=e827]: §COMP
+        - button "11 LANDSCAPE" [ref=e828] [cursor=pointer]:
+          - generic [ref=e829]: "11"
+          - generic [ref=e830]: LANDSCAPE
+        - button "12 MATRIX" [ref=e831] [cursor=pointer]:
+          - generic [ref=e832]: "12"
+          - generic [ref=e833]: MATRIX
+        - button "13 §04" [ref=e834] [cursor=pointer]:
+          - generic [ref=e835]: "13"
+          - generic [ref=e836]: §04
+        - button "14 ROADMAP" [ref=e837] [cursor=pointer]:
+          - generic [ref=e838]: "14"
+          - generic [ref=e839]: ROADMAP
+        - button "15 §05" [ref=e840] [cursor=pointer]:
+          - generic [ref=e841]: "15"
+          - generic [ref=e842]: §05
+        - button "16 FINANCIALS" [ref=e843] [cursor=pointer]:
+          - generic [ref=e844]: "16"
+          - generic [ref=e845]: FINANCIALS
+        - button "17 FINANCIAL" [ref=e846] [cursor=pointer]:
+          - generic [ref=e847]: "17"
+          - generic [ref=e848]: FINANCIAL
+        - button "18 §MKT" [ref=e849] [cursor=pointer]:
+          - generic [ref=e850]: "18"
+          - generic [ref=e851]: §MKT
+        - button "19 DIGITAL MKT" [ref=e852] [cursor=pointer]:
+          - generic [ref=e853]: "19"
+          - generic [ref=e854]: DIGITAL MKT
+        - button "20 §CLOSE" [ref=e855] [cursor=pointer]:
+          - generic [ref=e856]: "20"
+          - generic [ref=e857]: §CLOSE
+        - button "21 Q & A" [ref=e858] [cursor=pointer]:
+          - generic [ref=e859]: "21"
+          - generic [ref=e860]: Q & A
+        - button "22 WHAT NOW?" [ref=e861] [cursor=pointer]:
+          - generic [ref=e862]: "22"
+          - generic [ref=e863]: WHAT NOW?
+      - generic [ref=e50]:
+        - generic [ref=e641]:
+          - generic [ref=e643]:
+            - generic [ref=e644]: PROOF OF COMMITMENT · 11 DELIVERABLES COMPLETE · BUILT BEFORE THIS CONTRACT EXISTS
+            - generic [ref=e645]:
+              - generic [ref=e646]:
+                - generic [ref=e647]: ✓
+                - generic [ref=e648]: KAG-JRK-001
+                - generic [ref=e649]: Advisory Framework
+              - generic [ref=e650]:
+                - generic [ref=e651]: ✓
+                - generic [ref=e652]: KAG-JRK-002
+                - generic [ref=e653]: Launch Checklist
+              - generic [ref=e654]:
+                - generic [ref=e655]: ✓
+                - generic [ref=e656]: KAG-JRK-003
+                - generic [ref=e657]: Financial Study
+              - generic [ref=e658]:
+                - generic [ref=e659]: ✓
+                - generic [ref=e660]: KAG-JRK-004
+                - generic [ref=e661]: Outreach System
+              - generic [ref=e662]:
+                - generic [ref=e663]: ✓
+                - generic [ref=e664]: KAG-JRK-005
+                - generic [ref=e665]: Competitive Analysis
+              - generic [ref=e666]:
+                - generic [ref=e667]: ✓
+                - generic [ref=e668]: KAG-JRK-006
+                - generic [ref=e669]: Brand Design Brief
+              - generic [ref=e670]:
+                - generic [ref=e671]: ✓
+                - generic [ref=e672]: KAG-JRK-007
+                - generic [ref=e673]: Manufacturer Brief
+              - generic [ref=e674]:
+                - generic [ref=e675]: ✓
+                - generic [ref=e676]: KAG-JRK-008
+                - generic [ref=e677]: Brand Study 92/100
+              - generic [ref=e678]:
+                - generic [ref=e679]: ✓
+                - generic [ref=e680]: KAG-JRK-009
+                - generic [ref=e681]: Board Presentation
+              - generic [ref=e682]:
+                - generic [ref=e683]: ✓
+                - generic [ref=e684]: KAG-JRK-010
+                - generic [ref=e685]: Handoff Document
+              - generic [ref=e686]:
+                - generic [ref=e687]: ✓
+                - generic [ref=e688]: KAG-JRK-MKT
+                - generic [ref=e689]: Digital Strategy
+          - generic [ref=e690]:
+            - generic [ref=e691]:
+              - generic [ref=e692]: THE CASE — CLOSED
+              - generic [ref=e693]:
+                - generic [ref=e694]: THE MARKET CLAIM
+                - paragraph [ref=e695]: Zero local beef jerky brands in Lebanon. The category is uncontested and available to its first owner — confirmed by Ru’ya 360° field research, June 2026.
+              - generic [ref=e696]:
+                - generic [ref=e697]: THE BRAND CLAIM
+                - paragraph [ref=e698]: STRIKE scores 92/100 on name alone. Visual identity, technical brief, and designer brief are production-ready today. No contract was required to build any of it.
+              - generic [ref=e699]:
+                - generic [ref=e700]: THE FINANCIAL CLAIM
+                - paragraph [ref=e701]: "Tier 2: $40K–$65K/mo by Month 12. Gross margin 61.9%. Breakeven Month 8–11. Every number field-corrected and verified against the Jack Link’s benchmark."
+              - generic [ref=e702]:
+                - generic [ref=e703]: YES VS. WAIT — THE REAL COST
+                - generic [ref=e705]:
+                  - generic [ref=e707]: SIGN TODAY
+                  - generic [ref=e709]: IF YOU WAIT
+                  - generic [ref=e710]:
+                    - generic [ref=e711]: ✓
+                    - generic [ref=e712]: Shelf-ready Q4 2026
+                  - generic [ref=e713]:
+                    - generic [ref=e714]: ✗
+                    - generic [ref=e715]: Q1 2027 at the earliest
+                  - generic [ref=e716]:
+                    - generic [ref=e717]: ✓
+                    - generic [ref=e718]: Category ownership — secured
+                  - generic [ref=e719]:
+                    - generic [ref=e720]: ✗
+                    - generic [ref=e721]: Wild West Halal arrives first
+                  - generic [ref=e722]:
+                    - generic [ref=e723]: ✓
+                    - generic [ref=e724]: Phase 0 in 72 hours
+                  - generic [ref=e725]:
+                    - generic [ref=e726]: ✗
+                    - generic [ref=e727]: Another planning cycle begins
+            - generic [ref=e728]:
+              - generic [ref=e729]: ONE DECISION — SELECT YOUR TIER
+              - button "TIER 1 Lean Launch $24,000" [ref=e731] [cursor=pointer]:
+                - generic [ref=e732]:
+                  - generic [ref=e733]:
+                    - generic [ref=e734]: TIER 1
+                    - generic [ref=e735]: Lean Launch
+                  - generic [ref=e736]: $24,000
+              - generic [ref=e737]:
+                - button "Ru’ya 360° RECOMMENDS TIER 2 Standard Launch $62,000 M12 REVENUE $40K–$65K/mo YEAR 1 ROI ~265% BREAKEVEN Month 8–11" [ref=e738] [cursor=pointer]:
+                  - generic [ref=e739]: Ru’ya 360° RECOMMENDS
+                  - generic [ref=e740]:
+                    - generic [ref=e741]:
+                      - generic [ref=e742]: TIER 2
+                      - generic [ref=e743]: Standard Launch
+                    - generic [ref=e744]: $62,000
+                  - generic [ref=e745]:
+                    - generic [ref=e746]:
+                      - generic [ref=e747]: M12 REVENUE
+                      - generic [ref=e748]: $40K–$65K/mo
+                    - generic [ref=e749]:
+                      - generic [ref=e750]: YEAR 1 ROI
+                      - generic [ref=e751]: ~265%
+                    - generic [ref=e752]:
+                      - generic [ref=e753]: BREAKEVEN
+                      - generic [ref=e754]: Month 8–11
+                - generic [ref=e755]:
+                  - generic [ref=e756]: PHASE 0 ACTIVATES · 72 HOURS FROM SIGNING
+                  - generic [ref=e757]:
+                    - generic [ref=e758]: →
+                    - generic [ref=e759]: SARL registration + full corporate structure
+                  - generic [ref=e760]:
+                    - generic [ref=e761]: →
+                    - generic [ref=e762]: MoPH registration — 2 SKUs + Halal certification
+                  - generic [ref=e763]:
+                    - generic [ref=e764]: →
+                    - generic [ref=e765]: Trademark filing — Classes 29 & 35, Lebanon
+                  - generic [ref=e766]:
+                    - generic [ref=e767]: →
+                    - generic [ref=e768]: Brand designer formally briefed — 8-week identity delivery
+                  - generic [ref=e769]:
+                    - generic [ref=e770]: →
+                    - generic [ref=e771]: Manufacturer supply agreement + QC protocol signed
+                  - generic [ref=e772]:
+                    - generic [ref=e773]: →
+                    - generic [ref=e774]: GS1 Lebanon barcode allocation — 2 SKUs
+                  - generic [ref=e775]:
+                    - generic [ref=e776]: →
+                    - generic [ref=e777]: 60+ account outreach activates Day 8
+              - button "TIER 3 Full Market Entry $96,000" [ref=e779] [cursor=pointer]:
+                - generic [ref=e780]:
+                  - generic [ref=e781]:
+                    - generic [ref=e782]: TIER 3
+                    - generic [ref=e783]: Full Market Entry
+                  - generic [ref=e784]: $96,000
+              - generic [ref=e785]:
+                - generic [ref=e786]: YOUR CONTROL · BUILT INTO THE MANDATE
+                - generic [ref=e787]:
+                  - generic [ref=e788]:
+                    - generic [ref=e789]: WEEKLY
+                    - generic [ref=e790]: Field activity report
+                  - generic [ref=e791]:
+                    - generic [ref=e792]: MONTHLY
+                    - generic [ref=e793]: P&L vs. approved plan
+                  - generic [ref=e794]:
+                    - generic [ref=e795]: PHASE GATES
+                    - generic [ref=e796]: Your sign-off required
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [disabled] [ref=e76]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [disabled] [ref=e80]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]

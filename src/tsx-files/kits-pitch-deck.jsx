@@ -1836,15 +1836,28 @@ const SLIDES = [
     notes: { open: "Spend time on Phase 2 — that is where the client's existing gym and manufacturer relationships become your most powerful accelerators. Say: 'Your contacts cut our Phase 2 timeline by 4–6 weeks versus any other entrant coming into this market cold.'", emphasis: ["The STRIKE TEAM trainer program is the highest-leverage activation in the entire plan. 20 trainers who believe in the product = 20 salespeople who work without a salary."], timing: "6 minutes" }
   },
   {
-    id: "sec05", type: "section", label: "§05",
-    badge: "SECTION FIVE", color: C.amber,
+    id: "sec_mkt", type: "section", label: "§MKT",
+    badge: "SECTION FIVE", color: C.teal,
+    title: "Marketing & Digital Strategy",
+    sub: "The full digital amplification layer — infrastructure, platforms, content, e-commerce, and 24-month financial model. Delivered complete.",
+    notes: { open: "Transition: 'The physical go-to-market gets STRIKE into 80 accounts. This is what makes 300,000 Lebanese fitness consumers know your name before they ever walk into one of those accounts.'", emphasis: ["KAG-JRK-MKT-001 is the eleventh deliverable — the complete digital strategy, not a summary. Eight interactive sections covering every digital channel and the full financial model.", "The three digital budget tiers (A / B / C) are separate from and in addition to the physical launch budget tiers. Frame as: Standard physical launch ($42K) + Tier B digital ($27K) = $69K combined Year 1 investment."], timing: "15 seconds" }
+  },
+  {
+    id: "marketingstrategy", type: "marketingstrategy", label: "DIGITAL MKT",
+    section: "05 · MARKETING & DIGITAL STRATEGY",
+    title: "Marketing & E-Marketing Strategy — KAG-JRK-MKT-001",
+    notes: { open: "Navigate through each of the 8 tabs using the tab bar at the top of the document. Start with OVERVIEW to set the strategic position, then walk through INFRASTRUCTURE → PLATFORMS → E-COMMERCE → CONTENT → COMMUNITY → FINANCIALS → ROADMAP. Let the client drive which section they want to explore in depth.", emphasis: ["The FINANCIALS tab shows the three digital budget tiers (A: $9K / B: $27K / C: $58K Year 1). Present Tier B as the recommended digital investment to run alongside the Standard $42K physical launch — combined Year 1: $69K.", "The Lebanon-specific context in every section is the differentiator. No global marketing agency knows that Lebanon Facebook CPC is $0.15–0.60 — vs $1.72 globally. This is the intelligence that justifies the partnership."], timing: "8–12 minutes depending on client engagement" }
+  },
+  {
+    id: "sec05", type: "section", label: "§06",
+    badge: "SECTION SIX", color: C.amber,
     title: "The Financial Plan",
     sub: "Your investment. Your return. Your timeline to profitability. Every number is based on real channel data.",
     notes: { open: "Before advancing to numbers: 'Every figure in this plan is derived from actual channel margins, competitive pricing in Lebanon, and realistic sell-through assumptions. We will not put a projection in front of you that we cannot defend number by number.'", emphasis: [], timing: "15 seconds" }
   },
   {
     id: "financials", type: "financials", label: "FINANCIALS",
-    section: "05 · FINANCIAL PLAN",
+    section: "06 · FINANCIAL PLAN",
     title: "Investment, Return & ROI — Three Scenarios",
     tiers: [
       {
@@ -1873,22 +1886,9 @@ const SLIDES = [
   },
   {
     id: "financialcorrections", type: "financialstudy", label: "FINANCIAL",
-    section: "05 · FINANCIAL PLAN",
+    section: "06 · FINANCIAL PLAN",
     title: "Financial Feasibility Study — Full Model",
     notes: { open: "This is the full three-tier financial model. Walk the client through each tier — Lean, Standard (recommended), and Full Market Entry — using the interactive breakdown. Present Tier 2 as the reference point. The investment breakdown, revenue projections, assumptions, and blockers are all interactive.", emphasis: ["Lead with Tier 2 (Standard Launch) — $42,000. Show the investment breakdown first, then projections. Let them click through.", "The Blockers tab is operational — use it to set the agenda for what needs to happen immediately after this meeting."], timing: "7 minutes" }
-  },
-  {
-    id: "sec_mkt", type: "section", label: "§MKT",
-    badge: "SECTION — MARKETING", color: C.teal,
-    title: "Marketing & Digital Strategy",
-    sub: "The full digital amplification layer — infrastructure, platforms, content, e-commerce, and 24-month financial model. Delivered complete.",
-    notes: { open: "Transition: 'The physical go-to-market gets STRIKE into 80 accounts. This is what makes 300,000 Lebanese fitness consumers know your name before they ever walk into one of those accounts.'", emphasis: ["KAG-JRK-MKT-001 is the eleventh deliverable — the complete digital strategy, not a summary. Eight interactive sections covering every digital channel and the full financial model.", "The three digital budget tiers (A / B / C) are separate from and in addition to the physical launch budget tiers. Frame as: Standard physical launch ($42K) + Tier B digital ($27K) = $69K combined Year 1 investment."], timing: "15 seconds" }
-  },
-  {
-    id: "marketingstrategy", type: "marketingstrategy", label: "DIGITAL MKT",
-    section: "05.5 · MARKETING & DIGITAL STRATEGY",
-    title: "Marketing & E-Marketing Strategy — KAG-JRK-MKT-001",
-    notes: { open: "Navigate through each of the 8 tabs using the tab bar at the top of the document. Start with OVERVIEW to set the strategic position, then walk through INFRASTRUCTURE → PLATFORMS → E-COMMERCE → CONTENT → COMMUNITY → FINANCIALS → ROADMAP. Let the client drive which section they want to explore in depth.", emphasis: ["The FINANCIALS tab shows the three digital budget tiers (A: $9K / B: $27K / C: $58K Year 1). Present Tier B as the recommended digital investment to run alongside the Standard $42K physical launch — combined Year 1: $69K.", "The Lebanon-specific context in every section is the differentiator. No global marketing agency knows that Lebanon Facebook CPC is $0.15–0.60 — vs $1.72 globally. This is the intelligence that justifies the partnership."], timing: "8–12 minutes depending on client engagement" }
   },
   {
     id: "sec_close", type: "section", label: "§CLOSE",

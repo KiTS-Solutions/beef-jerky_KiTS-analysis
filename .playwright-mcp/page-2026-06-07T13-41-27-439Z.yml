@@ -1,0 +1,298 @@
+- generic [ref=e3]:
+  - button "☰" [ref=e106] [cursor=pointer]
+  - main [ref=e36]:
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e41]: STRIKE BITES
+        - generic [ref=e44]:
+          - button "SLIDES" [active] [ref=e45] [cursor=pointer]
+          - button "NOTES ▼" [ref=e46] [cursor=pointer]
+          - button "☀ DAY" [ref=e47] [cursor=pointer]
+          - generic [ref=e48]: 12 / 22
+      - generic [ref=e1390]:
+        - button "01 COVER" [ref=e1391] [cursor=pointer]:
+          - generic [ref=e1392]: "01"
+          - generic [ref=e1393]: COVER
+        - button "02 LISTEN" [ref=e1394] [cursor=pointer]:
+          - generic [ref=e1395]: "02"
+          - generic [ref=e1396]: LISTEN
+        - button "03 §01" [ref=e1397] [cursor=pointer]:
+          - generic [ref=e1398]: "03"
+          - generic [ref=e1399]: §01
+        - button "04 MARKET" [ref=e1400] [cursor=pointer]:
+          - generic [ref=e1401]: "04"
+          - generic [ref=e1402]: MARKET
+        - button "05 WHY NOW" [ref=e1403] [cursor=pointer]:
+          - generic [ref=e1404]: "05"
+          - generic [ref=e1405]: WHY NOW
+        - button "06 §02" [ref=e1406] [cursor=pointer]:
+          - generic [ref=e1407]: "06"
+          - generic [ref=e1408]: §02
+        - button "07 DELIVERED" [ref=e1409] [cursor=pointer]:
+          - generic [ref=e1410]: "07"
+          - generic [ref=e1411]: DELIVERED
+        - button "08 §03" [ref=e1412] [cursor=pointer]:
+          - generic [ref=e1413]: "08"
+          - generic [ref=e1414]: §03
+        - button "09 BRAND" [ref=e1415] [cursor=pointer]:
+          - generic [ref=e1416]: "09"
+          - generic [ref=e1417]: BRAND
+        - button "10 §COMP" [ref=e1418] [cursor=pointer]:
+          - generic [ref=e1419]: "10"
+          - generic [ref=e1420]: §COMP
+        - button "11 LANDSCAPE" [ref=e1421] [cursor=pointer]:
+          - generic [ref=e1422]: "11"
+          - generic [ref=e1423]: LANDSCAPE
+        - button "12 MATRIX" [ref=e1424] [cursor=pointer]:
+          - generic [ref=e1425]: "12"
+          - generic [ref=e1426]: MATRIX
+        - button "13 §04" [ref=e1427] [cursor=pointer]:
+          - generic [ref=e1428]: "13"
+          - generic [ref=e1429]: §04
+        - button "14 ROADMAP" [ref=e1430] [cursor=pointer]:
+          - generic [ref=e1431]: "14"
+          - generic [ref=e1432]: ROADMAP
+        - button "15 §05" [ref=e1433] [cursor=pointer]:
+          - generic [ref=e1434]: "15"
+          - generic [ref=e1435]: §05
+        - button "16 FINANCIALS" [ref=e1436] [cursor=pointer]:
+          - generic [ref=e1437]: "16"
+          - generic [ref=e1438]: FINANCIALS
+        - button "17 FINANCIAL" [ref=e1439] [cursor=pointer]:
+          - generic [ref=e1440]: "17"
+          - generic [ref=e1441]: FINANCIAL
+        - button "18 §MKT" [ref=e1442] [cursor=pointer]:
+          - generic [ref=e1443]: "18"
+          - generic [ref=e1444]: §MKT
+        - button "19 DIGITAL MKT" [ref=e1445] [cursor=pointer]:
+          - generic [ref=e1446]: "19"
+          - generic [ref=e1447]: DIGITAL MKT
+        - button "20 §CLOSE" [ref=e1448] [cursor=pointer]:
+          - generic [ref=e1449]: "20"
+          - generic [ref=e1450]: §CLOSE
+        - button "21 Q & A" [ref=e1451] [cursor=pointer]:
+          - generic [ref=e1452]: "21"
+          - generic [ref=e1453]: Q & A
+        - button "22 WHAT NOW?" [ref=e1454] [cursor=pointer]:
+          - generic [ref=e1455]: "22"
+          - generic [ref=e1456]: WHAT NOW?
+      - generic [ref=e50]:
+        - generic [ref=e1198]:
+          - generic [ref=e1199]:
+            - generic [ref=e1200]: COMP · COMPARISON
+            - heading "Head-to-Head — Seven Criteria That Decide the Sale" [level=2] [ref=e1201]
+          - paragraph [ref=e1203]: Rated from both the trade buyer and end consumer perspective. The criteria that win shelf space, drive repeat purchase, and build brand loyalty in Lebanon.
+          - table [ref=e1205]:
+            - rowgroup [ref=e1206]:
+              - row "CRITERION Jack Link's Country Archer A Cup Quest Bar STRIKE ✦ ★ OUR BRAND" [ref=e1207]:
+                - columnheader "CRITERION" [ref=e1208]
+                - columnheader "Jack Link's" [ref=e1209]
+                - columnheader "Country Archer" [ref=e1210]
+                - columnheader "A Cup" [ref=e1211]
+                - columnheader "Quest Bar" [ref=e1212]
+                - columnheader "STRIKE ✦ ★ OUR BRAND" [ref=e1213]:
+                  - text: STRIKE ✦
+                  - generic [ref=e1214]: ★ OUR BRAND
+            - rowgroup [ref=e1215]:
+              - row "Halal Certified ~ FAMBRAS EU only ✗ No cert ✗ Unconfirmed ✗ Mushbooh ✓ Dar Al-Fatwa" [ref=e1216]:
+                - cell "Halal Certified" [ref=e1217]:
+                  - generic [ref=e1218]: Halal Certified
+                - cell "~ FAMBRAS EU only" [ref=e1219]:
+                  - generic [ref=e1220]:
+                    - generic [ref=e1221]: ~
+                    - generic [ref=e1222]: FAMBRAS EU only
+                - cell "✗ No cert" [ref=e1223]:
+                  - generic [ref=e1224]:
+                    - generic [ref=e1225]: ✗
+                    - generic [ref=e1226]: No cert
+                - cell "✗ Unconfirmed" [ref=e1227]:
+                  - generic [ref=e1228]:
+                    - generic [ref=e1229]: ✗
+                    - generic [ref=e1230]: Unconfirmed
+                - cell "✗ Mushbooh" [ref=e1231]:
+                  - generic [ref=e1232]:
+                    - generic [ref=e1233]: ✗
+                    - generic [ref=e1234]: Mushbooh
+                - cell "✓ Dar Al-Fatwa" [ref=e1235]:
+                  - generic [ref=e1236]:
+                    - generic [ref=e1237]: ✓
+                    - generic [ref=e1238]: Dar Al-Fatwa
+              - row "Zero Added Sugar ~ 0g Original ~ Cane sugar ✗ Dessert-base ~ Sucralose ✓ Zero" [ref=e1239]:
+                - cell "Zero Added Sugar" [ref=e1240]:
+                  - generic [ref=e1241]: Zero Added Sugar
+                - cell "~ 0g Original" [ref=e1242]:
+                  - generic [ref=e1243]:
+                    - generic [ref=e1244]: ~
+                    - generic [ref=e1245]: 0g Original
+                - cell "~ Cane sugar" [ref=e1246]:
+                  - generic [ref=e1247]:
+                    - generic [ref=e1248]: ~
+                    - generic [ref=e1249]: Cane sugar
+                - cell "✗ Dessert-base" [ref=e1250]:
+                  - generic [ref=e1251]:
+                    - generic [ref=e1252]: ✗
+                    - generic [ref=e1253]: Dessert-base
+                - cell "~ Sucralose" [ref=e1254]:
+                  - generic [ref=e1255]:
+                    - generic [ref=e1256]: ~
+                    - generic [ref=e1257]: Sucralose
+                - cell "✓ Zero" [ref=e1258]:
+                  - generic [ref=e1259]:
+                    - generic [ref=e1260]: ✓
+                    - generic [ref=e1261]: Zero
+              - row "Lebanon Price Point ✗ $5.15–5.62/40g ✗ ~$6–8/pack ✓ $2.29–3.57 ~ $4.00/bar ✓ $2.50–3.50" [ref=e1262]:
+                - cell "Lebanon Price Point" [ref=e1263]:
+                  - generic [ref=e1264]: Lebanon Price Point
+                - cell "✗ $5.15–5.62/40g" [ref=e1265]:
+                  - generic [ref=e1266]:
+                    - generic [ref=e1267]: ✗
+                    - generic [ref=e1268]: $5.15–5.62/40g
+                - cell "✗ ~$6–8/pack" [ref=e1269]:
+                  - generic [ref=e1270]:
+                    - generic [ref=e1271]: ✗
+                    - generic [ref=e1272]: ~$6–8/pack
+                - cell "✓ $2.29–3.57" [ref=e1273]:
+                  - generic [ref=e1274]:
+                    - generic [ref=e1275]: ✓
+                    - generic [ref=e1276]: $2.29–3.57
+                - cell "~ $4.00/bar" [ref=e1277]:
+                  - generic [ref=e1278]:
+                    - generic [ref=e1279]: ~
+                    - generic [ref=e1280]: $4.00/bar
+                - cell "✓ $2.50–3.50" [ref=e1281]:
+                  - generic [ref=e1282]:
+                    - generic [ref=e1283]: ✓
+                    - generic [ref=e1284]: $2.50–3.50
+              - row "Local Production ✗ USA ✗ USA ✓ Lebanon ✓ ✗ USA ✓ Lebanon" [ref=e1285]:
+                - cell "Local Production" [ref=e1286]:
+                  - generic [ref=e1287]: Local Production
+                - cell "✗ USA" [ref=e1288]:
+                  - generic [ref=e1289]:
+                    - generic [ref=e1290]: ✗
+                    - generic [ref=e1291]: USA
+                - cell "✗ USA" [ref=e1292]:
+                  - generic [ref=e1293]:
+                    - generic [ref=e1294]: ✗
+                    - generic [ref=e1295]: USA
+                - cell "✓ Lebanon ✓" [ref=e1296]:
+                  - generic [ref=e1297]:
+                    - generic [ref=e1298]: ✓
+                    - generic [ref=e1299]: Lebanon ✓
+                - cell "✗ USA" [ref=e1300]:
+                  - generic [ref=e1301]:
+                    - generic [ref=e1302]: ✗
+                    - generic [ref=e1303]: USA
+                - cell "✓ Lebanon" [ref=e1304]:
+                  - generic [ref=e1305]:
+                    - generic [ref=e1306]: ✓
+                    - generic [ref=e1307]: Lebanon
+              - row "Lebanese Flavor Profile ✗ Teriyaki/US ✗ Classic/US ~ Konafa/Sweets ✗ Cookie/US ✓ Cedar BBQ" [ref=e1308]:
+                - cell "Lebanese Flavor Profile" [ref=e1309]:
+                  - generic [ref=e1310]: Lebanese Flavor Profile
+                - cell "✗ Teriyaki/US" [ref=e1311]:
+                  - generic [ref=e1312]:
+                    - generic [ref=e1313]: ✗
+                    - generic [ref=e1314]: Teriyaki/US
+                - cell "✗ Classic/US" [ref=e1315]:
+                  - generic [ref=e1316]:
+                    - generic [ref=e1317]: ✗
+                    - generic [ref=e1318]: Classic/US
+                - cell "~ Konafa/Sweets" [ref=e1319]:
+                  - generic [ref=e1320]:
+                    - generic [ref=e1321]: ~
+                    - generic [ref=e1322]: Konafa/Sweets
+                - cell "✗ Cookie/US" [ref=e1323]:
+                  - generic [ref=e1324]:
+                    - generic [ref=e1325]: ✗
+                    - generic [ref=e1326]: Cookie/US
+                - cell "✓ Cedar BBQ" [ref=e1327]:
+                  - generic [ref=e1328]:
+                    - generic [ref=e1329]: ✓
+                    - generic [ref=e1330]: Cedar BBQ
+              - row "Complete Meat Protein ✓ Beef ✓ ✓ Beef ✓ ✗ Whey/casein ✗ Whey/milk ✓ Beef ✓" [ref=e1331]:
+                - cell "Complete Meat Protein" [ref=e1332]:
+                  - generic [ref=e1333]: Complete Meat Protein
+                - cell "✓ Beef ✓" [ref=e1334]:
+                  - generic [ref=e1335]:
+                    - generic [ref=e1336]: ✓
+                    - generic [ref=e1337]: Beef ✓
+                - cell "✓ Beef ✓" [ref=e1338]:
+                  - generic [ref=e1339]:
+                    - generic [ref=e1340]: ✓
+                    - generic [ref=e1341]: Beef ✓
+                - cell "✗ Whey/casein" [ref=e1342]:
+                  - generic [ref=e1343]:
+                    - generic [ref=e1344]: ✗
+                    - generic [ref=e1345]: Whey/casein
+                - cell "✗ Whey/milk" [ref=e1346]:
+                  - generic [ref=e1347]:
+                    - generic [ref=e1348]: ✗
+                    - generic [ref=e1349]: Whey/milk
+                - cell "✓ Beef ✓" [ref=e1350]:
+                  - generic [ref=e1351]:
+                    - generic [ref=e1352]: ✓
+                    - generic [ref=e1353]: Beef ✓
+              - row "Direct Trade Support ✗ Importer only ✗ Spinneys only ✗ None ~ Via distrib. ✓ Founder direct" [ref=e1354]:
+                - cell "Direct Trade Support" [ref=e1355]:
+                  - generic [ref=e1356]: Direct Trade Support
+                - cell "✗ Importer only" [ref=e1357]:
+                  - generic [ref=e1358]:
+                    - generic [ref=e1359]: ✗
+                    - generic [ref=e1360]: Importer only
+                - cell "✗ Spinneys only" [ref=e1361]:
+                  - generic [ref=e1362]:
+                    - generic [ref=e1363]: ✗
+                    - generic [ref=e1364]: Spinneys only
+                - cell "✗ None" [ref=e1365]:
+                  - generic [ref=e1366]:
+                    - generic [ref=e1367]: ✗
+                    - generic [ref=e1368]: None
+                - cell "~ Via distrib." [ref=e1369]:
+                  - generic [ref=e1370]:
+                    - generic [ref=e1371]: ~
+                    - generic [ref=e1372]: Via distrib.
+                - cell "✓ Founder direct" [ref=e1373]:
+                  - generic [ref=e1374]:
+                    - generic [ref=e1375]: ✓
+                    - generic [ref=e1376]: Founder direct
+          - generic [ref=e1377]:
+            - paragraph [ref=e1379]: STRIKE is the only brand that wins all seven criteria. A Cup — Lebanon's best local competitor — wins on price and local production but is refrigerated and delivers no meat protein. Jack Link's and Country Archer deliver real beef but fail on Halal and price. No single competitor holds more than three criteria simultaneously.
+            - generic [ref=e1380]:
+              - generic [ref=e1381]:
+                - generic [ref=e1382]: ✓
+                - generic [ref=e1383]: WIN
+              - generic [ref=e1384]:
+                - generic [ref=e1385]: ~
+                - generic [ref=e1386]: PARTIAL
+              - generic [ref=e1387]:
+                - generic [ref=e1388]: ✗
+                - generic [ref=e1389]: FAIL
+        - button "‹" [ref=e75] [cursor=pointer]
+        - button "›" [ref=e76] [cursor=pointer]
+      - generic [ref=e77]:
+        - generic [ref=e78]:
+          - button "← PREV" [ref=e79] [cursor=pointer]
+          - button "NEXT →" [ref=e80] [cursor=pointer]
+        - generic [ref=e81]:
+          - button [ref=e82] [cursor=pointer]
+          - button [ref=e83] [cursor=pointer]
+          - button [ref=e84] [cursor=pointer]
+          - button [ref=e85] [cursor=pointer]
+          - button [ref=e86] [cursor=pointer]
+          - button [ref=e87] [cursor=pointer]
+          - button [ref=e88] [cursor=pointer]
+          - button [ref=e89] [cursor=pointer]
+          - button [ref=e90] [cursor=pointer]
+          - button [ref=e91] [cursor=pointer]
+          - button [ref=e92] [cursor=pointer]
+          - button [ref=e93] [cursor=pointer]
+          - button [ref=e94] [cursor=pointer]
+          - button [ref=e95] [cursor=pointer]
+          - button [ref=e96] [cursor=pointer]
+          - button [ref=e97] [cursor=pointer]
+          - button [ref=e98] [cursor=pointer]
+          - button [ref=e99] [cursor=pointer]
+          - button [ref=e100] [cursor=pointer]
+          - button [ref=e101] [cursor=pointer]
+          - button [ref=e102] [cursor=pointer]
+          - button [ref=e103] [cursor=pointer]
