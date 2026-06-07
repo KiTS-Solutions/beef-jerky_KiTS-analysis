@@ -576,10 +576,11 @@ function FinancialsSlide({ slide }) {
       </div>
 
       {/* Tier selector */}
-      <div style={{ display: "flex", gap: 8, marginBottom: 10, flexDirection: isMobile ? "column" : "row" }}>
+      <div style={{ display: "flex", gap: 8, marginBottom: 10, flexDirection: "row", overflowX: isMobile ? "auto" : "visible", WebkitOverflowScrolling: "touch", flexShrink: 0 }}>
         {slide.tiers.map((tier, i) => (
           <button key={i} onClick={() => handleSetAt(i)} style={{
-            flex: 1, background: at === i ? `${tier.color}15` : C.charcoal,
+            flex: isMobile ? "0 0 auto" : 1, minWidth: isMobile ? 155 : undefined,
+            background: at === i ? `${tier.color}15` : C.charcoal,
             border: `1px solid ${at === i ? tier.color : C.ash}`,
             borderTop: `3px solid ${at === i ? tier.color : C.ash}`,
             borderRadius: 3, padding: isMobile ? "10px 12px" : "10px 14px",
@@ -604,10 +605,10 @@ function FinancialsSlide({ slide }) {
       </div>
 
       {/* Content grid */}
-      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 10, minHeight: 0, overflow: "hidden" }}>
+      <div style={{ flex: 1, display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 10, minHeight: isMobile ? "auto" : 0, overflowY: isMobile ? "auto" : "hidden", WebkitOverflowScrolling: "touch" }}>
 
         {/* Left column */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflow: "hidden" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: isMobile ? "auto" : 0, overflow: isMobile ? "visible" : "hidden" }}>
 
           {/* KPI cards */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,minmax(0,1fr))", gap: isMobile ? 5 : 7 }}>
@@ -665,7 +666,7 @@ function FinancialsSlide({ slide }) {
           </div>
 
           {/* Revenue trajectory */}
-          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "12px 15px", flex: 1 }}>
+          <div style={{ background: C.charcoal, border: `1px solid ${C.ash}`, borderRadius: 4, padding: "12px 15px", flex: isMobile ? "0 0 auto" : 1 }}>
             <div style={{ fontFamily: "monospace", fontSize: 12, color: C.creamDim, letterSpacing: "0.15em", marginBottom: 10 }}>REVENUE TRAJECTORY</div>
             {[
               { label: "Month 3", pct: t.m3p, text: t.m3, delay: 0, corrected: false },
@@ -695,10 +696,10 @@ function FinancialsSlide({ slide }) {
         </div>
 
         {/* Right column */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: 0, overflow: "hidden" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 8, minHeight: isMobile ? "auto" : 0, overflow: isMobile ? "visible" : "hidden" }}>
 
           {/* What this funds */}
-          <div style={{ background: `${t.color}08`, border: `1px solid ${t.color}22`, borderRadius: 4, padding: "12px 15px", flex: 1, minHeight: 0, overflow: "hidden" }}>
+          <div style={{ background: `${t.color}08`, border: `1px solid ${t.color}22`, borderRadius: 4, padding: "12px 15px", flex: isMobile ? "0 0 auto" : 1, minHeight: 0, overflow: isMobile ? "visible" : "hidden" }}>
             <div style={{ fontFamily: "monospace", fontSize: 12, color: t.color, letterSpacing: "0.12em", marginBottom: 8 }}>WHAT THIS FUNDS</div>
             {(t.includes || []).map((inc, i) => (
               <div key={i} style={{ display: "flex", gap: 7, marginBottom: 5 }}>
@@ -709,7 +710,7 @@ function FinancialsSlide({ slide }) {
           </div>
 
           {/* ROI + cumulative profit */}
-          <div style={{ background: `${C.greenBright}08`, border: `1px solid ${C.greenBright}22`, borderRadius: 4, padding: "12px 15px", flex: 1, minHeight: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
+          <div style={{ background: `${C.greenBright}08`, border: `1px solid ${C.greenBright}22`, borderRadius: 4, padding: "12px 15px", flex: isMobile ? "0 0 auto" : 1, minHeight: 0, overflow: isMobile ? "visible" : "hidden", display: "flex", flexDirection: "column" }}>
             <div style={{ fontFamily: "monospace", fontSize: 12, color: C.greenBright, letterSpacing: "0.12em", marginBottom: 8 }}>CUMULATIVE YEAR 1 GROSS PROFIT</div>
 
             {/* Investment vs return ratio bar */}
@@ -735,7 +736,7 @@ function FinancialsSlide({ slide }) {
             <div style={{ fontFamily: "monospace", fontSize: 11, color: C.greenBright, marginBottom: 6 }}>Year 1 · {t.roi} ROI · {t.margin} avg GM</div>
             <p style={{ margin: "0 0 8px", fontSize: 11, color: C.creamDim, lineHeight: 1.55, overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}>{t.profitNote}</p>
 
-            <div style={{ marginTop: "auto", display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 5, paddingTop: 8, borderTop: `1px solid ${C.ash}` }}>
+            <div style={{ marginTop: "auto", display: "grid", gridTemplateColumns: isMobile ? "repeat(2,1fr)" : "1fr 1fr 1fr 1fr", gap: 5, paddingTop: 8, borderTop: `1px solid ${C.ash}` }}>
               {[
                 { label: "RRP", val: "$4.50", col: C.gold },
                 { label: "COGS", val: "$1.20", col: C.amber },
