@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Revenue Projections</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --sky-10: #e5f3f8; --turq-10: #e5f4f7; --sunset-10: #fef5e7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9pt;
+    color: var(--txt); background: #fff; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .ph {
+    background: var(--ocean); color: #fff;
+    padding: 2.5mm 4mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 6mm;
+  }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf {
+    font-size: 7pt; color: var(--txt-dim);
+    display: flex; justify-content: space-between;
+    padding-top: 2mm; border-top: 1px solid var(--line); margin-top: 5mm;
+  }
+
+  .sl { font-size: 7pt; font-weight: 700; color: var(--turq); letter-spacing: .3em; text-transform: uppercase; display: block; margin-bottom: 1.5mm; }
+  h1 { font-size: 20pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1mm; }
+  h2 { font-size: 12pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm; margin-top: 5mm; }
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 4mm; }
+  p { color: var(--txt-mid); margin-bottom: 3mm; }
+
+  /* KPI strip */
+  .kpi-strip { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3mm; margin-bottom: 5mm; }
+  .kpi-card { background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--turq); padding: 2.5mm 3mm; }
+  .kpi-lbl { font-size: 6.5pt; font-weight: 700; color: var(--turq); letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: 1mm; }
+  .kpi-val { font-size: 13pt; font-weight: 800; color: var(--ocean); display: block; line-height: 1.1; }
+  .kpi-sub { font-size: 7.5pt; color: var(--txt-mid); display: block; margin-top: .5mm; }
+
+  /* Monthly table */
+  .month-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 4mm; table-layout: fixed; }
+  .month-table th {
+    background: var(--ocean); color: rgba(255,255,255,.8);
+    font-size: 7.5pt; font-weight: 700; padding: 2mm 2.5mm;
+    text-align: right; letter-spacing: .06em; text-transform: uppercase;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+  }
+  .month-table th:first-child { text-align: left; }
+  .month-table td { padding: 1.8mm 2.5mm; text-align: right; border-bottom: .5px solid var(--line); font-size: 8.5pt; color: var(--txt-mid); font-weight: 600; }
+  .month-table td:first-child { text-align: left; color: var(--txt); font-weight: 500; }
+  .month-table tr:nth-child(even) td { background: var(--card); }
+
+  .month-table .q-row td { background: var(--sunset-10); color: #9a4710; font-weight: 700; border-top: 1px solid var(--sunset); }
+  .month-table .total-row td { background: var(--ocean); color: rgba(255,255,255,.9); font-size: 9pt; font-weight: 800; border-top: 2px solid var(--lime); }
+  .month-table tr { page-break-inside: avoid; }
+
+  /* Revenue chart */
+  .rev-chart { margin: 4mm 0; page-break-inside: avoid; }
+  .rev-row { display: flex; align-items: center; margin-bottom: 1.8mm; gap: 2mm; }
+  .rev-mo { font-size: 7pt; font-weight: 700; color: var(--txt-dim); width: 8mm; flex-shrink: 0; text-align: right; }
+  .rev-track { flex: 1; height: 4mm; background: var(--card); overflow: hidden; border: 1px solid var(--line); }
+  .rev-fill { height: 100%; background: linear-gradient(to right, var(--turq), var(--sky)); display: block; }
+  .rev-val { font-size: 7.5pt; font-weight: 700; color: var(--turq); width: 14mm; flex-shrink: 0; text-align: right; }
+
+  /* ROI grid */
+  .roi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 4mm 0; page-break-inside: avoid; }
+  .roi-box { background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--turq); padding: 3mm 4mm; }
+  .roi-lbl { font-size: 7pt; font-weight: 700; color: var(--turq); display: block; margin-bottom: 1mm; letter-spacing: .12em; text-transform: uppercase; }
+  .roi-fig { font-size: 13pt; font-weight: 800; color: var(--ocean); display: block; }
+  .roi-desc { font-size: 8pt; color: var(--txt-mid); margin-top: .5mm; line-height: 1.4; }
+
+  /* ROAS table */
+  .roas-table { width: 100%; border-collapse: collapse; margin: 4mm 0; page-break-inside: avoid; table-layout: fixed; }
+  .roas-table th { font-size: 7.5pt; font-weight: 700; color: var(--txt-dim); padding: 2mm 3mm; text-align: left; border-bottom: 2px solid var(--line); letter-spacing: .06em; background: var(--card); text-transform: uppercase; }
+  .roas-table td { padding: 2mm 3mm; border-bottom: .5px solid var(--line); font-size: 8.5pt; }
+  .roas-table tr:nth-child(even) td { background: var(--card); }
+  .roas-table tr { page-break-inside: avoid; }
+  .roas-channel { color: var(--txt); font-weight: 700; }
+  .roas-budget { font-weight: 700; color: var(--turq); text-align: right; }
+  .roas-roas { font-weight: 800; color: var(--ocean); text-align: center; }
+  .roas-note { font-size: 8pt; color: var(--txt-mid); }
+
+  /* Assumptions table */
+  .assum-table { width: 100%; border-collapse: collapse; margin: 3mm 0; page-break-inside: avoid; table-layout: fixed; }
+  .assum-table td { padding: 2mm 3mm; border-bottom: .5px solid var(--line); vertical-align: top; font-size: 8.5pt; }
+  .assum-table tr:nth-child(even) td { background: var(--card); }
+  .assum-table tr { page-break-inside: avoid; }
+  .assum-key { color: var(--txt); width: 42mm; font-weight: 600; }
+  .assum-val { font-weight: 800; color: var(--turq); width: 22mm; text-align: right; }
+  .assum-note { color: var(--txt-mid); font-size: 8pt; }
+
+  /* Risk grid */
+  .risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; margin-top: 4mm; page-break-inside: avoid; }
+  .risk-item { border-left: 3px solid var(--coral); padding: 2mm 3mm; background: var(--card); }
+  .risk-title { font-size: 7.5pt; font-weight: 700; color: var(--coral); display: block; margin-bottom: .5mm; text-transform: uppercase; letter-spacing: .08em; }
+  .risk-desc { font-size: 8pt; color: var(--txt-mid); line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — 12-MONTH REVENUE MODEL -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Revenue Projections &nbsp;·&nbsp; R360-JRK-FIN-002</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Revenue Projections &middot; R360-JRK-FIN-002 &middot; Tier 2 Standard</span>
+  <h1>12-Month Revenue Model</h1>
+  <div class="rule"></div>
+
+  <div class="kpi-strip">
+    <div class="kpi-card"><span class="kpi-lbl">Yr 1 Revenue</span><span class="kpi-val">~$215K</span><span class="kpi-sub">Gross revenue all channels</span></div>
+    <div class="kpi-card"><span class="kpi-lbl">Yr 1 Gross Profit</span><span class="kpi-val">~$153K</span><span class="kpi-sub">~71% blended gross margin</span></div>
+    <div class="kpi-card"><span class="kpi-lbl">Investment ROI</span><span class="kpi-val">~265%</span><span class="kpi-sub">On $62,000 deployed capital</span></div>
+    <div class="kpi-card"><span class="kpi-lbl">Breakeven</span><span class="kpi-val">M8&ndash;M11</span><span class="kpi-sub">Cumulative recovery month</span></div>
+  </div>
+
+  <table class="month-table">
+    <thead>
+      <tr>
+        <th style="width:14mm;">Month</th>
+        <th style="width:22mm;">Active Accounts</th>
+        <th style="width:22mm;">Gross Revenue</th>
+        <th style="width:22mm;">Gross Profit</th>
+        <th style="width:22mm;">Cumul. Revenue</th>
+        <th>Key Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Month 1</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="text-align:right;">—</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">Foundation / setup</td></tr>
+      <tr><td>Month 2</td><td style="text-align:right;">10&ndash;15</td><td style="text-align:right;">$7,000</td><td style="text-align:right;">$4,900</td><td style="text-align:right;">$7,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">First gym accounts open</td></tr>
+      <tr><td>Month 3</td><td style="text-align:right;">25&ndash;30</td><td style="text-align:right;">$13,000</td><td style="text-align:right;">$9,100</td><td style="text-align:right;">$20,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">First reorders, trainer program</td></tr>
+      <tr class="q-row"><td>Q1 Subtotal</td><td style="text-align:right;">—</td><td style="text-align:right;">$20,000</td><td style="text-align:right;">$14,000</td><td style="text-align:right;">—</td><td style="font-size:7.5pt; text-align:left;">Ramp phase</td></tr>
+      <tr><td>Month 4</td><td style="text-align:right;">35&ndash;45</td><td style="text-align:right;">$18,000</td><td style="text-align:right;">$12,600</td><td style="text-align:right;">$38,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">40+ accounts, velocity builds</td></tr>
+      <tr><td>Month 5</td><td style="text-align:right;">50&ndash;60</td><td style="text-align:right;">$21,000</td><td style="text-align:right;">$14,700</td><td style="text-align:right;">$59,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">Pharmacy channel opens</td></tr>
+      <tr><td>Month 6</td><td style="text-align:right;">60&ndash;70</td><td style="text-align:right;">$23,000</td><td style="text-align:right;">$16,100</td><td style="text-align:right;">$82,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">E-commerce soft launch</td></tr>
+      <tr class="q-row"><td>Q2 Subtotal</td><td style="text-align:right;">—</td><td style="text-align:right;">$62,000</td><td style="text-align:right;">$43,400</td><td style="text-align:right;">—</td><td style="font-size:7.5pt; text-align:left;">Breakeven zone begins</td></tr>
+      <tr><td>Month 7</td><td style="text-align:right;">65&ndash;75</td><td style="text-align:right;">$24,000</td><td style="text-align:right;">$16,800</td><td style="text-align:right;">$106,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">E-commerce revenue adds</td></tr>
+      <tr><td>Month 8</td><td style="text-align:right;">70&ndash;80</td><td style="text-align:right;">$24,000</td><td style="text-align:right;">$16,800</td><td style="text-align:right;">$130,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">Cumulative recovery point</td></tr>
+      <tr><td>Month 9</td><td style="text-align:right;">75&ndash;85</td><td style="text-align:right;">$25,000</td><td style="text-align:right;">$17,500</td><td style="text-align:right;">$155,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">Modern trade discussions</td></tr>
+      <tr class="q-row"><td>Q3 Subtotal</td><td style="text-align:right;">—</td><td style="text-align:right;">$73,000</td><td style="text-align:right;">$51,100</td><td style="text-align:right;">—</td><td style="font-size:7.5pt; text-align:left;">Scale phase</td></tr>
+      <tr><td>Month 10</td><td style="text-align:right;">80&ndash;90</td><td style="text-align:right;">$22,000</td><td style="text-align:right;">$15,400</td><td style="text-align:right;">$177,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">GCC export prep begins</td></tr>
+      <tr><td>Month 11</td><td style="text-align:right;">80&ndash;90</td><td style="text-align:right;">$20,000</td><td style="text-align:right;">$14,000</td><td style="text-align:right;">$197,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">Modern trade listings</td></tr>
+      <tr><td>Month 12</td><td style="text-align:right;">85&ndash;95</td><td style="text-align:right;">$18,000</td><td style="text-align:right;">$12,600</td><td style="text-align:right;">$215,000</td><td style="font-size:7.5pt; text-align:left; color:var(--txt-mid);">Year-end close, GCC filing</td></tr>
+      <tr class="q-row"><td>Q4 Subtotal</td><td style="text-align:right;">—</td><td style="text-align:right;">$60,000</td><td style="text-align:right;">$42,000</td><td style="text-align:right;">—</td><td style="font-size:7.5pt; text-align:left;">Consolidation + export</td></tr>
+      <tr class="total-row"><td>YEAR 1 TOTAL</td><td style="text-align:right; color:rgba(255,255,255,.7);">Peak 85&ndash;95</td><td style="text-align:right;">$215,000</td><td style="text-align:right;">$153,000</td><td style="text-align:right;">$215,000</td><td style="font-size:7.5pt; text-align:left; color:var(--lime);">ROI ~265%</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="margin-top:3mm;">Monthly Revenue Growth (Months 2&ndash;12)</h2>
+  <div class="rev-chart">
+    <div class="rev-row"><span class="rev-mo">M2</span><div class="rev-track"><span class="rev-fill" style="width:29.1%;"></span></div><span class="rev-val">$7K</span></div>
+    <div class="rev-row"><span class="rev-mo">M3</span><div class="rev-track"><span class="rev-fill" style="width:54.2%;"></span></div><span class="rev-val">$13K</span></div>
+    <div class="rev-row"><span class="rev-mo">M4</span><div class="rev-track"><span class="rev-fill" style="width:75.0%;"></span></div><span class="rev-val">$18K</span></div>
+    <div class="rev-row"><span class="rev-mo">M5</span><div class="rev-track"><span class="rev-fill" style="width:87.5%;"></span></div><span class="rev-val">$21K</span></div>
+    <div class="rev-row"><span class="rev-mo">M6</span><div class="rev-track"><span class="rev-fill" style="width:95.8%;"></span></div><span class="rev-val">$23K</span></div>
+    <div class="rev-row"><span class="rev-mo">M7</span><div class="rev-track"><span class="rev-fill" style="width:100%;"></span></div><span class="rev-val">$24K</span></div>
+    <div class="rev-row"><span class="rev-mo">M8</span><div class="rev-track"><span class="rev-fill" style="width:100%;"></span></div><span class="rev-val">$24K</span></div>
+    <div class="rev-row"><span class="rev-mo">M9</span><div class="rev-track"><span class="rev-fill" style="width:100%;"></span></div><span class="rev-val">$25K</span></div>
+    <div class="rev-row"><span class="rev-mo">M10</span><div class="rev-track"><span class="rev-fill" style="width:91.7%;"></span></div><span class="rev-val">$22K</span></div>
+    <div class="rev-row"><span class="rev-mo">M11</span><div class="rev-track"><span class="rev-fill" style="width:83.3%;"></span></div><span class="rev-val">$20K</span></div>
+    <div class="rev-row"><span class="rev-mo">M12</span><div class="rev-track"><span class="rev-fill" style="width:75.0%;"></span></div><span class="rev-val">$18K</span></div>
+  </div>
+  <p style="font-size:8pt; color:var(--txt-dim); font-style:italic; margin-top:-2mm;">Revenue moderation in Q4 reflects seasonal adjustment and GCC pipeline investment. Year 2 reacceleration expected with modern trade listings and GCC entry.</p>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- PAGE 2 — ROI MODEL + ASSUMPTIONS -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Revenue Projections &nbsp;·&nbsp; R360-JRK-FIN-002</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Revenue Projections &middot; Marketing ROI &amp; Model Assumptions</span>
+  <h2 style="margin-top:0; font-size:15pt;">Digital Marketing ROAS &amp; ROI Model</h2>
+  <div class="rule"></div>
+
+  <table class="roas-table">
+    <thead>
+      <tr>
+        <th style="width:35%;">Channel</th>
+        <th style="text-align:right; width:25%;">Yr 1 Budget (Tier 2)</th>
+        <th style="text-align:center; width:18%;">Projected ROAS</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="roas-channel">Meta Ads (Instagram + Facebook)</td>
+        <td class="roas-budget">$9,000</td>
+        <td class="roas-roas">2.0&ndash;3.2&times;</td>
+        <td class="roas-note">Primary digital acquisition. Lebanese fitness audience. Peak ROAS Q2&ndash;Q3 with video creatives.</td>
+      </tr>
+      <tr>
+        <td class="roas-channel">Influencer Activations</td>
+        <td class="roas-budget">$6,000</td>
+        <td class="roas-roas">3.0&ndash;5.5&times;</td>
+        <td class="roas-note">Lebanese fitness micro-influencers (10K&ndash;80K followers). Product seeding + affiliate codes.</td>
+      </tr>
+      <tr>
+        <td class="roas-channel">E-Commerce (Shopify / WhatsApp)</td>
+        <td class="roas-budget">$5,500</td>
+        <td class="roas-roas">2.1&ndash;4.8&times;</td>
+        <td class="roas-note">Soft launch Month 6. WhatsApp ordering native to Lebanese consumer behavior. DTC margin highest.</td>
+      </tr>
+      <tr>
+        <td class="roas-channel">Content Marketing</td>
+        <td class="roas-budget">$4,000</td>
+        <td class="roas-roas">Compounding</td>
+        <td class="roas-note">SEO, recipe content, gym-culture editorial. Builds organic channel with zero incremental cost.</td>
+      </tr>
+      <tr>
+        <td class="roas-channel">Events &amp; Activations</td>
+        <td class="roas-budget">$2,523</td>
+        <td class="roas-roas">2.0&ndash;4.0&times;</td>
+        <td class="roas-note">CrossFit competitions, fitness expos, gym open days. Highest word-of-mouth multiplier.</td>
+      </tr>
+      <tr>
+        <td class="roas-channel" style="font-weight:800;">TOTAL YEAR 1</td>
+        <td class="roas-budget" style="color:var(--ocean); font-size:9.5pt;">$27,023</td>
+        <td class="roas-roas" style="font-size:10pt;">Blended ~2.8&times;</td>
+        <td class="roas-note" style="color:var(--txt);">Included within Tier 2 $62,000 total. Digital marketing budget is a subset of total investment.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="roi-grid">
+    <div class="roi-box">
+      <span class="roi-lbl">Unit Economics (40g SKU)</span>
+      <span class="roi-fig">$4.50 RRP</span>
+      <span class="roi-desc">Gym wholesale: ~$3.20 | COGS: ~$1.20<br>Gross margin: ~62% (gym channel)<br>Protein: &ge;19g per 40g serving</span>
+    </div>
+    <div class="roi-box">
+      <span class="roi-lbl">Payback Calculation</span>
+      <span class="roi-fig">$62K &rarr; $153K GP</span>
+      <span class="roi-desc">$153K gross profit on $62K deployed<br>Net recovery: $91K in Year 1<br>Payback multiple: 2.47&times; gross / 1.47&times; net</span>
+    </div>
+  </div>
+
+  <h2>Model Assumptions</h2>
+  <div class="rule"></div>
+
+  <table class="assum-table">
+    <tr><td class="assum-key">Price per 40g unit (RRP)</td><td class="assum-val">$4.50</td><td class="assum-note">19% below Jack Link&rsquo;s ($5.62). Positioned for daily purchase frequency, not premium impulse.</td></tr>
+    <tr><td class="assum-key">Gym wholesale price</td><td class="assum-val">~$3.20</td><td class="assum-note">29% trade margin. Standard Lebanese gym retail mark-up applied.</td></tr>
+    <tr><td class="assum-key">COGS per unit (40g)</td><td class="assum-val">~$1.20</td><td class="assum-note">Beef cost + packaging + labour + production overhead. No cold chain required.</td></tr>
+    <tr><td class="assum-key">Halal certification</td><td class="assum-val">Dar Al-Fatwa</td><td class="assum-note">Lebanon-issued. Unlocks 60%+ Muslim consumer base and all GCC export channels from Day 1.</td></tr>
+    <tr><td class="assum-key">Account velocity (gym)</td><td class="assum-val">60&ndash;120 units/mo</td><td class="assum-note">Per active gym account. Average based on conservative sell-through of 2&ndash;4 units/day.</td></tr>
+    <tr><td class="assum-key">Launch geography</td><td class="assum-val">Beirut + Metn + North</td><td class="assum-note">Primary: Beirut, Ashrafieh, Metn, Keserwan, Jounieh. Secondary: Tripoli. No Bekaa at Year 1.</td></tr>
+    <tr><td class="assum-key">FX regime</td><td class="assum-val">USD-denominated</td><td class="assum-note">All figures in USD. Lebanese market effectively dollarised at retail level. LBP exposure minimal.</td></tr>
+    <tr><td class="assum-key">Sale-or-return terms</td><td class="assum-val">Year 1 default</td><td class="assum-note">Consignment model for Year 1. Reduces account acquisition friction. Creates 30&ndash;60 day cash float.</td></tr>
+    <tr><td class="assum-key">Year 2 catalyst</td><td class="assum-val">GCC + modern trade</td><td class="assum-note">UAE/KSA export filing begins Q4 Year 1. Modern trade (Spinneys, Carrefour) discussions Month 9&ndash;10.</td></tr>
+  </table>
+
+  <div class="risk-grid">
+    <div class="risk-item">
+      <span class="risk-title">Risk: Wild West Halal Entry</span>
+      <span class="risk-desc">Confirmed in UAE June 2026. Lebanon arrival est. 8&ndash;12 months. First-mover window is open now.</span>
+    </div>
+    <div class="risk-item">
+      <span class="risk-title">Risk: MoPH Processing Delay</span>
+      <span class="risk-desc">2&ndash;4 month standard processing. Filing on Day 1 builds the mandatory buffer. Gym channel launches ahead of registration.</span>
+    </div>
+    <div class="risk-item">
+      <span class="risk-title">Risk: Sale-or-Return Float</span>
+      <span class="risk-desc">$4,200&ndash;5,600 product at risk during Month 2&ndash;4. Working capital buffer of $1,200 absorbs this gap.</span>
+    </div>
+    <div class="risk-item">
+      <span class="risk-title">Risk: FX / USD Access</span>
+      <span class="risk-desc">Circular 158 limits Lebanese bank USD wire capability. Offshore account (Cyprus/UAE) budgeted at $1,500.</span>
+    </div>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>

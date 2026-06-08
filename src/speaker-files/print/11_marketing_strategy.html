@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Marketing &amp; Digital Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --sky-10: #e5f3f8; --turq-10: #e5f4f7; --sunset-10: #fef5e7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9pt;
+    color: var(--txt); background: #fff; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .ph { background: var(--ocean); color: #fff; padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center; margin-bottom: 5mm; }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf { font-size: 7pt; color: var(--txt-dim); display: flex; justify-content: space-between; padding-top: 2mm; border-top: 1px solid var(--line); margin-top: 5mm; }
+
+  .sl { font-size: 7pt; font-weight: 700; color: var(--turq); letter-spacing: .3em; text-transform: uppercase; display: block; margin-bottom: 1.5mm; }
+  h1 { font-size: 20pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1mm; }
+  h2 { font-size: 11.5pt; font-weight: 800; color: var(--ocean); margin-bottom: 1.5mm; margin-top: 4mm; }
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 3.5mm; }
+  p { color: var(--txt-mid); margin-bottom: 2mm; font-size: 8.5pt; line-height: 1.5; }
+
+  .section-band { background: var(--ocean); color: rgba(255,255,255,.9); font-size: 7.5pt; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; padding: 1.5mm 4mm; margin: 2mm 0 1.5mm; page-break-after: avoid; break-after: avoid; }
+  .section-band em { color: var(--lime); font-style: normal; }
+
+  /* Pillar grid */
+  .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; margin-bottom: 3mm; }
+  .pillar { border-left: 3px solid var(--turq); padding: 2mm 3mm; background: var(--card); }
+  .pillar-title { font-size: 8pt; font-weight: 800; color: var(--ocean); display: block; margin-bottom: .5mm; }
+  .pillar-body { font-size: 7.5pt; color: var(--txt-mid); line-height: 1.4; }
+
+  /* KPI stats */
+  .kpi-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2.5mm; margin-bottom: 3mm; }
+  .kpi-stat { background: var(--turq-10); border: 1px solid var(--line); border-top: 2px solid var(--turq); padding: 2.5mm 3mm; text-align: center; }
+  .kpi-stat-label { font-size: 6.5pt; font-weight: 700; color: var(--turq); letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: 1mm; }
+  .kpi-stat-val { font-size: 16pt; font-weight: 800; color: var(--ocean); display: block; line-height: 1.1; }
+  .kpi-stat-sub { font-size: 7.5pt; color: var(--txt-mid); display: block; margin-top: .5mm; }
+
+  /* Platform table */
+  .platform-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 3mm; page-break-inside: avoid; table-layout: fixed; }
+  .platform-table th { background: var(--ocean); color: rgba(255,255,255,.8); font-size: 7.5pt; font-weight: 700; padding: 2mm 3mm; text-align: left; letter-spacing: .06em; text-transform: uppercase; }
+  .platform-table td { padding: 2mm 3mm; border-bottom: .5px solid var(--line); vertical-align: top; font-size: 8.5pt; }
+  .platform-table tr:nth-child(even) td { background: var(--card); }
+  .platform-table tr { page-break-inside: avoid; }
+  .pt-platform { font-weight: 800; color: var(--ocean); }
+  .pt-priority { font-weight: 700; color: var(--turq); }
+  .pt-cadence { color: var(--txt-mid); }
+  .pt-kpi { color: var(--txt-dim); font-size: 8pt; }
+
+  /* Content pillar grid */
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin-bottom: 2.5mm; page-break-inside: avoid; break-inside: avoid; }
+  .content-pillar { border: 1px solid var(--line); border-top: 2px solid var(--turq); padding: 2mm 3mm; background: var(--card); }
+  .cp-num { font-size: 7pt; font-weight: 800; color: var(--turq); display: block; margin-bottom: .5mm; letter-spacing: .1em; }
+  .cp-title { font-size: 9pt; font-weight: 800; color: var(--ocean); display: block; margin-bottom: .5mm; }
+  .cp-freq { font-size: 7pt; color: var(--coral); font-weight: 700; display: inline-block; margin-bottom: 1mm; }
+  .cp-body { font-size: 7.5pt; color: var(--txt-mid); line-height: 1.4; }
+
+  /* Influencer table */
+  .inf-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 3mm; page-break-inside: avoid; table-layout: fixed; }
+  .inf-table th { background: var(--ocean); color: rgba(255,255,255,.8); font-size: 7pt; font-weight: 700; padding: 1.8mm 2.5mm; text-align: left; letter-spacing: .06em; text-transform: uppercase; }
+  .inf-table td { padding: 2mm 2.5mm; border-bottom: .5px solid var(--line); vertical-align: top; font-size: 8pt; }
+  .inf-table tr:nth-child(even) td { background: var(--card); }
+  .inf-table tr { page-break-inside: avoid; }
+  .inf-tier { font-weight: 800; color: var(--ocean); }
+  .inf-cost { font-weight: 700; color: var(--turq); }
+  .inf-roi { color: var(--txt-mid); font-size: 7.5pt; }
+
+  /* Events */
+  .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm; margin-bottom: 3mm; page-break-inside: avoid; }
+  .event-item { border: 1px solid var(--line); border-left: 2px solid var(--coral); padding: 1.5mm 2.5mm; background: var(--card); }
+  .ev-name { font-size: 8pt; font-weight: 700; color: var(--ocean); display: block; margin-bottom: .5mm; }
+  .ev-meta { font-size: 7pt; color: var(--turq); font-weight: 700; display: block; margin-bottom: .5mm; }
+  .ev-note { font-size: 7.5pt; color: var(--txt-mid); line-height: 1.35; }
+
+  /* Financial model table */
+  .fin-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 3mm; page-break-inside: avoid; table-layout: fixed; }
+  .fin-table th { background: var(--ocean); color: rgba(255,255,255,.8); font-size: 7pt; font-weight: 700; padding: 2mm 3mm; text-align: left; letter-spacing: .06em; text-transform: uppercase; }
+  .fin-table th.ta { background: var(--sky-10); color: var(--ocean); border-bottom: 2px solid var(--sky); }
+  .fin-table th.tb { background: var(--sunset-10); color: #9a4710; border-bottom: 2px solid var(--sunset); }
+  .fin-table th.tc { background: var(--turq-10); color: var(--turq); border-bottom: 2px solid var(--turq); }
+  .fin-table td { padding: 2mm 3mm; border-bottom: .5px solid var(--line); vertical-align: top; }
+  .fin-table tr:nth-child(even) td { background: var(--card); }
+  .fin-table tr { page-break-inside: avoid; }
+  .fin-section td { background: var(--ocean); color: rgba(255,255,255,.7); font-size: 7pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 1.5mm 3mm; }
+  .fin-item { color: var(--txt); font-size: 8.5pt; }
+  .fin-a { color: var(--ocean); text-align: right; font-weight: 700; background: rgba(102,196,221,.08); }
+  .fin-b { color: #9a4710; text-align: right; font-weight: 800; background: rgba(247,183,89,.1); }
+  .fin-c { color: var(--turq); text-align: right; font-weight: 700; background: rgba(43,150,175,.08); }
+  .fin-total td { background: var(--ocean); color: rgba(255,255,255,.9); font-weight: 800; font-size: 9pt; }
+  .fin-total .fin-b { background: var(--sunset); color: #fff; font-size: 11pt; }
+
+  /* ROI table */
+  .roi-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-top: 2mm; page-break-inside: avoid; table-layout: fixed; }
+  .roi-table th { background: var(--ocean); color: rgba(255,255,255,.8); font-size: 7pt; font-weight: 700; padding: 2mm 3mm; text-align: left; letter-spacing: .06em; text-transform: uppercase; }
+  .roi-table td { padding: 2mm 3mm; border-bottom: .5px solid var(--line); font-size: 8.5pt; }
+  .roi-table tr:nth-child(even) td { background: var(--card); }
+  .roi-table tr { page-break-inside: avoid; }
+  .roi-channel { font-weight: 700; color: var(--txt); }
+  .roi-spend { font-weight: 700; color: var(--turq); text-align: right; }
+  .roi-rev { font-weight: 700; color: var(--ocean); text-align: right; }
+  .roi-roas { font-weight: 800; color: var(--ocean); text-align: center; font-size: 9pt; }
+  .roi-note { font-size: 7.5pt; color: var(--txt-mid); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: STRATEGY OVERVIEW + PILLARS + LEBANON CONTEXT + PLATFORM ARCHITECTURE -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Marketing &amp; Digital Strategy &nbsp;·&nbsp; R360-JRK-MKT-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Marketing &amp; Digital Strategy &middot; R360-JRK-MKT-001</span>
+  <h1>The Strategy That Makes STRIKE a Trend</h1>
+  <div class="rule"></div>
+
+  <p>A brand that is only known in the gym cannot scale. A brand that is felt on the street, seen on every feed, and spoken about in every WhatsApp group becomes a cultural fixture &mdash; and a cultural fixture sells itself. STRIKE's go-to-market is correctly physical-first. This document adds the digital amplification layer that transforms a product sold in 30 gyms into a brand that 300,000 Lebanese fitness consumers know, want, and seek out.</p>
+
+  <div class="section-band">6 Strategic Pillars</div>
+
+  <div class="pillars-grid">
+    <div class="pillar">
+      <span class="pillar-title">Physical-First. Digital-Amplified.</span>
+      <span class="pillar-body">82.6% of MENA sports nutrition purchases are in-store. The handshake closes the deal. Digital is the megaphone that makes the handshake mean something before it happens.</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-title">Build the Trend. Not Just the Brand.</span>
+      <span class="pillar-body">Beef jerky is a non-essential snack. In Lebanon, non-essential wins when it feels inevitable &mdash; when everyone at the gym has seen it, talked about it, and wants to be the one who introduced it.</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-title">Community Before Commerce.</span>
+      <span class="pillar-body">Sell to the gym community, the trainer network, and the macro-tracking community &mdash; not to a generic audience. The first 1,000 customers build the brand more than any ad campaign.</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-title">Organic Engine. Paid Accelerant.</span>
+      <span class="pillar-body">Organic content builds the brand. Paid ads accelerate what's already working. Never run paid ads on content that hasn't proven organic traction first. This sequencing saves budget and improves ROAS 3&times;.</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-title">WhatsApp is Your CRM.</span>
+      <span class="pillar-body">In Lebanon, business happens on WhatsApp. A well-managed WhatsApp Business account is worth more than a sophisticated CRM system. Every customer interaction starts and ends there.</span>
+    </div>
+    <div class="pillar">
+      <span class="pillar-title">Lebanese Pride. GCC-Ready From Day One.</span>
+      <span class="pillar-body">Every piece of content should be producible in Arabic + English. Every digital asset should be structurally export-ready. The Lebanese story IS the GCC marketing asset &mdash; document it from the beginning.</span>
+    </div>
+  </div>
+
+  <div class="section-band">Lebanon Digital Market Context</div>
+  <div class="kpi-row">
+    <div class="kpi-stat">
+      <span class="kpi-stat-label">Lebanon Meta CPM</span>
+      <span class="kpi-stat-val">$1.50&ndash;$5</span>
+      <span class="kpi-stat-sub">vs. $8&ndash;20 in GCC. Extraordinary paid value.</span>
+    </div>
+    <div class="kpi-stat">
+      <span class="kpi-stat-label">Lebanon Meta CPC</span>
+      <span class="kpi-stat-val">$0.15&ndash;$0.60</span>
+      <span class="kpi-stat-sub">Meaningful campaigns from $300&ndash;500/month</span>
+    </div>
+    <div class="kpi-stat">
+      <span class="kpi-stat-label">Instagram Penetration</span>
+      <span class="kpi-stat-val">92%</span>
+      <span class="kpi-stat-sub">Of Lebanese 18&ndash;35 urban consumers</span>
+    </div>
+  </div>
+
+  <div class="section-band">Platform Architecture &mdash; Role &amp; Priority</div>
+
+  <table class="platform-table">
+    <thead>
+      <tr>
+        <th style="width:20%;">Platform</th>
+        <th style="width:22%;">Priority &amp; Launch</th>
+        <th style="width:22%;">Cadence (Tier 2)</th>
+        <th>Primary KPI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="pt-platform">Instagram</td><td class="pt-priority">Primary &mdash; Launch Day</td><td class="pt-cadence">4&ndash;5 feed/wk + Daily Stories + 3 Reels/wk</td><td class="pt-kpi">Engagement rate &gt;3&ndash;6% · 200&ndash;500 followers/month</td></tr>
+      <tr><td class="pt-platform">TikTok</td><td class="pt-priority">Secondary &mdash; Month 2</td><td class="pt-cadence">3&ndash;5 short videos/week · No paid ads until Month 6</td><td class="pt-kpi">1 video &gt;10K views in first 90 days · 100&ndash;300 followers/month</td></tr>
+      <tr><td class="pt-platform">Facebook</td><td class="pt-priority">Ads Platform &mdash; Month 1</td><td class="pt-cadence">3 posts/wk mirrored from IG + active in 3 Groups</td><td class="pt-kpi">Ad ROAS &gt;2.0&times; by Month 3 · CPC $0.15&ndash;0.60</td></tr>
+      <tr><td class="pt-platform">WhatsApp Business</td><td class="pt-priority">Operational &mdash; Launch Day</td><td class="pt-cadence">&lt;2hr response · weekly broadcast · trainer group (daily)</td><td class="pt-kpi">200+ opted-in subscribers by Month 3 · &gt;85% open rate</td></tr>
+      <tr><td class="pt-platform">Email</td><td class="pt-priority">Nurture &mdash; Month 1</td><td class="pt-cadence">1 newsletter/month (Ph1&ndash;2) · weekly at e-commerce launch</td><td class="pt-kpi">Open rate &gt;35% · list growth 50&ndash;100/month</td></tr>
+      <tr><td class="pt-platform">YouTube</td><td class="pt-priority">Long-term &mdash; Month 6+</td><td class="pt-cadence">1 long-form/month · Shorts mirrored from TikTok always</td><td class="pt-kpi">Not primary KPI in Year 1 &mdash; Shorts supplement TikTok reach</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pf"><span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span><span>Page 1 of 4</span></div>
+</div>
+
+<!-- PAGE 2: E-COMMERCE PHASES + INFRASTRUCTURE + TOOLS -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Marketing &amp; Digital Strategy &nbsp;·&nbsp; R360-JRK-MKT-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <div class="section-band">E-Commerce Phased Rollout</div>
+
+  <table class="platform-table">
+    <thead>
+      <tr>
+        <th style="width:18%;">Phase &amp; Timing</th>
+        <th style="width:30%;">What's Live</th>
+        <th style="width:26%;">Why This Sequence</th>
+        <th>Cost (one-time + monthly)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:800; color:var(--txt-dim); font-size:8pt;">PHASE 0&ndash;1<br>M0&ndash;M3</td>
+        <td style="color:var(--txt); font-size:8.5pt;">Informational website only (trilingual EN/AR/FR). WhatsApp "Order Now" button. Product + stockist locator.</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">Lebanese payment gateway approval takes 4&ndash;8 weeks. E-com investment not justified until product is proven in physical channels.</td>
+        <td style="font-size:8pt;">Website build: $1,200&ndash;1,800<br>Hosting: $5&ndash;10/month<br>Domain: $15&ndash;20/year</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800; color:#9a6b00; font-size:8pt;">PHASE 2<br>M3&ndash;M6</td>
+        <td style="color:var(--txt); font-size:8.5pt;">WhatsApp Commerce. Fixed-price DM ordering. Torod last-mile delivery ($3&ndash;6/order). Manual payment: cash + bank transfer.</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">Lebanese consumers accustomed to WhatsApp ordering. Generates first D2C revenue data before investing in Shopify. Zero setup cost.</td>
+        <td style="font-size:8pt;">Setup: $0<br>Delivery: $3&ndash;6/order<br>Payment: OMT ~2.5% fee</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800; color:var(--turq); font-size:8pt;">PHASE 3 &#9733;<br>M6&ndash;M9</td>
+        <td style="color:var(--txt); font-size:8.5pt;">Shopify Basic store. Areeba/NetCommerce payment gateway. Klaviyo email automation. WhatsApp "Chat with Us" integrated. Product pages: 40g + 120g.</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">Once physical sell-through validated and brand has social following, e-commerce adds D2C revenue stream at 70&ndash;80% gross margin vs. 48&ndash;55% wholesale.</td>
+        <td style="font-size:8pt;">Shopify build: $1,500&ndash;2,500<br>Shopify Basic: $39/month<br>Areeba gateway: $500&ndash;1,000 setup<br>Klaviyo: $45/month</td>
+      </tr>
+      <tr>
+        <td style="font-weight:800; color:var(--ocean); font-size:8pt;">PHASE 4<br>M12+</td>
+        <td style="color:var(--txt); font-size:8.5pt;">International D2C. Stripe gateway (via offshore entity). Multi-currency: USD, AED, SAR. Arabic storefronts for GCC.</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">Lebanese diaspora in UAE creates immediate D2C demand. GCC-ready e-commerce required for export channel activation.</td>
+        <td style="font-size:8pt;">Shopify upgrade: +$66/month<br>Stripe: 2.9% + $0.30/txn<br>Intl shipping: $12&ndash;25/order</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-band">Digital Infrastructure Checklist &mdash; Priority Order</div>
+
+  <table class="platform-table">
+    <thead>
+      <tr>
+        <th style="width:20%;">Phase</th>
+        <th style="width:14%;">Priority</th>
+        <th>Task</th>
+        <th style="width:18%;">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td style="font-weight:700; color:var(--coral); font-size:8pt;">Pre-launch Week 1</td><td style="font-weight:800; color:var(--coral); font-size:8pt;">CRITICAL</td><td style="font-size:8.5pt;">Reserve @strikebites handle on all platforms simultaneously (IG, TikTok, Facebook, YouTube)</td><td style="font-size:8pt; color:var(--txt-dim);">Free</td></tr>
+      <tr><td style="font-weight:700; color:var(--coral); font-size:8pt;">Pre-launch Week 1</td><td style="font-weight:800; color:var(--coral); font-size:8pt;">CRITICAL</td><td style="font-size:8.5pt;">Register strikebites.com + backups. Set up Google Workspace (hello@strikebites.com). Meta Business Suite.</td><td style="font-size:8pt; color:var(--txt-dim);">$15&ndash;20/domain · $6/user/mo</td></tr>
+      <tr><td style="font-weight:700; color:#9a6b00; font-size:8pt;">Pre-launch Week 2&ndash;3</td><td style="font-weight:800; color:var(--coral); font-size:8pt;">CRITICAL</td><td style="font-size:8.5pt;">Deploy informational website (trilingual EN+AR+FR, mobile-first). Set up WhatsApp Business with product catalog.</td><td style="font-size:8pt; color:var(--txt-dim);">$1,200&ndash;1,800 build</td></tr>
+      <tr><td style="font-weight:700; color:#9a6b00; font-size:8pt;">Pre-launch Week 2&ndash;3</td><td style="font-weight:800; color:var(--turq); font-size:8pt;">HIGH</td><td style="font-size:8.5pt;">Set up TikTok Business + Instagram Business accounts. Canva Pro brand kit. Mailchimp (free, 500 contacts).</td><td style="font-size:8pt; color:var(--txt-dim);">$15/mo (Canva)</td></tr>
+      <tr><td style="font-weight:700; color:var(--turq); font-size:8pt;">Month 1&ndash;2</td><td style="font-weight:800; color:var(--coral); font-size:8pt;">CRITICAL</td><td style="font-size:8.5pt;">Activate Meta Ads Manager with first campaign ($400/month minimum). Launch content calendar — 20 posts scheduled in advance.</td><td style="font-size:8pt; color:var(--txt-dim);">$400/month minimum</td></tr>
+      <tr><td style="font-weight:700; color:var(--turq); font-size:8pt;">Month 1&ndash;2</td><td style="font-weight:800; color:var(--turq); font-size:8pt;">HIGH</td><td style="font-size:8.5pt;">Seed product to 10&ndash;15 nano-influencers (product cost only). Google My Business profile. Link-in-bio live (Linktree).</td><td style="font-size:8pt; color:var(--txt-dim);">Product cost only</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-band">Key Tool Stack (Tier 2 Recommended)</div>
+
+  <table class="platform-table" style="font-size:8pt;">
+    <thead>
+      <tr><th style="width:22%;">Tool</th><th style="width:14%;">Monthly Cost</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+      <tr><td style="font-weight:700; color:var(--ocean);">Meta Business Suite</td><td style="font-weight:700; color:var(--turq);">Free</td><td style="color:var(--txt-mid);">Manage FB + IG from one dashboard. Schedule posts, monitor comments, run ads.</td></tr>
+      <tr><td style="font-weight:700; color:var(--ocean);">WhatsApp Business</td><td style="font-weight:700; color:var(--turq);">Free</td><td style="color:var(--txt-mid);">Primary customer service + informal ordering channel. Essential in Lebanese market.</td></tr>
+      <tr><td style="font-weight:700; color:var(--ocean);">Canva Pro</td><td style="font-weight:700; color:var(--turq);">$15/mo</td><td style="color:var(--txt-mid);">Social media templates, Story designs, promotional graphics. Brand kit managed by Ru'ya 360°.</td></tr>
+      <tr><td style="font-weight:700; color:var(--ocean);">Shopify Basic</td><td style="font-weight:700; color:var(--turq);">$39/mo</td><td style="color:var(--txt-mid);">Activates Phase 3 (Month 6). Lebanese template build $1,500&ndash;2,500 one-time.</td></tr>
+      <tr><td style="font-weight:700; color:var(--ocean);">Klaviyo</td><td style="font-weight:700; color:var(--turq);">$45/mo</td><td style="color:var(--txt-mid);">Activates at Shopify launch. Abandoned cart, post-purchase, VIP sequences.</td></tr>
+      <tr><td style="font-weight:700; color:var(--ocean);">Google Analytics 4</td><td style="font-weight:700; color:var(--turq);">Free</td><td style="color:var(--txt-mid);">Website traffic, conversion tracking, user behavior. Connect to all ad platforms.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pf"><span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span><span>Page 2 of 4</span></div>
+</div>
+
+<!-- PAGE 3: CONTENT SYSTEM + INFLUENCER TIERS + EVENTS -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Marketing &amp; Digital Strategy &nbsp;·&nbsp; R360-JRK-MKT-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <div class="section-band">5 Content Pillars &mdash; Year 1 Framework</div>
+
+  <div class="content-grid">
+    <div class="content-pillar">
+      <span class="cp-num">PILLAR 01</span>
+      <span class="cp-title">Performance Proof</span>
+      <span class="cp-freq">2&times;/week</span>
+      <span class="cp-body">Content that validates STRIKE as the intelligent athlete's snack. Protein-per-gram comparison graphics. Macro-tracking screenshots. Post-workout recovery meal plan posts. Calorie density vs. satisfaction graphics.</span>
+    </div>
+    <div class="content-pillar">
+      <span class="cp-num">PILLAR 02</span>
+      <span class="cp-title">Product Story</span>
+      <span class="cp-freq">2&times;/week</span>
+      <span class="cp-body">The taste, the texture, the cube format &mdash; make people want it before they try it. First-bite slow-motion videos. Flavor profile graphics (Aleppo pepper, cedar smoke). Pack format explainer. Unboxing content.</span>
+    </div>
+    <div class="content-pillar">
+      <span class="cp-num">PILLAR 03</span>
+      <span class="cp-title">Lebanese Identity</span>
+      <span class="cp-freq">1&times;/week</span>
+      <span class="cp-body">Own the Lebanese provenance narrative. Made here. For us. By us. Ingredient origin stories (Aleppo pepper, sumac). Lebanese kitchen meets gym culture. Arabic-language content (Arabizi welcome). Cedar Lebanon pride.</span>
+    </div>
+    <div class="content-pillar">
+      <span class="cp-num">PILLAR 04</span>
+      <span class="cp-title">Community Spotlight</span>
+      <span class="cp-freq">1&ndash;2&times;/week</span>
+      <span class="cp-body">Feature the people who use STRIKE. STRIKE TEAM trainer features. Customer transformation stories. Gym of the Month partnership post. UGC reposts with permission and credit.</span>
+    </div>
+    <div class="content-pillar">
+      <span class="cp-num">PILLAR 05</span>
+      <span class="cp-title">Education</span>
+      <span class="cp-freq">1&times;/week</span>
+      <span class="cp-body">Become the authority on high-protein snacking in Lebanon. Teach, don't sell. "Protein myth busted" series. Label reading guide. "Is jerky healthy?" explainer. Meal prep ideas featuring STRIKE.</span>
+    </div>
+    <div class="content-pillar" style="border-top-color:var(--ocean); background:var(--ocean-10);">
+      <span class="cp-num" style="color:var(--ocean);">WEEKLY CADENCE</span>
+      <span class="cp-title">Suggested Posting Schedule</span>
+      <span class="cp-freq" style="color:var(--ocean);">9&ndash;11 posts/week</span>
+      <span class="cp-body">Sat: IG+FB Carousel (P1) &middot; Sun: TikTok + IG Story (P2+P5) &middot; Mon: IG Reel (P4) &middot; Tue: IG+FB single (P3) + TikTok (P2) &middot; Wed: IG Story stockist (P4) &middot; Thu: Reel + TikTok UGC (P5+P4) &middot; Fri: Multi-platform beauty shot (P1).</span>
+    </div>
+  </div>
+
+  <div class="section-band">Influencer Tier System</div>
+
+  <table class="inf-table">
+    <thead>
+      <tr>
+        <th style="width:17%;">Tier</th>
+        <th style="width:16%;">Followers</th>
+        <th style="width:20%;">Cost</th>
+        <th>Approach &amp; ROI</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="inf-tier">NANO</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">1K &ndash; 10K</td>
+        <td class="inf-cost">Product seeding only<br><span style="font-size:7.5pt; color:var(--txt-dim);">Zero cash payment</span></td>
+        <td class="inf-roi">15&ndash;20 nano accounts (Phase 1). Welcome pack: 24 units + referral card. No posting requirement &mdash; genuine enthusiasm only. 20 accounts = 6,000&ndash;16,000 highly targeted impressions for product cost only.</td>
+      </tr>
+      <tr>
+        <td class="inf-tier">MICRO</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">10K &ndash; 50K</td>
+        <td class="inf-cost">$100&ndash;$350/post<br><span style="font-size:7.5pt; color:var(--txt-dim);">+ product</span></td>
+        <td class="inf-roi">3&ndash;5 paid posts/month (Phase 2+). Brief: authentic integration in workout/gym. 1 Reel + 3 Stories minimum. At $250/post, 15K followers, 4.5% engagement: CPE $0.37 vs. industry benchmark $0.80.</td>
+      </tr>
+      <tr>
+        <td class="inf-tier">MID-TIER</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">50K &ndash; 200K</td>
+        <td class="inf-cost">$400&ndash;$900/campaign<br><span style="font-size:7.5pt; color:var(--txt-dim);">+ 30-day exclusivity</span></td>
+        <td class="inf-roi">1&ndash;2 campaigns/quarter (Phase 3+). Formal contract. Multiple deliverables: 1 Reel + dedicated Story + logo in bio for 30 days. Brand-building investment, not direct-response. Track 30-day stockist sell-through uplift.</td>
+      </tr>
+      <tr>
+        <td class="inf-tier">TRAINER AMBASSADOR</td>
+        <td style="font-size:8pt; color:var(--txt-mid);">Any size</td>
+        <td class="inf-cost">Product + $40/mo<br><span style="font-size:7.5pt; color:var(--txt-dim);">performance incentive</span></td>
+        <td class="inf-roi">The 20 STRIKE TEAM founding trainers extended to digital. Unique discount code + 24 units/month + Story templates. 20 trainers &times; avg 800 followers = 16,000 captive gym audience/month. Equivalent paid reach: $3,000&ndash;6,000.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-band">Key Events &amp; Activations Calendar</div>
+
+  <div class="events-grid">
+    <div class="event-item">
+      <span class="ev-name">Beirut Marathon Registration</span>
+      <span class="ev-meta">November &middot; Sampling Booth &middot; $800&ndash;1,500</span>
+      <span class="ev-note">15,000+ runners and spectators. Highest single-day brand impression event in Lebanon.</span>
+    </div>
+    <div class="event-item">
+      <span class="ev-name">Fitness Expo Lebanon</span>
+      <span class="ev-meta">Q4 annually &middot; Exhibition Booth &middot; $1,200&ndash;2,500</span>
+      <span class="ev-note">STRIKE TEAM demonstration + sampling. Lebanese fitness industry's premier gathering.</span>
+    </div>
+    <div class="event-item">
+      <span class="ev-name">Gym Open Day Activations</span>
+      <span class="ev-meta">Monthly &middot; In-Gym Event &middot; $200&ndash;400/event</span>
+      <span class="ev-note">Partner with gym (mutual promotion). STRIKE samples at all new-member orientation days.</span>
+    </div>
+    <div class="event-item">
+      <span class="ev-name">CrossFit Lebanon Competitions</span>
+      <span class="ev-meta">Quarterly &middot; Sponsorship &middot; $500&ndash;1,000</span>
+      <span class="ev-note">CrossFit community: highest per-capita protein consumption demographic. Direct alignment.</span>
+    </div>
+    <div class="event-item">
+      <span class="ev-name">University Sports Days</span>
+      <span class="ev-meta">Spring + Fall &middot; Campus Sampling &middot; $300&ndash;600</span>
+      <span class="ev-note">AUB, LAU, LU, USJ sports days. Reach the 18&ndash;24 demographic that defines trends.</span>
+    </div>
+    <div class="event-item">
+      <span class="ev-name">Ramadan Fitness Campaign</span>
+      <span class="ev-meta">Mar&ndash;Apr &middot; Digital + Sampling &middot; $400&ndash;800</span>
+      <span class="ev-note">Suhoor high-protein content campaign. Purchase intent highest of the year. Do NOT pause ads.</span>
+    </div>
+  </div>
+
+  <div class="pf"><span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span><span>Page 3 of 4</span></div>
+</div>
+
+<!-- PAGE 4: MARKETING FINANCIAL MODEL -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Marketing &amp; Digital Strategy &nbsp;·&nbsp; R360-JRK-MKT-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <div class="section-band">Marketing Financial Model &mdash; Year 1 by Investment Tier</div>
+
+  <table class="fin-table">
+    <thead>
+      <tr>
+        <th style="width:38%;">Line Item</th>
+        <th class="ta" style="width:20%; text-align:center;">TIER A · Digital Presence<br><span style="font-size:6pt; opacity:.7; font-weight:600;">Organic only. No paid ads.</span></th>
+        <th class="tb" style="width:20%; text-align:center;">TIER B &#9733; · Active Digital<br><span style="font-size:6pt; opacity:.7; font-weight:600;">Full strategy. Paid + E-com Ph3.</span></th>
+        <th class="tc" style="width:20%; text-align:center;">TIER C · Full Digital<br><span style="font-size:6pt; opacity:.7; font-weight:600;">Aggressive. Full paid stack.</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="fin-section"><td colspan="4">One-Time Setup Investment</td></tr>
+      <tr><td class="fin-item">Domain registration (3 domains × 3 yrs)</td><td class="fin-a">$150</td><td class="fin-b">$150</td><td class="fin-c">$150</td></tr>
+      <tr><td class="fin-item">Google Workspace Starter (email + Drive)</td><td class="fin-a">$72</td><td class="fin-b">$72</td><td class="fin-c">$144</td></tr>
+      <tr><td class="fin-item">Informational website build (trilingual)</td><td class="fin-a">$800</td><td class="fin-b">$1,500</td><td class="fin-c">$2,500</td></tr>
+      <tr><td class="fin-item">Launch content shoot (product + lifestyle)</td><td class="fin-a">$400</td><td class="fin-b">$1,000</td><td class="fin-c">$2,000</td></tr>
+      <tr><td class="fin-item">E-commerce build (Shopify + gateway)</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$2,500</td><td class="fin-c">$4,000</td></tr>
+      <tr><td class="fin-item">Email lead magnet PDF production</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$200</td><td class="fin-c">$200</td></tr>
+      <tr><td class="fin-item">Canva Pro annual + brand kit</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$180</td><td class="fin-c">$180</td></tr>
+
+      <tr class="fin-section"><td colspan="4">Monthly Phase 1: Launch (Months 1&ndash;3)</td></tr>
+      <tr><td class="fin-item">Meta ads — Facebook + Instagram</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$400/mo</td><td class="fin-c">$800/mo</td></tr>
+      <tr><td class="fin-item">Content creation retainer</td><td class="fin-a">$200/mo</td><td class="fin-b">$500/mo</td><td class="fin-c">$1,000/mo</td></tr>
+      <tr><td class="fin-item">Nano-influencer seeding (product cost)</td><td class="fin-a">$80/mo</td><td class="fin-b">$150/mo</td><td class="fin-c">$300/mo</td></tr>
+
+      <tr class="fin-section"><td colspan="4">Monthly Phase 2: Growth (Months 3&ndash;6)</td></tr>
+      <tr><td class="fin-item">Meta ads — scaled</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$550/mo</td><td class="fin-c">$1,100/mo</td></tr>
+      <tr><td class="fin-item">TikTok ads — test budget</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$150/mo</td><td class="fin-c">$400/mo</td></tr>
+      <tr><td class="fin-item">Micro-influencer paid posts (1&ndash;2/month)</td><td class="fin-a">$100/mo</td><td class="fin-b">$300/mo</td><td class="fin-c">$600/mo</td></tr>
+      <tr><td class="fin-item">Shopify + Klaviyo subscriptions</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$84/mo</td><td class="fin-c">$84/mo</td></tr>
+
+      <tr class="fin-section"><td colspan="4">Monthly Phase 3: Scale (Months 6&ndash;12)</td></tr>
+      <tr><td class="fin-item">Meta ads — brand awareness + conversion</td><td class="fin-a">$150/mo</td><td class="fin-b">$750/mo</td><td class="fin-c">$1,500/mo</td></tr>
+      <tr><td class="fin-item">TikTok ads (proven organic content boosted)</td><td class="fin-a" style="color:var(--txt-dim);">—</td><td class="fin-b">$250/mo</td><td class="fin-c">$600/mo</td></tr>
+      <tr><td class="fin-item">Influencer program — micro + trainer</td><td class="fin-a">$150/mo</td><td class="fin-b">$400/mo</td><td class="fin-c">$1,000/mo</td></tr>
+      <tr><td class="fin-item">Event activations (monthly allocation)</td><td class="fin-a">$100/mo</td><td class="fin-b">$250/mo</td><td class="fin-c">$600/mo</td></tr>
+
+      <tr class="fin-total">
+        <td style="background:var(--ocean); color:var(--lime); font-weight:800; letter-spacing:.12em; font-size:8pt;">YEAR 1 TOTAL MARKETING INVESTMENT</td>
+        <td class="fin-a" style="background:var(--sky); color:#fff; font-size:9pt; text-align:right; font-weight:800;">$9,022</td>
+        <td class="fin-b" style="background:var(--sunset); color:#fff; font-size:11pt; text-align:right; font-weight:800;">$27,023 &#9733;</td>
+        <td class="fin-c" style="background:var(--turq); color:#fff; font-size:9pt; text-align:right; font-weight:800;">$58,168</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="section-band" style="margin-top:3mm;">Channel ROI Projections (Tier B / Tier 2 Recommended)</div>
+
+  <table class="roi-table">
+    <thead>
+      <tr>
+        <th style="width:26%;">Channel</th>
+        <th style="width:15%; text-align:right;">Yr 1 Spend</th>
+        <th style="width:22%; text-align:right;">Attributed Revenue</th>
+        <th style="width:12%; text-align:center;">ROAS</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="roi-channel">Meta Ads (Lebanon)</td><td class="roi-spend">$6,900</td><td class="roi-rev">$14,000&ndash;22,000</td><td class="roi-roas">2.0&ndash;3.2&times;</td><td class="roi-note">Revenue from online orders + offline awareness lift on physical sell-through.</td></tr>
+      <tr><td class="roi-channel">Influencer Program</td><td class="roi-spend">$2,700</td><td class="roi-rev">$8,000&ndash;15,000</td><td class="roi-roas">3.0&ndash;5.5&times;</td><td class="roi-note">Trainer network generates highest per-dollar return. Nano tier = zero cash cost.</td></tr>
+      <tr><td class="roi-channel">E-Commerce (Shopify DTC)</td><td class="roi-spend">$2,902</td><td class="roi-rev">$6,000&ndash;14,000</td><td class="roi-roas">2.1&ndash;4.8&times;</td><td class="roi-note">D2C margin 70&ndash;80% vs. 48&ndash;55% wholesale. Highest gross margin channel.</td></tr>
+      <tr><td class="roi-channel">Content Creation</td><td class="roi-spend">$6,000</td><td class="roi-rev">Brand equity</td><td class="roi-roas">Compounding</td><td class="roi-note">Content built in Year 1 earns reach in Years 2&ndash;3. Not direct-response.</td></tr>
+      <tr><td class="roi-channel">Events + Activations</td><td class="roi-spend">$2,500</td><td class="roi-rev">$5,000&ndash;10,000</td><td class="roi-roas">2.0&ndash;4.0&times;</td><td class="roi-note">Highest-impact channel for sell-through velocity in physical accounts.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pf"><span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span><span>Page 4 of 4</span></div>
+</div>
+
+</body>
+</html>

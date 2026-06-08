@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Executive Summary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --sky-10: #e5f3f8;
+    --sunset-10: #fef5e7; --turq-10: #e5f4f7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --bg: #fff; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9.5pt;
+    color: var(--txt); background: #fff; line-height: 1.55;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  /* Page header */
+  .ph {
+    background: var(--ocean); color: #fff;
+    padding: 2.5mm 4mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 7mm;
+  }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  /* Page footer */
+  .pf {
+    font-size: 7pt; color: var(--txt-dim);
+    display: flex; justify-content: space-between;
+    padding-top: 2.5mm; border-top: 1px solid var(--line); margin-top: 6mm;
+  }
+
+  .sl {
+    font-size: 7pt; font-weight: 700; color: var(--turq);
+    letter-spacing: .3em; text-transform: uppercase;
+    display: block; margin-bottom: 2mm;
+  }
+
+  h1 { font-size: 21pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1.5mm; }
+  h2 { font-size: 12pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm; margin-top: 5mm; }
+
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 5mm; }
+
+  p { color: var(--txt-mid); margin-bottom: 3mm; }
+
+  /* KPI strip */
+  .kpi-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3mm; margin: 5mm 0; }
+  .kpi-card {
+    background: var(--card); border: 1px solid var(--line);
+    border-top: 3px solid var(--turq); padding: 3mm 4mm;
+    page-break-inside: avoid;
+  }
+  .kpi-lbl {
+    font-size: 6.5pt; font-weight: 700; color: var(--turq);
+    letter-spacing: .2em; text-transform: uppercase;
+    display: block; margin-bottom: 1mm;
+  }
+  .kpi-val {
+    font-size: 13pt; font-weight: 800; color: var(--ocean);
+    display: block; line-height: 1.1; margin-bottom: 1mm;
+  }
+  .kpi-sub { font-size: 8pt; color: var(--txt-mid); line-height: 1.35; }
+
+  /* Mandate box */
+  .mandate-box {
+    background: var(--ocean-10); border: 1px solid var(--sky);
+    border-left: 4px solid var(--ocean); padding: 4mm 5mm;
+    margin: 5mm 0; page-break-inside: avoid;
+  }
+  .mandate-title {
+    font-size: 7.5pt; font-weight: 700; color: var(--ocean);
+    letter-spacing: .2em; text-transform: uppercase;
+    display: block; margin-bottom: 2mm;
+  }
+
+  /* Deliverables grid */
+  .del-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 5mm; margin: 4mm 0; }
+  .del-item {
+    display: flex; gap: 3mm; align-items: flex-start;
+    padding: 1.5mm 0; border-bottom: .5px solid var(--line);
+    page-break-inside: avoid;
+  }
+  .del-ref {
+    font-size: 7pt; font-weight: 700; color: var(--turq);
+    flex-shrink: 0; min-width: 28mm; margin-top: 1px;
+    letter-spacing: .04em;
+  }
+  .del-name { font-size: 9pt; color: var(--txt); line-height: 1.3; }
+
+  /* Tier table */
+  .tier-table {
+    width: 100%; border-collapse: collapse; font-size: 9.5pt;
+    margin: 4mm 0; page-break-inside: avoid;
+    table-layout: fixed;
+  }
+  .tier-table th {
+    padding: 2.5mm 3mm; text-align: center;
+    font-size: 8pt; font-weight: 700; letter-spacing: .06em;
+    border-bottom: 2px solid var(--line);
+    text-transform: uppercase;
+  }
+  .tier-table th.rh  { text-align: left; background: var(--card); color: var(--txt-dim); }
+  .tier-table th.t1h { background: var(--sky-10); color: var(--ocean); border-bottom-color: var(--sky); }
+  .tier-table th.t2h { background: var(--sunset-10); color: #b5530a; border-bottom-color: var(--sunset); font-size: 9pt; }
+  .tier-table th.t3h { background: var(--turq-10); color: var(--turq); border-bottom-color: var(--turq); }
+
+  .tier-table td {
+    padding: 2mm 3mm; text-align: center;
+    border-bottom: 1px solid var(--line);
+    font-size: 9.5pt; font-weight: 600;
+    color: var(--txt-dim);
+  }
+  .tier-table td.rl { text-align: left; background: var(--card); color: var(--txt); font-weight: 500; }
+  .tier-table td.t1 { background: var(--sky-10); color: var(--ocean); }
+  .tier-table td.t2 { background: var(--sunset-10); color: #b5530a; font-weight: 800; font-size: 10pt; }
+  .tier-table td.t3 { background: var(--turq-10); color: var(--turq); }
+  .tier-table tr:nth-child(even) td { filter: brightness(.98); }
+
+  /* Decision box */
+  .decision-box {
+    background: var(--ocean); color: #fff;
+    padding: 5mm 6mm; margin: 5mm 0;
+    text-align: center; page-break-inside: avoid;
+  }
+  .decision-lbl {
+    font-size: 7pt; font-weight: 700; color: var(--lime);
+    letter-spacing: .32em; text-transform: uppercase;
+    display: block; margin-bottom: 2mm;
+  }
+  .decision-txt { font-size: 13pt; font-weight: 700; color: #fff; line-height: 1.5; }
+
+  .rec-note { font-size: 8.5pt; color: var(--coral); font-weight: 600; margin-top: 1mm; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Executive Summary &nbsp;·&nbsp; R360-JRK-EXEC-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Executive Summary &middot; Page 1 of 2</span>
+  <h1>An Empty Category in a Growing Market</h1>
+  <div class="rule"></div>
+
+  <div class="kpi-strip">
+    <div class="kpi-card">
+      <span class="kpi-lbl">Market</span>
+      <span class="kpi-val">Lebanese Premium Snacking</span>
+      <span class="kpi-sub">No established local beef jerky brand. Category fully available today.</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-lbl">Product</span>
+      <span class="kpi-val">STRIKE BITES</span>
+      <span class="kpi-sub">Premium beef jerky, performance-positioned, Halal-certified by Dar Al-Fatwa Lebanon.</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-lbl">Window</span>
+      <span class="kpi-val">First Mover</span>
+      <span class="kpi-sub">Category is empty. No credible Lebanese brand owns this shelf. Window is open now.</span>
+    </div>
+  </div>
+
+  <p>Lebanon&rsquo;s fitness culture is expanding rapidly &mdash; gyms, CrossFit boxes, and boutique studios proliferating across Beirut, Metn, Keserwan, Jounieh, and the North. Health-conscious consumers aged 18&ndash;40 are actively tracking macros; protein content is now the primary purchase driver. Yet the shelf in every gym and nutrition store remains empty of a locally produced, Halal-certified beef jerky. The imported alternatives &mdash; Jack Link&rsquo;s at $5.62 per 40g and Country Archer at $6&ndash;$8 &mdash; hold no Lebanese authority certification and are priced outside routine daily purchase. Wild West&rsquo;s Halal range, confirmed in UAE as of June 2026, is heading toward Lebanon. The first-mover window is measured in months.</p>
+
+  <p>STRIKE BITES is positioned at $4.50 per 40g: 19% below Jack Link&rsquo;s, structurally accessible for daily purchase, and built with a Lebanese BBQ flavor profile featuring Aleppo pepper, sumac, pomegranate, and cedar smoke. Halal certification from Dar Al-Fatwa Lebanon unlocks the 60%+ Muslim consumer base and all GCC export channels simultaneously from Day 1. &ldquo;Made in Lebanon&rdquo; carries premium provenance weight in UAE and Saudi Arabia &mdash; the Lebanese identity is not a constraint, it is the GCC marketing asset.</p>
+
+  <div class="mandate-box">
+    <span class="mandate-title">The Ru'ya 360° Advisory Mandate</span>
+    <p style="margin:0; color:var(--txt);">Ru'ya 360° Advisory Group operates as full commercial operator for STRIKE BITES: legal entity formation, regulatory filing management, brand execution, manufacturer relationship, trade outreach and account activation, monthly P&amp;L reporting, and digital strategy oversight. Eleven institutional-quality deliverables have been completed before mandate signature &mdash; demonstrating capability and commitment before any contract exists. Execution commences within 72 hours of budget tier confirmation and first milestone payment.</p>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Executive Summary &nbsp;·&nbsp; R360-JRK-EXEC-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Executive Summary &middot; Page 2 of 2</span>
+  <h2 style="margin-top:0;">What Has Already Been Built</h2>
+  <div class="rule"></div>
+
+  <div class="del-grid">
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-001</span>
+      <span class="del-name">Full Advisory Framework &mdash; 10-section A-to-Z market entry guide</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-002</span>
+      <span class="del-name">Master Launch Checklist &mdash; 38 steps across 5 milestone-gated phases</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-003</span>
+      <span class="del-name">Financial Feasibility Study &mdash; 3 tiers, 12-month model, ROI analysis</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-004</span>
+      <span class="del-name">Trade Outreach System &mdash; scripts, objection handling, account tracker</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-005</span>
+      <span class="del-name">Competitive Analysis &mdash; 5 competitors, dual perspective, 8 criteria each</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-006</span>
+      <span class="del-name">Brand &amp; Packaging Design Brief &mdash; 8 sections, trilingual, print-ready specs</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-007</span>
+      <span class="del-name">Manufacturer Technical Brief &mdash; flavor spec, 8 QC parameters, Halal checklist</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-008</span>
+      <span class="del-name">STRIKE Brand Enhancement Study &mdash; 88/100 score, 3 SKU renders</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-VIZ-001</span>
+      <span class="del-name">Product Visualization System &mdash; packaging renders, brand assets</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-BOARD-001</span>
+      <span class="del-name">Board Presentation &mdash; 25-slide institutional-quality, funder-ready</span>
+    </div>
+    <div class="del-item">
+      <span class="del-ref">R360-JRK-MKT-001</span>
+      <span class="del-name">Marketing &amp; Digital Strategy &mdash; 8 sections, 24-month roadmap</span>
+    </div>
+  </div>
+
+  <h2>Three Investment Scenarios</h2>
+  <div class="rule"></div>
+
+  <table class="tier-table">
+    <thead>
+      <tr>
+        <th class="rh" style="width:38%;">Scenario</th>
+        <th class="t1h">Tier 1 &mdash; Lean</th>
+        <th class="t2h">Tier 2 &mdash; Standard &#9733;</th>
+        <th class="t3h">Tier 3 &mdash; Full Entry</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rl">Total Investment</td>
+        <td class="t1">$24,000</td>
+        <td class="t2">$62,000</td>
+        <td class="t3">$96,000</td>
+      </tr>
+      <tr>
+        <td class="rl">Year 1 ROI</td>
+        <td class="t1">~155%</td>
+        <td class="t2">~265%</td>
+        <td class="t3">~310%</td>
+      </tr>
+      <tr>
+        <td class="rl">Breakeven</td>
+        <td class="t1">Month 9&ndash;12</td>
+        <td class="t2">Month 8&ndash;11</td>
+        <td class="t3">Month 5&ndash;7</td>
+      </tr>
+      <tr>
+        <td class="rl">Year 1 Gross Profit</td>
+        <td class="t1">~$40K</td>
+        <td class="t2">~$153K</td>
+        <td class="t3">~$310K</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="rec-note">&#9733; Ru'ya 360° Recommendation: Tier 2 Standard Launch &mdash; sufficient capital to execute correctly without overspending on a first-year proof of concept.</p>
+
+  <div class="decision-box">
+    <span class="decision-lbl">The Single Decision Required Today</span>
+    <div class="decision-txt">Which tier do we activate?<br>
+    Lean ($24,000) &nbsp;&middot;&nbsp; Standard ($62,000) &nbsp;&middot;&nbsp; Full Market Entry ($96,000)</div>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>

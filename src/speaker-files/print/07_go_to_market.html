@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Go-to-Market Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --sky-10: #e5f3f8; --turq-10: #e5f4f7; --sunset-10: #fef5e7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9pt;
+    color: var(--txt); background: #fff; line-height: 1.55;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .ph {
+    background: var(--ocean); color: #fff;
+    padding: 2.5mm 4mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 6mm;
+  }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf {
+    font-size: 7pt; color: var(--txt-dim);
+    display: flex; justify-content: space-between;
+    padding-top: 2mm; border-top: 1px solid var(--line); margin-top: 5mm;
+  }
+
+  .sl { font-size: 7pt; font-weight: 700; color: var(--turq); letter-spacing: .3em; text-transform: uppercase; display: block; margin-bottom: 1.5mm; }
+  h1 { font-size: 20pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1mm; }
+  h2 { font-size: 12pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm; margin-top: 5mm; }
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 4mm; }
+  p { color: var(--txt-mid); margin-bottom: 3mm; font-size: 9pt; }
+
+  /* Channel sequence */
+  .channel-item { display: flex; gap: 3.5mm; margin-bottom: 3mm; align-items: flex-start; page-break-inside: avoid; }
+  .ch-num {
+    font-size: 18pt; font-weight: 800; color: var(--turq);
+    flex-shrink: 0; width: 8mm; line-height: 1; margin-top: 0.5mm; text-align: center;
+  }
+  .ch-content { flex: 1; border-left: 2px solid var(--turq); padding-left: 3.5mm; }
+  .ch-header { display: flex; align-items: baseline; gap: 3mm; margin-bottom: 1mm; flex-wrap: wrap; }
+  .ch-title { font-size: 10.5pt; font-weight: 800; color: var(--ocean); }
+  .ch-timing { font-size: 7pt; font-weight: 700; color: var(--turq); letter-spacing: .1em; text-transform: uppercase; }
+  .ch-accounts { font-size: 7pt; color: var(--txt-dim); }
+  .ch-desc { font-size: 8.5pt; color: var(--txt-mid); line-height: 1.45; }
+
+  /* Phase grid */
+  .phase-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2mm; margin: 3mm 0; page-break-inside: avoid; }
+  .phase-card { border: 1px solid var(--line); border-top: 3px solid; padding: 2.5mm 2.5mm; }
+  .ph0 { border-top-color: var(--ocean); background: var(--ocean-10); }
+  .ph1 { border-top-color: var(--turq); background: var(--turq-10); }
+  .ph2 { border-top-color: var(--sky); background: var(--sky-10); }
+  .ph3 { border-top-color: var(--sunset); background: var(--sunset-10); }
+  .ph4 { border-top-color: var(--coral); background: #fdf0ed; }
+
+  .phase-num { font-size: 6.5pt; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; display: block; margin-bottom: .5mm; }
+  .ph0 .phase-num { color: var(--ocean); }
+  .ph1 .phase-num { color: var(--turq); }
+  .ph2 .phase-num { color: var(--sky); filter: saturate(1.5) brightness(.8); }
+  .ph3 .phase-num { color: #9a6b00; }
+  .ph4 .phase-num { color: var(--coral); }
+
+  .phase-name { font-size: 9.5pt; font-weight: 800; color: var(--ocean); display: block; margin-bottom: 0.5mm; }
+  .phase-months { font-size: 7pt; color: var(--txt-dim); display: block; margin-bottom: 1.5mm; }
+
+  .phase-bullets { list-style: none; padding: 0; }
+  .phase-bullets li { font-size: 7.5pt; color: var(--txt-mid); padding: .5mm 0; border-bottom: .5px solid var(--line); display: flex; gap: 1.5mm; line-height: 1.3; }
+  .phase-bullets li::before { content: '·'; color: var(--turq); flex-shrink: 0; font-weight: 800; }
+  .phase-bullets li:last-child { border-bottom: none; }
+
+  .phase-milestone { margin-top: 1.5mm; padding: 1.5mm 2mm; background: rgba(47,91,107,.08); font-size: 7pt; color: var(--txt-mid); font-style: italic; line-height: 1.3; }
+
+  /* 24-month roadmap */
+  .roadmap-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1.5mm; margin: 3mm 0; page-break-inside: avoid; }
+  .rm-cell { border: 1px solid var(--line); padding: 1.5mm 2mm; background: var(--card); }
+  .rm-period { font-size: 6.5pt; font-weight: 700; color: var(--turq); display: block; margin-bottom: .5mm; text-transform: uppercase; }
+  .rm-desc { font-size: 7.5pt; color: var(--txt-mid); line-height: 1.3; }
+
+  /* Distribution table */
+  .distrib-table { width: 100%; border-collapse: collapse; margin: 3mm 0; font-size: 8.5pt; page-break-inside: avoid; table-layout: fixed; }
+  .distrib-table th { background: var(--ocean); color: rgba(255,255,255,.8); font-size: 7.5pt; font-weight: 700; padding: 2mm 3mm; text-align: left; letter-spacing: .06em; text-transform: uppercase; }
+  .distrib-table td { padding: 2mm 3mm; border-bottom: .5px solid var(--line); vertical-align: top; font-size: 8.5pt; }
+  .distrib-table tr:nth-child(even) td { background: var(--card); }
+  .distrib-table tr { page-break-inside: avoid; }
+  .dt-channel { color: var(--txt); font-weight: 700; }
+  .dt-timing { font-weight: 700; color: var(--turq); }
+  .dt-targets { color: var(--txt-mid); }
+  .dt-terms { color: var(--txt-mid); font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — CHANNEL SEQUENCE -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Go-to-Market Strategy &nbsp;·&nbsp; R360-JRK-GTM-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Go-to-Market &middot; R360-JRK-GTM-001</span>
+  <h1>Channel Sequence &amp; Phase Timeline</h1>
+  <div class="rule"></div>
+
+  <p>STRIKE BITES enters through the Lebanese gym and fitness channel &mdash; not through modern trade. This is deliberate. Gym channel placement creates the brand story before supermarket shelf space. Fitness trainers who believe in the product become a zero-salary sales force. Modern trade and GCC export open only after the Lebanese consumer market has validated the product at scale.</p>
+
+  <div class="channel-item">
+    <span class="ch-num">1</span>
+    <div class="ch-content">
+      <div class="ch-header"><span class="ch-title">Gym &amp; Fitness Channel</span><span class="ch-timing">Month 2 &rarr;</span><span class="ch-accounts">60&ndash;80 accounts · Year 1</span></div>
+      <span class="ch-desc">CrossFit boxes, boutique gyms, and fitness studios across Beirut, Ashrafieh, Metn, Keserwan, Jounieh, and Tripoli. Personal delivery + display installation by team on Day 1 of each account. Sale-or-return terms reduce placement risk. Bi-weekly check-ins build the relationship that drives sell-through. Trainer ambassador program (20 trainers) creates peer-to-peer advocacy.</span>
+    </div>
+  </div>
+
+  <div class="channel-item">
+    <span class="ch-num">2</span>
+    <div class="ch-content">
+      <div class="ch-header"><span class="ch-title">Sports Nutrition &amp; Supplement Stores</span><span class="ch-timing">Month 3 &rarr;</span><span class="ch-accounts">15&ndash;20 accounts · Year 1</span></div>
+      <span class="ch-desc">Dedicated supplement and nutrition retailers across Lebanon. These buyers purchase product &mdash; not consignment. Higher AOV, lower visit frequency. Key accounts in Hamra, Verdun, Dora, Kaslik, and Tripoli city centre.</span>
+    </div>
+  </div>
+
+  <div class="channel-item">
+    <span class="ch-num">3</span>
+    <div class="ch-content">
+      <div class="ch-header"><span class="ch-title">Pharmacy Channel</span><span class="ch-timing">Month 5 &rarr;</span><span class="ch-accounts">20&ndash;30 accounts · Year 1</span></div>
+      <span class="ch-desc">Lebanese pharmacies are credible health-product retail points &mdash; particularly with Halal certification and nutritional claims prominent on packaging. No imported beef jerky currently placed in the pharmacy channel. STRIKE enters an empty shelf position.</span>
+    </div>
+  </div>
+
+  <div class="channel-item">
+    <span class="ch-num">4</span>
+    <div class="ch-content">
+      <div class="ch-header"><span class="ch-title">E-Commerce (Shopify + WhatsApp Business)</span><span class="ch-timing">Month 6 &rarr;</span><span class="ch-accounts">DTC · highest margin channel</span></div>
+      <span class="ch-desc">WhatsApp ordering native to Lebanese consumer behavior. Shopify storefront with cash-on-delivery. No payment gateway complexity at launch. Direct-to-consumer eliminates wholesale margin, increasing gross margin from ~62% to ~73%. Customer data collected for GCC expansion targeting.</span>
+    </div>
+  </div>
+
+  <div class="channel-item">
+    <span class="ch-num">5</span>
+    <div class="ch-content">
+      <div class="ch-header"><span class="ch-title">Modern Trade (Spinneys, Carrefour, TSC)</span><span class="ch-timing">Month 10&ndash;12 &rarr;</span><span class="ch-accounts">Category review timing</span></div>
+      <span class="ch-desc">Modern trade requires brand equity built through gym and pharmacy before the buyer conversation is credible. Category review cycles mean Month 9&ndash;10 outreach leads to Month 12+ listing. Requires full compliance: MoPH, GS1 barcode, commercial liability insurance &mdash; all funded in Tier 2 budget.</span>
+    </div>
+  </div>
+
+  <div class="channel-item">
+    <span class="ch-num">6</span>
+    <div class="ch-content">
+      <div class="ch-header"><span class="ch-title">GCC Export (UAE &amp; KSA)</span><span class="ch-timing">Q4 Year 1 &rarr;</span><span class="ch-accounts">UAE first · then KSA</span></div>
+      <span class="ch-desc">"Made in Lebanon" carries premium provenance weight in UAE and Saudi Arabia. Dar Al-Fatwa Halal certification opens both markets. UAE health food regulatory filing (FIRS system) initiated Q4 Year 1. Lebanese diaspora in UAE: ~400,000 potential warm brand ambassadors. Export unlocks Year 2 step-change in revenue.</span>
+    </div>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- PAGE 2 — PHASE TIMELINE + ROADMAP + DISTRIBUTION -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Go-to-Market Strategy &nbsp;·&nbsp; R360-JRK-GTM-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Go-to-Market &middot; 5-Phase Execution Framework</span>
+  <h2 style="margin-top:0;">38 Steps Across 5 Milestone-Gated Phases</h2>
+  <div class="rule"></div>
+
+  <div class="phase-grid">
+    <div class="phase-card ph0">
+      <span class="phase-num">Phase 0</span>
+      <span class="phase-name">Foundation</span>
+      <span class="phase-months">Months 0&ndash;2</span>
+      <ul class="phase-bullets">
+        <li>SARL registration</li>
+        <li>MoPH filing (Day 1)</li>
+        <li>Trademark Class 29+35</li>
+        <li>Dar Al-Fatwa Halal</li>
+        <li>Brand identity locked</li>
+        <li>Offshore banking set up</li>
+        <li>Technology stack live</li>
+        <li>Supply agreement signed</li>
+      </ul>
+      <div class="phase-milestone">Gate: All legal entities filed · Brand approved · Manufacturer committed</div>
+    </div>
+    <div class="phase-card ph1">
+      <span class="phase-num">Phase 1</span>
+      <span class="phase-name">Launch</span>
+      <span class="phase-months">Months 2&ndash;4</span>
+      <ul class="phase-bullets">
+        <li>First batch 2 SKUs</li>
+        <li>Deploy delivery vehicle</li>
+        <li>Open 30&ndash;50 gym accounts</li>
+        <li>Install displays Day 1</li>
+        <li>Launch trainer program</li>
+        <li>Bi-weekly sell-through</li>
+        <li>2 sampling events</li>
+        <li>Weekly board report</li>
+      </ul>
+      <div class="phase-milestone">Gate: 30+ accounts · First batch delivered · 20 trainers onboarded</div>
+    </div>
+    <div class="phase-card ph2">
+      <span class="phase-num">Phase 2</span>
+      <span class="phase-name">Scale</span>
+      <span class="phase-months">Months 4&ndash;6</span>
+      <ul class="phase-bullets">
+        <li>60&ndash;80 accounts</li>
+        <li>Pharmacy channel open</li>
+        <li>E-commerce live</li>
+        <li>Second batch ordered</li>
+        <li>Monthly revenue &ge;$9K</li>
+        <li>Nutrition store channel</li>
+        <li>Influencer activation</li>
+        <li>Monthly P&amp;L to board</li>
+      </ul>
+      <div class="phase-milestone">Gate: 60+ accounts · Pharmacy listed · Revenue &ge;$9K/month</div>
+    </div>
+    <div class="phase-card ph3">
+      <span class="phase-num">Phase 3</span>
+      <span class="phase-name">Growth</span>
+      <span class="phase-months">Months 6&ndash;9</span>
+      <ul class="phase-bullets">
+        <li>E-commerce accelerate</li>
+        <li>Modern trade outreach</li>
+        <li>GCC regulatory filing</li>
+        <li>85+ accounts total</li>
+        <li>Brand refresh Q2</li>
+        <li>3rd SKU planning</li>
+        <li>Influencer Q2 cohort</li>
+        <li>Investor update report</li>
+      </ul>
+      <div class="phase-milestone">Gate: Modern trade in pipeline · GCC filing initiated · E-com tracked</div>
+    </div>
+    <div class="phase-card ph4">
+      <span class="phase-num">Phase 4</span>
+      <span class="phase-name">Export</span>
+      <span class="phase-months">Months 9&ndash;12</span>
+      <ul class="phase-bullets">
+        <li>UAE distributor meetings</li>
+        <li>FIRS health food filing</li>
+        <li>Modern trade listing</li>
+        <li>STRIKE STRIPS dev</li>
+        <li>Year 2 plan drafted</li>
+        <li>KSA feasibility study</li>
+        <li>Year 1 P&amp;L close</li>
+        <li>Mandate renewal terms</li>
+      </ul>
+      <div class="phase-milestone">Gate: UAE filing submitted · Modern trade listed · Year 2 board approved</div>
+    </div>
+  </div>
+
+  <h2>24-Month Strategic Roadmap</h2>
+  <div class="rule"></div>
+
+  <div class="roadmap-strip">
+    <div class="rm-cell" style="border-top:2px solid var(--ocean);">
+      <span class="rm-period">M1&ndash;M2</span>
+      <span class="rm-desc">Foundation. Legal, brand, banking, regulatory filing initiated.</span>
+    </div>
+    <div class="rm-cell" style="border-top:2px solid var(--turq);">
+      <span class="rm-period">M2&ndash;M4</span>
+      <span class="rm-desc">Launch. 30&ndash;50 gym accounts. First revenue. Trainer program active.</span>
+    </div>
+    <div class="rm-cell" style="border-top:2px solid var(--sky);">
+      <span class="rm-period">M4&ndash;M6</span>
+      <span class="rm-desc">Scale. 60&ndash;80 accounts. Pharmacy opens. E-commerce live. &ge;$9K/month.</span>
+    </div>
+    <div class="rm-cell" style="border-top:2px solid var(--sunset);">
+      <span class="rm-period">M6&ndash;M9</span>
+      <span class="rm-desc">Growth. Modern trade pipeline. GCC filing. 85+ accounts. Breakeven zone.</span>
+    </div>
+    <div class="rm-cell" style="border-top:2px solid var(--coral);">
+      <span class="rm-period">M9&ndash;M12</span>
+      <span class="rm-desc">Export. UAE distributor. Modern trade listed. Year 1 close. &ge;$215K revenue.</span>
+    </div>
+    <div class="rm-cell" style="border-top:2px solid var(--lime); background:var(--sunset-10);">
+      <span class="rm-period" style="color:var(--ocean);">Year 2</span>
+      <span class="rm-desc" style="color:var(--txt);">GCC entry. STRIPS SKU. KSA feasibility. Revenue step-change from export.</span>
+    </div>
+  </div>
+
+  <table class="distrib-table">
+    <thead>
+      <tr>
+        <th style="width:22%;">Channel</th>
+        <th style="width:15%;">Launch</th>
+        <th style="width:30%;">Target Accounts</th>
+        <th>Commercial Terms</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="dt-channel">Gym / Fitness</td><td class="dt-timing">Month 2</td><td class="dt-targets">60&ndash;80 gym accounts across Lebanon</td><td class="dt-terms">Sale-or-return Year 1. Net-payment from Month 6.</td></tr>
+      <tr><td class="dt-channel">Sports Nutrition Retail</td><td class="dt-timing">Month 3</td><td class="dt-targets">15&ndash;20 specialist retailers</td><td class="dt-terms">Purchase order. 28-day payment terms.</td></tr>
+      <tr><td class="dt-channel">Pharmacy Channel</td><td class="dt-timing">Month 5</td><td class="dt-targets">20&ndash;30 pharmacies, urban Lebanon</td><td class="dt-terms">Consignment or purchase depending on account.</td></tr>
+      <tr><td class="dt-channel">E-Commerce (DTC)</td><td class="dt-timing">Month 6</td><td class="dt-targets">Shopify + WhatsApp Business</td><td class="dt-terms">Cash on delivery. No payment gateway at launch.</td></tr>
+      <tr><td class="dt-channel">Modern Trade</td><td class="dt-timing">Month 10&ndash;12</td><td class="dt-targets">Spinneys, Carrefour, TSC Lebanon</td><td class="dt-terms">Purchase order. 45&ndash;60 day terms. Listing fee TBC.</td></tr>
+      <tr><td class="dt-channel">GCC Export (UAE first)</td><td class="dt-timing">Q4 Year 1</td><td class="dt-targets">UAE health food distributor</td><td class="dt-terms">Exclusive distributor agreement. CIF pricing.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - text: Ru'ya
+      - emphasis [ref=e4]: "360"
+      - text: ° · STRIKE BITES
+    - generic [ref=e6]: Loading 3 / 12 — Proof of Work…
+    - button "Loading…" [disabled] [ref=e7]
+  - generic [ref=e9]:
+    - generic [ref=e10]:
+      - generic [ref=e11]: DOC 01
+      - generic [ref=e12]: Cover Page
+      - generic [ref=e14]: 1 page
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - generic [ref=e19]: Ru'ya 360°
+          - generic [ref=e20]: Advisory Partners
+        - generic [ref=e21]:
+          - text: Start Seeing the Whole Path
+          - text: Strategy · Execution · Market Entry
+      - generic [ref=e22]:
+        - generic [ref=e23]: Management Mandate Meeting · Investor Presentation
+        - generic [ref=e24]:
+          - text: STRIKE
+          - text: BITES
+        - generic [ref=e25]: Lebanon Market Entry Advisory
+        - generic [ref=e27]: Advisory mandate exclusively prepared by
+        - generic [ref=e28]: Ru'ya 360° Advisory Group
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - text: Ru'ya 360° Advisory Group
+          - text: kits.tech.co@gmail.com
+        - generic [ref=e31]:
+          - text: Confidential — For addressee only
+          - text: R360-JRK-PRES-001 · June 2026
+    - generic [ref=e32]:
+      - generic [ref=e33]: DOC 02
+      - generic [ref=e34]: Executive Summary
+      - generic [ref=e36]: 2 pages
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - text: Ru'ya
+            - emphasis [ref=e41]: "360"
+            - text: ° · Executive Summary · R360-JRK-EXEC-001
+          - generic [ref=e42]: STRIKE BITES Advisory · Confidential
+        - generic [ref=e43]: Executive Summary · Page 1 of 2
+        - heading "An Empty Category in a Growing Market" [level=1] [ref=e44]
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: Market
+            - generic [ref=e49]: Lebanese Premium Snacking
+            - text: No established local beef jerky brand. Category fully available today.
+          - generic [ref=e50]:
+            - generic [ref=e51]: Product
+            - generic [ref=e52]: STRIKE BITES
+            - text: Premium beef jerky, performance-positioned, Halal-certified by Dar Al-Fatwa Lebanon.
+          - generic [ref=e53]:
+            - generic [ref=e54]: Window
+            - generic [ref=e55]: First Mover
+            - text: Category is empty. No credible Lebanese brand owns this shelf. Window is open now.
+        - paragraph [ref=e56]: Lebanon’s fitness culture is expanding rapidly — gyms, CrossFit boxes, and boutique studios proliferating across Beirut, Metn, Keserwan, Jounieh, and the North. Health-conscious consumers aged 18–40 are actively tracking macros; protein content is now the primary purchase driver. Yet the shelf in every gym and nutrition store remains empty of a locally produced, Halal-certified beef jerky. The imported alternatives — Jack Link’s at $5.62 per 40g and Country Archer at $6–$8 — hold no Lebanese authority certification and are priced outside routine daily purchase. Wild West’s Halal range, confirmed in UAE as of June 2026, is heading toward Lebanon. The first-mover window is measured in months.
+        - paragraph [ref=e57]: "STRIKE BITES is positioned at $4.50 per 40g: 19% below Jack Link’s, structurally accessible for daily purchase, and built with a Lebanese BBQ flavor profile featuring Aleppo pepper, sumac, pomegranate, and cedar smoke. Halal certification from Dar Al-Fatwa Lebanon unlocks the 60%+ Muslim consumer base and all GCC export channels simultaneously from Day 1. “Made in Lebanon” carries premium provenance weight in UAE and Saudi Arabia — the Lebanese identity is not a constraint, it is the GCC marketing asset."
+        - generic [ref=e58]:
+          - generic [ref=e59]: The Ru'ya 360° Advisory Mandate
+          - paragraph [ref=e60]: "Ru'ya 360° Advisory Group operates as full commercial operator for STRIKE BITES: legal entity formation, regulatory filing management, brand execution, manufacturer relationship, trade outreach and account activation, monthly P&L reporting, and digital strategy oversight. Eleven institutional-quality deliverables have been completed before mandate signature — demonstrating capability and commitment before any contract exists. Execution commences within 72 hours of budget tier confirmation and first milestone payment."
+        - generic [ref=e61]:
+          - generic [ref=e62]: STRIKE BITES — Management Mandate Meeting · Confidential
+          - generic [ref=e63]: Page 1 of 2
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - text: Ru'ya
+            - emphasis [ref=e67]: "360"
+            - text: ° · Executive Summary · R360-JRK-EXEC-001
+          - generic [ref=e68]: STRIKE BITES Advisory · Confidential
+        - generic [ref=e69]: Executive Summary · Page 2 of 2
+        - heading "What Has Already Been Built" [level=2] [ref=e70]
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: R360-JRK-001
+            - generic [ref=e75]: Full Advisory Framework — 10-section A-to-Z market entry guide
+          - generic [ref=e76]:
+            - generic [ref=e77]: R360-JRK-002
+            - generic [ref=e78]: Master Launch Checklist — 38 steps across 5 milestone-gated phases
+          - generic [ref=e79]:
+            - generic [ref=e80]: R360-JRK-003
+            - generic [ref=e81]: Financial Feasibility Study — 3 tiers, 12-month model, ROI analysis
+          - generic [ref=e82]:
+            - generic [ref=e83]: R360-JRK-004
+            - generic [ref=e84]: Trade Outreach System — scripts, objection handling, account tracker
+          - generic [ref=e85]:
+            - generic [ref=e86]: R360-JRK-005
+            - generic [ref=e87]: Competitive Analysis — 5 competitors, dual perspective, 8 criteria each
+          - generic [ref=e88]:
+            - generic [ref=e89]: R360-JRK-006
+            - generic [ref=e90]: Brand & Packaging Design Brief — 8 sections, trilingual, print-ready specs
+          - generic [ref=e91]:
+            - generic [ref=e92]: R360-JRK-007
+            - generic [ref=e93]: Manufacturer Technical Brief — flavor spec, 8 QC parameters, Halal checklist
+          - generic [ref=e94]:
+            - generic [ref=e95]: R360-JRK-008
+            - generic [ref=e96]: STRIKE Brand Enhancement Study — 88/100 score, 3 SKU renders
+          - generic [ref=e97]:
+            - generic [ref=e98]: R360-JRK-VIZ-001
+            - generic [ref=e99]: Product Visualization System — packaging renders, brand assets
+          - generic [ref=e100]:
+            - generic [ref=e101]: R360-JRK-BOARD-001
+            - generic [ref=e102]: Board Presentation — 25-slide institutional-quality, funder-ready
+          - generic [ref=e103]:
+            - generic [ref=e104]: R360-JRK-MKT-001
+            - generic [ref=e105]: Marketing & Digital Strategy — 8 sections, 24-month roadmap
+        - heading "Three Investment Scenarios" [level=2] [ref=e106]
+        - table [ref=e108]:
+          - rowgroup [ref=e109]:
+            - row "Scenario Tier 1 — Lean Tier 2 — Standard ★ Tier 3 — Full Entry" [ref=e110]:
+              - columnheader "Scenario" [ref=e111]
+              - columnheader "Tier 1 — Lean" [ref=e112]
+              - columnheader "Tier 2 — Standard ★" [ref=e113]
+              - columnheader "Tier 3 — Full Entry" [ref=e114]
+          - rowgroup [ref=e115]:
+            - row "Total Investment $24,000 $62,000 $96,000" [ref=e116]:
+              - cell "Total Investment" [ref=e117]
+              - cell "$24,000" [ref=e118]
+              - cell "$62,000" [ref=e119]
+              - cell "$96,000" [ref=e120]
+            - row "Year 1 ROI ~155% ~265% ~310%" [ref=e121]:
+              - cell "Year 1 ROI" [ref=e122]
+              - cell "~155%" [ref=e123]
+              - cell "~265%" [ref=e124]
+              - cell "~310%" [ref=e125]
+            - row "Breakeven Month 9–12 Month 8–11 Month 5–7" [ref=e126]:
+              - cell "Breakeven" [ref=e127]
+              - cell "Month 9–12" [ref=e128]
+              - cell "Month 8–11" [ref=e129]
+              - cell "Month 5–7" [ref=e130]
+            - row "Year 1 Gross Profit ~$40K ~$153K ~$310K" [ref=e131]:
+              - cell "Year 1 Gross Profit" [ref=e132]
+              - cell "~$40K" [ref=e133]
+              - cell "~$153K" [ref=e134]
+              - cell "~$310K" [ref=e135]
+        - paragraph [ref=e136]: "★ Ru'ya 360° Recommendation: Tier 2 Standard Launch — sufficient capital to execute correctly without overspending on a first-year proof of concept."
+        - generic [ref=e137]:
+          - generic [ref=e138]: The Single Decision Required Today
+          - generic [ref=e139]:
+            - text: Which tier do we activate?
+            - text: Lean ($24,000) · Standard ($62,000) · Full Market Entry ($96,000)
+        - generic [ref=e140]:
+          - generic [ref=e141]: STRIKE BITES — Management Mandate Meeting · Confidential
+          - generic [ref=e142]: Page 2 of 2
+    - generic [ref=e143]:
+      - generic [ref=e144]: DOC 03
+      - generic [ref=e145]: Proof of Work
+      - generic [ref=e147]: 2 pages

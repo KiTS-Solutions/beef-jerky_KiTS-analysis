@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Meeting Discovery Notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --turq-10: #e5f4f7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9pt;
+    color: var(--txt); background: #fff; line-height: 1.55;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; break-after: always; }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  .ph { background: var(--ocean); color: #fff; padding: 2.5mm 4mm; display: flex; justify-content: space-between; align-items: center; margin-bottom: 4mm; }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf { font-size: 7pt; color: var(--txt-dim); display: flex; justify-content: space-between; padding-top: 2mm; border-top: 1px solid var(--line); margin-top: 4mm; }
+
+  .sl { font-size: 7pt; font-weight: 700; color: var(--turq); letter-spacing: .3em; text-transform: uppercase; display: block; margin-bottom: 1mm; }
+  h1 { font-size: 18pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1mm; }
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 1.5mm 0 2.5mm; }
+  p { color: var(--txt-mid); margin-bottom: 1.5mm; font-size: 8.5pt; }
+
+  .meta-bar { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 3mm; margin-bottom: 3mm; }
+  .meta-field { border-bottom: 1.5px solid var(--turq); padding-bottom: 1mm; }
+  .meta-label { font-size: 6.5pt; font-weight: 800; color: var(--turq); letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: 3mm; }
+
+  .domain-block { border: 1px solid var(--line); margin-bottom: 2.5mm; page-break-inside: avoid; break-inside: avoid; }
+  .domain-header { background: var(--card); border-bottom: 1px solid var(--line); padding: 1.8mm 3mm; display: flex; justify-content: space-between; align-items: center; }
+  .domain-num { font-size: 7pt; font-weight: 800; color: var(--turq); letter-spacing: .1em; flex-shrink: 0; margin-right: 2mm; }
+  .domain-title { font-size: 9pt; font-weight: 700; color: var(--ocean); flex: 1; }
+  .domain-priority { font-size: 6.5pt; font-weight: 800; color: #fff; padding: .5mm 2mm; letter-spacing: .06em; text-transform: uppercase; flex-shrink: 0; }
+  .priority-critical { background: var(--coral); }
+  .priority-high { background: var(--turq); }
+  .priority-medium { background: var(--sunset); color: var(--txt); }
+  .priority-open { background: var(--ocean); }
+
+  .domain-body { padding: 1.5mm 3mm 2mm; }
+  .domain-prompt { font-size: 8pt; color: var(--txt-mid); font-style: italic; margin-bottom: 1.5mm; display: block; line-height: 1.4; }
+
+  .write-lines { display: flex; flex-direction: column; gap: 3mm; }
+  .write-line { border-bottom: .5px solid var(--line); height: 4mm; display: block; }
+
+  .sv-section-ph {
+    background: var(--ocean); color: #fff;
+    padding: 2mm 4mm; margin-top: 3mm; margin-bottom: 2mm;
+    display: flex; justify-content: space-between; align-items: center;
+    page-break-after: avoid; break-after: avoid;
+  }
+  .sv-section-ph-l { font-size: 8.5pt; font-weight: 800; }
+  .sv-section-ph-r { font-size: 7pt; color: rgba(255,255,255,.6); }
+
+  .sv-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; page-break-inside: avoid; break-inside: avoid; table-layout: fixed; }
+  .sv-table th { background: var(--ocean); color: rgba(255,255,255,.8); font-size: 7.5pt; font-weight: 700; padding: 2mm 3mm; text-align: left; letter-spacing: .06em; text-transform: uppercase; }
+  .sv-table td { padding: 2mm 3mm; border-bottom: .5px solid var(--line); vertical-align: middle; }
+  .sv-table tr:nth-child(even) td { background: var(--card); }
+  .sv-cat { font-weight: 700; color: var(--txt); }
+  .sv-lever { color: var(--txt-mid); font-size: 8pt; }
+  .sv-write { border-bottom: .5px solid var(--line); display: block; height: 5mm; }
+
+  .decision-box { border: 1px solid var(--line); border-top: 3px solid var(--ocean); padding: 4mm; margin-top: 3mm; background: var(--ocean-10); page-break-inside: avoid; break-inside: avoid; }
+  .decision-label { font-size: 7.5pt; font-weight: 800; color: var(--turq); letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: 3mm; }
+  .decision-row { display: flex; align-items: center; gap: 3mm; margin-bottom: 3mm; }
+  .decision-field-label { font-size: 8pt; font-weight: 600; color: var(--txt-mid); flex-shrink: 0; width: 42mm; }
+  .decision-write { flex: 1; border-bottom: 1px solid var(--txt-mid); height: 5mm; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — INTRO + META + D-01 to D-04 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Discovery Notes &nbsp;·&nbsp; R360-JRK-DIS-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Meeting Discovery Notes &middot; R360-JRK-DIS-001</span>
+  <h1>10-Domain Discovery Form</h1>
+  <div class="rule"></div>
+  <p>To be completed during the meeting. Capture answers to the 10 key discovery domains. This form travels with the mandate &mdash; responses inform execution decisions from Day 1.</p>
+
+  <div class="meta-bar">
+    <div class="meta-field"><span class="meta-label">Meeting Date</span></div>
+    <div class="meta-field"><span class="meta-label">Location / Format</span></div>
+    <div class="meta-field"><span class="meta-label">Attendees Present</span></div>
+    <div class="meta-field"><span class="meta-label">Tier Selected</span></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-01</span><span class="domain-title">Financial Capacity &amp; Capital Readiness</span><span class="domain-priority priority-critical">Critical</span></div>
+    <div class="domain-body"><span class="domain-prompt">Is capital immediately available, or does a financing event need to occur first? Are funds in USD or LBP? Single investor or multiple? Is there a co-investor?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-02</span><span class="domain-title">Decision-Making Authority</span><span class="domain-priority priority-critical">Critical</span></div>
+    <div class="domain-body"><span class="domain-prompt">Who has final say on expenditure, brand decisions, and account terms? Is there a board, partner, or family member whose sign-off is needed?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-03</span><span class="domain-title">Existing Assets &amp; Cross-Investment Savings</span><span class="domain-priority priority-high">High</span></div>
+    <div class="domain-body"><span class="domain-prompt">Does the client already have: office space, a vehicle, a lawyer on retainer, existing gym connections, an existing company, or import/export relationships? Any existing asset reduces the Budget requirement.</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-04</span><span class="domain-title">Manufacturing Relationships</span><span class="domain-priority priority-high">High</span></div>
+    <div class="domain-body"><span class="domain-prompt">Any existing relationship with a food manufacturer, butcher supplier, or production facility? Prior food industry experience? Preferred geographic area (Beirut / North / Bekaa)?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="pf"><span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span><span>Page 1 of 3</span></div>
+</div>
+
+<!-- PAGE 2 — D-05 to D-10 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Discovery Notes &nbsp;·&nbsp; R360-JRK-DIS-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-05</span><span class="domain-title">Gym &amp; Trade Network</span><span class="domain-priority priority-high">High</span></div>
+    <div class="domain-body"><span class="domain-prompt">How many gym owners / gym managers does the client personally know? Are there warm introductions available for the first 10&ndash;15 accounts? Any existing sports nutrition retail relationships?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-06</span><span class="domain-title">Risk Tolerance &amp; Timeline Expectations</span><span class="domain-priority priority-high">High</span></div>
+    <div class="domain-body"><span class="domain-prompt">Is the client expecting to see revenue within 3 or 6 months? How does the client think about the 8&ndash;11 month breakeven? Is there pressure for faster return, or is patience available?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-07</span><span class="domain-title">GCC &amp; Export Priority</span><span class="domain-priority priority-medium">Medium</span></div>
+    <div class="domain-body"><span class="domain-prompt">Is GCC export a Year 1 priority, or is Lebanon-first the clear mandate? Are there existing contacts in UAE or KSA? Does the client have a UAE entity or bank account already?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-08</span><span class="domain-title">Brand Preferences &amp; SKU Priorities</span><span class="domain-priority priority-medium">Medium</span></div>
+    <div class="domain-body"><span class="domain-prompt">Does the client have strong opinions on brand direction (from R360-JRK-008 brand study)? Preference on which SKU launches first &mdash; 40g single-serve or 120g multi-serve? Any flavor direction feedback?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-09</span><span class="domain-title">Reporting &amp; Governance Preferences</span><span class="domain-priority priority-medium">Medium</span></div>
+    <div class="domain-body"><span class="domain-prompt">How often does the client want written P&amp;L reports? Weekly WhatsApp updates acceptable, or formal monthly reviews preferred? Who else should receive reports (co-investor, accountant, family)?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="domain-block">
+    <div class="domain-header"><span class="domain-num">D-10</span><span class="domain-title">Concerns, Objections &amp; Open Questions</span><span class="domain-priority priority-open">Open</span></div>
+    <div class="domain-body"><span class="domain-prompt">What is the client's biggest concern about proceeding? What question has not been answered by the documents presented? What would make the client more comfortable with the mandate?</span><div class="write-lines"><span class="write-line"></span><span class="write-line"></span><span class="write-line"></span><span class="write-line"></span></div></div>
+  </div>
+
+  <div class="pf"><span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span><span>Page 2 of 3</span></div>
+</div>
+
+<!-- PAGE 3 — SAVINGS CAPTURE + DECISION BOX -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Discovery Notes &nbsp;·&nbsp; R360-JRK-DIS-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <div class="sv-section-ph">
+    <span class="sv-section-ph-l">Cross-Investment Savings &nbsp;&mdash;&nbsp; Existing Asset Capture</span>
+    <span class="sv-section-ph-r">Potential saving: $8,000&ndash;$15,000 if 3+ existing assets confirmed</span>
+  </div>
+
+  <table class="sv-table">
+    <thead>
+      <tr><th style="width:28%;">Budget Category</th><th style="width:28%;">Standard Allocation</th><th style="width:22%;">Existing Asset (if any)</th><th style="width:22%;">Revised Estimate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="sv-cat">Office / Workspace</td><td class="sv-lever">$1,500 (6 months)</td><td><span class="sv-write">&nbsp;</span></td><td><span class="sv-write">&nbsp;</span></td></tr>
+      <tr><td class="sv-cat">Vehicle / Transport</td><td class="sv-lever">$4,500 (van lease + fuel)</td><td><span class="sv-write">&nbsp;</span></td><td><span class="sv-write">&nbsp;</span></td></tr>
+      <tr><td class="sv-cat">Legal (SARL lawyer)</td><td class="sv-lever">$3,500 if no existing lawyer</td><td><span class="sv-write">&nbsp;</span></td><td><span class="sv-write">&nbsp;</span></td></tr>
+      <tr><td class="sv-cat">Production / Manufacturer</td><td class="sv-lever">Existing supply contact</td><td><span class="sv-write">&nbsp;</span></td><td><span class="sv-write">&nbsp;</span></td></tr>
+      <tr><td class="sv-cat">Banking (offshore)</td><td class="sv-lever">$1,500 if no USD offshore account</td><td><span class="sv-write">&nbsp;</span></td><td><span class="sv-write">&nbsp;</span></td></tr>
+      <tr><td class="sv-cat">Trade Network (gyms)</td><td class="sv-lever">Warm intros accelerate Month 2</td><td><span class="sv-write">&nbsp;</span></td><td><span class="sv-write">&nbsp;</span></td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:8pt; color:var(--txt-dim); font-style:italic; margin-top:1.5mm;">Maximum potential saving: $8,000&ndash;$15,000 if 3+ existing assets confirmed. Savings may reduce effective Tier 2 capital requirement or increase deployment toward production and marketing.</p>
+
+  <div class="decision-box">
+    <span class="decision-label">Meeting Outcome &amp; Next Steps</span>
+    <div class="decision-row"><span class="decision-field-label">Tier Decision:</span><div class="decision-write">&nbsp;</div></div>
+    <div class="decision-row"><span class="decision-field-label">First Tranche Amount:</span><div class="decision-write">&nbsp;</div></div>
+    <div class="decision-row"><span class="decision-field-label">Payment Timeline:</span><div class="decision-write">&nbsp;</div></div>
+    <div class="decision-row"><span class="decision-field-label">Agreement Signing Date:</span><div class="decision-write">&nbsp;</div></div>
+    <div class="decision-row"><span class="decision-field-label">Follow-Up Items:</span><div class="decision-write">&nbsp;</div></div>
+    <div class="decision-row"><span class="decision-field-label">Additional Notes:</span><div class="decision-write">&nbsp;</div></div>
+  </div>
+
+  <div class="pf"><span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span><span>Page 3 of 3</span></div>
+</div>
+
+</body>
+</html>

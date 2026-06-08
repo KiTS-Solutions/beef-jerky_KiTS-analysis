@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Financial Tiers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --sky-10: #e5f3f8; --turq-10: #e5f4f7; --sunset-10: #fef5e7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9.5pt;
+    color: var(--txt); background: #fff; line-height: 1.55;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .ph {
+    background: var(--ocean); color: #fff;
+    padding: 2.5mm 4mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 7mm;
+  }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf {
+    font-size: 7pt; color: var(--txt-dim);
+    display: flex; justify-content: space-between;
+    padding-top: 2.5mm; border-top: 1px solid var(--line); margin-top: 6mm;
+  }
+
+  .sl {
+    font-size: 7pt; font-weight: 700; color: var(--turq);
+    letter-spacing: .3em; text-transform: uppercase;
+    display: block; margin-bottom: 2mm;
+  }
+
+  h1 { font-size: 21pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1.5mm; }
+  h2 { font-size: 12pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm; margin-top: 5mm; }
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 4mm; }
+  p { color: var(--txt-mid); margin-bottom: 3mm; }
+
+  /* Tier comparison table */
+  .tier-table {
+    width: 100%; border-collapse: collapse; font-size: 9.5pt;
+    margin-bottom: 5mm; page-break-inside: avoid; table-layout: fixed;
+  }
+  .tier-table th {
+    padding: 3mm 3.5mm; text-align: center;
+    font-size: 8pt; font-weight: 700; letter-spacing: .06em;
+    border-bottom: 3px solid transparent; text-transform: uppercase;
+  }
+  .tier-table th.rh { text-align: left; background: var(--card); color: var(--txt-dim); font-size: 7.5pt; border-bottom-color: var(--line); }
+  .tier-table th.t1h { background: var(--sky-10); color: var(--ocean); border-bottom-color: var(--sky); }
+  .tier-table th.t2h { background: var(--sunset-10); color: #9a4710; border-bottom-color: var(--sunset); font-size: 9pt; }
+  .tier-table th.t3h { background: var(--turq-10); color: var(--turq); border-bottom-color: var(--turq); }
+
+  .tier-table td {
+    padding: 2.5mm 3.5mm; text-align: center;
+    border-bottom: 1px solid var(--line);
+    font-size: 9.5pt; font-weight: 600; color: var(--txt-dim);
+  }
+  .tier-table td.rl { text-align: left; background: var(--card); color: var(--txt); font-weight: 500; font-size: 9pt; }
+  .tier-table td.t1 { background: var(--sky-10); color: var(--ocean); }
+  .tier-table td.t2 { background: var(--sunset-10); color: #9a4710; font-weight: 800; font-size: 10.5pt; }
+  .tier-table td.t3 { background: var(--turq-10); color: var(--turq); }
+
+  .tier-table .section-row td {
+    background: var(--ocean); color: rgba(255,255,255,.85);
+    font-size: 7.5pt; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; padding: 1.5mm 3.5mm;
+    text-align: left; border-bottom: none;
+  }
+
+  /* Bar chart */
+  .bar-chart { margin: 5mm 0; page-break-inside: avoid; }
+  .bar-row { display: flex; align-items: center; margin-bottom: 2.5mm; gap: 3mm; }
+  .bar-lbl { font-size: 8pt; font-weight: 500; color: var(--txt-mid); width: 38mm; flex-shrink: 0; text-align: right; }
+  .bar-track { flex: 1; height: 5mm; background: var(--card); border: 1px solid var(--line); overflow: hidden; }
+  .bar-fill { height: 100%; display: block; }
+  .bar-val { font-size: 8.5pt; font-weight: 700; width: 18mm; flex-shrink: 0; }
+
+  /* Info boxes */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin-top: 4mm; page-break-inside: avoid; }
+  .info-box { border: 1px solid var(--line); border-top: 3px solid var(--turq); padding: 3mm 4mm; background: var(--card); }
+  .info-box-lbl { font-size: 7pt; font-weight: 700; color: var(--turq); letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: 1.5mm; }
+  .info-box-val { font-size: 14pt; font-weight: 800; color: var(--ocean); display: block; margin-bottom: 1mm; }
+  .info-box-desc { font-size: 8.5pt; color: var(--txt-mid); line-height: 1.45; }
+
+  .recommend-badge {
+    display: inline-block; font-size: 7pt; font-weight: 800;
+    background: var(--coral); color: #fff;
+    padding: .5mm 2.5mm; margin-left: 2mm; vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Financial Tiers &nbsp;·&nbsp; R360-JRK-FIN-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Financial Tiers &middot; R360-JRK-FIN-001</span>
+  <h1>Three Investment Scenarios</h1>
+  <div class="rule"></div>
+
+  <p>Three fully-costed launch scenarios have been modelled. Each tier is structurally complete &mdash; the question is not whether STRIKE BITES can launch, but how aggressively. Ru'ya 360° recommends Tier 2 Standard as the optimal first-year capital deployment: sufficient to execute correctly, without overcommitting to a proof-of-concept phase.</p>
+
+  <table class="tier-table">
+    <thead>
+      <tr>
+        <th class="rh" style="width:35%;">Metric</th>
+        <th class="t1h">TIER 1<br>Lean Launch</th>
+        <th class="t2h">TIER 2 &#9733;<br>Standard Launch</th>
+        <th class="t3h">TIER 3<br>Full Market Entry</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="section-row"><td colspan="4">Investment &amp; Returns</td></tr>
+      <tr>
+        <td class="rl">Total Investment</td>
+        <td class="t1">$24,000</td>
+        <td class="t2">$62,000</td>
+        <td class="t3">$96,000</td>
+      </tr>
+      <tr>
+        <td class="rl">Year 1 Gross Revenue</td>
+        <td class="t1">~$61K</td>
+        <td class="t2">~$215K</td>
+        <td class="t3">~$406K</td>
+      </tr>
+      <tr>
+        <td class="rl">Year 1 Gross Profit</td>
+        <td class="t1">~$40K</td>
+        <td class="t2">~$153K</td>
+        <td class="t3">~$310K</td>
+      </tr>
+      <tr>
+        <td class="rl">Net ROI (Year 1)</td>
+        <td class="t1">~155%</td>
+        <td class="t2">~265%</td>
+        <td class="t3">~310%</td>
+      </tr>
+      <tr class="section-row"><td colspan="4">Operations &amp; Timing</td></tr>
+      <tr>
+        <td class="rl">Breakeven (Months)</td>
+        <td class="t1">9&ndash;12</td>
+        <td class="t2">8&ndash;11</td>
+        <td class="t3">5&ndash;7</td>
+      </tr>
+      <tr>
+        <td class="rl">Launch Timeline</td>
+        <td class="t1">Month 3</td>
+        <td class="t2">Month 2&ndash;3</td>
+        <td class="t3">Month 2</td>
+      </tr>
+      <tr>
+        <td class="rl">Initial SKUs</td>
+        <td class="t1">1 SKU</td>
+        <td class="t2">2 SKUs</td>
+        <td class="t3">3 SKUs</td>
+      </tr>
+      <tr class="section-row"><td colspan="4">Scope &amp; Channels</td></tr>
+      <tr>
+        <td class="rl">Gym Accounts (Year 1)</td>
+        <td class="t1">10&ndash;15</td>
+        <td class="t2">25&ndash;40</td>
+        <td class="t3">60&ndash;80</td>
+      </tr>
+      <tr>
+        <td class="rl">E-Commerce Launch</td>
+        <td class="t1">Month 6</td>
+        <td class="t2">Month 3</td>
+        <td class="t3">Month 2</td>
+      </tr>
+      <tr>
+        <td class="rl">GCC Export</td>
+        <td class="t1">Year 2</td>
+        <td class="t2">Q4 Year 1</td>
+        <td class="t3">Q3 Year 1</td>
+      </tr>
+      <tr>
+        <td class="rl">Marketing Budget</td>
+        <td class="t1">$9,022</td>
+        <td class="t2">$27,023</td>
+        <td class="t3">$58,168</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Investment vs. Projected Year 1 Gross Profit</h2>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <span class="bar-lbl">Tier 1 Investment</span>
+      <div class="bar-track"><span class="bar-fill" style="width:25%; background:var(--sky); opacity:.7;"></span></div>
+      <span class="bar-val" style="color:var(--ocean);">$24K</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Tier 1 Yr 1 Profit</span>
+      <div class="bar-track"><span class="bar-fill" style="width:41.7%; background:var(--sky);"></span></div>
+      <span class="bar-val" style="color:var(--ocean);">$40K</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Tier 2 Investment</span>
+      <div class="bar-track"><span class="bar-fill" style="width:64.6%; background:var(--sunset); opacity:.7;"></span></div>
+      <span class="bar-val" style="color:#9a4710;">$62K</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Tier 2 Yr 1 Profit</span>
+      <div class="bar-track"><span class="bar-fill" style="width:100%; background:var(--sunset);"></span></div>
+      <span class="bar-val" style="color:#9a4710;">$153K &#9733;</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Tier 3 Investment</span>
+      <div class="bar-track"><span class="bar-fill" style="width:100%; background:var(--turq); opacity:.55;"></span></div>
+      <span class="bar-val" style="color:var(--turq);">$96K</span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-lbl">Tier 3 Yr 1 Profit</span>
+      <div class="bar-track"><span class="bar-fill" style="width:100%; background:var(--turq);"></span></div>
+      <span class="bar-val" style="color:var(--turq);">$310K</span>
+    </div>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-box">
+      <span class="info-box-lbl">Ru'ya 360° Recommendation <span class="recommend-badge">&#9733; TIER 2</span></span>
+      <span class="info-box-val">$62,000 Standard</span>
+      <span class="info-box-desc">Sufficient capital to launch with two SKUs, 25&ndash;40 gym accounts, and a Q4 GCC export pathway. The marginal improvement of Tier 3 does not justify doubling year-one exposure for an initial proof-of-concept.</span>
+    </div>
+    <div class="info-box">
+      <span class="info-box-lbl">Capital Deployment Timeline</span>
+      <span class="info-box-val">Milestone-Gated</span>
+      <span class="info-box-desc">No lump-sum commitment required. Investment is deployed in 5 gated tranches aligned to verified completion of legal, brand, manufacturing, launch, and growth milestones. Budget never advances ahead of proof.</span>
+    </div>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 1 of 1</span>
+  </div>
+</div>
+
+</body>
+</html>

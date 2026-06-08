@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Investment Breakdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9pt;
+    color: var(--txt); background: #fff; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .ph {
+    background: var(--ocean); color: #fff;
+    padding: 2.5mm 4mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 6mm;
+  }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf {
+    font-size: 7pt; color: var(--txt-dim);
+    display: flex; justify-content: space-between;
+    padding-top: 2mm; border-top: 1px solid var(--line); margin-top: 5mm;
+  }
+
+  .sl {
+    font-size: 7pt; font-weight: 700; color: var(--turq);
+    letter-spacing: .3em; text-transform: uppercase;
+    display: block; margin-bottom: 1.5mm;
+  }
+
+  h1 { font-size: 20pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1mm; }
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 4mm; }
+
+  /* Summary strip */
+  .summary-strip {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 2mm; margin-bottom: 4mm; page-break-inside: avoid;
+  }
+  .sum-cell { background: var(--card); border: 1px solid var(--line); padding: 2mm 2.5mm; text-align: center; }
+  .sum-cat { font-size: 6.5pt; font-weight: 700; color: var(--turq); letter-spacing: .06em; display: block; margin-bottom: .5mm; text-transform: uppercase; }
+  .sum-total { font-size: 9.5pt; font-weight: 800; color: var(--ocean); }
+
+  /* Category block */
+  .cat-block { border: 1px solid var(--line); margin-bottom: 3.5mm; page-break-inside: avoid; }
+  .cat-header {
+    background: var(--ocean); padding: 2.5mm 4mm;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .cat-name { font-size: 10pt; font-weight: 700; color: #fff; }
+  .cat-total { font-size: 10pt; font-weight: 800; color: var(--lime); }
+  .cat-phase { font-size: 7pt; color: rgba(255,255,255,.5); letter-spacing: .08em; margin-left: 4mm; }
+
+  .cat-why {
+    background: var(--ocean-10); padding: 2mm 4mm;
+    border-bottom: 1px solid var(--line);
+    font-size: 8pt; color: var(--txt-mid); font-style: italic; line-height: 1.4;
+  }
+
+  .line-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .line-table tr { page-break-inside: avoid; }
+  .line-table td { padding: 1.8mm 4mm; border-bottom: .5px solid var(--line); font-size: 8.5pt; vertical-align: top; }
+  .line-table tr:last-child td { border-bottom: none; }
+  .line-table tr:nth-child(even) td { background: var(--card); }
+
+  .line-desc { color: var(--txt); width: auto; line-height: 1.3; }
+  .line-note { font-size: 7.5pt; color: var(--txt-dim); display: block; margin-top: .5mm; font-style: italic; }
+  .line-amount {
+    font-size: 9pt; font-weight: 700; color: var(--turq);
+    text-align: right; white-space: nowrap; width: 18mm;
+  }
+
+  /* Grand total */
+  .grand-total {
+    background: var(--ocean); color: #fff;
+    padding: 4mm 5mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-top: 4mm; page-break-inside: avoid;
+  }
+  .gt-label { font-size: 8pt; font-weight: 700; color: var(--lime); letter-spacing: .18em; text-transform: uppercase; }
+  .gt-sub { font-size: 8pt; color: rgba(255,255,255,.5); margin-top: .5mm; }
+  .gt-value { font-size: 22pt; font-weight: 800; color: var(--lime); }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — CATEGORIES 1–2 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Investment Breakdown &nbsp;·&nbsp; R360-JRK-BUD-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Investment Breakdown &middot; R360-JRK-BUD-001 &middot; Tier 2 Standard</span>
+  <h1>$62,000 &mdash; Line by Line</h1>
+  <div class="rule"></div>
+
+  <div class="summary-strip">
+    <div class="sum-cell"><span class="sum-cat">Legal</span><span class="sum-total">$10,500</span></div>
+    <div class="sum-cell"><span class="sum-cat">Brand</span><span class="sum-total">$10,000</span></div>
+    <div class="sum-cell"><span class="sum-cat">Production</span><span class="sum-total">$12,500</span></div>
+    <div class="sum-cell"><span class="sum-cat">Transport</span><span class="sum-total">$4,500</span></div>
+    <div class="sum-cell"><span class="sum-cat">Marketing</span><span class="sum-total">$7,000</span></div>
+  </div>
+  <div class="summary-strip" style="margin-bottom:4mm;">
+    <div class="sum-cell"><span class="sum-cat">Operations</span><span class="sum-total">$4,500</span></div>
+    <div class="sum-cell"><span class="sum-cat">Technology</span><span class="sum-total">$1,800</span></div>
+    <div class="sum-cell"><span class="sum-cat">Banking</span><span class="sum-total">$2,000</span></div>
+    <div class="sum-cell"><span class="sum-cat">Advisory</span><span class="sum-total">$7,500</span></div>
+    <div class="sum-cell"><span class="sum-cat">Contingency</span><span class="sum-total">$1,700</span></div>
+  </div>
+
+  <!-- CAT 1 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">01 &mdash; Legal &amp; Regulatory</span><span class="cat-phase">Phase 0 · M0&ndash;M2</span></div>
+      <span class="cat-total">$10,500</span>
+    </div>
+    <div class="cat-why">File Day 1. The MoPH 2&ndash;4 month processing clock starts on submission &mdash; not on decision day. Trademark must be filed before any account sees the STRIKE name.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">SARL registration &mdash; notary + Commercial Register + mandatory corporate lawyer<span class="line-note">All-in per Mattar Law / PwC Lebanon standard. Articles, CR filing, mandatory attorney retainer included.</span></td><td class="line-amount">$3,500</td></tr>
+      <tr><td class="line-desc">Tax ID + NSSF registration + business licensing</td><td class="line-amount">$400</td></tr>
+      <tr><td class="line-desc">MoPH food product registration &mdash; 2 SKUs<span class="line-note">2&ndash;4 month processing each. Both SKUs filed simultaneously from Day 1. Clock must start immediately.</span></td><td class="line-amount">$2,000</td></tr>
+      <tr><td class="line-desc">Lab testing &mdash; nutritional panel + microbiology, 2 SKUs &times; 2 rounds<span class="line-note">Round 1: MoPH submission file. Round 2: batch QC on first production run. CCIAS ISO 17025 accredited.</span></td><td class="line-amount">$1,200</td></tr>
+      <tr><td class="line-desc">Halal certification &mdash; Dar Al-Fatwa Lebanon, full scope<span class="line-note">Lebanon-only. 3&ndash;6 week timeline. Unlocks all gym, pharmacy, modern trade, and GCC export channels.</span></td><td class="line-amount">$800</td></tr>
+      <tr><td class="line-desc">Trademark &mdash; Class 29 (food products) + Class 35 (retail services)<span class="line-note">Class 35 protects the commercial channel, not just the product. Required before any GCC expansion.</span></td><td class="line-amount">$1,200</td></tr>
+      <tr><td class="line-desc">GS1 Lebanon &mdash; 2 barcodes + annual membership</td><td class="line-amount">$400</td></tr>
+      <tr><td class="line-desc">IP lawyer fees &mdash; filing + 6-month correspondence</td><td class="line-amount">$600</td></tr>
+      <tr><td class="line-desc">Food regulatory consultant &mdash; MoPH submission support<span class="line-note">Navigates informal MoPH process. $400 reduces rejection risk on a $2,000 submission.</span></td><td class="line-amount">$400</td></tr>
+    </table>
+  </div>
+
+  <!-- CAT 2 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">02 &mdash; Brand &amp; Design</span><span class="cat-phase">Phase 0 · M0&ndash;M2</span></div>
+      <span class="cat-total">$10,000</span>
+    </div>
+    <div class="cat-why">Packaging is the product&rsquo;s first commercial act. STRIKE competes against Jack Link&rsquo;s ($5.62) on the same gym shelf. The R360-JRK-006 brand brief is complete &mdash; this is execution cost, not planning cost.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">Full brand identity system &mdash; wordmark, symbol, palette, typography, brand guidelines<span class="line-note">R360-JRK-006 brief ready for designer. Trilingual system: Arabic / English / French.</span></td><td class="line-amount">$4,000</td></tr>
+      <tr><td class="line-desc">Packaging design &mdash; 2 SKUs, 2 sizes each (40g single-serve + 120g multi-serve)</td><td class="line-amount">$2,500</td></tr>
+      <tr><td class="line-desc">First packaging print run &mdash; 2 SKUs (matte laminate + UV spot varnish)<span class="line-note">Minimum viable quantity. Unit cost falls 40&ndash;60% at 10&times; volume.</span></td><td class="line-amount">$1,800</td></tr>
+      <tr><td class="line-desc">Product &amp; lifestyle photography &mdash; 2 shoot sessions<span class="line-note">Shoot 1: pure product on black background. Shoot 2: gym lifestyle / athlete context.</span></td><td class="line-amount">$1,000</td></tr>
+      <tr><td class="line-desc">Label compliance design &mdash; trilingual AR/EN/FR MoPH layout<span class="line-note">Nutritional panel, allergen declaration, Halal mark, lot number, manufacturer address.</span></td><td class="line-amount">$500</td></tr>
+      <tr><td class="line-desc">Printed brand collateral &mdash; trade folders, letterhead, envelope system</td><td class="line-amount">$200</td></tr>
+    </table>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 1 of 3</span>
+  </div>
+</div>
+
+<!-- PAGE 2 — CATEGORIES 3–6 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Investment Breakdown &nbsp;·&nbsp; R360-JRK-BUD-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <!-- CAT 3 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">03 &mdash; Production &amp; Supply</span><span class="cat-phase">Phase 1 · M1&ndash;M4</span></div>
+      <span class="cat-total">$12,500</span>
+    </div>
+    <div class="cat-why">At $1.20 COGS and $4.50 RRP, every gym-wholesale unit returns $1.95 gross profit. First batch is simultaneously the revenue engine and the proof-of-product for every account conversation.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">First production batch &mdash; 2 SKUs (40g + 120g), 90-day stock<span class="line-note">Lebanese BBQ flavor profile: Aleppo pepper, sumac, pomegranate, cedar smoke. Zero added sugar.</span></td><td class="line-amount">$9,000</td></tr>
+      <tr><td class="line-desc">Packaging material procurement &mdash; barrier pouches + Lebanon import duties<span class="line-note">Lebanon&ndash;Turkey FTA unratified &rarr; MFN tariff + 11% VAT on CIF value applies to imported pouches.</span></td><td class="line-amount">$1,500</td></tr>
+      <tr><td class="line-desc">QC setup &mdash; sampling kit, documentation system, batch SOPs</td><td class="line-amount">$400</td></tr>
+      <tr><td class="line-desc">Per-batch microbiology testing &times; 2 rounds (CCIAS, ISO 17025)<span class="line-note">Mandatory each production run. Required for Halal integrity documentation.</span></td><td class="line-amount">$300</td></tr>
+      <tr><td class="line-desc">Warehousing &mdash; 6 months, ambient food-safe storage<span class="line-note">No cold chain. Barrier packaging + ambient temp/humidity monitoring sufficient for shelf stability.</span></td><td class="line-amount">$1,000</td></tr>
+      <tr><td class="line-desc">Storage shelving + ambient temperature/humidity monitoring equipment</td><td class="line-amount">$300</td></tr>
+    </table>
+  </div>
+
+  <!-- CAT 4 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">04 &mdash; Transportation &amp; Logistics</span><span class="cat-phase">Phase 1&ndash;2 · M1&ndash;M6</span></div>
+      <span class="cat-total">$4,500</span>
+    </div>
+    <div class="cat-why">The team personally visits and delivers to every account bi-weekly. 60&ndash;80 accounts across Beirut, Metn, Keserwan, Jounieh, and Tripoli require a dedicated vehicle. Fuel at $1.30/L for 95-octane on a 250&ndash;350L/month route costs $350&ndash;500/month.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">Dedicated delivery vehicle &mdash; used van lease (6 months &times; $380/month)<span class="line-note">Essential for bi-weekly visits across 60&ndash;80 accounts. Relationship model, not distributor-dependent.</span></td><td class="line-amount">$2,280</td></tr>
+      <tr><td class="line-desc">Fuel &mdash; 6 months (250&ndash;350L/month &times; ~$1.30/L)<span class="line-note">Route: Beirut, Ashrafieh, Metn, Keserwan, Jounieh, Tripoli. ~$370&ndash;500/month at Lebanese pump price.</span></td><td class="line-amount">$2,220</td></tr>
+    </table>
+  </div>
+
+  <!-- CAT 5 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">05 &mdash; Non-Digital Marketing &amp; Activation</span><span class="cat-phase">Phase 1&ndash;2 · M2&ndash;M6</span></div>
+      <span class="cat-total">$7,000</span>
+    </div>
+    <div class="cat-why">82.6% of MENA sports nutrition purchases are in physical stores. The trainer network &mdash; 20 ambassadors at Tier 2 &mdash; functions as a zero-fixed-salary sales force reaching 400&ndash;1,000 active gym clients.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">In-gym branded display stands &mdash; 60 accounts &times; $15<span class="line-note">STRIKE-branded unit installed by team on first delivery day. No account opens without a display.</span></td><td class="line-amount">$900</td></tr>
+      <tr><td class="line-desc">POS countertop display hardware &mdash; premium acrylic units, 60 accounts</td><td class="line-amount">$800</td></tr>
+      <tr><td class="line-desc">Shelf talkers, price cards, and brand posters</td><td class="line-amount">$500</td></tr>
+      <tr><td class="line-desc">Trade presentation kits &mdash; professionally printed, 100+ copies<span class="line-note">Account-opening kit: product spec, pricing, channel terms, STRIKE brand story.</span></td><td class="line-amount">$700</td></tr>
+      <tr><td class="line-desc">Product samples &mdash; 50+ accounts, 4&ndash;5 units each<span class="line-note">Product at COGS. Every account visit begins with product in hand. Non-negotiable.</span></td><td class="line-amount">$900</td></tr>
+      <tr><td class="line-desc">Trainer ambassador program &mdash; 20 trainers &times; $60 starter package<span class="line-note">Package: 24 units + referral cards + branded shaker. 20 trainers = 400&ndash;1,000 client reach.</span></td><td class="line-amount">$1,200</td></tr>
+      <tr><td class="line-desc">Product sampling events &mdash; 2 CrossFit / fitness expo events<span class="line-note">Event permit, sampling table, branded tablecloth. Maximum word-of-mouth ROI.</span></td><td class="line-amount">$700</td></tr>
+      <tr><td class="line-desc">Trade show / fitness expo participation &mdash; 1 event</td><td class="line-amount">$400</td></tr>
+      <tr><td class="line-desc">B2B first-meeting gifting &mdash; branded product boxes<span class="line-note">Left with pharmacy / modern trade buyers. $5&ndash;8 cost. Impression worth $500&ndash;5,000 in listing value.</span></td><td class="line-amount">$300</td></tr>
+      <tr><td class="line-desc">Business cards + premium stationery</td><td class="line-amount">$250</td></tr>
+      <tr><td class="line-desc">Branded apparel &mdash; sales team, 5 sets (shirt + cap)</td><td class="line-amount">$350</td></tr>
+    </table>
+  </div>
+
+  <!-- CAT 6 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">06 &mdash; Operational Overhead</span><span class="cat-phase">Phase 0&ndash;2 · M0&ndash;M6</span></div>
+      <span class="cat-total">$4,500</span>
+    </div>
+    <div class="cat-why">Running a food startup in Lebanon means generator dependency (3&ndash;6 hrs/day grid supply), workspace for a 3&ndash;4 person team, mandatory product liability insurance for retail placement, and communication costs.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">Workspace / co-working &mdash; 6 months &times; $250/month<span class="line-note">Regus Lebanon dedicated desk: $209&ndash;329/month. Co-working from $150/month.</span></td><td class="line-amount">$1,500</td></tr>
+      <tr><td class="line-desc">Product liability insurance &mdash; food brand (12-month policy)<span class="line-note">Required before first retail placement. Covers all distribution channels.</span></td><td class="line-amount">$800</td></tr>
+      <tr><td class="line-desc">Commercial vehicle insurance &mdash; delivery van</td><td class="line-amount">$500</td></tr>
+      <tr><td class="line-desc">Generator / electricity &mdash; warehouse + office (6 months &times; $90/month)<span class="line-note">Lebanon commercial rate $0.27&ndash;0.32/kWh. Generator subscription essential for reliable ops.</span></td><td class="line-amount">$540</td></tr>
+      <tr><td class="line-desc">Phone plans &mdash; 3 team members &times; 6 months &times; $27/month</td><td class="line-amount">$500</td></tr>
+      <tr><td class="line-desc">Internet connectivity &mdash; office + warehouse (6 months &times; $60/month)</td><td class="line-amount">$360</td></tr>
+      <tr><td class="line-desc">Office supplies, printing, miscellaneous stationery</td><td class="line-amount">$200</td></tr>
+      <tr><td class="line-desc">Miscellaneous administrative + operational</td><td class="line-amount">$100</td></tr>
+    </table>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 2 of 3</span>
+  </div>
+</div>
+
+<!-- PAGE 3 — CATEGORIES 7–10 + GRAND TOTAL -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Investment Breakdown &nbsp;·&nbsp; R360-JRK-BUD-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <!-- CAT 7 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">07 &mdash; Technology &amp; Tools</span><span class="cat-phase">Phase 0 · Month 0</span></div>
+      <span class="cat-total">$1,800</span>
+    </div>
+    <div class="cat-why">Minimum viable stack for monthly P&amp;L reporting, account management, and inventory control. Without accounting software, there is no P&amp;L. Without inventory tracking, restock triggers are guesswork.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">Informational website &mdash; design + 12-month hosting<span class="line-note">Non-e-commerce. STRIKE brand-consistent. Credibility anchor for pharmacy and modern trade buyers.</span></td><td class="line-amount">$600</td></tr>
+      <tr><td class="line-desc">Inventory management &mdash; Zoho Inventory or equivalent (12 months)<span class="line-note">Per-SKU stock tracking, reorder alerts, integrated with accounting.</span></td><td class="line-amount">$400</td></tr>
+      <tr><td class="line-desc">Accounting software &mdash; Zoho Books Standard (12 months)<span class="line-note">Full invoicing, bank reconciliation, P&amp;L. Monthly board reports generated from this system.</span></td><td class="line-amount">$300</td></tr>
+      <tr><td class="line-desc">Mobile order management tool &mdash; field use by team</td><td class="line-amount">$200</td></tr>
+      <tr><td class="line-desc">Digital asset management + cloud file storage</td><td class="line-amount">$200</td></tr>
+      <tr><td class="line-desc">Basic CRM &mdash; account tracking + bi-weekly visit log (HubSpot free)<span class="line-note">60&ndash;80 accounts require structured tracking. Visit log drives the check-in protocol.</span></td><td class="line-amount">$100</td></tr>
+    </table>
+  </div>
+
+  <!-- CAT 8 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">08 &mdash; Banking &amp; Financial Setup</span><span class="cat-phase">Phase 0 · Month 0&ndash;1</span></div>
+      <span class="cat-total">$2,000</span>
+    </div>
+    <div class="cat-why">Circular 158 banking controls and Lebanon&rsquo;s FATF grey-listing mean local banks cannot reliably process international USD transfers. An offshore USD account (Cyprus or UAE) is required for SWIFT payments to Turkish packaging suppliers.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">Offshore USD account setup &mdash; Cyprus or UAE (one-time)<span class="line-note">Required for Turkish packaging supplier, Halal auditors, any international SWIFT payment.</span></td><td class="line-amount">$1,500</td></tr>
+      <tr><td class="line-desc">International wire transfer fees &mdash; 6 months &times; 2 supplier payments<span class="line-note">$25&ndash;50/SWIFT transfer &times; ~6 transfers over the 6-month launch period.</span></td><td class="line-amount">$300</td></tr>
+      <tr><td class="line-desc">Banking compliance / KYC documentation preparation</td><td class="line-amount">$200</td></tr>
+    </table>
+  </div>
+
+  <!-- CAT 9 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">09 &mdash; Advisory &amp; Management (Ru'ya 360°)</span><span class="cat-phase">Phase 0&ndash;2 · M0&ndash;M6</span></div>
+      <span class="cat-total">$7,500</span>
+    </div>
+    <div class="cat-why">Milestone-gated &mdash; each phase payment releases only upon demonstrated delivery against defined milestones. This is the operational cost of executing a 38-step launch plan: not a consulting retainer for advice.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">Management fee &mdash; Phase 0 Foundation (M0&ndash;M2)<span class="line-note">Milestone: SARL registered · Trademark filed · Brand identity approved · MoPH submitted · Supply agreement signed.</span></td><td class="line-amount">$1,800</td></tr>
+      <tr><td class="line-desc">Management fee &mdash; Phase 1 Launch (M2&ndash;M4)<span class="line-note">Milestone: 30+ active accounts · First batch delivered · All displays installed · 20 trainers onboarded.</span></td><td class="line-amount">$1,800</td></tr>
+      <tr><td class="line-desc">Management fee &mdash; Phase 2 Scale (M4&ndash;M6)<span class="line-note">Milestone: 60&ndash;80 accounts · Pharmacy channel entered · Monthly revenue &ge;$9K · Second batch ordered.</span></td><td class="line-amount">$1,400</td></tr>
+      <tr><td class="line-desc">Field logistics coordinator &mdash; part-time (6 months &times; $300/month)<span class="line-note">Delivery scheduling, account stock checks, reorder processing, and CRM maintenance.</span></td><td class="line-amount">$1,800</td></tr>
+      <tr><td class="line-desc">Client engagement expenses &mdash; travel, reporting tools, account visit costs</td><td class="line-amount">$700</td></tr>
+    </table>
+  </div>
+
+  <!-- CAT 10 -->
+  <div class="cat-block">
+    <div class="cat-header">
+      <div><span class="cat-name">10 &mdash; Working Capital &amp; Contingency</span><span class="cat-phase">Always-On · M0&ndash;M12</span></div>
+      <span class="cat-total">$1,700</span>
+    </div>
+    <div class="cat-why">Sale-or-return placement means cash does not return immediately. 60&ndash;80 accounts on consignment = product in market, cash not yet back. Buffer covers the 30&ndash;60 day float and absorbs MoPH fee variance and unexpected lab re-testing.</div>
+    <table class="line-table">
+      <tr><td class="line-desc">Working capital float &mdash; sale-or-return period (Month 2&ndash;4)<span class="line-note">60&ndash;80 accounts &times; ~$70 avg first placement = $4,200&ndash;5,600 product at risk. Buffer covers operations.</span></td><td class="line-amount">$1,200</td></tr>
+      <tr><td class="line-desc">Contingency reserve &mdash; MoPH variance, GS1 confirmation, unexpected re-testing</td><td class="line-amount">$500</td></tr>
+    </table>
+  </div>
+
+  <div class="grand-total">
+    <div>
+      <div class="gt-label">Tier 2 &mdash; Standard Launch &middot; Total Investment</div>
+      <div class="gt-sub">10 categories &nbsp;&middot;&nbsp; 44 line items &nbsp;&middot;&nbsp; milestone-gated deployment &nbsp;&middot;&nbsp; v2.0 revised figures</div>
+    </div>
+    <span class="gt-value">$62,000</span>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 3 of 3</span>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Complete Print Suite (12 Documents)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ── Master @page rule (all documents share this in print) ── */
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #dde6ea;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  /* Each document section is a self-contained block */
+  .doc-section { display: block; }
+
+  /* Print: force page break between documents */
+  .doc-section + .doc-section { page-break-before: always; break-before: always; }
+
+  /* ── Screen-only styles ── */
+  @media screen {
+
+    /* Fixed top control bar */
+    .print-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: #2f5b6b; color: #fff;
+      display: flex; align-items: center; gap: 16px;
+      padding: 0 24px; height: 54px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.35);
+      font-family: 'Montserrat', Arial, sans-serif;
+    }
+    .bar-logo { font-size: 11pt; font-weight: 800; white-space: nowrap; letter-spacing: .02em; }
+    .bar-logo em { color: #ea5c3f; font-style: normal; }
+    .bar-rule { width: 1px; height: 26px; background: rgba(255,255,255,.2); flex-shrink: 0; }
+    .bar-status {
+      font-size: 8.5pt; color: rgba(255,255,255,.78); flex: 1; min-width: 0;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .bar-pill {
+      font-size: 7.5pt; font-weight: 700; color: #2f5b6b; background: #e7e569;
+      padding: 3px 9px; white-space: nowrap; flex-shrink: 0; letter-spacing: .04em;
+    }
+    .bar-btn {
+      background: #ea5c3f; color: #fff; border: none; cursor: pointer;
+      font-family: 'Montserrat', Arial, sans-serif; font-weight: 800;
+      font-size: 9pt; padding: 0 24px; height: 38px;
+      letter-spacing: .05em; white-space: nowrap; flex-shrink: 0;
+      transition: background .15s;
+    }
+    .bar-btn:hover:not(:disabled) { background: #c84830; }
+    .bar-btn:disabled {
+      background: rgba(255,255,255,.12); cursor: not-allowed;
+      color: rgba(255,255,255,.35); border: 1px solid rgba(255,255,255,.15);
+    }
+    .bar-btn.ready { animation: btn-pulse 2s ease-in-out infinite; }
+
+    @keyframes btn-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(234,92,63,.5); }
+      55% { box-shadow: 0 0 0 10px rgba(234,92,63,0); }
+    }
+
+    /* Thin progress strip under bar */
+    .progress-strip {
+      position: fixed; top: 54px; left: 0; right: 0; z-index: 9998;
+      height: 3px; background: rgba(0,0,0,.1);
+    }
+    .progress-fill {
+      height: 100%; background: #e7e569; width: 0%;
+      transition: width .35s ease;
+    }
+
+    body { padding-top: 57px; }
+
+    /* Suite container */
+    #suite {
+      max-width: 820px; margin: 28px auto 80px;
+      padding: 0 20px;
+      display: flex; flex-direction: column; gap: 0;
+    }
+
+    /* Document label — shown between each doc in screen view */
+    .doc-label {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 0 8px; margin-top: 4px;
+    }
+    .doc-label:first-child { padding-top: 4px; }
+    .dl-num {
+      font-size: 7pt; font-weight: 800; color: #2f5b6b;
+      background: #e7e569; padding: 2px 7px;
+      letter-spacing: .08em; flex-shrink: 0;
+    }
+    .dl-title {
+      font-size: 8.5pt; font-weight: 700; color: #2f5b6b;
+      flex-shrink: 0;
+    }
+    .dl-rule { flex: 1; height: 1px; background: #c5dde4; }
+    .dl-pages {
+      font-size: 7.5pt; color: #6b8896; font-weight: 500;
+      white-space: nowrap; flex-shrink: 0;
+    }
+
+    /* Document card wrapper */
+    .doc-section {
+      background: #fff;
+      box-shadow: 0 2px 18px rgba(47,91,107,.14), 0 1px 4px rgba(0,0,0,.06);
+    }
+
+    .error-msg {
+      padding: 12px 16px; background: #fce8e5;
+      border-left: 4px solid #ea5c3f;
+      font-size: 9pt; color: #8b1a1a;
+    }
+  }
+
+  /* ── Print-only styles ── */
+  @media print {
+    .print-bar, .progress-strip, .doc-label { display: none !important; }
+    body { background: #fff; padding: 0; }
+    #suite { margin: 0; padding: 0; max-width: none; }
+    .doc-section { box-shadow: none; background: transparent; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Control bar (screen only) -->
+<div class="print-bar">
+  <div class="bar-logo">Ru'ya <em>360</em>° &nbsp;·&nbsp; STRIKE BITES</div>
+  <div class="bar-rule"></div>
+  <div class="bar-status" id="barStatus">Initialising…</div>
+  <div class="bar-pill" id="barPill" style="display:none"></div>
+  <button class="bar-btn" id="printBtn" disabled onclick="window.print()">Loading…</button>
+</div>
+<div class="progress-strip"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- Combined document container -->
+<div id="suite"></div>
+
+<script>
+/* ──────────────────────────────────────────────────────
+   Document manifest
+────────────────────────────────────────────────────── */
+const DOCS = [
+  { file: '01_cover.html',               title: 'Cover Page',                    pages: 1  },
+  { file: '02_executive_summary.html',   title: 'Executive Summary',             pages: 2  },
+  { file: '03_proof_of_work.html',       title: 'Proof of Work',                 pages: 2  },
+  { file: '04_financial_tiers.html',     title: 'Financial Tiers',               pages: 1  },
+  { file: '05_investment_breakdown.html',title: 'Investment Breakdown',           pages: 3  },
+  { file: '06_revenue_projections.html', title: 'Revenue Projections',            pages: 2  },
+  { file: '07_go_to_market.html',        title: 'Go-to-Market Strategy',          pages: 2  },
+  { file: '08_competitive_analysis.html',title: 'Competitive Analysis',           pages: 1  },
+  { file: '09_management_mandate.html',  title: 'Management Mandate Agreement',   pages: 3  },
+  { file: '10_discovery_notes.html',     title: 'Meeting Discovery Notes',        pages: 3  },
+  { file: '11_marketing_strategy.html',  title: 'Marketing & Digital Strategy',   pages: 4  },
+  { file: '12_qa_bank.html',             title: 'Investor Q&A Bank',              pages: 1  },
+];
+const TOTAL_PAGES = DOCS.reduce((s, d) => s + d.pages, 0);
+
+/* ──────────────────────────────────────────────────────
+   CSSOM-based CSS scoping
+   Transforms each document's styles so they only apply
+   inside their own .doc-section[data-doc="filename"].
+   This prevents body/root rules from one doc leaking
+   into another.
+────────────────────────────────────────────────────── */
+const STYLE_RULE     = 1;
+const MEDIA_RULE     = 4;
+const KEYFRAMES_RULE = 7;
+const SUPPORTS_RULE  = 12;
+
+function transformSelector(sel, scope) {
+  sel = sel.trim();
+  if (sel === 'body' || sel === 'html' || sel === 'html, body') return scope;
+  if (sel === ':root') return ':root';          // keep global for CSS custom props
+  if (sel === '*')     return `${scope}, ${scope} *`;
+  // pseudo-elements of *
+  if (sel === '*::before' || sel === '*::after') return `${scope} ${sel}`;
+  // Already scoped or is a pseudo of :root — leave as-is
+  if (sel.startsWith(':root')) return sel;
+  return `${scope} ${sel}`;
+}
+
+function transformRule(rule, scope) {
+  if (rule.type === STYLE_RULE) {
+    const scoped = rule.selectorText
+      .split(',')
+      .map(s => transformSelector(s, scope))
+      .join(', ');
+    return `${scoped} { ${rule.style.cssText} }\n`;
+  }
+  if (rule.type === MEDIA_RULE) {
+    const inner = Array.from(rule.cssRules || [])
+      .map(r => '  ' + transformRule(r, scope)).join('');
+    return `@media ${rule.conditionText} {\n${inner}}\n`;
+  }
+  if (rule.type === SUPPORTS_RULE) {
+    const inner = Array.from(rule.cssRules || [])
+      .map(r => '  ' + transformRule(r, scope)).join('');
+    return `@supports ${rule.conditionText} {\n${inner}}\n`;
+  }
+  if (rule.type === KEYFRAMES_RULE) {
+    return rule.cssText + '\n';  // animations are global — keep as-is
+  }
+  return ''; // skip @page, @charset, @import, etc.
+}
+
+function scopeDocCSS(rawCSS, file) {
+  const scope = `.doc-section[data-doc="${file}"]`;
+
+  // Strip @page rules (master @page above handles print layout)
+  const css = rawCSS.replace(/@page\b[^{]*\{[^}]*\}/g, '').trim();
+  if (!css) return '';
+
+  // Parse via CSSOM in a temporary <style> element
+  const temp = document.createElement('style');
+  temp.textContent = css;
+  document.head.appendChild(temp);
+
+  let out = '';
+  try {
+    out = Array.from(temp.sheet?.cssRules || [])
+      .map(r => transformRule(r, scope))
+      .join('');
+  } catch (e) {
+    // Fallback: inject unscoped rather than break the doc
+    console.warn(`CSS scope failed for ${file}:`, e);
+    out = css;
+  } finally {
+    document.head.removeChild(temp);
+  }
+  return out;
+}
+
+/* ──────────────────────────────────────────────────────
+   Main loader
+────────────────────────────────────────────────────── */
+(async function loadSuite() {
+  const suite      = document.getElementById('suite');
+  const barStatus  = document.getElementById('barStatus');
+  const barPill    = document.getElementById('barPill');
+  const printBtn   = document.getElementById('printBtn');
+  const progress   = document.getElementById('progressFill');
+
+  let loaded = 0, failed = 0;
+
+  for (let i = 0; i < DOCS.length; i++) {
+    const { file, title, pages } = DOCS[i];
+
+    // Update UI
+    barStatus.textContent = `Loading ${i + 1} / ${DOCS.length} — ${title}…`;
+    progress.style.width = `${Math.round((i / DOCS.length) * 100)}%`;
+
+    // Document label (screen only)
+    const label = document.createElement('div');
+    label.className = 'doc-label';
+    label.setAttribute('aria-hidden', 'true');
+    label.innerHTML =
+      `<span class="dl-num">DOC ${String(i + 1).padStart(2, '0')}</span>` +
+      `<span class="dl-title">${title}</span>` +
+      `<span class="dl-rule"></span>` +
+      `<span class="dl-pages">${pages} page${pages > 1 ? 's' : ''}</span>`;
+    suite.appendChild(label);
+
+    try {
+      const res = await fetch(file);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const html = await res.text();
+
+      const parser = new DOMParser();
+      const parsed = parser.parseFromString(html, 'text/html');
+
+      // Scope and inject <style> blocks
+      parsed.querySelectorAll('style').forEach(styleEl => {
+        const scoped = scopeDocCSS(styleEl.textContent, file);
+        if (!scoped.trim()) return;
+        const el = document.createElement('style');
+        el.setAttribute('data-src', file);
+        el.textContent = scoped;
+        document.head.appendChild(el);
+      });
+
+      // Inject any Google Fonts links not already present
+      parsed.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        if (href && !document.querySelector(`link[href="${href}"]`)) {
+          const el = document.createElement('link');
+          el.rel = 'stylesheet'; el.href = href;
+          document.head.appendChild(el);
+        }
+      });
+
+      // Append body content inside a scoped section div
+      const section = document.createElement('div');
+      section.className = 'doc-section';
+      section.setAttribute('data-doc', file);
+      section.innerHTML = parsed.body.innerHTML;
+      suite.appendChild(section);
+
+      loaded++;
+    } catch (err) {
+      console.error(`Failed to load ${file}:`, err);
+      const errDiv = document.createElement('div');
+      errDiv.className = 'error-msg';
+      errDiv.textContent = `⚠  Failed to load "${file}": ${err.message}`;
+      suite.appendChild(errDiv);
+      failed++;
+    }
+  }
+
+  // All documents loaded
+  progress.style.width = '100%';
+  setTimeout(() => { progress.style.opacity = '0'; }, 700);
+
+  if (failed === 0) {
+    barStatus.textContent = `All ${loaded} documents loaded and ready to print.`;
+    barPill.textContent   = `${loaded} docs · ${TOTAL_PAGES} pages`;
+    barPill.style.display = '';
+    printBtn.textContent  = '🖨  Print All Documents';
+    printBtn.classList.add('ready');
+    printBtn.disabled = false;
+  } else {
+    barStatus.textContent = `${loaded} of ${DOCS.length} documents loaded (${failed} failed — see below).`;
+    barPill.textContent   = `${loaded}/${DOCS.length} docs`;
+    barPill.style.display = '';
+    printBtn.textContent  = `🖨  Print (${loaded} docs)`;
+    printBtn.classList.add('ready');
+    printBtn.disabled = false;
+  }
+})();
+</script>
+</body>
+</html>

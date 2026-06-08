@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Investor Q&amp;A Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --sky-10: #e5f3f8; --turq-10: #e5f4f7; --sunset-10: #fef5e7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9pt;
+    color: var(--txt); background: #fff; line-height: 1.55;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .ph {
+    background: var(--ocean); color: #fff;
+    padding: 2.5mm 4mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 6mm;
+  }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf {
+    font-size: 7pt; color: var(--txt-dim);
+    display: flex; justify-content: space-between;
+    padding-top: 2mm; border-top: 1px solid var(--line); margin-top: 5mm;
+  }
+
+  .sl { font-size: 7pt; font-weight: 700; color: var(--turq); letter-spacing: .3em; text-transform: uppercase; display: block; margin-bottom: 1.5mm; }
+  h1 { font-size: 20pt; font-weight: 800; color: var(--ocean); line-height: 1.1; margin-bottom: 1mm; }
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 4mm; }
+  p { color: var(--txt-mid); margin-bottom: 3mm; font-size: 8.5pt; }
+
+  /* Q&A Cards */
+  .qa-stack { display: flex; flex-direction: column; gap: 4mm; }
+
+  .qa-card { border: 1px solid var(--line); border-radius: 1mm; page-break-inside: avoid; overflow: hidden; }
+
+  .qa-q {
+    background: var(--ocean); color: #fff;
+    padding: 3mm 4mm; display: flex; align-items: flex-start; gap: 3mm;
+  }
+  .qa-num {
+    font-size: 7pt; font-weight: 800; color: var(--lime);
+    letter-spacing: .1em; flex-shrink: 0; padding-top: .5mm;
+    min-width: 6mm;
+  }
+  .qa-q-text { font-size: 9pt; font-weight: 700; line-height: 1.45; color: #fff; }
+
+  .qa-a {
+    background: var(--card); padding: 3mm 4mm 3mm calc(4mm + 3mm + 6mm);
+    border-left: 3px solid var(--turq);
+  }
+  .qa-a-lead {
+    font-size: 8.5pt; font-weight: 600; color: var(--turq);
+    display: block; margin-bottom: 1.5mm; line-height: 1.4;
+  }
+  .qa-a-body {
+    font-size: 8pt; color: var(--txt-mid); line-height: 1.55;
+  }
+  .qa-a-body strong { color: var(--ocean); font-weight: 700; }
+
+  .qa-tag {
+    display: inline-block; margin-top: 2mm;
+    font-size: 6.5pt; font-weight: 800; letter-spacing: .15em; text-transform: uppercase;
+    padding: 1mm 2.5mm; border-radius: .5mm;
+  }
+  .tag-control { background: var(--ocean-10); color: var(--ocean); }
+  .tag-risk { background: #fae9e6; color: #9a2e1a; }
+  .tag-timeline { background: var(--turq-10); color: var(--turq); }
+  .tag-structure { background: var(--sky-10); color: #1a5070; }
+  .tag-investment { background: var(--sunset-10); color: #9a6010; }
+  .tag-market { background: var(--ocean-10); color: var(--ocean); }
+  .tag-value { background: var(--turq-10); color: var(--turq); }
+  .tag-close { background: var(--lime); color: #3a3a00; }
+
+  /* Closing instruction box */
+  .close-box {
+    background: var(--ocean); color: #fff;
+    padding: 4mm 5mm; margin-top: 5mm;
+    border-top: 3px solid var(--lime);
+    page-break-inside: avoid;
+  }
+  .close-title {
+    font-size: 8pt; font-weight: 800; color: var(--lime);
+    letter-spacing: .2em; text-transform: uppercase; display: block; margin-bottom: 2mm;
+  }
+  .close-text { font-size: 8.5pt; color: rgba(255,255,255,.85); line-height: 1.55; }
+  .close-text strong { color: #fff; font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Investor Q&amp;A Bank &nbsp;·&nbsp; R360-JRK-FAQ-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Investor Q&amp;A &middot; R360-JRK-FAQ-001</span>
+  <h1>Anticipated Investor Questions</h1>
+  <div class="rule"></div>
+  <p>These are the eight questions most likely to arise during or after the mandate meeting. Each answer is structured: direct response first, rationale second. Answers may be delivered verbatim or adapted to the flow of conversation.</p>
+
+  <div class="qa-stack">
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;1</span>
+        <span class="qa-q-text">Why should I give full control to an advisory firm I just met?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">You are not giving control — you are authorizing execution within boundaries you define.</span>
+        <span class="qa-a-body">The mandate sets a fixed budget ceiling, a defined scope, and milestone-gated payment releases. <strong>No single tranche exceeds $18,000.</strong> Every significant spend category is pre-disclosed in the investment breakdown you are holding. Ru'ya 360° cannot exceed the approved budget, cannot pivot the strategy, and cannot make contractual commitments outside the defined scope without your written consent. The mandate gives us the authority to move quickly — because in this market, slow execution is the only real risk.<br>
+        <span class="qa-tag tag-control">Control &amp; Governance</span></span>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;2</span>
+        <span class="qa-q-text">What happens if the product doesn't sell?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">The first accounts are placed on sale-or-return. STRIKE does not lose shelf space investment if units don't move.</span>
+        <span class="qa-a-body">Phase 0 prioritizes gyms and sports nutrition outlets on consignment terms — <strong>STRIKE takes back unsold stock and pays nothing for the shelf time.</strong> This means the first 8–12 weeks generate real sell-through data before any capital risk scales. If the product does not perform within expected parameters at the first 5 accounts, we stop, assess, and restructure before the next milestone payment is released. We do not spend your money on a theory. We spend it on a proof.<br>
+        <span class="qa-tag tag-risk">Risk Mitigation</span></span>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;3</span>
+        <span class="qa-q-text">How long before I start making money?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">Under the recommended Tier 2 scenario: breakeven is targeted between Month 8 and Month 11.</span>
+        <span class="qa-a-body">The revenue projection model shows Month 1–4 as investment-heavy (production, branding, initial distribution). <strong>Revenue begins in Month 2.</strong> It accelerates from Month 5 as digital channels compound and gym reorders begin. The model reaches monthly breakeven at approximately $12,500 in net monthly revenue — achievable at 2,780 units sold per month across the distribution footprint. Full investment recovery is projected in the 18–22 month range under conservative ROAS assumptions. This is consumer goods velocity, not a startup moonshot.<br>
+        <span class="qa-tag tag-timeline">Timeline &amp; Returns</span></span>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;4</span>
+        <span class="qa-q-text">What if I want to manage some parts of this myself?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">That is your decision entirely — and the mandate documents it precisely.</span>
+        <span class="qa-a-body">The scope section of the management mandate contains a clear division-of-responsibilities table. If you prefer to manage relationships with specific retailers directly, or handle logistics internally, we write that into the mandate and adjust the budget accordingly. <strong>What we do not recommend is informal overlap</strong> — two parties making decisions in the same lane creates confusion in the market and with suppliers. Define the line in writing and we each stay on our side of it. We have done this before; a clean mandate is better for both parties.<br>
+        <span class="qa-tag tag-structure">Structure &amp; Scope</span></span>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;5</span>
+        <span class="qa-q-text">What is the minimum I can invest to get started?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">Tier 1 at $24,000 is the viable minimum. Ru'ya 360°'s recommendation is Tier 2 at $62,000.</span>
+        <span class="qa-a-body">Tier 1 covers production, Halal certification, packaging, and direct gym distribution only. It is viable — but it has no digital presence budget, no e-commerce infrastructure, and no marketing investment beyond physical placement. <strong>It will generate sales, but it will not build a brand.</strong> Tier 2 adds the full digital layer: Meta advertising, influencer program, e-commerce channel, and events. Brand-building at that level is what converts a product into an asset. If $24,000 is today's ceiling, Tier 1 is the honest answer. If the goal is a brand that qualifies for GCC expansion in 18 months, Tier 2 is the answer.<br>
+        <span class="qa-tag tag-investment">Investment Sizing</span></span>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;6</span>
+        <span class="qa-q-text">Why Lebanon first and not another market?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">Lebanon is the proof-of-concept that unlocks the GCC — not the destination.</span>
+        <span class="qa-a-body">Lebanon has no credible Halal Lebanese beef jerky brand today. <strong>That category vacancy does not exist in the UAE or KSA</strong>, where Wild West Halal and international brands already have shelf presence. Winning Lebanon first gives STRIKE: (1) a certified-clean Lebanese origin story, (2) documented sell-through data that GCC buyers require, and (3) 8–12 months to build before a well-funded Halal competitor arrives. Lebanese products carry a premium in the Gulf — "Made in Lebanon" is a differentiator, not a handicap. The GCC launch is in the plan. Lebanon is Phase 0–2. GCC is Phase 3.<br>
+        <span class="qa-tag tag-market">Market Strategy</span></span>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;7</span>
+        <span class="qa-q-text">What does Ru'ya 360° do that I couldn't hire someone else to do?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">An employee executes tasks. Ru'ya 360° brings the full system — strategy, execution, accountability, and market relationships operating simultaneously.</span>
+        <span class="qa-a-body">To replace what Ru'ya 360° delivers under this mandate, you would need: a brand strategist, a digital marketing manager, a field sales representative, a logistics coordinator, a compliance liaison for Halal certification, and an e-commerce manager — <strong>all coordinated by you, working from scratch on relationships we already hold.</strong> Beyond headcount: the institutional knowledge of what has and hasn't worked in Lebanese FMCG distribution, the existing relationships with gym buyers and pharmacy chains, and the accountability structure that milestone payments enforce. You can hire people. You cannot hire a system that is already running.<br>
+        <span class="qa-tag tag-value">Value Proposition</span></span>
+      </div>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-q">
+        <span class="qa-num">Q&thinsp;8</span>
+        <span class="qa-q-text">What happens right now, at the end of this conversation?</span>
+      </div>
+      <div class="qa-a">
+        <span class="qa-a-lead">One decision. Select your tier. Sign the mandate. Ru'ya 360° activates Phase 0 within 72 hours.</span>
+        <span class="qa-a-body">If you select Tier 2 today: the mandate is signed, Milestone 1 ($18,000) is released, and Ru'ya 360° initiates supplier coordination, Dar Al-Fatwa certification process, and packaging design briefing within 72 hours. <strong>The window for first-mover advantage is not abstract — it is measured in months.</strong> Wild West Halal is confirmed in the UAE as of June 2026. Lebanon arrival is estimated in 8–12 months. Every week of delay is a week closer to competing rather than owning the shelf. If you are not ready to decide today, tell us what question is still unanswered and we will answer it before you leave this room.<br>
+        <span class="qa-tag tag-close">Closing the Deal</span></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="close-box">
+    <span class="close-title">Presenter Note</span>
+    <span class="close-text">After Q&amp;A 8, go silent. The next person to speak is the investor. Do not fill the silence with additional selling — the work has been done. If they ask for more time: <strong>"Of course. What specific question should we resolve before you decide?"</strong> Return to the relevant Q&amp;A card and answer it directly.</span>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 1 of 1</span>
+  </div>
+</div>
+
+</body>
+</html>

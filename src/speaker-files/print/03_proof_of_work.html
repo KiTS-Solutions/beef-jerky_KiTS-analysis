@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STRIKE BITES — Proof of Work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 18mm 20mm 16mm 20mm; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ocean: #2f5b6b; --lime: #e7e569; --sky: #66c4dd;
+    --coral: #ea5c3f; --turq: #2b96af; --sunset: #f7b759;
+    --ocean-10: #e8f0f3; --sky-10: #e5f3f8; --turq-10: #e5f4f7;
+    --txt: #1a2a30; --txt-mid: #3d6070; --txt-dim: #6b8896;
+    --line: #c5dde4; --card: #f0f7f9;
+  }
+
+  body {
+    font-family: 'Montserrat', Arial, sans-serif; font-size: 9pt;
+    color: var(--txt); background: #fff; line-height: 1.5;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+
+  .page { width: 100%; min-height: 261mm; page-break-after: always; break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .ph {
+    background: var(--ocean); color: #fff;
+    padding: 2.5mm 4mm; display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 7mm;
+  }
+  .ph-l { font-size: 9pt; font-weight: 800; }
+  .ph-l em { color: var(--coral); font-style: normal; }
+  .ph-r { font-size: 7pt; color: rgba(255,255,255,.65); letter-spacing: .06em; }
+
+  .pf {
+    font-size: 7pt; color: var(--txt-dim);
+    display: flex; justify-content: space-between;
+    padding-top: 2.5mm; border-top: 1px solid var(--line); margin-top: 6mm;
+  }
+
+  .sl {
+    font-size: 7pt; font-weight: 700; color: var(--turq);
+    letter-spacing: .3em; text-transform: uppercase;
+    display: block; margin-bottom: 2mm;
+  }
+
+  /* Ocean band for page 1 title */
+  .ocean-band {
+    background: var(--ocean); color: #fff;
+    padding: 4mm 5mm; margin-bottom: 6mm;
+  }
+  .ob-label {
+    font-size: 7pt; font-weight: 700; color: var(--lime);
+    letter-spacing: .3em; text-transform: uppercase;
+    display: block; margin-bottom: 1.5mm;
+  }
+  .ob-title { font-size: 18pt; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 1.5mm; }
+  .ob-sub { font-size: 9pt; color: rgba(255,255,255,.65); line-height: 1.45; }
+
+  h2 { font-size: 12pt; font-weight: 700; color: var(--ocean); margin-bottom: 2mm; margin-top: 4mm; }
+
+  .rule { width: 100%; height: 2px; background: linear-gradient(to right, var(--turq), transparent); margin: 2mm 0 4mm; }
+
+  /* Deliverables table */
+  .del-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 4mm; table-layout: fixed; }
+  .del-table thead tr { background: var(--ocean); color: #fff; }
+  .del-table th {
+    font-size: 7pt; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; padding: 2mm 3mm;
+    text-align: left; color: rgba(255,255,255,.8);
+    border-bottom: 1px solid rgba(255,255,255,.15);
+  }
+  .del-table td { padding: 2.5mm 3mm; vertical-align: top; border-bottom: 1px solid var(--line); }
+  .del-table tr:nth-child(even) td { background: var(--card); }
+  .del-table tr { page-break-inside: avoid; }
+
+  .ref-code { font-size: 8pt; font-weight: 700; color: var(--turq); white-space: nowrap; letter-spacing: .03em; }
+  .del-title { font-weight: 700; color: var(--txt); font-size: 9pt; display: block; margin-bottom: .5mm; }
+  .del-desc { color: var(--txt-mid); font-size: 8pt; }
+
+  .status-badge {
+    display: inline-block; font-size: 7pt; font-weight: 700;
+    background: var(--turq-10); color: var(--turq);
+    border: 1px solid var(--turq); padding: .5mm 2mm;
+    white-space: nowrap;
+  }
+
+  .tag-row { margin-top: 1mm; display: flex; flex-wrap: wrap; gap: 1.5mm; }
+  .tag {
+    font-size: 6.5pt; font-weight: 600; color: var(--ocean);
+    border: .5px solid var(--sky); padding: .3mm 1.5mm;
+    background: var(--sky-10); letter-spacing: .06em;
+  }
+
+  /* Depth grid — page 2 */
+  .depth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 4mm 0; }
+  .depth-card {
+    border: 1px solid var(--line); border-top: 3px solid var(--turq);
+    padding: 3mm 4mm; page-break-inside: avoid; background: var(--card);
+  }
+  .depth-ref { font-size: 7pt; font-weight: 700; color: var(--turq); display: block; margin-bottom: 1mm; letter-spacing: .08em; }
+  .depth-title { font-size: 10pt; font-weight: 700; color: var(--ocean); display: block; margin-bottom: 2mm; }
+
+  .depth-list { list-style: none; padding: 0; }
+  .depth-list li {
+    font-size: 8pt; color: var(--txt-mid); padding: .8mm 0;
+    border-bottom: .5px solid var(--line); display: flex;
+    gap: 2mm; align-items: baseline; line-height: 1.35;
+  }
+  .depth-list li::before { content: '›'; color: var(--turq); font-size: 10pt; flex-shrink: 0; }
+  .depth-list li:last-child { border-bottom: none; }
+
+  .commit-box {
+    background: var(--ocean); color: #fff;
+    padding: 4mm 5mm; margin-top: 4mm;
+    border-left: 4px solid var(--lime); page-break-inside: avoid;
+  }
+  .commit-lbl {
+    font-size: 7pt; font-weight: 700; color: var(--lime);
+    letter-spacing: .25em; text-transform: uppercase;
+    display: block; margin-bottom: 2mm;
+  }
+  .commit-txt { font-size: 10pt; font-weight: 400; color: rgba(255,255,255,.85); font-style: italic; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — ELEVEN DELIVERABLES -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Proof of Work &nbsp;·&nbsp; R360-JRK-POW-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <div class="ocean-band">
+    <span class="ob-label">Proof of Work &middot; R360-JRK-POW-001</span>
+    <div class="ob-title">Eleven Deliverables Before Mandate</div>
+    <div class="ob-sub">Institutional-quality research and execution &mdash; completed before contract, before payment, and before any formal engagement existed.</div>
+  </div>
+
+  <table class="del-table">
+    <thead>
+      <tr>
+        <th style="width:22mm;">Reference</th>
+        <th>Deliverable &amp; Description</th>
+        <th style="width:17mm; text-align:center;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="ref-code">R360-JRK-001</span></td>
+        <td>
+          <span class="del-title">Full Advisory Framework</span>
+          <span class="del-desc">10-section A-to-Z market entry guide covering legal entity, regulatory filing, manufacturing, brand, distribution, export, and operations. Primary reference document for mandate execution.</span>
+          <div class="tag-row"><span class="tag">Legal</span><span class="tag">Operations</span><span class="tag">Strategy</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-002</span></td>
+        <td>
+          <span class="del-title">Master Launch Checklist</span>
+          <span class="del-desc">38 execution steps across 5 milestone-gated phases: Pre-Launch, Launch, Growth, Export, and Scale. Every task is owner-assigned with timeline anchors.</span>
+          <div class="tag-row"><span class="tag">Execution</span><span class="tag">Milestones</span><span class="tag">PM</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-003</span></td>
+        <td>
+          <span class="del-title">Financial Feasibility Study</span>
+          <span class="del-desc">Three-tier investment model ($24K / $62K / $96K), full 12-month P&amp;L projections, breakeven analysis, ROI modeling, and line-by-line category allocation.</span>
+          <div class="tag-row"><span class="tag">Finance</span><span class="tag">Modelling</span><span class="tag">ROI</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-004</span></td>
+        <td>
+          <span class="del-title">Trade Outreach System</span>
+          <span class="del-desc">Gym buyer scripts, objection-handling playbook, account activation tracker, and follow-up cadence templates. Covers B2B pitch for gym retail, nutrition stores, and F&amp;B channels.</span>
+          <div class="tag-row"><span class="tag">Sales</span><span class="tag">B2B</span><span class="tag">Trade</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-005</span></td>
+        <td>
+          <span class="del-title">Competitive Analysis</span>
+          <span class="del-desc">Five competitors benchmarked across 8 weighted criteria from both Lebanese consumer and investor perspectives. Dual-axis scoring matrix with brand positioning gap map.</span>
+          <div class="tag-row"><span class="tag">Market Intel</span><span class="tag">Positioning</span><span class="tag">Gaps</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-006</span></td>
+        <td>
+          <span class="del-title">Brand &amp; Packaging Design Brief</span>
+          <span class="del-desc">8-section brief including visual identity system, trilingual labeling (AR/EN/FR), Dar Al-Fatwa Halal certification specs, print-ready packaging dimensions, and material specifications.</span>
+          <div class="tag-row"><span class="tag">Brand</span><span class="tag">Packaging</span><span class="tag">Print-Ready</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-007</span></td>
+        <td>
+          <span class="del-title">Manufacturer Technical Brief</span>
+          <span class="del-desc">Full flavor specification for Lebanese BBQ recipe (Aleppo pepper, sumac, pomegranate, cedar smoke), 8 QC parameters, Halal production protocol, and supplier qualification criteria.</span>
+          <div class="tag-row"><span class="tag">Production</span><span class="tag">QC</span><span class="tag">Halal</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-008</span></td>
+        <td>
+          <span class="del-title">STRIKE Brand Enhancement Study</span>
+          <span class="del-desc">Brand audit scoring 88/100 with three SKU mockup renders, shelf-impact analysis, and premium positioning recommendations calibrated to the Lebanese gym and fitness retail context.</span>
+          <div class="tag-row"><span class="tag">Brand</span><span class="tag">Renders</span><span class="tag">Retail</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-VIZ-001</span></td>
+        <td>
+          <span class="del-title">Product Visualization System</span>
+          <span class="del-desc">Packaging renders, brand asset library, and product photography simulation for three SKUs across primary and secondary packaging formats. Investor- and retail-presentation quality.</span>
+          <div class="tag-row"><span class="tag">Visualization</span><span class="tag">Assets</span><span class="tag">SKUs</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-BOARD-001</span></td>
+        <td>
+          <span class="del-title">Board Presentation</span>
+          <span class="del-desc">25-slide institutional-quality presentation structured for funder and board audiences. Covers market context, financial tiers, execution roadmap, competitive positioning, and management structure.</span>
+          <div class="tag-row"><span class="tag">Investor</span><span class="tag">Board</span><span class="tag">Presentation</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+      <tr>
+        <td><span class="ref-code">R360-JRK-MKT-001</span></td>
+        <td>
+          <span class="del-title">Marketing &amp; Digital Strategy</span>
+          <span class="del-desc">8-section document covering channel mix, Meta Ads ROAS model, influencer activation, e-commerce setup, content calendar, and 24-month growth roadmap with monthly milestones.</span>
+          <div class="tag-row"><span class="tag">Digital</span><span class="tag">Meta Ads</span><span class="tag">24-month</span></div>
+        </td>
+        <td style="text-align:center;"><span class="status-badge">&#10003; COMPLETE</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 1 of 2</span>
+  </div>
+</div>
+
+<!-- PAGE 2 — DEPTH INVENTORY -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-l">Ru'ya <em>360</em>° &nbsp;·&nbsp; Proof of Work &nbsp;·&nbsp; R360-JRK-POW-001</span>
+    <span class="ph-r">STRIKE BITES Advisory &nbsp;·&nbsp; Confidential</span>
+  </div>
+
+  <span class="sl">Proof of Work &middot; Depth Inventory</span>
+  <h2>What Each Deliverable Contains</h2>
+  <div class="rule"></div>
+
+  <div class="depth-grid">
+    <div class="depth-card">
+      <span class="depth-ref">R360-JRK-003</span>
+      <span class="depth-title">Financial Feasibility Study</span>
+      <ul class="depth-list">
+        <li>Three-tier model: $24K / $62K / $96K total investment</li>
+        <li>12-month monthly P&amp;L with unit economics per SKU</li>
+        <li>Breakeven units and revenue thresholds per tier</li>
+        <li>Year 1 ROI: ~155% / ~265% / ~310% by tier</li>
+        <li>Line-by-line allocation across 10 cost categories</li>
+        <li>FX risk notation (LBP / USD dual exposure)</li>
+      </ul>
+    </div>
+
+    <div class="depth-card">
+      <span class="depth-ref">R360-JRK-MKT-001</span>
+      <span class="depth-title">Marketing &amp; Digital Strategy</span>
+      <ul class="depth-list">
+        <li>Meta Ads: 2.0&ndash;3.2&times; ROAS modelled across budget scenarios</li>
+        <li>Influencer program: 3.0&ndash;5.5&times; estimated return</li>
+        <li>E-Commerce integration: 2.1&ndash;4.8&times; ROAS (Shopify / WhatsApp)</li>
+        <li>Year 1 total channel spend: $9K / $27K / $58K by tier</li>
+        <li>24-month roadmap with quarterly activation milestones</li>
+        <li>Content calendar and weekly publishing cadence</li>
+      </ul>
+    </div>
+
+    <div class="depth-card">
+      <span class="depth-ref">R360-JRK-005</span>
+      <span class="depth-title">Competitive Analysis</span>
+      <ul class="depth-list">
+        <li>5 competitors: Jack Link&rsquo;s, Country Archer, Wild West, Balila, local artisan</li>
+        <li>8 criteria: Price, Halal, Lebanon presence, brand equity, distribution, digital</li>
+        <li>Jack Link&rsquo;s: $5.62 / 40g — no Lebanese Halal certification</li>
+        <li>Wild West Halal: UAE-confirmed, Lebanon arrival imminent</li>
+        <li>STRIKE BITES window: 8&ndash;12 months before competitive entry</li>
+        <li>Dual scoring: consumer perspective vs. investor perspective</li>
+      </ul>
+    </div>
+
+    <div class="depth-card">
+      <span class="depth-ref">R360-JRK-007</span>
+      <span class="depth-title">Manufacturer Technical Brief</span>
+      <ul class="depth-list">
+        <li>Lebanese BBQ flavor profile: Aleppo pepper, sumac, pomegranate, cedar smoke</li>
+        <li>Protein target: &ge;19g per 40g serving (primary KPI)</li>
+        <li>8 QC checkpoints from raw material to finished bag</li>
+        <li>Halal slaughter protocol aligned to Dar Al-Fatwa standards</li>
+        <li>Moisture content, shelf stability, and packaging gas specs</li>
+        <li>3 approved supplier qualification criteria for sourcing</li>
+      </ul>
+    </div>
+
+    <div class="depth-card">
+      <span class="depth-ref">R360-JRK-006</span>
+      <span class="depth-title">Brand &amp; Packaging Design Brief</span>
+      <ul class="depth-list">
+        <li>Trilingual label: Arabic / English / French regulatory compliance</li>
+        <li>Dar Al-Fatwa Halal logo placement and certification text</li>
+        <li>Primary SKU: 40g stand-up pouch — print spec sheet included</li>
+        <li>Secondary: 100g value format for gym bulk channel</li>
+        <li>Material: matte laminate with spot UV on brand mark</li>
+        <li>Color system &amp; typeface locked for print production hand-off</li>
+      </ul>
+    </div>
+
+    <div class="depth-card">
+      <span class="depth-ref">R360-JRK-004</span>
+      <span class="depth-title">Trade Outreach System</span>
+      <ul class="depth-list">
+        <li>Gym retail pitch script: opening, product demo, close</li>
+        <li>6 pre-written objection responses (price, origin, shelf space)</li>
+        <li>CRM tracker template: 50 target account fields</li>
+        <li>Account tier system: A (premium gym) / B (nutrition store) / C (caf&eacute;)</li>
+        <li>Follow-up cadence: Day 1 / Day 4 / Day 10 / Day 21</li>
+        <li>WhatsApp activation kit for Lebanese sales culture</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="commit-box">
+    <span class="commit-lbl">The Ru'ya 360° Commitment</span>
+    <div class="commit-txt">"Every one of these documents was produced before a mandate existed — before payment, before contract, before formal engagement. We invest our own time and expertise first. That is the model. The mandate formalises what we have already demonstrated."</div>
+  </div>
+
+  <div class="pf">
+    <span>STRIKE BITES &mdash; Management Mandate Meeting &middot; Confidential</span>
+    <span>Page 2 of 2</span>
+  </div>
+</div>
+
+</body>
+</html>
